@@ -94,7 +94,7 @@ export default function Work() {
               </div>
               
               <a 
-                href="#" 
+                href="https://prompt2story.com" 
                 className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors font-semibold"
               >
                 Visit Live Site →
