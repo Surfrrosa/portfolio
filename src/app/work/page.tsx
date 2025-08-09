@@ -32,7 +32,7 @@ export default function Work() {
   }, [])
 
   return (
-    <div className="min-h-screen grid lg:grid-cols-[320px_1fr]">
+    <div className="min-h-screen grid lg:grid-cols-[340px_1fr]">
       <Sidebar />
       
       <main className="px-6 lg:px-12 py-12">
