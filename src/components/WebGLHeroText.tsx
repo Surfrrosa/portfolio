@@ -5,16 +5,17 @@ import { motion } from 'framer-motion'
 import * as THREE from 'three'
 // @ts-ignore - troika-three-text doesn't have types
 import { Text } from 'troika-three-text'
-import { EffectComposer, RenderPass, ChromaticAberrationEffect, EffectPass } from 'postprocessing'
+import { EffectComposer, RenderPass, ChromaticAberrationEffect, EffectPass, Effect } from 'postprocessing'
+import { heroLens } from '../lib/heroLens.config'
 
 export const heroConfig = {
   warpIntensity: 0.4,
   noiseFreq: 1.2,
-  damping: 0.08,
-  distortionRadius: 0.15,
+  damping: heroLens.damping,
+  distortionRadius: heroLens.lensRadius,
   chromAberrationPx: {
-    desktop: 0.8,
-    mobile: 0.5
+    desktop: heroLens.rgbOffsetPx,
+    mobile: heroLens.rgbOffsetPx * 0.6
   },
   idleMotionSpeed: 0.2,
   performanceMode: false
@@ -28,89 +29,15 @@ interface WebGLHeroTextProps {
 
 const vertexShader = `
   uniform float uTime;
-  uniform float uWarpIntensity;
-  uniform float uNoiseFreq;
   uniform vec2 uPointer;
   uniform float uPointerInfluence;
   uniform float uDistortionRadius;
-  
-  vec3 mod289(vec3 x) {
-    return x - floor(x * (1.0 / 289.0)) * 289.0;
-  }
-  
-  vec4 mod289(vec4 x) {
-    return x - floor(x * (1.0 / 289.0)) * 289.0;
-  }
-  
-  vec4 permute(vec4 x) {
-    return mod289(((x*34.0)+1.0)*x);
-  }
-  
-  vec4 taylorInvSqrt(vec4 r) {
-    return 1.79284291400159 - 0.85373472095314 * r;
-  }
-  
-  float snoise(vec3 v) {
-    const vec2 C = vec2(1.0/6.0, 1.0/3.0);
-    const vec4 D = vec4(0.0, 0.5, 1.0, 2.0);
-    
-    vec3 i = floor(v + dot(v, C.yyy));
-    vec3 x0 = v - i + dot(i, C.xxx);
-    
-    vec3 g = step(x0.yzx, x0.xyz);
-    vec3 l = 1.0 - g;
-    vec3 i1 = min(g.xyz, l.zxy);
-    vec3 i2 = max(g.xyz, l.zxy);
-    
-    vec3 x1 = x0 - i1 + C.xxx;
-    vec3 x2 = x0 - i2 + C.yyy;
-    vec3 x3 = x0 - D.yyy;
-    
-    i = mod289(i);
-    vec4 p = permute(permute(permute(
-             i.z + vec4(0.0, i1.z, i2.z, 1.0))
-           + i.y + vec4(0.0, i1.y, i2.y, 1.0))
-           + i.x + vec4(0.0, i1.x, i2.x, 1.0));
-    
-    float n_ = 0.142857142857;
-    vec3 ns = n_ * D.wyz - D.xzx;
-    
-    vec4 j = p - 49.0 * floor(p * ns.z * ns.z);
-    
-    vec4 x_ = floor(j * ns.z);
-    vec4 y_ = floor(j - 7.0 * x_);
-    
-    vec4 x = x_ *ns.x + ns.yyyy;
-    vec4 y = y_ *ns.x + ns.yyyy;
-    vec4 h = 1.0 - abs(x) - abs(y);
-    
-    vec4 b0 = vec4(x.xy, y.xy);
-    vec4 b1 = vec4(x.zw, y.zw);
-    
-    vec4 s0 = floor(b0) * 2.0 + 1.0;
-    vec4 s1 = floor(b1) * 2.0 + 1.0;
-    vec4 sh = -step(h, vec4(0.0));
-    
-    vec4 a0 = b0.xzyw + s0.xzyw * sh.xxyy;
-    vec4 a1 = b1.xzyw + s1.xzyw * sh.zzww;
-    
-    vec3 p0 = vec3(a0.xy, h.x);
-    vec3 p1 = vec3(a0.zw, h.y);
-    vec3 p2 = vec3(a1.xy, h.z);
-    vec3 p3 = vec3(a1.zw, h.w);
-    
-    vec4 norm = taylorInvSqrt(vec4(dot(p0,p0), dot(p1,p1), dot(p2, p2), dot(p3,p3)));
-    p0 *= norm.x;
-    p1 *= norm.y;
-    p2 *= norm.z;
-    p3 *= norm.w;
-    
-    vec4 m = max(0.6 - vec4(dot(x0,x0), dot(x1,x1), dot(x2,x2), dot(x3,x3)), 0.0);
-    m = m * m;
-    return 42.0 * dot(m*m, vec4(dot(p0,x0), dot(p1,x1), dot(p2,x2), dot(p3,x3)));
-  }
+  uniform float uMagnify;
+  varying vec2 vUv;
+  varying float vLensInfluence;
   
   void main() {
+    vUv = uv;
     vec3 pos = position;
     
     vec4 worldPos = modelMatrix * vec4(position, 1.0);
@@ -120,40 +47,72 @@ const vertexShader = `
     float normalizedDistance = distanceFromPointer / uDistortionRadius;
     
     float influence = smoothstep(1.0, 0.0, normalizedDistance) * uPointerInfluence;
-    influence = influence * influence; // Quadratic falloff for sharper edges
-    
-    float idleNoise = snoise(vec3(pos.xy * 1.2, uTime * 0.3)) * 0.008;
+    influence = influence * influence;
+    vLensInfluence = influence;
     
     if (influence > 0.01) {
-      float noise = snoise(vec3(pos.xy * uNoiseFreq + uTime * 0.2, uTime * 0.4));
-      vec2 distortion = vec2(
-        noise,
-        snoise(vec3(pos.xy * uNoiseFreq + 100.0, uTime * 0.4))
-      ) * influence * uWarpIntensity;
-      
-      pos.xy += distortion;
+      vec2 direction = normalize(screenPos - uPointer);
+      float magnification = mix(1.0, uMagnify, influence);
+      vec2 offset = direction * (magnification - 1.0) * influence * 0.1;
+      pos.xy += offset;
     }
-    
-    pos.xy += vec2(idleNoise * 0.5);
     
     gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
   }
 `
 
-const fragmentShader = `
-  uniform vec3 color;
-  uniform float uTime;
+const pixelLensFragmentShader = `
+  uniform vec2 uPointer;
+  uniform float uLensRadius;
+  uniform float uMagnify;
+  uniform float uPixelSize;
+  uniform float uRgbOffset;
+  uniform vec2 uResolution;
   
-  void main() {
-    vec3 finalColor = color;
+  void mainImage(const in vec4 inputColor, const in vec2 uv, out vec4 outputColor) {
+    vec2 screenPos = uv;
+    vec2 pointerUv = (uPointer + 1.0) * 0.5; // Convert from NDC to UV space
     
-    float shift = sin(uTime * 2.0) * 0.02;
-    finalColor.r += shift;
-    finalColor.b -= shift;
+    float distanceFromPointer = length(screenPos - pointerUv);
+    float normalizedDistance = distanceFromPointer / uLensRadius;
     
-    gl_FragColor = vec4(finalColor, 1.0);
+    float lensInfluence = 1.0 - smoothstep(0.8, 1.0, normalizedDistance);
+    
+    if (lensInfluence > 0.01) {
+      vec2 direction = normalize(screenPos - pointerUv);
+      vec2 magnifiedUv = pointerUv + (screenPos - pointerUv) / uMagnify;
+      
+      vec2 pixelSize = vec2(uPixelSize) / uResolution;
+      vec2 pixelatedUv = floor(magnifiedUv / pixelSize) * pixelSize + pixelSize * 0.5;
+      
+      float rgbShift = uRgbOffset * 0.002 * lensInfluence;
+      vec2 offsetR = pixelatedUv + vec2(rgbShift, 0.0);
+      vec2 offsetB = pixelatedUv - vec2(rgbShift, 0.0);
+      
+      float r = texture2D(inputBuffer, offsetR).r;
+      float g = texture2D(inputBuffer, pixelatedUv).g;
+      float b = texture2D(inputBuffer, offsetB).b;
+      
+      outputColor = vec4(r, g, b, 1.0);
+      outputColor.rgb *= (1.0 + lensInfluence * 0.1);
+    } else {
+      outputColor = inputColor;
+    }
   }
 `
+
+class PixelLensEffect extends Effect {
+  constructor() {
+    super('PixelLensEffect', pixelLensFragmentShader)
+    
+    this.uniforms.set('uPointer', new THREE.Uniform(new THREE.Vector2(0, 0)))
+    this.uniforms.set('uLensRadius', new THREE.Uniform(heroLens.lensRadius))
+    this.uniforms.set('uMagnify', new THREE.Uniform(heroLens.magnify))
+    this.uniforms.set('uPixelSize', new THREE.Uniform(heroLens.pixelSize))
+    this.uniforms.set('uRgbOffset', new THREE.Uniform(heroLens.rgbOffsetPx))
+    this.uniforms.set('uResolution', new THREE.Uniform(new THREE.Vector2(window.innerWidth, window.innerHeight)))
+  }
+}
 
 
 
@@ -165,179 +124,166 @@ function WebGLTextCanvas({ text, className, style }: { text: string; className?:
     renderer: THREE.WebGLRenderer
     composer: EffectComposer | null
     textMesh: THREE.Mesh | null
-    material: THREE.ShaderMaterial | null
-    chromaEffect: ChromaticAberrationEffect | null
+    pixelLensEffect: PixelLensEffect | null
     animationId: number | null
   }>()
   
   useEffect(() => {
-    if (!canvasRef.current) return
-    
-    const canvas = canvasRef.current
-    const scene = new THREE.Scene()
-    const camera = new THREE.PerspectiveCamera(75, canvas.clientWidth / canvas.clientHeight, 0.1, 1000)
-    const renderer = new THREE.WebGLRenderer({ 
-      canvas, 
-      antialias: true, 
-      alpha: true,
-      powerPreference: 'high-performance'
-    })
-    
-    renderer.setSize(canvas.clientWidth, canvas.clientHeight)
-    renderer.setPixelRatio(Math.min(1.5, window.devicePixelRatio))
-    
-    const textMesh = new Text()
-    textMesh.text = text
-    textMesh.fontSize = 0.8
-    textMesh.color = 0xffffff
-    textMesh.anchorX = 'center'
-    textMesh.anchorY = 'middle'
-    textMesh.maxWidth = 8
-    
-    const material = new THREE.ShaderMaterial({
-      vertexShader,
-      fragmentShader,
-      uniforms: {
-        uTime: { value: 0 },
-        uWarpIntensity: { value: heroConfig.warpIntensity },
-        uNoiseFreq: { value: heroConfig.noiseFreq },
-        uPointer: { value: new THREE.Vector2(0, 0) },
-        uPointerInfluence: { value: 0 },
-        uDistortionRadius: { value: heroConfig.distortionRadius },
-        color: { value: new THREE.Color(0xffffff) }
-      },
-      transparent: true
-    })
-    
-    textMesh.sync(() => {
-      textMesh.material = material
-    })
-    
-    scene.add(textMesh)
-    camera.position.z = 5
-    
-    const composer = new EffectComposer(renderer)
-    const renderPass = new RenderPass(scene, camera)
-    
-    const isMobile = window.innerWidth < 768
-    const chromaStrength = isMobile ? heroConfig.chromAberrationPx.mobile : heroConfig.chromAberrationPx.desktop
-    
-    const chromaEffect = new ChromaticAberrationEffect({
-      offset: new THREE.Vector2(chromaStrength * 0.001, chromaStrength * 0.001),
-      radialModulation: false,
-      modulationOffset: 0
-    })
-    
-    const effectPass = new EffectPass(camera, chromaEffect)
-    
-    composer.addPass(renderPass)
-    composer.addPass(effectPass)
-    
-    sceneRef.current = {
-      scene,
-      camera,
-      renderer,
-      composer,
-      textMesh,
-      material,
-      chromaEffect,
-      animationId: null
+    if (!canvasRef.current) {
+      console.log('Canvas ref not available')
+      return
     }
     
-    let pointer = { x: 0, y: 0 }
-    let pointerInfluence = 0
+    console.log('Starting WebGL canvas setup')
     
-    const handleMouseMove = (event: MouseEvent) => {
-      const rect = canvas.getBoundingClientRect()
-      pointer.x = ((event.clientX - rect.left) / rect.width) * 2 - 1
-      pointer.y = -((event.clientY - rect.top) / rect.height) * 2 + 1
-      pointerInfluence = 1.0
-    }
-    
-    const handleMouseLeave = () => {
-      pointerInfluence = 0
-    }
-    
-    canvas.addEventListener('mousemove', handleMouseMove)
-    canvas.addEventListener('mouseleave', handleMouseLeave)
-    
-    const animate = () => {
-      if (!sceneRef.current) return
+    try {
+      const canvas = canvasRef.current
+      const scene = new THREE.Scene()
+      const camera = new THREE.PerspectiveCamera(75, canvas.clientWidth / canvas.clientHeight, 0.1, 1000)
+      const renderer = new THREE.WebGLRenderer({ 
+        canvas, 
+        antialias: true, 
+        alpha: true,
+        powerPreference: 'high-performance'
+      })
       
-      const { material: mat, composer: comp, chromaEffect } = sceneRef.current
+      renderer.setSize(canvas.clientWidth, canvas.clientHeight)
+      renderer.setPixelRatio(Math.min(1.5, window.devicePixelRatio))
       
-      if (mat) {
-        mat.uniforms.uTime.value = performance.now() * 0.001 * heroConfig.idleMotionSpeed
+      console.log('Creating text mesh...')
+      const textMesh = new Text()
+      textMesh.text = text
+      textMesh.fontSize = 2.0
+      textMesh.color = 0xffffff
+      textMesh.anchorX = 'center'
+      textMesh.anchorY = 'middle'
+      textMesh.maxWidth = 8
+      console.log('Text mesh created successfully')
+      
+      console.log('Syncing text mesh...')
+      textMesh.sync(() => {
+        console.log('Text mesh sync callback executing - using default material')
+        console.log('Text mesh material:', textMesh.material)
+        console.log('Text mesh geometry:', textMesh.geometry)
+        console.log('Text mesh geometry vertices:', textMesh.geometry?.attributes?.position?.count)
+      })
+      
+      scene.add(textMesh)
+      camera.position.z = 10
+      console.log('Text mesh added to scene, camera positioned at z=5')
+      console.log('Text mesh position:', textMesh.position)
+      console.log('Text mesh visible:', textMesh.visible)
+      console.log('Scene children count:', scene.children.length)
+      
+      const composer = new EffectComposer(renderer)
+      const renderPass = new RenderPass(scene, camera)
+      
+      const isMobile = window.innerWidth < 768
+      const chromaStrength = isMobile ? heroConfig.chromAberrationPx.mobile : heroConfig.chromAberrationPx.desktop
+      
+      const pixelLensEffect = new PixelLensEffect()
+      const effectPass = new EffectPass(camera, pixelLensEffect)
+      
+      composer.addPass(renderPass)
+      composer.addPass(effectPass)
+      
+      sceneRef.current = {
+        scene,
+        camera,
+        renderer,
+        composer,
+        textMesh,
+        pixelLensEffect,
+        animationId: null
+      }
+      
+      let pointer = { x: 0, y: 0 }
+      let pointerInfluence = 0
+      
+      const handleMouseMove = (event: MouseEvent) => {
+        const rect = canvas.getBoundingClientRect()
+        pointer.x = ((event.clientX - rect.left) / rect.width) * 2 - 1
+        pointer.y = -((event.clientY - rect.top) / rect.height) * 2 + 1
+        pointerInfluence = 1.0
+      }
+      
+      const handleMouseLeave = () => {
+        pointerInfluence = 0
+      }
+      
+      canvas.addEventListener('mousemove', handleMouseMove)
+      canvas.addEventListener('mouseleave', handleMouseLeave)
+      
+      const animate = () => {
+        if (!sceneRef.current) return
         
-        const current = mat.uniforms.uPointerInfluence.value
-        mat.uniforms.uPointerInfluence.value = THREE.MathUtils.lerp(
-          current,
-          pointerInfluence,
-          heroConfig.damping
-        )
+        const { composer: comp, pixelLensEffect } = sceneRef.current
         
-        mat.uniforms.uPointer.value.set(pointer.x, pointer.y)
+        const pointerUniform = pixelLensEffect?.uniforms.get('uPointer')
+        if (pointerUniform && pixelLensEffect) {
+          const currentPointer = pointerUniform.value
+          currentPointer.x = THREE.MathUtils.lerp(currentPointer.x, pointer.x, heroLens.damping)
+          currentPointer.y = THREE.MathUtils.lerp(currentPointer.y, pointer.y, heroLens.damping)
+        }
         
-        if (chromaEffect) {
-          const warpInfluence = mat.uniforms.uPointerInfluence.value
-          const baseStrength = window.innerWidth < 768 ? 
-            heroConfig.chromAberrationPx.mobile : 
-            heroConfig.chromAberrationPx.desktop
-          const dynamicStrength = baseStrength * (1 + warpInfluence * 0.5)
-          chromaEffect.offset.set(dynamicStrength * 0.001, dynamicStrength * 0.001)
+        if (comp) {
+          comp.render()
+        } else {
+          console.log('No composer available, using direct renderer')
+          renderer.render(scene, camera)
+        }
+        
+        sceneRef.current.animationId = requestAnimationFrame(animate)
+      }
+      
+      animate()
+      
+      const handleResize = () => {
+        if (!sceneRef.current) return
+        
+        const { camera: cam, renderer: rend, composer: comp } = sceneRef.current
+        cam.aspect = canvas.clientWidth / canvas.clientHeight
+        cam.updateProjectionMatrix()
+        rend.setSize(canvas.clientWidth, canvas.clientHeight)
+        if (comp) {
+          comp.setSize(canvas.clientWidth, canvas.clientHeight)
         }
       }
       
-      if (comp) {
-        comp.render()
-      }
+      window.addEventListener('resize', handleResize)
       
-      sceneRef.current.animationId = requestAnimationFrame(animate)
-    }
-    
-    animate()
-    
-    const handleResize = () => {
-      if (!sceneRef.current) return
-      
-      const { camera: cam, renderer: rend, composer: comp } = sceneRef.current
-      cam.aspect = canvas.clientWidth / canvas.clientHeight
-      cam.updateProjectionMatrix()
-      rend.setSize(canvas.clientWidth, canvas.clientHeight)
-      if (comp) {
-        comp.setSize(canvas.clientWidth, canvas.clientHeight)
+      return () => {
+        canvas.removeEventListener('mousemove', handleMouseMove)
+        canvas.removeEventListener('mouseleave', handleMouseLeave)
+        window.removeEventListener('resize', handleResize)
+        
+        if (sceneRef.current?.animationId) {
+          cancelAnimationFrame(sceneRef.current.animationId)
+        }
+        
+        if (sceneRef.current) {
+          sceneRef.current.composer?.dispose()
+          sceneRef.current.renderer.dispose()
+          sceneRef.current.textMesh?.geometry.dispose()
+        }
       }
-    }
-    
-    window.addEventListener('resize', handleResize)
-    
-    return () => {
-      canvas.removeEventListener('mousemove', handleMouseMove)
-      canvas.removeEventListener('mouseleave', handleMouseLeave)
-      window.removeEventListener('resize', handleResize)
-      
-      if (sceneRef.current?.animationId) {
-        cancelAnimationFrame(sceneRef.current.animationId)
-      }
-      
-      if (sceneRef.current) {
-        sceneRef.current.composer?.dispose()
-        sceneRef.current.renderer.dispose()
-        sceneRef.current.material?.dispose()
-        sceneRef.current.textMesh?.geometry.dispose()
-      }
+    } catch (error) {
+      console.error('Error in WebGL canvas setup:', error)
     }
   }, [text])
   
   return (
     <div className="relative" style={style}>
-      <h1 className={`${className} sr-only`} aria-label={text}>
+      <h1 className={`${className} sr-only`} aria-label={text} style={{ display: 'none' }}>
         {text}
       </h1>
       <canvas
         ref={canvasRef}
         className="w-full h-full"
-        style={{ display: 'block' }}
+        style={{ 
+          display: 'block',
+          minHeight: '400px'
+        }}
       />
     </div>
   )
@@ -366,7 +312,7 @@ export default function WebGLHeroText({ text, className, style }: WebGLHeroTextP
     return () => mediaQuery.removeEventListener('change', handleChange)
   }, [])
   
-  const shouldUseFallback = heroConfig.performanceMode || !supportsWebGL2 || prefersReducedMotion
+  const shouldUseFallback = false // Temporarily force WebGL rendering
   
   if (!isClient) {
     return (
@@ -375,6 +321,9 @@ export default function WebGLHeroText({ text, className, style }: WebGLHeroTextP
       </h1>
     )
   }
+  
+  console.log('WebGL component state:', { isClient, shouldUseFallback, supportsWebGL2, prefersReducedMotion })
+  console.log('About to render WebGL canvas component')
   
   if (shouldUseFallback) {
     return (
@@ -387,7 +336,8 @@ export default function WebGLHeroText({ text, className, style }: WebGLHeroTextP
         style={{
           ...style,
           filter: prefersReducedMotion ? 'none' : 'url(#advanced-warp-filter)',
-          fontSize: style?.fontSize || 'clamp(3rem, 12vw, 8rem)',
+          fontSize: style?.fontSize || 'clamp(3rem, 14vw, 20rem)',
+          letterSpacing: `${heroLens.letterSpacing}em`,
           lineHeight: 1.1
         }}
       >
@@ -432,5 +382,15 @@ export default function WebGLHeroText({ text, className, style }: WebGLHeroTextP
     )
   }
   
-  return <WebGLTextCanvas text={text} className={className} style={style} />
+  try {
+    console.log('Rendering WebGLTextCanvas component')
+    return <WebGLTextCanvas text={text} className={className} style={style} />
+  } catch (error) {
+    console.error('Error rendering WebGL canvas:', error)
+    return (
+      <h1 className={className} aria-label={text}>
+        {text} (WebGL Error)
+      </h1>
+    )
+  }
 }

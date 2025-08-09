@@ -58,17 +58,18 @@ export default function Home() {
         {/* Radial glow background */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(56,189,248,.2),transparent_60%)]"></div>
         
-        <div className="relative z-10 text-center max-w-6xl mx-auto px-6">
+        <div className="relative z-10 text-center w-full px-6">
           {/* WebGL Headline with dominant viewport sizing */}
           <WebGLHeroText 
             text="Future-Proof Product Management"
-            className="font-display font-bold leading-tight max-w-6xl mx-auto"
+            className="font-display font-black leading-tight w-full"
             style={{
-              fontSize: 'clamp(3rem, 12vw, 8rem)',
-              height: 'clamp(200px, 45vh, 400px)',
+              fontSize: 'clamp(3rem, 14vw, 20rem)',
+              height: 'clamp(300px, 60vh, 600px)',
               display: 'flex',
               alignItems: 'center',
-              justifyContent: 'center'
+              justifyContent: 'center',
+              letterSpacing: '-0.04em'
             }}
           />
           
