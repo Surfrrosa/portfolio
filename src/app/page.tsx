@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useRef } from 'react'
+import React, { useRef, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import Lenis from 'lenis'
 import Sidebar from '@/components/Sidebar'
@@ -11,14 +11,15 @@ export default function Home() {
   const lenisRef = useRef<Lenis | null>(null)
 
   useEffect(() => {
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: 1.1,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smoothWheel: !prefersReducedMotion,
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
+      smoothWheel: true,
       wheelMultiplier: 1,
       touchMultiplier: 2,
+      infinite: false,
     })
 
     lenisRef.current = lenis
