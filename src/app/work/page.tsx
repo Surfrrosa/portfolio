@@ -69,7 +69,7 @@ export default function Work() {
               </div>
               
               <h3 className="text-white text-2xl font-display font-bold mb-4">
-                Prompt2Story - AI-Powered User Story & Acceptance Criteria Generator
+                Prompt2Story - AI-Powered User Story Generator
               </h3>
               
               <h4 className="text-teal-400 text-lg font-semibold mb-6">
