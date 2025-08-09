@@ -152,7 +152,7 @@ export default function Work() {
                 </div>
               </div>
               
-              <div className="p-6">
+              <div className="px-6 py-4">
                 <a 
                   href="https://prompt2story.com" 
                   className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors group w-full justify-center"
