@@ -69,40 +69,54 @@ export default function Work() {
               </div>
               
               <h3 className="text-white text-2xl font-display font-bold mb-4">
-                Prompt2Story
+                Prompt2Story - AI-Powered User Story Generator
               </h3>
               
-              <h4 className="text-teal-400 text-lg font-semibold mb-4">
-                AI-Powered Storytelling Platform
+              <h4 className="text-teal-400 text-lg font-semibold mb-6">
+                From chaos to clarity: instantly turn raw ideas into Agile-ready user stories.
               </h4>
               
-              <p className="text-gray-300 leading-relaxed mb-6">
-                Revolutionary AI tool that transforms simple prompts into compelling narratives, serving 10K+ users with 95% satisfaction rate.
-              </p>
-              
-              <div className="mb-6">
-                <h5 className="text-white font-semibold mb-2">Impact</h5>
-                <p className="text-gray-300 text-sm">
-                  10K+ users, 95% satisfaction, 40% faster content creation
-                </p>
+              <div className="space-y-6">
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Problem</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    Product teams waste hours transforming messy meeting notes, feature ideas, and requirements into consistent, actionable user stories with acceptance criteria.
+                  </p>
+                </div>
+                
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Solution</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    I designed and shipped an AI-powered platform that ingests unstructured input and outputs standardized, ready-to-use user stories — including acceptance criteria, edge cases, and optional BDD/Gherkin formatting — all aligned with Agile best practices.
+                  </p>
+                </div>
+                
+                <div>
+                  <h5 className="text-white font-semibold mb-2">My Role</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    Product concept, UX flows, AI prompt design, API integration, QA/testing, go-to-market strategy.
+                  </p>
+                </div>
+                
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Impact</h5>
+                  <ul className="text-gray-300 space-y-1">
+                    <li>• Reduced backlog grooming time by 70%.</li>
+                    <li>• Improved clarity and consistency across engineering teams.</li>
+                    <li>• 95% satisfaction from early adopters: "indispensable" for sprint prep.</li>
+                  </ul>
+                </div>
               </div>
               
-              <div className="flex flex-wrap gap-2 mb-6">
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">AI/ML</span>
+              <div className="flex flex-wrap gap-2 mt-6">
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">AI Workflow Design</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Agile Delivery</span>
                 <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Product Strategy</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">User Experience</span>
               </div>
-              
-              <a 
-                href="https://prompt2story.com" 
-                className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors font-semibold"
-              >
-                Visit Live Site →
-              </a>
             </motion.div>
 
             <motion.div
-              className="bg-slate-700/30 rounded-2xl overflow-hidden border border-white/10"
+              className="bg-slate-700/30 rounded-2xl overflow-hidden border border-white/10 flex flex-col"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.7 }}
@@ -135,6 +149,18 @@ export default function Work() {
                     <p className="text-white font-semibold">Prompt2Story</p>
                   </div>
                 </div>
+              </div>
+              
+              <div className="px-6 py-4">
+                <a 
+                  href="https://prompt2story.com" 
+                  className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors group w-full justify-center"
+                >
+                  Visit Live Site
+                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </a>
               </div>
             </motion.div>
           </div>
