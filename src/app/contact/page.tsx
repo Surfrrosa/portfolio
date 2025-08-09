@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -223,7 +224,7 @@ export default function Contact() {
             <div className="grid md:grid-cols-3 gap-8">
               <div className="text-center">
                 <div className="w-16 h-16 bg-accent-teal/20 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-accent-teal text-2xl">💼</span>
+                  <Image src="/icons/linkedin.png" alt="LinkedIn" width={24} height={24} />
                 </div>
                 <h3 className="font-semibold mb-2">LinkedIn</h3>
                 <p className="text-gray-300 text-sm">
@@ -233,7 +234,7 @@ export default function Contact() {
               
               <div className="text-center">
                 <div className="w-16 h-16 bg-accent-teal/20 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-accent-teal text-2xl">📧</span>
+                  <Image src="/icons/send.png" alt="Email" width={24} height={24} />
                 </div>
                 <h3 className="font-semibold mb-2">Direct Email</h3>
                 <p className="text-gray-300 text-sm">
@@ -243,7 +244,7 @@ export default function Contact() {
               
               <div className="text-center">
                 <div className="w-16 h-16 bg-accent-teal/20 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-accent-teal text-2xl">📅</span>
+                  <Image src="/icons/calendar-check.png" alt="Schedule" width={24} height={24} />
                 </div>
                 <h3 className="font-semibold mb-2">Schedule a Call</h3>
                 <p className="text-gray-300 text-sm">

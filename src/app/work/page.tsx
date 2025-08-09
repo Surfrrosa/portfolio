@@ -147,7 +147,7 @@ export default function Work() {
                 <div className="bg-gray-800 flex items-center justify-center min-h-[300px]">
                   <div className="text-center text-gray-400">
                     <div className="w-16 h-16 bg-accent-teal/20 rounded-lg mx-auto mb-4 flex items-center justify-center">
-                      <span className="text-accent-teal text-2xl">📱</span>
+                      <Image src="/icons/send.png" alt="Project" width={24} height={24} />
                     </div>
                     <p>Project Preview</p>
                     <p className="text-sm">{project.title}</p>
@@ -185,7 +185,7 @@ export default function Work() {
                 <div className="bg-gray-800 h-48 flex items-center justify-center">
                   <div className="text-center text-gray-400">
                     <div className="w-12 h-12 bg-accent-teal/20 rounded-lg mx-auto mb-3 flex items-center justify-center">
-                      <span className="text-accent-teal">🚀</span>
+                      <Image src="/icons/linkedin.png" alt="Project" width={20} height={20} />
                     </div>
                     <p className="text-sm">{project.title}</p>
                   </div>
