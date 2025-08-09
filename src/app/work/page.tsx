@@ -112,7 +112,6 @@ export default function Work() {
                 <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">AI Workflow Design</span>
                 <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Agile Delivery</span>
                 <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Product Strategy</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">0 → 1 Launch</span>
               </div>
             </motion.div>
 
