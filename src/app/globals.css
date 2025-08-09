@@ -38,47 +38,11 @@ body::before {
   width: 100%;
   height: 100%;
   z-index: -1;
-  background: 
-    radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.03) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.02) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(120, 119, 198, 0.02) 0%, transparent 50%),
-    linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.01) 50%, transparent 100%);
-  background-size: 800px 800px, 600px 600px, 400px 400px, 100% 100%;
-  opacity: 0.8;
-}
-
-body::after {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  background-image: 
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 2px,
-      rgba(255, 255, 255, 0.008) 2px,
-      rgba(255, 255, 255, 0.008) 4px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 2px,
-      rgba(255, 255, 255, 0.005) 2px,
-      rgba(255, 255, 255, 0.005) 4px
-    ),
-    repeating-linear-gradient(
-      45deg,
-      transparent,
-      transparent 1px,
-      rgba(255, 255, 255, 0.003) 1px,
-      rgba(255, 255, 255, 0.003) 2px
-    );
-  filter: contrast(1.1) brightness(0.95);
-  mix-blend-mode: overlay;
+  background-image: url('/images/grunge-texture.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 1;
 }
 
 @media (prefers-reduced-motion: reduce) {
