@@ -1,131 +1,168 @@
-Project Overview
+# Portfolio - Shaina Pauley
 
-Build a fast, minimal 3‑page portfolio that positions Shaina as a future‑ready Product Manager (AI + data
-fluent). Design language draws from Cyphr Studio, Bemo, and Odinaut. Primary showcase project:
-prompt2story.com.
+A modern, responsive portfolio website showcasing AI-powered product management expertise and data-driven solutions.
 
-Site Map (3 pages)
-1) Home / About
-2) Work (project index + featured case study)
-3) Contact
-4) 
-Aesthetic Direction (Mood & Motion)
-Tone: Bold, modern, future‑forward. Dark UI with high‑contrast type and surgical use of color.
-Motion: Memorable, not noisy. Smooth scroll with easing; micro‑interactions on hover; one signature hero
-effect.
+## 🚀 Quick Start
 
-Color Tokens (dark theme)
-•bg/base: #0B0C0E
-•surface: #14161A
-•text/primary: #E8EDF2
-•text/muted: #AAB3BD
-•accent/teal: #2BD4CF
-•accent/acid‑green: #C6FF4D
-•accent/rgb‑edge (for chromatic aberration overlays): use additive RGB channel split ~1–2px.
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn package manager
 
-Note: keep color use restrained; rely on imagery and motion for pop.
+### Local Development Setup
 
-Typography
-•Display (hero/headlines): Monument Extended, Bebas Neue, or Space Grotesk SemiBold (condensed/
-heavy vibe).
-•Body/UI: Inter or Satoshi (400/500/700).
-•Tight letter‑spacing on display, generous line‑height on body.
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Surfrrosa/portfolio.git
+   cd portfolio
+   ```
 
-Key Effects to Implement
-1.Scroll‑Triggered Text Distortion (hero): WebGL shader warp + subtle chromatic aberration (RGB
-split).
-2.Soft Parallax on background elements in hero.
-3.Micro‑interactions: hover lift (scale 1.02), subtle shadow bloom, link underline slide.
-4.Smooth scrolling (Lenis or equivalent).
+2. **Switch to development branch**
+   ```bash
+   git checkout portfolio-dev
+   ```
 
-Performance budget: LCP < 2.5s, CLS < 0.02, TTI < 2.5s on mid‑range mobile. Provide
-prefers‑reduced‑motion fallbacks (disable heavy effects; keep content intact).
+3. **Install dependencies**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-Technical Approach (pick one)
-Option A — Framer-first (fastest ship):
-- Framer site for layout, components, CMS-like project cards.
-- Custom Code Component for the WebGL text distortion (Three.js/GLSL).
-- Framer Motion for secondary animations.
-Option B — Next.js app (max control):
-- Next.js + React + Tailwind.
-- Three.js (or Pixi.js) for shader effect.
-- GSAP ScrollTrigger or Framer Motion for scroll sync.
-Recommend Option A for speed, then migrate to Option B later if needed.
-Page Blueprints & Copy (v1)
+4. **Start the development server**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
 
-1) Home / About
-Hero:
-- H1 (animated with distortion): Future‑Ready Product Management
-- Subhead (1–2 lines): I build AI‑powered products and systems that feel inevitable—clear strategy, elegant
-UX, and measurable outcomes.
-- CTA: View Work
-About (short):
-- I’m Shaina Pauley, a product leader who blends customer insight, data fluency, and AI tooling. I’ve shipped
-platform features at scale (auth, dashboards, APIs) and prototype fast with automation.
-- Highlights: 7+ years PM | SaaS, AI workflows, neuroscience‑adjacent tools | Strengths: Strategic,
-Arranger, Positivity, Connectedness, Input.
-Logos/cred strip (optional): Key companies/initiatives (e.g., ConnectWise Manage, Prompt2Story,
-Enlighten).
+5. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000) to view the portfolio.
 
-2) Work
-Intro line: Selected work that shows range—from zero‑to‑one AI tools to platform modernization.
+## 🏗️ Project Structure
 
-Featured — Prompt2Story (lead card, opens detail):
-- Tagline: Turn any prompt into a compelling, structured narrative.
-- Problem: Creators and marketers waste time turning rough prompts into publish‑ready stories.
-- Solution: A guided pipeline that transforms inputs into narrative arcs with tone, pacing, and
-calls‑to‑action.
-- My role: Product strategy, UX, prompt engineering, evaluation harness.
-- Outcome (v1): Faster story ideation (minutes → seconds), consistent voice, export‑ready content.
-- Link: prompt2story.com
-- Visuals: hero mock, flow diagram, sample outputs.
-Other Projects (short cards):
-- ConnectWise Manage — MFA rollout, REST API conversion, React migration; significant performance lift.
-- Enlighten (case brief) — Customer‑facing strategy doc and prototype; clarified value prop and roadmap.
-- AI Workflow Toolkits — Automated user stories/acceptance criteria generator for PMs.
-Clicking a card opens a lightweight overlay or dedicated case page (optional within the Work
-page) with problem → approach → impact.
+```
+src/
+├── app/                    # Next.js App Router pages
+│   ├── layout.tsx         # Root layout with global styles
+│   ├── page.tsx           # Home/About page
+│   ├── work/              # Work showcase page
+│   └── contact/           # Contact form page
+├── components/            # Reusable React components
+│   └── WebGLTextDistortion.tsx  # Scroll-triggered text effects
+├── styles/               # Global styles and utilities
+└── lib/                  # Utility functions and configurations
+```
 
-3) Contact
-•Headline: Let’s build the future.
-•Copy: I’m open to product leadership roles, consulting, and collaborations.
-•Form: name, email, message (honey‑pot spam trap).
-•Direct: shainaep@gmail.com 
-•Links: LinkedIn, Substack.
-•Optional: Calendly link.
+## 🎨 Design System
 
-Components & Layout
-•Nav: sticky top, sections: About / Work / Contact.
-•Hero block: full‑bleed, 100vh, animated headline, subhead, CTA.
-•Project cards: image, title, 1‑line impact, tags; hover lift + underline.
-•Case layout: split grid (problem / approach / outcome) + metrics band.
-•Footer: minimal, dark.
+### Color Tokens
+- **Background Base**: `#0B0C0E` - Primary dark background
+- **Surface**: `#14161A` - Card and section backgrounds  
+- **Accent Teal**: `#2BD4CF` - Primary accent color for CTAs and highlights
 
-Implementation Notes for Devin.ai
-1.Set up project (Framer or Next.js). Add Tailwind if Next.js.
-2.Global tokens: add color + type tokens above; support dark by default.
-3.Hero effect: Implement shader warp with RGB split; bind intensity to scroll progress (0→1). Provide CSS fallback with simple fade/translate if prefers-reduced-motion or no WebGL.
-4.Smooth scroll: Lenis (60fps), damping ~0.1–0.2.
-5.Images: Next/Image or responsive Framer images; lazy‑load below the fold.
-6.SEO: meaningful titles/desc, Open Graph image from hero.
-7.Analytics: GA4 or privacy‑friendly alt.
-8.Perf: prefetch fonts; serve variable fonts; compress images; code‑split shader component.
-9.Accessibility: Focus states, color contrast ≥ 4.5:1, skip‑to‑content link.
+### Typography
+- **Display Fonts**: Monument Extended, Bebas Neue, Space Grotesk
+- **Body/UI Fonts**: Inter, Satoshi
+- **Font Loading**: Web fonts are loaded via Google Fonts with fallbacks
 
-Acceptance Criteria
-- Distortion effect matches reference within ±10% intensity; 60fps on desktop; fallback works.
-- Lighthouse (Mobile) Performance ≥ 85, Accessiblity ≥ 95.
-- CLS < 0.02; no layout jumps.
-- All CTAs functional; contact form sends to email/DB.
-Assets Needed from Shaina:
-•Headshot or abstract graphic (optional).
-•Logos/marks for projects.
-•Screenshots: prompt2story.com flows + outputs.
-•Short bios (50/150 words).
-•Social links and contact email.
+### Swapping Fonts Later
+To replace the current fonts with final brand fonts:
 
-Next Steps
-1) Confirm palette + type (or swap from the options listed).
-2) Approve the page copy above (I can refine tone/voice).
-3) Choose Option A (Framer) or Option B (Next.js).
-4) I’ll generate a task list for Devin.ai + provide code scaffolding snippets if going Next.js.
+1. **Add font files** to `public/fonts/` directory
+2. **Update font imports** in `src/app/layout.tsx`
+3. **Modify Tailwind config** in `tailwind.config.ts`:
+   ```typescript
+   fontFamily: {
+     'display': ['YourDisplayFont', 'Monument Extended', 'sans-serif'],
+     'body': ['YourBodyFont', 'Inter', 'sans-serif'],
+   }
+   ```
+4. **Update CSS custom properties** in `src/app/globals.css`
+
+## ✨ Features Implemented (Milestone 1)
+
+### Core Functionality
+- ✅ **3-Page Architecture**: Home/About, Work, Contact with Next.js App Router
+- ✅ **Responsive Design**: Mobile-first approach with Tailwind CSS
+- ✅ **Dark Theme**: Consistent dark UI with defined color tokens
+- ✅ **Smooth Scrolling**: Lenis integration for enhanced scroll experience
+
+### Hero Section
+- ✅ **Dynamic Text Effects**: CSS-based distortion with chromatic aberration
+- ✅ **Parallax Elements**: Subtle background animations
+- ✅ **Call-to-Action**: "View Work" button with hover effects
+
+### Work Showcase
+- ✅ **Featured Project**: Prompt2Story as lead project with detailed metrics
+- ✅ **Project Grid**: Additional projects with impact data and tags
+- ✅ **Interactive Cards**: Hover effects and smooth transitions
+
+### Contact Form
+- ✅ **Form Fields**: Name, email, and message inputs with validation
+- ✅ **No-op Submit**: Simulated form submission with success feedback
+- ✅ **Additional Contact Methods**: LinkedIn, email, and scheduling options
+
+### Accessibility & Performance
+- ✅ **Reduced Motion Support**: Respects `prefers-reduced-motion` settings
+- ✅ **Semantic HTML**: Proper heading hierarchy and ARIA labels
+- ✅ **Performance Optimized**: Next.js optimizations for fast loading
+
+## 🔧 Technical Stack
+
+- **Framework**: Next.js 15 with App Router
+- **Styling**: Tailwind CSS with custom design tokens
+- **Animations**: Framer Motion for smooth interactions
+- **Smooth Scrolling**: Lenis for enhanced scroll behavior
+- **TypeScript**: Full type safety throughout the application
+- **Performance**: Optimized for Core Web Vitals compliance
+
+## 📊 Performance Targets
+
+- **Cumulative Layout Shift (CLS)**: < 0.02
+- **Lighthouse Mobile Performance**: ≥ 85
+- **Lighthouse Accessibility**: ≥ 95
+- **First Contentful Paint**: < 2.5s
+
+## 🛠️ Development Commands
+
+```bash
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
+
+# Run linting
+npm run lint
+
+# Type checking
+npm run type-check
+```
+
+## 🚀 Deployment
+
+The application is optimized for deployment on Vercel, Netlify, or any platform supporting Next.js applications.
+
+### Environment Variables
+No environment variables are required for basic functionality. Add any API keys or external service configurations as needed.
+
+## 📝 Next Steps (Post-Milestone 1)
+
+- [ ] Advanced WebGL text distortion effects
+- [ ] Project detail pages with case studies
+- [ ] Blog/insights section
+- [ ] Performance monitoring and analytics
+- [ ] SEO optimization and meta tags
+- [ ] Contact form backend integration
+
+## 🤝 Contributing
+
+This is a personal portfolio project. For suggestions or feedback, please open an issue or reach out directly.
+
+---
+
+**Built with ❤️ by Shaina Pauley**  
+*Future-Ready Product Management*s.
