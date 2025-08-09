@@ -71,30 +71,30 @@ const pixelLensFragmentShader = `
   
   void mainImage(const in vec4 inputColor, const in vec2 uv, out vec4 outputColor) {
     vec2 screenPos = uv;
-    vec2 pointerUv = (uPointer + 1.0) * 0.5; // Convert from NDC to UV space
+    vec2 pointerUv = (uPointer + 1.0) * 0.5;
     
     float distanceFromPointer = length(screenPos - pointerUv);
     float normalizedDistance = distanceFromPointer / uLensRadius;
     
-    float lensInfluence = 1.0 - smoothstep(0.8, 1.0, normalizedDistance);
+    float lensStrength = 1.0 - smoothstep(0.0, 1.0, normalizedDistance);
     
-    if (lensInfluence > 0.01) {
-      vec2 direction = normalize(screenPos - pointerUv);
-      vec2 magnifiedUv = pointerUv + (screenPos - pointerUv) / uMagnify;
+    if (lensStrength > 0.001) {
+      vec2 magnifiedUv = mix(screenPos, pointerUv + (screenPos - pointerUv) / uMagnify, lensStrength);
       
       vec2 pixelSize = vec2(uPixelSize) / uResolution;
-      vec2 pixelatedUv = floor(magnifiedUv / pixelSize) * pixelSize + pixelSize * 0.5;
+      vec2 pixelatedUv = mix(screenPos, floor(magnifiedUv / pixelSize) * pixelSize + pixelSize * 0.5, lensStrength);
       
-      float rgbShift = uRgbOffset * 0.002 * lensInfluence;
-      vec2 offsetR = pixelatedUv + vec2(rgbShift, 0.0);
-      vec2 offsetB = pixelatedUv - vec2(rgbShift, 0.0);
+      pixelatedUv = clamp(pixelatedUv, vec2(0.0), vec2(1.0));
+      
+      float rgbShift = uRgbOffset * 0.002 * lensStrength;
+      vec2 offsetR = clamp(pixelatedUv + vec2(rgbShift, 0.0), vec2(0.0), vec2(1.0));
+      vec2 offsetB = clamp(pixelatedUv - vec2(rgbShift, 0.0), vec2(0.0), vec2(1.0));
       
       float r = texture2D(inputBuffer, offsetR).r;
       float g = texture2D(inputBuffer, pixelatedUv).g;
       float b = texture2D(inputBuffer, offsetB).b;
       
-      outputColor = vec4(r, g, b, 1.0);
-      outputColor.rgb *= (1.0 + lensInfluence * 0.1);
+      outputColor = vec4(r, g, b, inputColor.a);
     } else {
       outputColor = inputColor;
     }
