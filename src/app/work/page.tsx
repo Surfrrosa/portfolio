@@ -102,19 +102,39 @@ export default function Work() {
             </motion.div>
 
             <motion.div
-              className="bg-slate-700/30 rounded-2xl p-8 flex items-center justify-center border border-white/10"
+              className="bg-slate-700/30 rounded-2xl overflow-hidden border border-white/10"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.7 }}
             >
-              <div className="text-center">
-                <div className="w-16 h-16 bg-teal-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                  </svg>
+              <div className="relative aspect-video">
+                <video
+                  className="w-full h-full object-cover"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  onError={(e) => {
+                    const target = e.target as HTMLVideoElement;
+                    target.style.display = 'none';
+                    const fallback = target.nextElementSibling as HTMLElement;
+                    if (fallback) fallback.style.display = 'flex';
+                  }}
+                >
+                  <source src="/videos/prompt2story-preview.webm" type="video/webm" />
+                  <source src="/videos/prompt2story-preview.mp4" type="video/mp4" />
+                </video>
+                <div className="absolute inset-0 bg-slate-700/30 flex items-center justify-center" style={{ display: 'none' }}>
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-teal-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <svg className="w-8 h-8 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                      </svg>
+                    </div>
+                    <p className="text-gray-400 text-sm">Project Preview</p>
+                    <p className="text-white font-semibold">Prompt2Story</p>
+                  </div>
                 </div>
-                <p className="text-gray-400 text-sm">Project Preview</p>
-                <p className="text-white font-semibold">Prompt2Story</p>
               </div>
             </motion.div>
           </div>
