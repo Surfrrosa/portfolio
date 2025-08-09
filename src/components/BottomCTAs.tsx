@@ -29,7 +29,7 @@ export default function BottomCTAs() {
   return (
     <div
       ref={ref}
-      className="flex justify-center gap-16"
+      className="flex justify-center gap-32"
       aria-label="Quick actions"
     >
       <a
