@@ -4,6 +4,19 @@ import React, { useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import Lenis from 'lenis'
+import dynamic from 'next/dynamic'
+
+const HeroWarp = dynamic(() => import('@/components/HeroWarp'), { 
+  ssr: false,
+  loading: () => (
+    <div className="relative min-h-screen grid place-items-center">
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,rgba(56,189,248,.18),transparent_60%)]" />
+      <h1 className="text-[clamp(3rem,12vw,20rem)] font-display font-black leading-tight text-center tracking-tight">
+        Future-Proof Product Management
+      </h1>
+    </div>
+  )
+})
 
 export default function Home() {
   const lenisRef = useRef<Lenis | null>(null)
@@ -53,51 +66,43 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Radial glow background */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(56,189,248,.2),transparent_60%)]"></div>
+      <section className="relative overflow-hidden">
+        <HeroWarp />
         
-        <div className="relative z-10 text-center max-w-6xl mx-auto px-6">
-          {/* Headline with responsive sizing */}
-          <motion.h1
-            className="text-6xl md:text-7xl lg:text-8xl font-display font-bold leading-tight mb-8 max-w-5xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            Future-Proof Product Management
-          </motion.h1>
-          
-          {/* Subhead */}
-          <motion.p
-            className="text-xl md:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-          >
-            I turn messy requirements into shipped outcomes. 7+ years building AI-powered products &amp; data-driven platforms that stay ahead of change.
-          </motion.p>
+        {/* Subhead and CTAs positioned over the WebGL canvas */}
+        <div className="absolute inset-0 flex items-end justify-center pb-20">
+          <div className="text-center max-w-4xl mx-auto px-6">
+            {/* Subhead */}
+            <motion.p
+              className="text-xl md:text-2xl text-gray-300 mb-12 leading-relaxed"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            >
+              I turn messy requirements into shipped outcomes. 7+ years building AI-powered products &amp; data-driven platforms that stay ahead of change.
+            </motion.p>
 
-          {/* CTAs */}
-          <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-          >
-            <Link
-              href="/work"
-              className="bg-teal-400 text-black px-8 py-4 rounded-lg font-semibold text-lg hover:bg-teal-300 transition-colors duration-300"
+            {/* CTAs */}
+            <motion.div
+              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
             >
-              View Work
-            </Link>
-            <Link
-              href="/contact"
-              className="border border-white/10 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white/5 transition-colors duration-300"
-            >
-              Get in Touch
-            </Link>
-          </motion.div>
+              <Link
+                href="/work"
+                className="bg-teal-400 text-black px-8 py-4 rounded-lg font-semibold text-lg hover:bg-teal-300 transition-colors duration-300"
+              >
+                View Work
+              </Link>
+              <Link
+                href="/contact"
+                className="border border-white/10 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white/5 transition-colors duration-300"
+              >
+                Get in Touch
+              </Link>
+            </motion.div>
+          </div>
         </div>
       </section>
 

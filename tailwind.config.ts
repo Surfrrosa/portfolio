@@ -14,7 +14,7 @@ const config: Config = {
         'accent-teal': '#2BD4CF',
       },
       fontFamily: {
-        'display': ['Monument Extended', 'Bebas Neue', 'Space Grotesk', 'sans-serif'],
+        'display': ['League Spartan', 'Monument Extended', 'Bebas Neue', 'Space Grotesk', 'sans-serif'],
         'body': ['Inter', 'Satoshi', 'sans-serif'],
       },
     },
