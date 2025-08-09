@@ -65,18 +65,28 @@ export default function Home() {
           </motion.p>
         </motion.div>
         
-        {/* Additional content for scroll testing */}
+        {/* Proven Impact & Approach section */}
         <section className="min-h-screen mt-20 p-12">
           <div className="max-w-4xl mx-auto text-white">
-            <h2 className="text-4xl font-bold mb-8">More Content</h2>
-            <p className="text-lg leading-relaxed mb-6">
-              This section provides content below the hero to test the scroll-triggered headline effects.
-              Scroll up and down to see the effect activate when the headline comes into view.
-            </p>
-            <p className="text-lg leading-relaxed">
-              The effect should only activate when scrolling over the "Future-proof Product Management" headline,
-              creating a subtle distortion and glow effect that responds to scroll position.
-            </p>
+            <h2 className="text-4xl font-bold mb-8">Proven Impact & Approach</h2>
+            <ul className="space-y-6 text-lg leading-relaxed">
+              <li className="flex items-start">
+                <span className="text-teal-400 mr-4 mt-1">•</span>
+                <span><strong>7+ years shipping SaaS at scale</strong> — secure authentication, REST API conversions, platform migrations, real-time dashboards.</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-teal-400 mr-4 mt-1">•</span>
+                <span><strong>AI-forward execution</strong> — automation, intelligent tooling, and workflows that streamline delivery and improve efficiency.</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-teal-400 mr-4 mt-1">•</span>
+                <span><strong>Cross-functional fluency</strong> — bridging engineering, design, leadership, and stakeholders to keep momentum high.</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-teal-400 mr-4 mt-1">•</span>
+                <span><strong>Measured outcomes</strong> — every feature tied to tangible, trackable results.</span>
+              </li>
+            </ul>
           </div>
         </section>
       </main>
