@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import Lenis from 'lenis'
 import Sidebar from '@/components/Sidebar'
 import { TextScrambleEffect } from '@/components/TextScrambleEffect'
+import BottomCTAs from '@/components/BottomCTAs'
 
 export default function Home() {
   const lenisRef = useRef<Lenis | null>(null)
@@ -88,6 +89,8 @@ export default function Home() {
               </li>
             </ul>
           </div>
+          
+          <BottomCTAs />
         </section>
       </main>
     </div>
