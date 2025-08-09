@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import Lenis from 'lenis'
 import Sidebar from '@/components/Sidebar'
-import ScrollTriggeredHeadline from '@/components/ScrollTriggeredHeadline'
+import { TextScrambleEffect } from '@/components/TextScrambleEffect'
 
 export default function Home() {
   const lenisRef = useRef<Lenis | null>(null)
@@ -45,9 +45,15 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
         >
-          <ScrollTriggeredHeadline className="h1-display text-white mb-8">
-            Future-proof<br/>Product<br/>Management
-          </ScrollTriggeredHeadline>
+          <TextScrambleEffect
+            className="h1-display text-white mb-8"
+            lines={["Future-proof", "Product", "Management"]}
+            threshold={0.6}
+            duration={680}
+            lineStagger={90}
+            id="hero-headline"
+            once
+          />
           
           <motion.p
             className="text-white text-xl leading-relaxed max-w-[70ch] mx-auto text-zinc-200"
