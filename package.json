@@ -9,8 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@react-three/drei": "^9.96.1",
     "@react-three/fiber": "^8.15.19",
+    "@vercel/analytics": "^1.5.0",
     "framer-motion": "^11.0.6",
     "lenis": "^1.0.42",
     "next": "15.4.6",

@@ -32,7 +32,7 @@ export default function Work() {
   }, [])
 
   return (
-    <div className="min-h-screen grid lg:grid-cols-[300px_1fr]">
+    <div className="min-h-screen grid lg:grid-cols-[340px_1fr]">
       <Sidebar />
       
       <main className="px-6 lg:px-12 py-12">
@@ -94,7 +94,7 @@ export default function Work() {
               </div>
               
               <a 
-                href="#" 
+                href="https://prompt2story.com" 
                 className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors font-semibold"
               >
                 Visit Live Site →

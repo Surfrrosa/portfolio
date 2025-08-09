@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import Lenis from 'lenis'
 import Sidebar from '@/components/Sidebar'
+import emailjs from '@emailjs/browser'
 
 export default function Contact() {
   const lenisRef = useRef<Lenis | null>(null)
@@ -12,6 +13,8 @@ export default function Contact() {
     email: '',
     message: ''
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
 
   useEffect(() => {
     const lenis = new Lenis({
@@ -44,13 +47,40 @@ export default function Contact() {
     }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log('Form submitted:', formData)
+    setIsSubmitting(true)
+    setSubmitStatus('idle')
+
+    try {
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'service_portfolio'
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'template_contact'
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || 'your_public_key'
+
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_email: 'shainaep@gmail.com',
+        },
+        publicKey
+      )
+
+      setSubmitStatus('success')
+      setFormData({ name: '', email: '', message: '' })
+    } catch (error) {
+      console.error('Email send failed:', error)
+      setSubmitStatus('error')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
-    <div className="min-h-screen grid lg:grid-cols-[300px_1fr]">
+    <div className="min-h-screen grid lg:grid-cols-[340px_1fr]">
       <Sidebar />
       
       <main className="px-6 lg:px-12 py-12">
@@ -165,10 +195,27 @@ export default function Contact() {
 
                 <button
                   type="submit"
-                  className="w-full bg-teal-500 hover:bg-teal-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors"
+                  disabled={isSubmitting}
+                  className="w-full bg-teal-500 hover:bg-teal-600 disabled:bg-teal-400 disabled:cursor-not-allowed text-white font-semibold py-3 px-6 rounded-lg transition-colors"
                 >
-                  Send Message
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
+
+                {submitStatus === 'success' && (
+                  <div className="mt-4 p-4 bg-green-500/20 border border-green-500/30 rounded-lg">
+                    <p className="text-green-400 text-center">
+                      ✅ Message sent successfully! I'll get back to you within 24 hours.
+                    </p>
+                  </div>
+                )}
+
+                {submitStatus === 'error' && (
+                  <div className="mt-4 p-4 bg-red-500/20 border border-red-500/30 rounded-lg">
+                    <p className="text-red-400 text-center">
+                      ❌ Failed to send message. Please try again or email me directly at shainaep@gmail.com
+                    </p>
+                  </div>
+                )}
               </form>
             </motion.div>
           </div>
