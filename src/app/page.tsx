@@ -38,7 +38,7 @@ export default function Home() {
     <div className="min-h-screen grid lg:grid-cols-[340px_1fr]">
       <Sidebar />
       
-      <main className="flex flex-col justify-end items-center px-6 lg:px-12 pb-32">
+      <main className="flex flex-col justify-center items-center px-6 lg:px-12 min-h-screen">
         <motion.div
           className="text-center"
           initial={{ opacity: 0, y: 50 }}
