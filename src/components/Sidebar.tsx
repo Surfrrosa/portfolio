@@ -11,22 +11,26 @@ export default function Sidebar() {
       <aside className="hidden lg:flex lg:flex-col gap-6 sticky top-0 h-screen
                          bg-black/60 backdrop-blur-[1px] border-r border-white/10 p-6">
         <div className="space-y-6">
-          <div className="text-sm text-gray-400">Hello</div>
+          <Link href="/" className="block">
+            <div className="text-xl font-bold text-white hover:text-accent-teal transition-colors cursor-pointer" style={{ letterSpacing: '-0.02em' }}>Hello</div>
+          </Link>
           
-          <motion.div
-            className="w-48 h-32 relative rounded-lg overflow-hidden"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-          >
-            <Image
-              src="/images/shaina-photo.jpg"
-              alt="Shaina Pauley"
-              fill
-              className="object-cover"
-              priority
-            />
-          </motion.div>
+          <Link href="/" className="block">
+            <motion.div
+              className="w-64 h-40 relative rounded-lg overflow-hidden hover:scale-105 transition-transform cursor-pointer"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8 }}
+            >
+              <Image
+                src="/images/shaina-photo.jpg"
+                alt="Shaina Pauley"
+                fill
+                className="object-cover"
+                priority
+              />
+            </motion.div>
+          </Link>
 
           <motion.div
             className="space-y-4"
@@ -88,7 +92,9 @@ export default function Sidebar() {
 
       <aside className="lg:hidden p-6 border-b border-white/10 bg-black/50 backdrop-blur-[1px]">
         <div className="flex items-center gap-4 mb-4">
-          <div className="text-sm text-gray-400">Hello</div>
+          <Link href="/" className="block">
+            <div className="text-lg font-bold text-white hover:text-accent-teal transition-colors cursor-pointer" style={{ letterSpacing: '-0.02em' }}>Hello</div>
+          </Link>
           <div className="flex gap-4 ml-auto">
             <Link href="/work" className="text-white hover:text-accent-teal transition-colors font-semibold">
               Work
@@ -100,15 +106,17 @@ export default function Sidebar() {
         </div>
         
         <div className="flex items-center gap-4">
-          <div className="w-16 h-16 relative rounded-lg overflow-hidden flex-shrink-0">
-            <Image
-              src="/images/shaina-photo.jpg"
-              alt="Shaina Pauley"
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
+          <Link href="/" className="block">
+            <div className="w-20 h-20 relative rounded-lg overflow-hidden flex-shrink-0 hover:scale-105 transition-transform cursor-pointer">
+              <Image
+                src="/images/shaina-photo.jpg"
+                alt="Shaina Pauley"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          </Link>
           
           <div className="flex-1">
             <p className="text-white text-sm font-semibold leading-relaxed">
