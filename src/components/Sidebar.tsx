@@ -78,16 +78,6 @@ export default function Sidebar() {
           </motion.div>
         </div>
         
-        <div className="mt-auto">
-          <div className="flex gap-6">
-            <Link href="/work" className="text-white hover:text-accent-teal transition-colors font-semibold">
-              Work
-            </Link>
-            <Link href="/contact" className="text-white hover:text-accent-teal transition-colors font-semibold">
-              Contact
-            </Link>
-          </div>
-        </div>
       </aside>
 
       <aside className="lg:hidden p-6 border-b border-white/10 bg-black/50 backdrop-blur-[1px]">
@@ -95,14 +85,6 @@ export default function Sidebar() {
           <Link href="/" className="block">
             <div className="text-lg font-bold text-white hover:text-accent-teal transition-colors cursor-pointer" style={{ letterSpacing: '-0.02em' }}>Hello</div>
           </Link>
-          <div className="flex gap-4 ml-auto">
-            <Link href="/work" className="text-white hover:text-accent-teal transition-colors font-semibold">
-              Work
-            </Link>
-            <Link href="/contact" className="text-white hover:text-accent-teal transition-colors font-semibold">
-              Contact
-            </Link>
-          </div>
         </div>
         
         <div className="flex items-center gap-4">
