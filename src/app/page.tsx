@@ -32,7 +32,7 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="min-h-screen grid lg:grid-cols-[320px_1fr]">
+    <div className="min-h-screen grid lg:grid-cols-[300px_1fr]">
       <Sidebar />
       
       <main className="flex flex-col justify-center items-center px-6 lg:px-12">
