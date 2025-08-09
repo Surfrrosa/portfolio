@@ -12,12 +12,13 @@ export default function Sidebar() {
                          bg-black/60 backdrop-blur-[1px] border-r border-white/10 p-6">
         <div className="space-y-6">
           <Link href="/" className="block">
-            <div className="text-xl font-bold text-white hover:text-accent-teal transition-colors cursor-pointer" style={{ letterSpacing: '-0.02em' }}>Hello</div>
+            <div className="font-bold text-white hover:text-accent-teal transition-colors cursor-pointer" style={{ fontSize: '32px', fontWeight: '700', letterSpacing: '-0.02em' }}>Hello</div>
           </Link>
           
           <Link href="/" className="block">
             <motion.div
-              className="w-64 h-40 relative rounded-lg overflow-hidden hover:scale-105 transition-transform cursor-pointer"
+              className="relative rounded-lg overflow-hidden hover:scale-105 transition-transform cursor-pointer"
+              style={{ width: '280px', height: '175px' }}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8 }}
@@ -38,14 +39,8 @@ export default function Sidebar() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <p className="text-white text-lg font-semibold leading-relaxed">
-              My name is<br />
-              Shaina Pauley<br />
-              and I am a<br />
-              product owner,<br />
-              builder, writer,<br />
-              and connoisseur<br />
-              of clouds.
+            <p className="text-white font-semibold" style={{ fontSize: '18px', lineHeight: '1.6' }}>
+              My name is Shaina Pauley. I am a product owner, builder, writer, and connoisseur of clouds.
             </p>
           </motion.div>
 

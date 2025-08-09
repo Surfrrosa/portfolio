@@ -54,17 +54,17 @@ body::after {
   width: 100%;
   height: 100%;
   z-index: -1;
-  background-color: #1a1a1a;
-  opacity: 0.45;
+  background-color: #000000;
+  opacity: 0.47;
   pointer-events: none;
 }
 
 .h1-display {
   font-family: var(--font-display, 'Archivo', system-ui, sans-serif);
   font-weight: 900;
-  letter-spacing: -0.06em;
-  line-height: 0.8;
-  font-size: clamp(3rem, 9vw, 9rem);
+  letter-spacing: -0.08em;
+  line-height: 0.85;
+  font-size: clamp(3.6rem, 10.8vw, 10.8rem);
 }
 
 @media (prefers-reduced-motion: reduce) {
