@@ -18,6 +18,19 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable}`}>
       <body className="bg-bg-base text-white font-body antialiased">
+        {/* Global dark charcoal sheath over background */}
+        <div
+          className="fixed inset-0 -z-10 pointer-events-none
+                     bg-black/55 backdrop-blur-[1px]"
+          aria-hidden="true"
+        />
+        {/* Optional subtle vignette for focus */}
+        <div
+          className="fixed inset-0 -z-10 pointer-events-none
+                     [mask-image:radial-gradient(75%_60%_at_55%_40%,#000_60%,transparent_100%)]
+                     bg-black/20"
+          aria-hidden="true"
+        />
         {children}
       </body>
     </html>

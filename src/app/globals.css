@@ -5,7 +5,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@900&display=swap');
 
 :root {
   --bg-base: #0B0C0E;
@@ -44,6 +44,14 @@ body::before {
   background-position: center;
   background-repeat: no-repeat;
   opacity: 1;
+}
+
+.h1-display {
+  font-family: var(--font-display, 'Archivo', system-ui, sans-serif);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 0.9;
+  font-size: clamp(3rem, 9vw, 9rem);
 }
 
 @media (prefers-reduced-motion: reduce) {
