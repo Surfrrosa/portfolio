@@ -61,7 +61,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            I turn messy requirements into shipped outcomes with 7+ years of experience with AI-powered products &amp; data-driven platforms
+            Technical Product Owner + AI builder — I ship secure, scalable SaaS and design AI workflows that accelerate teams and deliver measurable impact.
           </motion.p>
         </motion.div>
         
