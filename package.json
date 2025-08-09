@@ -9,25 +9,27 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-three/drei": "^9.96.1",
+    "@react-three/fiber": "^8.15.19",
+    "framer-motion": "^11.0.6",
+    "lenis": "^1.0.42",
     "next": "15.4.6",
+    "postprocessing": "^6.37.7",
     "react": "^18",
     "react-dom": "^18",
     "three": "^0.170.0",
-    "@react-three/fiber": "^8.15.19",
-    "@react-three/drei": "^9.96.1",
-    "framer-motion": "^11.0.6",
-    "lenis": "^1.0.42"
+    "troika-three-text": "^0.52.4"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@types/three": "^0.170.0",
     "autoprefixer": "^10.0.1",
+    "eslint": "^8",
+    "eslint-config-next": "15.4.6",
     "postcss": "^8",
     "tailwindcss": "^3.3.0",
-    "eslint": "^8",
-    "eslint-config-next": "15.4.6"
+    "typescript": "^5"
   }
 }

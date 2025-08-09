@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import Lenis from 'lenis'
+import WebGLHeroText from '@/components/WebGLHeroText'
 
 export default function Home() {
   const lenisRef = useRef<Lenis | null>(null)
@@ -58,15 +59,11 @@ export default function Home() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(56,189,248,.2),transparent_60%)]"></div>
         
         <div className="relative z-10 text-center max-w-6xl mx-auto px-6">
-          {/* Headline with responsive sizing */}
-          <motion.h1
-            className="text-6xl md:text-7xl lg:text-8xl font-display font-bold leading-tight mb-8 max-w-5xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            Future-Proof Product Management
-          </motion.h1>
+          {/* WebGL Headline with responsive sizing */}
+          <WebGLHeroText 
+            text="Future-Proof Product Management"
+            className="text-6xl md:text-7xl lg:text-8xl font-display font-bold leading-tight max-w-5xl mx-auto"
+          />
           
           {/* Subhead */}
           <motion.p
