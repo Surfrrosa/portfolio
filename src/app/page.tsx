@@ -90,7 +90,9 @@ export default function Home() {
             </ul>
           </div>
           
-          <BottomCTAs />
+          <div className="mt-24">
+            <BottomCTAs />
+          </div>
         </section>
       </main>
     </div>
