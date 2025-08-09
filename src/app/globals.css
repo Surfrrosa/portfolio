@@ -4,6 +4,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@900&display=swap');
 
 :root {
   --bg-base: #0B0C0E;
@@ -26,6 +28,43 @@ body {
   background: var(--bg-base);
   font-family: var(--font-inter), 'Inter', sans-serif;
   line-height: 1.6;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-image: url('/images/grunge-texture.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 1;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: #000000;
+  opacity: 0.47;
+  pointer-events: none;
+}
+
+.h1-display {
+  font-family: var(--font-display, 'Archivo', system-ui, sans-serif);
+  font-weight: 900;
+  letter-spacing: -0.08em;
+  line-height: 0.85;
+  font-size: clamp(3.6rem, 10.8vw, 10.8rem);
 }
 
 @media (prefers-reduced-motion: reduce) {

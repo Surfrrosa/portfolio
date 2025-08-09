@@ -1,148 +1,152 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
-import Link from 'next/link'
+import Lenis from 'lenis'
+import Sidebar from '@/components/Sidebar'
+import emailjs from '@emailjs/browser'
 
 export default function Contact() {
+  const lenisRef = useRef<Lenis | null>(null)
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: ''
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitMessage, setSubmitMessage] = useState('')
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel: true,
+      wheelMultiplier: 1,
+      touchMultiplier: 2,
     })
+
+    lenisRef.current = lenis
+
+    function raf(time: number) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+
+    requestAnimationFrame(raf)
+
+    return () => {
+      lenis.destroy()
+    }
+  }, [])
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }))
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    
-    setTimeout(() => {
-      setIsSubmitting(false)
-      setSubmitMessage('Thank you for your message! I\'ll get back to you soon.')
+    setSubmitStatus('idle')
+
+    try {
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'service_portfolio'
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'template_contact'
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || 'your_public_key'
+
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_email: 'shainaep@gmail.com',
+        },
+        publicKey
+      )
+
+      setSubmitStatus('success')
       setFormData({ name: '', email: '', message: '' })
-    }, 1000)
+    } catch (error) {
+      console.error('Email send failed:', error)
+      setSubmitStatus('error')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
-    <main className="min-h-screen pt-20">
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 p-6 bg-bg-base/80 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <Link href="/" className="text-xl font-display font-bold">
-            SP
-          </Link>
-          <div className="flex gap-8">
-            <Link href="/" className="hover:text-accent-teal transition-colors">
-              Home
-            </Link>
-            <Link href="/work" className="hover:text-accent-teal transition-colors">
-              Work
-            </Link>
-            <Link href="/contact" className="text-accent-teal">
-              Contact
-            </Link>
-          </div>
-        </div>
-      </nav>
-
-      {/* Header */}
-      <section className="py-20 px-6">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
+    <div className="min-h-screen grid lg:grid-cols-[340px_1fr]">
+      <Sidebar />
+      
+      <main className="px-6 lg:px-12 py-12">
+        <div className="max-w-6xl mx-auto">
+          <motion.h1
+            className="text-white text-5xl md:text-6xl lg:text-7xl font-display leading-tight mb-8"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+          >
+            Let's Connect
+          </motion.h1>
+          
+          <motion.p
+            className="text-white text-xl md:text-2xl leading-relaxed max-w-4xl mb-16"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <h1 className="text-5xl md:text-7xl font-display font-bold mb-6">
-              Let's Connect
-            </h1>
-            <p className="text-xl text-gray-300 max-w-2xl">
-              Ready to discuss your next product challenge? I'd love to hear about 
-              your vision and explore how we can bring it to life together.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+            Ready to discuss your next product challenge? I'd love to hear about your vision and explore how we can bring it to life together.
+          </motion.p>
 
-      {/* Contact Form */}
-      <section className="py-12 px-6">
-        <div className="max-w-4xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12">
-            {/* Contact Info */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
+              className="space-y-8"
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
             >
-              <h2 className="text-2xl font-display font-bold mb-6">
-                Get In Touch
-              </h2>
-              <div className="space-y-6">
-                <div>
-                  <h3 className="font-semibold text-accent-teal mb-2">
-                    What I Do
-                  </h3>
-                  <ul className="text-gray-300 space-y-1">
-                    <li>• Product Strategy &amp; Roadmapping</li>
-                    <li>• AI Product Development</li>
-                    <li>• SaaS Platform Optimization</li>
-                    <li>• Cross-functional Team Leadership</li>
-                    <li>• Data-Driven Decision Making</li>
-                  </ul>
-                </div>
-                
-                <div>
-                  <h3 className="font-semibold text-accent-teal mb-2">
-                    Industries
-                  </h3>
-                  <ul className="text-gray-300 space-y-1">
-                    <li>• AI &amp; Machine Learning</li>
-                    <li>• SaaS &amp; Enterprise Software</li>
-                    <li>• Healthcare &amp; Neuroscience</li>
-                    <li>• Productivity &amp; Automation Tools</li>
-                  </ul>
-                </div>
+              <div>
+                <h3 className="text-teal-400 text-lg font-semibold mb-4">What I Do</h3>
+                <ul className="space-y-2 text-gray-300">
+                  <li>• Product Strategy &amp; Roadmapping</li>
+                  <li>• AI Product Development</li>
+                  <li>• SaaS Platform Optimization</li>
+                  <li>• Cross-functional Team Leadership</li>
+                  <li>• Data-Driven Decision Making</li>
+                </ul>
+              </div>
 
-                <div>
-                  <h3 className="font-semibold text-accent-teal mb-2">
-                    Response Time
-                  </h3>
-                  <p className="text-gray-300">
-                    I typically respond within 24 hours. For urgent inquiries, 
-                    please mention it in your message.
-                  </p>
-                </div>
+              <div>
+                <h3 className="text-teal-400 text-lg font-semibold mb-4">Industries</h3>
+                <ul className="space-y-2 text-gray-300">
+                  <li>• AI &amp; Machine Learning</li>
+                  <li>• SaaS &amp; Enterprise Software</li>
+                  <li>• Healthcare &amp; Neuroscience</li>
+                  <li>• Productivity &amp; Automation Tools</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-teal-400 text-lg font-semibold mb-4">Response Time</h3>
+                <p className="text-gray-300">
+                  I typically respond within 24 hours. For urgent inquiries, please mention it in your message.
+                </p>
               </div>
             </motion.div>
 
-            {/* Contact Form */}
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
             >
               <form onSubmit={handleSubmit} className="space-y-6">
-                {/* Honey pot for spam prevention */}
-                <input
-                  type="text"
-                  name="website"
-                  style={{ display: 'none' }}
-                  tabIndex={-1}
-                  autoComplete="off"
-                />
-
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-2">
+                  <label htmlFor="name" className="block text-white font-semibold mb-2">
                     Name *
                   </label>
                   <input
@@ -150,15 +154,15 @@ export default function Contact() {
                     id="name"
                     name="name"
                     value={formData.name}
-                    onChange={handleChange}
+                    onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-surface border border-gray-600 rounded-lg focus:outline-none focus:border-accent-teal focus:ring-1 focus:ring-accent-teal transition-colors"
+                    className="w-full px-4 py-3 bg-slate-800/50 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-teal-400 transition-colors"
                     placeholder="Your full name"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-2">
+                  <label htmlFor="email" className="block text-white font-semibold mb-2">
                     Email *
                   </label>
                   <input
@@ -166,94 +170,57 @@ export default function Contact() {
                     id="email"
                     name="email"
                     value={formData.email}
-                    onChange={handleChange}
+                    onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-surface border border-gray-600 rounded-lg focus:outline-none focus:border-accent-teal focus:ring-1 focus:ring-accent-teal transition-colors"
+                    className="w-full px-4 py-3 bg-slate-800/50 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-teal-400 transition-colors"
                     placeholder="your.email@example.com"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2">
+                  <label htmlFor="message" className="block text-white font-semibold mb-2">
                     Message *
                   </label>
                   <textarea
                     id="message"
                     name="message"
                     value={formData.message}
-                    onChange={handleChange}
+                    onChange={handleInputChange}
                     required
-                    rows={6}
-                    className="w-full px-4 py-3 bg-surface border border-gray-600 rounded-lg focus:outline-none focus:border-accent-teal focus:ring-1 focus:ring-accent-teal transition-colors resize-vertical"
+                    rows={5}
+                    className="w-full px-4 py-3 bg-slate-800/50 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-teal-400 transition-colors resize-none"
                     placeholder="Tell me about your project, challenges, or how I can help..."
                   />
                 </div>
 
-                {submitMessage && (
-                  <div className="p-4 bg-accent-teal/20 border border-accent-teal/30 rounded-lg">
-                    <p className="text-accent-teal">{submitMessage}</p>
-                  </div>
-                )}
-
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-accent-teal text-bg-base px-6 py-3 rounded-lg font-semibold hover:scale-[1.02] hover:shadow-lg hover:shadow-accent-teal/25 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                  className="w-full bg-teal-500 hover:bg-teal-600 disabled:bg-teal-400 disabled:cursor-not-allowed text-white font-semibold py-3 px-6 rounded-lg transition-colors"
                 >
                   {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
+
+                {submitStatus === 'success' && (
+                  <div className="mt-4 p-4 bg-green-500/20 border border-green-500/30 rounded-lg">
+                    <p className="text-green-400 text-center">
+                      ✅ Message sent successfully! I'll get back to you within 24 hours.
+                    </p>
+                  </div>
+                )}
+
+                {submitStatus === 'error' && (
+                  <div className="mt-4 p-4 bg-red-500/20 border border-red-500/30 rounded-lg">
+                    <p className="text-red-400 text-center">
+                      ❌ Failed to send message. Please try again or email me directly at shainaep@gmail.com
+                    </p>
+                  </div>
+                )}
               </form>
             </motion.div>
           </div>
         </div>
-      </section>
-
-      {/* Additional Contact Methods */}
-      <section className="py-20 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-2xl font-display font-bold mb-8">
-              Other Ways to Connect
-            </h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-accent-teal/20 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-accent-teal text-2xl">💼</span>
-                </div>
-                <h3 className="font-semibold mb-2">LinkedIn</h3>
-                <p className="text-gray-300 text-sm">
-                  Connect for professional networking and industry insights
-                </p>
-              </div>
-              
-              <div className="text-center">
-                <div className="w-16 h-16 bg-accent-teal/20 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-accent-teal text-2xl">📧</span>
-                </div>
-                <h3 className="font-semibold mb-2">Direct Email</h3>
-                <p className="text-gray-300 text-sm">
-                  For detailed project discussions and collaboration inquiries
-                </p>
-              </div>
-              
-              <div className="text-center">
-                <div className="w-16 h-16 bg-accent-teal/20 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-accent-teal text-2xl">📅</span>
-                </div>
-                <h3 className="font-semibold mb-2">Schedule a Call</h3>
-                <p className="text-gray-300 text-sm">
-                  Book a consultation to discuss your product challenges
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-    </main>
+      </main>
+    </div>
   )
 }

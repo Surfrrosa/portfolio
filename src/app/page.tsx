@@ -1,33 +1,25 @@
 'use client'
 
-import React, { useEffect, useRef } from 'react'
-import Link from 'next/link'
+import React, { useRef, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import Lenis from 'lenis'
-import dynamic from 'next/dynamic'
-
-const HeroWarp = dynamic(() => import('@/components/HeroWarp'), { 
-  ssr: false,
-  loading: () => (
-    <div className="relative min-h-screen grid place-items-center">
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,rgba(56,189,248,.18),transparent_60%)]" />
-      <h1 className="text-[clamp(3rem,12vw,20rem)] font-display font-black leading-tight text-center tracking-tight">
-        Future-Proof Product Management
-      </h1>
-    </div>
-  )
-})
+import Sidebar from '@/components/Sidebar'
+import { TextScrambleEffect } from '@/components/TextScrambleEffect'
+import BottomCTAs from '@/components/BottomCTAs'
 
 export default function Home() {
   const lenisRef = useRef<Lenis | null>(null)
 
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: 1.1,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
       smoothWheel: true,
       wheelMultiplier: 1,
       touchMultiplier: 2,
+      infinite: false,
     })
 
     lenisRef.current = lenis
@@ -45,204 +37,65 @@ export default function Home() {
   }, [])
 
   return (
-    <main className="min-h-screen">
-      {/* Header - Sticky with backdrop blur */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-black/30 backdrop-blur-md">
-        <nav className="p-6">
-          <div className="max-w-7xl mx-auto flex justify-between items-center">
-            <Link href="/" className="text-xl font-display font-bold">
-              SP
-            </Link>
-            <div className="flex gap-8">
-              <Link href="/work" className="hover:text-teal-400 transition-colors">
-                Work
-              </Link>
-              <Link href="/contact" className="hover:text-teal-400 transition-colors">
-                Contact
-              </Link>
-            </div>
-          </div>
-        </nav>
-      </header>
-
-      {/* Hero Section */}
-      <section className="relative overflow-hidden">
-        <HeroWarp />
-        
-        {/* Subhead and CTAs positioned over the WebGL canvas */}
-        <div className="absolute inset-0 flex items-end justify-center pb-20">
-          <div className="text-center max-w-4xl mx-auto px-6">
-            {/* Subhead */}
-            <motion.p
-              className="text-xl md:text-2xl text-gray-300 mb-12 leading-relaxed"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-            >
-              I turn messy requirements into shipped outcomes. 7+ years building AI-powered products &amp; data-driven platforms that stay ahead of change.
-            </motion.p>
-
-            {/* CTAs */}
-            <motion.div
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-            >
-              <Link
-                href="/work"
-                className="bg-teal-400 text-black px-8 py-4 rounded-lg font-semibold text-lg hover:bg-teal-300 transition-colors duration-300"
-              >
-                View Work
-              </Link>
-              <Link
-                href="/contact"
-                className="border border-white/10 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white/5 transition-colors duration-300"
-              >
-                Get in Touch
-              </Link>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Proof Strip */}
-      <section className="py-12 px-6">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            className="flex flex-wrap justify-center gap-6"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <div className="rounded-full border border-white/10 px-6 py-3 text-zinc-400">
-              7+ years
-            </div>
-            <div className="rounded-full border border-white/10 px-6 py-3 text-zinc-400">
-              5 shipped AI products
-            </div>
-            <div className="rounded-full border border-white/10 px-6 py-3 text-zinc-400">
-              &gt;$3M ARR impact
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Selected Work */}
-      <section className="py-20 px-6">
-        <div className="max-w-6xl mx-auto">
-          <motion.h2
-            className="text-2xl font-bold text-white mb-12"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            Selected Work
-          </motion.h2>
+    <div className="min-h-screen grid lg:grid-cols-[340px_1fr]">
+      <Sidebar />
+      
+      <main className="flex flex-col justify-center items-center px-6 lg:px-12 min-h-screen">
+        <motion.div
+          className="text-center"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.3 }}
+        >
+          <TextScrambleEffect
+            className="h1-display text-white mb-8"
+            lines={["Future-proof", "Product", "Management"]}
+            threshold={0.6}
+            duration={680}
+            lineStagger={90}
+            id="hero-headline"
+            once
+          />
           
-          <div className="grid md:grid-cols-3 gap-8">
-            <motion.div
-              className="bg-zinc-900/50 border border-white/10 rounded-lg p-6 hover:border-white/20 transition-colors duration-300"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-              viewport={{ once: true }}
-            >
-              <h3 className="text-xl font-semibold text-white mb-3">Prompt2Story</h3>
-              <p className="text-teal-400 mb-4">+38% task completion</p>
-              <Link href="/work" className="text-teal-400 hover:underline">
-                Case study →
-              </Link>
-            </motion.div>
-
-            <motion.div
-              className="bg-zinc-900/50 border border-white/10 rounded-lg p-6 hover:border-white/20 transition-colors duration-300"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              <h3 className="text-xl font-semibold text-white mb-3">ConnectWise Manage</h3>
-              <p className="text-teal-400 mb-4">25% churn reduction</p>
-              <Link href="/work" className="text-teal-400 hover:underline">
-                Case study →
-              </Link>
-            </motion.div>
-
-            <motion.div
-              className="bg-zinc-900/50 border border-white/10 rounded-lg p-6 hover:border-white/20 transition-colors duration-300"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              viewport={{ once: true }}
-            >
-              <h3 className="text-xl font-semibold text-white mb-3">AI Workflow Toolkits</h3>
-              <p className="text-teal-400 mb-4">50% productivity increase</p>
-              <Link href="/work" className="text-teal-400 hover:underline">
-                Case study →
-              </Link>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* About Teaser */}
-      <section className="py-20 px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <p className="text-lg text-gray-300 leading-relaxed">
-                Product manager focused on AI tools &amp; data-driven platforms. I translate ambiguity into roadmaps, coordinate cross-functional teams, and ship.
-              </p>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              <h3 className="text-xl font-semibold mb-4 text-teal-400">
-                Core Expertise
-              </h3>
-              <ul className="space-y-2 text-zinc-300">
-                <li>AI Product Strategy</li>
-                <li>Data-Driven PM</li>
-                <li>Team Leadership</li>
-              </ul>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact CTA Footer */}
-      <section className="py-20 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
+          <motion.p
+            className="text-white text-xl leading-relaxed max-w-[70ch] mx-auto text-zinc-200"
             initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <p className="text-xl text-gray-300 mb-8">
-              Have a product challenge? I typically reply within 24 hours.
-            </p>
-            <Link
-              href="/contact"
-              className="bg-teal-400 text-black px-8 py-4 rounded-lg font-semibold text-lg hover:bg-teal-300 transition-colors duration-300"
-            >
-              Send a Message
-            </Link>
-          </motion.div>
-        </div>
-      </section>
-    </main>
+            Technical Product Owner + AI builder — I ship secure, scalable SaaS and design AI workflows that accelerate teams and deliver measurable impact.
+          </motion.p>
+        </motion.div>
+        
+        {/* Proven Impact & Approach section */}
+        <section className="min-h-screen mt-20 p-12">
+          <div className="max-w-4xl mx-auto text-white">
+            <h2 className="text-4xl font-bold mb-8">Proven Impact & Approach</h2>
+            <ul className="space-y-6 text-lg leading-relaxed">
+              <li className="flex items-start">
+                <span className="text-teal-400 mr-4 mt-1">•</span>
+                <span><strong>7+ Years in the Trenches</strong> — secure authentication, REST APIs, CRM, migrations, dashboards.</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-teal-400 mr-4 mt-1">•</span>
+                <span><strong>AI as a Co-Pilot</strong> — automation, intelligent tooling, workflows that streamline delivery.</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-teal-400 mr-4 mt-1">•</span>
+                <span><strong>Fluent in Tech + People</strong> — bridging engineering, design, leadership, and stakeholders.</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-teal-400 mr-4 mt-1">•</span>
+                <span><strong>Impact, Not Just Output</strong> — every feature tied to tangible, trackable results.</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div className="mt-48">
+            <BottomCTAs />
+          </div>
+        </section>
+      </main>
+    </div>
   )
 }
