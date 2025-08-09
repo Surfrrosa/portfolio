@@ -59,10 +59,17 @@ export default function Home() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(56,189,248,.2),transparent_60%)]"></div>
         
         <div className="relative z-10 text-center max-w-6xl mx-auto px-6">
-          {/* WebGL Headline with responsive sizing */}
+          {/* WebGL Headline with dominant viewport sizing */}
           <WebGLHeroText 
             text="Future-Proof Product Management"
-            className="text-6xl md:text-7xl lg:text-8xl font-display font-bold leading-tight max-w-5xl mx-auto"
+            className="font-display font-bold leading-tight max-w-6xl mx-auto"
+            style={{
+              fontSize: 'clamp(3rem, 12vw, 8rem)',
+              height: 'clamp(200px, 45vh, 400px)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}
           />
           
           {/* Subhead */}

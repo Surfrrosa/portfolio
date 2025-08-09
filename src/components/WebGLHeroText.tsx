@@ -8,20 +8,22 @@ import { Text } from 'troika-three-text'
 import { EffectComposer, RenderPass, ChromaticAberrationEffect, EffectPass } from 'postprocessing'
 
 export const heroConfig = {
-  warpIntensity: 0.3,
-  noiseFreq: 0.8,
-  damping: 0.1,
+  warpIntensity: 0.4,
+  noiseFreq: 1.2,
+  damping: 0.08,
+  distortionRadius: 0.15,
   chromAberrationPx: {
     desktop: 0.8,
     mobile: 0.5
   },
-  idleMotionSpeed: 0.5,
+  idleMotionSpeed: 0.2,
   performanceMode: false
 }
 
 interface WebGLHeroTextProps {
   text: string
   className?: string
+  style?: React.CSSProperties
 }
 
 const vertexShader = `
@@ -30,6 +32,7 @@ const vertexShader = `
   uniform float uNoiseFreq;
   uniform vec2 uPointer;
   uniform float uPointerInfluence;
+  uniform float uDistortionRadius;
   
   vec3 mod289(vec3 x) {
     return x - floor(x * (1.0 / 289.0)) * 289.0;
@@ -110,17 +113,28 @@ const vertexShader = `
   void main() {
     vec3 pos = position;
     
-    vec2 screenPos = (modelViewMatrix * vec4(position, 1.0)).xy;
-    float pointerDist = distance(screenPos, uPointer);
-    float pointerEffect = 1.0 / (1.0 + pointerDist * 0.1) * uPointerInfluence;
+    vec4 worldPos = modelMatrix * vec4(position, 1.0);
+    vec2 screenPos = worldPos.xy;
     
-    float noise = snoise(vec3(pos.xy * uNoiseFreq, uTime * 0.5));
-    float idleNoise = snoise(vec3(pos.xy * 0.3, uTime * 0.2)) * 0.3;
+    float distanceFromPointer = length(screenPos - uPointer);
+    float normalizedDistance = distanceFromPointer / uDistortionRadius;
     
-    float totalWarp = (noise * pointerEffect + idleNoise) * uWarpIntensity;
+    float influence = smoothstep(1.0, 0.0, normalizedDistance) * uPointerInfluence;
+    influence = influence * influence; // Quadratic falloff for sharper edges
     
-    pos.z += totalWarp;
-    pos.xy += vec2(totalWarp * 0.5, totalWarp * 0.3);
+    float idleNoise = snoise(vec3(pos.xy * 1.2, uTime * 0.3)) * 0.008;
+    
+    if (influence > 0.01) {
+      float noise = snoise(vec3(pos.xy * uNoiseFreq + uTime * 0.2, uTime * 0.4));
+      vec2 distortion = vec2(
+        noise,
+        snoise(vec3(pos.xy * uNoiseFreq + 100.0, uTime * 0.4))
+      ) * influence * uWarpIntensity;
+      
+      pos.xy += distortion;
+    }
+    
+    pos.xy += vec2(idleNoise * 0.5);
     
     gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
   }
@@ -143,7 +157,7 @@ const fragmentShader = `
 
 
 
-function WebGLTextCanvas({ text, className }: { text: string; className?: string }) {
+function WebGLTextCanvas({ text, className, style }: { text: string; className?: string; style?: React.CSSProperties }) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const sceneRef = useRef<{
     scene: THREE.Scene
@@ -189,6 +203,7 @@ function WebGLTextCanvas({ text, className }: { text: string; className?: string
         uNoiseFreq: { value: heroConfig.noiseFreq },
         uPointer: { value: new THREE.Vector2(0, 0) },
         uPointerInfluence: { value: 0 },
+        uDistortionRadius: { value: heroConfig.distortionRadius },
         color: { value: new THREE.Color(0xffffff) }
       },
       transparent: true
@@ -315,20 +330,20 @@ function WebGLTextCanvas({ text, className }: { text: string; className?: string
   }, [text])
   
   return (
-    <div className="relative">
+    <div className="relative" style={style}>
       <h1 className={`${className} sr-only`} aria-label={text}>
         {text}
       </h1>
       <canvas
         ref={canvasRef}
-        className="w-full h-32 md:h-40 lg:h-48"
+        className="w-full h-full"
         style={{ display: 'block' }}
       />
     </div>
   )
 }
 
-export default function WebGLHeroText({ text, className }: WebGLHeroTextProps) {
+export default function WebGLHeroText({ text, className, style }: WebGLHeroTextProps) {
   const [supportsWebGL2, setSupportsWebGL2] = useState(true)
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false)
   const [isClient, setIsClient] = useState(false)
@@ -364,13 +379,16 @@ export default function WebGLHeroText({ text, className }: WebGLHeroTextProps) {
   if (shouldUseFallback) {
     return (
       <motion.h1
-        className={className}
+        className={`${className} flex items-center justify-center h-full`}
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         aria-label={text}
         style={{
+          ...style,
           filter: prefersReducedMotion ? 'none' : 'url(#advanced-warp-filter)',
+          fontSize: style?.fontSize || 'clamp(3rem, 12vw, 8rem)',
+          lineHeight: 1.1
         }}
       >
         {text}
@@ -414,5 +432,5 @@ export default function WebGLHeroText({ text, className }: WebGLHeroTextProps) {
     )
   }
   
-  return <WebGLTextCanvas text={text} className={className} />
+  return <WebGLTextCanvas text={text} className={className} style={style} />
 }
