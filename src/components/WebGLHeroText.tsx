@@ -76,15 +76,17 @@ const pixelLensFragmentShader = `
     float distanceFromPointer = length(screenPos - pointerUv);
     float normalizedDistance = distanceFromPointer / uLensRadius;
     
-    if (normalizedDistance < 1.0) {
-      vec2 magnifiedUv = pointerUv + (screenPos - pointerUv) / uMagnify;
+    float lensStrength = 1.0 - smoothstep(0.0, 1.0, normalizedDistance);
+    
+    if (lensStrength > 0.001) {
+      vec2 magnifiedUv = mix(screenPos, pointerUv + (screenPos - pointerUv) / uMagnify, lensStrength);
       
       vec2 pixelSize = vec2(uPixelSize) / uResolution;
-      vec2 pixelatedUv = floor(magnifiedUv / pixelSize) * pixelSize + pixelSize * 0.5;
+      vec2 pixelatedUv = mix(screenPos, floor(magnifiedUv / pixelSize) * pixelSize + pixelSize * 0.5, lensStrength);
       
       pixelatedUv = clamp(pixelatedUv, vec2(0.0), vec2(1.0));
       
-      float rgbShift = uRgbOffset * 0.002;
+      float rgbShift = uRgbOffset * 0.002 * lensStrength;
       vec2 offsetR = clamp(pixelatedUv + vec2(rgbShift, 0.0), vec2(0.0), vec2(1.0));
       vec2 offsetB = clamp(pixelatedUv - vec2(rgbShift, 0.0), vec2(0.0), vec2(1.0));
       
