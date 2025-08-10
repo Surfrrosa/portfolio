@@ -87,7 +87,7 @@ export default function Work() {
                 <div>
                   <h5 className="text-white font-semibold mb-2">Solution</h5>
                   <p className="text-gray-300 leading-relaxed">
-                    I designed and shipped an AI-powered platform that ingests unstructured input and outputs standardized, ready-to-use user stories — including acceptance criteria, edge cases, and optional BDD/Gherkin formatting — all aligned with Agile best practices.
+                    I designed and shipped an AI-powered platform that ingests unstructured input and outputs standardized, ready-to-use user stories. Including acceptance criteria, edge cases, and optional metadata, all aligned with Agile best practices.
                   </p>
                 </div>
                 
@@ -100,11 +100,11 @@ export default function Work() {
                 
                 <div>
                   <h5 className="text-white font-semibold mb-2">Impact</h5>
-                  <ul className="text-gray-300 space-y-1">
-                    <li>• Reduced backlog grooming time by 70%.</li>
-                    <li>• Improved clarity and consistency across engineering teams.</li>
-                    <li>• 95% satisfaction from early adopters: "indispensable" for sprint prep.</li>
-                  </ul>
+                  <div className="text-gray-300 space-y-3">
+                    <p>Positive early feedback from beta testers and peers in product management.</p>
+                    <p>Streamlined the process of converting messy notes into Agile-ready user stories.</p>
+                    <p>Designed to reduce backlog grooming time and improve cross-team clarity.</p>
+                  </div>
                 </div>
               </div>
               
