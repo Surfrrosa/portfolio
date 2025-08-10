@@ -151,7 +151,26 @@ export default function Work() {
                 </div>
               </div>
               
-              <div className="px-6 py-4">
+              <div className="px-6 py-4 space-y-4">
+                <div className="grid grid-cols-1 gap-3">
+                  <div className="relative rounded-lg overflow-hidden border border-white/10">
+                    <img 
+                      src="/images/prompt2story/input-method.png" 
+                      alt="Prompt2Story input method selection showing Text Input and Design Upload options"
+                      className="w-full h-auto object-cover"
+                    />
+                  </div>
+                  <div className="relative rounded-lg overflow-hidden border border-white/10">
+                    <img 
+                      src="/images/prompt2story/design-upload.png" 
+                      alt="Prompt2Story AI analysis in progress, hunting for user stories from uploaded design"
+                      className="w-full h-auto object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+              
+              <div className="px-6 pb-6">
                 <a 
                   href="https://prompt2story.com" 
                   className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors group w-full justify-center"
