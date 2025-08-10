@@ -114,28 +114,30 @@ export default function Contact() {
               <div>
                 <h3 className="text-teal-400 text-lg font-semibold mb-4">What I Do</h3>
                 <ul className="space-y-2 text-gray-300">
-                  <li>• Product Strategy &amp; Roadmapping</li>
-                  <li>• AI Product Development</li>
-                  <li>• SaaS Platform Optimization</li>
-                  <li>• Cross-functional Team Leadership</li>
-                  <li>• Data-Driven Decision Making</li>
+                  <li>• Product strategy, roadmapping, and MVP definition</li>
+                  <li>• AI product design &amp; development workflows</li>
+                  <li>• SaaS platform optimization &amp; feature delivery</li>
+                  <li>• Cross-functional team leadership &amp; alignment</li>
+                  <li>• Data-driven product decisions</li>
+                  <li>• Design &amp; build of landing pages, portfolios, and websites</li>
+                  <li>• Product consulting &amp; advisory</li>
                 </ul>
               </div>
 
               <div>
                 <h3 className="text-teal-400 text-lg font-semibold mb-4">Industries</h3>
                 <ul className="space-y-2 text-gray-300">
-                  <li>• AI &amp; Machine Learning</li>
-                  <li>• SaaS &amp; Enterprise Software</li>
-                  <li>• Healthcare &amp; Neuroscience</li>
-                  <li>• Productivity &amp; Automation Tools</li>
+                  <li>• AI &amp; machine learning solutions</li>
+                  <li>• SaaS and enterprise software</li>
+                  <li>• Healthcare &amp; neuroscience innovation</li>
+                  <li>• Productivity &amp; automation tools</li>
                 </ul>
               </div>
 
               <div>
                 <h3 className="text-teal-400 text-lg font-semibold mb-4">Response Time</h3>
                 <p className="text-gray-300">
-                  I typically respond within 24 hours. For urgent inquiries, please mention it in your message.
+                  I typically respond within 24 hours.
                 </p>
               </div>
             </motion.div>
