@@ -100,11 +100,11 @@ export default function Work() {
                 
                 <div>
                   <h5 className="text-white font-semibold mb-2">Impact</h5>
-                  <ul className="text-gray-300 space-y-1">
-                    <li>• Reduced backlog grooming time by 70%.</li>
-                    <li>• Improved clarity and consistency across engineering teams.</li>
-                    <li>• 95% satisfaction from early adopters: "indispensable" for sprint prep.</li>
-                  </ul>
+                  <div className="text-gray-300 space-y-3">
+                    <p>Positive early feedback from beta testers and peers in product management.</p>
+                    <p>Streamlined the process of converting messy notes into Agile-ready user stories.</p>
+                    <p>Designed to reduce backlog grooming time and improve cross-team clarity.</p>
+                  </div>
                 </div>
               </div>
               
