@@ -116,6 +116,73 @@ export default function Work() {
             </motion.div>
 
             <motion.div
+              className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-white/10"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
+            >
+              <div className="mb-4">
+                <span className="inline-block bg-purple-500/20 text-purple-400 px-3 py-1 rounded-full text-sm font-semibold">
+                  In Development
+                </span>
+              </div>
+              
+              <h3 className="text-white text-2xl font-display font-bold mb-4">
+                Enlighten – Mindfulness App Inspired by the Tao Te Ching
+              </h3>
+              
+              <h4 className="text-teal-400 text-lg font-semibold mb-6">
+                Mindfulness, community, and Taoist wisdom — in your pocket.
+              </h4>
+              
+              <div className="space-y-6">
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Problem</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    Mindfulness apps often require users to seek out content, making it easy to forget or skip practice entirely. Few offer unpredictable, thought-provoking prompts that feel timely, personal, and modernized.
+                  </p>
+                </div>
+                
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Solution</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    Enlighten delivers quotes and lessons from the Tao Te Ching at unexpected moments, prompting reflection without disrupting the day. Core features include search, bookmarking, community discussions, and customizable notifications.
+                  </p>
+                </div>
+                
+                <div>
+                  <h5 className="text-white font-semibold mb-2">My Role</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    Product concept, user journey mapping, UX design, high-level technical planning, user story creation, and roadmap development.
+                  </p>
+                </div>
+                
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Impact (Projected)</h5>
+                  <div className="text-gray-300 space-y-3">
+                    <p>Daily micro-moments of mindfulness without disrupting routine.</p>
+                    <p>Community space for shared wisdom and interpretation.</p>
+                    <p>Expands accessibility of Taoist philosophy to a modern audience.</p>
+                  </div>
+                </div>
+                
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Status</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    Currently in late-stage development.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="flex flex-wrap gap-2 mt-6">
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Mindfulness</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Mobile UX</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Product Strategy</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">AI Development</span>
+              </div>
+            </motion.div>
+
+            <motion.div
               className="bg-slate-700/30 rounded-2xl overflow-hidden border border-white/10 flex flex-col"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
