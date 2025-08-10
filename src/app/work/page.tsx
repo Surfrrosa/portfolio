@@ -113,6 +113,50 @@ export default function Work() {
                 <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Agile Delivery</span>
                 <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Product Strategy</span>
               </div>
+
+              <div className="mt-8 space-y-6">
+                <div className="relative aspect-video rounded-lg overflow-hidden border border-white/10">
+                  <video
+                    className="w-full h-full object-cover"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    onError={(e) => {
+                      const target = e.target as HTMLVideoElement;
+                      target.style.display = 'none';
+                      const fallback = target.nextElementSibling as HTMLElement;
+                      if (fallback) fallback.style.display = 'flex';
+                    }}
+                  >
+                    <source src="/videos/prompt2story-preview.webm" type="video/webm" />
+                    <source src="/videos/prompt2story-preview.mp4" type="video/mp4" />
+                  </video>
+                  <div className="absolute inset-0 bg-slate-700/30 flex items-center justify-center" style={{ display: 'none' }}>
+                    <div className="text-center">
+                      <div className="w-16 h-16 bg-teal-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg className="w-8 h-8 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                        </svg>
+                      </div>
+                      <p className="text-gray-400 text-sm">Project Preview</p>
+                      <p className="text-white font-semibold">Prompt2Story</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="text-center">
+                  <a 
+                    href="https://prompt2story.com" 
+                    className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors group"
+                  >
+                    Visit Live Site
+                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
             </motion.div>
 
             <motion.div
@@ -179,74 +223,6 @@ export default function Work() {
                 <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Mobile UX</span>
                 <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Product Strategy</span>
                 <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">AI Development</span>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="bg-slate-700/30 rounded-2xl overflow-hidden border border-white/10 flex flex-col"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.7 }}
-            >
-              <div className="relative aspect-video">
-                <video
-                  className="w-full h-full object-cover"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  onError={(e) => {
-                    const target = e.target as HTMLVideoElement;
-                    target.style.display = 'none';
-                    const fallback = target.nextElementSibling as HTMLElement;
-                    if (fallback) fallback.style.display = 'flex';
-                  }}
-                >
-                  <source src="/videos/prompt2story-preview.webm" type="video/webm" />
-                  <source src="/videos/prompt2story-preview.mp4" type="video/mp4" />
-                </video>
-                <div className="absolute inset-0 bg-slate-700/30 flex items-center justify-center" style={{ display: 'none' }}>
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-teal-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <svg className="w-8 h-8 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                      </svg>
-                    </div>
-                    <p className="text-gray-400 text-sm">Project Preview</p>
-                    <p className="text-white font-semibold">Prompt2Story</p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="px-6 py-4 space-y-4">
-                <div className="grid grid-cols-1 gap-3">
-                  <div className="relative rounded-lg overflow-hidden border border-white/10">
-                    <img 
-                      src="/images/prompt2story/input-method.png" 
-                      alt="Prompt2Story input method selection showing Text Input and Design Upload options"
-                      className="w-full h-auto object-cover"
-                    />
-                  </div>
-                  <div className="relative rounded-lg overflow-hidden border border-white/10">
-                    <img 
-                      src="/images/prompt2story/design-upload.png" 
-                      alt="Prompt2Story AI analysis in progress, hunting for user stories from uploaded design"
-                      className="w-full h-auto object-cover"
-                    />
-                  </div>
-                </div>
-              </div>
-              
-              <div className="px-6 pb-6">
-                <a 
-                  href="https://prompt2story.com" 
-                  className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors group w-full justify-center"
-                >
-                  Visit Live Site
-                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </a>
               </div>
             </motion.div>
           </div>
