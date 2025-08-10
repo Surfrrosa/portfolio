@@ -100,7 +100,8 @@ export default function Contact() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            Ready to discuss your next product challenge? I'd love to hear about your vision and explore how we can bring it to life together.
+            Ready to discuss your next product challenge?
+            Like what you see here? Let's talk about your vision and explore how we can bring it to life together.
           </motion.p>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
