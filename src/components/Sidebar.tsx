@@ -42,6 +42,9 @@ export default function Sidebar() {
             <p className="text-white font-semibold" style={{ fontSize: '18px', lineHeight: '1.6' }}>
               My name is Shaina Pauley. I am a product owner, builder, writer, and connoisseur of clouds.
             </p>
+            <p className="text-white font-semibold" style={{ fontSize: '18px', lineHeight: '1.6' }}>
+              I'm an action-oriented dreamer, a student of ideas, and a believer that emotional intelligence, systems thinking, storytelling, and collaboration are the real superpowers in a time of rapid change.
+            </p>
           </motion.div>
 
           <motion.div
@@ -111,6 +114,9 @@ export default function Sidebar() {
           <div className="flex-1">
             <p className="text-white text-sm font-semibold leading-relaxed">
               My name is Shaina Pauley and I am a product owner, builder, writer, and connoisseur of clouds.
+            </p>
+            <p className="text-white text-sm font-semibold leading-relaxed">
+              I'm an action-oriented dreamer, a student of ideas, and a believer that emotional intelligence, systems thinking, storytelling, and collaboration are the real superpowers in a time of rapid change.
             </p>
           </div>
           
