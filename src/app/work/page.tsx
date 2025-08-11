@@ -8,6 +8,7 @@ import Sidebar from '@/components/Sidebar'
 export default function Work() {
   const lenisRef = useRef<Lenis | null>(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [modalImage, setModalImage] = useState('')
 
   useEffect(() => {
     const lenis = new Lenis({
@@ -229,7 +230,10 @@ export default function Work() {
               <div className="mt-8">
                 <div 
                   className="relative rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
-                  onClick={() => setIsModalOpen(true)}
+                  onClick={() => {
+                    setModalImage('/images/enlighten_portfolio_horizontal.png')
+                    setIsModalOpen(true)
+                  }}
                 >
                   <img
                     src="/images/enlighten_portfolio_horizontal.png"
@@ -295,7 +299,23 @@ export default function Work() {
               <div className="flex flex-wrap gap-2 mt-6">
                 <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Mobile Development</span>
                 <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Product Design</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">AI-Assisted Development</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Agile Development</span>
+              </div>
+
+              <div className="mt-8">
+                <div 
+                  className="relative rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
+                  onClick={() => {
+                    setModalImage('/images/pomodoro-flow-app.jpg')
+                    setIsModalOpen(true)
+                  }}
+                >
+                  <img
+                    src="/images/pomodoro-flow-app.jpg"
+                    alt="Pomodoro Flow app preview showing 25/5 timer interface"
+                    className="w-48 h-auto object-contain mx-auto"
+                  />
+                </div>
               </div>
             </motion.div>
           </div>
@@ -316,8 +336,11 @@ export default function Work() {
               ✕ Close
             </button>
             <img
-              src="/images/enlighten_portfolio_horizontal.png"
-              alt="Enlighten app portfolio showcase featuring mobile screens for notifications, daily wisdom, micro-practice, library, and favorites"
+              src={modalImage}
+              alt={modalImage.includes('enlighten') 
+                ? "Enlighten app portfolio showcase featuring mobile screens for notifications, daily wisdom, micro-practice, library, and favorites"
+                : "Pomodoro Flow app screenshot showing the minimal timer interface with focus and break modes"
+              }
               className="max-w-full max-h-full object-contain rounded-lg"
             />
           </div>
