@@ -1,12 +1,13 @@
 'use client'
 
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import Lenis from 'lenis'
 import Sidebar from '@/components/Sidebar'
 
 export default function Work() {
   const lenisRef = useRef<Lenis | null>(null)
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   useEffect(() => {
     const lenis = new Lenis({
@@ -224,10 +225,45 @@ export default function Work() {
                 <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Product Strategy</span>
                 <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">AI Development</span>
               </div>
+
+              <div className="mt-8">
+                <div 
+                  className="relative rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
+                  onClick={() => setIsModalOpen(true)}
+                >
+                  <img
+                    src="/images/enlighten_portfolio_horizontal.png"
+                    alt="Enlighten app portfolio showcase featuring mobile screens for notifications, daily wisdom, micro-practice, library, and favorites"
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+              </div>
             </motion.div>
           </div>
         </div>
       </main>
+
+      {/* Image Modal */}
+      {isModalOpen && (
+        <div 
+          className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
+          onClick={() => setIsModalOpen(false)}
+        >
+          <div className="relative max-w-6xl max-h-full">
+            <button
+              onClick={() => setIsModalOpen(false)}
+              className="absolute -top-12 right-0 text-white hover:text-gray-300 text-xl font-bold"
+            >
+              ✕ Close
+            </button>
+            <img
+              src="/images/enlighten_portfolio_horizontal.png"
+              alt="Enlighten app portfolio showcase featuring mobile screens for notifications, daily wisdom, micro-practice, library, and favorites"
+              className="max-w-full max-h-full object-contain rounded-lg"
+            />
+          </div>
+        </div>
+      )}
     </div>
   )
 }
