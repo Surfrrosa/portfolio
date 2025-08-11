@@ -312,8 +312,8 @@ export default function Work() {
                 >
                   <img
                     src="/images/pomodoro-flow-app.png"
-                    alt="Pomodoro Flow app screenshot showing the minimal timer interface with focus and break modes"
-                    className="w-full h-auto object-cover"
+                    alt="Pomodoro Flow app preview showing 25/5 timer interface"
+                    className="w-48 h-auto object-contain mx-auto"
                   />
                 </div>
               </div>
