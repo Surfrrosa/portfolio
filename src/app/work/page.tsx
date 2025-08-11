@@ -239,6 +239,65 @@ export default function Work() {
                 </div>
               </div>
             </motion.div>
+
+            <motion.div
+              className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-white/10"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.9 }}
+            >
+              <div className="mb-4">
+                <span className="inline-block bg-amber-500/20 text-amber-400 px-3 py-1 rounded-full text-sm font-semibold">
+                  Mobile Development
+                </span>
+              </div>
+              
+              <h3 className="text-white text-2xl font-display font-bold mb-4">
+                Pomodoro Flow – Radically Simple Focus Timer
+              </h3>
+              
+              <h4 className="text-teal-400 text-lg font-semibold mb-6">
+                From start to focus in one tap, a minimal 25/5 pomodoro timer with zero clutter.
+              </h4>
+              
+              <div className="space-y-6">
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Problem</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    Most pomodoro apps are overloaded with customization, making them distracting to set up and easy to abandon. I wanted a timer so simple it fades into the background, yet reliable enough to track focus cycles without breaking flow.
+                  </p>
+                </div>
+                
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Solution</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    Pomodoro Flow delivers a distraction-free 25-minute focus / 5-minute break cycle with auto-progression, subtle chimes, and gentle haptic feedback. Sessions persist if the app is closed, and local notifications ensure you never miss a switch. Includes a "Fast Mode" for rapid QA and testing.
+                  </p>
+                </div>
+                
+                <div>
+                  <h5 className="text-white font-semibold mb-2">My Role</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    Product concept, UX design, feature scoping, implementation in Expo (React Native), local notification & audio integration, Git branching strategy, EAS build configuration.
+                  </p>
+                </div>
+                
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Impact</h5>
+                  <div className="text-gray-300 space-y-3">
+                    <p>Created a seamless, minimal UX that keeps users focused without decision fatigue.</p>
+                    <p>Improved testing speed with a dedicated developer mode.</p>
+                    <p>Established safe, AI-assisted branch workflow to prevent future merge conflicts.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="flex flex-wrap gap-2 mt-6">
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Mobile Development</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Product Design</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">AI-Assisted Development</span>
+              </div>
+            </motion.div>
           </div>
         </div>
       </main>
