@@ -306,12 +306,12 @@ export default function Work() {
                 <div 
                   className="relative rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
                   onClick={() => {
-                    setModalImage('/images/pomodoro-flow-app.png')
+                    setModalImage('/images/pomodoro-flow-app.jpg')
                     setIsModalOpen(true)
                   }}
                 >
                   <img
-                    src="/images/pomodoro-flow-app.png"
+                    src="/images/pomodoro-flow-app.jpg"
                     alt="Pomodoro Flow app preview showing 25/5 timer interface"
                     className="w-48 h-auto object-contain mx-auto"
                   />
