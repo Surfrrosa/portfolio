@@ -173,48 +173,48 @@ export default function Work() {
               </div>
               
               <h3 className="text-white text-2xl font-display font-bold mb-4">
-                Enlighten – Mindfulness App Inspired by the Tao Te Ching
+                Enlighten – Tao × Neuroscience Mindfulness App
               </h3>
               
               <h4 className="text-teal-400 text-lg font-semibold mb-6">
-                Mindfulness, community, and Taoist wisdom — in your pocket.
+                Mindfulness, nervous system regulation, and timeless Taoist wisdom — in your pocket.
               </h4>
               
               <div className="space-y-6">
                 <div>
                   <h5 className="text-white font-semibold mb-2">Problem</h5>
                   <p className="text-gray-300 leading-relaxed">
-                    Mindfulness apps often require users to seek out content, making it easy to forget or skip practice entirely. Few offer unpredictable, thought-provoking prompts that feel timely, personal, and modernized.
+                    Most mindfulness apps expect users to actively seek out content, making it easy to forget or skip entirely. Few combine unpredictable Taoist insights with quick, evidence-based practices for an immediate state shift.
                   </p>
                 </div>
                 
                 <div>
                   <h5 className="text-white font-semibold mb-2">Solution</h5>
                   <p className="text-gray-300 leading-relaxed">
-                    Enlighten delivers quotes and lessons from the Tao Te Ching at unexpected moments, prompting reflection without disrupting the day. Core features include search, bookmarking, community discussions, and customizable notifications.
+                    Enlighten delivers Tao Te Ching passages paired with neuroscience-backed micro-practices at beautifully timed moments. Features include a quote library with filters, favorites, customizable notifications, and minimal, distraction-free UX.
                   </p>
                 </div>
                 
                 <div>
                   <h5 className="text-white font-semibold mb-2">My Role</h5>
                   <p className="text-gray-300 leading-relaxed">
-                    Product concept, user journey mapping, UX design, high-level technical planning, user story creation, and roadmap development.
+                    Product concept, UX design, user flows, high-level technical planning, user story creation, and roadmap development.
                   </p>
                 </div>
                 
                 <div>
                   <h5 className="text-white font-semibold mb-2">Impact (Projected)</h5>
                   <div className="text-gray-300 space-y-3">
-                    <p>Daily micro-moments of mindfulness without disrupting routine.</p>
-                    <p>Community space for shared wisdom and interpretation.</p>
-                    <p>Expands accessibility of Taoist philosophy to a modern audience.</p>
+                    <p>Provides fast, restorative nervous system resets without disrupting routine.</p>
+                    <p>Bridges philosophy and neuroscience for practical daily use.</p>
+                    <p>Makes Taoist wisdom accessible through modern, mobile-first design.</p>
                   </div>
                 </div>
                 
                 <div>
                   <h5 className="text-white font-semibold mb-2">Status</h5>
                   <p className="text-gray-300 leading-relaxed">
-                    Currently in late-stage development.
+                    Currently in late-stage design and prototype development.
                   </p>
                 </div>
               </div>
