@@ -83,10 +83,10 @@ export default function Contact() {
     <div className="min-h-screen grid lg:grid-cols-[340px_1fr]">
       <Sidebar />
       
-      <main className="px-6 lg:px-12 py-12">
+      <main className="px-4 lg:px-12 py-8 lg:py-12">
         <div className="max-w-6xl mx-auto">
           <motion.h1
-            className="text-white text-5xl md:text-6xl lg:text-7xl font-display leading-tight mb-8"
+            className="text-white text-4xl md:text-5xl lg:text-7xl font-display leading-tight mb-6 lg:mb-8"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}

@@ -40,7 +40,7 @@ export default function Home() {
     <div className="min-h-screen grid lg:grid-cols-[340px_1fr]">
       <Sidebar />
       
-      <main className="flex flex-col justify-center items-center px-6 lg:px-12 min-h-screen">
+      <main className="flex flex-col justify-center items-center px-4 lg:px-12 min-h-screen pt-4 lg:pt-0">
         <motion.div
           className="text-center"
           initial={{ opacity: 0, y: 50 }}
@@ -68,9 +68,9 @@ export default function Home() {
         </motion.div>
         
         {/* Proven Impact & Approach section */}
-        <section className="min-h-screen mt-20 p-12">
+        <section className="min-h-screen mt-12 lg:mt-20 p-4 lg:p-12">
           <div className="max-w-4xl mx-auto text-white">
-            <h2 className="text-4xl font-bold mb-8">Proven Impact & Approach</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold mb-6 lg:mb-8">Proven Impact & Approach</h2>
             <ul className="space-y-6 text-lg leading-relaxed">
               <li className="flex items-start">
                 <span className="text-teal-400 mr-4 mt-1">•</span>
