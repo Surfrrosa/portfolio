@@ -377,6 +377,22 @@ export default function Work() {
                 <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Agile Delivery</span>
                 <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Enterprise Retail</span>
               </div>
+
+              <div className="mt-8">
+                <div 
+                  className="relative rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
+                  onClick={() => {
+                    setModalImage('/images/nortal-tmobile-showcase.png')
+                    setIsModalOpen(true)
+                  }}
+                >
+                  <img
+                    src="/images/nortal-tmobile-showcase.png"
+                    alt="Nortal T-Mobile mobile app interfaces showing prepaid activation, number porting, and retail integration workflows"
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+              </div>
             </motion.div>
 
             <motion.div
@@ -520,6 +536,8 @@ export default function Work() {
               src={modalImage}
               alt={modalImage.includes('enlighten') 
                 ? "Enlighten app portfolio showcase featuring mobile screens for notifications, daily wisdom, micro-practice, library, and favorites"
+                : modalImage.includes('nortal')
+                ? "Nortal T-Mobile mobile app interfaces showing prepaid activation, number porting, and retail integration workflows"
                 : "Pomodoro Flow app screenshot showing the minimal timer interface with focus and break modes"
               }
               className="max-w-full max-h-full object-contain rounded-lg"
