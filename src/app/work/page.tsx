@@ -498,6 +498,22 @@ export default function Work() {
                 <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Data Visualization</span>
                 <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Communication UX</span>
               </div>
+
+              <div className="mt-8">
+                <div 
+                  className="relative rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
+                  onClick={() => {
+                    setModalImage('/images/connectwise-manage-showcase.png')
+                    setIsModalOpen(true)
+                  }}
+                >
+                  <img
+                    src="/images/connectwise-manage-showcase.png"
+                    alt="ConnectWise Manage mobile app interfaces showing ticket management, time tracking, and CRM dashboards"
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+              </div>
             </motion.div>
           </div>
         </div>
@@ -520,6 +536,8 @@ export default function Work() {
               src={modalImage}
               alt={modalImage.includes('enlighten') 
                 ? "Enlighten app portfolio showcase featuring mobile screens for notifications, daily wisdom, micro-practice, library, and favorites"
+                : modalImage.includes('connectwise')
+                ? "ConnectWise Manage mobile app interfaces showing ticket management, time tracking, and CRM dashboards"
                 : "Pomodoro Flow app screenshot showing the minimal timer interface with focus and break modes"
               }
               className="max-w-full max-h-full object-contain rounded-lg"
