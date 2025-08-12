@@ -378,6 +378,127 @@ export default function Work() {
                 <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Enterprise Retail</span>
               </div>
             </motion.div>
+
+            <motion.div
+              className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-white/10"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.3 }}
+            >
+              <div className="mb-4">
+                <span className="inline-block bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm font-semibold">
+                  Fixed Wireless / Public Sector Innovation
+                </span>
+              </div>
+              
+              <h3 className="text-white text-2xl font-display font-bold mb-4">
+                WindTalker — Real-Time Monitoring, RF Planning, and Field Deployments
+              </h3>
+              
+              <h4 className="text-teal-400 text-lg font-semibold mb-6">
+                Delivering mission-critical network tools and rapid connectivity solutions for complex, high-stakes environments.
+              </h4>
+              
+              <div className="space-y-6">
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Problem</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    Fixed wireless networks in remote and tactical contexts require precision planning, real-time health visibility, and the ability to deploy infrastructure quickly — even in humanitarian or emergency situations.
+                  </p>
+                </div>
+                
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Solution</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    In dual roles as Product Owner and Business Analyst, I delivered Manager — a real-time network health monitoring platform with uptime alerts and performance analytics, Planner — an RF mapping and network planning tool for rapid, accurate deployment design, and Field Deployments — guided refugee camp mesh network setup and drone integration for public safety operations.
+                  </p>
+                </div>
+                
+                <div>
+                  <h5 className="text-white font-semibold mb-2">My Role</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    Product Owner and Business Analyst managing network monitoring platforms, RF planning tools, and field deployment coordination for mission-critical environments.
+                  </p>
+                </div>
+                
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Impact</h5>
+                  <div className="text-gray-300 space-y-3">
+                    <p>Reduced network downtime and improved monitoring accuracy.</p>
+                    <p>Cut RF planning time and increased deployment precision.</p>
+                    <p>Provided life-critical communications in crisis and public safety scenarios.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="flex flex-wrap gap-2 mt-6">
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Network Monitoring</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">RF Planning</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Emergency Deployments</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">SaaS Product Ownership</span>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-white/10"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.5 }}
+            >
+              <div className="mb-4">
+                <span className="inline-block bg-orange-500/20 text-orange-400 px-3 py-1 rounded-full text-sm font-semibold">
+                  Enterprise SaaS / B2B Product Management
+                </span>
+              </div>
+              
+              <h3 className="text-white text-2xl font-display font-bold mb-4">
+                ConnectWise Manage — Product Ownership Across Mobile, Communication, and CRM Platforms
+              </h3>
+              
+              <h4 className="text-teal-400 text-lg font-semibold mb-6">
+                Delivered cross-platform enhancements to improve usability, communication, and data visibility for IT service providers.
+              </h4>
+              
+              <div className="space-y-6">
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Problem</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    ConnectWise Manage serves thousands of IT professionals worldwide, but some workflows were outdated or inefficient — from mobile field operations to client communication and sales visibility. Users needed a faster, clearer, and more integrated experience across devices and departments.
+                  </p>
+                </div>
+                
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Solution</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    As Product Owner for CRM, Service, and System modules, I delivered Mobile App Updates – improved ticket management, remote access, and workflows for technicians on the go, Ticket Notes Redesign – added rich text formatting, inline images, avatars, and issue tags to improve clarity and reduce resolution times, and ConnectWise Now CRM Dashboards – built real-time sales and quote visibility into customizable dashboards, integrating pipeline, forecasting, and compliance metrics.
+                  </p>
+                </div>
+                
+                <div>
+                  <h5 className="text-white font-semibold mb-2">My Role</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    Product Owner for CRM, Service, and System modules managing mobile UX improvements, communication redesigns, and data visualization enhancements for enterprise IT service providers.
+                  </p>
+                </div>
+                
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Impact</h5>
+                  <div className="text-gray-300 space-y-3">
+                    <p>Reduced mobile ticket handling time by ~25% and boosted app adoption by 40%.</p>
+                    <p>Improved communication clarity and reduced note review time for technicians and clients.</p>
+                    <p>Enabled instant CRM data access for sales teams, improving forecast accuracy and decision-making speed.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="flex flex-wrap gap-2 mt-6">
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Product Ownership</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">SaaS</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Mobile UX</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Data Visualization</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Communication UX</span>
+              </div>
+            </motion.div>
           </div>
         </div>
       </main>
