@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import Lenis from 'lenis'
 import Sidebar from '@/components/Sidebar'
+import DiagramGallery from '@/components/DiagramGallery'
 
 export default function Work() {
   const lenisRef = useRef<Lenis | null>(null)
@@ -377,6 +378,8 @@ export default function Work() {
                 <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Agile Delivery</span>
                 <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Enterprise Retail</span>
               </div>
+              
+              <DiagramGallery />
             </motion.div>
 
             <motion.div
