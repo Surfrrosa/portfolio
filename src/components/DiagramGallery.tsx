@@ -8,22 +8,22 @@ type Item = {
 
 const items = [
   {
-    src: "/diagrams/nortal/01_prepaid_activation.png?v=3",
+    src: "/diagrams/nortal/01_prepaid_activation.png?v=4",
     alt: "Prepaid activation sequence diagram",
     label: "Prepaid Activation",
   },
   {
-    src: "/diagrams/nortal/02_number_port_in.png?v=3",
+    src: "/diagrams/nortal/02_number_port_in.png?v=4",
     alt: "Number port-in sequence diagram",
     label: "Number Port-In",
   },
   {
-    src: "/diagrams/nortal/03_add_a_line.png?v=3",
+    src: "/diagrams/nortal/03_add_a_line.png?v=4",
     alt: "Add-a-Line sequence diagram",
     label: "Add-a-Line (AAL)",
   },
   {
-    src: "/diagrams/nortal/04_cart_payment_otp.png?v=3",
+    src: "/diagrams/nortal/04_cart_payment_otp.png?v=4",
     alt: "Cart, payment & OTP sequence diagram",
     label: "Cart, Payment & OTP",
   },
