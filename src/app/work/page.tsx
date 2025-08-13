@@ -457,7 +457,7 @@ export default function Work() {
                   <img
                     src="/media/windtalker/personas.svg"
                     alt="WindTalker personas: Operator, Technician, Mission Lead with goals and pain points"
-                    className="w-full h-auto object-contain"
+                    className="w-full h-auto max-h-64 md:max-h-72 object-contain"
                     loading="lazy"
                   />
                 </div>
@@ -465,7 +465,7 @@ export default function Work() {
                   <img
                     src="/media/windtalker/impact.svg"
                     alt="WindTalker impact metrics: Deployment Time 6 hrs to 2 hrs, Activation Success Rate +22%, Training Time –50%"
-                    className="w-full h-auto object-contain"
+                    className="w-full h-auto max-h-64 md:max-h-72 object-contain"
                     loading="lazy"
                   />
                 </div>
@@ -473,7 +473,7 @@ export default function Work() {
                   <img
                     src="/media/windtalker/journey.svg"
                     alt="WindTalker before/after journey: manual setup, frequency mapping, extended training to automated setup, instant frequency scan, quick start guide"
-                    className="w-full h-auto object-contain"
+                    className="w-full h-auto max-h-64 md:max-h-72 object-contain"
                     loading="lazy"
                   />
                 </div>
@@ -557,12 +557,12 @@ export default function Work() {
                   <img
                     src="/images/connectwise-manage-showcase.png"
                     alt="ConnectWise Manage mobile app interfaces showing ticket management, time tracking, and CRM dashboards"
-                    className="w-full h-auto object-cover"
+                    className="w-full h-auto max-h-64 md:max-h-72 object-contain"
                   />
                 </div>
 
                 <section
-                  className="mt-4 rounded-xl border border-white/10 bg-white/[0.03] p-4"
+                  className="mt-4 rounded-xl border border-white/10 bg-white/[0.03] p-3"
                   aria-label="ConnectWise Release Notes"
                 >
                   <div className="mb-2 text-sm font-semibold text-white/90">Release Notes</div>
