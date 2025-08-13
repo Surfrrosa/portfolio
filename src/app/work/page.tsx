@@ -266,7 +266,7 @@ export default function Work() {
                 From start to focus in one tap, a minimal 25/5 pomodoro timer with zero clutter.
               </h4>
               
-              <div className="space-y-6">
+              <div className="space-y-4">
                 <div>
                   <h5 className="text-white font-semibold mb-2">Problem</h5>
                   <p className="text-gray-300 leading-relaxed">
@@ -290,7 +290,7 @@ export default function Work() {
                 
                 <div>
                   <h5 className="text-white font-semibold mb-2">Impact</h5>
-                  <div className="text-gray-300 space-y-3">
+                  <div className="text-gray-300 space-y-2">
                     <p>Created a seamless, minimal UX that keeps users focused without decision fatigue.</p>
                     <p>Improved testing speed with a dedicated developer mode.</p>
                     <p>Established safe, AI-assisted branch workflow to prevent future merge conflicts.</p>
@@ -298,13 +298,13 @@ export default function Work() {
                 </div>
               </div>
               
-              <div className="flex flex-wrap gap-2 mt-6">
+              <div className="flex flex-wrap gap-2 mt-4">
                 <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Mobile Development</span>
                 <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Product Design</span>
                 <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Agile Development</span>
               </div>
 
-              <div className="mt-8">
+              <div className="mt-6">
                 <div className="mb-2">
                   <span className="inline-block bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs tracking-wide">
                     Mobile App
@@ -550,39 +550,39 @@ export default function Work() {
                     </div>
                   </div>
                 </div>
-                <div className="relative rounded-lg border border-white/10 bg-black/30 p-6">
-                  <h5 className="text-white font-semibold mb-6">WindTalker — Impact Metrics</h5>
-                  <div className="space-y-8">
-                    <div className="flex items-center gap-4">
-                      <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="relative rounded-lg border border-white/10 bg-black/30 p-4">
+                  <h5 className="text-white font-semibold mb-4">WindTalker — Impact Metrics</h5>
+                  <div className="space-y-5">
+                    <div className="flex items-center gap-3">
+                      <svg className="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                       <div>
-                        <div className="text-4xl font-bold text-white" style={{textShadow: '0 0 20px rgba(96, 165, 250, 0.5)'}}>
+                        <div className="text-3xl font-bold text-white" style={{textShadow: '0 0 20px rgba(96, 165, 250, 0.5)'}}>
                           6 hrs → 2 hrs
                         </div>
                         <div className="text-xs uppercase tracking-wider text-gray-400 mt-1">Time to Deploy</div>
                       </div>
                     </div>
                     
-                    <div className="flex items-center gap-4">
-                      <svg className="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="flex items-center gap-3">
+                      <svg className="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                       <div>
-                        <div className="text-4xl font-bold text-white" style={{textShadow: '0 0 20px rgba(52, 211, 153, 0.5)'}}>
+                        <div className="text-3xl font-bold text-white" style={{textShadow: '0 0 20px rgba(52, 211, 153, 0.5)'}}>
                           +22%
                         </div>
                         <div className="text-xs uppercase tracking-wider text-gray-400 mt-1">Reliability</div>
                       </div>
                     </div>
                     
-                    <div className="flex items-center gap-4">
-                      <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="flex items-center gap-3">
+                      <svg className="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                       </svg>
                       <div>
-                        <div className="text-4xl font-bold text-white" style={{textShadow: '0 0 20px rgba(167, 139, 250, 0.5)'}}>
+                        <div className="text-3xl font-bold text-white" style={{textShadow: '0 0 20px rgba(167, 139, 250, 0.5)'}}>
                           −50%
                         </div>
                         <div className="text-xs uppercase tracking-wider text-gray-400 mt-1">Onboarding</div>
@@ -590,38 +590,38 @@ export default function Work() {
                     </div>
                   </div>
                 </div>
-                <div className="relative rounded-lg border border-white/10 bg-black/30 p-6">
-                  <h5 className="text-white font-semibold mb-6">WindTalker — Before / After</h5>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="relative rounded-lg border border-white/10 bg-black/30 p-4">
+                  <h5 className="text-white font-semibold mb-4">WindTalker — Before / After</h5>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <div className="text-xs uppercase tracking-wider text-gray-400 mb-4 font-semibold">Before</div>
-                      <div className="space-y-4">
-                        <div className="flex items-center gap-4 p-3 rounded-lg bg-slate-800/50 border border-slate-700">
-                          <svg className="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="text-xs uppercase tracking-wider text-gray-400 mb-3 font-semibold">Before</div>
+                      <div className="space-y-3">
+                        <div className="flex items-center gap-3 p-2 rounded-lg bg-slate-800/50 border border-slate-700">
+                          <svg className="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                           </svg>
                           <span className="text-gray-300 text-sm">Manual setup</span>
-                          <svg className="w-4 h-4 text-gray-500 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <svg className="w-3 h-3 text-gray-500 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                           </svg>
                         </div>
                         
-                        <div className="flex items-center gap-4 p-3 rounded-lg bg-slate-800/50 border border-slate-700">
-                          <svg className="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div className="flex items-center gap-3 p-2 rounded-lg bg-slate-800/50 border border-slate-700">
+                          <svg className="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
                           </svg>
                           <span className="text-gray-300 text-sm">Frequency mapping</span>
-                          <svg className="w-4 h-4 text-gray-500 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <svg className="w-3 h-3 text-gray-500 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                           </svg>
                         </div>
                         
-                        <div className="flex items-center gap-4 p-3 rounded-lg bg-slate-800/50 border border-slate-700">
-                          <svg className="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div className="flex items-center gap-3 p-2 rounded-lg bg-slate-800/50 border border-slate-700">
+                          <svg className="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                           </svg>
                           <span className="text-gray-300 text-sm">Extended training</span>
-                          <svg className="w-4 h-4 text-gray-500 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <svg className="w-3 h-3 text-gray-500 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                           </svg>
                         </div>
@@ -629,24 +629,24 @@ export default function Work() {
                     </div>
                     
                     <div>
-                      <div className="text-xs uppercase tracking-wider text-gray-400 mb-4 font-semibold">After</div>
-                      <div className="space-y-4">
-                        <div className="flex items-center gap-4 p-3 rounded-lg bg-green-900/20 border border-green-700/50">
-                          <svg className="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="text-xs uppercase tracking-wider text-gray-400 mb-3 font-semibold">After</div>
+                      <div className="space-y-3">
+                        <div className="flex items-center gap-3 p-2 rounded-lg bg-green-900/20 border border-green-700/50">
+                          <svg className="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                           </svg>
                           <span className="text-gray-300 text-sm">Automated setup</span>
                         </div>
                         
-                        <div className="flex items-center gap-4 p-3 rounded-lg bg-green-900/20 border border-green-700/50">
-                          <svg className="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div className="flex items-center gap-3 p-2 rounded-lg bg-green-900/20 border border-green-700/50">
+                          <svg className="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
                           </svg>
                           <span className="text-gray-300 text-sm">Instant frequency scan</span>
                         </div>
                         
-                        <div className="flex items-center gap-4 p-3 rounded-lg bg-green-900/20 border border-green-700/50">
-                          <svg className="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div className="flex items-center gap-3 p-2 rounded-lg bg-green-900/20 border border-green-700/50">
+                          <svg className="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                           </svg>
                           <span className="text-gray-300 text-sm">Quick start guide</span>
