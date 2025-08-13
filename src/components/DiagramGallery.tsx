@@ -50,21 +50,18 @@ export default function DiagramGallery() {
           <button
             key={it.src}
             onClick={() => setActive(it)}
-            className="group relative w-full rounded-xl border border-white/10 bg-white/5 p-2 hover:bg-white/10 transition"
+            className="group rounded-xl bg-white p-2 shadow-sm ring-1 ring-black/5 hover:shadow-md transition"
             aria-label={`Open ${it.label} diagram`}
           >
-            {/* Keep aspect ratio and avoid layout shift */}
-            <div className="aspect-video w-full overflow-hidden rounded-lg bg-white/5">
+            <div className="aspect-video overflow-hidden rounded-lg">
               <img
                 src={it.src}
                 alt={it.alt}
+                className="h-full w-full object-contain"
                 loading="lazy"
-                className="h-full w-full object-contain filter brightness-110 contrast-110"
               />
             </div>
-            <div className="pointer-events-none absolute bottom-2 left-2 right-2 rounded-md bg-black/40 px-2 py-1 text-[11px] text-zinc-200 opacity-0 backdrop-blur-sm transition group-hover:opacity-100">
-              {it.label}
-            </div>
+            <div className="mt-1 text-xs text-zinc-600">{it.label}</div>
           </button>
         ))}
       </div>
@@ -89,7 +86,7 @@ export default function DiagramGallery() {
             >
               Close
             </button>
-            <div className="max-h-[80vh] overflow-auto">
+            <div className="max-h-[80vh] overflow-auto rounded-lg bg-white p-2">
               <img
                 src={active.src}
                 alt={active.alt}
