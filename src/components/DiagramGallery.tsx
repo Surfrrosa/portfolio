@@ -8,22 +8,22 @@ type Item = {
 
 const items = [
   {
-    src: "/diagrams/nortal/01_prepaid_activation.png?v=2",
+    src: "/diagrams/nortal/01_prepaid_activation.png?v=3",
     alt: "Prepaid activation sequence diagram",
     label: "Prepaid Activation",
   },
   {
-    src: "/diagrams/nortal/02_number_port_in.png?v=2",
+    src: "/diagrams/nortal/02_number_port_in.png?v=3",
     alt: "Number port-in sequence diagram",
     label: "Number Port-In",
   },
   {
-    src: "/diagrams/nortal/03_add_a_line.png?v=2",
+    src: "/diagrams/nortal/03_add_a_line.png?v=3",
     alt: "Add-a-Line sequence diagram",
     label: "Add-a-Line (AAL)",
   },
   {
-    src: "/diagrams/nortal/04_cart_payment_otp.png?v=2",
+    src: "/diagrams/nortal/04_cart_payment_otp.png?v=3",
     alt: "Cart, payment & OTP sequence diagram",
     label: "Cart, Payment & OTP",
   },
@@ -97,7 +97,7 @@ export default function DiagramGallery() {
                   download
                   className="rounded-md bg-white/10 px-2 py-1 text-xs text-zinc-100 hover:bg-white/20"
                 >
-                  Download SVG
+                  Download PNG
                 </a>
                 <button
                   onClick={() => setActive(null)}
