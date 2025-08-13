@@ -54,12 +54,12 @@ export default function DiagramGallery() {
             aria-label={`Open ${it.label} diagram`}
           >
             {/* Keep aspect ratio and avoid layout shift */}
-            <div className="aspect-video w-full overflow-hidden rounded-lg bg-white/5">
+            <div className="aspect-video w-full overflow-hidden rounded-lg bg-white">
               <img
                 src={it.src}
                 alt={it.alt}
                 loading="lazy"
-                className="h-full w-full object-contain filter brightness-110 contrast-110"
+                className="h-full w-full object-contain"
               />
             </div>
             <div className="pointer-events-none absolute bottom-2 left-2 right-2 rounded-md bg-black/40 px-2 py-1 text-[11px] text-zinc-200 opacity-0 backdrop-blur-sm transition group-hover:opacity-100">
@@ -90,11 +90,13 @@ export default function DiagramGallery() {
               Close
             </button>
             <div className="max-h-[80vh] overflow-auto">
-              <img
-                src={active.src}
-                alt={active.alt}
-                className="mx-auto h-auto w-full object-contain"
-              />
+              <div className="mx-auto w-full rounded-lg bg-white p-2">
+                <img
+                  src={active.src}
+                  alt={active.alt}
+                  className="h-auto w-full object-contain"
+                />
+              </div>
             </div>
             <div className="mt-2 text-center text-sm text-zinc-300">{active.label}</div>
           </div>
