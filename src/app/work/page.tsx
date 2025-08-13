@@ -305,6 +305,11 @@ export default function Work() {
               </div>
 
               <div className="mt-8">
+                <div className="mb-2">
+                  <span className="inline-block bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs tracking-wide">
+                    Mobile App
+                  </span>
+                </div>
                 <div 
                   className="relative rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
                   onClick={() => {
@@ -317,6 +322,11 @@ export default function Work() {
                     alt="Pomodoro Flow app preview showing 25/5 timer interface"
                     className="w-48 h-auto object-contain mx-auto"
                   />
+                </div>
+                <div className="mt-4 mb-2">
+                  <span className="inline-block bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs tracking-wide">
+                    Web App
+                  </span>
                 </div>
                 <PomodoroMedia />
               </div>
