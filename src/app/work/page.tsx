@@ -333,7 +333,7 @@ export default function Work() {
             </motion.div>
 
             <motion.div
-              className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-white/10"
+              className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.1 }}
