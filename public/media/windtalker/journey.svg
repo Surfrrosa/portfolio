@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#121212"/>
+      <stop offset="1" stop-color="#0f1115"/>
+    </linearGradient>
+    <style>
+      .title{fill:#e5e7eb;font:600 40px ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
+      .colTitle{fill:#a1a1aa;font:700 28px ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial;letter-spacing:.08em;text-transform:uppercase}
+      .label{fill:#cbd5e1;font:500 22px ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
+      .panel{fill:#0b0d12;fill-opacity:.8;stroke:#1f2937}
+      .icon{fill:#60a5fa}
+      .icon2{fill:#34d399}
+      .arrow{stroke:#64748b;stroke-width:2;marker-end:url(#mend)}
+    </style>
+    <marker id="mend" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#64748b"/>
+    </marker>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg3)"/>
+  <text x="60" y="90" class="title">WindTalker — Before / After</text>
+
+  <g transform="translate(60,140)">
+    <rect width="1480" height="660" rx="24" class="panel"/>
+    <g transform="translate(80,80)">
+      <text x="0" y="-20" class="colTitle">Before</text>
+      <g transform="translate(0,20)">
+        <rect x="0" y="0" width="380" height="140" rx="16" fill="#0f172a" opacity=".6" stroke="#1f2937"/>
+        <rect x="24" y="24" width="36" height="36" rx="8" class="icon"/>
+        <text x="80" y="50" class="label">Manual setup</text>
+
+        <rect x="0" y="180" width="380" height="140" rx="16" fill="#0f172a" opacity=".6" stroke="#1f2937"/>
+        <circle cx="42" cy="214" r="18" class="icon"/>
+        <text x="80" y="230" class="label">Frequency mapping</text>
+
+        <rect x="0" y="360" width="380" height="140" rx="16" fill="#0f172a" opacity=".6" stroke="#1f2937"/>
+        <polygon points="24,384 64,384 44,424" class="icon"/>
+        <text x="80" y="410" class="label">Extended training</text>
+      </g>
+    </g>
+
+    <line x1="560" y1="150" x2="920" y2="150" class="arrow"/>
+    <line x1="560" y1="330" x2="920" y2="330" class="arrow"/>
+    <line x1="560" y1="510" x2="920" y2="510" class="arrow"/>
+
+    <g transform="translate(980,80)">
+      <text x="0" y="-20" class="colTitle">After</text>
+      <g transform="translate(0,20)">
+        <rect x="0" y="0" width="380" height="140" rx="16" fill="#052e2b" opacity=".6" stroke="#1f2937"/>
+        <rect x="24" y="24" width="36" height="36" rx="8" class="icon2"/>
+        <text x="80" y="50" class="label">Automated setup</text>
+
+        <rect x="0" y="180" width="380" height="140" rx="16" fill="#052e2b" opacity=".6" stroke="#1f2937"/>
+        <circle cx="42" cy="214" r="18" class="icon2"/>
+        <text x="80" y="230" class="label">Instant frequency scan</text>
+
+        <rect x="0" y="360" width="380" height="140" rx="16" fill="#052e2b" opacity=".6" stroke="#1f2937"/>
+        <polygon points="24,384 64,384 44,424" class="icon2"/>
+        <text x="80" y="410" class="label">Quick start guide</text>
+      </g>
+    </g>
+  </g>
+</svg>

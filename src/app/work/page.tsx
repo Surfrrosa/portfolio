@@ -61,7 +61,7 @@ export default function Work() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <motion.div
-              className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-white/10"
+              className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
@@ -164,7 +164,7 @@ export default function Work() {
             </motion.div>
 
             <motion.div
-              className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-white/10"
+              className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.7 }}
@@ -247,7 +247,7 @@ export default function Work() {
             </motion.div>
 
             <motion.div
-              className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-white/10"
+              className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.9 }}
@@ -395,7 +395,7 @@ export default function Work() {
             </motion.div>
 
             <motion.div
-              className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-white/10"
+              className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.3 }}
@@ -452,10 +452,37 @@ export default function Work() {
                 <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Emergency Deployments</span>
                 <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">SaaS Product Ownership</span>
               </div>
+              <div className="mt-8 space-y-4" aria-label="WindTalker visuals">
+                <div className="relative rounded-lg overflow-hidden border border-white/10 bg-black/30">
+                  <img
+                    src="/media/windtalker/personas.svg"
+                    alt="WindTalker personas: Operator, Technician, Mission Lead with goals and pain points"
+                    className="w-full h-auto max-h-64 md:max-h-72 object-contain"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="relative rounded-lg overflow-hidden border border-white/10 bg-black/30">
+                  <img
+                    src="/media/windtalker/impact.svg"
+                    alt="WindTalker impact metrics: Deployment Time 6 hrs to 2 hrs, Activation Success Rate +22%, Training Time –50%"
+                    className="w-full h-auto max-h-64 md:max-h-72 object-contain"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="relative rounded-lg overflow-hidden border border-white/10 bg-black/30">
+                  <img
+                    src="/media/windtalker/journey.svg"
+                    alt="WindTalker before/after journey: manual setup, frequency mapping, extended training to automated setup, instant frequency scan, quick start guide"
+                    className="w-full h-auto max-h-64 md:max-h-72 object-contain"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+
             </motion.div>
 
             <motion.div
-              className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-white/10"
+              className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.5 }}
@@ -515,6 +542,11 @@ export default function Work() {
               </div>
 
               <div className="mt-8">
+                <div className="mb-3">
+                  <span className="text-xs uppercase tracking-wider text-zinc-300">
+                    ConnectWise Mobile App
+                  </span>
+                </div>
                 <div 
                   className="relative rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
                   onClick={() => {
@@ -525,9 +557,54 @@ export default function Work() {
                   <img
                     src="/images/connectwise-manage-showcase.png"
                     alt="ConnectWise Manage mobile app interfaces showing ticket management, time tracking, and CRM dashboards"
-                    className="w-full h-auto object-cover"
+                    className="w-full h-auto max-h-64 md:max-h-72 object-contain"
                   />
                 </div>
+
+                <section
+                  className="mt-4 rounded-xl border border-white/10 bg-white/[0.03] p-3"
+                  aria-label="ConnectWise Release Notes"
+                >
+                  <div className="mb-2 text-sm font-semibold text-white/90">Release Notes</div>
+                  <ul className="space-y-2 text-sm">
+                    <li>
+                      <a
+                        href="https://www.connectwise.com/blog/new-connectwise-mobile-app#:~:text=With%20our%20core%20values%20to%20guide%20us%2C,techs%20complete%20assigned%20tasks%20quickly%20and%20efficiently"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-2 text-teal-400 hover:text-teal-300"
+                        title="ConnectWise Mobile App"
+                      >
+                        <span className="inline-block h-1.5 w-1.5 rounded-full bg-teal-400"></span>
+                        ConnectWise Mobile App
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.connectwise.com/blog/new-connectwise-manage-features"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-2 text-teal-400 hover:text-teal-300"
+                        title="Ticket Notes"
+                      >
+                        <span className="inline-block h-1.5 w-1.5 rounded-full bg-teal-400"></span>
+                        Ticket Notes
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.connectwise.com/blog/introducing-connectwise-now-a-new-dashboard-for-your-data"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-2 text-teal-400 hover:text-teal-300"
+                        title="ConnectWise Now Dashboard"
+                      >
+                        <span className="inline-block h-1.5 w-1.5 rounded-full bg-teal-400"></span>
+                        ConnectWise Now Dashboard
+                      </a>
+                    </li>
+                  </ul>
+                </section>
               </div>
             </motion.div>
           </div>
