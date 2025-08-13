@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import Lenis from 'lenis'
 import Sidebar from '@/components/Sidebar'
 import DiagramGallery from '@/components/DiagramGallery'
+import PomodoroMedia from '@/components/PomodoroMedia'
 
 export default function Work() {
   const lenisRef = useRef<Lenis | null>(null)
@@ -317,6 +318,7 @@ export default function Work() {
                     className="w-48 h-auto object-contain mx-auto"
                   />
                 </div>
+                <PomodoroMedia />
               </div>
             </motion.div>
 
