@@ -515,6 +515,17 @@ export default function Work() {
               </div>
 
               <div className="mt-8">
+                <div className="mb-3 flex items-center gap-2">
+                  <img
+                    src="https://app.devin.ai/attachments/f268aa8c-c5b6-40ad-bd3d-45862032286c/connectwise-white-logo.webp"
+                    alt=""
+                    aria-hidden="true"
+                    className="h-5 w-5 object-contain opacity-90"
+                  />
+                  <span className="text-xs uppercase tracking-wider text-zinc-300">
+                    ConnectWise Mobile App
+                  </span>
+                </div>
                 <div 
                   className="relative rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
                   onClick={() => {
@@ -528,6 +539,48 @@ export default function Work() {
                     className="w-full h-auto object-cover"
                   />
                 </div>
+
+                <section className="mt-4 rounded-xl border border-white/10 bg-white/[0.03] p-4">
+                  <div className="mb-2 text-sm font-semibold text-white/90">Release Notes</div>
+                  <ul className="space-y-2 text-sm">
+                    <li>
+                      <a
+                        href="https://www.connectwise.com/blog/new-connectwise-mobile-app#:~:text=With%20our%20core%20values%20to%20guide%20us%2C,techs%20complete%20assigned%20tasks%20quickly%20and%20efficiently"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-2 text-teal-400 hover:text-teal-300"
+                        title="ConnectWise Mobile App"
+                      >
+                        <span className="inline-block h-1.5 w-1.5 rounded-full bg-teal-400"></span>
+                        ConnectWise Mobile App
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.connectwise.com/blog/new-connectwise-manage-features"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-2 text-teal-400 hover:text-teal-300"
+                        title="Ticket Notes"
+                      >
+                        <span className="inline-block h-1.5 w-1.5 rounded-full bg-teal-400"></span>
+                        Ticket Notes
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.connectwise.com/blog/introducing-connectwise-now-a-new-dashboard-for-your-data"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-2 text-teal-400 hover:text-teal-300"
+                        title="ConnectWise Now Dashboard"
+                      >
+                        <span className="inline-block h-1.5 w-1.5 rounded-full bg-teal-400"></span>
+                        ConnectWise Now Dashboard
+                      </a>
+                    </li>
+                  </ul>
+                </section>
               </div>
             </motion.div>
           </div>
