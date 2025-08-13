@@ -51,10 +51,10 @@ export default function PomodoroMedia() {
           Radical simplicity — 25/5
         </p>
         <a
-          aria-disabled
-          role="button"
+          href="https://pomodoroflow-brown.vercel.app/"
+          target="_blank"
+          rel="noreferrer"
           className="inline-flex items-center gap-1 rounded-lg bg-teal-500/90 px-3 py-1.5 text-sm font-medium text-white hover:bg-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-400/60"
-          title="Live demo coming soon"
         >
           Try It Live →
         </a>
