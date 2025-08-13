@@ -560,6 +560,34 @@ export default function Work() {
                     className="w-full h-auto max-h-64 md:max-h-72 object-contain"
                   />
                 </div>
+                <div className="mt-4">
+                  <div className="mb-2">
+                    <span className="text-xs uppercase tracking-wider text-zinc-300">
+                      ConnectWise Now Dashboard
+                    </span>
+                  </div>
+                  <div className="rounded-xl border border-white/10 bg-white/[0.03] p-3">
+                    <div className="grid grid-cols-2 gap-3 max-md:grid-cols-1">
+                      <div className="relative rounded-lg overflow-hidden border border-white/10 bg-black/40">
+                        <img
+                          src="/media/connectwise/dashboard-1.png"
+                          alt="ConnectWise Now dashboard: service summary with trends"
+                          className="w-full h-auto max-h-40 md:max-h-48 object-contain"
+                          loading="lazy"
+                        />
+                      </div>
+                      <div className="relative rounded-lg overflow-hidden border border-white/10 bg-black/40">
+                        <img
+                          src="/media/connectwise/dashboard-2.png"
+                          alt="ConnectWise Now dashboard: device and patching status tiles"
+                          className="w-full h-auto max-h-40 md:max-h-48 object-contain"
+                          loading="lazy"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
 
                 <section
                   className="mt-4 rounded-xl border border-white/10 bg-white/[0.03] p-3"
