@@ -515,13 +515,7 @@ export default function Work() {
               </div>
 
               <div className="mt-8">
-                <div className="mb-3 flex items-center gap-2">
-                  <img
-                    src="https://app.devin.ai/attachments/f268aa8c-c5b6-40ad-bd3d-45862032286c/connectwise-white-logo.webp"
-                    alt=""
-                    aria-hidden="true"
-                    className="h-5 w-5 object-contain opacity-90"
-                  />
+                <div className="mb-3">
                   <span className="text-xs uppercase tracking-wider text-zinc-300">
                     ConnectWise Mobile App
                   </span>
@@ -540,7 +534,10 @@ export default function Work() {
                   />
                 </div>
 
-                <section className="mt-4 rounded-xl border border-white/10 bg-white/[0.03] p-4">
+                <section
+                  className="mt-4 rounded-xl border border-white/10 bg-white/[0.03] p-4"
+                  aria-label="ConnectWise Release Notes"
+                >
                   <div className="mb-2 text-sm font-semibold text-white/90">Release Notes</div>
                   <ul className="space-y-2 text-sm">
                     <li>
