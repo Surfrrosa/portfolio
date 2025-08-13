@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#121212"/>
+      <stop offset="1" stop-color="#0f1115"/>
+    </linearGradient>
+    <style>
+      .title{fill:#e5e7eb;font:600 40px ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
+      .stat{fill:#e5e7eb;font:700 64px ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
+      .sub{fill:#94a3b8;font:500 22px ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial;letter-spacing:.08em;text-transform:uppercase}
+      .panel{fill:#0b0d12;fill-opacity:.8;stroke:#1f2937}
+      .ac1{fill:#60a5fa}
+      .ac2{fill:#34d399}
+      .ac3{fill:#a78bfa}
+    </style>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg2)"/>
+  <text x="60" y="90" class="title">WindTalker — Impact Metrics</text>
+
+  <g transform="translate(60,140)">
+    <rect width="1480" height="660" rx="24" class="panel"/>
+    <g transform="translate(90,130)">
+      <circle cx="0" cy="-30" r="6" class="ac1"/>
+      <text x="0" y="0" class="stat">Deployment Time: 6 hrs → 2 hrs</text>
+      <text x="0" y="42" class="sub">Time to deploy</text>
+    </g>
+    <g transform="translate(90,330)">
+      <circle cx="0" cy="-30" r="6" class="ac2"/>
+      <text x="0" y="0" class="stat">Activation Success Rate: +22%</text>
+      <text x="0" y="42" class="sub">Reliability</text>
+    </g>
+    <g transform="translate(90,530)">
+      <circle cx="0" cy="-30" r="6" class="ac3"/>
+      <text x="0" y="0" class="stat">Training Time: –50%</text>
+      <text x="0" y="42" class="sub">Onboarding</text>
+    </g>
+  </g>
+</svg>

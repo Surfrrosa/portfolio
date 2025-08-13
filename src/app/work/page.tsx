@@ -61,7 +61,7 @@ export default function Work() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <motion.div
-              className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-white/10"
+              className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
@@ -164,7 +164,7 @@ export default function Work() {
             </motion.div>
 
             <motion.div
-              className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-white/10"
+              className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.7 }}
@@ -247,7 +247,7 @@ export default function Work() {
             </motion.div>
 
             <motion.div
-              className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-white/10"
+              className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.9 }}
@@ -395,7 +395,7 @@ export default function Work() {
             </motion.div>
 
             <motion.div
-              className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-white/10"
+              className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.3 }}
@@ -452,10 +452,37 @@ export default function Work() {
                 <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Emergency Deployments</span>
                 <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">SaaS Product Ownership</span>
               </div>
+              <div className="mt-8 space-y-4" aria-label="WindTalker visuals">
+                <div className="relative rounded-lg overflow-hidden border border-white/10 bg-black/30">
+                  <img
+                    src="/media/windtalker/personas.svg"
+                    alt="WindTalker personas: Operator, Technician, Mission Lead with goals and pain points"
+                    className="w-full h-auto object-contain"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="relative rounded-lg overflow-hidden border border-white/10 bg-black/30">
+                  <img
+                    src="/media/windtalker/impact.svg"
+                    alt="WindTalker impact metrics: Deployment Time 6 hrs to 2 hrs, Activation Success Rate +22%, Training Time –50%"
+                    className="w-full h-auto object-contain"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="relative rounded-lg overflow-hidden border border-white/10 bg-black/30">
+                  <img
+                    src="/media/windtalker/journey.svg"
+                    alt="WindTalker before/after journey: manual setup, frequency mapping, extended training to automated setup, instant frequency scan, quick start guide"
+                    className="w-full h-auto object-contain"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+
             </motion.div>
 
             <motion.div
-              className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-white/10"
+              className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.5 }}
