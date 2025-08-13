@@ -6,7 +6,7 @@ type Item = {
   label: string;
 };
 
-const items: Item[] = [
+const items = [
   {
     src: "/diagrams/nortal/01_prepaid_activation.svg",
     alt: "Prepaid activation sequence diagram",
@@ -20,14 +20,14 @@ const items: Item[] = [
   {
     src: "/diagrams/nortal/03_add_a_line.svg",
     alt: "Add-a-Line sequence diagram",
-    label: "Add-a-Line",
+    label: "Add-a-Line (AAL)",
   },
   {
     src: "/diagrams/nortal/04_cart_payment_otp.svg",
     alt: "Cart, payment & OTP sequence diagram",
     label: "Cart, Payment & OTP",
   },
-];
+] as const;
 
 export default function DiagramGallery() {
   const [active, setActive] = React.useState<Item | null>(null);
@@ -50,21 +50,18 @@ export default function DiagramGallery() {
           <button
             key={it.src}
             onClick={() => setActive(it)}
-            className="group relative w-full rounded-xl border border-white/10 bg-white/5 p-2 hover:bg-white/10 transition"
+            className="group rounded-xl bg-white p-2 shadow-sm ring-1 ring-black/5 hover:shadow-md transition"
             aria-label={`Open ${it.label} diagram`}
           >
-            {/* Keep aspect ratio and avoid layout shift */}
-            <div className="aspect-video w-full overflow-hidden rounded-lg bg-white/5">
+            <div className="aspect-video overflow-hidden rounded-lg">
               <img
                 src={it.src}
                 alt={it.alt}
+                className="h-full w-full object-contain"
                 loading="lazy"
-                className="h-full w-full object-contain filter brightness-110 contrast-110"
               />
             </div>
-            <div className="pointer-events-none absolute bottom-2 left-2 right-2 rounded-md bg-black/40 px-2 py-1 text-[11px] text-zinc-200 opacity-0 backdrop-blur-sm transition group-hover:opacity-100">
-              {it.label}
-            </div>
+            <div className="mt-1 text-[11px] text-zinc-400 text-center">{it.label}</div>
           </button>
         ))}
       </div>
@@ -74,29 +71,59 @@ export default function DiagramGallery() {
         <div
           role="dialog"
           aria-modal="true"
-          aria-label={`${active.label} full-size diagram`}
+          aria-label={`${active.label} diagram`}
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4"
           onClick={() => setActive(null)}
         >
           <div
-            className="relative w-full max-w-5xl rounded-2xl bg-zinc-900/90 p-4 shadow-xl"
+            className="relative w-full max-w-5xl rounded-2xl bg-zinc-900/95 shadow-xl ring-1 ring-white/10"
             onClick={(e) => e.stopPropagation()}
           >
-            <button
-              onClick={() => setActive(null)}
-              className="absolute right-3 top-3 rounded-md bg-white/10 px-2 py-1 text-sm text-zinc-100 hover:bg-white/20"
-              aria-label="Close"
-            >
-              Close
-            </button>
-            <div className="max-h-[80vh] overflow-auto">
+            {/* Header */}
+            <div className="flex items-center justify-between gap-3 border-b border-white/10 px-4 py-3">
+              <h3 className="text-base font-medium text-zinc-50">{active.label}</h3>
+              <div className="flex items-center gap-2">
+                {/* Optional: open full size and download */}
+                <a
+                  href={active.src}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded-md bg-white/10 px-2 py-1 text-xs text-zinc-100 hover:bg-white/20"
+                >
+                  Open Full Size
+                </a>
+                <a
+                  href={active.src}
+                  download
+                  className="rounded-md bg-white/10 px-2 py-1 text-xs text-zinc-100 hover:bg-white/20"
+                >
+                  Download SVG
+                </a>
+                <button
+                  onClick={() => setActive(null)}
+                  className="rounded-md bg-white/10 px-2 py-1 text-xs text-zinc-100 hover:bg-white/20"
+                  aria-label="Close"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+
+            {/* Image area with light canvas so diagrams pop */}
+            <div className="max-h-[70vh] overflow-auto bg-white p-3">
               <img
                 src={active.src}
                 alt={active.alt}
                 className="mx-auto h-auto w-full object-contain"
               />
             </div>
-            <div className="mt-2 text-center text-sm text-zinc-300">{active.label}</div>
+
+            {/* Caption / disclaimer */}
+            <div className="px-4 py-3 text-xs leading-relaxed text-zinc-300">
+              Conceptual diagram illustrating the workflow I managed as Technical Product
+              Owner. Labels are generic and do not depict proprietary systems or exact
+              production architecture.
+            </div>
           </div>
         </div>
       )}
