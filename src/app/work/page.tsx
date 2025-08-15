@@ -651,28 +651,6 @@ export default function Work() {
                 <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Emergency Deployments</span>
                 <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">SaaS Product Ownership</span>
               </div>
-              <div className="space-y-6">
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Problem</h5>
-                  <p className="text-gray-300 leading-relaxed">
-                    Military and tactical communication systems required complex manual setup processes that delayed critical operations and created security vulnerabilities in high-stakes environments.
-                  </p>
-                </div>
-                
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Solution</h5>
-                  <p className="text-gray-300 leading-relaxed">
-                    WindTalker delivers automated secure communication deployment with instant frequency scanning, streamlined configuration workflows, and rapid onboarding protocols designed for mission-critical scenarios.
-                  </p>
-                </div>
-                
-                <div>
-                  <h5 className="text-white font-semibold mb-2">My Role</h5>
-                  <p className="text-gray-300 leading-relaxed">
-                    Product strategy, UX research with military personnel, secure system architecture, deployment automation design, and field testing coordination.
-                  </p>
-                </div>
-              </div>
 
               <div className="mt-8 space-y-4" aria-label="WindTalker visuals">
                 <div className="relative rounded-lg border border-white/10 bg-black/30 p-6">
