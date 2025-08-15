@@ -5,7 +5,6 @@ import { motion } from 'framer-motion'
 import Lenis from 'lenis'
 import Sidebar from '@/components/Sidebar'
 import DiagramGallery from '@/components/DiagramGallery'
-import NortalHeatMap from '@/components/NortalHeatMap'
 import PomodoroMedia from '@/components/PomodoroMedia'
 
 export default function Work() {
@@ -573,10 +572,7 @@ export default function Work() {
                 <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Enterprise Retail</span>
               </div>
               
-              <div className="space-y-4 mt-6">
-                <NortalHeatMap className="w-full max-h-[240px] md:max-h-[280px] rounded-xl border border-white/5 bg-black/20 p-3" />
-                <DiagramGallery />
-              </div>
+              <DiagramGallery />
               
               <div className="text-center mt-8">
                 <a 
