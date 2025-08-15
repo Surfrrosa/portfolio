@@ -1,0 +1,45 @@
+{
+  "bands": [
+    {
+      "id": "retail",
+      "label": "Retail Partner Systems",
+      "nodes": [
+        { "id": "pos", "label": "POS / Catalog", "x": 0.2, "y": 0.5 },
+        { "id": "cart", "label": "Cart & Checkout", "x": 0.4, "y": 0.5 },
+        { "id": "identity", "label": "Identity / OTP", "x": 0.6, "y": 0.5 },
+        { "id": "billing", "label": "Billing Gateway", "x": 0.8, "y": 0.5 }
+      ]
+    },
+    {
+      "id": "tmobile",
+      "label": "T-Mobile TPAS APIs",
+      "nodes": [
+        { "id": "prepaid", "label": "Prepaid Activation", "x": 0.15, "y": 0.5 },
+        { "id": "portin", "label": "Number Port-In", "x": 0.35, "y": 0.5 },
+        { "id": "aal", "label": "Add-a-Line (AAL)", "x": 0.55, "y": 0.5 },
+        { "id": "imei", "label": "IMEI / Validation", "x": 0.75, "y": 0.5 },
+        { "id": "coupons", "label": "Billing & Coupons", "x": 0.95, "y": 0.5 }
+      ]
+    },
+    {
+      "id": "outcomes",
+      "label": "Customer Outcomes",
+      "nodes": [
+        { "id": "activation", "label": "Activation Complete", "x": 0.2, "y": 0.5 },
+        { "id": "transfer", "label": "Number Transferred", "x": 0.4, "y": 0.5 },
+        { "id": "extended", "label": "Plan Extended", "x": 0.6, "y": 0.5 },
+        { "id": "checkout", "label": "Faster Checkout", "x": 0.8, "y": 0.5 }
+      ]
+    }
+  ],
+  "edges": [
+    { "from": "pos", "to": "prepaid", "label": "Product Selection → Activation" },
+    { "from": "cart", "to": "portin", "label": "Checkout → Port Request" },
+    { "from": "identity", "to": "aal", "label": "Identity Verification → Add Line" },
+    { "from": "billing", "to": "coupons", "label": "Payment → Billing Integration" },
+    { "from": "prepaid", "to": "activation", "label": "API Response → Complete" },
+    { "from": "portin", "to": "transfer", "label": "Port Success → Transferred" },
+    { "from": "aal", "to": "extended", "label": "Line Added → Plan Extended" },
+    { "from": "coupons", "to": "checkout", "label": "Billing Complete → Faster Flow" }
+  ]
+}
