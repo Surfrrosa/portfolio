@@ -837,6 +837,181 @@ export default function Work() {
                 </a>
               </div>
             </motion.div>
+
+            <motion.div
+              className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.7 }}
+            >
+              <div className="mb-4">
+                <span className="inline-block bg-indigo-500/20 text-indigo-400 px-3 py-1 rounded-full text-sm font-semibold">
+                  MVP Beta Testing
+                </span>
+              </div>
+              
+              <h3 className="text-white text-2xl font-display font-bold mb-4">
+                Floatless – Automated Payment Reconciliation & Dunning Platform
+              </h3>
+              
+              <h4 className="text-teal-400 text-lg font-semibold mb-6">
+                Polite payment reminders, accurate records, and zero manual chasing all in one place.
+              </h4>
+              
+              <div className="space-y-6">
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Problem</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    Small businesses and agencies waste time manually reconciling payments, chasing overdue invoices, and tracking dunning communications. These tasks are repetitive, error-prone, and often lead to awkward client interactions.
+                  </p>
+                </div>
+                
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Solution</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    Floatless automates payment reconciliation by integrating directly with Stripe and QuickBooks, generating polite, on-brand dunning messages, and tracking communication history. The platform also provides subscription metrics, ROI reporting, and payment health summaries, all in a minimalist, easy-to-use dashboard.
+                  </p>
+                </div>
+                
+                <div>
+                  <h5 className="text-white font-semibold mb-2">My Role</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    Product concept, UX design, data model architecture, API integration planning, workflow automation design, and go-to-market strategy.
+                  </p>
+                </div>
+                
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Impact (Projected)</h5>
+                  <div className="text-gray-300 space-y-3">
+                    <p>Reduces overdue payments and manual follow-up time.</p>
+                    <p>Improves cash flow visibility with real-time payment health metrics.</p>
+                    <p>Creates a positive client experience through polite, professional reminders.</p>
+                  </div>
+                </div>
+                
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Status</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    MVP feature-complete; currently in closed beta testing.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="flex flex-wrap gap-2 mt-6">
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Payment Automation</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">SaaS UX</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">API Integration</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Product Strategy</span>
+              </div>
+
+              <div className="mt-8 space-y-6">
+                <div className="relative rounded-lg border border-white/10 bg-black/30 p-6">
+                  <h5 className="text-white font-semibold mb-6">Payment Automation Flow</h5>
+                  <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div className="text-center space-y-3">
+                      <div className="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto">
+                        <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                      </div>
+                      <div className="text-sm text-gray-300">
+                        <div className="font-semibold text-white">Invoice Created</div>
+                        <div>Stripe integration detects new charges</div>
+                      </div>
+                    </div>
+                    
+                    <div className="text-center space-y-3">
+                      <div className="w-12 h-12 bg-teal-500/20 rounded-full flex items-center justify-center mx-auto">
+                        <svg className="w-6 h-6 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                        </svg>
+                      </div>
+                      <div className="text-sm text-gray-300">
+                        <div className="font-semibold text-white">Auto Reconciliation</div>
+                        <div>Floatless matches payments to invoices</div>
+                      </div>
+                    </div>
+                    
+                    <div className="text-center space-y-3">
+                      <div className="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center mx-auto">
+                        <svg className="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                        </svg>
+                      </div>
+                      <div className="text-sm text-gray-300">
+                        <div className="font-semibold text-white">QuickBooks Sync</div>
+                        <div>Records updated automatically</div>
+                      </div>
+                    </div>
+                    
+                    <div className="text-center space-y-3">
+                      <div className="w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center mx-auto">
+                        <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                        </svg>
+                      </div>
+                      <div className="text-sm text-gray-300">
+                        <div className="font-semibold text-white">Polite Reminders</div>
+                        <div>Automated, on-brand dunning messages</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="relative rounded-lg border border-white/10 bg-black/30 p-4">
+                  <h5 className="text-white font-semibold mb-4">Before vs After</h5>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <div className="text-xs uppercase tracking-wider text-gray-400 mb-3 font-semibold">Before Floatless</div>
+                      <div className="space-y-3">
+                        <div className="flex items-center gap-3 p-2 rounded-lg bg-red-900/20 border border-red-700/50">
+                          <svg className="w-4 h-4 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          <span className="text-gray-300 text-sm">Manual payment tracking</span>
+                        </div>
+                        <div className="flex items-center gap-3 p-2 rounded-lg bg-red-900/20 border border-red-700/50">
+                          <svg className="w-4 h-4 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          <span className="text-gray-300 text-sm">Awkward follow-up calls</span>
+                        </div>
+                        <div className="flex items-center gap-3 p-2 rounded-lg bg-red-900/20 border border-red-700/50">
+                          <svg className="w-4 h-4 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          <span className="text-gray-300 text-sm">Inconsistent record keeping</span>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <div className="text-xs uppercase tracking-wider text-gray-400 mb-3 font-semibold">With Floatless</div>
+                      <div className="space-y-3">
+                        <div className="flex items-center gap-3 p-2 rounded-lg bg-green-900/20 border border-green-700/50">
+                          <svg className="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span className="text-gray-300 text-sm">Automated reconciliation</span>
+                        </div>
+                        <div className="flex items-center gap-3 p-2 rounded-lg bg-green-900/20 border border-green-700/50">
+                          <svg className="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span className="text-gray-300 text-sm">Professional, polite reminders</span>
+                        </div>
+                        <div className="flex items-center gap-3 p-2 rounded-lg bg-green-900/20 border border-green-700/50">
+                          <svg className="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span className="text-gray-300 text-sm">Real-time payment health</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </main>
