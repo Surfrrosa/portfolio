@@ -78,7 +78,7 @@ export default function Home() {
               </li>
               <li className="flex items-start">
                 <span className="text-teal-400 mr-4 mt-1">•</span>
-                <span><strong>AI as a Co-Pilot</strong> — automation, intelligent tooling, workflows that streamline delivery.</span>
+                <span><strong>Driven by Efficiency</strong> — automation, intelligent tooling, workflows that streamline delivery.</span>
               </li>
               <li className="flex items-start">
                 <span className="text-teal-400 mr-4 mt-1">•</span>
