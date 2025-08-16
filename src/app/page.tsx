@@ -63,7 +63,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            Technical Product Owner + AI builder — I ship secure, scalable SaaS and design AI workflows that accelerate teams and deliver measurable impact.
+            Technical Product Owner + AI builder. I ship secure, scalable SaaS and design AI workflows that accelerate teams and deliver measurable impact.
           </motion.p>
         </motion.div>
         
