@@ -151,6 +151,7 @@ export default function Work() {
 
                 <div className="text-center">
                   
+                  <a
                     
                     className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors group"
                   >
