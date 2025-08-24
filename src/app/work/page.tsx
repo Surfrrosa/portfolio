@@ -150,8 +150,8 @@ export default function Work() {
                 </div>
 
                 <div className="text-center">
-                  <a 
-                    href="https://prompt2story.com" 
+                  
+                    
                     className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors group"
                   >
                    
