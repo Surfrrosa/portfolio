@@ -4,7 +4,6 @@ import React, { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import Lenis from 'lenis'
 import Sidebar from '@/components/Sidebar'
-import emailjs from '@emailjs/browser'
 
 export default function Contact() {
   const lenisRef = useRef<Lenis | null>(null)
@@ -47,32 +46,32 @@ export default function Contact() {
     }))
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     setIsSubmitting(true)
     setSubmitStatus('idle')
+    const form = e.currentTarget;
+    const fd = new FormData(form);
+    const payload = {
+      name: String(fd.get("name") || ""),
+      email: String(fd.get("email") || ""),
+      message: String(fd.get("message") || ""),
+    };
 
     try {
-      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'service_portfolio'
-      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'template_contact'
-      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || 'your_public_key'
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
 
-      await emailjs.send(
-        serviceId,
-        templateId,
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          message: formData.message,
-          to_email: 'shainaep@gmail.com',
-        },
-        publicKey
-      )
+      const data: any = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(data?.error || "Failed");
 
       setSubmitStatus('success')
-      setFormData({ name: '', email: '', message: '' })
-    } catch (error) {
-      console.error('Email send failed:', error)
+      if (typeof form.reset === "function") form.reset();
+    } catch (err) {
+      console.error(err);
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)
