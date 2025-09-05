@@ -4,7 +4,6 @@ import React, { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import Lenis from 'lenis'
 import Sidebar from '@/components/Sidebar'
-import emailjs from '@emailjs/browser'
 
 export default function Contact() {
   const lenisRef = useRef<Lenis | null>(null)
@@ -52,11 +51,11 @@ export default function Contact() {
     setIsSubmitting(true)
     setSubmitStatus('idle')
     const form = e.currentTarget;
-    const formData = new FormData(form);
+    const fd = new FormData(form);
     const payload = {
-      name: String(formData.get("name") || ""),
-      email: String(formData.get("email") || ""),
-      message: String(formData.get("message") || ""),
+      name: String(fd.get("name") || ""),
+      email: String(fd.get("email") || ""),
+      message: String(fd.get("message") || ""),
     };
 
     try {
