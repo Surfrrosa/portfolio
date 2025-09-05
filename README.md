@@ -270,6 +270,36 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 **Built with ❤️ by Shaina Pauley**  
 *Future-Ready Product Management*
 
+## Contact Form Email (Resend)
+
+The `/api/contact` endpoint uses Resend for email delivery with Node.js runtime. This enables reliable email sending from the contact form with proper error handling and validation.
+
+### Setup
+
+1. **Add domain in Resend & verify DNS** (done for shainapauley.com)
+2. **Create Resend API key** at [resend.com/api-keys](https://resend.com/api-keys)
+3. **Create .env.local** from .env.example and fill in real values
+4. **Restart dev** server with `npm run dev`
+5. **For production**: Add the same 3 environment variables in Vercel → Settings → Environment Variables → redeploy
+
+### Local Test
+
+```bash
+curl -i -X POST http://localhost:3000/api/contact \
+  -H "Content-Type: application/json" \
+  -d '{"name":"Test","email":"test@example.com","message":"Hello"}'
+```
+
+### Troubleshooting
+
+| Status | Error | Solution |
+|--------|-------|----------|
+| 401 | API key invalid | Check `RESEND_API_KEY` in .env.local |
+| 400 | Missing fields | Ensure name, email, message are provided |
+| 500 | Send failed | Verify `CONTACT_FROM_EMAIL` domain is added/verified in Resend |
+
+---
+
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=flat&logo=linkedin)](https://linkedin.com/in/shainapauley)
 [![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?style=flat&logo=github)](https://github.com/Surfrrosa)
 [![Portfolio](https://img.shields.io/badge/Portfolio-Visit-FF6B6B?style=flat&logo=web)](https://shainaep.com)
