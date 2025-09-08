@@ -73,7 +73,7 @@ export default function Work() {
               </div>
               
               <h3 className="text-white text-2xl font-display font-bold mb-4">
-                Prompt2Story - AI-Powered User Story Generator
+                Prompt2Story ● AI-Powered User Story Generator
               </h3>
               
               <h4 className="text-teal-400 text-lg font-semibold mb-6">
@@ -177,11 +177,11 @@ export default function Work() {
               </div>
               
               <h3 className="text-white text-2xl font-display font-bold mb-4">
-                Enlighten – Tao × Neuroscience Mindfulness App
+                Enlighten ● Tao × Neuroscience Mindfulness App
               </h3>
               
               <h4 className="text-teal-400 text-lg font-semibold mb-6">
-                Mindfulness, nervous system regulation, and timeless Taoist wisdom — in your pocket.
+                Mindfulness, nervous system regulation, and timeless Taoist wisdom in your pocket.
               </h4>
               
               <div className="space-y-6">
@@ -260,7 +260,7 @@ export default function Work() {
               </div>
               
               <h3 className="text-white text-2xl font-display font-bold mb-4">
-                Pomodoro Flow – Radically Simple Focus Timer
+                Pomodoro Flow ● Radically Simple Focus Timer
               </h3>
               
               <h4 className="text-teal-400 text-lg font-semibold mb-6">
@@ -346,7 +346,7 @@ export default function Work() {
               </div>
               
               <h3 className="text-white text-2xl font-display font-bold mb-4">
-                Nortal — API-Driven Telecom Solutions for National Retailers
+                Nortal ● API-Driven Telecom Solutions for National Retailers
               </h3>
               
               <h4 className="text-teal-400 text-lg font-semibold mb-6">
@@ -426,7 +426,7 @@ export default function Work() {
               </div>
               
               <h3 className="text-white text-2xl font-display font-bold mb-4">
-                WindTalker — Real-Time Monitoring, RF Planning, and Field Deployments
+                WindTalker ● Real-Time Monitoring, RF Planning, and Field Deployments
               </h3>
               
               <h4 className="text-teal-400 text-lg font-semibold mb-6">
@@ -685,7 +685,7 @@ export default function Work() {
               </div>
               
               <h3 className="text-white text-2xl font-display font-bold mb-4">
-                ConnectWise Manage — Product Ownership Across Mobile, Communication, and CRM Platforms
+                ConnectWise Manage ● Product Ownership Across Mobile, Communication, and CRM Platforms
               </h3>
               
               <h4 className="text-teal-400 text-lg font-semibold mb-6">
@@ -852,7 +852,7 @@ export default function Work() {
               </div>
               
               <h3 className="text-white text-2xl font-display font-bold mb-4">
-                Floatless – Automated Payment Reconciliation & Dunning Platform
+                Floatless ● Automated Payment Reconciliation & Dunning Platform
               </h3>
               
               <h4 className="text-teal-400 text-lg font-semibold mb-6">
