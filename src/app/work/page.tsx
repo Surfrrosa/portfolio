@@ -56,7 +56,7 @@ export default function Work() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            A showcase of AI-powered products and data-driven solutions that have transformed user experiences and driven measurable business impact.
+            A showcase of data-driven solutions that have transformed user experiences and driven measurable business impact.
           </motion.p>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
