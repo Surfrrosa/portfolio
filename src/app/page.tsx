@@ -74,19 +74,19 @@ export default function Home() {
             <ul className="space-y-6 text-lg leading-relaxed">
               <li className="flex items-start">
                 <span className="text-teal-400 mr-4 mt-1">•</span>
-                <span><strong>7+ Years in the Trenches</strong> — secure authentication, REST APIs, CRM, migrations, dashboards.</span>
+                <span><strong>7+ Years in the Trenches</strong> ● secure authentication, REST APIs, CRM, migrations, dashboards.</span>
               </li>
               <li className="flex items-start">
                 <span className="text-teal-400 mr-4 mt-1">•</span>
-                <span><strong>AI as a Co-Pilot</strong> — automation, intelligent tooling, workflows that streamline delivery.</span>
+                <span><strong>AI as a Co-Pilot</strong> ● automation, intelligent tooling, workflows that streamline delivery.</span>
               </li>
               <li className="flex items-start">
                 <span className="text-teal-400 mr-4 mt-1">•</span>
-                <span><strong>Fluent in Tech + People</strong> — bridging engineering, design, leadership, and stakeholders.</span>
+                <span><strong>Fluent in Tech + People</strong> ● bridging engineering, design, leadership, and stakeholders.</span>
               </li>
               <li className="flex items-start">
                 <span className="text-teal-400 mr-4 mt-1">•</span>
-                <span><strong>Impact, Not Just Output</strong> — every feature tied to tangible, trackable results.</span>
+                <span><strong>Impact, Not Just Output</strong> ● every feature tied to tangible, trackable results.</span>
               </li>
             </ul>
           </div>
