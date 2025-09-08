@@ -7,8 +7,8 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
 export const metadata: Metadata = {
-  title: 'Shaina Pauley - Future-Ready Product Manager',
-  description: 'Portfolio showcasing 7+ years of product management experience in AI-powered products and data-driven solutions.',
+  title: 'Shaina Pauley ● Future-proof Product Manager',
+  description: 'Portfolio showcasing 7+ years of product management experience in data-driven solutions.',
   icons: {
     icon: [
       { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
