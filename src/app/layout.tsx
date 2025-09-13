@@ -7,7 +7,7 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
 export const metadata: Metadata = {
-  title: 'Shaina Pauley ● Future-proof Product Manager',
+  title: 'Shaina Pauley',
   description: 'Portfolio showcasing 7+ years of product management experience in data-driven solutions.',
   icons: {
     icon: [
