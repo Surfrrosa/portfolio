@@ -40,7 +40,7 @@ export default function Sidebar() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <p className="text-white font-semibold" style={{ fontSize: '18px', lineHeight: '1.6' }}>
-              My name is Shaina Pauley. I am a product owner, builder, writer, and connoisseur of clouds.
+              My name is Shaina Pauley.
             </p>
             <p className="text-white font-semibold" style={{ fontSize: '18px', lineHeight: '1.6' }}>
               I'm an action-oriented dreamer, a student of ideas, and a believer that emotional intelligence, systems thinking, storytelling, and collaboration are the real superpowers in a time of rapid change.
