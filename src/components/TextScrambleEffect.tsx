@@ -1,23 +1,43 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 
-const GLYPHS = "!<>-_\\/[]{}=+*^?#";
+const GLYPHS = "!@#$%^&*()_+-=[]{}|;:,.<>?/~`";
 
-function scramble(el: HTMLElement, finalText: string, duration = 680) {
+function scramble(el: HTMLElement, finalText: string, duration = 1200) {
   const len = finalText.length;
   const start = performance.now();
   let raf = 0;
 
   function frame(t: number) {
-    const p = Math.min(1, (t - start) / duration);
+    const elapsed = t - start;
+    const p = Math.min(1, elapsed / duration);
+
+    // Smooth easing curve for more dramatic effect
+    const easedP = 1 - Math.pow(1 - p, 4);
+
     let out = "";
     for (let i = 0; i < len; i++) {
-      const settle = i / len; // progressive settle L→R
-      out += p < settle ? GLYPHS[(Math.random()*GLYPHS.length)|0] : (finalText[i] ?? " ");
+      // More dramatic wave effect - characters settle in smooth waves
+      const charProgress = Math.max(0, Math.min(1, (easedP * 1.5) - (i / len) * 0.8));
+      const charEased = 1 - Math.pow(1 - charProgress, 3);
+
+      if (charEased > 0.9) {
+        out += finalText[i] ?? " ";
+      } else if (charEased > 0.1) {
+        // Slow down scrambling as we get closer to the final character
+        const scrambleSpeed = Math.max(0.1, 1 - charEased);
+        out += Math.random() < scrambleSpeed ?
+          GLYPHS[Math.floor(Math.random() * GLYPHS.length)] :
+          finalText[i] ?? " ";
+      } else {
+        out += GLYPHS[Math.floor(Math.random() * GLYPHS.length)];
+      }
     }
+
     el.textContent = out;
     if (p < 1) raf = requestAnimationFrame(frame);
   }
+
   cancelAnimationFrame(raf);
   raf = requestAnimationFrame(frame);
   return () => cancelAnimationFrame(raf);
@@ -27,8 +47,8 @@ export function TextScrambleEffect({
   lines,
   className = "",
   threshold = 0.6,
-  duration = 680,
-  lineStagger = 90,
+  duration = 1200,
+  lineStagger = 200,
   id = "hero",
   once = true,
 }: {

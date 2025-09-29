@@ -51,8 +51,8 @@ export default function Home() {
             className="h1-display text-white mb-8"
             lines={["Building what lasts.", "Exploring what's next."]}
             threshold={0.6}
-            duration={800}
-            lineStagger={120}
+            duration={1200}
+            lineStagger={250}
             id="hero-headline"
             once
           />
