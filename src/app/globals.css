@@ -62,7 +62,7 @@ body::after {
 .h1-display {
   font-family: var(--font-display, 'Archivo', system-ui, sans-serif);
   font-weight: 900;
-  letter-spacing: -0.08em;
+  letter-spacing: -0.12em;
   line-height: 0.85;
   font-size: clamp(3.6rem, 10.8vw, 10.8rem);
   will-change: contents;
