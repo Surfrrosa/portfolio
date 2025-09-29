@@ -174,7 +174,7 @@ export default function Work() {
             >
               <div className="mb-4">
                 <span className="inline-block bg-purple-500/20 text-purple-400 px-3 py-1 rounded-full text-sm font-semibold">
-                  In Development
+                  MVP Complete
                 </span>
               </div>
               
@@ -220,7 +220,7 @@ export default function Work() {
                 <div>
                   <h5 className="text-white font-semibold mb-2">Status</h5>
                   <p className="text-gray-300 leading-relaxed">
-                    Currently in late-stage design and prototype development.
+                    MVP complete and ready for deployment.
                   </p>
                 </div>
               </div>
@@ -297,6 +297,7 @@ export default function Work() {
                     <p>Created a seamless, minimal UX that keeps users focused without decision fatigue.</p>
                     <p>Improved testing speed with a dedicated developer mode.</p>
                     <p>Established safe, AI-assisted branch workflow to prevent future merge conflicts.</p>
+                    <p className="text-teal-400 font-medium">Launching soon on the iOS App Store and Google Play Store.</p>
                   </div>
                 </div>
               </div>
