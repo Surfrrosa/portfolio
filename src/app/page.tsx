@@ -49,10 +49,10 @@ export default function Home() {
         >
           <TextScrambleEffect
             className="h1-display text-white mb-8"
-            lines={["Future-proof", "Product", "Management"]}
+            lines={["Building what lasts.", "Exploring what's next."]}
             threshold={0.6}
-            duration={680}
-            lineStagger={90}
+            duration={800}
+            lineStagger={120}
             id="hero-headline"
             once
           />

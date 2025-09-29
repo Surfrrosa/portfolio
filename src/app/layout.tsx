@@ -2,13 +2,64 @@ import React from 'react'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
+import StructuredData from '@/components/StructuredData'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
 export const metadata: Metadata = {
-  title: 'Shaina Pauley - Future-Ready Product Manager',
-  description: 'Portfolio showcasing 7+ years of product management experience in AI-powered products and data-driven solutions.',
+  title: {
+    default: 'Shaina Pauley - Building what lasts. Exploring what\'s next.',
+    template: '%s | Shaina Pauley - Technical Product Owner'
+  },
+  description: 'Technical Product Owner and AI builder with 7+ years enterprise experience. Building what lasts. Exploring what\'s next. Specializing in AI workflows, secure SaaS products, and measurable business impact.',
+  keywords: ['Technical Product Owner', 'Product Manager', 'AI Product Development', 'SaaS Product Management', 'Enterprise Software', 'Product Strategy', 'AI Workflows', 'Agile Product Management', 'Shaina Pauley'],
+  authors: [{ name: 'Shaina Pauley', url: 'https://shainapauley.com' }],
+  creator: 'Shaina Pauley',
+  publisher: 'Shaina Pauley',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL('https://shainapauley.com'),
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title: 'Shaina Pauley - Building what lasts. Exploring what\'s next.',
+    description: 'Technical Product Owner and AI builder with 7+ years enterprise experience. Building what lasts. Exploring what\'s next. Specializing in AI workflows, secure SaaS products, and measurable business impact.',
+    url: 'https://shainapauley.com',
+    siteName: 'Shaina Pauley Portfolio',
+    type: 'website',
+    locale: 'en_US',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Shaina Pauley - Technical Product Owner and AI Builder',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Shaina Pauley - Building what lasts. Exploring what\'s next.',
+    description: 'Technical Product Owner and AI builder. Building what lasts. Exploring what\'s next.',
+    images: ['/og-image.jpg'],
+    creator: '@shainapauley',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   icons: {
     icon: [
       { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
@@ -32,6 +83,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable}`}>
+      <head>
+        <StructuredData />
+      </head>
       <body className="bg-bg-base text-white font-body antialiased">
         {/* Global dark charcoal sheath over background */}
         <div

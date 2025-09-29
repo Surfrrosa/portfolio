@@ -65,6 +65,9 @@ body::after {
   letter-spacing: -0.08em;
   line-height: 0.85;
   font-size: clamp(3.6rem, 10.8vw, 10.8rem);
+  will-change: contents;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 @media (prefers-reduced-motion: reduce) {
