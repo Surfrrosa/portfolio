@@ -113,12 +113,10 @@ export default function Contact() {
                 <h3 className="text-teal-400 text-lg font-semibold mb-4">What I Do</h3>
                 <ul className="space-y-2 text-gray-300">
                   <li>• Product strategy, roadmapping, and MVP definition</li>
-                  <li>• AI product design &amp; development workflows</li>
+                  <li>• Product design &amp; development workflows</li>
                   <li>• SaaS platform optimization &amp; feature delivery</li>
                   <li>• Cross-functional team leadership &amp; alignment</li>
-                  <li>• Data-driven product decisions</li>
-                  <li>• Design &amp; build of landing pages, portfolios, and websites</li>
-                  <li>• Product consulting &amp; advisory</li>
+                  <li>• Data-driven product decisions & consulting</li>
                 </ul>
               </div>
 
