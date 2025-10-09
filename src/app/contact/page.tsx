@@ -227,40 +227,42 @@ export default function Contact() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.9 }}
           >
-            <h3 className="text-white text-4xl md:text-5xl lg:text-6xl font-display mb-12 tracking-tight text-center">
-              Find me on <span className="text-teal-400">Upwork</span> <span className="text-gray-400 font-serif italic">&</span> <span className="text-teal-400">Contra</span>
+            <h3 className="text-white text-3xl md:text-4xl font-display mb-12 tracking-tight text-center">
+              Find me on
             </h3>
-            <div className="flex flex-col sm:flex-row gap-8 justify-center items-center max-w-4xl mx-auto">
+            <div className="flex flex-col sm:flex-row gap-8 justify-center items-center max-w-5xl mx-auto">
               <a
                 href="https://www.upwork.com/freelancers/~01678c95a70afbd270?mp_source=share"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-white/10 to-white/[0.02] hover:from-teal-500/20 hover:to-teal-500/5 border-2 border-white/20 hover:border-teal-400 p-12 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-teal-500/20 w-full sm:w-auto"
+                className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-white/10 to-white/[0.02] hover:from-teal-500/20 hover:to-teal-500/5 border-2 border-white/20 hover:border-teal-400 p-10 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-teal-500/20"
               >
                 <div className="relative z-10">
                   <Image
                     src="/images/upwork-logo.png"
                     alt="Upwork"
-                    width={200}
-                    height={70}
-                    className="w-auto h-16 object-contain brightness-0 invert group-hover:brightness-100 group-hover:invert-0 transition-all duration-500"
+                    width={280}
+                    height={80}
+                    className="w-auto h-20 object-contain brightness-0 invert group-hover:brightness-100 group-hover:invert-0 transition-all duration-500"
                   />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-r from-teal-500/0 via-teal-500/10 to-teal-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </a>
 
+              <span className="text-white/40 text-5xl font-serif italic hidden sm:block">&</span>
+
               <a
                 href="#"
-                className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] border-2 border-white/10 p-12 opacity-40 cursor-not-allowed w-full sm:w-auto"
+                className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] border-2 border-white/10 p-10 opacity-40 cursor-not-allowed"
                 title="Coming soon"
               >
                 <div className="relative z-10">
                   <Image
                     src="/images/contra-logo.png"
                     alt="Contra"
-                    width={200}
-                    height={70}
-                    className="w-auto h-16 object-contain brightness-0 invert"
+                    width={280}
+                    height={80}
+                    className="w-auto h-20 object-contain brightness-0 invert"
                   />
                   <span className="absolute -top-4 -right-4 bg-teal-500/30 text-teal-300 text-sm font-bold px-4 py-2 rounded-full border-2 border-teal-400/50 backdrop-blur-sm">
                     Soon
