@@ -227,38 +227,39 @@ export default function Contact() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.9 }}
           >
-            <h3 className="text-white text-3xl md:text-4xl font-display mb-12 tracking-tight text-center">
-              Find me on
-            </h3>
-            <div className="flex flex-col sm:flex-row gap-8 justify-center items-center max-w-5xl mx-auto">
+            <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8">
+              <h3 className="text-white text-2xl md:text-3xl font-light tracking-wide">
+                Find me on
+              </h3>
+
               <a
                 href="https://www.upwork.com/freelancers/~01678c95a70afbd270?mp_source=share"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative overflow-hidden rounded-2xl border-2 border-white/20 hover:border-teal-400 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-teal-500/20 w-72 h-32 flex items-center justify-center"
+                className="group relative overflow-hidden rounded-2xl border-2 border-white/20 hover:border-teal-400 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-teal-500/20 w-64 h-28 flex items-center justify-center"
               >
                 <Image
                   src="/images/upwork-logo.png"
                   alt="Upwork"
-                  width={240}
-                  height={80}
+                  width={220}
+                  height={70}
                   className="object-contain transition-all duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-teal-500/0 via-teal-500/10 to-teal-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </a>
 
-              <span className="text-white/40 text-5xl font-serif italic hidden sm:block">&</span>
+              <span className="text-white text-4xl md:text-5xl font-serif italic">&</span>
 
               <a
                 href="#"
-                className="group relative overflow-hidden rounded-2xl border-2 border-white/10 opacity-40 cursor-not-allowed w-72 h-32 flex items-center justify-center"
+                className="group relative overflow-hidden rounded-2xl border-2 border-white/10 opacity-40 cursor-not-allowed w-64 h-28 flex items-center justify-center"
                 title="Coming soon"
               >
                 <Image
                   src="/images/contra-logo.png"
                   alt="Contra"
-                  width={240}
-                  height={80}
+                  width={220}
+                  height={70}
                   className="object-contain"
                 />
               </a>
