@@ -235,17 +235,15 @@ export default function Contact() {
                 href="https://www.upwork.com/freelancers/~01678c95a70afbd270?mp_source=share"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-white/10 to-white/[0.02] hover:from-teal-500/20 hover:to-teal-500/5 border-2 border-white/20 hover:border-teal-400 p-10 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-teal-500/20"
+                className="group relative overflow-hidden rounded-2xl border-2 border-white/20 hover:border-teal-400 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-teal-500/20 w-72 h-32 flex items-center justify-center"
               >
-                <div className="relative z-10">
-                  <Image
-                    src="/images/upwork-logo.png"
-                    alt="Upwork"
-                    width={280}
-                    height={80}
-                    className="w-auto h-20 object-contain brightness-0 invert group-hover:brightness-100 group-hover:invert-0 transition-all duration-500"
-                  />
-                </div>
+                <Image
+                  src="/images/upwork-logo.png"
+                  alt="Upwork"
+                  width={240}
+                  height={80}
+                  className="object-contain mix-blend-lighten group-hover:mix-blend-normal transition-all duration-500"
+                />
                 <div className="absolute inset-0 bg-gradient-to-r from-teal-500/0 via-teal-500/10 to-teal-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </a>
 
@@ -253,21 +251,16 @@ export default function Contact() {
 
               <a
                 href="#"
-                className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] border-2 border-white/10 p-10 opacity-40 cursor-not-allowed"
+                className="group relative overflow-hidden rounded-2xl border-2 border-white/10 opacity-40 cursor-not-allowed w-72 h-32 flex items-center justify-center"
                 title="Coming soon"
               >
-                <div className="relative z-10">
-                  <Image
-                    src="/images/contra-logo.png"
-                    alt="Contra"
-                    width={280}
-                    height={80}
-                    className="w-auto h-20 object-contain brightness-0 invert"
-                  />
-                  <span className="absolute -top-4 -right-4 bg-teal-500/30 text-teal-300 text-sm font-bold px-4 py-2 rounded-full border-2 border-teal-400/50 backdrop-blur-sm">
-                    Soon
-                  </span>
-                </div>
+                <Image
+                  src="/images/contra-logo.png"
+                  alt="Contra"
+                  width={240}
+                  height={80}
+                  className="object-contain mix-blend-lighten"
+                />
               </a>
             </div>
           </motion.div>
