@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import Lenis from 'lenis'
+import Image from 'next/image'
 import Sidebar from '@/components/Sidebar'
 
 export default function Contact() {
@@ -136,38 +137,6 @@ export default function Contact() {
                   I typically respond within 24 hours.
                 </p>
               </div>
-
-              <div>
-                <h3 className="text-teal-400 text-lg font-semibold mb-4">Find Me On</h3>
-                <div className="flex gap-4">
-                  <a
-                    href="https://www.upwork.com/freelancers/~01678c95a70afbd270?mp_source=share"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-3 px-5 py-3 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-teal-400/50 rounded-lg transition-all group"
-                  >
-                    <svg className="w-6 h-6 text-white group-hover:text-teal-400 transition-colors" viewBox="0 0 102 28" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M28.18 14.87c-1.99 0-3.85-.87-5.26-2.35-.37 1.72-1.04 3.82-1.84 5.56l-.14.29-6.32 14.5-4.82-1.99 4.54-10.47c-1.57-1.71-2.52-4.03-2.52-6.55 0-5.32 4.31-9.63 9.63-9.63s9.63 4.31 9.63 9.63-4.31 9.63-9.63 9.63l-.14-.01.14.01zm0-15.26c-3.11 0-5.63 2.52-5.63 5.63s2.52 5.63 5.63 5.63 5.63-2.52 5.63-5.63-2.52-5.63-5.63-5.63zM49.99 2.93h4.64v21.81h-4.64zM67.99 24.74l-7.76-13.42v13.42h-4.64V2.93h4.64l7.76 13.42V2.93h4.64v21.81zM102 24.74l-10-21.81h5.23l7.23 16.18 7.23-16.18H117l-10 21.81zM0 13.86C0 6.2 6.2 0 13.86 0s13.86 6.2 13.86 13.86-6.2 13.86-13.86 13.86S0 21.52 0 13.86zm4 0c0 5.44 4.42 9.86 9.86 9.86s9.86-4.42 9.86-9.86-4.42-9.86-9.86-9.86S4 8.42 4 13.86z"/>
-                    </svg>
-                    <span className="text-white text-sm font-medium">Upwork</span>
-                  </a>
-
-                  <a
-                    href="#"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-3 px-5 py-3 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-teal-400/50 rounded-lg transition-all group opacity-50 cursor-not-allowed"
-                    title="Coming soon"
-                  >
-                    <svg className="w-6 h-6 text-white" viewBox="0 0 120 28" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M18.5 0C8.28 0 0 8.28 0 18.5S8.28 37 18.5 37 37 28.72 37 18.5 28.72 0 18.5 0zm0 32C10.56 32 4 25.44 4 17.5S10.56 3 18.5 3 33 9.56 33 17.5 26.44 32 18.5 32z"/>
-                      <path d="M50.4 8.2h4.8v11.6c0 3.2-2.4 5.6-5.6 5.6s-5.6-2.4-5.6-5.6V8.2h4.8v11.2c0 .8.4 1.2 1.2 1.2s1.2-.4 1.2-1.2V8.2zM72.4 8.2h4.8v16.4h-4.8l-4.8-8v8h-4.8V8.2h4.8l4.8 8v-8zM91.6 8.2h-6.8v16.4h-4.8V8.2h-6.8V3.8h18.4v4.4zM104.8 8.2h-4.8v11.2c0 .8-.4 1.2-1.2 1.2s-1.2-.4-1.2-1.2V8.2h-4.8v11.6c0 3.2 2.4 5.6 5.6 5.6s5.6-2.4 5.6-5.6V8.2h4.8zM120 24.6l-6.8-10h2.4c2.4 0 4.4-2 4.4-4.4s-2-4.4-4.4-4.4h-6.8v18.8h4.8v-8.4l4 8.4H120z"/>
-                    </svg>
-                    <span className="text-white text-sm font-medium">Contra</span>
-                    <span className="text-xs text-gray-400">(Soon)</span>
-                  </a>
-                </div>
-              </div>
             </motion.div>
 
             <motion.div
@@ -250,6 +219,56 @@ export default function Contact() {
               </form>
             </motion.div>
           </div>
+
+          {/* Find Me On Section - Standalone at bottom */}
+          <motion.div
+            className="mt-20 pt-16 border-t border-white/10"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.9 }}
+          >
+            <h3 className="text-white text-4xl md:text-5xl lg:text-6xl font-display mb-12 tracking-tight text-center">
+              Find me on <span className="text-teal-400">Upwork</span> <span className="text-gray-400 font-serif italic">&</span> <span className="text-teal-400">Contra</span>
+            </h3>
+            <div className="flex flex-col sm:flex-row gap-8 justify-center items-center max-w-4xl mx-auto">
+              <a
+                href="https://www.upwork.com/freelancers/~01678c95a70afbd270?mp_source=share"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-white/10 to-white/[0.02] hover:from-teal-500/20 hover:to-teal-500/5 border-2 border-white/20 hover:border-teal-400 p-12 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-teal-500/20 w-full sm:w-auto"
+              >
+                <div className="relative z-10">
+                  <Image
+                    src="/images/upwork-logo.png"
+                    alt="Upwork"
+                    width={200}
+                    height={70}
+                    className="w-auto h-16 object-contain brightness-0 invert group-hover:brightness-100 group-hover:invert-0 transition-all duration-500"
+                  />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-r from-teal-500/0 via-teal-500/10 to-teal-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              </a>
+
+              <a
+                href="#"
+                className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] border-2 border-white/10 p-12 opacity-40 cursor-not-allowed w-full sm:w-auto"
+                title="Coming soon"
+              >
+                <div className="relative z-10">
+                  <Image
+                    src="/images/contra-logo.png"
+                    alt="Contra"
+                    width={200}
+                    height={70}
+                    className="w-auto h-16 object-contain brightness-0 invert"
+                  />
+                  <span className="absolute -top-4 -right-4 bg-teal-500/30 text-teal-300 text-sm font-bold px-4 py-2 rounded-full border-2 border-teal-400/50 backdrop-blur-sm">
+                    Soon
+                  </span>
+                </div>
+              </a>
+            </div>
+          </motion.div>
         </div>
       </main>
     </div>
