@@ -243,7 +243,7 @@ export default function Contact() {
                   alt="Upwork"
                   width={220}
                   height={70}
-                  className="object-contain transition-all duration-500 translate-y-2"
+                  className="object-contain transition-all duration-500 translate-y-3"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-teal-500/0 via-teal-500/10 to-teal-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </a>
@@ -258,8 +258,8 @@ export default function Contact() {
                 <Image
                   src="/images/contra-logo.png"
                   alt="Contra"
-                  width={220}
-                  height={70}
+                  width={240}
+                  height={90}
                   className="object-contain"
                 />
               </a>
