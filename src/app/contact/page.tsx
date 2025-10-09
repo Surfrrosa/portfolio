@@ -242,7 +242,7 @@ export default function Contact() {
                   alt="Upwork"
                   width={240}
                   height={80}
-                  className="object-contain mix-blend-lighten group-hover:mix-blend-normal transition-all duration-500"
+                  className="object-contain transition-all duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-teal-500/0 via-teal-500/10 to-teal-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </a>
@@ -259,7 +259,7 @@ export default function Contact() {
                   alt="Contra"
                   width={240}
                   height={80}
-                  className="object-contain mix-blend-lighten"
+                  className="object-contain"
                 />
               </a>
             </div>
