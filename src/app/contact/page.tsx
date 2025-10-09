@@ -258,8 +258,8 @@ export default function Contact() {
                 <Image
                   src="/images/contra-logo.png"
                   alt="Contra"
-                  width={240}
-                  height={90}
+                  width={260}
+                  height={110}
                   className="object-contain"
                 />
               </a>
