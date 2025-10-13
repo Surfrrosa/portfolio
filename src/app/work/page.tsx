@@ -105,6 +105,7 @@ export default function Work() {
                 <div>
                   <h5 className="text-white font-semibold mb-2">Impact</h5>
                   <div className="text-gray-300 space-y-3">
+                    <p>Launched on Product Hunt, gaining early adopters and valuable user feedback from the product community.</p>
                     <p>Positive early feedback from beta testers and peers in product management.</p>
                     <p>Streamlined the process of converting messy notes into Agile-ready user stories.</p>
                     <p>Designed to reduce backlog grooming time and improve cross-team clarity.</p>
@@ -116,6 +117,24 @@ export default function Work() {
                 <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">AI Workflow Design</span>
                 <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Agile Delivery</span>
                 <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Product Strategy</span>
+              </div>
+
+              <div className="mt-6 pt-6 border-t border-white/10">
+                <h5 className="text-white/60 text-xs uppercase tracking-wider mb-3">Featured On</h5>
+                <a
+                  href="https://www.producthunt.com/products/prompt2story"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-gray-400 hover:text-orange-400 transition-colors group"
+                >
+                  <svg className="w-5 h-5" viewBox="0 0 40 40" fill="currentColor">
+                    <path d="M20 0c11.046 0 20 8.954 20 20s-8.954 20-20 20S0 31.046 0 20 8.954 0 20 0zm0 4c-8.837 0-16 7.163-16 16s7.163 16 16 16 16-7.163 16-16S28.837 4 20 4zm3.5 12h-7v8h7c2.209 0 4-1.791 4-4s-1.791-4-4-4zm0 6h-3v-4h3c1.105 0 2 .895 2 2s-.895 2-2 2z"/>
+                  </svg>
+                  <span className="text-sm font-medium">Product Hunt</span>
+                  <svg className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
               </div>
 
               <div className="mt-8 space-y-6">
