@@ -275,8 +275,8 @@ export default function Work() {
               transition={{ duration: 0.8, delay: 0.9 }}
             >
               <div className="mb-4">
-                <span className="inline-block bg-amber-500/20 text-amber-400 px-3 py-1 rounded-full text-sm font-semibold">
-                  Mobile Development
+                <span className="inline-block bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm font-semibold">
+                  Live on App Store
                 </span>
               </div>
               
@@ -316,7 +316,7 @@ export default function Work() {
                     <p>Created a seamless, minimal UX that keeps users focused without decision fatigue.</p>
                     <p>Improved testing speed with a dedicated developer mode.</p>
                     <p>Established safe, AI-assisted branch workflow to prevent future merge conflicts.</p>
-                    <p className="text-teal-400 font-medium">Launching soon on the iOS App Store and Google Play Store.</p>
+                    <p className="text-green-400 font-medium">Now live on the iOS App Store, with Android version coming soon.</p>
                   </div>
                 </div>
               </div>
@@ -352,6 +352,26 @@ export default function Work() {
                   </span>
                 </div>
                 <PomodoroMedia />
+
+                <div className="mt-8 text-center">
+                  <a
+                    href="https://apps.apple.com/us/app/pomodoroflow/id6753604260"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-3 bg-black/40 hover:bg-black/60 border border-white/10 hover:border-white/20 px-6 py-4 rounded-xl transition-all group"
+                  >
+                    <svg className="w-10 h-10" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.09997 22C7.78997 22.05 6.79997 20.68 5.95997 19.47C4.24997 17 2.93997 12.45 4.69997 9.39C5.56997 7.87 7.12997 6.91 8.81997 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z" fill="white"/>
+                    </svg>
+                    <div className="text-left">
+                      <div className="text-xs text-gray-400">Download on the</div>
+                      <div className="text-xl font-semibold text-white">App Store</div>
+                    </div>
+                    <svg className="w-4 h-4 text-gray-400 group-hover:text-white group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </a>
+                </div>
               </div>
             </motion.div>
 
