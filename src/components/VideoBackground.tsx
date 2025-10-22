@@ -4,23 +4,97 @@ import React, { useEffect, useRef, useState } from 'react'
 
 export default function VideoBackground() {
   const videoRef = useRef<HTMLVideoElement>(null)
+  const audioContextRef = useRef<AudioContext | null>(null)
+  const audioBufferRef = useRef<AudioBuffer | null>(null)
+  const sourceNodeRef = useRef<AudioBufferSourceNode | null>(null)
+  const gainNodeRef = useRef<GainNode | null>(null)
   const [isMuted, setIsMuted] = useState(true)
+  const [audioReady, setAudioReady] = useState(false)
 
   useEffect(() => {
-    // Start video muted to avoid autoplay policy issues
+    // Start video muted
     if (videoRef.current) {
       videoRef.current.muted = true
       videoRef.current.play().catch((error) => {
         console.error('Autoplay failed:', error)
       })
     }
+
+    // Initialize Web Audio API
+    const initAudio = async () => {
+      try {
+        const AudioContext = window.AudioContext || (window as any).webkitAudioContext
+        audioContextRef.current = new AudioContext()
+        gainNodeRef.current = audioContextRef.current.createGain()
+        gainNodeRef.current.gain.value = 0
+        gainNodeRef.current.connect(audioContextRef.current.destination)
+
+        // Load audio file
+        const response = await fetch('/videos/background-audio.opus')
+        const arrayBuffer = await response.arrayBuffer()
+        audioBufferRef.current = await audioContextRef.current.decodeAudioData(arrayBuffer)
+        setAudioReady(true)
+      } catch (error) {
+        console.error('Audio initialization failed:', error)
+      }
+    }
+
+    initAudio()
+
+    return () => {
+      if (sourceNodeRef.current) {
+        sourceNodeRef.current.stop()
+      }
+      if (audioContextRef.current) {
+        audioContextRef.current.close()
+      }
+    }
   }, [])
 
-  const toggleMute = () => {
-    if (videoRef.current) {
-      const newMutedState = !isMuted
-      videoRef.current.muted = newMutedState
-      setIsMuted(newMutedState)
+  const toggleMute = async () => {
+    if (!audioContextRef.current || !audioBufferRef.current || !gainNodeRef.current) return
+
+    // Resume AudioContext (required for iOS/Safari)
+    if (audioContextRef.current.state === 'suspended') {
+      await audioContextRef.current.resume()
+    }
+
+    if (isMuted) {
+      // Start playing gapless loop
+      if (sourceNodeRef.current) {
+        sourceNodeRef.current.stop()
+      }
+
+      const source = audioContextRef.current.createBufferSource()
+      source.buffer = audioBufferRef.current
+      source.loop = true // Gapless loop!
+      source.connect(gainNodeRef.current)
+      source.start()
+      sourceNodeRef.current = source
+
+      // Fade in
+      const now = audioContextRef.current.currentTime
+      gainNodeRef.current.gain.cancelScheduledValues(now)
+      gainNodeRef.current.gain.linearRampToValueAtTime(0, now)
+      gainNodeRef.current.gain.linearRampToValueAtTime(1, now + 0.8)
+
+      setIsMuted(false)
+    } else {
+      // Fade out
+      const now = audioContextRef.current.currentTime
+      gainNodeRef.current.gain.cancelScheduledValues(now)
+      gainNodeRef.current.gain.linearRampToValueAtTime(gainNodeRef.current.gain.value, now)
+      gainNodeRef.current.gain.linearRampToValueAtTime(0, now + 0.5)
+
+      // Stop after fade
+      setTimeout(() => {
+        if (sourceNodeRef.current) {
+          sourceNodeRef.current.stop()
+          sourceNodeRef.current = null
+        }
+      }, 600)
+
+      setIsMuted(true)
     }
   }
 
@@ -36,7 +110,7 @@ export default function VideoBackground() {
           playsInline
           preload="auto"
         >
-          <source src="/videos/background-loop.mp4" type="video/mp4" />
+          <source src="/videos/background-loop-v3.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
