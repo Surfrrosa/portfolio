@@ -349,7 +349,7 @@ export default function NpcDialog({ open, onClose }: NpcDialogProps) {
           {/* Always show close button in corner */}
           <button
             onClick={onClose}
-            className="absolute top-2 right-2 w-8 h-8 flex items-center justify-center border-2 border-white/40 rounded-sm hover:border-red-400 hover:bg-red-400/10 transition-colors text-gray-300 hover:text-red-400 font-mono text-xl leading-none"
+            className="absolute -top-1 right-3 w-6 h-6 flex items-center justify-center border-2 border-white/40 rounded-sm hover:border-red-400 hover:bg-red-400/10 transition-colors text-gray-300 hover:text-red-400 font-mono text-lg leading-none"
             aria-label="Close dialog"
           >
             ×

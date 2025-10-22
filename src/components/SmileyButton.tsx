@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef } from 'react'
 import NpcDialog from './NpcDialog'
 
 interface SmileyButtonProps {
@@ -11,17 +11,8 @@ export default function SmileyButton({ children }: SmileyButtonProps) {
   const [isHovered, setIsHovered] = useState(false)
   const [showBubble, setShowBubble] = useState(false)
   const [isDialogOpen, setIsDialogOpen] = useState(false)
-  const [showExclamation, setShowExclamation] = useState(false)
   const buttonRef = useRef<HTMLButtonElement>(null)
   const hoverTimeoutRef = useRef<NodeJS.Timeout>()
-
-  // Check if user has interacted before
-  useEffect(() => {
-    const hasInteracted = localStorage.getItem('npc-dialog-interacted')
-    if (!hasInteracted) {
-      setShowExclamation(true)
-    }
-  }, [])
 
   const handleMouseEnter = () => {
     setIsHovered(true)
@@ -43,9 +34,6 @@ export default function SmileyButton({ children }: SmileyButtonProps) {
     // Open dialog immediately on click
     setIsDialogOpen(true)
     setShowBubble(false)
-    // Hide exclamation and mark as interacted
-    setShowExclamation(false)
-    localStorage.setItem('npc-dialog-interacted', 'true')
   }
 
   const handleCloseDialog = () => {
@@ -66,32 +54,6 @@ export default function SmileyButton({ children }: SmileyButtonProps) {
         className="relative group cursor-pointer focus:outline-none focus:ring-2 focus:ring-teal-400/60 focus:ring-offset-2 focus:ring-offset-black rounded-lg transition-all"
         aria-label="Open framework quest dialog"
       >
-        {/* Gold 3D Exclamation Point */}
-        {showExclamation && (
-          <div className="absolute top-[50px] left-1/2 -translate-x-1/2 z-50 animate-float pointer-events-none">
-            <div
-              className="text-5xl font-black"
-              style={{
-                textShadow: `
-                  0 2px 0 #B8860B,
-                  0 3px 0 #996515,
-                  0 4px 0 #7A5010,
-                  0 5px 0 #5C3C0A,
-                  0 6px 8px rgba(0, 0, 0, 0.5),
-                  0 0 20px rgba(255, 215, 0, 0.6)
-                `,
-                background: 'linear-gradient(180deg, #FFD700 0%, #FFA500 50%, #B8860B 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-                filter: 'drop-shadow(0 0 10px rgba(255, 215, 0, 0.8))'
-              }}
-            >
-              !
-            </div>
-          </div>
-        )}
-
         {/* Shimmer wrapper */}
         <div className="relative animate-shimmer">
           {children}
