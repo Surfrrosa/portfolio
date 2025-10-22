@@ -68,7 +68,7 @@ export default function SmileyButton({ children }: SmileyButtonProps) {
       >
         {/* Gold 3D Exclamation Point */}
         {showExclamation && (
-          <div className="absolute -top-[7px] left-1/2 -translate-x-1/2 z-50 animate-float pointer-events-none">
+          <div className="absolute -top-[2px] left-1/2 -translate-x-1/2 z-50 animate-float pointer-events-none">
             <div
               className="text-5xl font-black"
               style={{
