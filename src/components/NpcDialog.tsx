@@ -84,7 +84,7 @@ const DIALOGUE_TREE: Record<string, DialogNode> = {
   },
   signal: {
     id: 'signal',
-    text: `* Phase 1 begins...\n\nSIGNAL. ${PHASES[0].objective} ${PHASES[0].action} ${PHASES[0].reward}\n\nThis is where it starts. Not with perfection. With honesty.`,
+    text: `SIGNAL. ${PHASES[0].objective} ${PHASES[0].action} ${PHASES[0].reward}\n\nThis is where it starts. Not with perfection. With honesty.`,
     choices: [
       { text: "I can do that.", next: 'architect', type: 'positive' },
       { text: "What's next?", next: 'architect', type: 'neutral' },
@@ -93,7 +93,7 @@ const DIALOGUE_TREE: Record<string, DialogNode> = {
   },
   architect: {
     id: 'architect',
-    text: `* You're building something real now.\n\nARCHITECT. ${PHASES[1].objective} ${PHASES[1].action} ${PHASES[1].reward}\n\nStructure before chaos. Systems before burnout.`,
+    text: `ARCHITECT. ${PHASES[1].objective} ${PHASES[1].action} ${PHASES[1].reward}\n\nStructure before chaos. Systems before burnout.`,
     choices: [
       { text: "This makes sense.", next: 'sync', type: 'positive' },
       { text: "Keep going.", next: 'sync', type: 'neutral' },
@@ -102,7 +102,7 @@ const DIALOGUE_TREE: Record<string, DialogNode> = {
   },
   sync: {
     id: 'sync',
-    text: `* Everything is coming together.\n\nSYNC. ${PHASES[2].objective} ${PHASES[2].action} ${PHASES[2].reward}\n\nAlignment isn't perfectionism. It's removing the friction between you and the work.`,
+    text: `SYNC. ${PHASES[2].objective} ${PHASES[2].action} ${PHASES[2].reward}\n\nAlignment isn't perfectionism. It's removing the friction between you and the work.`,
     choices: [
       { text: "I love this.", next: 'deploy', type: 'positive' },
       { text: "Continue.", next: 'deploy', type: 'neutral' },
@@ -111,7 +111,7 @@ const DIALOGUE_TREE: Record<string, DialogNode> = {
   },
   deploy: {
     id: 'deploy',
-    text: `* Your determination is rewarded.\n\nDEPLOY. ${PHASES[3].objective} ${PHASES[3].action} ${PHASES[3].reward}\n\nThis is the scary part. Also the only part that matters.\n\nShip something imperfect. Learn what's real.`,
+    text: `DEPLOY. ${PHASES[3].objective} ${PHASES[3].action} ${PHASES[3].reward}\n\nThis is the scary part. Also the only part that matters.\n\nShip something imperfect. Learn what's real.`,
     choices: [
       { text: "And then?", next: 'transform', type: 'positive' },
       { text: "What's the final phase?", next: 'transform', type: 'neutral' },
@@ -120,7 +120,7 @@ const DIALOGUE_TREE: Record<string, DialogNode> = {
   },
   transform: {
     id: 'transform',
-    text: `* You feel yourself changing.\n\nTRANSFORM. ${PHASES[4].objective} ${PHASES[4].action} ${PHASES[4].reward}\n\nThe loop closes. You're not the same person who started.\n\nThat's the point.`,
+    text: `TRANSFORM. ${PHASES[4].objective} ${PHASES[4].action} ${PHASES[4].reward}\n\nThe loop closes. You're not the same person who started.\n\nThat's the point.`,
     choices: [
       { text: "I want to do this.", next: 'end', type: 'positive' },
       { text: "Tell me more.", next: 'end', type: 'neutral' },
