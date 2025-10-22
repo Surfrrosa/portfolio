@@ -1,13 +1,13 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Sidebar from '@/components/Sidebar'
 import { PHASES } from '@/lib/phases'
 
-export default function MethodPage() {
+function MethodContent() {
   const searchParams = useSearchParams()
   const [highlightedPhase, setHighlightedPhase] = useState<string | null>(null)
 
@@ -132,5 +132,22 @@ export default function MethodPage() {
         </div>
       </main>
     </div>
+  )
+}
+
+export default function MethodPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen grid lg:grid-cols-[340px_1fr]">
+        <Sidebar />
+        <main className="px-4 lg:px-12 py-8 lg:py-12">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-white text-4xl">Loading...</div>
+          </div>
+        </main>
+      </div>
+    }>
+      <MethodContent />
+    </Suspense>
   )
 }
