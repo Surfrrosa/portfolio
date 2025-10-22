@@ -118,3 +118,40 @@ body::after {
     animation: none;
   }
 }
+
+/* Shimmer Effect for Smiley */
+@keyframes shimmer {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+/* Fade In Effect */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.2s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-shimmer,
+  .animate-fade-in {
+    animation: none;
+  }
+}

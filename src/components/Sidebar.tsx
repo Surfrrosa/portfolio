@@ -4,6 +4,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
+import SmileyButton from './SmileyButton'
 
 export default function Sidebar() {
   return (
@@ -94,7 +95,8 @@ export default function Sidebar() {
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.6 }}
           >
-            <pre className="text-white/30 text-[12px] leading-[1.2] font-mono select-none scale-150">
+            <SmileyButton>
+              <pre className="text-white/30 text-[12px] leading-[1.2] font-mono select-none scale-150">
 {`⠀⠀⠀⠀⠀⡾⠀⢀⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢇⠀⠸⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⠇⠀⡸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⡄⠀⢿⠀⠀⠀⠀⠀
 ⠀⠀⠀⢠⡾⠁⠀⡼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⡄⠀⠙⣦⠀⠀⠀⠀⠀⠀⠀⣴⠋⠀⢠⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢷⠀⠈⢳⣄⠀⠀⠀
 ⠤⠒⠚⠁⠀⢀⡞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢦⡀⠀⠙⠒⠂⠤⠐⠒⠋⠀⠀⣰⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠳⣄⠀⠈⠓⠒⠤
@@ -128,7 +130,8 @@ export default function Sidebar() {
 ⠀⣤⠀⠀⠀⠈⢷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠏⠀⠀⠀⢠⡄⠀⢀⣄⠀⠀⠀⠙⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡼⠁⠀⠀⢀⣄⠀
 ⠀⣿⡇⠀⠀⠀⠀⢳⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⠃⠀⠀⠀⠀⣿⡧⠀⢸⣿⠀⠀⠀⠀⠘⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡞⠀⠀⠀⠀⢸⣿⠀
 ⠀⠿⠁⠀⢠⣶⡆⢨⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡎⠀⢴⡦⠀⠀⢹⡇⠀⠘⣟⠀⠀⣠⣤⠀⢱⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⠱⢠⣤⡄⠀⠘⡟⠀`}
-            </pre>
+              </pre>
+            </SmileyButton>
           </motion.div>
         </div>
 
