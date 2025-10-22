@@ -29,8 +29,8 @@ export default function VideoBackground() {
         gainNodeRef.current.gain.value = 0
         gainNodeRef.current.connect(audioContextRef.current.destination)
 
-        // Load audio file
-        const response = await fetch('/videos/background-audio.opus')
+        // Load audio file (M4A for universal browser compatibility)
+        const response = await fetch('/videos/background-audio.m4a')
         const arrayBuffer = await response.arrayBuffer()
         audioBufferRef.current = await audioContextRef.current.decodeAudioData(arrayBuffer)
         setAudioReady(true)
