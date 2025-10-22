@@ -149,9 +149,24 @@ body::after {
   animation: fade-in 0.2s ease-out forwards;
 }
 
+/* Float Effect for Exclamation Point */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) translateX(-50%);
+  }
+  50% {
+    transform: translateY(-10px) translateX(-50%);
+  }
+}
+
+.animate-float {
+  animation: float 2s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-shimmer,
-  .animate-fade-in {
+  .animate-fade-in,
+  .animate-float {
     animation: none;
   }
 }
