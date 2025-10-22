@@ -129,7 +129,7 @@ const DIALOGUE_TREE: Record<string, DialogNode> = {
   },
   end: {
     id: 'end',
-    text: "* You reached the end of the dialogue tree.\n\nSo... what now?\n\nYou can check out the full framework breakdown. Or we can book a session and actually DO this thing.\n\nOr you can close this and pretend we never had this conversation.\n\n(But we both know that project is still waiting.)",
+    text: "* You reached the end of the dialogue tree.\n\nSo... what now?\n\nYou can check out the full framework breakdown. Or we can book a session and actually DO this thing.\n\nOr you can close this and pretend this never happened.\n\n(But we both know that project is still waiting.)",
     choices: [
       { text: "Show me everything.", next: 'showMethod', type: 'positive' },
       { text: "Let's book a session.", next: 'bookSession', type: 'positive' },
