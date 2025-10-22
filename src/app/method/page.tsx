@@ -71,16 +71,11 @@ function MethodContent() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 * index }}
               >
-                <div className="flex items-start gap-4 mb-6">
-                  <div className="text-5xl">{phase.emoji}</div>
-                  <div>
-                    <h2 className="text-white text-3xl font-display font-bold mb-2">
-                      {index + 1}. {phase.title}
-                    </h2>
-                    <p className="text-teal-400 text-lg font-semibold">
-                      {phase.objective}
-                    </p>
-                  </div>
+                <div className="mb-6">
+                  <h2 className="text-white text-3xl font-display font-bold mb-2">
+                    <span className="font-bold">{phase.title}.</span>{' '}
+                    <span className="text-teal-400 font-semibold">{phase.objective}</span>
+                  </h2>
                 </div>
 
                 <div className="space-y-4">
