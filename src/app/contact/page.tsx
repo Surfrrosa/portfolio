@@ -100,7 +100,7 @@ export default function Contact() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            Have a product challenge, idea, or opportunity you want to explore? Let's discuss your vision and how we can tackle it together.
+            Got a project idea or challenge you want to tackle? Drop me a quick summary below and I'll send you a link to book a free 15-minute consultation to see how I can help.
           </motion.p>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -189,7 +189,7 @@ export default function Contact() {
                     required
                     rows={5}
                     className="w-full px-4 py-3 bg-slate-800/50 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-teal-400 transition-colors resize-none"
-                    placeholder="Tell me about your project, challenges, or how I can help..."
+                    placeholder="Give me the quick version: what are you building and what do you need help with?"
                   />
                 </div>
 
@@ -204,7 +204,7 @@ export default function Contact() {
                 {submitStatus === 'success' && (
                   <div className="mt-4 p-4 bg-green-500/20 border border-green-500/30 rounded-lg">
                     <p className="text-green-400 text-center">
-                      ✅ Message sent successfully! I'll get back to you within 24 hours.
+                      Got it! I'll send you a scheduling link for a free 15-minute consultation within 24 hours.
                     </p>
                   </div>
                 )}
@@ -212,7 +212,7 @@ export default function Contact() {
                 {submitStatus === 'error' && (
                   <div className="mt-4 p-4 bg-red-500/20 border border-red-500/30 rounded-lg">
                     <p className="text-red-400 text-center">
-                      ❌ Failed to send message. Please try again or email me directly at shainaep@gmail.com
+                      Failed to send message. Please try again or email me directly at shainaep@gmail.com
                     </p>
                   </div>
                 )}
