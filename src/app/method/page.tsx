@@ -41,7 +41,7 @@ function MethodContent() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
           >
-            The Method
+            The Method in my Madness
           </motion.h1>
 
           <motion.p
