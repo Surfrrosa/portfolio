@@ -31,7 +31,8 @@ body {
   position: relative;
 }
 
-body::before {
+/* Commented out to allow video background to show */
+/* body::before {
   content: '';
   position: fixed;
   top: 0;
@@ -57,7 +58,7 @@ body::after {
   background-color: #000000;
   opacity: 0.47;
   pointer-events: none;
-}
+} */
 
 .h1-display {
   font-family: var(--font-display, 'Archivo', system-ui, sans-serif);

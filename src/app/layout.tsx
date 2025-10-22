@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 import StructuredData from '@/components/StructuredData'
+import VideoBackground from '@/components/VideoBackground'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
@@ -87,6 +88,8 @@ export default function RootLayout({
         <StructuredData />
       </head>
       <body className="bg-bg-base text-white font-body antialiased">
+        {/* Video Background */}
+        <VideoBackground />
         {/* Global dark charcoal sheath over background */}
         <div
           className="fixed inset-0 -z-10 pointer-events-none
