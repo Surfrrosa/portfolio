@@ -89,3 +89,32 @@ body::after {
 .hero-gradient {
   background: linear-gradient(135deg, var(--bg-base) 0%, var(--surface) 100%);
 }
+
+/* RGB Glitch Effect */
+@keyframes rgb-glitch {
+  0% {
+    text-shadow: 0 0 0 rgba(43, 212, 207, 0);
+  }
+  25% {
+    text-shadow: -2px 0 0 rgba(43, 212, 207, 0.8), 2px 0 0 rgba(255, 0, 100, 0.8);
+  }
+  50% {
+    text-shadow: 2px 0 0 rgba(43, 212, 207, 0.8), -2px 0 0 rgba(255, 0, 100, 0.8);
+  }
+  75% {
+    text-shadow: -2px 0 0 rgba(43, 212, 207, 0.8), 2px 0 0 rgba(255, 0, 100, 0.8);
+  }
+  100% {
+    text-shadow: 0 0 0 rgba(43, 212, 207, 0);
+  }
+}
+
+.glitch-hover:hover {
+  animation: rgb-glitch 0.2s ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glitch-hover:hover {
+    animation: none;
+  }
+}

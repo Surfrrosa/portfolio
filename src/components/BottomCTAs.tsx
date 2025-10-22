@@ -16,7 +16,7 @@ export default function BottomCTAs() {
   }, []);
 
   const linkClass =
-    "text-teal-400 hover:text-teal-300 font-medium relative " +
+    "text-teal-400 hover:text-teal-300 font-medium relative glitch-hover " +
     "transition-[opacity,transform,filter,color] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] " +
     "focus:outline-none focus:ring-2 focus:ring-teal-400/60 focus:ring-offset-2 focus:ring-offset-black " +
     "after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 " +
