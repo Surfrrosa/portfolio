@@ -25,7 +25,14 @@ type DialogNode = {
 const DIALOGUE_TREE: Record<string, DialogNode> = {
   start: {
     id: 'start',
-    text: "* You feel a strange pull toward the smiling face...\n\nOh! Hey! You actually clicked me. Most people just stare and wonder if I'm a feature or a bug.\n\n(I'm a feature.)\n\nSo... you got a project that's been sitting in your mental backlog for, what, three months? Six? A year?\n\nDon't worry. I'm not judging. I'm here to help.",
+    text: "* You feel a strange pull toward the smiling face...\n\nOh! Hey! You actually clicked me. Most people just stare and wonder if I'm a feature or a bug.\n\n(I'm a feature.)",
+    choices: [
+      { text: "...", next: 'startContinue', type: 'neutral' },
+    ],
+  },
+  startContinue: {
+    id: 'startContinue',
+    text: "So... you got a project that's been sitting in your mental backlog for, what, three months? Six? A year?\n\nDon't worry. I'm not judging. I'm here to help.",
     choices: [
       { text: "...How did you know?", next: 'explain', type: 'positive' },
       { text: "Who ARE you?", next: 'who', type: 'neutral' },

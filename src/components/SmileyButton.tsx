@@ -11,7 +11,6 @@ export default function SmileyButton({ children }: SmileyButtonProps) {
   const [isHovered, setIsHovered] = useState(false)
   const [showBubble, setShowBubble] = useState(false)
   const [isDialogOpen, setIsDialogOpen] = useState(false)
-  const [hasInteracted, setHasInteracted] = useState(false)
   const buttonRef = useRef<HTMLButtonElement>(null)
   const hoverTimeoutRef = useRef<NodeJS.Timeout>()
 
@@ -32,12 +31,7 @@ export default function SmileyButton({ children }: SmileyButtonProps) {
   }
 
   const handleClick = () => {
-    // Mobile: first tap shows bubble, second tap opens dialog
-    if (!hasInteracted) {
-      setHasInteracted(true)
-      setShowBubble(true)
-      return
-    }
+    // Open dialog immediately on click
     setIsDialogOpen(true)
     setShowBubble(false)
   }
