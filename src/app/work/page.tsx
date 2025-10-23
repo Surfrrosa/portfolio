@@ -5,7 +5,6 @@ import { motion } from 'framer-motion'
 import Lenis from 'lenis'
 import Sidebar from '@/components/Sidebar'
 import DiagramGallery from '@/components/DiagramGallery'
-import PomodoroMedia from '@/components/PomodoroMedia'
 
 export default function Work() {
   const lenisRef = useRef<Lenis | null>(null)
@@ -327,31 +326,48 @@ export default function Work() {
                 <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Agile Development</span>
               </div>
 
-              <div className="mt-6">
-                <div className="mb-2">
-                  <span className="inline-block bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs tracking-wide">
-                    Mobile App
-                  </span>
+              <div className="mt-6 space-y-6">
+                <div>
+                  <div className="mb-2">
+                    <span className="inline-block bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs tracking-wide">
+                      Mobile App
+                    </span>
+                  </div>
+                  <div
+                    className="relative rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
+                    onClick={() => {
+                      setModalImage('/images/pomodoro-flow-app.jpg')
+                      setIsModalOpen(true)
+                    }}
+                  >
+                    <img
+                      src="/images/pomodoro-flow-app.jpg"
+                      alt="Pomodoro Flow app preview showing 25/5 timer interface"
+                      className="w-48 h-auto object-contain mx-auto"
+                    />
+                  </div>
                 </div>
-                <div 
-                  className="relative rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
-                  onClick={() => {
-                    setModalImage('/images/pomodoro-flow-app.jpg')
-                    setIsModalOpen(true)
-                  }}
-                >
-                  <img
-                    src="/images/pomodoro-flow-app.jpg"
-                    alt="Pomodoro Flow app preview showing 25/5 timer interface"
-                    className="w-48 h-auto object-contain mx-auto"
-                  />
+
+                <div>
+                  <div className="mb-2">
+                    <span className="inline-block bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs tracking-wide">
+                      Landing Page
+                    </span>
+                  </div>
+                  <div
+                    className="relative rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
+                    onClick={() => {
+                      setModalImage('/images/pomodoro-flow-landing.png')
+                      setIsModalOpen(true)
+                    }}
+                  >
+                    <img
+                      src="/images/pomodoro-flow-landing.png"
+                      alt="Pomodoro Flow landing page showcasing calm, zero-friction pomodoro for neurodivergents"
+                      className="w-full h-auto object-contain"
+                    />
+                  </div>
                 </div>
-                <div className="mt-4 mb-2">
-                  <span className="inline-block bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs tracking-wide">
-                    Web App
-                  </span>
-                </div>
-                <PomodoroMedia />
 
                 <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
                   <a
