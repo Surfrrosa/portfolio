@@ -6,6 +6,7 @@ import Lenis from 'lenis'
 import Sidebar from '@/components/Sidebar'
 import { TextScrambleEffect } from '@/components/TextScrambleEffect'
 import BottomCTAs from '@/components/BottomCTAs'
+import ExitIntentPrompt from '@/components/ExitIntentPrompt'
 
 export default function Home() {
   const lenisRef = useRef<Lenis | null>(null)
@@ -39,7 +40,8 @@ export default function Home() {
   return (
     <div className="min-h-screen grid lg:grid-cols-[340px_1fr]">
       <Sidebar />
-      
+      <ExitIntentPrompt />
+
       <main className="flex flex-col justify-center items-center px-4 lg:px-12 min-h-screen pt-4 lg:pt-0">
         <motion.div
           className="text-center"
