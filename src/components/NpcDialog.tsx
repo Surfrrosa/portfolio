@@ -301,6 +301,16 @@ export default function NpcDialog({ open, onClose }: NpcDialogProps) {
 
         {/* Content */}
         <div className="relative z-20 p-8 space-y-6">
+          {/* ASCII Smiley Portrait */}
+          <div className="flex justify-center mb-4">
+            <img
+              src="/images/ascii-smiley.png"
+              alt="ASCII smiley character portrait"
+              className="w-16 h-16 pixelated"
+              style={{ imageRendering: 'pixelated' }}
+            />
+          </div>
+
           {/* Dialogue text */}
           <div className="min-h-[80px] text-white text-base leading-relaxed font-mono tracking-wide">
             <Typewriter
