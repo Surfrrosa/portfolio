@@ -7,7 +7,13 @@ export default function ExitIntentPrompt() {
   const [hasTriggered, setHasTriggered] = useState(false)
 
   useEffect(() => {
-    // Check if user has seen this before
+    // Check if user has already interacted with the NPC dialog
+    const hasInteractedWithNPC = localStorage.getItem('npc-dialog-interacted')
+    if (hasInteractedWithNPC) {
+      return // Don't show exit intent if they've already found the easter egg
+    }
+
+    // Check if user has seen this prompt before in this session
     const hasSeenPrompt = sessionStorage.getItem('exit-intent-shown')
     if (hasSeenPrompt) {
       setHasTriggered(true)
@@ -15,8 +21,9 @@ export default function ExitIntentPrompt() {
     }
 
     const handleMouseLeave = (e: MouseEvent) => {
-      // Trigger when mouse leaves from top of viewport (typical exit behavior)
-      if (e.clientY <= 10 && !hasTriggered) {
+      // Trigger when mouse leaves viewport from top (like going to tabs/address bar)
+      // Check if mouse is leaving the document and moving upward
+      if (e.clientY <= 0 && !hasTriggered) {
         setShowPrompt(true)
         setHasTriggered(true)
         sessionStorage.setItem('exit-intent-shown', 'true')
@@ -33,10 +40,11 @@ export default function ExitIntentPrompt() {
       }
     }
 
-    document.addEventListener('mouseout', handleMouseLeave)
+    // Use mouseleave on document for better detection
+    document.addEventListener('mouseleave', handleMouseLeave)
 
     return () => {
-      document.removeEventListener('mouseout', handleMouseLeave)
+      document.removeEventListener('mouseleave', handleMouseLeave)
     }
   }, [hasTriggered])
 

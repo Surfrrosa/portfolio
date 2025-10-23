@@ -34,6 +34,8 @@ export default function SmileyButton({ children }: SmileyButtonProps) {
     // Open dialog immediately on click
     setIsDialogOpen(true)
     setShowBubble(false)
+    // Mark that user has interacted with NPC dialog
+    localStorage.setItem('npc-dialog-interacted', 'true')
   }
 
   const handleCloseDialog = () => {
