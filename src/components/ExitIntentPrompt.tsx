@@ -20,10 +20,10 @@ export default function ExitIntentPrompt() {
       return
     }
 
-    const handleMouseLeave = (e: MouseEvent) => {
-      // Trigger when mouse leaves viewport from top (like going to tabs/address bar)
-      // Check if mouse is leaving the document and moving upward
-      if (e.clientY <= 0 && !hasTriggered) {
+    const handleMouseOut = (e: MouseEvent) => {
+      // Detect when mouse is moving toward top of viewport (exit intent)
+      // This fires when cursor leaves the document through the top
+      if (!e.relatedTarget && !hasTriggered && e.clientY < 10) {
         setShowPrompt(true)
         setHasTriggered(true)
         sessionStorage.setItem('exit-intent-shown', 'true')
@@ -40,11 +40,11 @@ export default function ExitIntentPrompt() {
       }
     }
 
-    // Use mouseleave on document for better detection
-    document.addEventListener('mouseleave', handleMouseLeave)
+    // Use mouseout for exit-intent detection
+    document.addEventListener('mouseout', handleMouseOut)
 
     return () => {
-      document.removeEventListener('mouseleave', handleMouseLeave)
+      document.removeEventListener('mouseout', handleMouseOut)
     }
   }, [hasTriggered])
 
