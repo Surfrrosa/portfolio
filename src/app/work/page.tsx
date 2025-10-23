@@ -274,6 +274,86 @@ export default function Work() {
               transition={{ duration: 0.8, delay: 0.9 }}
             >
               <div className="mb-4">
+                <span className="inline-block bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-sm font-semibold">
+                  Enterprise Telecom / API Integrations
+                </span>
+              </div>
+              
+              <h3 className="text-white text-2xl font-display font-bold mb-4">
+                Nortal ● API-Driven Telecom Solutions for National Retailers
+              </h3>
+              
+              <h4 className="text-teal-400 text-lg font-semibold mb-6">
+                Delivered prepaid activation, number port-in, add-a-line, and billing integrations for T-Mobile's largest retail partners.
+              </h4>
+              
+              <div className="mb-6">
+                <p className="text-xs uppercase tracking-wider text-gray-400 font-semibold">
+                  Secure Communications Modernization — Faster, Safer, Smarter
+                </p>
+              </div>
+              
+              <div className="space-y-6">
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Problem</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    T-Mobile's prepaid services for major retailers like Walmart, Costco, and Best Buy required complex API integrations for activations, number porting, and service extensions. Without streamlined processes, onboarding new customers or adding lines was slow, error-prone, and frustrating.
+                  </p>
+                </div>
+                
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Solution</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    As Technical Product Owner, I managed the MAAD Lite prepaid API integration for national retailers, delivered Port-In capabilities for seamless number transfers, launched National Retailer Add-a-Line (AAL) functionality for existing customers, and improved cart, payment, and OTP retry performance for faster transactions.
+                  </p>
+                </div>
+                
+                <div>
+                  <h5 className="text-white font-semibold mb-2">My Role</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    Technical Product Owner managing API integrations, stakeholder coordination, performance optimization, and cross-team delivery for enterprise retail partnerships.
+                  </p>
+                </div>
+                
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Impact</h5>
+                  <div className="text-gray-300 space-y-3">
+                    <p>Reduced number porting time and errors, improving customer onboarding.</p>
+                    <p>Implemented and streamlined prepaid activations across retail partners.</p>
+                    <p>Boosted upsell opportunities through improved AAL process.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="flex flex-wrap gap-2 mt-6">
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">API Integration</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Telecom</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Agile Delivery</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Enterprise Retail</span>
+              </div>
+              
+              <DiagramGallery />
+              
+              <div className="text-center mt-8">
+                <a 
+                  href="https://nortal.com/about" 
+                  className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors group"
+                >
+                  Visit Website
+                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </a>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.0 }}
+            >
+              <div className="mb-4">
                 <span className="inline-block bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm font-semibold">
                   Live on App Store
                 </span>
@@ -412,234 +492,7 @@ export default function Work() {
               className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.0 }}
-            >
-              <div className="mb-4">
-                <span className="inline-block bg-cyan-500/20 text-cyan-400 px-3 py-1 rounded-full text-sm font-semibold">
-                  Personal Passion Project
-                </span>
-              </div>
-
-              <h3 className="text-white text-2xl font-display font-bold mb-4">
-                ShainAI ● My RAG-Powered Second Brain
-              </h3>
-
-              <h4 className="text-teal-400 text-lg font-semibold mb-6">
-                My personal memory, searchable: AI that remembers everything I've learned, built, and discussed.
-              </h4>
-
-              <div className="space-y-6">
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Problem</h5>
-                  <p className="text-gray-300 leading-relaxed">
-                    I was accumulating knowledge across fragmented sources: ChatGPT conversations, code repos, notes apps, and local files. This made it impossible to recall past decisions, retrieve old ideas, or connect dots across projects. Critical context kept getting lost in the noise.
-                  </p>
-                </div>
-
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Solution</h5>
-                  <p className="text-gray-300 leading-relaxed">
-                    I built a privacy-first RAG (Retrieval-Augmented Generation) system that ingests, indexes, and semantically searches across all my personal data sources. ShainAI automatically watches my local files, ingests my Git repos on commit, parses my ChatGPT exports, and imports my note archives. It then answers my questions by retrieving relevant context with citations. The system even ingests its own conversations with me, creating a meta-memory loop where my second brain remembers thinking with itself.
-                  </p>
-                </div>
-
-                <div>
-                  <h5 className="text-white font-semibold mb-2">What I Built</h5>
-                  <p className="text-gray-300 leading-relaxed">
-                    System architecture (RAG pipeline, vector embeddings, semantic search), full-stack development, AI orchestration and prompt engineering, auto-ingestion system design with real-time file watching and git hooks, UX/UI for conversational interface.
-                  </p>
-                </div>
-
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Impact</h5>
-                  <div className="text-gray-300 space-y-3">
-                    <p>Gives me instant semantic search across my 1,000+ memories (ChatGPT history, Joplin notes, local files, GitHub repos).</p>
-                    <p>Auto-ingestion pipeline watches my files, hooks into my git commits, and parses multiple formats (PDF, Word, images with OCR, .env files, ZIP archives).</p>
-                    <p>Meta capability: Automatically saves its own conversations with me every 5 Q&A exchanges, making past ShainAI discussions searchable.</p>
-                    <p className="text-cyan-400 font-medium">Built for privacy: 100% local deployment on my machine with no external dependencies and full data ownership.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex flex-wrap gap-2 mt-6">
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">RAG Systems</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Vector Search</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">AI Engineering</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Full-Stack</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Node.js</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
-              </div>
-
-              <div className="mt-8 space-y-4">
-                <div className="relative rounded-lg border border-white/10 bg-black/30 p-6">
-                  <h5 className="text-white font-semibold mb-4">Tech Stack</h5>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-                    <div>
-                      <div className="text-cyan-400 font-semibold mb-2">Backend</div>
-                      <div className="text-gray-300 space-y-1">
-                        <p>• Node.js + Express</p>
-                        <p>• PostgreSQL + pgvector</p>
-                        <p>• Vector similarity search</p>
-                      </div>
-                    </div>
-                    <div>
-                      <div className="text-cyan-400 font-semibold mb-2">Frontend</div>
-                      <div className="text-gray-300 space-y-1">
-                        <p>• Next.js 14 + TypeScript</p>
-                        <p>• React + Tailwind CSS</p>
-                        <p>• Markdown rendering</p>
-                      </div>
-                    </div>
-                    <div>
-                      <div className="text-cyan-400 font-semibold mb-2">AI/ML</div>
-                      <div className="text-gray-300 space-y-1">
-                        <p>• OpenAI GPT-4 Turbo</p>
-                        <p>• text-embedding-3-small</p>
-                        <p>• 1536-dim embeddings</p>
-                      </div>
-                    </div>
-                    <div>
-                      <div className="text-cyan-400 font-semibold mb-2">Ingestion</div>
-                      <div className="text-gray-300 space-y-1">
-                        <p>• Custom parsers (PDF, Word)</p>
-                        <p>• Tesseract OCR for images</p>
-                        <p>• File watching (chokidar)</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="relative rounded-lg border border-white/10 bg-black/30 p-4">
-                  <h5 className="text-white font-semibold mb-4">Auto-Ingestion Highlights</h5>
-                  <div className="space-y-3 text-sm text-gray-300">
-                    <div className="flex items-start gap-3">
-                      <svg className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                      <p>Real-time file monitoring across Desktop, Downloads, Documents with intelligent filtering</p>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <svg className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                      <p>Git integration via post-commit hooks—every commit auto-ingests changed files</p>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <svg className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                      <p>Multi-source imports: ChatGPT (343 conversations → 5,037 chunks), Joplin (400 notes → 1,315 chunks), local files (900+ scanned)</p>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <svg className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                      <p>Meta-memory: ShainAI auto-saves its own conversations, enabling queries like "What did I ask you about Floatless yesterday?"</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="relative aspect-video rounded-lg overflow-hidden border border-white/10 bg-gradient-to-br from-cyan-500/10 to-purple-500/10">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-16 h-16 bg-cyan-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg className="w-8 h-8 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                        </svg>
-                      </div>
-                      <p className="text-gray-400 text-sm">Demo Coming Soon</p>
-                      <p className="text-white font-semibold">ShainAI Interface</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.1 }}
-            >
-              <div className="mb-4">
-                <span className="inline-block bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-sm font-semibold">
-                  Enterprise Telecom / API Integrations
-                </span>
-              </div>
-              
-              <h3 className="text-white text-2xl font-display font-bold mb-4">
-                Nortal ● API-Driven Telecom Solutions for National Retailers
-              </h3>
-              
-              <h4 className="text-teal-400 text-lg font-semibold mb-6">
-                Delivered prepaid activation, number port-in, add-a-line, and billing integrations for T-Mobile's largest retail partners.
-              </h4>
-              
-              <div className="mb-6">
-                <p className="text-xs uppercase tracking-wider text-gray-400 font-semibold">
-                  Secure Communications Modernization — Faster, Safer, Smarter
-                </p>
-              </div>
-              
-              <div className="space-y-6">
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Problem</h5>
-                  <p className="text-gray-300 leading-relaxed">
-                    T-Mobile's prepaid services for major retailers like Walmart, Costco, and Best Buy required complex API integrations for activations, number porting, and service extensions. Without streamlined processes, onboarding new customers or adding lines was slow, error-prone, and frustrating.
-                  </p>
-                </div>
-                
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Solution</h5>
-                  <p className="text-gray-300 leading-relaxed">
-                    As Technical Product Owner, I managed the MAAD Lite prepaid API integration for national retailers, delivered Port-In capabilities for seamless number transfers, launched National Retailer Add-a-Line (AAL) functionality for existing customers, and improved cart, payment, and OTP retry performance for faster transactions.
-                  </p>
-                </div>
-                
-                <div>
-                  <h5 className="text-white font-semibold mb-2">My Role</h5>
-                  <p className="text-gray-300 leading-relaxed">
-                    Technical Product Owner managing API integrations, stakeholder coordination, performance optimization, and cross-team delivery for enterprise retail partnerships.
-                  </p>
-                </div>
-                
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Impact</h5>
-                  <div className="text-gray-300 space-y-3">
-                    <p>Reduced number porting time and errors, improving customer onboarding.</p>
-                    <p>Implemented and streamlined prepaid activations across retail partners.</p>
-                    <p>Boosted upsell opportunities through improved AAL process.</p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="flex flex-wrap gap-2 mt-6">
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">API Integration</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Telecom</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Agile Delivery</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Enterprise Retail</span>
-              </div>
-              
-              <DiagramGallery />
-              
-              <div className="text-center mt-8">
-                <a 
-                  href="https://nortal.com/about" 
-                  className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors group"
-                >
-                  Visit Website
-                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </a>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.3 }}
             >
               <div className="mb-4">
                 <span className="inline-block bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm font-semibold">
@@ -892,6 +745,153 @@ export default function Work() {
                 </a>
               </div>
 
+            </motion.div>
+
+            <motion.div
+              className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.3 }}
+            >
+              <div className="mb-4">
+                <span className="inline-block bg-cyan-500/20 text-cyan-400 px-3 py-1 rounded-full text-sm font-semibold">
+                  Personal Passion Project
+                </span>
+              </div>
+
+              <h3 className="text-white text-2xl font-display font-bold mb-4">
+                ShainAI ● My RAG-Powered Second Brain
+              </h3>
+
+              <h4 className="text-teal-400 text-lg font-semibold mb-6">
+                My personal memory, searchable: AI that remembers everything I've learned, built, and discussed.
+              </h4>
+
+              <div className="space-y-6">
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Problem</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    I was accumulating knowledge across fragmented sources: ChatGPT conversations, code repos, notes apps, and local files. This made it impossible to recall past decisions, retrieve old ideas, or connect dots across projects. Critical context kept getting lost in the noise.
+                  </p>
+                </div>
+
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Solution</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    I built a privacy-first RAG (Retrieval-Augmented Generation) system that ingests, indexes, and semantically searches across all my personal data sources. ShainAI automatically watches my local files, ingests my Git repos on commit, parses my ChatGPT exports, and imports my note archives. It then answers my questions by retrieving relevant context with citations. The system even ingests its own conversations with me, creating a meta-memory loop where my second brain remembers thinking with itself.
+                  </p>
+                </div>
+
+                <div>
+                  <h5 className="text-white font-semibold mb-2">What I Built</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    System architecture (RAG pipeline, vector embeddings, semantic search), full-stack development, AI orchestration and prompt engineering, auto-ingestion system design with real-time file watching and git hooks, UX/UI for conversational interface.
+                  </p>
+                </div>
+
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Impact</h5>
+                  <div className="text-gray-300 space-y-3">
+                    <p>Gives me instant semantic search across my 1,000+ memories (ChatGPT history, Joplin notes, local files, GitHub repos).</p>
+                    <p>Auto-ingestion pipeline watches my files, hooks into my git commits, and parses multiple formats (PDF, Word, images with OCR, .env files, ZIP archives).</p>
+                    <p>Meta capability: Automatically saves its own conversations with me every 5 Q&A exchanges, making past ShainAI discussions searchable.</p>
+                    <p className="text-cyan-400 font-medium">Built for privacy: 100% local deployment on my machine with no external dependencies and full data ownership.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap gap-2 mt-6">
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">RAG Systems</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Vector Search</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">AI Engineering</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Full-Stack</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Node.js</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
+              </div>
+
+              <div className="mt-8 space-y-4">
+                <div className="relative rounded-lg border border-white/10 bg-black/30 p-6">
+                  <h5 className="text-white font-semibold mb-4">Tech Stack</h5>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                    <div>
+                      <div className="text-cyan-400 font-semibold mb-2">Backend</div>
+                      <div className="text-gray-300 space-y-1">
+                        <p>• Node.js + Express</p>
+                        <p>• PostgreSQL + pgvector</p>
+                        <p>• Vector similarity search</p>
+                      </div>
+                    </div>
+                    <div>
+                      <div className="text-cyan-400 font-semibold mb-2">Frontend</div>
+                      <div className="text-gray-300 space-y-1">
+                        <p>• Next.js 14 + TypeScript</p>
+                        <p>• React + Tailwind CSS</p>
+                        <p>• Markdown rendering</p>
+                      </div>
+                    </div>
+                    <div>
+                      <div className="text-cyan-400 font-semibold mb-2">AI/ML</div>
+                      <div className="text-gray-300 space-y-1">
+                        <p>• OpenAI GPT-4 Turbo</p>
+                        <p>• text-embedding-3-small</p>
+                        <p>• 1536-dim embeddings</p>
+                      </div>
+                    </div>
+                    <div>
+                      <div className="text-cyan-400 font-semibold mb-2">Ingestion</div>
+                      <div className="text-gray-300 space-y-1">
+                        <p>• Custom parsers (PDF, Word)</p>
+                        <p>• Tesseract OCR for images</p>
+                        <p>• File watching (chokidar)</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="relative rounded-lg border border-white/10 bg-black/30 p-4">
+                  <h5 className="text-white font-semibold mb-4">Auto-Ingestion Highlights</h5>
+                  <div className="space-y-3 text-sm text-gray-300">
+                    <div className="flex items-start gap-3">
+                      <svg className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      <p>Real-time file monitoring across Desktop, Downloads, Documents with intelligent filtering</p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <svg className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      <p>Git integration via post-commit hooks—every commit auto-ingests changed files</p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <svg className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      <p>Multi-source imports: ChatGPT (343 conversations → 5,037 chunks), Joplin (400 notes → 1,315 chunks), local files (900+ scanned)</p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <svg className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      <p>Meta-memory: ShainAI auto-saves its own conversations, enabling queries like "What did I ask you about Floatless yesterday?"</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="relative aspect-video rounded-lg overflow-hidden border border-white/10 bg-gradient-to-br from-cyan-500/10 to-purple-500/10">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="w-16 h-16 bg-cyan-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg className="w-8 h-8 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                        </svg>
+                      </div>
+                      <p className="text-gray-400 text-sm">Demo Coming Soon</p>
+                      <p className="text-white font-semibold">ShainAI Interface</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </motion.div>
 
             <motion.div
