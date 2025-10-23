@@ -412,6 +412,153 @@ export default function Work() {
               className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.0 }}
+            >
+              <div className="mb-4">
+                <span className="inline-block bg-cyan-500/20 text-cyan-400 px-3 py-1 rounded-full text-sm font-semibold">
+                  Production Ready
+                </span>
+              </div>
+
+              <h3 className="text-white text-2xl font-display font-bold mb-4">
+                ShainAI ● RAG-Powered Second Brain
+              </h3>
+
+              <h4 className="text-teal-400 text-lg font-semibold mb-6">
+                Your personal memory, searchable: AI that remembers everything you've learned, built, and discussed.
+              </h4>
+
+              <div className="space-y-6">
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Problem</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    Developers and builders accumulate knowledge across fragmented sources—ChatGPT conversations, code repos, notes apps, local files—making it impossible to recall past decisions, retrieve old ideas, or connect dots across projects. Critical context gets lost in the noise.
+                  </p>
+                </div>
+
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Solution</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    A privacy-first RAG (Retrieval-Augmented Generation) system that ingests, indexes, and semantically searches across all personal data sources. ShainAI automatically watches local files, ingests Git repos on commit, parses ChatGPT exports, and imports note archives—then answers questions by retrieving relevant context with citations. The system even ingests its own conversations, creating a meta-memory loop where your second brain remembers thinking with itself.
+                  </p>
+                </div>
+
+                <div>
+                  <h5 className="text-white font-semibold mb-2">My Role</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    System architecture (RAG pipeline, vector embeddings, semantic search), full-stack development, AI orchestration and prompt engineering, auto-ingestion system design with real-time file watching and git hooks, UX/UI for conversational interface.
+                  </p>
+                </div>
+
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Impact</h5>
+                  <div className="text-gray-300 space-y-3">
+                    <p>Instant semantic search across 1,000+ personal memories (ChatGPT history, Joplin notes, local files, GitHub repos).</p>
+                    <p>Auto-ingestion pipeline with file watchers, git hooks, and multi-format parsers (PDF, Word, images with OCR, .env files, ZIP archives).</p>
+                    <p>Meta capability: Automatically saves its own conversations every 5 Q&A exchanges, making past ShainAI discussions searchable.</p>
+                    <p className="text-cyan-400 font-medium">Privacy-focused: 100% local deployment—no external dependencies, full data ownership.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap gap-2 mt-6">
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">RAG Systems</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Vector Search</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">AI Engineering</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Full-Stack</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Node.js</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
+              </div>
+
+              <div className="mt-8 space-y-4">
+                <div className="relative rounded-lg border border-white/10 bg-black/30 p-6">
+                  <h5 className="text-white font-semibold mb-4">Tech Stack</h5>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                    <div>
+                      <div className="text-cyan-400 font-semibold mb-2">Backend</div>
+                      <div className="text-gray-300 space-y-1">
+                        <p>• Node.js + Express</p>
+                        <p>• PostgreSQL + pgvector</p>
+                        <p>• Vector similarity search</p>
+                      </div>
+                    </div>
+                    <div>
+                      <div className="text-cyan-400 font-semibold mb-2">Frontend</div>
+                      <div className="text-gray-300 space-y-1">
+                        <p>• Next.js 14 + TypeScript</p>
+                        <p>• React + Tailwind CSS</p>
+                        <p>• Markdown rendering</p>
+                      </div>
+                    </div>
+                    <div>
+                      <div className="text-cyan-400 font-semibold mb-2">AI/ML</div>
+                      <div className="text-gray-300 space-y-1">
+                        <p>• OpenAI GPT-4 Turbo</p>
+                        <p>• text-embedding-3-small</p>
+                        <p>• 1536-dim embeddings</p>
+                      </div>
+                    </div>
+                    <div>
+                      <div className="text-cyan-400 font-semibold mb-2">Ingestion</div>
+                      <div className="text-gray-300 space-y-1">
+                        <p>• Custom parsers (PDF, Word)</p>
+                        <p>• Tesseract OCR for images</p>
+                        <p>• File watching (chokidar)</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="relative rounded-lg border border-white/10 bg-black/30 p-4">
+                  <h5 className="text-white font-semibold mb-4">Auto-Ingestion Highlights</h5>
+                  <div className="space-y-3 text-sm text-gray-300">
+                    <div className="flex items-start gap-3">
+                      <svg className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      <p>Real-time file monitoring across Desktop, Downloads, Documents with intelligent filtering</p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <svg className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      <p>Git integration via post-commit hooks—every commit auto-ingests changed files</p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <svg className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      <p>Multi-source imports: ChatGPT (343 conversations → 5,037 chunks), Joplin (400 notes → 1,315 chunks), local files (900+ scanned)</p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <svg className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      <p>Meta-memory: ShainAI auto-saves its own conversations, enabling queries like "What did I ask you about Floatless yesterday?"</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="relative aspect-video rounded-lg overflow-hidden border border-white/10 bg-gradient-to-br from-cyan-500/10 to-purple-500/10">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="w-16 h-16 bg-cyan-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg className="w-8 h-8 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                        </svg>
+                      </div>
+                      <p className="text-gray-400 text-sm">Demo Coming Soon</p>
+                      <p className="text-white font-semibold">ShainAI Interface</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.1 }}
             >
               <div className="mb-4">
