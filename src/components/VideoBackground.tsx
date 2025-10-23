@@ -110,6 +110,7 @@ export default function VideoBackground() {
           playsInline
           preload="auto"
         >
+          <source src="/videos/background-loop-safari.mp4" type="video/mp4" />
           <source src="/videos/background-loop-v3.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
