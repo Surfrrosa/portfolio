@@ -764,14 +764,14 @@ export default function Work() {
               </h3>
 
               <h4 className="text-teal-400 text-lg font-semibold mb-6">
-                My personal memory, searchable: AI that remembers everything I've learned, built, and discussed.
+                AI-powered knowledge retrieval: instant access to technical details, decision history, and project context from across all my work.
               </h4>
 
               <div className="space-y-6">
                 <div>
                   <h5 className="text-white font-semibold mb-2">Problem</h5>
                   <p className="text-gray-300 leading-relaxed">
-                    I was accumulating knowledge across fragmented sources: ChatGPT conversations, code repos, notes apps, and local files. This made it impossible to recall past decisions, retrieve old ideas, or connect dots across projects. Critical context kept getting lost in the noise.
+                    I generate tons of technical knowledge daily: architecture decisions, code patterns, debugging sessions, feature discussions. When that information lives across ChatGPT conversations, Git repos, note archives, and local files, finding specific details becomes a needle-in-haystack problem. What was that API approach I discussed three months ago? Why did I choose that architecture? What was the solution to that edge case? My brain remembers the concepts, but not all the specifics.
                   </p>
                 </div>
 
