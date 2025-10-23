@@ -51,7 +51,7 @@ export default function ExitIntentPrompt() {
   if (!showPrompt) return null
 
   return (
-    <div className="fixed top-[75%] left-[140px] -translate-x-1/2 z-50 animate-fade-in pointer-events-none">
+    <div className="fixed top-[65%] left-[123px] -translate-x-1/2 z-50 animate-fade-in pointer-events-none">
       {/* Text Bubble */}
       <div className="relative bg-zinc-950 border-[3px] border-white/90 rounded-sm px-5 py-3 shadow-2xl mb-4">
         {/* Inner border for classic layered look */}
