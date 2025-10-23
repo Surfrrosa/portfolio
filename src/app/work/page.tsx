@@ -9,7 +9,7 @@ import DiagramGallery from '@/components/DiagramGallery'
 export default function Work() {
   const lenisRef = useRef<Lenis | null>(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
-  const [modalImage, setModalImage] = useState('')
+  const [modalMedia, setModalMedia] = useState({ src: '', type: 'image' as 'image' | 'video' })
 
   useEffect(() => {
     const lenis = new Lenis({
@@ -137,7 +137,13 @@ export default function Work() {
               </div>
 
               <div className="mt-8 space-y-6">
-                <div className="relative aspect-video rounded-lg overflow-hidden border border-white/10">
+                <div
+                  className="relative aspect-video rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
+                  onClick={() => {
+                    setModalMedia({ src: '/videos/prompt2story-preview.mp4', type: 'video' })
+                    setIsModalOpen(true)
+                  }}
+                >
                   <video
                     className="w-full h-full object-cover"
                     autoPlay
@@ -251,10 +257,10 @@ export default function Work() {
               </div>
 
               <div className="mt-8">
-                <div 
+                <div
                   className="relative rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
                   onClick={() => {
-                    setModalImage('/images/enlighten_portfolio_horizontal.png')
+                    setModalMedia({ src: '/images/enlighten_portfolio_horizontal.png', type: 'image' })
                     setIsModalOpen(true)
                   }}
                 >
@@ -416,7 +422,7 @@ export default function Work() {
                   <div
                     className="relative rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
                     onClick={() => {
-                      setModalImage('/images/pomodoro-flow-app.jpg')
+                      setModalMedia({ src: '/images/pomodoro-flow-app.jpg', type: 'image' })
                       setIsModalOpen(true)
                     }}
                   >
@@ -437,7 +443,7 @@ export default function Work() {
                   <div
                     className="relative rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
                     onClick={() => {
-                      setModalImage('/images/pomodoro-flow-landing.png')
+                      setModalMedia({ src: '/images/pomodoro-flow-landing.png', type: 'image' })
                       setIsModalOpen(true)
                     }}
                   >
@@ -878,7 +884,13 @@ export default function Work() {
                   </div>
                 </div>
 
-                <div className="relative aspect-video rounded-lg overflow-hidden border border-white/10">
+                <div
+                  className="relative aspect-video rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
+                  onClick={() => {
+                    setModalMedia({ src: '/videos/shainai-demo.mp4', type: 'video' })
+                    setIsModalOpen(true)
+                  }}
+                >
                   <video
                     className="w-full h-full object-cover"
                     autoPlay
@@ -975,10 +987,10 @@ export default function Work() {
                     ConnectWise Mobile App
                   </span>
                 </div>
-                <div 
+                <div
                   className="relative rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
                   onClick={() => {
-                    setModalImage('/images/connectwise-manage-showcase.png')
+                    setModalMedia({ src: '/images/connectwise-manage-showcase.png', type: 'image' })
                     setIsModalOpen(true)
                   }}
                 >
@@ -1249,7 +1261,13 @@ export default function Work() {
                   </div>
                 </div>
 
-                <div className="relative aspect-video rounded-lg overflow-hidden border border-white/10">
+                <div
+                  className="relative aspect-video rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
+                  onClick={() => {
+                    setModalMedia({ src: '/videos/floatless-marketing.mp4', type: 'video' })
+                    setIsModalOpen(true)
+                  }}
+                >
                   <video
                     className="w-full h-full object-cover"
                     autoPlay
@@ -1315,29 +1333,37 @@ export default function Work() {
         </div>
       </main>
 
-      {/* Image Modal */}
+      {/* Media Modal */}
       {isModalOpen && (
-        <div 
-          className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
+        <div
+          className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4"
           onClick={() => setIsModalOpen(false)}
         >
-          <div className="relative max-w-6xl max-h-full">
+          <div className="relative w-[95vw] h-[95vh]">
             <button
               onClick={() => setIsModalOpen(false)}
               className="absolute -top-12 right-0 text-white hover:text-gray-300 text-xl font-bold"
             >
               ✕ Close
             </button>
-            <img
-              src={modalImage}
-              alt={modalImage.includes('enlighten') 
-                ? "Enlighten app portfolio showcase featuring mobile screens for notifications, daily wisdom, micro-practice, library, and favorites"
-                : modalImage.includes('connectwise')
-                ? "ConnectWise Manage mobile app interfaces showing ticket management, time tracking, and CRM dashboards"
-                : "Pomodoro Flow app screenshot showing the minimal timer interface with focus and break modes"
-              }
-              className="max-w-full max-h-full object-contain rounded-lg"
-            />
+            {modalMedia.type === 'video' ? (
+              <video
+                className="w-full h-full object-contain rounded-lg"
+                controls
+                autoPlay
+                loop
+                onClick={(e) => e.stopPropagation()}
+              >
+                <source src={modalMedia.src} type="video/mp4" />
+                <source src={modalMedia.src.replace('.mp4', '.webm')} type="video/webm" />
+              </video>
+            ) : (
+              <img
+                src={modalMedia.src}
+                alt="Enlarged view"
+                className="w-full h-full object-contain rounded-lg"
+              />
+            )}
           </div>
         </div>
       )}
