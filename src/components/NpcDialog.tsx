@@ -173,12 +173,19 @@ const DIALOGUE_TREE: Record<string, DialogNode> = {
 export default function NpcDialog({ open, onClose }: NpcDialogProps) {
   const router = useRouter()
   const dialogRef = useRef<HTMLDivElement>(null)
+  const menuClickAudioRef = useRef<HTMLAudioElement | null>(null)
   const [currentNode, setCurrentNode] = useState<string>('start')
   const [textComplete, setTextComplete] = useState(false)
   const [canSkip, setCanSkip] = useState(false)
   const [skipToEnd, setSkipToEnd] = useState(false)
 
   const node = DIALOGUE_TREE[currentNode]
+
+  // Initialize menu click audio
+  useEffect(() => {
+    menuClickAudioRef.current = new Audio('/sounds/menu_click.wav')
+    menuClickAudioRef.current.volume = 0.4
+  }, [])
 
   // Focus trap
   useEffect(() => {
@@ -262,6 +269,12 @@ export default function NpcDialog({ open, onClose }: NpcDialogProps) {
   }, [textComplete, node.action, onClose, router])
 
   const handleChoice = (nextNode: string) => {
+    // Play menu click sound
+    if (menuClickAudioRef.current) {
+      const audio = menuClickAudioRef.current.cloneNode() as HTMLAudioElement
+      audio.volume = 0.4
+      audio.play().catch(() => {}) // Ignore autoplay errors
+    }
     setCurrentNode(nextNode)
   }
 

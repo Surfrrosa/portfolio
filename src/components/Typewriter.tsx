@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 
 interface TypewriterProps {
   text: string
@@ -17,6 +17,13 @@ export default function Typewriter({
 }: TypewriterProps) {
   const [visibleText, setVisibleText] = useState('')
   const [currentIndex, setCurrentIndex] = useState(0)
+  const audioRef = useRef<HTMLAudioElement | null>(null)
+
+  // Initialize audio on mount
+  useEffect(() => {
+    audioRef.current = new Audio('/sounds/dialogue_blip.wav')
+    audioRef.current.volume = 0.3 // Keep it subtle
+  }, [])
 
   useEffect(() => {
     if (skipToEnd) {
@@ -28,8 +35,17 @@ export default function Typewriter({
 
     if (currentIndex < text.length) {
       const timeout = setTimeout(() => {
+        const currentChar = text[currentIndex]
         setVisibleText(text.substring(0, currentIndex + 1))
         setCurrentIndex(currentIndex + 1)
+
+        // Play blip sound for non-space characters
+        if (currentChar !== ' ' && currentChar !== '\n' && audioRef.current) {
+          // Clone and play to allow rapid successive sounds
+          const audio = audioRef.current.cloneNode() as HTMLAudioElement
+          audio.volume = 0.3
+          audio.play().catch(() => {}) // Ignore autoplay errors
+        }
       }, speed)
       return () => clearTimeout(timeout)
     } else if (currentIndex === text.length && onComplete) {
