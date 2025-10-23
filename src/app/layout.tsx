@@ -1,5 +1,6 @@
 import React from 'react'
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import { Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 import StructuredData from '@/components/StructuredData'
@@ -88,6 +89,20 @@ export default function RootLayout({
         <StructuredData />
       </head>
       <body className="bg-bg-base text-white font-body antialiased">
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-GY2TH8WC2G"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-GY2TH8WC2G');
+          `}
+        </Script>
+
         {/* Video Background */}
         <VideoBackground />
         {/* Global dark charcoal sheath over background */}
