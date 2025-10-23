@@ -878,15 +878,30 @@ export default function Work() {
                   </div>
                 </div>
 
-                <div className="relative aspect-video rounded-lg overflow-hidden border border-white/10 bg-gradient-to-br from-cyan-500/10 to-purple-500/10">
-                  <div className="absolute inset-0 flex items-center justify-center">
+                <div className="relative aspect-video rounded-lg overflow-hidden border border-white/10">
+                  <video
+                    className="w-full h-full object-cover"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    onError={(e) => {
+                      const target = e.target as HTMLVideoElement;
+                      target.style.display = 'none';
+                      const fallback = target.nextElementSibling as HTMLElement;
+                      if (fallback) fallback.style.display = 'flex';
+                    }}
+                  >
+                    <source src="/videos/shainai-demo.mp4" type="video/mp4" />
+                  </video>
+                  <div className="absolute inset-0 bg-slate-700/30 flex items-center justify-center" style={{ display: 'none' }}>
                     <div className="text-center">
                       <div className="w-16 h-16 bg-cyan-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
                         <svg className="w-8 h-8 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                         </svg>
                       </div>
-                      <p className="text-gray-400 text-sm">Demo Coming Soon</p>
+                      <p className="text-gray-400 text-sm">Demo Video</p>
                       <p className="text-white font-semibold">ShainAI Interface</p>
                     </div>
                   </div>
