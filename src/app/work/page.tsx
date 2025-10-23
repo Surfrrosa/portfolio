@@ -416,35 +416,35 @@ export default function Work() {
             >
               <div className="mb-4">
                 <span className="inline-block bg-cyan-500/20 text-cyan-400 px-3 py-1 rounded-full text-sm font-semibold">
-                  Production Ready
+                  Personal Passion Project
                 </span>
               </div>
 
               <h3 className="text-white text-2xl font-display font-bold mb-4">
-                ShainAI ● RAG-Powered Second Brain
+                ShainAI ● My RAG-Powered Second Brain
               </h3>
 
               <h4 className="text-teal-400 text-lg font-semibold mb-6">
-                Your personal memory, searchable: AI that remembers everything you've learned, built, and discussed.
+                My personal memory, searchable: AI that remembers everything I've learned, built, and discussed.
               </h4>
 
               <div className="space-y-6">
                 <div>
                   <h5 className="text-white font-semibold mb-2">Problem</h5>
                   <p className="text-gray-300 leading-relaxed">
-                    Developers and builders accumulate knowledge across fragmented sources—ChatGPT conversations, code repos, notes apps, local files—making it impossible to recall past decisions, retrieve old ideas, or connect dots across projects. Critical context gets lost in the noise.
+                    I was accumulating knowledge across fragmented sources: ChatGPT conversations, code repos, notes apps, and local files. This made it impossible to recall past decisions, retrieve old ideas, or connect dots across projects. Critical context kept getting lost in the noise.
                   </p>
                 </div>
 
                 <div>
                   <h5 className="text-white font-semibold mb-2">Solution</h5>
                   <p className="text-gray-300 leading-relaxed">
-                    A privacy-first RAG (Retrieval-Augmented Generation) system that ingests, indexes, and semantically searches across all personal data sources. ShainAI automatically watches local files, ingests Git repos on commit, parses ChatGPT exports, and imports note archives—then answers questions by retrieving relevant context with citations. The system even ingests its own conversations, creating a meta-memory loop where your second brain remembers thinking with itself.
+                    I built a privacy-first RAG (Retrieval-Augmented Generation) system that ingests, indexes, and semantically searches across all my personal data sources. ShainAI automatically watches my local files, ingests my Git repos on commit, parses my ChatGPT exports, and imports my note archives. It then answers my questions by retrieving relevant context with citations. The system even ingests its own conversations with me, creating a meta-memory loop where my second brain remembers thinking with itself.
                   </p>
                 </div>
 
                 <div>
-                  <h5 className="text-white font-semibold mb-2">My Role</h5>
+                  <h5 className="text-white font-semibold mb-2">What I Built</h5>
                   <p className="text-gray-300 leading-relaxed">
                     System architecture (RAG pipeline, vector embeddings, semantic search), full-stack development, AI orchestration and prompt engineering, auto-ingestion system design with real-time file watching and git hooks, UX/UI for conversational interface.
                   </p>
@@ -453,10 +453,10 @@ export default function Work() {
                 <div>
                   <h5 className="text-white font-semibold mb-2">Impact</h5>
                   <div className="text-gray-300 space-y-3">
-                    <p>Instant semantic search across 1,000+ personal memories (ChatGPT history, Joplin notes, local files, GitHub repos).</p>
-                    <p>Auto-ingestion pipeline with file watchers, git hooks, and multi-format parsers (PDF, Word, images with OCR, .env files, ZIP archives).</p>
-                    <p>Meta capability: Automatically saves its own conversations every 5 Q&A exchanges, making past ShainAI discussions searchable.</p>
-                    <p className="text-cyan-400 font-medium">Privacy-focused: 100% local deployment—no external dependencies, full data ownership.</p>
+                    <p>Gives me instant semantic search across my 1,000+ memories (ChatGPT history, Joplin notes, local files, GitHub repos).</p>
+                    <p>Auto-ingestion pipeline watches my files, hooks into my git commits, and parses multiple formats (PDF, Word, images with OCR, .env files, ZIP archives).</p>
+                    <p>Meta capability: Automatically saves its own conversations with me every 5 Q&A exchanges, making past ShainAI discussions searchable.</p>
+                    <p className="text-cyan-400 font-medium">Built for privacy: 100% local deployment on my machine with no external dependencies and full data ownership.</p>
                   </div>
                 </div>
               </div>
