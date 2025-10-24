@@ -1311,6 +1311,116 @@ export default function Work() {
                 </div>
               </div>
             </motion.div>
+
+            <motion.div
+              className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.9 }}
+            >
+              <div className="mb-4">
+                <span className="inline-block bg-orange-500/20 text-orange-400 px-3 py-1 rounded-full text-sm font-semibold">
+                  Active Competition
+                </span>
+              </div>
+
+              <h3 className="text-white text-2xl font-display font-bold mb-4">
+                Copy-Move Forgery Detection ● Kaggle Competition
+              </h3>
+
+              <h4 className="text-teal-400 text-lg font-semibold mb-6">
+                Pixel-level manipulation detection in biomedical gel images with rigorous ML experimentation.
+              </h4>
+
+              <div className="space-y-6">
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Problem</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    Detecting near-duplicate regions in low-contrast scientific imagery is challenging. Repetitive textures and banding patterns create false positives, while competition constraints limit daily submissions and GPU time.
+                  </p>
+                </div>
+
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Approach</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    Built an encoder-decoder pipeline with self-correlation stage to surface copy-move candidates. Established deterministic cross-validation, per-epoch metrics tracking, and automated submission pipeline with RLE formatting. Prioritized generalization over leaderboard chasing.
+                  </p>
+                </div>
+
+                <div>
+                  <h5 className="text-white font-semibold mb-2">My Role</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    Model design, training strategy, experiment operations, CV setup, logging infrastructure, submission pipeline automation, and post-processing optimization.
+                  </p>
+                </div>
+
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Current Outcomes</h5>
+                  <div className="text-gray-300 space-y-3">
+                    <p>Steady validation gains with clear reductions in spurious detections on gel band regions.</p>
+                    <p>Fully automated pipeline from checkpoint to CSV, shortening iteration cycles.</p>
+                    <p>Reproducible experiment design with pinned configs and visual sanity checks.</p>
+                  </div>
+                </div>
+
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Next Steps</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    Enable test-time augmentation, run post-processing sweeps, train complementary model for ensemble, and publish full reproducibility kit post-competition.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap gap-2 mt-6">
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">PyTorch</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Computer Vision</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">ML Ops</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Kaggle</span>
+              </div>
+
+              <div className="mt-8">
+                <div className="relative rounded-lg border border-white/10 bg-black/30 p-6">
+                  <h5 className="text-white font-semibold mb-4">Experiment Pipeline</h5>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div className="text-center space-y-3">
+                      <div className="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto">
+                        <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                        </svg>
+                      </div>
+                      <div className="text-sm text-gray-300">
+                        <div className="font-semibold text-white">Deterministic CV</div>
+                        <div>Fixed seeds & validation splits</div>
+                      </div>
+                    </div>
+
+                    <div className="text-center space-y-3">
+                      <div className="w-12 h-12 bg-teal-500/20 rounded-full flex items-center justify-center mx-auto">
+                        <svg className="w-6 h-6 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                        </svg>
+                      </div>
+                      <div className="text-sm text-gray-300">
+                        <div className="font-semibold text-white">Metrics Tracking</div>
+                        <div>Per-epoch logs & checkpoints</div>
+                      </div>
+                    </div>
+
+                    <div className="text-center space-y-3">
+                      <div className="w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center mx-auto">
+                        <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                        </svg>
+                      </div>
+                      <div className="text-sm text-gray-300">
+                        <div className="font-semibold text-white">Auto Submission</div>
+                        <div>Checkpoint → RLE → CSV</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </div>
 
           {/* Return to Top Button */}
