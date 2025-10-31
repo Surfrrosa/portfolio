@@ -434,27 +434,6 @@ export default function Work() {
                   </div>
                 </div>
 
-                <div>
-                  <div className="mb-2">
-                    <span className="inline-block bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs tracking-wide">
-                      Landing Page
-                    </span>
-                  </div>
-                  <div
-                    className="relative rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
-                    onClick={() => {
-                      setModalMedia({ src: '/assets/landingpage.png', type: 'image' })
-                      setIsModalOpen(true)
-                    }}
-                  >
-                    <img
-                      src="/assets/landingpage.png"
-                      alt="PomodoroFlow landing page showcasing calm, zero-friction pomodoro for neurodivergents"
-                      className="w-full h-auto object-contain"
-                    />
-                  </div>
-                </div>
-
                 <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
                   <a
                     href="https://apps.apple.com/us/app/pomodoroflow/id6753604260"
