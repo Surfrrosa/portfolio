@@ -429,7 +429,7 @@ export default function Work() {
                     <img
                       src="/images/pomodoro_flow_app.png"
                       alt="PomodoroFlow app splash screen with tomato icon and Focus • Flow • Achieve tagline"
-                      className="w-48 h-auto object-contain mx-auto"
+                      className="w-full h-auto object-contain mx-auto"
                     />
                   </div>
                 </div>
