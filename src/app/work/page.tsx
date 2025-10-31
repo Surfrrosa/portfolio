@@ -432,23 +432,6 @@ export default function Work() {
                       className="w-48 h-auto object-contain mx-auto"
                     />
                   </div>
-                </div>
-
-                <div>
-                  <div className="mb-2">
-                    <span className="inline-block bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs tracking-wide">
-                      Landing Page
-                    </span>
-                  </div>
-                  <a
-                    href="https://pomodoroflow.app"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block relative rounded-lg overflow-hidden border border-white/10 hover:border-white/20 transition-colors"
-                  >
-
-                  </a>
-                </div>
 
                 <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
                   <a
