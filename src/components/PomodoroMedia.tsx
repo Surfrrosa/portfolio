@@ -20,13 +20,13 @@ export default function PomodoroMedia() {
   return (
     <section
       className="mt-4 rounded-2xl border border-white/10 bg-white/[0.03] p-3"
-      aria-label="Pomodoro Flow demo"
+      aria-label="PomodoroFlow demo"
     >
       <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-black/60">
         {reduced ? (
           <img
             src="/media/pomodoro/poster.jpg"
-            alt="Pomodoro Flow timer preview"
+            alt="PomodoroFlow timer preview"
             className="h-full w-full object-cover"
             loading="lazy"
           />

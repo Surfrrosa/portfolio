@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import Lenis from 'lenis'
 import Sidebar from '@/components/Sidebar'
 import DiagramGallery from '@/components/DiagramGallery'
+import PomodoroMedia from '@/components/PomodoroMedia'
 
 export default function Work() {
   const lenisRef = useRef<Lenis | null>(null)
@@ -366,7 +367,7 @@ export default function Work() {
               </div>
               
               <h3 className="text-white text-2xl font-display font-bold mb-4">
-                Pomodoro Flow ● Radically Simple Focus Timer
+                PomodoroFlow ● Radically Simple Focus Timer
               </h3>
               
               <h4 className="text-teal-400 text-lg font-semibold mb-6">
@@ -384,7 +385,7 @@ export default function Work() {
                 <div>
                   <h5 className="text-white font-semibold mb-2">Solution</h5>
                   <p className="text-gray-300 leading-relaxed">
-                    Pomodoro Flow delivers a distraction-free 25-minute focus / 5-minute break cycle with auto-progression, subtle chimes, and gentle haptic feedback. Sessions persist if the app is closed, and local notifications ensure you never miss a switch. Includes a "Fast Mode" for rapid QA and testing.
+                    PomodoroFlow delivers a distraction-free 25-minute focus / 5-minute break cycle with auto-progression, subtle chimes, and gentle haptic feedback. Sessions persist if the app is closed, and local notifications ensure you never miss a switch. Includes a "Fast Mode" for rapid QA and testing.
                   </p>
                 </div>
                 
@@ -428,7 +429,7 @@ export default function Work() {
                   >
                     <img
                       src="/images/pomodoro-flow-app.jpg"
-                      alt="Pomodoro Flow app preview showing 25/5 timer interface"
+                      alt="PomodoroFlow app preview showing 25/5 timer interface"
                       className="w-48 h-auto object-contain mx-auto"
                     />
                   </div>
@@ -449,11 +450,13 @@ export default function Work() {
                   >
                     <img
                       src="/images/pomodoro-flow-landing.png"
-                      alt="Pomodoro Flow landing page showcasing calm, zero-friction pomodoro for neurodivergents"
+                      alt="PomodoroFlow landing page showcasing calm, zero-friction pomodoro for neurodivergents"
                       className="w-full h-auto object-contain"
                     />
                   </div>
                 </div>
+
+                <PomodoroMedia />
 
                 <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
                   <a
