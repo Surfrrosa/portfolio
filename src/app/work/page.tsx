@@ -422,13 +422,13 @@ export default function Work() {
                   <div
                     className="relative rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
                     onClick={() => {
-                      setModalMedia({ src: '/images/pomodoro-flow-app.jpg', type: 'image' })
+                      setModalMedia({ src: '/images/pomodoro_flow_app.jpg', type: 'image' })
                       setIsModalOpen(true)
                     }}
                   >
                     <img
-                      src="/images/pomodoro-flow-app.jpg"
-                      alt="PomodoroFlow app preview showing 25/5 timer interface"
+                      src="/images/pomodoro_flow_app.jpg"
+                      alt="PomodoroFlow app splash screen with tomato icon and Focus • Flow • Achieve tagline"
                       className="w-48 h-auto object-contain mx-auto"
                     />
                   </div>
