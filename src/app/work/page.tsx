@@ -446,11 +446,7 @@ export default function Work() {
                     rel="noopener noreferrer"
                     className="block relative rounded-lg overflow-hidden border border-white/10 hover:border-white/20 transition-colors"
                   >
-                    <img
-                      src="/images/landingpage.png"
-                      alt="PomodoroFlow landing page showcasing calm, zero-friction pomodoro for neurodivergents"
-                      className="w-full h-auto object-contain"
-                    />
+
                   </a>
                 </div>
 
