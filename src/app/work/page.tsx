@@ -5,7 +5,6 @@ import { motion } from 'framer-motion'
 import Lenis from 'lenis'
 import Sidebar from '@/components/Sidebar'
 import DiagramGallery from '@/components/DiagramGallery'
-import PomodoroMedia from '@/components/PomodoroMedia'
 
 export default function Work() {
   const lenisRef = useRef<Lenis | null>(null)
@@ -444,19 +443,17 @@ export default function Work() {
                   <div
                     className="relative rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
                     onClick={() => {
-                      setModalMedia({ src: '/images/pomodoro-flow-landing.png', type: 'image' })
+                      setModalMedia({ src: '/assets/landingpage.png', type: 'image' })
                       setIsModalOpen(true)
                     }}
                   >
                     <img
-                      src="/images/pomodoro-flow-landing.png"
+                      src="/assets/landingpage.png"
                       alt="PomodoroFlow landing page showcasing calm, zero-friction pomodoro for neurodivergents"
                       className="w-full h-auto object-contain"
                     />
                   </div>
                 </div>
-
-                <PomodoroMedia />
 
                 <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
                   <a
