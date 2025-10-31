@@ -434,6 +434,26 @@ export default function Work() {
                   </div>
                 </div>
 
+                <div>
+                  <div className="mb-2">
+                    <span className="inline-block bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs tracking-wide">
+                      Landing Page
+                    </span>
+                  </div>
+                  <a
+                    href="https://pomodoroflow.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block relative rounded-lg overflow-hidden border border-white/10 hover:border-white/20 transition-colors"
+                  >
+                    <img
+                      src="/images/landingpage.png"
+                      alt="PomodoroFlow landing page showcasing calm, zero-friction pomodoro for neurodivergents"
+                      className="w-full h-auto object-contain"
+                    />
+                  </a>
+                </div>
+
                 <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
                   <a
                     href="https://apps.apple.com/us/app/pomodoroflow/id6753604260"
