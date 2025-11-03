@@ -197,8 +197,8 @@ export default function Work() {
               transition={{ duration: 0.8, delay: 0.7 }}
             >
               <div className="mb-4">
-                <span className="inline-block bg-purple-500/20 text-purple-400 px-3 py-1 rounded-full text-sm font-semibold">
-                  MVP Complete
+                <span className="inline-block bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm font-semibold">
+                  Launching on iOS & Android
                 </span>
               </div>
               
@@ -244,7 +244,7 @@ export default function Work() {
                 <div>
                   <h5 className="text-white font-semibold mb-2">Status</h5>
                   <p className="text-gray-300 leading-relaxed">
-                    MVP complete and ready for deployment.
+                    Launching soon on iOS App Store and Google Play Store.
                   </p>
                 </div>
               </div>
@@ -254,6 +254,20 @@ export default function Work() {
                 <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Mobile UX</span>
                 <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Product Strategy</span>
                 <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">AI Development</span>
+              </div>
+
+              <div className="text-center mt-8">
+                <a
+                  href="https://enlighten-kappa.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors group"
+                >
+                  View Landing Page
+                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </a>
               </div>
 
               <div className="mt-8">
