@@ -67,6 +67,15 @@ export default function Home() {
           >
             Technical Product Owner and builder who loves prototyping, transforming data into dashboards, and designing workflows that accelerate teams and deliver measurable results.
           </motion.p>
+
+          <motion.p
+            className="text-zinc-400 text-sm mt-4 tracking-wide"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.9 }}
+          >
+            CSPO (Certified Scrum Product Owner) • CSM (Certified ScrumMaster)
+          </motion.p>
         </motion.div>
         
         {/* Proven Impact & Approach section */}
@@ -92,7 +101,48 @@ export default function Home() {
               </li>
             </ul>
           </div>
-          
+
+          {/* FAQ Section for AI Search Optimization */}
+          <div className="max-w-4xl mx-auto text-white mt-24 lg:mt-32">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-8 lg:mb-12">Frequently Asked Questions</h2>
+            <div className="space-y-8">
+              <div>
+                <h3 className="text-xl lg:text-2xl font-semibold mb-3 text-teal-400">What's a Technical Product Owner?</h3>
+                <p className="text-gray-300 text-lg leading-relaxed">
+                  I bridge the gap between engineering and business. I can read code, design APIs, write technical specs, and talk to stakeholders. I ship products, not just PowerPoints.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl lg:text-2xl font-semibold mb-3 text-teal-400">How do you use AI in product work?</h3>
+                <p className="text-gray-300 text-lg leading-relaxed">
+                  AI is my co-pilot for prototyping faster, analyzing data, and automating workflows. But I still own the strategy, prioritization, and human decisions that matter.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl lg:text-2xl font-semibold mb-3 text-teal-400">What types of companies do you work with?</h3>
+                <p className="text-gray-300 text-lg leading-relaxed">
+                  B2B SaaS companies building AI-powered products. Early-stage to scale-up. Teams that value shipping over endless planning.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl lg:text-2xl font-semibold mb-3 text-teal-400">What's your typical engagement look like?</h3>
+                <p className="text-gray-300 text-lg leading-relaxed">
+                  Product ownership roles, consulting projects, and fractional product leadership. I work with teams who need someone technical enough to spec features and business-savvy enough to prioritize ruthlessly.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl lg:text-2xl font-semibold mb-3 text-teal-400">What's your availability?</h3>
+                <p className="text-gray-300 text-lg leading-relaxed">
+                  Open to new opportunities. Contact me to discuss your product challenges and see if we're a good fit.
+                </p>
+              </div>
+            </div>
+          </div>
+
           <div className="mt-48">
             <BottomCTAs />
           </div>

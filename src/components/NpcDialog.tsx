@@ -67,60 +67,51 @@ const DIALOGUE_TREE: Record<string, DialogNode> = {
   },
   explain: {
     id: 'explain',
-    text: "* You feel determined.\n\nOkay, here's the deal:\n\nFive phases. Signal. Architect. Sync. Deploy. Transform.\n\nThink of it like a quest chain, but instead of 'save the princess,' it's 'actually finish your project.'\n\nNo grinding. No RNG. Just you, a system, and forward momentum.\n\nReady?",
+    text: "* You feel determined.\n\nOkay, here's the deal:\n\nFour phases. Name It. Set It Up. Ship It. Learn & Adjust.\n\nThink of it like a quest chain, but instead of 'save the princess,' it's 'actually finish your project.'\n\nNo grinding. No RNG. Just you, a system, and forward momentum.\n\nReady?",
     choices: [
-      { text: "Let's do this.", next: 'signal', type: 'positive' },
-      { text: "Start from the beginning.", next: 'signal', type: 'neutral' },
+      { text: "Let's do this.", next: 'nameit', type: 'positive' },
+      { text: "Start from the beginning.", next: 'nameit', type: 'neutral' },
       { text: "Can I skip the tutorial?", next: 'notComplicated', type: 'negative' },
     ],
   },
   notComplicated: {
     id: 'notComplicated',
-    text: "* A button masher, huh?\n\nAlright speedrunner, here's the TL;DR:\n\nFigure out what you want. Plan the structure. Align your tools. Ship something tiny. Learn and evolve.\n\nThat's it. That's the whole thing.\n\nSimple doesn't mean easy, but it DOES mean you can actually remember it at 3 AM when motivation strikes.",
+    text: "* A button masher, huh?\n\nAlright speedrunner, here's the TL;DR:\n\nName what you're building. Set up your routine. Ship something tiny. Learn and adjust.\n\nThat's it. That's the whole thing.\n\nSimple doesn't mean easy, but it DOES mean you can actually remember it at 3 AM when motivation strikes.",
     choices: [
-      { text: "Okay, let's hear the full version.", next: 'signal', type: 'positive' },
-      { text: "Alright, I'm in.", next: 'signal', type: 'neutral' },
+      { text: "Okay, let's hear the full version.", next: 'nameit', type: 'positive' },
+      { text: "Alright, I'm in.", next: 'nameit', type: 'neutral' },
     ],
   },
-  signal: {
-    id: 'signal',
-    text: `SIGNAL. ${PHASES[0].objective} ${PHASES[0].action} ${PHASES[0].reward}\n\nThis is where it starts. Not with perfection. With honesty.`,
+  nameit: {
+    id: 'nameit',
+    text: `NAME IT. ${PHASES[0].objective} ${PHASES[0].action} ${PHASES[0].reward}\n\nThis is where it starts. Not with perfection. With honesty.`,
     choices: [
-      { text: "I can do that.", next: 'architect', type: 'positive' },
-      { text: "What's next?", next: 'architect', type: 'neutral' },
-      { text: "Can we skip ahead?", next: 'deploy', type: 'negative' },
+      { text: "I can do that.", next: 'setup', type: 'positive' },
+      { text: "What's next?", next: 'setup', type: 'neutral' },
+      { text: "Can we skip ahead?", next: 'shipit', type: 'negative' },
     ],
   },
-  architect: {
-    id: 'architect',
-    text: `ARCHITECT. ${PHASES[1].objective} ${PHASES[1].action} ${PHASES[1].reward}\n\nStructure before chaos. Systems before burnout.`,
+  setup: {
+    id: 'setup',
+    text: `SET IT UP. ${PHASES[1].objective} ${PHASES[1].action} ${PHASES[1].reward}\n\nStructure before chaos. Systems before burnout.`,
     choices: [
-      { text: "This makes sense.", next: 'sync', type: 'positive' },
-      { text: "Keep going.", next: 'sync', type: 'neutral' },
-      { text: "When do we ship?", next: 'deploy', type: 'negative' },
+      { text: "This makes sense.", next: 'shipit', type: 'positive' },
+      { text: "Keep going.", next: 'shipit', type: 'neutral' },
+      { text: "When do we ship?", next: 'shipit', type: 'negative' },
     ],
   },
-  sync: {
-    id: 'sync',
-    text: `SYNC. ${PHASES[2].objective} ${PHASES[2].action} ${PHASES[2].reward}\n\nAlignment isn't perfectionism. It's removing the friction between you and the work.`,
+  shipit: {
+    id: 'shipit',
+    text: `SHIP IT. ${PHASES[2].objective} ${PHASES[2].action} ${PHASES[2].reward}\n\nThis is the scary part. Also the only part that matters.\n\nShip something imperfect. Learn what's real.`,
     choices: [
-      { text: "I love this.", next: 'deploy', type: 'positive' },
-      { text: "Continue.", next: 'deploy', type: 'neutral' },
-      { text: "Let's ship already.", next: 'deploy', type: 'negative' },
+      { text: "And then?", next: 'adjust', type: 'positive' },
+      { text: "What's the final phase?", next: 'adjust', type: 'neutral' },
+      { text: "That's it?", next: 'adjust', type: 'negative' },
     ],
   },
-  deploy: {
-    id: 'deploy',
-    text: `DEPLOY. ${PHASES[3].objective} ${PHASES[3].action} ${PHASES[3].reward}\n\nThis is the scary part. Also the only part that matters.\n\nShip something imperfect. Learn what's real.`,
-    choices: [
-      { text: "And then?", next: 'transform', type: 'positive' },
-      { text: "What's the final phase?", next: 'transform', type: 'neutral' },
-      { text: "That's it?", next: 'transform', type: 'negative' },
-    ],
-  },
-  transform: {
-    id: 'transform',
-    text: `TRANSFORM. ${PHASES[4].objective} ${PHASES[4].action} ${PHASES[4].reward}\n\nThe loop closes. You're not the same person who started.\n\nThat's the point.`,
+  adjust: {
+    id: 'adjust',
+    text: `LEARN & ADJUST. ${PHASES[3].objective} ${PHASES[3].action} ${PHASES[3].reward}\n\nThe loop closes. You're not the same person who started.\n\nThat's the point.`,
     choices: [
       { text: "I want to do this.", next: 'end', type: 'positive' },
       { text: "Tell me more.", next: 'end', type: 'neutral' },
@@ -138,7 +129,7 @@ const DIALOGUE_TREE: Record<string, DialogNode> = {
   },
   endSkeptic: {
     id: 'endSkeptic',
-    text: "* The smiley shrugs again.\n\n'That's IT?' Yeah. That's it.\n\nNo secret level. No hidden achievement. Just five phases that work.\n\nSometimes the best systems are the ones you can remember at 3 AM when inspiration hits.\n\nSimple doesn't mean easy. But it DOES mean you'll actually use it.",
+    text: "* The smiley shrugs again.\n\n'That's IT?' Yeah. That's it.\n\nNo secret level. No hidden achievement. Just four phases that work.\n\nSometimes the best systems are the ones you can remember at 3 AM when inspiration hits.\n\nSimple doesn't mean easy. But it DOES mean you'll actually use it.",
     choices: [
       { text: "Okay, show me the full thing.", next: 'showMethod', type: 'positive' },
       { text: "Alright, I'll check it out.", next: 'showMethod', type: 'neutral' },

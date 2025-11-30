@@ -8,11 +8,11 @@
 
 A modern, responsive portfolio website showcasing AI-powered product management expertise and data-driven solutions.
 
-## 🌟 Live Demo
+## Live Demo
 
-**[View Live Portfolio →](https://shainaep.com)**
+**[View Live Portfolio →](https://shainapauley.com)**
 
-## 📸 Preview
+## Preview
 
 ### Home Page
 ![Portfolio Home Page](screenshots/localhost_3000_142030.png)
@@ -26,7 +26,7 @@ A modern, responsive portfolio website showcasing AI-powered product management 
 ![Portfolio Contact Page](screenshots/localhost_3000_142053.png)
 *Professional contact form with service details and response time*
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - Node.js 18+ 
@@ -62,7 +62,7 @@ A modern, responsive portfolio website showcasing AI-powered product management 
 5. **Open your browser**
    Navigate to [http://localhost:3000](http://localhost:3000) to view the portfolio.
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
 src/
@@ -77,7 +77,7 @@ src/
 └── lib/                  # Utility functions and configurations
 ```
 
-## 🎨 Design System
+## Design System
 
 ### Color Tokens
 - **Background Base**: `#0B0C0E` - Primary dark background
@@ -103,7 +103,7 @@ To replace the current fonts with final brand fonts:
    ```
 4. **Update CSS custom properties** in `src/app/globals.css`
 
-## ✨ Features Implemented (Milestone 1)
+## Features Implemented (Milestone 1)
 
 ### Core Functionality
 - ✅ **3-Page Architecture**: Home/About, Work, Contact with Next.js App Router
@@ -131,7 +131,7 @@ To replace the current fonts with final brand fonts:
 - ✅ **Semantic HTML**: Proper heading hierarchy and ARIA labels
 - ✅ **Performance Optimized**: Next.js optimizations for fast loading
 
-## 🔧 Technical Architecture
+## Technical Architecture
 
 ### Core Technologies
 - **Framework**: Next.js 15 with App Router
@@ -157,7 +157,7 @@ To replace the current fonts with final brand fonts:
 - **Bundle Analysis**: Optimized chunk sizes and tree shaking
 - **Caching Strategy**: Static generation with ISR where applicable
 
-## 📊 Performance Metrics
+## Performance Metrics
 
 ### Lighthouse Scores
 - **Performance**: 95+ (Mobile & Desktop)
@@ -177,7 +177,7 @@ To replace the current fonts with final brand fonts:
 - ✅ **Perfect Accessibility**: WCAG 2.1 AA compliant
 - ✅ **SEO Optimized**: Semantic HTML and meta tag optimization
 
-## 🛠️ Development Commands
+## Development Commands
 
 ```bash
 # Start development server
@@ -196,12 +196,12 @@ npm run lint
 npm run type-check
 ```
 
-## 🚀 Deployment
+## Deployment
 
 ### Production Deployment
 The application is deployed on **Vercel** with automatic deployments from the main branch.
 
-- **Live URL**: [shainaep.com](https://shainaep.com)
+- **Live URL**: [shainapauley.com](https://shainapauley.com)
 - **Preview Deployments**: Automatic for all pull requests
 - **Build Time**: ~45 seconds
 - **Global CDN**: Edge locations worldwide for optimal performance
@@ -223,7 +223,7 @@ NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
 - ✅ **AWS Amplify** - Compatible with Next.js SSG
 - ✅ **Docker** - Dockerfile included for containerized deployment
 
-## 📝 Next Steps (Post-Milestone 1)
+## Next Steps (Post-Milestone 1)
 
 - [ ] Advanced WebGL text distortion effects
 - [ ] Project detail pages with case studies
@@ -232,7 +232,7 @@ NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
 - [ ] SEO optimization and meta tags
 - [ ] Contact form backend integration
 
-## 🤝 Contributing
+## Contributing
 
 This is a personal portfolio project, but contributions are welcome! Here's how you can help:
 
@@ -255,11 +255,11 @@ This is a personal portfolio project, but contributions are welcome! Here's how 
 - Test on both desktop and mobile viewports
 - Run `npm run lint` before submitting
 
-## 📄 License
+## License
 
 This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - **Design Inspiration**: Modern portfolio trends and accessibility best practices
 - **Technical Stack**: Next.js team for the amazing framework
@@ -302,4 +302,4 @@ curl -i -X POST http://localhost:3000/api/contact \
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=flat&logo=linkedin)](https://linkedin.com/in/shainapauley)
 [![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?style=flat&logo=github)](https://github.com/Surfrrosa)
-[![Portfolio](https://img.shields.io/badge/Portfolio-Visit-FF6B6B?style=flat&logo=web)](https://shainaep.com)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Visit-FF6B6B?style=flat&logo=web)](https://shainapauley.com)
