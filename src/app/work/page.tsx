@@ -105,7 +105,7 @@ export default function Work() {
                   <h5 className="text-white font-semibold mb-2">Impact</h5>
                   <div className="text-gray-300 space-y-3">
                     <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Generated 1,000+ user stories for product teams globally</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Reduces story creation time by ~87% (15 min → <2 min per story)</span></p>
+                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Reduces story creation time by ~87% (15 min → &lt;2 min per story)</span></p>
                     <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Launched on Product Hunt with community engagement</span></p>
                     <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Free tool serving teams across 20+ countries</span></p>
                   </div>
