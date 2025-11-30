@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useRef, useEffect } from 'react'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import Lenis from 'lenis'
 import Sidebar from '@/components/Sidebar'
@@ -68,14 +69,34 @@ export default function Home() {
             Technical Product Owner and builder who loves prototyping, transforming data into dashboards, and designing workflows that accelerate teams and deliver measurable results.
           </motion.p>
 
-          <motion.p
-            className="text-zinc-400 text-sm mt-4 tracking-wide"
+          <motion.div
+            className="flex items-center justify-center gap-3 mt-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.9 }}
           >
-            CSPO (Certified Scrum Product Owner) • CSM (Certified ScrumMaster)
-          </motion.p>
+            <Image
+              src="/images/cspo-badge.png"
+              alt="CSPO Certified"
+              width={24}
+              height={24}
+              className="inline-block"
+            />
+            <span className="text-zinc-400 text-sm tracking-wide">
+              CSPO (Certified Scrum Product Owner)
+            </span>
+            <span className="text-zinc-500">•</span>
+            <Image
+              src="/images/csm-badge.png"
+              alt="CSM Certified"
+              width={24}
+              height={24}
+              className="inline-block"
+            />
+            <span className="text-zinc-400 text-sm tracking-wide">
+              CSM (Certified ScrumMaster)
+            </span>
+          </motion.div>
         </motion.div>
         
         {/* Proven Impact & Approach section */}
