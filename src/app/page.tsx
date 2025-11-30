@@ -78,8 +78,8 @@ export default function Home() {
             <Image
               src="/images/cspo-badge.png"
               alt="CSPO Certified"
-              width={32}
-              height={32}
+              width={40}
+              height={40}
               className="inline-block"
             />
             <span className="text-zinc-400 text-sm tracking-wide">
@@ -89,8 +89,8 @@ export default function Home() {
             <Image
               src="/images/csm-badge.png"
               alt="CSM Certified"
-              width={32}
-              height={32}
+              width={42}
+              height={42}
               className="inline-block"
             />
             <span className="text-zinc-400 text-sm tracking-wide">
