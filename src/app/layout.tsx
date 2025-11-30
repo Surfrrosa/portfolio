@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     default: 'Shaina Pauley | I Build Products & Systems That Work',
     template: '%s | Shaina Pauley • Technical Product Owner'
   },
-  description: 'I build products and systems that work. Technical Product Owner (CSPO, CSM) with 7+ years shipping AI-powered solutions, secure SaaS platforms, and workflows that deliver measurable results. No fluff, just execution.',
+  description: 'I build products and systems that work. Technical Product Owner (CSPO, CSM) with 7+ years shipping AI-powered solutions, secure SaaS platforms, and workflows that deliver measurable results.',
   keywords: ['Technical Product Owner', 'Product Manager', 'AI Product Development', 'SaaS Product Management', 'Enterprise Software', 'Product Strategy', 'AI Workflows', 'Agile Product Management', 'Shaina Pauley', 'CSPO', 'CSM'],
   authors: [{ name: 'Shaina Pauley', url: 'https://shainapauley.com' }],
   creator: 'Shaina Pauley',
