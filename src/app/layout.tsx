@@ -11,11 +11,11 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
 export const metadata: Metadata = {
   title: {
-    default: 'Shaina Pauley - Building what lasts. Exploring what\'s next.',
-    template: '%s | Shaina Pauley - Technical Product Owner'
+    default: 'Shaina Pauley | I Build Products & Systems That Work',
+    template: '%s | Shaina Pauley • Technical Product Owner'
   },
-  description: 'Technical Product Owner and AI builder with 7+ years enterprise experience. Building what lasts. Exploring what\'s next. Specializing in AI workflows, secure SaaS products, and measurable business impact.',
-  keywords: ['Technical Product Owner', 'Product Manager', 'AI Product Development', 'SaaS Product Management', 'Enterprise Software', 'Product Strategy', 'AI Workflows', 'Agile Product Management', 'Shaina Pauley'],
+  description: 'I build products and systems that work. Technical Product Owner (CSPO, CSM) with 7+ years shipping AI-powered solutions, secure SaaS platforms, and workflows that deliver measurable results. No fluff, just execution.',
+  keywords: ['Technical Product Owner', 'Product Manager', 'AI Product Development', 'SaaS Product Management', 'Enterprise Software', 'Product Strategy', 'AI Workflows', 'Agile Product Management', 'Shaina Pauley', 'CSPO', 'CSM'],
   authors: [{ name: 'Shaina Pauley', url: 'https://shainapauley.com' }],
   creator: 'Shaina Pauley',
   publisher: 'Shaina Pauley',
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'Shaina Pauley - Building what lasts. Exploring what\'s next.',
-    description: 'Technical Product Owner and AI builder with 7+ years enterprise experience. Building what lasts. Exploring what\'s next. Specializing in AI workflows, secure SaaS products, and measurable business impact.',
+    title: 'Shaina Pauley | I Build Products & Systems That Work',
+    description: 'I build products and systems that work. Technical Product Owner with 7+ years shipping AI-powered solutions, secure SaaS platforms, and workflows that deliver measurable results.',
     url: 'https://shainapauley.com',
     siteName: 'Shaina Pauley Portfolio',
     type: 'website',
@@ -46,8 +46,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Shaina Pauley - Building what lasts. Exploring what\'s next.',
-    description: 'Technical Product Owner and AI builder. Building what lasts. Exploring what\'s next.',
+    title: 'Shaina Pauley | I Build Products & Systems That Work',
+    description: 'I build products and systems that work. Technical Product Owner shipping AI-powered solutions and secure SaaS platforms.',
     images: ['/og-image.jpg'],
     creator: '@shainapauley',
   },
