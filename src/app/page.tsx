@@ -137,7 +137,7 @@ export default function Home() {
               <div>
                 <h3 className="text-xl lg:text-2xl font-semibold mb-3 text-teal-400">How do you use AI in product work?</h3>
                 <p className="text-gray-300 text-lg leading-relaxed">
-                  I use AI to move faster on execution—building features, drafting content, and analyzing options. I iterate and push back often, validating everything. I take full ownership for my work as well as any tools I use. AI is tremendous for speed, not a replacement for judgment or accountability.
+                  I use AI to move faster on execution by building features, drafting content, and analyzing options. I iterate and push back often, validating everything. I take full ownership for my work as well as any tools I use. AI is tremendous for speed, not a replacement for judgment or accountability.
                 </p>
               </div>
 
