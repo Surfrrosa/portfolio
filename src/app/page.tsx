@@ -144,14 +144,14 @@ export default function Home() {
               <div>
                 <h3 className="text-xl lg:text-2xl font-semibold mb-3 text-teal-400">What types of companies do you work with?</h3>
                 <p className="text-gray-300 text-lg leading-relaxed">
-                  B2B SaaS companies building AI-powered products. Early-stage to scale-up. Teams that value shipping over endless planning.
+                  Product-focused companies across industries—SaaS, enterprise tools, consumer apps. Early-stage to scale-up. Teams that value shipping over endless planning.
                 </p>
               </div>
 
               <div>
                 <h3 className="text-xl lg:text-2xl font-semibold mb-3 text-teal-400">What's your typical engagement look like?</h3>
                 <p className="text-gray-300 text-lg leading-relaxed">
-                  Product ownership roles, consulting projects, and fractional product leadership. I work with teams who need someone technical enough to spec features and business-savvy enough to prioritize ruthlessly.
+                  Product ownership roles, consulting projects, fractional product leadership, and custom deliverables. I work with teams who need someone technical enough to spec features and business-savvy enough to prioritize ruthlessly.
                 </p>
               </div>
 
