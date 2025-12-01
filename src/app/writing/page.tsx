@@ -6,7 +6,7 @@ import { getAllPosts } from '@/lib/blog'
 import Sidebar from '@/components/Sidebar'
 
 export const metadata: Metadata = {
-  title: 'Writing',
+  title: 'stuff I'm writing about',
   description: 'Thoughts on product management, AI, and building things that work.',
 }
 
@@ -19,12 +19,9 @@ export default function WritingPage() {
 
       <main className="px-4 lg:px-12 py-12 lg:py-20">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-            Writing
+          <h1 className="text-4xl lg:text-5xl font-bold text-white mb-12">
+            stuff I'm writing about
           </h1>
-          <p className="text-xl text-zinc-300 mb-12 leading-relaxed">
-            Thoughts on product management, AI, and building things that work.
-          </p>
 
           {posts.length === 0 ? (
             <div className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-12 border border-white/10">
