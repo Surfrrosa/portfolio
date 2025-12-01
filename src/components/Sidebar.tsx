@@ -76,7 +76,12 @@ export default function Sidebar() {
             </a>
             
             <div className="w-px h-10 bg-white/20 mx-2"></div>
-            
+
+            <Link href="/writing" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors group glitch-hover" aria-label="Writing">
+              <svg className="w-5 h-5 text-white group-hover:text-accent-teal transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+              </svg>
+            </Link>
             <Link href="/work" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors group glitch-hover" aria-label="View Work">
               <svg className="w-5 h-5 text-white group-hover:text-accent-teal transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-4m-5 0H3m2 0h4M9 7h6m-6 4h6m-6 4h6" />
@@ -187,6 +192,11 @@ export default function Sidebar() {
           </div>
           
           <div className="flex gap-3">
+            <Link href="/writing" className="w-11 h-11 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors group touch-manipulation glitch-hover" aria-label="Writing">
+              <svg className="w-5 h-5 text-white group-hover:text-accent-teal transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+              </svg>
+            </Link>
             <Link href="/work" className="w-11 h-11 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors group touch-manipulation glitch-hover" aria-label="View Work">
               <svg className="w-5 h-5 text-white group-hover:text-accent-teal transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-4m-5 0H3m2 0h4M9 7h6m-6 4h6m-6 4h6" />

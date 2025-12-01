@@ -9,15 +9,23 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@mdx-js/loader": "^3.1.1",
+    "@mdx-js/react": "^3.1.1",
+    "@next/mdx": "^16.0.6",
     "@react-three/drei": "^9.96.1",
     "@react-three/fiber": "^8.15.19",
+    "@tailwindcss/typography": "^0.5.19",
     "@vercel/analytics": "^1.5.0",
     "framer-motion": "^11.0.6",
+    "gray-matter": "^4.0.3",
     "lenis": "^1.0.42",
     "next": "15.4.6",
+    "next-mdx-remote": "^5.0.0",
     "postprocessing": "^6.37.7",
     "react": "^18",
     "react-dom": "^18",
+    "rehype-highlight": "^7.0.2",
+    "remark-gfm": "^4.0.1",
     "resend": "^6.0.2",
     "three": "^0.170.0",
     "troika-three-text": "^0.52.4"
