@@ -130,7 +130,7 @@ export default function Home() {
               <div>
                 <h3 className="text-xl lg:text-2xl font-semibold mb-3 text-teal-400">What's a Technical Product Owner?</h3>
                 <p className="text-gray-300 text-lg leading-relaxed">
-                  I bridge the gap between engineering and business. I can read code, design APIs, write technical specs, and talk to stakeholders. I ship products, not just PowerPoints.
+                  I bridge the gap between engineering and business. I can read code, design APIs, write technical specs, and talk to stakeholders. I own the why, what, when, and where, which sets up a clean handoff for engineering to own the how.
                 </p>
               </div>
 
