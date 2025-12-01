@@ -90,14 +90,14 @@ export default function Work() {
                 <div>
                   <h5 className="text-white font-semibold mb-2">Solution</h5>
                   <p className="text-gray-300 leading-relaxed">
-                    I designed and shipped an AI-powered platform that ingests unstructured input and outputs standardized, ready-to-use user stories. Including acceptance criteria, edge cases, and optional metadata, all aligned with Agile best practices.
+                    An AI-powered platform that ingests unstructured input and outputs standardized, ready-to-use user stories. Including acceptance criteria, edge cases, and optional metadata, all aligned with Agile best practices.
                   </p>
                 </div>
-                
+
                 <div>
                   <h5 className="text-white font-semibold mb-2">My Role</h5>
                   <p className="text-gray-300 leading-relaxed">
-                    Product concept, UX flows, AI prompt design, API integration, QA/testing, go-to-market strategy.
+                    Product concept, UX flows, AI prompt design, platform architecture, QA/testing, go-to-market strategy.
                   </p>
                 </div>
                 
@@ -407,7 +407,7 @@ export default function Work() {
                 <div>
                   <h5 className="text-white font-semibold mb-2">My Role</h5>
                   <p className="text-gray-300 leading-relaxed">
-                    Product concept, UX design, feature scoping, implementation in Expo (React Native), local notification and audio integration, Git branching strategy, EAS build configuration.
+                    Product concept, UX design, feature scoping, technical direction, and platform deployment. Built with AI-assisted development using Expo (React Native).
                   </p>
                 </div>
                 
@@ -793,14 +793,14 @@ export default function Work() {
                 <div>
                   <h5 className="text-white font-semibold mb-2">Solution</h5>
                   <p className="text-gray-300 leading-relaxed">
-                    I built a privacy-first RAG (Retrieval-Augmented Generation) system that ingests, indexes, and semantically searches across all my personal data sources. ShainAI automatically watches my local files, ingests my Git repos on commit, parses my ChatGPT exports, and imports my note archives. It then answers my questions by retrieving relevant context with citations. The system even ingests its own conversations with me, creating a meta-memory loop where my second brain remembers thinking with itself.
+                    A privacy-first RAG (Retrieval-Augmented Generation) system that ingests, indexes, and semantically searches across all my personal data sources. ShainAI automatically watches my local files, ingests my Git repos on commit, parses my ChatGPT exports, and imports my note archives. It then answers my questions by retrieving relevant context with citations. The system even ingests its own conversations with me, creating a meta-memory loop where my second brain remembers thinking with itself.
                   </p>
                 </div>
 
                 <div>
-                  <h5 className="text-white font-semibold mb-2">What I Built</h5>
+                  <h5 className="text-white font-semibold mb-2">My Role</h5>
                   <p className="text-gray-300 leading-relaxed">
-                    System architecture (RAG pipeline, vector embeddings, semantic search), full-stack development, AI orchestration and prompt engineering, auto-ingestion system design with real-time file watching and git hooks, UX/UI for conversational interface.
+                    System architecture design (RAG pipeline, vector embeddings, semantic search), AI orchestration and prompt engineering, auto-ingestion system design with real-time file watching and git hooks, UX/UI for conversational interface. Built with AI-assisted development.
                   </p>
                 </div>
 
@@ -1135,7 +1135,7 @@ export default function Work() {
                 <div>
                   <h5 className="text-white font-semibold mb-2">My Role</h5>
                   <p className="text-gray-300 leading-relaxed">
-                    Product concept, UX design, data model architecture, API integration planning, workflow automation design, and go-to-market strategy.
+                    Product concept, UX design, data model design, API integration strategy, workflow automation design, and go-to-market strategy. Built with AI-assisted development.
                   </p>
                 </div>
                 
