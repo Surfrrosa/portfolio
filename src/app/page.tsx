@@ -89,8 +89,8 @@ export default function Home() {
             <Image
               src="/images/csm-badge.png"
               alt="CSM Certified"
-              width={45}
-              height={45}
+              width={48}
+              height={48}
               className="inline-block"
             />
             <span className="text-zinc-400 text-sm tracking-wide">
