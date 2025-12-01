@@ -144,7 +144,7 @@ export default function Home() {
               <div>
                 <h3 className="text-xl lg:text-2xl font-semibold mb-3 text-teal-400">What types of companies do you work with?</h3>
                 <p className="text-gray-300 text-lg leading-relaxed">
-                  Product-focused companies across industries—SaaS, enterprise tools, consumer apps. Early-stage to scale-up. Teams that value shipping over endless planning.
+                  Product-focused companies across industries: SaaS, enterprise tools, consumer apps. Early-stage to scale-up. Teams that value shipping over endless planning.
                 </p>
               </div>
 

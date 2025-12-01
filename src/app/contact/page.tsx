@@ -86,12 +86,12 @@ export default function Contact() {
       <main className="px-4 lg:px-12 py-8 lg:py-12">
         <div className="max-w-6xl mx-auto">
           <motion.h1
-            className="text-white text-4xl md:text-5xl lg:text-7xl font-display leading-tight mb-6 lg:mb-8"
+            className="text-4xl lg:text-5xl font-bold text-white mb-12"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
           >
-            Let's Connect
+            let&apos;s connect
           </motion.h1>
           
           <motion.p
