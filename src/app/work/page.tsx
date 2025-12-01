@@ -46,7 +46,7 @@ export default function Work() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
           >
-            stuff I&apos;ve built
+            stuff I&apos;ve been working on
           </motion.h1>
           
           <motion.p
