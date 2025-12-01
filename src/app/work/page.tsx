@@ -414,10 +414,9 @@ export default function Work() {
                 <div>
                   <h5 className="text-white font-semibold mb-2">Impact</h5>
                   <div className="text-gray-300 space-y-2">
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Live on iOS App Store with users across 15+ countries</span></p>
+                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Live on iOS App Store and Google Play with users across 15+ countries</span></p>
                     <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Created seamless, minimal UX that keeps users focused without decision fatigue</span></p>
                     <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>One-tap launch to focus eliminates setup friction</span></p>
-                    <p className="text-green-400 font-medium flex items-start"><span className="text-green-400 mr-2">→</span><span>Android version launching soon</span></p>
                   </div>
                 </div>
               </div>
