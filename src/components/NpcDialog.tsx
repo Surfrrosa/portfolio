@@ -176,17 +176,6 @@ export default function NpcDialog({ open, onClose }: NpcDialogProps) {
   useEffect(() => {
     menuClickAudioRef.current = new Audio('/sounds/menu_click.wav')
     menuClickAudioRef.current.volume = 0.4
-
-    // Prime audio for mobile (load and pause to unlock autoplay)
-    menuClickAudioRef.current.load()
-    menuClickAudioRef.current.play().then(() => {
-      menuClickAudioRef.current?.pause()
-      if (menuClickAudioRef.current) {
-        menuClickAudioRef.current.currentTime = 0
-      }
-    }).catch(() => {
-      // Autoplay not allowed yet, will work after user interaction
-    })
   }, [])
 
   // Focus trap
