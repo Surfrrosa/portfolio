@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     default: 'Shaina Pauley | I Build Products & Systems That Work',
     template: '%s | Shaina Pauley • Technical Product Owner'
   },
-  description: 'I build products and systems that work. Technical Product Owner (CSPO, CSM) with 7+ years shipping AI-powered solutions, secure SaaS platforms, and workflows that deliver measurable results.',
+  description: 'Technical Product Owner and builder who loves prototyping, transforming data into dashboards, and designing workflows that accelerate teams and deliver measurable results.',
   keywords: ['Technical Product Owner', 'Product Manager', 'AI Product Development', 'SaaS Product Management', 'Enterprise Software', 'Product Strategy', 'AI Workflows', 'Agile Product Management', 'Shaina Pauley', 'CSPO', 'CSM'],
   authors: [{ name: 'Shaina Pauley', url: 'https://shainapauley.com' }],
   creator: 'Shaina Pauley',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Shaina Pauley | I Build Products & Systems That Work',
-    description: 'I build products and systems that work. Technical Product Owner with 7+ years shipping AI-powered solutions, secure SaaS platforms, and workflows that deliver measurable results.',
+    description: 'Technical Product Owner and builder who loves prototyping, transforming data into dashboards, and designing workflows that accelerate teams and deliver measurable results.',
     url: 'https://shainapauley.com',
     siteName: 'Shaina Pauley Portfolio',
     type: 'website',
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Shaina Pauley | I Build Products & Systems That Work',
-    description: 'I build products and systems that work. Technical Product Owner shipping AI-powered solutions and secure SaaS platforms.',
+    description: 'Technical Product Owner and builder who loves prototyping, transforming data into dashboards, and designing workflows that accelerate teams and deliver measurable results.',
     images: ['/og-image.jpg'],
     creator: '@shainapauley',
   },
