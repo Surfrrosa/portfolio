@@ -20,8 +20,19 @@ export default function VideoBackground() {
       })
     }
 
-    // Initialize Web Audio API
-    const initAudio = async () => {
+    return () => {
+      if (sourceNodeRef.current) {
+        sourceNodeRef.current.stop()
+      }
+      if (audioContextRef.current) {
+        audioContextRef.current.close()
+      }
+    }
+  }, [])
+
+  const toggleMute = async () => {
+    // Initialize audio on first interaction (required for mobile)
+    if (!audioContextRef.current) {
       try {
         const AudioContext = window.AudioContext || (window as any).webkitAudioContext
         audioContextRef.current = new AudioContext()
@@ -36,23 +47,11 @@ export default function VideoBackground() {
         setAudioReady(true)
       } catch (error) {
         console.error('Audio initialization failed:', error)
+        return
       }
     }
 
-    initAudio()
-
-    return () => {
-      if (sourceNodeRef.current) {
-        sourceNodeRef.current.stop()
-      }
-      if (audioContextRef.current) {
-        audioContextRef.current.close()
-      }
-    }
-  }, [])
-
-  const toggleMute = async () => {
-    if (!audioContextRef.current || !audioBufferRef.current || !gainNodeRef.current) return
+    if (!audioBufferRef.current || !gainNodeRef.current) return
 
     // Resume AudioContext (required for iOS/Safari)
     if (audioContextRef.current.state === 'suspended') {

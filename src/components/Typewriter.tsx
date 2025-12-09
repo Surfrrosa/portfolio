@@ -19,10 +19,11 @@ export default function Typewriter({
   const [currentIndex, setCurrentIndex] = useState(0)
   const audioRef = useRef<HTMLAudioElement | null>(null)
 
-  // Initialize audio on mount
+  // Initialize audio when component mounts (after user clicks smiley)
   useEffect(() => {
     audioRef.current = new Audio('/sounds/dialogue_blip.wav')
     audioRef.current.volume = 0.3 // Keep it subtle
+    // Audio is created after user interaction (smiley click), so it should work on mobile
   }, [])
 
   useEffect(() => {
