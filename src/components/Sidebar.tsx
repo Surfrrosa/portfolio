@@ -154,7 +154,7 @@ export default function Sidebar() {
         
         <div className="flex items-start gap-4">
           <Link href="/" className="block flex-shrink-0">
-            <div className="w-16 h-16 relative rounded-lg overflow-hidden hover:scale-105 transition-transform cursor-pointer">
+            <div className="w-24 h-32 relative rounded-lg overflow-hidden hover:scale-105 transition-transform cursor-pointer">
               <Image
                 src="/images/shaina-photo.jpg"
                 alt="Shaina Pauley"
