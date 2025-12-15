@@ -1,13 +1,14 @@
 import React from 'react'
 import type { Metadata } from 'next'
 import Script from 'next/script'
-import { Inter } from 'next/font/google'
+import { Inter, Bebas_Neue } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 import StructuredData from '@/components/StructuredData'
 import VideoBackground from '@/components/VideoBackground'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
+const bebasNeue = Bebas_Neue({ weight: '400', subsets: ['latin'], variable: '--font-bebas' })
 
 export const metadata: Metadata = {
   title: {
@@ -84,7 +85,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable}`}>
+    <html lang="en" className={`${inter.variable} ${bebasNeue.variable}`}>
       <head>
         <StructuredData />
       </head>

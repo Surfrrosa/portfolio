@@ -43,14 +43,32 @@ export default function Home() {
       <Sidebar />
       <ExitIntentPrompt />
 
-      <main className="flex flex-col justify-center items-center px-4 lg:px-12 min-h-screen pt-4 lg:pt-0">
+      <main className="flex flex-col justify-center items-center px-4 lg:px-12 min-h-screen pt-4 lg:pt-0 relative overflow-visible">
         <motion.div
-          className="text-center"
+          className="text-center relative w-full"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
         >
-          <h1 className="text-white mb-8 font-bold overflow-visible" style={{ fontSize: 'clamp(4rem, 12vw, 10rem)', lineHeight: '0.9', letterSpacing: '-0.04em', marginLeft: '-2rem', marginRight: '-2rem' }}>
+          <h1
+            className="text-white mb-8 overflow-visible relative"
+            style={{
+              fontFamily: 'var(--font-bebas)',
+              fontSize: 'clamp(5rem, 15vw, 12rem)',
+              lineHeight: '0.85',
+              letterSpacing: '0.02em',
+              fontWeight: '400',
+              textTransform: 'uppercase',
+              width: '100vw',
+              position: 'relative',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              marginLeft: '0',
+              marginRight: '0',
+              paddingLeft: '1rem',
+              paddingRight: '1rem'
+            }}
+          >
             I'm glad you're here.
           </h1>
           
