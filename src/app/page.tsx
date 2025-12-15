@@ -151,7 +151,7 @@ export default function Home() {
               <div>
                 <h3 className="text-xl lg:text-2xl font-semibold mb-3 text-teal-400">What's your typical engagement look like?</h3>
                 <p className="text-gray-300 text-lg leading-relaxed">
-                  Product ownership roles, consulting projects, fractional product leadership, and custom deliverables. I work with teams who need someone technical enough to spec features and business-savvy enough to prioritize ruthlessly.
+                  Product ownership roles, consulting projects, fractional product leadership, and custom deliverables. I work with teams who need someone technical enough to spec features and business-savvy enough to prioritize ruthlessly. I also love helping teams work together better. Open communication, everyone feeling heard, and genuine alignment.
                 </p>
               </div>
 
