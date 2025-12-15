@@ -53,10 +53,10 @@ export default function Home() {
           <div
             className="mb-8 overflow-visible relative"
             style={{
-              width: '85vw',
-              maxWidth: '2400px',
+              width: '92vw',
+              maxWidth: '2600px',
               position: 'relative',
-              left: '-5%',
+              left: '-2%',
               marginLeft: '0',
               marginRight: '0'
             }}
@@ -70,14 +70,15 @@ export default function Home() {
               priority
             />
           </div>
-          
+
           <motion.p
-            className="text-white text-xl leading-relaxed max-w-[70ch] mx-auto text-zinc-200"
+            className="text-white leading-relaxed max-w-[70ch] mx-auto text-zinc-200"
+            style={{ fontSize: '1.75rem' }}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            I'm a Technical Product Owner and builder who loves prototyping, transforming data into dashboards, and designing workflows that accelerate teams and deliver measurable results.
+            I'm a <strong className="font-bold">Technical Product Owner</strong> and builder who loves prototyping, transforming data into dashboards, and designing workflows that accelerate teams and deliver measurable results.
           </motion.p>
 
           <motion.div
