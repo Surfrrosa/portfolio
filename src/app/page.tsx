@@ -56,7 +56,7 @@ export default function Home() {
               width: '92vw',
               maxWidth: '2600px',
               position: 'relative',
-              left: '-2%',
+              left: '-4%',
               marginLeft: '0',
               marginRight: '0'
             }}
