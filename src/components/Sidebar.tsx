@@ -19,7 +19,7 @@ export default function Sidebar() {
           <Link href="/" className="block">
             <motion.div
               className="relative rounded-lg overflow-hidden hover:scale-105 transition-transform cursor-pointer"
-              style={{ width: '280px', height: '280px' }}
+              style={{ width: '280px', height: '350px' }}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8 }}
