@@ -50,27 +50,27 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
         >
-          <h1
-            className="text-white mb-8 overflow-visible relative"
+          <div
+            className="mb-8 overflow-visible relative"
             style={{
-              fontFamily: 'var(--font-bebas)',
-              fontSize: 'clamp(5rem, 15vw, 12rem)',
-              lineHeight: '0.85',
-              letterSpacing: '0.02em',
-              fontWeight: '400',
-              textTransform: 'uppercase',
-              width: '100vw',
+              width: '110vw',
+              maxWidth: '3000px',
               position: 'relative',
               left: '50%',
               transform: 'translateX(-50%)',
               marginLeft: '0',
-              marginRight: '0',
-              paddingLeft: '1rem',
-              paddingRight: '1rem'
+              marginRight: '0'
             }}
           >
-            I'm glad you're here.
-          </h1>
+            <Image
+              src="/images/hero-banner.png"
+              alt="I'm glad you're here"
+              width={3000}
+              height={700}
+              className="w-full h-auto"
+              priority
+            />
+          </div>
           
           <motion.p
             className="text-white text-xl leading-relaxed max-w-[70ch] mx-auto text-zinc-200"
