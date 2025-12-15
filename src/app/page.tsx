@@ -135,6 +135,10 @@ export default function Home() {
             </ul>
           </div>
 
+          <div className="mt-24 lg:mt-32">
+            <BottomCTAs />
+          </div>
+
           {/* FAQ Section for AI Search Optimization */}
           <div className="max-w-4xl mx-auto text-white mt-24 lg:mt-32">
             <h2 className="text-3xl lg:text-4xl font-bold mb-8 lg:mb-12">Frequently Asked Questions</h2>
@@ -174,10 +178,6 @@ export default function Home() {
                 </p>
               </div>
             </div>
-          </div>
-
-          <div className="mt-48">
-            <BottomCTAs />
           </div>
         </section>
       </main>
