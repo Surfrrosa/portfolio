@@ -53,11 +53,10 @@ export default function Home() {
           <div
             className="mb-8 overflow-visible relative"
             style={{
-              width: '110vw',
-              maxWidth: '3000px',
+              width: '85vw',
+              maxWidth: '2400px',
               position: 'relative',
-              left: '50%',
-              transform: 'translateX(-50%)',
+              left: '-5%',
               marginLeft: '0',
               marginRight: '0'
             }}
