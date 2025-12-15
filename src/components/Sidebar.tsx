@@ -12,8 +12,11 @@ export default function Sidebar() {
       <aside className="hidden lg:flex lg:flex-col gap-6 sticky top-0 h-screen
                          bg-black/60 backdrop-blur-[1px] border-r border-white/10 p-6">
         <div className="space-y-6">
-          <Link href="/" className="block">
-            <div className="font-bold text-white hover:text-accent-teal transition-colors cursor-pointer glitch-hover" style={{ fontSize: '32px', fontWeight: '700', letterSpacing: '-0.02em' }}>Hello</div>
+          <Link href="/" className="block group">
+            <div className="font-bold text-white hover:text-accent-teal transition-colors cursor-pointer glitch-hover flex items-center gap-2" style={{ fontSize: '32px', fontWeight: '700', letterSpacing: '-0.02em' }}>
+              <span>→</span>
+              <span>Hello</span>
+            </div>
           </Link>
           
           <Link href="/" className="block">

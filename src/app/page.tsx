@@ -50,15 +50,9 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
         >
-          <TextScrambleEffect
-            className="h1-display text-white mb-8"
-            lines={["Building what", "lasts. Exploring", "what's next."]}
-            threshold={0.6}
-            duration={1200}
-            lineStagger={250}
-            id="hero-headline"
-            once
-          />
+          <h1 className="text-white mb-8 font-bold overflow-visible" style={{ fontSize: 'clamp(4rem, 12vw, 10rem)', lineHeight: '0.9', letterSpacing: '-0.04em', marginLeft: '-2rem', marginRight: '-2rem' }}>
+            I'm glad you're here.
+          </h1>
           
           <motion.p
             className="text-white text-xl leading-relaxed max-w-[70ch] mx-auto text-zinc-200"
