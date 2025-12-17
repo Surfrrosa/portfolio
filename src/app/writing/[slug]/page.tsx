@@ -7,6 +7,7 @@ import remarkGfm from 'remark-gfm'
 import { getPostBySlug, getAllPostSlugs } from '@/lib/blog'
 import Sidebar from '@/components/Sidebar'
 import MDXContent from '@/components/MDXContent'
+import ArticleStructuredData from '@/components/ArticleStructuredData'
 
 interface PageProps {
   params: Promise<{ slug: string }>
@@ -30,11 +31,28 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: post.title,
     description: post.excerpt,
+    keywords: post.tags,
+    authors: [{ name: 'Shaina Pauley', url: 'https://shainapauley.com' }],
+    creator: 'Shaina Pauley',
+    publisher: 'Shaina Pauley',
     openGraph: {
       title: post.title,
       description: post.excerpt,
       type: 'article',
       publishedTime: post.date,
+      authors: ['Shaina Pauley'],
+      tags: post.tags,
+      url: `https://shainapauley.com/writing/${slug}`,
+      siteName: 'Shaina Pauley Portfolio',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt,
+      creator: '@shainapauley',
+    },
+    alternates: {
+      canonical: `/writing/${slug}`,
     },
   }
 }
@@ -48,8 +66,16 @@ export default async function BlogPost({ params }: PageProps) {
   }
 
   return (
-    <div className="min-h-screen grid lg:grid-cols-[340px_1fr]">
-      <Sidebar />
+    <>
+      <ArticleStructuredData
+        title={post.title}
+        description={post.excerpt}
+        publishedTime={post.date}
+        tags={post.tags || []}
+        url={`https://shainapauley.com/writing/${slug}`}
+      />
+      <div className="min-h-screen grid lg:grid-cols-[340px_1fr]">
+        <Sidebar />
 
       <main className="px-4 lg:px-12 py-12 lg:py-20">
         <article className="max-w-3xl mx-auto">
@@ -145,5 +171,6 @@ export default async function BlogPost({ params }: PageProps) {
         </article>
       </main>
     </div>
+    </>
   )
 }
