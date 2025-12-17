@@ -314,7 +314,7 @@ export default function Work() {
                 </div>
                 <div className="pt-6 border-t border-white/10">
                   <a
-                    href="/writing/the-absurdity-index-quantifying-what-statistics-miss"
+                    href="/writing/the-absurdity-index"
                     className="inline-flex items-center gap-2 text-teal-400 hover:text-teal-300 transition-colors group"
                   >
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
