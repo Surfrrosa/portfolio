@@ -208,7 +208,7 @@ export default function Work() {
                 <div>
                   <h5 className="text-white font-semibold mb-2">Problem</h5>
                   <p className="text-gray-300 leading-relaxed">
-                    Official statistics often lag reality and miss the psychological toll of modern challenges—from healthcare nightmares to housing despair to AI dependency.
+                    Official statistics often lag reality and miss the psychological toll of modern challenges like healthcare nightmares, housing despair, and AI dependency.
                   </p>
                 </div>
 
@@ -232,7 +232,7 @@ export default function Work() {
                     <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Systematic 3-level crisis categorization across 8 societal metrics</span></p>
                     <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Target: 380-480 data points per metric with verifiable URLs</span></p>
                     <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Open-source Python collection scripts for reproducibility</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Interactive dashboard with brutalist design inspired by Hieronymus Bosch</span></p>
+                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Brutalist design chosen to mirror the stark, unembellished reality of modern absurdity</span></p>
                   </div>
                 </div>
               </div>
