@@ -215,14 +215,14 @@ export default function Work() {
                 <div>
                   <h5 className="text-white font-semibold mb-2">Solution</h5>
                   <p className="text-gray-300 leading-relaxed">
-                    A research dashboard tracking 8 metrics of modern absurdity through a 40/60 formula combining official data with systematic social sentiment analysis across YouTube, Reddit, and TikTok.
+                    A research dashboard tracking 8 metrics of modern absurdity through a 40/60 formula combining official data with social sentiment analysis across YouTube, Reddit, and TikTok.
                   </p>
                 </div>
 
                 <div>
                   <h5 className="text-white font-semibold mb-2">My Role</h5>
                   <p className="text-gray-300 leading-relaxed">
-                    Research design, methodology development, data collection framework, UX/UI design, brutalist aesthetic direction, and platform deployment. Built with AI-assisted development.
+                    Research design, methodology development, data collection framework, UX/UI design, brutalist aesthetic, platform deployment. Built with AI-assisted development.
                   </p>
                 </div>
 
