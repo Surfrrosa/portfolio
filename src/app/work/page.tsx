@@ -318,185 +318,6 @@ export default function Work() {
             >
               <div className="mb-4">
                 <span className="inline-block bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm font-semibold">
-                  Launching on iOS & Android
-                </span>
-              </div>
-              
-              <h3 className="text-white text-2xl font-display font-bold mb-4">
-                Enlighten ● Tao × Neuroscience Mindfulness App
-              </h3>
-              
-              <h4 className="text-teal-400 text-lg font-semibold mb-6">
-                Mindfulness, nervous system regulation, and timeless Taoist wisdom in your pocket.
-              </h4>
-              
-              <div className="space-y-6">
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Problem</h5>
-                  <p className="text-gray-300 leading-relaxed">
-                    Most mindfulness apps expect users to actively seek out content, making it easy to forget or skip entirely. Few combine unpredictable Taoist insights with quick, evidence-based practices for an immediate state shift.
-                  </p>
-                </div>
-                
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Solution</h5>
-                  <p className="text-gray-300 leading-relaxed">
-                    Enlighten delivers Tao Te Ching passages paired with neuroscience-backed micro-practices at beautifully timed moments. Features include a quote library with filters, favorites, customizable notifications, and minimal, distraction-free UX.
-                  </p>
-                </div>
-                
-                <div>
-                  <h5 className="text-white font-semibold mb-2">My Role</h5>
-                  <p className="text-gray-300 leading-relaxed">
-                    Product concept, UX design, user flows, high-level technical planning, user story creation, and roadmap development.
-                  </p>
-                </div>
-                
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Impact (6-Month Targets)</h5>
-                  <div className="text-gray-300 space-y-3">
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">→</span><span>750-1,500 downloads with organic growth</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">→</span><span>4-6% Day 30 retention (indie app benchmark)</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">→</span><span>100-200 weekly active users engaging 2-3x per week</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">→</span><span>Fast nervous system resets without disrupting routine</span></p>
-                  </div>
-                </div>
-                
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Status</h5>
-                  <p className="text-gray-300 leading-relaxed">
-                    Launching soon on iOS App Store and Google Play Store.
-                  </p>
-                </div>
-              </div>
-              
-              <div className="flex flex-wrap gap-2 mt-6">
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Mindfulness</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Mobile UX</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Product Strategy</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">AI Development</span>
-              </div>
-
-              <div className="text-center mt-8">
-                <a
-                  href="https://enlighten-kappa.vercel.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors group"
-                >
-                  View Landing Page
-                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </a>
-              </div>
-
-              <div className="mt-8">
-                <div
-                  className="relative rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
-                  onClick={() => {
-                    setModalMedia({ src: '/images/enlighten_portfolio_horizontal.png', type: 'image' })
-                    setIsModalOpen(true)
-                  }}
-                >
-                  <img
-                    src="/images/enlighten_portfolio_horizontal.png"
-                    alt="Enlighten app portfolio showcase featuring mobile screens for notifications, daily wisdom, micro-practice, library, and favorites"
-                    className="w-full h-auto object-cover"
-                  />
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.9 }}
-            >
-              <div className="mb-4">
-                <span className="inline-block bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-sm font-semibold">
-                  Enterprise Telecom / API Integrations
-                </span>
-              </div>
-              
-              <h3 className="text-white text-2xl font-display font-bold mb-4">
-                Nortal ● API-Driven Telecom Solutions for National Retailers
-              </h3>
-              
-              <h4 className="text-teal-400 text-lg font-semibold mb-6">
-                Delivered prepaid activation, number port-in, add-a-line, and billing integrations for T-Mobile's largest retail partners.
-              </h4>
-              
-              <div className="mb-6">
-                <p className="text-xs uppercase tracking-wider text-gray-400 font-semibold">
-                  Secure Communications Modernization — Faster, Safer, Smarter
-                </p>
-              </div>
-              
-              <div className="space-y-6">
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Problem</h5>
-                  <p className="text-gray-300 leading-relaxed">
-                    T-Mobile's prepaid services for major retailers like Walmart, Costco, and Best Buy required complex API integrations for activations, number porting, and service extensions. Without streamlined processes, onboarding new customers or adding lines was slow, error-prone, and frustrating.
-                  </p>
-                </div>
-                
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Solution</h5>
-                  <p className="text-gray-300 leading-relaxed">
-                    As Technical Product Owner, I managed the MAAD Lite prepaid API integration for national retailers, delivered Port-In capabilities for seamless number transfers, launched National Retailer Add-a-Line (AAL) functionality for existing customers, and improved cart, payment, and OTP retry performance for faster transactions.
-                  </p>
-                </div>
-                
-                <div>
-                  <h5 className="text-white font-semibold mb-2">My Role</h5>
-                  <p className="text-gray-300 leading-relaxed">
-                    Technical Product Owner managing API integrations, stakeholder coordination, performance optimization, and cross-team delivery for enterprise retail partnerships.
-                  </p>
-                </div>
-                
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Impact</h5>
-                  <div className="text-gray-300 space-y-3">
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Delivered 3 major API integrations on time for T-Mobile's largest retail partners</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Streamlined prepaid activations across Walmart, Costco, and Best Buy</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Reduced number porting errors and improved customer onboarding flow</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Zero critical production bugs across enterprise retail integrations</span></p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="flex flex-wrap gap-2 mt-6">
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">API Integration</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Telecom</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Agile Delivery</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Enterprise Retail</span>
-              </div>
-              
-              <DiagramGallery />
-              
-              <div className="text-center mt-8">
-                <a 
-                  href="https://nortal.com/about" 
-                  className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors group"
-                >
-                  Visit Website
-                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </a>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.0 }}
-            >
-              <div className="mb-4">
-                <span className="inline-block bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm font-semibold">
                   Live on App Store
                 </span>
               </div>
@@ -618,6 +439,186 @@ export default function Work() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </a>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.9 }}
+            >
+              <div className="mb-4">
+                <span className="inline-block bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-sm font-semibold">
+                  Enterprise Telecom / API Integrations
+                </span>
+              </div>
+              
+              <h3 className="text-white text-2xl font-display font-bold mb-4">
+                Nortal ● API-Driven Telecom Solutions for National Retailers
+              </h3>
+              
+              <h4 className="text-teal-400 text-lg font-semibold mb-6">
+                Delivered prepaid activation, number port-in, add-a-line, and billing integrations for T-Mobile's largest retail partners.
+              </h4>
+              
+              <div className="mb-6">
+                <p className="text-xs uppercase tracking-wider text-gray-400 font-semibold">
+                  Secure Communications Modernization — Faster, Safer, Smarter
+                </p>
+              </div>
+              
+              <div className="space-y-6">
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Problem</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    T-Mobile's prepaid services for major retailers like Walmart, Costco, and Best Buy required complex API integrations for activations, number porting, and service extensions. Without streamlined processes, onboarding new customers or adding lines was slow, error-prone, and frustrating.
+                  </p>
+                </div>
+                
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Solution</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    As Technical Product Owner, I managed the MAAD Lite prepaid API integration for national retailers, delivered Port-In capabilities for seamless number transfers, launched National Retailer Add-a-Line (AAL) functionality for existing customers, and improved cart, payment, and OTP retry performance for faster transactions.
+                  </p>
+                </div>
+                
+                <div>
+                  <h5 className="text-white font-semibold mb-2">My Role</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    Technical Product Owner managing API integrations, stakeholder coordination, performance optimization, and cross-team delivery for enterprise retail partnerships.
+                  </p>
+                </div>
+                
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Impact</h5>
+                  <div className="text-gray-300 space-y-3">
+                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Delivered 3 major API integrations on time for T-Mobile's largest retail partners</span></p>
+                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Streamlined prepaid activations across Walmart, Costco, and Best Buy</span></p>
+                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Reduced number porting errors and improved customer onboarding flow</span></p>
+                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Zero critical production bugs across enterprise retail integrations</span></p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="flex flex-wrap gap-2 mt-6">
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">API Integration</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Telecom</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Agile Delivery</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Enterprise Retail</span>
+              </div>
+              
+              <DiagramGallery />
+              
+              <div className="text-center mt-8">
+                <a 
+                  href="https://nortal.com/about" 
+                  className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors group"
+                >
+                  Visit Website
+                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </a>
+              </div>
+            </motion.div>
+
+            <motion.div
+            <motion.div
+              className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.0 }}
+            >
+              <div className="mb-4">
+                <span className="inline-block bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm font-semibold">
+                  Launching on iOS & Android
+                </span>
+              </div>
+              
+              <h3 className="text-white text-2xl font-display font-bold mb-4">
+                Enlighten ● Tao × Neuroscience Mindfulness App
+              </h3>
+              
+              <h4 className="text-teal-400 text-lg font-semibold mb-6">
+                Mindfulness, nervous system regulation, and timeless Taoist wisdom in your pocket.
+              </h4>
+              
+              <div className="space-y-6">
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Problem</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    Most mindfulness apps expect users to actively seek out content, making it easy to forget or skip entirely. Few combine unpredictable Taoist insights with quick, evidence-based practices for an immediate state shift.
+                  </p>
+                </div>
+                
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Solution</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    Enlighten delivers Tao Te Ching passages paired with neuroscience-backed micro-practices at beautifully timed moments. Features include a quote library with filters, favorites, customizable notifications, and minimal, distraction-free UX.
+                  </p>
+                </div>
+                
+                <div>
+                  <h5 className="text-white font-semibold mb-2">My Role</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    Product concept, UX design, user flows, high-level technical planning, user story creation, and roadmap development.
+                  </p>
+                </div>
+                
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Impact (6-Month Targets)</h5>
+                  <div className="text-gray-300 space-y-3">
+                    <p className="flex items-start"><span className="text-teal-400 mr-2">→</span><span>750-1,500 downloads with organic growth</span></p>
+                    <p className="flex items-start"><span className="text-teal-400 mr-2">→</span><span>4-6% Day 30 retention (indie app benchmark)</span></p>
+                    <p className="flex items-start"><span className="text-teal-400 mr-2">→</span><span>100-200 weekly active users engaging 2-3x per week</span></p>
+                    <p className="flex items-start"><span className="text-teal-400 mr-2">→</span><span>Fast nervous system resets without disrupting routine</span></p>
+                  </div>
+                </div>
+                
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Status</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    Launching soon on iOS App Store and Google Play Store.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="flex flex-wrap gap-2 mt-6">
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Mindfulness</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Mobile UX</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Product Strategy</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">AI Development</span>
+              </div>
+
+              <div className="text-center mt-8">
+                <a
+                  href="https://enlighten-kappa.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors group"
+                >
+                  View Landing Page
+                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </a>
+              </div>
+
+              <div className="mt-8">
+                <div
+                  className="relative rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
+                  onClick={() => {
+                    setModalMedia({ src: '/images/enlighten_portfolio_horizontal.png', type: 'image' })
+                    setIsModalOpen(true)
+                  }}
+                >
+                  <img
+                    src="/images/enlighten_portfolio_horizontal.png"
+                    alt="Enlighten app portfolio showcase featuring mobile screens for notifications, daily wisdom, micro-practice, library, and favorites"
+                    className="w-full h-auto object-cover"
+                  />
                 </div>
               </div>
             </motion.div>
