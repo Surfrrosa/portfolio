@@ -74,71 +74,74 @@ export default async function BlogPost({ params }: PageProps) {
             Back to Writing
           </Link>
 
-          {/* Post header */}
-          <header className="mb-12">
-            <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
-              {post.title}
-            </h1>
+          {/* Article container with dark background */}
+          <div className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 lg:p-12 border border-white/10">
+            {/* Post header */}
+            <header className="mb-12">
+              <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
+                {post.title}
+              </h1>
 
-            <div className="flex items-center gap-4 text-zinc-400 text-sm">
-              <time dateTime={post.date}>
-                {new Date(post.date).toLocaleDateString('en-US', {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric',
-                })}
-              </time>
-              {post.readTime && (
-                <>
-                  <span className="text-zinc-600">•</span>
-                  <span>{post.readTime}</span>
-                </>
-              )}
-            </div>
-
-            {post.tags && post.tags.length > 0 && (
-              <div className="flex flex-wrap gap-2 mt-6">
-                {post.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-3 py-1 bg-teal-400/10 text-teal-400 text-sm rounded-full"
-                  >
-                    {tag}
-                  </span>
-                ))}
+              <div className="flex items-center gap-4 text-zinc-400 text-sm">
+                <time dateTime={post.date}>
+                  {new Date(post.date).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                  })}
+                </time>
+                {post.readTime && (
+                  <>
+                    <span className="text-zinc-600">•</span>
+                    <span>{post.readTime}</span>
+                  </>
+                )}
               </div>
-            )}
-          </header>
 
-          {/* Post content */}
-          <MDXContent>
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>
-              {post.content}
-            </ReactMarkdown>
-          </MDXContent>
+              {post.tags && post.tags.length > 0 && (
+                <div className="flex flex-wrap gap-2 mt-6">
+                  {post.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-3 py-1 bg-teal-400/10 text-teal-400 text-sm rounded-full"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </header>
 
-          {/* Footer */}
-          <footer className="mt-16 pt-8 border-t border-white/10">
-            <Link
-              href="/writing"
-              className="inline-flex items-center gap-2 text-teal-400 hover:text-teal-300 transition-colors"
-            >
-              <svg
-                className="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+            {/* Post content */}
+            <MDXContent>
+              <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                {post.content}
+              </ReactMarkdown>
+            </MDXContent>
+
+            {/* Footer */}
+            <footer className="mt-16 pt-8 border-t border-white/10">
+              <Link
+                href="/writing"
+                className="inline-flex items-center gap-2 text-teal-400 hover:text-teal-300 transition-colors"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M15 19l-7-7 7-7"
-                />
-              </svg>
-              Back to all posts
-            </Link>
-          </footer>
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M15 19l-7-7 7-7"
+                  />
+                </svg>
+                Back to all posts
+              </Link>
+            </footer>
+          </div>
         </article>
       </main>
     </div>
