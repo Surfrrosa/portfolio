@@ -1,0 +1,111 @@
+---
+title: "The Absurdity Index: Quantifying What the Statistics Miss"
+date: "2024-12-17"
+excerpt: "A data-driven dashboard that combines official statistics with social sentiment to quantify the absurdity of modern existence. When the economy is 'strong' but everyone's struggling, that gap is worth measuring."
+readTime: "8 min read"
+tags: ["Data Visualization", "Social Research", "Product Design"]
+draft: false
+---
+
+There's a particular kind of cognitive dissonance that defines modern life. The Bureau of Labor Statistics announces that the economy is strong. Your healthcare claim gets denied. Again.
+
+Rent goes up 15%. Your dating app matches never seem to materialize. You're told everything is fine, but your bank account and your mental health suggest otherwise.
+
+I built **The Absurdity Index** because sometimes it feels like the stats just aren't telling the full story. When I speak to others and see patterns throughout media of real stories, big data seems to miss the entire emotional and psychological texture of being alive right now.
+
+## The Gap Between Data and Despair
+
+Here's the problem: traditional economic metrics are designed to measure aggregate trends, not lived experience. GDP growth doesn't capture the fact that you're paying over $200 month for subscriptions you forgot to cancel. Unemployment rates don't measure the existential dread of watching 152,922 tech workers get laid off while you're still trying to get hired in 2025, or the college students pouring their hearts out on YouTube about their deep fear of their futures.
+
+Official data lags reality by months or quarters, and I believe that's being generous. Social sentiment happens in real-time, on Reddit at midnight when someone posts: *"Insurance denied my cancer treatment after 10 years of premiums. Facing bankruptcy. They said it wasn't 'medically necessary.'"*
+
+Those types of stories that get lost in the cracks are data points, too. It's just not one that shows up in the Consumer Price Index.
+
+## Methodology
+
+The Absurdity Index tracks 8 metrics of modern life through a formula that combines hard data with human sentiment:
+
+**Final Score = (Official Data × 0.4) + (Social Sentiment × 0.6)**
+
+Why weight social sentiment at 60%? Because when your prior authorization gets denied for the third time, you don't care that healthcare spending grew 4.1% year-over-year. You care that you're in pain and the system that's supposed to help you was never designed to.
+
+I collect social sentiment systematically from YouTube, Reddit, and TikTok—targeting 300-480 entries per metric. Every data point links back to a real person's story.
+
+Content gets categorized into three levels:
+- **Level 1 (Mild)**: Minor frustration, awareness
+- **Level 2 (Struggling)**: Significant impact & frequent challenges
+- **Level 3 (Crisis)**: Financial ruin, mental health crisis, major life disruption
+
+The **crisis ratio** (Level 3 percentage) becomes the social sentiment score. Anchor that to official stats, and you get something much closer to reality.
+
+## 9 Layers of ~~Hell~~ Data
+
+**CIRCLE I: LIMBO** — The overall score? **37.54 out of 100.** Not great, not terrible. "Quarterly Purge Required."
+
+**CIRCLE II: LUST** — **Dating App Despair** (0.36—still collecting data, romance might not be dead yet).
+
+**CIRCLE III: GLUTTONY** — **Subscription Overload** hits 58.99 because we're all paying for streaming services we don't watch.
+
+**CIRCLE IV: GREED** — **Wage Stagnation** sits at 32.56, which somehow feels both accurate and depressing.
+
+**CIRCLE V: WRATH** — **Airline Chaos** (18.67). Didn't I mention something about flying into the sun?
+
+**CIRCLE VI: HERESY** — **AI Psychosis** (18.05). We out here.
+
+**CIRCLE VII: VIOLENCE** — **What Healthcare?** prior authorization purgatory at 72.34.
+
+**CIRCLE VIII: FRAUD** — **Housing Despair** registers 50.85, suggesting homeownership requires selling multiple organs or a pact with T҉h҉e҉ D҉a҉r҉k҉n҉e҉s҉s҉.
+
+**CIRCLE IX: TREACHERY** — **Layoff Watch** (48.48). Sit back, relax, and grab some popcorn (& potentially your resume.)
+
+## The Hard Stuff
+
+**Platform bias** is real. Reddit and TikTok users skew younger and more tech-savvy than the general population. People in crisis are more likely to post than people who are fine, and viral events can spike sentiment temporarily.
+
+I try to mitigate this by sampling across multiple platforms, anchoring to official statistics, and being honest about the limitations. The goal isn't perfect representation, it's directional insight into what traditional metrics miss.
+
+**Data collection at scale** is the bigger challenge. I need 3,440 total entries across 8 metrics. That's 30-50 hours of manual work, scrolling through Reddit threads, copying URLs, categorizing stories. I'm doing it systematically, weekly, one metric at a time. It's slow. It's tedious. It's necessary.
+
+**Launching incomplete** is risky. Do I wait until all the data is collected to go public, or do I ship transparently and show the work-in-progress? I chose transparency. The homepage shows "37.54*" with a footnote: "*Collection in progress." This is going to be on-going work.
+
+## Build
+
+This project is built with Next.js 15, React 19, and Tailwind CSS 4. The design is brutalist—heavy black borders, red accents, stark typography—because if you're quantifying modern absurdity, your aesthetic should mirror the bold subject matter.
+
+The data collection scripts are written in Python and fully open-source. Anyone can verify the methodology or run analysis, and I welcome any criticism or helpful revisioning. Transparency is something very close to my heart.
+
+This project has been built with AI-assisted development as needed for full-stack development with a close eye to detail and direction. For this, I used Claude Terminal, my faithful companion.
+
+## Why This Matters
+
+It doesn't. I mean, this is a complex and subjective statement. Instead of disappearing into a philosophy vortex, I'll cut to the chase. The Absurdity Index isn't about doom-scrolling or feeding outrage. It's about curiosity, dark humour, and a burning passion for the bizarre. I think it's validating to see qualitative data turned quantitative.
+
+When official stats say "housing costs are manageable" but everyone under 35 has given up on homeownership, that gap is worth quantifying. The absurdity isn't in the numbers. It's in the distance between what we're told and what we know.
+
+
+## What I Learned
+
+Building The Absurdity Index taught me that **methodology is design**. How you collect data, prioritize sources, weight variables, and categorize stories are design decisions that shape the final product even more than the color palette or typography. It's impossible to get perfect, but flying into the sun is exciting.
+
+I learned that **transparency builds trust**. Showing the Python scripts, being open-source, documenting limitations, being open about methods and how I use AI-assisted development only invites opportunities to be better and learn more.
+
+
+## The Asterisk
+
+Like I said, The Absurdity Index isn't perfect and it's not meant to be. It's not complete, and I don't think it's the kind of project that gets completed. The data collection is ongoing, the sample sizes are preliminary, and the scores will fluctuate as patterns emerge; really, the best I can do is the best I can do.
+
+And that's the point.
+
+We're living through this in real-time and the absurdity compounds faster than any dashboard can track. So, all stats are bullshit. JK, kinda.
+
+This is meant to be a fun, living research project that I update weekly out of my own curiousity. The asterisk is an open invitation.
+
+---
+
+**View the dashboard:** [absurdity-index.vercel.app](https://absurdity-index.vercel.app)
+**Read the methodology:** [Full documentation here](https://absurdity-index.vercel.app/methodology)
+**See the code:** [GitHub repository](https://github.com/shainarazavi/absurdity-index)
+
+---
+
+**Disclaimer:** Scores and methodology are subject to change at any time.
