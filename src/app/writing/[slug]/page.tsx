@@ -75,7 +75,7 @@ export default async function BlogPost({ params }: PageProps) {
           </Link>
 
           {/* Article container with dark background */}
-          <div className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 lg:p-12 border border-white/10">
+          <div className="bg-zinc-950 rounded-2xl p-8 lg:p-12 border border-white/10">
             {/* Post header */}
             <header className="mb-12">
               <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
