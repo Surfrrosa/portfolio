@@ -11,6 +11,11 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const bebasNeue = Bebas_Neue({ weight: '400', subsets: ['latin'], variable: '--font-bebas' })
 
 export const metadata: Metadata = {
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+  },
   title: {
     default: 'Shaina Pauley | I Build Products & Systems That Work',
     template: '%s | Shaina Pauley • Technical Product Owner'
