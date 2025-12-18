@@ -4,6 +4,37 @@ import matter from 'gray-matter'
 
 const postsDirectory = path.join(process.cwd(), 'content/blog')
 
+// Helper function to extract plain text preview from markdown content
+export function getContentPreview(content: string, maxLength: number = 200): string {
+  // Remove markdown frontmatter if it exists
+  const contentWithoutFrontmatter = content.replace(/^---[\s\S]*?---\n/, '')
+
+  // Remove markdown syntax (headers, bold, italic, links, etc)
+  let plainText = contentWithoutFrontmatter
+    .replace(/#{1,6}\s/g, '') // Remove headers
+    .replace(/\*\*(.+?)\*\*/g, '$1') // Remove bold
+    .replace(/\*(.+?)\*/g, '$1') // Remove italic
+    .replace(/\[(.+?)\]\(.+?\)/g, '$1') // Remove links but keep text
+    .replace(/`(.+?)`/g, '$1') // Remove inline code
+    .replace(/^\s*[-*+]\s/gm, '') // Remove list markers
+    .replace(/^\s*\d+\.\s/gm, '') // Remove numbered list markers
+    .replace(/\n+/g, ' ') // Replace newlines with spaces
+    .trim()
+
+  // Truncate to maxLength and add ellipsis
+  if (plainText.length > maxLength) {
+    plainText = plainText.substring(0, maxLength).trim()
+    // Try to break at last complete word
+    const lastSpace = plainText.lastIndexOf(' ')
+    if (lastSpace > maxLength * 0.8) { // Only break at word if it's not too far back
+      plainText = plainText.substring(0, lastSpace)
+    }
+    plainText += '...'
+  }
+
+  return plainText
+}
+
 export interface BlogPost {
   slug: string
   title: string

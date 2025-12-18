@@ -2,7 +2,7 @@ import React from 'react'
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { getAllPosts } from '@/lib/blog'
+import { getAllPosts, getContentPreview } from '@/lib/blog'
 import Sidebar from '@/components/Sidebar'
 
 export const metadata: Metadata = {
@@ -58,7 +58,7 @@ export default function WritingPage() {
                     </p>
 
                     <p className="text-zinc-300 leading-relaxed mb-4">
-                      {post.excerpt}
+                      {getContentPreview(post.content, 200)}
                     </p>
 
                     {post.tags && post.tags.length > 0 && (
