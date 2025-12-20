@@ -100,7 +100,7 @@ export default function Contact() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            Got a project idea or challenge keeping you up at night? Drop me a quick summary below and I'll send you a link to book a free 15-minute consultation to see how I can help.
+            Got a project idea or challenge keeping you up at night? Drop me a quick summary below and I'll send you a link to book a free 30-minute consultation to see how I can help.
           </motion.p>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -204,7 +204,7 @@ export default function Contact() {
                 {submitStatus === 'success' && (
                   <div className="mt-4 p-4 bg-green-500/20 border border-green-500/30 rounded-lg">
                     <p className="text-green-400 text-center">
-                      Got it! I'll send you a scheduling link for a free 15-minute consultation within 24 hours.
+                      Got it! I'll send you a scheduling link for a free 30-minute consultation within 24 hours.
                     </p>
                   </div>
                 )}
