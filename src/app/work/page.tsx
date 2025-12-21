@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import Lenis from 'lenis'
 import Sidebar from '@/components/Sidebar'
 import DiagramGallery from '@/components/DiagramGallery'
+import { EnlightenCarousel } from '@/components/EnlightenCarousel'
 
 export default function Work() {
   const lenisRef = useRef<Lenis | null>(null)
@@ -337,7 +338,7 @@ export default function Work() {
             >
               <div className="mb-4">
                 <span className="inline-block bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm font-semibold">
-                  Launching on iOS & Android
+                  Live on App Store
                 </span>
               </div>
               
@@ -384,7 +385,7 @@ export default function Work() {
                 <div>
                   <h5 className="text-white font-semibold mb-2">Status</h5>
                   <p className="text-gray-300 leading-relaxed">
-                    Launching soon on iOS App Store and Google Play Store.
+                    Available now on iOS App Store. Android version coming soon.
                   </p>
                 </div>
               </div>
@@ -410,21 +411,15 @@ export default function Work() {
                 </a>
               </div>
 
-              <div className="mt-8">
-                <div
-                  className="relative rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
-                  onClick={() => {
-                    setModalMedia({ src: '/images/enlighten_portfolio_horizontal.png', type: 'image' })
-                    setIsModalOpen(true)
-                  }}
-                >
-                  <img
-                    src="/images/enlighten_portfolio_horizontal.png"
-                    alt="Enlighten app portfolio showcase featuring mobile screens for notifications, daily wisdom, micro-practice, library, and favorites"
-                    className="w-full h-auto object-cover"
-                  />
-                </div>
-              </div>
+              <EnlightenCarousel
+                onSlideClick={(index) => {
+                  setModalMedia({
+                    src: `/images/enlighten${index + 1}.PNG`,
+                    type: 'image'
+                  })
+                  setIsModalOpen(true)
+                }}
+              />
             </motion.div>
 
             <motion.div
