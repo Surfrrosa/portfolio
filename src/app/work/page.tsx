@@ -429,6 +429,16 @@ export default function Work() {
                 </div>
               </div>
 
+              <EnlightenCarousel
+                onSlideClick={(index) => {
+                  setModalMedia({
+                    src: `/images/enlighten${index + 1}.PNG`,
+                    type: 'image'
+                  })
+                  setIsModalOpen(true)
+                }}
+              />
+
               <div className="text-center mt-8">
                 <a
                   href="https://enlighten-kappa.vercel.app/"
@@ -442,16 +452,6 @@ export default function Work() {
                   </svg>
                 </a>
               </div>
-
-              <EnlightenCarousel
-                onSlideClick={(index) => {
-                  setModalMedia({
-                    src: `/images/enlighten${index + 1}.PNG`,
-                    type: 'image'
-                  })
-                  setIsModalOpen(true)
-                }}
-              />
             </motion.div>
 
             <motion.div
