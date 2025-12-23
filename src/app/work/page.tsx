@@ -514,11 +514,6 @@ export default function Work() {
 
               <div className="mt-6 space-y-6">
                 <div>
-                  <div className="mb-2">
-                    <span className="inline-block bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs tracking-wide">
-                      Mobile App
-                    </span>
-                  </div>
                   <div
                     className="relative rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
                     onClick={() => {
