@@ -51,14 +51,10 @@ export default function Home() {
           transition={{ duration: 1, delay: 0.3 }}
         >
           <div
-            className="mb-8 overflow-visible relative"
+            className="mb-8 overflow-visible relative mx-auto"
             style={{
               width: '70vw',
-              maxWidth: '1800px',
-              position: 'relative',
-              left: '-5%',
-              marginLeft: '0',
-              marginRight: '0'
+              maxWidth: '1800px'
             }}
           >
             <Image
