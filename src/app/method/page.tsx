@@ -50,7 +50,7 @@ function MethodContent() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            My 5-phase framework for transforming ideas into lasting impact.
+            My 4-phase framework for transforming ideas into lasting impact.
           </motion.p>
 
           <div className="space-y-16">
