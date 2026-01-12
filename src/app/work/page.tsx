@@ -385,7 +385,7 @@ export default function Work() {
                 <div>
                   <h5 className="text-white font-semibold mb-2">Status</h5>
                   <p className="text-gray-300 leading-relaxed">
-                    Available now on iOS App Store. Android version coming soon.
+                    Available now on iOS App Store and Google Play.
                   </p>
                 </div>
               </div>
@@ -415,18 +415,23 @@ export default function Work() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </a>
-                <div className="inline-flex items-center gap-3 bg-black/20 border border-white/5 px-6 py-4 rounded-xl opacity-50 cursor-not-allowed">
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.enlighten.wisdomapp"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 bg-black/40 hover:bg-black/60 border border-white/10 hover:border-white/20 px-6 py-4 rounded-xl transition-all group"
+                >
                   <svg className="w-10 h-10" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" fill="white"/>
                   </svg>
                   <div className="text-left">
-                    <div className="text-xs text-gray-500">Coming Soon</div>
-                    <div className="text-xl font-semibold text-gray-400">Google Play</div>
+                    <div className="text-xs text-gray-400">Get it on</div>
+                    <div className="text-xl font-semibold text-white">Google Play</div>
                   </div>
-                  <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 text-gray-400 group-hover:text-white group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
-                </div>
+                </a>
               </div>
 
               <EnlightenCarousel
