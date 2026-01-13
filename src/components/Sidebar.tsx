@@ -47,7 +47,7 @@ export default function Sidebar() {
               My name is Shaina Pauley.
             </p>
             <p className="text-white font-semibold" style={{ fontSize: '18px', lineHeight: '1.6' }}>
-              I'm an action-oriented dreamer, a student of ideas, and a believer that emotional intelligence, systems thinking, storytelling, and collaboration are the real superpowers in a time of rapid change.
+              I'm an action-oriented dreamer and believer that emotional intelligence, systems thinking, storytelling, and collaboration are the real superpowers in a time of rapid change.
             </p>
           </motion.div>
 
@@ -170,7 +170,7 @@ export default function Sidebar() {
               My name is Shaina Pauley and I am a product owner, builder, writer, and connoisseur of clouds.
             </p>
             <p className="text-white text-xs leading-relaxed text-gray-300">
-              I'm an action-oriented dreamer, a student of ideas, and a believer that emotional intelligence, systems thinking, storytelling, and collaboration are the real superpowers in a time of rapid change.
+              I'm an action-oriented dreamer and believer that emotional intelligence, systems thinking, storytelling, and collaboration are the real superpowers in a time of rapid change.
             </p>
           </div>
         </div>

@@ -50,23 +50,6 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
         >
-          <div
-            className="mb-8 overflow-visible relative mx-auto"
-            style={{
-              width: '70vw',
-              maxWidth: '1800px'
-            }}
-          >
-            <Image
-              src="/images/hero-banner.png"
-              alt="I'm glad you're here"
-              width={3000}
-              height={700}
-              className="w-full h-auto"
-              priority
-            />
-          </div>
-
           <motion.p
             className="text-white leading-relaxed max-w-[70ch] mx-auto text-zinc-200"
             style={{ fontSize: '1.75rem' }}
