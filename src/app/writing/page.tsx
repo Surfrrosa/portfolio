@@ -19,9 +19,24 @@ export default function WritingPage() {
 
       <main className="px-4 lg:px-12 py-12 lg:py-20">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl lg:text-5xl font-bold text-white mb-12">
+          <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6">
             stuff I&apos;m writing about
           </h1>
+
+          <a
+            href="https://buttondown.com/shainapauley"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-zinc-400 hover:text-teal-400 transition-colors mb-12 group"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            <span>Get notified when I post something new</span>
+            <svg className="w-3 h-3 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
 
           {posts.length === 0 ? (
             <div className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-12 border border-white/10">
