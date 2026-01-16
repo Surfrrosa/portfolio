@@ -35,7 +35,7 @@ We spent days on this. The fix was three things:
 2. Increase max_tokens to 4000 so responses don't get cut off and we're allowing for enough user stories and acceptance criteria per input
 3. Build a parser that can extract JSON even when it's wrapped in code fences or has trailing garbage
 
-We called the helper function `coerceJson()` because that's what it does. It coerces whatever mess comes back into something usable. Not elegant, but it works.
+We called the helper function `coerceJson()` because that's what it does. It coerces whatever mess comes back into something usable. It's not elegant, but it works.
 
 ## CTRL-Z everything we thought we knew
 
