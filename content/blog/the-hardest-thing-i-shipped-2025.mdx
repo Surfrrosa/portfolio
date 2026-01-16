@@ -1,0 +1,82 @@
+---
+title: "The Hardest Thing I Shipped in 2025"
+date: "2026-01-16"
+excerpt: "Prompt2Story looks simple. Getting it to work took four months, a full architecture rewrite, and mass deleting 323 npm packages. Here's what actually happened."
+readTime: "7 min read"
+tags: ["AI", "Product Development", "Lessons Learned", "Shipping"]
+draft: false
+---
+
+Prompt2Story looks simple. You paste messy notes, click a button, and get a structured user story. That's it.
+
+Getting it to work reliably took four months, a full architecture rewrite, and mass deleting 323 npm packages. We built it using Claude Code as my development partner, with me making product decisions while working through implementation together. This is the story of what actually happened.
+
+## Works on my machine.
+
+The first version worked great in development, but when we started testing more complex material, the errors came pouring in.
+
+The main problem was timeouts. Complex inputs took 10-20 seconds to process. Vercel's serverless functions have a 30-second limit. Users were hitting 504 errors constantly.
+
+The first fix was lazy: just increase the timeout to 60 seconds. That helped, but users were still staring at a loading spinner for way too long. Nobody wants to wait 15 seconds wondering if the thing is still working.
+
+The real fix was streaming. Instead of waiting for the entire response from OpenAI, we implemented Server-Sent Events so the frontend could display text as it arrived. Users now see results appearing in 2-3 seconds. Same total processing time, completely different experience.
+
+This taught me something obvious that we'd somehow missed: perceived performance matters more than actual performance.
+
+## Vision API or a potato?
+
+Prompt2Story lets you upload design mockups and wireframes. The Vision API analyzes the image and generates user stories from what it sees.
+
+Except the Vision API kept returning garbage. Sometimes the JSON was wrapped in markdown code fences. Sometimes it was truncated mid-sentence. Sometimes it just wasn't JSON at all.
+
+We spent days on this. The fix was three things:
+
+1. Force JSON mode in the API call (should have been obvious)
+2. Increase max_tokens to 4000 so responses don't get cut off and we're allowing for enough user stories and acceptance criteria per input
+3. Build a parser that can extract JSON even when it's wrapped in code fences or has trailing garbage
+
+We called the helper function `coerceJson()` because that's what it does. It coerces whatever mess comes back into something usable. Not elegant, but it works.
+
+## CTRL-Z everything we thought we knew
+
+The first version was Python with FastAPI, deployed on Fly.io with Docker. It worked, but deployment was painful. The git history has dozens of commits that are just "Update main.py", "Update Dockerfile", "Update fly.toml" as we fought with configuration.
+
+Eventually we decided to scrap it and rewrite everything in TypeScript for Vercel serverless. This meant porting all the Python logic, but deployment became a single command. No more Docker. No more Fly.io. Just push to main and it's live.
+
+The tradeoff was real: rewriting working code. But the operational simplicity was worth it. We stopped fighting infrastructure and started shipping features.
+
+## Our cup runneth over. With bloat.
+
+At one point, the package-lock.json was 8,265 lines. For a form with four buttons.
+
+We were using lucide-react, a 30MB icon library, for 15 icons. There were 133 testing packages installed even though most weren't being used. The CSS bundle was 67 kB.
+
+We spent a day just deleting things. Replaced lucide-react with 15 hand-copied SVG files. Removed every unused shadcn/ui component. Stripped out dead testing infrastructure.
+
+Results: package-lock went from 8,265 to 3,362 lines. CSS bundle dropped to 21 kB. Build times got noticeably faster.
+
+We wrote a document called **DEPENDENCY_BLOAT_AUTOPSY.md** where we noted: "Our form app has a larger dependency footprint than most desktop applications from 2010."
+
+Modern web development is kind of insane. But at least now it's less insane.
+
+And the bloat wasn't the only thing that took longer than it should have. PDF uploads kept returning 502 errors because the Vision API can't process PDFs directly. We had to build a router that detects file type and sends PDFs to a text extraction path while images go to the Vision API. A missing null check in the metadata display caused a white screen of death that crashed the entire UI. And we spent way too long debugging ESM vs CommonJS module conflicts when importing pdf-parse.
+
+## We got schooled
+
+**Streaming changes everything for AI products.** If your users are waiting more than a few seconds, show them something happening. The same 15-second process feels completely different when you can see progress.
+
+**LLM outputs need to be coerced, not trusted.** You can't assume the API will return clean JSON even when you ask for it. Build parsers that handle the messy reality.
+
+**Operational simplicity beats architectural purity.** We rewrote working Python code into TypeScript because the deployment experience was miserable. 100% worth it.
+
+**AI-assisted development is powerful, but it comes with a learning curve.** Claude Code helped us implement solutions we couldn't have built alone. But you're learning new patterns on the fly while trying to ship. You need guardrails for code quality and architecture decisions, or things drift fast. Context gets lost between sessions more than you'd expect, so detailed notes and clear handoffs become essential. Nobody's written the playbook for this way of working yet.
+
+## Headed Weast
+
+Prompt2Story currently does one thing: take messy input, generate structured output. The next version will have multiple specialized agents handling different parts of the process. One for extracting requirements. One for writing acceptance criteria. One for identifying edge cases. They'll coordinate and produce better results than a single prompt can, and we think it'll be a fantastic learning opportunity.
+
+---
+
+**Try it:** [prompt2story.com](https://www.prompt2story.com)
+
+*Over 1,000 stories generated for teams in 20+ countries.*
