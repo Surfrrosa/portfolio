@@ -51,7 +51,7 @@ export default function Home() {
           transition={{ duration: 1, delay: 0.3 }}
         >
           <div
-            className="mb-2 overflow-visible relative mx-auto -mt-24"
+            className="mb-0 overflow-visible relative mx-auto -mt-40"
             style={{
               width: '70vw',
               maxWidth: '1600px'
