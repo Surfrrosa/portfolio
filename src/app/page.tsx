@@ -51,9 +51,8 @@ export default function Home() {
           transition={{ duration: 1, delay: 0.3 }}
         >
           <div
-            className="mb-0 overflow-visible relative mx-auto mt-0 lg:-mt-56"
+            className="mb-0 overflow-visible relative mx-auto mt-0 lg:-mt-56 w-[90vw] lg:w-[70vw]"
             style={{
-              width: '70vw',
               maxWidth: '1600px'
             }}
           >
@@ -65,7 +64,7 @@ export default function Home() {
           </div>
 
           <motion.p
-            className="text-white leading-relaxed max-w-[70ch] mx-auto text-zinc-200 text-base lg:text-[2rem]"
+            className="text-white leading-relaxed max-w-[70ch] mx-auto text-zinc-200 text-base lg:text-[2rem] -mt-4 lg:mt-0"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
