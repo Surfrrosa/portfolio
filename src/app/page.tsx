@@ -53,17 +53,17 @@ export default function Home() {
           <div
             className="mb-8 overflow-visible relative mx-auto"
             style={{
-              width: '70vw',
+              width: '80vw',
               maxWidth: '1800px'
             }}
           >
-            <Image
-              src="/images/hero-banner.png"
-              alt="I'm glad you're here"
-              width={3000}
-              height={700}
+            <video
+              src="/videos/hero-video.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
               className="w-full h-auto"
-              priority
             />
           </div>
 
