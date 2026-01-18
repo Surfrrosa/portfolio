@@ -71,7 +71,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            I'm a <strong className="font-bold">Technical Product Owner</strong> and builder who loves prototyping, transforming data into dashboards, and designing workflows that accelerate teams and deliver measurable results.
+            <strong className="font-bold">Technical Product Owner</strong> and <strong className="font-bold">builder</strong> who loves prototyping, transforming data into dashboards, and designing workflows that accelerate teams and deliver measurable results.
           </motion.p>
 
           <motion.div
