@@ -57,13 +57,10 @@ export default function Home() {
               maxWidth: '1800px'
             }}
           >
-            <video
-              src="/videos/hero-video.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-full h-auto mix-blend-multiply"
+            <img
+              src="/images/hero-banner.gif"
+              alt="I'm glad you're here"
+              className="w-full h-auto"
             />
           </div>
 
