@@ -63,7 +63,7 @@ export default function Home() {
               loop
               muted
               playsInline
-              className="w-full h-auto"
+              className="w-full h-auto mix-blend-multiply"
             />
           </div>
 
