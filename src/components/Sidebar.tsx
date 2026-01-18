@@ -43,7 +43,7 @@ export default function Sidebar() {
               My name is Shaina Pauley.
             </p>
             <p className="text-white font-mono tracking-wide" style={{ fontSize: '22px', lineHeight: '1.7' }}>
-              I'm an action-oriented dreamer and believer that emotional intelligence, systems thinking, storytelling, and collaboration are the real superpowers in a time of rapid change
+              I'm an action-oriented dreamer and believer that emotional intelligence, systems thinking, storytelling, and collaboration are the real signal through the noise
               <span className="inline-block w-[3px] h-[1.1em] bg-white ml-1 align-middle animate-blink" />
             </p>
           </motion.div>
@@ -164,7 +164,7 @@ export default function Sidebar() {
             My name is Shaina Pauley.
           </p>
           <p className="text-white font-mono tracking-wide text-sm leading-relaxed">
-            I'm an action-oriented dreamer and believer that emotional intelligence, systems thinking, storytelling, and collaboration are the real superpowers in a time of rapid change
+            I'm an action-oriented dreamer and believer that emotional intelligence, systems thinking, storytelling, and collaboration are the real signal through the noise
             <span className="inline-block w-[2px] h-[1em] bg-white ml-1 align-middle animate-blink" />
           </p>
         </div>
