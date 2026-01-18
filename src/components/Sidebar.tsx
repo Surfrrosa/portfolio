@@ -9,6 +9,9 @@ import SmileyButton from './SmileyButton'
 export default function Sidebar() {
   return (
     <>
+      {/* Placeholder to reserve grid space */}
+      <div className="hidden lg:block w-[340px]" />
+
       <aside className="hidden lg:flex lg:flex-col gap-6 fixed top-0 left-0 w-[340px] h-screen
                          bg-black/60 backdrop-blur-[1px] border-r border-white/10 p-6 z-50">
         <div className="space-y-6">
