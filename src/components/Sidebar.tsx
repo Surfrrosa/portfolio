@@ -9,8 +9,8 @@ import SmileyButton from './SmileyButton'
 export default function Sidebar() {
   return (
     <>
-      <aside className="hidden lg:flex lg:flex-col gap-6 sticky top-0 h-screen
-                         bg-black/60 backdrop-blur-[1px] border-r border-white/10 p-6">
+      <aside className="hidden lg:flex lg:flex-col gap-6 fixed top-0 left-0 w-[340px] h-screen
+                         bg-black/60 backdrop-blur-[1px] border-r border-white/10 p-6 z-50">
         <div className="space-y-6">
           <Link href="/" className="block group">
             <div className="font-bold text-white hover:text-accent-teal transition-colors cursor-pointer glitch-hover flex items-center gap-2" style={{ fontSize: '32px', fontWeight: '700', letterSpacing: '-0.02em' }}>
