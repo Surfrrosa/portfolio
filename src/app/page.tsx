@@ -51,10 +51,10 @@ export default function Home() {
           transition={{ duration: 1, delay: 0.3 }}
         >
           <div
-            className="mb-8 overflow-visible relative mx-auto"
+            className="mb-6 overflow-visible relative mx-auto -mt-8"
             style={{
-              width: '80vw',
-              maxWidth: '1800px'
+              width: '70vw',
+              maxWidth: '1600px'
             }}
           >
             <img
@@ -66,7 +66,7 @@ export default function Home() {
 
           <motion.p
             className="text-white leading-relaxed max-w-[70ch] mx-auto text-zinc-200"
-            style={{ fontSize: '1.75rem' }}
+            style={{ fontSize: '2rem' }}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
@@ -75,7 +75,7 @@ export default function Home() {
           </motion.p>
 
           <motion.div
-            className="flex items-center justify-center gap-3 mt-4"
+            className="flex items-center justify-center gap-4 mt-6"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.9 }}
@@ -83,22 +83,22 @@ export default function Home() {
             <Image
               src="/images/cspo-badge.png"
               alt="CSPO Certified"
-              width={40}
-              height={40}
+              width={52}
+              height={52}
               className="inline-block"
             />
-            <span className="text-zinc-400 text-sm tracking-wide">
+            <span className="text-zinc-400 text-base tracking-wide">
               CSPO (Certified Scrum Product Owner)
             </span>
-            <span className="text-zinc-500">•</span>
+            <span className="text-zinc-500 text-lg">•</span>
             <Image
               src="/images/csm-badge.png"
               alt="CSM Certified"
-              width={48}
-              height={48}
+              width={60}
+              height={60}
               className="inline-block"
             />
-            <span className="text-zinc-400 text-sm tracking-wide">
+            <span className="text-zinc-400 text-base tracking-wide">
               CSM (Certified ScrumMaster)
             </span>
           </motion.div>
