@@ -19,34 +19,16 @@ export default function Sidebar() {
             </div>
           </Link>
           
-          <Link href="/" className="block">
-            <motion.div
-              className="relative rounded-lg overflow-hidden hover:scale-105 transition-transform cursor-pointer"
-              style={{ width: '280px', height: '350px' }}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8 }}
-            >
-              <Image
-                src="/images/shaina-photo.jpg"
-                alt="Shaina Pauley"
-                fill
-                className="object-cover"
-                priority
-              />
-            </motion.div>
-          </Link>
-
           <motion.div
             className="space-y-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <p className="text-white font-semibold" style={{ fontSize: '18px', lineHeight: '1.6' }}>
+            <p className="text-white font-mono tracking-wide" style={{ fontSize: '22px', lineHeight: '1.7' }}>
               My name is Shaina Pauley.
             </p>
-            <p className="text-white font-semibold" style={{ fontSize: '18px', lineHeight: '1.6' }}>
+            <p className="text-white font-mono tracking-wide" style={{ fontSize: '22px', lineHeight: '1.7' }}>
               I'm an action-oriented dreamer and believer that emotional intelligence, systems thinking, storytelling, and collaboration are the real superpowers in a time of rapid change.
             </p>
           </motion.div>
@@ -151,28 +133,14 @@ export default function Sidebar() {
             <div className="text-lg font-bold text-white hover:text-accent-teal transition-colors cursor-pointer glitch-hover" style={{ letterSpacing: '-0.02em' }}>Hello</div>
           </Link>
         </div>
-        
-        <div className="flex items-start gap-4">
-          <Link href="/" className="block flex-shrink-0">
-            <div className="w-24 h-32 relative rounded-lg overflow-hidden hover:scale-105 transition-transform cursor-pointer">
-              <Image
-                src="/images/shaina-photo.jpg"
-                alt="Shaina Pauley"
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
-          </Link>
-          
-          <div className="flex-1 min-w-0">
-            <p className="text-white text-sm font-semibold leading-relaxed mb-2">
-              My name is Shaina Pauley and I am a product owner, builder, writer, and connoisseur of clouds.
-            </p>
-            <p className="text-white text-xs leading-relaxed text-gray-300">
-              I'm an action-oriented dreamer and believer that emotional intelligence, systems thinking, storytelling, and collaboration are the real superpowers in a time of rapid change.
-            </p>
-          </div>
+
+        <div className="space-y-2">
+          <p className="text-white font-mono tracking-wide text-base leading-relaxed">
+            My name is Shaina Pauley.
+          </p>
+          <p className="text-white font-mono tracking-wide text-sm leading-relaxed">
+            I'm an action-oriented dreamer and believer that emotional intelligence, systems thinking, storytelling, and collaboration are the real superpowers in a time of rapid change.
+          </p>
         </div>
         
         <div className="flex items-center justify-between mt-4">
