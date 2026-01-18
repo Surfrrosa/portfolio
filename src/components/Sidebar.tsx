@@ -131,7 +131,7 @@ export default function Sidebar() {
 
       </aside>
 
-      <aside className="lg:hidden p-4 border-b border-white/10 bg-black/50 backdrop-blur-[1px]">
+      <aside className="lg:hidden p-4 border-b border-white/10 bg-black/50 backdrop-blur-[1px] relative z-10">
         <div className="flex items-center gap-3 mb-4">
           <Link href="/" className="block">
             <div className="text-lg font-bold text-white hover:text-accent-teal transition-colors cursor-pointer glitch-hover" style={{ letterSpacing: '-0.02em' }}>Hello</div>
