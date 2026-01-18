@@ -65,8 +65,7 @@ export default function Home() {
           </div>
 
           <motion.p
-            className="text-white leading-relaxed max-w-[70ch] mx-auto text-zinc-200"
-            style={{ fontSize: '2rem' }}
+            className="text-white leading-relaxed max-w-[70ch] mx-auto text-zinc-200 text-base lg:text-[2rem]"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
@@ -87,7 +86,7 @@ export default function Home() {
               height={52}
               className="inline-block"
             />
-            <span className="text-zinc-400 text-base tracking-wide">
+            <span className="text-zinc-400 text-xs lg:text-base tracking-wide">
               CSPO (Certified Scrum Product Owner)
             </span>
             <span className="text-zinc-500 text-lg">•</span>
@@ -98,7 +97,7 @@ export default function Home() {
               height={60}
               className="inline-block"
             />
-            <span className="text-zinc-400 text-base tracking-wide">
+            <span className="text-zinc-400 text-xs lg:text-base tracking-wide">
               CSM (Certified ScrumMaster)
             </span>
           </motion.div>
