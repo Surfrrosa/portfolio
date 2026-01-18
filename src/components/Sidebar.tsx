@@ -1,12 +1,16 @@
 'use client'
 
 import React from 'react'
+import { usePathname } from 'next/navigation'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import SmileyButton from './SmileyButton'
 
 export default function Sidebar() {
+  const pathname = usePathname()
+  const isHome = pathname === '/'
+
   return (
     <>
       {/* Placeholder to reserve grid space */}
@@ -18,7 +22,14 @@ export default function Sidebar() {
           <Link href="/" className="block group">
             <div className="font-bold text-white hover:text-accent-teal transition-colors cursor-pointer glitch-hover flex items-center gap-2" style={{ fontSize: '32px', fontWeight: '700', letterSpacing: '-0.02em' }}>
               <span>→</span>
-              <span>Hello</span>
+              {isHome ? (
+                <span>Hello</span>
+              ) : (
+                <span className="flex items-center gap-2">
+                  <span className="line-through opacity-50">Hello</span>
+                  <span>Home</span>
+                </span>
+              )}
             </div>
           </Link>
           
@@ -134,7 +145,17 @@ export default function Sidebar() {
       <aside className="lg:hidden p-4 border-b border-white/10 bg-black/50 backdrop-blur-[1px] relative z-10">
         <div className="flex items-center gap-3 mb-4">
           <Link href="/" className="block">
-            <div className="text-lg font-bold text-white hover:text-accent-teal transition-colors cursor-pointer glitch-hover" style={{ letterSpacing: '-0.02em' }}>Hello</div>
+            <div className="text-lg font-bold text-white hover:text-accent-teal transition-colors cursor-pointer glitch-hover flex items-center gap-2" style={{ letterSpacing: '-0.02em' }}>
+              <span>→</span>
+              {isHome ? (
+                <span>Hello</span>
+              ) : (
+                <span className="flex items-center gap-2">
+                  <span className="line-through opacity-50">Hello</span>
+                  <span>Home</span>
+                </span>
+              )}
+            </div>
           </Link>
         </div>
 
