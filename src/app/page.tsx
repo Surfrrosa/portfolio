@@ -60,7 +60,7 @@ export default function Home() {
       <Sidebar />
       <ExitIntentPrompt />
 
-      <main className="flex flex-col items-center px-4 lg:px-12 min-h-screen pt-0 lg:justify-center relative overflow-visible">
+      <main className="flex flex-col items-center px-4 lg:px-12 h-auto lg:min-h-screen pt-0 lg:justify-center relative overflow-visible">
         <motion.div
           className="text-center relative w-full"
           initial={{ opacity: 0, y: 50 }}
