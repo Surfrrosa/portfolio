@@ -13,40 +13,40 @@ const tvHotspots = [
     label: 'Work',
     href: '/work',
     // Top left TV (hello world)
-    top: '5%',
-    left: '12%',
-    width: '22%',
-    height: '35%',
+    top: '8%',
+    left: '14%',
+    width: '18%',
+    height: '28%',
   },
   {
     id: 'writing',
     label: 'Writing',
     href: '/writing',
     // Top right TV
-    top: '5%',
-    left: '66%',
-    width: '22%',
-    height: '35%',
+    top: '8%',
+    left: '68%',
+    width: '18%',
+    height: '28%',
   },
   {
     id: 'about',
     label: 'About',
     href: '/about',
     // Bottom left TV (video of her)
-    top: '42%',
-    left: '5%',
-    width: '25%',
-    height: '42%',
+    top: '45%',
+    left: '8%',
+    width: '22%',
+    height: '38%',
   },
   {
     id: 'contact',
     label: 'Contact',
     href: '/contact',
     // Bottom right TV (crowd)
-    top: '42%',
-    left: '62%',
-    width: '26%',
-    height: '42%',
+    top: '45%',
+    left: '65%',
+    width: '22%',
+    height: '38%',
   },
 ]
 
@@ -94,8 +94,11 @@ export default function Home() {
                 <div className="w-full h-full" />
 
                 {/* Label that appears on hover (desktop only) */}
-                <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 px-4 py-2 bg-black/90 border border-teal-400/50 text-teal-400 text-lg font-mono tracking-wider uppercase opacity-0 group-hover:opacity-100 transition-all duration-200 whitespace-nowrap hidden lg:block shadow-[0_0_20px_rgba(0,0,0,0.8)]">
-                  [ {tv.label} ]
+                <span
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 px-4 py-2 bg-black text-white text-lg font-mono tracking-wider uppercase opacity-0 group-hover:opacity-100 transition-all duration-200 whitespace-nowrap hidden lg:block"
+                  style={{ textShadow: '0 0 10px rgba(255,255,255,0.8), 0 0 20px rgba(255,255,255,0.6), 0 0 30px rgba(255,255,255,0.4)' }}
+                >
+                  {tv.label}
                 </span>
               </Link>
             ))}
