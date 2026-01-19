@@ -1,43 +1,56 @@
 'use client'
 
-import React, { useRef, useEffect } from 'react'
-import Image from 'next/image'
+import React from 'react'
+import Link from 'next/link'
 import { motion } from 'framer-motion'
-import Lenis from 'lenis'
 import Sidebar from '@/components/Sidebar'
-import { TextScrambleEffect } from '@/components/TextScrambleEffect'
-import BottomCTAs from '@/components/BottomCTAs'
 import ExitIntentPrompt from '@/components/ExitIntentPrompt'
 
+// TV hotspot positions (percentages relative to the GIF container)
+const tvHotspots = [
+  {
+    id: 'work',
+    label: 'Work',
+    href: '/work',
+    // Top left TV (hello world)
+    top: '5%',
+    left: '12%',
+    width: '22%',
+    height: '35%',
+  },
+  {
+    id: 'writing',
+    label: 'Writing',
+    href: '/writing',
+    // Top right TV
+    top: '5%',
+    left: '66%',
+    width: '22%',
+    height: '35%',
+  },
+  {
+    id: 'about',
+    label: 'About',
+    href: '/about',
+    // Bottom left TV (video of her)
+    top: '42%',
+    left: '5%',
+    width: '25%',
+    height: '42%',
+  },
+  {
+    id: 'contact',
+    label: 'Contact',
+    href: '/contact',
+    // Bottom right TV (crowd)
+    top: '42%',
+    left: '62%',
+    width: '26%',
+    height: '42%',
+  },
+]
+
 export default function Home() {
-  const lenisRef = useRef<Lenis | null>(null)
-
-  useEffect(() => {
-    const lenis = new Lenis({
-      duration: 1.1,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      orientation: 'vertical',
-      gestureOrientation: 'vertical',
-      smoothWheel: true,
-      wheelMultiplier: 1,
-      touchMultiplier: 2,
-      infinite: false,
-    })
-
-    lenisRef.current = lenis
-
-    function raf(time: number) {
-      lenis.raf(time)
-      requestAnimationFrame(raf)
-    }
-
-    requestAnimationFrame(raf)
-
-    return () => {
-      lenis.destroy()
-    }
-  }, [])
-
   return (
     <div className="min-h-screen grid lg:grid-cols-[340px_1fr]">
       <Sidebar />
@@ -50,127 +63,54 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
         >
+          {/* GIF container with hotspots */}
           <div
-            className="mb-0 overflow-visible relative mx-auto mt-0 lg:-mt-56 w-[90vw] lg:w-[70vw]"
+            className="overflow-visible relative mx-auto mt-0 lg:-mt-32 w-[95vw] lg:w-[70vw]"
             style={{
               maxWidth: '1600px'
             }}
           >
+            {/* The GIF */}
             <img
               src="/images/hero-banner.gif"
-              alt="I'm glad you're here"
+              alt="Navigate by clicking on the TV screens"
               className="w-full h-auto"
             />
+
+            {/* Clickable TV hotspots */}
+            {tvHotspots.map((tv) => (
+              <Link
+                key={tv.id}
+                href={tv.href}
+                className="absolute group cursor-pointer"
+                style={{
+                  top: tv.top,
+                  left: tv.left,
+                  width: tv.width,
+                  height: tv.height,
+                }}
+              >
+                {/* Hover effect overlay */}
+                <div className="w-full h-full transition-all duration-300 rounded-sm group-hover:bg-white/15 group-hover:shadow-[0_0_30px_rgba(43,212,207,0.3)]" />
+
+                {/* Label that appears on hover (desktop only) */}
+                <span className="absolute bottom-2 left-1/2 -translate-x-1/2 px-3 py-1 bg-black/80 text-white text-sm font-mono rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap hidden lg:block">
+                  {tv.label}
+                </span>
+              </Link>
+            ))}
           </div>
 
+          {/* Mobile hint */}
           <motion.p
-            className="text-white leading-relaxed max-w-[70ch] mx-auto text-zinc-200 text-base lg:text-[2rem] -mt-4 lg:mt-0"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          >
-            <strong className="font-bold">Technical Product Owner</strong> and <strong className="font-bold">builder</strong> who loves prototyping, transforming data into dashboards, and designing workflows that accelerate teams and deliver measurable results.
-          </motion.p>
-
-          <motion.div
-            className="flex items-center justify-center gap-4 mt-6"
+            className="text-zinc-500 text-sm font-mono mt-6 lg:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.9 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
           >
-            <Image
-              src="/images/cspo-badge.png"
-              alt="CSPO Certified"
-              width={52}
-              height={52}
-              className="inline-block"
-            />
-            <span className="text-zinc-400 text-xs lg:text-base tracking-wide">
-              CSPO (Certified Scrum Product Owner)
-            </span>
-            <span className="text-zinc-500 text-lg">•</span>
-            <Image
-              src="/images/csm-badge.png"
-              alt="CSM Certified"
-              width={60}
-              height={60}
-              className="inline-block"
-            />
-            <span className="text-zinc-400 text-xs lg:text-base tracking-wide">
-              CSM (Certified ScrumMaster)
-            </span>
-          </motion.div>
+            tap a screen to explore
+          </motion.p>
         </motion.div>
-        
-        {/* Proven Impact & Approach section */}
-        <section className="min-h-screen mt-12 lg:mt-20 p-4 lg:p-12">
-          <div className="max-w-4xl mx-auto text-white">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-6 lg:mb-8">Proven Impact & Approach</h2>
-            <ul className="space-y-6 text-lg leading-relaxed">
-              <li className="flex items-start">
-                <span className="text-teal-400 mr-4 mt-1">•</span>
-                <span><strong>7+ Years in the Trenches</strong> ● secure authentication, REST APIs, CRM, migrations, dashboards.</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-teal-400 mr-4 mt-1">•</span>
-                <span><strong>AI as a Co-Pilot</strong> ● automation, intelligent tooling, workflows that streamline delivery.</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-teal-400 mr-4 mt-1">•</span>
-                <span><strong>Fluent in Tech + People</strong> ● bridging engineering, design, leadership, and stakeholders.</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-teal-400 mr-4 mt-1">•</span>
-                <span><strong>Impact, Not Just Output</strong> ● every feature tied to tangible, trackable results.</span>
-              </li>
-            </ul>
-          </div>
-
-          <div className="mt-24 lg:mt-32">
-            <BottomCTAs />
-          </div>
-
-          {/* FAQ Section for AI Search Optimization */}
-          <div className="max-w-4xl mx-auto text-white mt-24 lg:mt-32">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-8 lg:mb-12">Frequently Asked Questions</h2>
-            <div className="space-y-8">
-              <div>
-                <h3 className="text-xl lg:text-2xl font-semibold mb-3 text-teal-400">What's a Technical Product Owner?</h3>
-                <p className="text-gray-300 text-lg leading-relaxed">
-                  I bridge the gap between engineering and business. I can read code, design APIs, write technical specs, and talk to stakeholders. I own the why, what, when, and where, which sets up a clean handoff for engineering to own the how.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="text-xl lg:text-2xl font-semibold mb-3 text-teal-400">How do you use AI in product work?</h3>
-                <p className="text-gray-300 text-lg leading-relaxed">
-                  I use AI to move faster on execution by building features, drafting content, and analyzing options. I iterate and push back often, validating everything. I take full ownership for my work as well as any tools I use. AI is tremendous for speed, not a replacement for judgment or accountability.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="text-xl lg:text-2xl font-semibold mb-3 text-teal-400">What types of teams do you work with?</h3>
-                <p className="text-gray-300 text-lg leading-relaxed">
-                  Product-focused teams across industries: SaaS, enterprise tools, consumer apps. From 1:1 work with founders to early-stage and scale-up. Teams that value shipping over endless planning.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="text-xl lg:text-2xl font-semibold mb-3 text-teal-400">What's your typical engagement look like?</h3>
-                <p className="text-gray-300 text-lg leading-relaxed">
-                  Product ownership roles, consulting projects, fractional product leadership, and custom deliverables. I work with teams who need someone technical enough to spec features and business-savvy enough to prioritize ruthlessly. I also love helping teams work together better. Open communication, everyone feeling heard, and genuine alignment.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="text-xl lg:text-2xl font-semibold mb-3 text-teal-400">What's your availability?</h3>
-                <p className="text-gray-300 text-lg leading-relaxed">
-                  Open to new opportunities. Contact me to discuss your product challenges and see if we're a good fit.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
       </main>
     </div>
   )
