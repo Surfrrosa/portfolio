@@ -13,22 +13,22 @@ const tvHotspots = [
     label: 'Work',
     href: '/work',
     // Top left TV (hello world)
-    top: '8%',
+    top: '18%',
     left: '14%',
     width: '18%',
-    height: '28%',
-    labelTop: '75%', // Label position within hotspot
+    height: '22%',
+    labelTop: '60%', // Label position within hotspot
   },
   {
     id: 'writing',
     label: 'Writing',
     href: '/writing',
     // Top right TV
-    top: '8%',
+    top: '18%',
     left: '68%',
     width: '18%',
-    height: '28%',
-    labelTop: '75%',
+    height: '22%',
+    labelTop: '60%',
   },
   {
     id: 'about',
