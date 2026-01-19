@@ -17,6 +17,7 @@ const tvHotspots = [
     left: '14%',
     width: '18%',
     height: '28%',
+    labelTop: '75%', // Label position within hotspot
   },
   {
     id: 'writing',
@@ -27,6 +28,7 @@ const tvHotspots = [
     left: '68%',
     width: '18%',
     height: '28%',
+    labelTop: '75%',
   },
   {
     id: 'about',
@@ -37,6 +39,7 @@ const tvHotspots = [
     left: '8%',
     width: '22%',
     height: '38%',
+    labelTop: '60%',
   },
   {
     id: 'contact',
@@ -47,6 +50,7 @@ const tvHotspots = [
     left: '65%',
     width: '22%',
     height: '38%',
+    labelTop: '60%',
   },
 ]
 
@@ -95,8 +99,11 @@ export default function Home() {
 
                 {/* Label that appears on hover (desktop only) */}
                 <span
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 px-4 py-2 bg-black text-white text-lg font-mono tracking-wider uppercase opacity-0 group-hover:opacity-100 transition-all duration-200 whitespace-nowrap hidden lg:block"
-                  style={{ textShadow: '0 0 10px rgba(255,255,255,0.8), 0 0 20px rgba(255,255,255,0.6), 0 0 30px rgba(255,255,255,0.4)' }}
+                  className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 px-4 py-2 bg-black text-white text-lg font-mono tracking-wider uppercase opacity-0 group-hover:opacity-100 transition-all duration-200 whitespace-nowrap hidden lg:block"
+                  style={{
+                    top: tv.labelTop,
+                    textShadow: '0 0 10px rgba(255,255,255,0.8), 0 0 20px rgba(255,255,255,0.6), 0 0 30px rgba(255,255,255,0.4)'
+                  }}
                 >
                   {tv.label}
                 </span>
