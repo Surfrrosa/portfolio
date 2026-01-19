@@ -60,7 +60,7 @@ export default function Home() {
       <Sidebar />
       <ExitIntentPrompt />
 
-      <main className="flex flex-col items-center px-4 lg:px-12 min-h-screen pt-8 lg:pt-0 lg:justify-center relative overflow-visible">
+      <main className="flex flex-col items-center px-4 lg:px-12 min-h-screen pt-0 lg:justify-center relative overflow-visible">
         <motion.div
           className="text-center relative w-full"
           initial={{ opacity: 0, y: 50 }}
@@ -113,7 +113,7 @@ export default function Home() {
 
           {/* Mobile hint */}
           <motion.p
-            className="text-zinc-500 text-sm font-mono mt-2 lg:hidden"
+            className="text-zinc-500 text-sm font-mono mt-1 lg:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.8 }}
