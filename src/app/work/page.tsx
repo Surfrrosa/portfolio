@@ -98,7 +98,7 @@ export default function Work() {
                 <div>
                   <h5 className="text-white font-semibold mb-2">My Role</h5>
                   <p className="text-gray-300 leading-relaxed">
-                    Solo founder and engineer. Product concept, backend architecture, calculation engines, AI prompt engineering, frontend design, Stripe integration, email delivery, SEO strategy, and content.
+                    Founder and product lead. Product strategy, UX design, AI prompt engineering, SEO, and go-to-market. Built with AI-assisted development.
                   </p>
                 </div>
 
@@ -122,18 +122,55 @@ export default function Work() {
                 <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">SEO</span>
               </div>
 
-              <div className="mt-8 text-center">
-                <a
-                  href="https://www.synestrology.com/tools/cosmic-blueprint"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors group"
+              <div className="mt-8 space-y-6">
+                <div
+                  className="relative aspect-video rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
+                  onClick={() => {
+                    setModalMedia({ src: '/videos/synestrology-preview.mp4', type: 'video' })
+                    setIsModalOpen(true)
+                  }}
                 >
-                  Try the Free Cosmic Blueprint
-                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </a>
+                  <video
+                    className="w-full h-full object-cover"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    onError={(e) => {
+                      const target = e.target as HTMLVideoElement;
+                      target.style.display = 'none';
+                      const fallback = target.nextElementSibling as HTMLElement;
+                      if (fallback) fallback.style.display = 'flex';
+                    }}
+                  >
+                    <source src="/videos/synestrology-preview.mp4" type="video/mp4" />
+                  </video>
+                  <div className="absolute inset-0 bg-slate-700/30 flex items-center justify-center" style={{ display: 'none' }}>
+                    <div className="text-center">
+                      <div className="w-16 h-16 bg-amber-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg className="w-8 h-8 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                        </svg>
+                      </div>
+                      <p className="text-gray-400 text-sm">Project Preview</p>
+                      <p className="text-white font-semibold">Synestrology</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="text-center">
+                  <a
+                    href="https://www.synestrology.com/tools/cosmic-blueprint"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors group"
+                  >
+                    Try the Free Cosmic Blueprint
+                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </a>
+                </div>
               </div>
             </motion.div>
 
