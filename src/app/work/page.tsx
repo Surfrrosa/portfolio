@@ -67,11 +67,88 @@ export default function Work() {
               transition={{ duration: 0.8, delay: 0.5 }}
             >
               <div className="mb-4">
+                <span className="inline-block bg-amber-500/20 text-amber-400 px-3 py-1 rounded-full text-sm font-semibold">
+                  Full Product
+                </span>
+              </div>
+
+              <h3 className="text-white text-2xl font-display font-bold mb-4">
+                Synestrology ● Astrology × Human Design × Numerology Synthesis Engine
+              </h3>
+
+              <h4 className="text-teal-400 text-lg font-semibold mb-6">
+                The only platform that weaves three self-discovery systems into a single personalized reading.
+              </h4>
+
+              <div className="space-y-6">
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Problem</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    Astrology, Human Design, and Numerology each offer deep personal insight — but they exist in silos. No product synthesizes all three into a unified narrative, forcing people to piece together fragmented readings across multiple sites.
+                  </p>
+                </div>
+
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Solution</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    A full-stack synthesis engine that calculates natal charts (Swiss Ephemeris), Human Design bodygraphs, and Pythagorean numerology profiles — then feeds all three into an AI synthesis layer that generates 3,000+ word personalized readings delivered as branded PDFs. Includes a free Cosmic Blueprint tool combining all three systems.
+                  </p>
+                </div>
+
+                <div>
+                  <h5 className="text-white font-semibold mb-2">My Role</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    Solo founder and engineer. Product concept, backend architecture, calculation engines, AI prompt engineering, frontend design, Stripe integration, email delivery, SEO strategy, and content.
+                  </p>
+                </div>
+
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Impact</h5>
+                  <div className="text-gray-300 space-y-3">
+                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Only combined astrology + Human Design + numerology calculator on the web</span></p>
+                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Swiss Ephemeris precision (0.001 arcsecond accuracy) for natal chart calculations</span></p>
+                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Full e-commerce pipeline: Stripe checkout → AI generation → branded PDF → email delivery</span></p>
+                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>257 passing tests, CI/CD pipeline, rate limiting, retry queue with exponential backoff</span></p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap gap-2 mt-6">
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Python / FastAPI</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Swiss Ephemeris</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">AI Synthesis</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Stripe</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">PDF Generation</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">SEO</span>
+              </div>
+
+              <div className="mt-8 text-center">
+                <a
+                  href="https://www.synestrology.com/tools/cosmic-blueprint"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors group"
+                >
+                  Try the Free Cosmic Blueprint
+                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </a>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+            >
+              <div className="mb-4">
                 <span className="inline-block bg-teal-500/20 text-teal-400 px-3 py-1 rounded-full text-sm font-semibold">
                   Featured Project
                 </span>
               </div>
-              
+
               <h3 className="text-white text-2xl font-display font-bold mb-4">
                 Prompt2Story ● AI-Powered User Story Generator
               </h3>
