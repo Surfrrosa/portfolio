@@ -66,12 +66,6 @@ export default function Work() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
-              <div className="mb-4">
-                <span className="inline-block bg-amber-500/20 text-amber-400 px-3 py-1 rounded-full text-sm font-semibold">
-                  Full Product
-                </span>
-              </div>
-
               <h3 className="text-white text-2xl font-display font-bold mb-4">
                 Synestrology ● Astrology × Human Design × Numerology Synthesis Engine
               </h3>
@@ -180,12 +174,6 @@ export default function Work() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
-              <div className="mb-4">
-                <span className="inline-block bg-teal-500/20 text-teal-400 px-3 py-1 rounded-full text-sm font-semibold">
-                  Featured Project
-                </span>
-              </div>
-
               <h3 className="text-white text-2xl font-display font-bold mb-4">
                 Prompt2Story ● AI-Powered User Story Generator
               </h3>
@@ -311,12 +299,6 @@ export default function Work() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              <div className="mb-4">
-                <span className="inline-block bg-red-500/20 text-red-400 px-3 py-1 rounded-full text-sm font-semibold">
-                  Research Project
-                </span>
-              </div>
-
               <h3 className="text-white text-2xl font-display font-bold mb-4">
                 The Absurdity Index ● Data-Driven Social Research
               </h3>
@@ -450,12 +432,6 @@ export default function Work() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.0 }}
             >
-              <div className="mb-4">
-                <span className="inline-block bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm font-semibold">
-                  Live on App Store
-                </span>
-              </div>
-              
               <h3 className="text-white text-2xl font-display font-bold mb-4">
                 Enlighten ● Tao × Neuroscience Mindfulness App
               </h3>
@@ -579,12 +555,6 @@ export default function Work() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.9 }}
             >
-              <div className="mb-4">
-                <span className="inline-block bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm font-semibold">
-                  Live on App Store
-                </span>
-              </div>
-
               <h3 className="text-white text-2xl font-display font-bold mb-4">
                 PomodoroFlow ● Radically Simple Focus Timer
               </h3>
@@ -707,12 +677,6 @@ export default function Work() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.7 }}
             >
-              <div className="mb-4">
-                <span className="inline-block bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-sm font-semibold">
-                  Enterprise Telecom / API Integrations
-                </span>
-              </div>
-
               <h3 className="text-white text-2xl font-display font-bold mb-4">
                 Nortal ● API-Driven Telecom Solutions for National Retailers
               </h3>
@@ -788,12 +752,6 @@ export default function Work() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.1 }}
             >
-              <div className="mb-4">
-                <span className="inline-block bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm font-semibold">
-                  Fixed Wireless / Public Sector Innovation
-                </span>
-              </div>
-              
               <h3 className="text-white text-2xl font-display font-bold mb-4">
                 WindTalker ● Real-Time Monitoring, RF Planning, and Field Deployments
               </h3>
@@ -1047,12 +1005,6 @@ export default function Work() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.3 }}
             >
-              <div className="mb-4">
-                <span className="inline-block bg-cyan-500/20 text-cyan-400 px-3 py-1 rounded-full text-sm font-semibold">
-                  Personal Passion Project
-                </span>
-              </div>
-
               <h3 className="text-white text-2xl font-display font-bold mb-4">
                 ShainAI ● My RAG-Powered Second Brain
               </h3>
@@ -1215,12 +1167,6 @@ export default function Work() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.5 }}
             >
-              <div className="mb-4">
-                <span className="inline-block bg-orange-500/20 text-orange-400 px-3 py-1 rounded-full text-sm font-semibold">
-                  Enterprise SaaS / B2B Product Management
-                </span>
-              </div>
-              
               <h3 className="text-white text-2xl font-display font-bold mb-4">
                 ConnectWise Manage ● Product Ownership Across Mobile, Communication, and CRM Platforms
               </h3>
@@ -1382,12 +1328,6 @@ export default function Work() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.7 }}
             >
-              <div className="mb-4">
-                <span className="inline-block bg-indigo-500/20 text-indigo-400 px-3 py-1 rounded-full text-sm font-semibold">
-                  MVP Beta Testing
-                </span>
-              </div>
-              
               <h3 className="text-white text-2xl font-display font-bold mb-4">
                 Floatless ● Automated Payment Reconciliation & Dunning Platform
               </h3>
