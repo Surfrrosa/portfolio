@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     maximumScale: 1,
   },
   title: {
-    default: 'Shaina Pauley | I Build Products & Systems That Work',
+    default: 'Shaina Pauley | Product Builder & Fearless Explorer',
     template: '%s | Shaina Pauley • Technical Product Owner'
   },
   description: 'Technical Product Owner and builder who loves prototyping, transforming data into dashboards, and designing workflows that accelerate teams and deliver measurable results.',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'Shaina Pauley | I Build Products & Systems That Work',
+    title: 'Shaina Pauley | Product Builder & Fearless Explorer',
     description: 'Technical Product Owner and builder who loves prototyping, transforming data into dashboards, and designing workflows that accelerate teams and deliver measurable results.',
     url: 'https://shainapauley.com',
     siteName: 'Shaina Pauley Portfolio',
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Shaina Pauley | I Build Products & Systems That Work',
+    title: 'Shaina Pauley | Product Builder & Fearless Explorer',
     description: 'Technical Product Owner and builder who loves prototyping, transforming data into dashboards, and designing workflows that accelerate teams and deliver measurable results.',
     images: ['/og-image.jpg'],
     creator: '@shainapauley',
