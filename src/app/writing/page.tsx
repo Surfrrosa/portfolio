@@ -49,7 +49,7 @@ export default function WritingPage() {
               {posts.map((post, index) => (
                 <Link
                   key={post.slug}
-                  href={`/writing/${post.slug}`}
+                  href={`/writing/${encodeURIComponent(post.slug)}`}
                   className="block group"
                 >
                   <article className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-teal-400/50 transition-all duration-300">
