@@ -9,12 +9,14 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "weekly"
-    ignore:
-      - dependency-name: "react"
-        versions: [">=19"]
-      - dependency-name: "react-dom"
-        versions: [">=19"]
-      - dependency-name: "@types/react"
-        versions: [">=19"]
-      - dependency-name: "@types/react-dom"
-        versions: [">=19"]
+    # Group related packages to prevent partial upgrades that break builds
+    groups:
+      react:
+        patterns:
+          - "react"
+          - "react-dom"
+          - "@types/react"
+          - "@types/react-dom"
+      react-three:
+        patterns:
+          - "@react-three/*"

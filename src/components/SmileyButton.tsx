@@ -12,7 +12,7 @@ export default function SmileyButton({ children }: SmileyButtonProps) {
   const [showBubble, setShowBubble] = useState(false)
   const [isDialogOpen, setIsDialogOpen] = useState(false)
   const buttonRef = useRef<HTMLButtonElement>(null)
-  const hoverTimeoutRef = useRef<NodeJS.Timeout>()
+  const hoverTimeoutRef = useRef<NodeJS.Timeout>(null)
 
   const handleMouseEnter = () => {
     setIsHovered(true)

@@ -126,7 +126,7 @@ function WebGLTextCanvas({ text, className, style }: { text: string; className?:
     textMesh: THREE.Mesh | null
     pixelLensEffect: PixelLensEffect | null
     animationId: number | null
-  }>()
+  }>(null)
   
   useEffect(() => {
     if (!canvasRef.current) {

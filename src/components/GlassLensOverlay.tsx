@@ -60,7 +60,7 @@ function GlassLensCanvas({ heroRef }: { heroRef: React.RefObject<HTMLElement> })
     composer: EffectComposer | null
     glassLensEffect: GlassLensEffect | null
     animationId: number | null
-  }>()
+  }>(null)
   
   const mouseX = useMotionValue(0.5)
   const mouseY = useMotionValue(0.5)
