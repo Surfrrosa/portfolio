@@ -30,14 +30,14 @@
     "remark-gfm": "^4.0.1",
     "resend": "^6.0.2",
     "swiper": "^12.0.3",
-    "three": "^0.170.0",
+    "three": "^0.182.0",
     "troika-three-text": "^0.52.4"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "@types/three": "^0.170.0",
+    "@types/three": "^0.182.0",
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
     "eslint-config-next": "15.4.6",
