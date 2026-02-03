@@ -19,7 +19,7 @@
     "framer-motion": "^11.0.6",
     "gray-matter": "^4.0.3",
     "lenis": "^1.0.42",
-    "next": "^15.4.8",
+    "next": "^16.1.5",
     "next-mdx-remote": "^5.0.0",
     "postprocessing": "^6.37.7",
     "react": "^18",
