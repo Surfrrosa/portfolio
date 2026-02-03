@@ -34,7 +34,7 @@
     "troika-three-text": "^0.52.4"
   },
   "devDependencies": {
-    "@types/node": "^20",
+    "@types/node": "^25",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@types/three": "^0.182.0",
