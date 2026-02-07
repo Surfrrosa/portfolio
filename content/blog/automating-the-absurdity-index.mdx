@@ -1,7 +1,7 @@
 ---
 title: "Automating the Absurdity Index"
 date: "2026-02-07"
-excerpt: "3,440 data points, 8 metrics, 30-50 hours of manual work per week. We automated The Absurdity Index with Python, GitHub Actions, and some questionable regex. No database. It works."
+excerpt: "3,440 data points, 8 metrics, 30-50 hours of manual work per week. We automated The Absurdity Index with Python, GitHub Actions, and regex that edits TypeScript. No database needed."
 readTime: "7 min read"
 tags: ["Automation", "Data Collection", "AI Development", "Open Source"]
 draft: false
@@ -13,13 +13,13 @@ So we automated it.
 
 ## Python With a Scalpel
 
-Here's probably the most unhinged technical decision in the whole project: there's no database.
+Here's the part that might surprise people: there's no database.
 
-All the dashboard data lives inside a single TypeScript file called `metricDetailData.ts`. Scores, crisis ratios, level distributions, sample stories, collection progress, dates. One file. One giant JavaScript object. And when the automation runs, a Python script opens that TypeScript file and rewrites specific values using regex.
+The dashboard is static. It builds once and deploys to Vercel. No server, no runtime data fetching, no connection strings. A database would've added infrastructure to solve a problem that doesn't exist here.
 
-About 15 regex patterns per metric. Navigating multi-line object structures. Finding the right field inside the right metric block, updating a number, and moving on.
+All the dashboard data lives inside a single TypeScript file called `metricDetailData.ts`. Scores, crisis ratios, level distributions, sample stories, collection progress, dates. One file. When the automation runs, a Python script opens that TypeScript file and rewrites specific values using regex. About 15 patterns per metric, navigating multi-line object structures, finding the right field inside the right metric block, updating a number, and moving on.
 
-Every reasonable instinct says "use a database." Postgres. SQLite. A JSON file, at least. We chose regex because the dashboard is static. It builds once and deploys to Vercel. There's no server, no runtime data fetching, no connection strings to manage. The data lives where the app reads it. The tradeoff is fragility (if the TypeScript structure changes, the regex breaks), but the build step catches that. If the regex corrupts the file, `npm run build` fails, the commit never lands, and nothing deploys. It's a guardrail made of duct tape, and it holds.
+The data lives where the app reads it. It's type-checked at build time, tracked in git history, and imported directly by the frontend. If the regex produces bad output, `npm run build` fails, the commit never lands, and nothing deploys. The build step is the validation layer.
 
 ## Three Ways to Fail at TikTok
 
@@ -61,11 +61,11 @@ The most interesting thing to come out of the automation wasn't efficiency. It w
 
 This validated the whole multi-platform approach. If we'd only collected from YouTube, the scores would skew high. Only Reddit, they'd skew low. The blend is closer to something real.
 
-## The Duct Tape Holds
+## The Full Picture
 
-The full pipeline (16 collectors, a deduplicator, a score calculator, a regex TypeScript rewriter, and a CI workflow) runs weekly and produces a working dashboard. It's not beautiful infrastructure. There's no database, no queue system, no monitoring dashboard for the monitoring dashboard. But it ships, the methodology is transparent, and anyone can read the scripts and verify how the scores are calculated.
+The pipeline (16 collectors, a deduplicator, a score calculator, a regex TypeScript rewriter, and a CI workflow) runs weekly and produces a working dashboard. The methodology is transparent, the scripts are open-source, and anyone can verify how the scores are calculated.
 
-I think there's something worth saying about building at this level. Not every project needs production-grade infrastructure. Sometimes regex and a cron job and a willingness to run Reddit locally on Mondays is exactly the right amount of engineering for the problem you actually have. The absurdity, after all, compounds faster than any pipeline can track. The best you can do is keep collecting, keep refining, and be honest about how the sausage gets made.
+Not every project needs production-grade infrastructure. Sometimes the right amount of engineering is exactly what the problem calls for, nothing more. The absurdity, after all, compounds faster than any pipeline can track. The best you can do is keep collecting, keep refining, and be honest about how it all works.
 
 ---
 
