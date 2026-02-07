@@ -9,17 +9,17 @@ draft: false
 
 Cowboy coding is a term that Claude taught me. I actually hadn't heard it before, but I think it's fitting.
 
-I've been working with AI since ChatGPT launched in December 2022. Built some GPTs, used it for research, writing, brainstorming. Casual user for most of that time. I tried Devin for a while and wasted way too much money on tokens before realizing it wasn't what I wanted. I had zero interest in the cookie-cutter coding apps that were spreading like wildfire, Lovable, Cursor, v0, all of it. They were too constraining.
+I've been working with AI since ChatGPT launched in December 2022. Built some GPTs, used it for research, writing, brainstorming. Casual user for most of that time. I tried Devin for a while and wasted way too much money on tokens before realizing it wasn't what I wanted. I had zero interest in the cookie-cutter coding apps that were spreading like wildfire: Lovable, Cursor, v0, etc. They were too constraining.
 
-What I wanted was a learning curve.
+I needed a learning curve.
 
-Claude Code gave me that. It lives in the CLI, moves through my files and folders, works inside my repos directly. The first time I opened the terminal and started a session, I knew it was different. The setup, the mode of operation, the tone. 232 days later, 14 repositories and 535 co-authored commits later, I'm not the same kind of builder I was before.
+Claude Code gave me that. It lives in the CLI, traverses my files and folders, and works directly in my repos. The first time I opened the terminal and started a session, I knew it was different. The setup, the mode of operation, the tone. 232 days later, 14 repositories and 535 co-authored commits later, I'm not the same product owner I was before.
 
 ## Spiderwebs
 
-A conversation starts with one thread. You pull it, and it connects to something you didn't anticipate. That connects to something else. The back-and-forth isn't linear, it's architectural. You're not just giving instructions and receiving output. You're thinking out loud with something that responds, catches things you missed, and occasionally takes a turn that lands better than your original direction.
+A conversation starts with one thread. You pull it, and it connects to something you didn't anticipate. That connects to something else. The back-and-forth isn't linear, it's architectural. You're not just giving instructions and receiving output. You're thinking out loud with something that responds, catches things you missed, and often takes a turn that lands better than your original direction.
 
-The value isn't speed. It's the quality of the thinking that happens inside the iteration. Sometimes Claude has a better idea than I do, and I've learned to recognize that and run with it. Other times, I know exactly what I want and the skill is getting there through the conversation without losing the thread.
+The value isn't speed. It's the quality of the thinking that happens inside the iteration. Sometimes Claude has a better idea than I do, and I've learned to recognize that and run with it. It's a spectacular act of active imagination and iteration. The key is to start the process with a deep understanding, data-rich research, and strict MVP-style boundaries until you can get what you're building in front of others.
 
 You start to get it. That's the best way I can describe it. There's a point where you stop thinking about how to use the tool and start thinking with it. That transition will set you free.
 
@@ -27,55 +27,51 @@ You start to get it. That's the best way I can describe it. There's a point wher
 
 Early on, I was learning everything at once. How to use terminal. How to test apps. How to submit to the App Store. How to safely store environment variables. How to run commands I'd never run before. Seven years of enterprise product management gave me the instincts for what needs to be in place, what questions to ask, how to iterate on the fly. But the technical execution was new territory.
 
-Figuring out what's possible, what isn't, and more importantly, what Claude says isn't possible but actually is if you push the right way.
+Figuring out what's possible, what isn't, and more importantly, what Claude says isn't possible but actually is if you know how to ask for it.
 
-I never had a "whole thing fell apart" moment, but I also put a lot of effort into making sure I wouldn't. Early on, I wanted to build a web-based radio that just played the internet, meaning it read the internet out loud into infinity. An avant-garde, dystopian art project. It never got off the ground. That early into the inception of Claude Code, something was missing, whether it was the tools or my ability to direct them, I'm not sure. It's still a fun idea. I'll come back to it.
-
-I haven't hit a total dead end since.
+I've never had a "whole thing fell apart" moment, but I also put a lot of effort into making sure I wouldn't. An early example is: I wanted to build a web-based radio that just played the internet, meaning it ingested 'the internet' and read it in an artificially generated voice, out loud, into infinity. A dystopian art project I was far too excited about. It never got off the ground. That early into the inception of Claude Code, something was missing, whether it was the tools or my ability to direct them, I'm not sure. It's still a fun idea I might revisit one day. Even though it didn't work right away, I still wouldn't consider it a dead-end. I've actually never hit one.
 
 ## Straightjacket
 
-Here's what nobody tells you: working with AI without process is actual cowboy coding. The output is only as disciplined as the system around it.
+Working with AI without process is cowboy coding. The output is only as disciplined as the system around it.
 
-Every project starts with strict, project-specific instructions that get loaded into every session. Don't guess data, verify it computationally. Use this font system, not that one. Read the latest session log before starting work. No exceptions. Without them, consistency drifts and context gets lost between sessions.
+Every project starts with strict, project-specific instructions that get loaded into every session. Don't guess data, verify it computationally. Use this font system, not that one. Read the latest session log before starting work and write a session log for your future self before stopping. No exceptions. Without them, consistency drifts and context gets lost in the interim.
 
-Every working session gets documented: what was built, what decisions were made, what's unfinished, what to pick up next. Architecture, design systems, methodology, security reasoning, all version-controlled. Not because I love documentation (nobody loves documentation), but because this is how the work stays coherent when you're switching between a data dashboard, a mobile app, and a client project in the same week.
+Every working session gets documented: what was built, what decisions were made, what's unfinished, what to pick up next. Architecture, design systems, methodology, security reasoning, all version-controlled. Not because I love documentation, but because this is how the work stays coherent when you're switching between a data dashboard, a mobile app, and a client project in the same week. You have to treat every session as if you're working with a new team member, and you've got to streamline the onboarding or it's going to be a pain in your ass.
 
 ## Control + Alt + Delete
 
-AI-assisted development has a reputation for shipping fast and worrying about security later. I take this personally.
+AI-assisted development has a reputation for shipping fast and worrying about security later. That is crazy work.
 
-Dependency monitoring runs weekly across active repositories, catching vulnerabilities before they compound. When a critical CVE drops, it gets patched that cycle. Not eventually. Not after launch. That cycle.
+Dependency monitoring runs weekly across active repositories, catching vulnerabilities before they compound. When a critical CVE drops, it gets patched that cycle.
 
-Content security policies, rate limiting, auth hardening, input sanitization. These aren't afterthoughts bolted on after someone finds a hole. They're built into the first pass. Every public-facing project goes through a hardening review before it ships.
+Content security policies, rate limiting, auth hardening, input sanitization. These aren't afterthoughts bolted on after someone finds a hole. They're built into the first pass. Every public-facing project goes through a hardening review before it ships, and then it's penetration tested into oblivion.
 
 ## Paid in Full
 
-I've seen what deferred technical debt looks like. It looks like never.
+I've seen what deferred technical debt looks like, especially with corporate monoliths. A lot of it looks like never.
 
-When a project's dependency tree balloons, we audit it before shipping, not after. React upgrades, TypeScript migrations, deprecated API replacements. These happen as ongoing maintenance, not items in a backlog that never gets touched. Keeping things clean is easier than cleaning things up.
+When a project's dependency tree balloons, we audit it before shipping, not after. React upgrades, TypeScript migrations, deprecated API replacements. These happen as ongoing maintenance, not items in an infinite backlog. Keeping things clean is much easier than cleaning things up.
 
-This sounds boring. It is boring. It's also the difference between projects that run reliably and projects that rot.
+This sounds boring. It is boring. It's also the difference between projects that run reliably and projects that die.
 
 ## Me 2
 
 People assume working this way is isolating. It's not.
 
-I find myself laughing during conversation more than you'd think. There are still moments of connection, real or not. It almost feels like having a second me. One that has opinions, pushes back, and occasionally says something that makes me reconsider an entire approach.
+I find myself laughing during conversation more than you'd think. It's been fun. It almost feels like having a second me. One that has opinions, pushes back, and occasionally says something that makes me reconsider an entire approach.
 
-It shouldn't ever replace human collaboration, and I don't think it can. But it's not the lonely, sterile experience people imagine. Some days I spend a couple hours checking in on projects. Sometimes I'll spend 15 hours in a session if I'm locked in. It's really more about my own energy levels than anything else.
+It shouldn't ever replace human collaboration, and I don't think it can. But it's not the lonely, sterile experience people imagine. Some days I spend a couple hours checking in on projects. Sometimes I'll spend 15 hours in a session if I have the focus. It's really more about my own energy levels than anything else.
 
-After 232 days, I've learned more about development than in all my previous years in product management. The skill hasn't atrophied. It's expanded into something different.
+After 232 days, I've learned more about development than in all my previous years in product management. People tend to talk about skills atrophy in the context of AI, but that's been far from my experience.
 
 ## I Don't Give Advice
 
 But just go for it.
 
-Don't worry about doing everything right or perfectly. Work on understanding the tools and figuring out how to get to what you're looking for, because there are many paths. Always consider it a collaboration, because sometimes the best version of your idea is one you arrive at together.
+Don't worry about doing everything right. Work on understanding the tools and figuring out how to get to what you're looking for, because there are many paths. Always consider it a collaboration, because sometimes the best version of your idea is one you arrive at together.
 
-I consider myself a creator and a builder. Nothing more, nothing less. I don't know if that makes me a developer or a product person or something else entirely, and I'm not sure it matters. The tools changed. The work is still the work.
-
-232 days. We're not going back.
+I consider myself a creator and a builder. Nothing more, nothing less. 232 days in, and there's no version of this where I go back.
 
 ---
 
