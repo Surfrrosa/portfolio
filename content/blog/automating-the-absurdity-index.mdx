@@ -2,14 +2,14 @@
 title: "Automating the Absurdity Index"
 date: "2026-02-07"
 excerpt: "3,440 data points, 8 metrics, 30-50 hours of manual work per week. We automated The Absurdity Index with Python, GitHub Actions, and regex that edits TypeScript. No database needed."
-readTime: "7 min read"
+readTime: "6 min read"
 tags: ["Automation", "Data Collection", "AI Development", "Open Source"]
 draft: false
 ---
 
 The Absurdity Index needs 3,440 data points across 8 metrics. Each one has to be found, read, categorized by severity, and linked back to a real person's story. The original estimate for doing this manually was 30-50 hours per collection cycle. Weekly. That's not a methodology, that's a full-time job with no pay.
 
-So we automated it.
+So we automated it. Mostly.
 
 ## Sneaky Snake
 
@@ -31,27 +31,29 @@ TikTok was the platform I most wanted data from and the hardest to actually get 
 
 **Attempt three (the one that stuck):** Search YouTube for TikTok compilation videos. Queries like "tiktok compilation insurance denied" and "viral tiktok hospital bill" return exactly what they sound like. People re-upload TikTok content to YouTube constantly, and we already had the YouTube API wired up.
 
-We turned a data access problem into a search query problem. It's not elegant. It captures viral TikTok content that crossed platforms, uses infrastructure we already had, and runs in CI without a headless browser. Sometimes the best solution is the side door.
+We turned a data access problem into a search query problem. It captures viral TikTok content that crossed platforms, uses infrastructure we already had, and runs in CI without a headless browser. Sometimes the best solution is the one that already exists.
 
 ## Fxck Reddit
 
 The weekly automation runs on GitHub Actions every Monday at 9 AM UTC. YouTube collectors fire, scores get recalculated, the TypeScript file gets rewritten, the site rebuilds, and it deploys. Fully hands-off.
 
-Except for Reddit. Reddit returns 403 Forbidden to requests from GitHub Actions IP ranges. We found this out the fun way.
+Except for Reddit. Reddit returns 403 Forbidden to requests from GitHub Actions IP ranges. A platform built on people sharing their worst moments, blocking automated research about people sharing their worst moments. We found this out the fun way.
 
-So the pipeline is hybrid. YouTube runs in CI automatically. Reddit collection runs locally, on my machine, with a `--reddit-only` flag we built specifically for this split. It's not the full automation dream, but it's honest. You automate what you can and design around what you can't.
+So the pipeline is hybrid. YouTube runs in CI automatically. Reddit collection runs locally, on my machine, with a `--reddit-only` flag we built specifically for this split. You automate what you can and design around what you can't.
 
 The Reddit collectors are straightforward, too. No API key. No official Reddit API client. They hit Reddit's public `.json` endpoints with a respectful user-agent and 2-3 second delays between requests. The original plan was to go through the formal API application process. The public endpoints just worked.
 
 ## Green Eggs and Spam
 
-This one surprised me. When you search YouTube for "can't afford healthcare," a significant chunk of results are financial guru content. "How I FIXED my healthcare costs in 30 days!" "The one trick insurance companies don't want you to know!"
+When you search YouTube for "can't afford healthcare," a significant chunk of results are financial guru content. "How I FIXED my healthcare costs in 30 days!" "The one trick insurance companies don't want you to know!"
 
 That's not spam in the traditional sense. It's content that describes *resolved* problems. And if it gets categorized alongside people sharing genuine crisis stories, it corrupts the severity data. A video about conquering medical debt isn't the same as a video about drowning in it.
 
 So we built a content filter with about 50 patterns that catch clickbait, self-promotion, and solution-selling content. The filter is conservative; it only excludes on positive matches. Missing some noise is acceptable. Accidentally filtering out a real story is not.
 
-**This is where automation became a methodology decision.** What you choose to exclude shapes the data just as much as what you include.
+There's also the overlap problem. A post on r/povertyfinance titled "can't make rent on minimum wage" gets collected by both Housing Despair and Wage Stagnation. Same story, two metrics. So the pipeline scores each post against every metric's keyword list (title matches weighted 3x over body) and assigns it to the single best fit. One post, one home.
+
+**This is where automation became a methodology decision.** What you choose to exclude, and where you choose to place what's left, shapes the data just as much as what you include.
 
 ## Main Character Energy
 
@@ -63,9 +65,9 @@ This validated the whole multi-platform approach. If we'd only collected from Yo
 
 ## Panoramic View
 
-The pipeline (16 collectors, a deduplicator, a score calculator, a regex TypeScript rewriter, and a CI workflow) runs weekly and produces a working dashboard. The methodology is transparent, the scripts are open-source, and anyone can verify how the scores are calculated.
+The pipeline runs every Monday. Sixteen collectors, a deduplicator, a score calculator, a regex TypeScript rewriter, and a CI workflow. The scripts are open-source, the methodology is documented, and anyone can verify how the scores land.
 
-Not every project needs production-grade infrastructure. Sometimes the right amount of engineering is exactly what the problem calls for, nothing more. The absurdity, after all, compounds faster than any pipeline can track. The best you can do is keep collecting, keep refining, and be honest about how it all works.
+We're not trying to build the perfect system. We're trying to keep up. The absurdity compounds weekly, and so does the data.
 
 ---
 
