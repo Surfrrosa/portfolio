@@ -1,0 +1,74 @@
+---
+title: "Automating the Absurdity Index"
+date: "2026-02-07"
+excerpt: "3,440 data points, 8 metrics, 30-50 hours of manual work per week. We automated The Absurdity Index with Python, GitHub Actions, and some questionable regex. No database. It works."
+readTime: "7 min read"
+tags: ["Automation", "Data Collection", "AI Development", "Open Source"]
+draft: false
+---
+
+The Absurdity Index needs 3,440 data points across 8 metrics. Each one has to be found, read, categorized by severity, and linked back to a real person's story. The original estimate for doing this manually was 30-50 hours per collection cycle. Weekly. That's not a methodology, that's a part-time job with no pay.
+
+So we automated it. And I want to be transparent about what "we" means here, because I think it matters: I worked with Claude Code throughout this project. Claude wrote the code. I directed the architecture, made the methodology decisions, identified problems, and pushed the direction when something wasn't working. Every decision in this article is one I made or co-developed. Every script is one Claude implemented. That collaboration is the reason any of this exists, and being honest about it matters more to me than pretending I hand-typed 16 Python collectors.
+
+## Python With a Scalpel
+
+Here's probably the most unhinged technical decision in the whole project: there's no database.
+
+All the dashboard data lives inside a single TypeScript file called `metricDetailData.ts`. Scores, crisis ratios, level distributions, sample stories, collection progress, dates. One file. One giant JavaScript object. And when the automation runs, a Python script opens that TypeScript file and rewrites specific values using regex.
+
+About 15 regex patterns per metric. Navigating multi-line object structures. Finding the right field inside the right metric block, updating a number, and moving on.
+
+Every reasonable instinct says "use a database." Postgres. SQLite. A JSON file, at least. We chose regex because the dashboard is static. It builds once and deploys to Vercel. There's no server, no runtime data fetching, no connection strings to manage. The data lives where the app reads it. The tradeoff is fragility (if the TypeScript structure changes, the regex breaks), but the build step catches that. If the regex corrupts the file, `npm run build` fails, the commit never lands, and nothing deploys. It's a guardrail made of duct tape, and it holds.
+
+## Three Ways to Fail at TikTok
+
+TikTok was the platform I most wanted data from and the hardest to actually get it.
+
+**Attempt one:** ProxiTok, a set of privacy-friendly mirrors that let you browse TikTok without an account. We built a collector that searched by hashtag and enriched results with TikTok's public oEmbed API. It worked until the ProxiTok instances started going down. Regularly.
+
+**Attempt two:** Playwright with full headless browser automation. The nuclear option. Spin up a headless Chrome, bypass TikTok's JavaScript rendering, scrape the pages directly. It was reliable but absurdly heavy for what we needed. TikTok's anti-bot measures are also not messing around.
+
+**Attempt three (the one that stuck):** Search YouTube for TikTok compilation videos. Queries like "tiktok compilation insurance denied" and "viral tiktok hospital bill" return exactly what they sound like. People re-upload TikTok content to YouTube constantly, and we already had the YouTube API wired up.
+
+We turned a data access problem into a search query problem. It's not elegant. It captures viral TikTok content that crossed platforms, uses infrastructure we already had, and runs in CI without a headless browser. Sometimes the best solution is the side door.
+
+## Reddit Said No (Sort Of)
+
+The weekly automation runs on GitHub Actions every Monday at 9 AM UTC. YouTube collectors fire, scores get recalculated, the TypeScript file gets rewritten, the site rebuilds, and it deploys. Fully hands-off.
+
+Except for Reddit. Reddit returns 403 Forbidden to requests from GitHub Actions IP ranges. We found this out the fun way.
+
+So the pipeline is hybrid. YouTube runs in CI automatically. Reddit collection runs locally, on my machine, with a `--reddit-only` flag we built specifically for this split. It's not the full automation dream, but it's honest. You automate what you can and design around what you can't.
+
+The Reddit collectors themselves are scrappy, too. No API key. No official Reddit API client. They hit Reddit's public `.json` endpoints with a respectful user-agent and 2-3 second delays between requests. The original plan was to go through the formal API application process. The public endpoints just worked.
+
+## Filtering for Methodology, Not Spam
+
+This one surprised me. When you search YouTube for "can't afford healthcare," a significant chunk of results are financial guru content. "How I FIXED my healthcare costs in 30 days!" "The one trick insurance companies don't want you to know!"
+
+That's not spam in the traditional sense. It's content that describes *resolved* problems. And if it gets categorized alongside people sharing genuine crisis stories, it corrupts the severity data. A video about conquering medical debt isn't the same as a video about drowning in it.
+
+So we built a content filter with about 50 patterns that catch clickbait, self-promotion, and solution-selling content. The filter is conservative; it only excludes on positive matches. Missing some noise is acceptable. Accidentally filtering out a real story is not.
+
+**This is where automation became a methodology decision.** What you choose to exclude shapes the data just as much as what you include.
+
+## What the Pipeline Taught Us About the Data
+
+The most interesting thing to come out of the automation wasn't efficiency. It was a finding we wouldn't have seen without multi-platform collection at scale.
+
+**Reddit is consistently less sensational than YouTube.** Across 7 of 8 metrics, Reddit showed lower crisis ratios. YouTube creators optimize for engagement, which inflates severity in titles and thumbnails. Reddit's anonymous users describe their experiences more plainly. The one exception was Layoff Watch, where subreddits like r/jobs and r/careerguidance function as genuine crisis forums.
+
+This validated the whole multi-platform approach. If we'd only collected from YouTube, the scores would skew high. Only Reddit, they'd skew low. The blend is closer to something real.
+
+## The Duct Tape Holds
+
+The full pipeline (16 collectors, a deduplicator, a score calculator, a regex TypeScript rewriter, and a CI workflow) runs weekly and produces a working dashboard. It's not beautiful infrastructure. There's no database, no queue system, no monitoring dashboard for the monitoring dashboard. But it ships, the methodology is transparent, and anyone can read the scripts and verify how the scores are calculated.
+
+I think there's something worth saying about building at this level. Not every project needs production-grade infrastructure. Sometimes regex and a cron job and a willingness to run Reddit locally on Mondays is exactly the right amount of engineering for the problem you actually have. The absurdity, after all, compounds faster than any pipeline can track. The best you can do is keep collecting, keep refining, and be honest about how the sausage gets made.
+
+---
+
+**View the dashboard:** [absurdity-index.vercel.app](https://absurdity-index.vercel.app)
+**Read the methodology:** [Full documentation](https://absurdity-index.vercel.app/methodology)
+**See the code:** [GitHub repository](https://github.com/Surfrrosa/absurdity-index)
