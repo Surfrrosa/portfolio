@@ -11,7 +11,7 @@ The Absurdity Index needs 3,440 data points across 8 metrics. Each one has to be
 
 So we automated it.
 
-## Python With a Scalpel
+## Sneaky Snake
 
 Here's the part that might surprise people: there's no database.
 
@@ -21,7 +21,7 @@ All the dashboard data lives inside a single TypeScript file called `metricDetai
 
 The data lives where the app reads it. It's type-checked at build time, tracked in git history, and imported directly by the frontend. If the regex produces bad output, `npm run build` fails, the commit never lands, and nothing deploys. The build step is the validation layer.
 
-## Three Ways to Fail at TikTok
+## TikTok Fail Compilation
 
 TikTok was the platform I most wanted data from and the hardest to actually get it.
 
@@ -33,7 +33,7 @@ TikTok was the platform I most wanted data from and the hardest to actually get 
 
 We turned a data access problem into a search query problem. It's not elegant. It captures viral TikTok content that crossed platforms, uses infrastructure we already had, and runs in CI without a headless browser. Sometimes the best solution is the side door.
 
-## Reddit Said No (Sort Of)
+## Fxck Reddit
 
 The weekly automation runs on GitHub Actions every Monday at 9 AM UTC. YouTube collectors fire, scores get recalculated, the TypeScript file gets rewritten, the site rebuilds, and it deploys. Fully hands-off.
 
@@ -41,9 +41,9 @@ Except for Reddit. Reddit returns 403 Forbidden to requests from GitHub Actions 
 
 So the pipeline is hybrid. YouTube runs in CI automatically. Reddit collection runs locally, on my machine, with a `--reddit-only` flag we built specifically for this split. It's not the full automation dream, but it's honest. You automate what you can and design around what you can't.
 
-The Reddit collectors themselves are scrappy, too. No API key. No official Reddit API client. They hit Reddit's public `.json` endpoints with a respectful user-agent and 2-3 second delays between requests. The original plan was to go through the formal API application process. The public endpoints just worked.
+The Reddit collectors are straightforward, too. No API key. No official Reddit API client. They hit Reddit's public `.json` endpoints with a respectful user-agent and 2-3 second delays between requests. The original plan was to go through the formal API application process. The public endpoints just worked.
 
-## Filtering for Methodology, Not Spam
+## Green Eggs and Spam
 
 This one surprised me. When you search YouTube for "can't afford healthcare," a significant chunk of results are financial guru content. "How I FIXED my healthcare costs in 30 days!" "The one trick insurance companies don't want you to know!"
 
@@ -53,7 +53,7 @@ So we built a content filter with about 50 patterns that catch clickbait, self-p
 
 **This is where automation became a methodology decision.** What you choose to exclude shapes the data just as much as what you include.
 
-## What the Pipeline Taught Us About the Data
+## Main Character Energy
 
 The most interesting thing to come out of the automation wasn't efficiency. It was a finding we wouldn't have seen without multi-platform collection at scale.
 
@@ -61,7 +61,7 @@ The most interesting thing to come out of the automation wasn't efficiency. It w
 
 This validated the whole multi-platform approach. If we'd only collected from YouTube, the scores would skew high. Only Reddit, they'd skew low. The blend is closer to something real.
 
-## The Full Picture
+## Panoramic View
 
 The pipeline (16 collectors, a deduplicator, a score calculator, a regex TypeScript rewriter, and a CI workflow) runs weekly and produces a working dashboard. The methodology is transparent, the scripts are open-source, and anyone can verify how the scores are calculated.
 
