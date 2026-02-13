@@ -82,3 +82,15 @@ npm run dev       # Dev server
 npm run build     # Production build
 npm run lint      # ESLint
 ```
+
+## Project Skills
+
+Custom slash commands in `.claude/commands/`:
+
+| Command | What it does |
+|---------|-------------|
+| `/blog [topic]` | Scaffold a new MDX blog post with proper frontmatter and voice |
+| `/work-card [project]` | Add a project card to the work page matching existing format |
+| `/preflight` | Run build + lint + sanity checks before pushing to main |
+| `/session` | Generate an end-of-session log in docs/sessions/ |
+| `/audit` | Repo health check: dead code, file hygiene, a11y, dependencies |
