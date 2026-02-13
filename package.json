@@ -39,7 +39,7 @@
     "@types/react-dom": "^19",
     "@types/three": "^0.182.0",
     "autoprefixer": "^10.4.24",
-    "eslint": "^10",
+    "eslint": "^9",
     "eslint-config-next": "16.1.6",
     "postcss": "^8",
     "sharp": "^0.34.3",
