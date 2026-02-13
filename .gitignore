@@ -1,3 +1,10 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Vercel
+.vercel
+
 # Logs
 logs
 *.log
