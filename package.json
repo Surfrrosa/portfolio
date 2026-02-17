@@ -28,7 +28,7 @@
     "rehype-highlight": "^7.0.2",
     "rehype-raw": "^7.0.0",
     "remark-gfm": "^4.0.1",
-    "resend": "^6.0.2",
+    "resend": "^6.9.2",
     "swiper": "^12.1.0",
     "three": "^0.182.0",
     "troika-three-text": "^0.52.4"
