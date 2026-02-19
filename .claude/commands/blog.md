@@ -45,7 +45,7 @@ Write the full post body in MDX.
 
 **Voice rules (mandatory):**
 - No emojis. Ever.
-- No em dashes. Use commas, periods, or "-- " (double hyphen) if needed.
+- No dashes (em dashes, double hyphens, etc.) unless absolutely necessary. Use commas, periods, or colons instead.
 - No AI speak: delve, navigate, tapestry, landscape, beacon, realm, embark, harness, pivotal, multifaceted, nuanced (as filler), "it's important to note that," "at the end of the day," "in a very real sense," "let's dive in"
 - Contractions are fine and encouraged. Write like you talk.
 - Be direct. Get to the point in the first two sentences.

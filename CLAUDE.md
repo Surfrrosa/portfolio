@@ -8,7 +8,7 @@ Next.js 16 (App Router), TypeScript, Tailwind CSS 3.3, Framer Motion, Vercel.
 ## Rules
 
 - No emojis anywhere in code or content.
-- No em dashes. Use "-- " (double hyphen with space) if needed.
+- No dashes (em dashes, double hyphens, etc.) unless absolutely necessary. Use commas, periods, or colons instead.
 - No AI speak. Write like a human. Contractions are fine.
 - Tailwind-first styling. Only add custom CSS to `globals.css` when Tailwind can't do it.
 - All components are TypeScript (.tsx). All utilities are TypeScript (.ts).
