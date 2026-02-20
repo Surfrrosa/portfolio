@@ -1,17 +1,17 @@
 ---
 title: "All the Notes, None of the Music"
 date: "2026-02-19"
-excerpt: "A developer shipped a component with thirty useState calls. It worked. The interesting question isn't whether the code is bad. It's why someone who knows better accepted it."
+excerpt: "A React component with thirty useState calls made the rounds online. It worked. The debate isn't whether the code is bad. It's missing a more interesting question."
 readTime: "8 min read"
 tags: ["AI Development", "Code Quality", "Process"]
 draft: false
 ---
 
-A developer shipped a React component with thirty useState calls in a single function. The app worked. Users could use it. And half the internet started arguing about whether it mattered.
+A React component with thirty useState calls made the rounds online. The app worked. Users couldn't tell. And half the internet started arguing about whether it mattered.
 
-One camp says it's bad code, maintainability is everything, this is what's wrong with vibe coding. The other camp says it works, who cares, stop gatekeeping. They're both missing the interesting question.
+One camp says it's bad code, maintainability is everything, this is what's wrong with vibe coding. The other camp says it works, who cares, stop gatekeeping. They're both missing a more interesting question.
 
-The code isn't bad because AI wrote it. It's bad because nobody directed the architecture. And the question worth asking is: why would a developer who'd never write thirty useState calls by hand accept them from AI without blinking?
+The code isn't bad because AI wrote it. It's bad because nobody directed the architecture. And the question worth asking isn't who wrote it. It's why nobody caught it before it shipped.
 
 ## fruity loops
 
@@ -103,7 +103,7 @@ AI just made the split visible overnight, because undirected AI produces a bigge
 
 Thirty useState calls in a single component isn't an AI problem. It's a missing document problem. It's a missing context problem. It's definitely an architecture and SOC problem.
 
-Maybe the dev who shipped it even knows exactly how to organize state, but they just never had to write that knowledge down before, because it was just baked into their process. Maybe it wasn't something they had to consciously acknowledge, but now it needs to live in a file. And the shift from feels to process is the actual skill gap that nobody in these threads is talking about.
+Maybe whoever shipped it even knows exactly how to organize state, but they just never had to write that knowledge down before, because it was just baked into their process. Maybe it wasn't something they had to consciously acknowledge, but now it needs to live in a file. And the shift from feels to process is the actual skill gap that nobody in these threads is talking about.
 
 The tool is an instrument. The variable is the conductor. And the score needs to be written down, because the orchestra can't read your mind. You aren't just working with 'an AI.' You're working with, on some level, an entire department.
 
