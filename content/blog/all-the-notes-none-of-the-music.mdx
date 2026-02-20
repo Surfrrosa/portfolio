@@ -81,17 +81,15 @@ I asked Claude directly what makes code maintainable from its perspective. The a
 
 None of this is new. It's the same stuff that makes code maintainable for humans. The difference is that humans compensate for missing context with tribal knowledge, processes, hallway conversations, and years of familiarity. This is genuinely the missing piece. It has to be created. AI needs to have a solid starting foundation, and approach it exactly the same way that I would work with any team. The entire team. You have to get it in your head that you're working with an entire team, and it's a non-stop revolving door of teammates. That means you're going to need onboarding capabilities that take no more than a few minutes, and it isn't hard.
 
-## the rest of the job
-
-The document is where it starts. It's not where it ends.
+## the end is the beginning
 
 When AI generates a component, you still have to read it the way you'd review a pull request from a junior developer. You still have to run it locally and click through the edge cases yourself. You still have to ask: does this actually work, or does it just look like it works?
 
 And then there's everything else. The testing. Not just "does it run," but does it handle the weird inputs, the empty states, the things a user will inevitably do that nobody planned for. Patching vulnerabilities, because AI will cheerfully introduce one if you don't tell it not to and sometimes even if you do. Documenting technical debt so the next session knows what corners were cut and why. Managing dependencies before they pile up into something nobody wants to untangle.
 
-AI replaces the typing. It does not replace the development lifecycle. Testing, security, QA, maintenance, iteration. All of it still has to happen. In some ways it has to happen more carefully, because the code arrived faster and in bigger chunks than it would have by hand, which means more surface area to review in less time.
+AI replaces typing. It does not replace the development lifecycle. Testing, security, QA, maintenance, iteration. All of it still has to happen. In some ways it has to happen more carefully, because the code arrived faster and in bigger chunks than it would have by hand, which means more surface area to review in less time.
 
-The people shipping thirty-useState components aren't just missing a document. They're missing the entire process that comes after the code is written. The part where you treat what the AI gave you as a first draft, not a finished product. The part where you push back, refine, break things apart, and test until it holds. That's still your job. The tool changed. The lifecycle didn't.
+The people shipping thirty-useState components aren't just missing a document. They're missing the entire process that comes after the code is written. The part where you treat what the AI gave you as a first draft, not a finished product. The part where you push back, refine, break things apart, and test until it holds. AI doesn't remove authority or accountability, it's a mechanism of action.
 
 ## dirty secret
 
@@ -101,13 +99,13 @@ The split was never AI code vs. human code. It's directed work vs. undirected wo
 
 AI just made the split visible overnight, because undirected AI produces a bigger pile of trash at a rate too rapid for any human to match.
 
-## panorama
+## lunch & learn
 
 Thirty useState calls in a single component isn't an AI problem. It's a missing document problem. It's a missing context problem. It's definitely an architecture and SOC problem.
 
 Maybe the dev who shipped it even knows exactly how to organize state, but they just never had to write that knowledge down before, because it was just baked into their process. Maybe it wasn't something they had to consciously acknowledge, but now it needs to live in a file. And the shift from feels to process is the actual skill gap that nobody in these threads is talking about.
 
-The tool is an instrument. The variable is the conductor. And the score needs to be written down, because the orchestra can't read your mind. You aren't just working with 1 AI. You're working with, on some level, an entire department.
+The tool is an instrument. The variable is the conductor. And the score needs to be written down, because the orchestra can't read your mind. You aren't just working with 'an AI.' You're working with, on some level, an entire department.
 
 ---
 
