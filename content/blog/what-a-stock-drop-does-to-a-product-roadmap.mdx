@@ -1,0 +1,74 @@
+---
+title: "The Same Mistake, Faster"
+date: "2026-02-19"
+excerpt: "I watched a team spend a year building a dashboard that got killed in a meeting. The AI scare trade is about to compress that same mistake into months, across thousands of companies."
+readTime: "6 min read"
+tags: ["AI", "Product Strategy", "Lessons Learned"]
+draft: true
+---
+
+I was on a team that spent close to a year building a dashboard. It was ambitious. Modules for CRM, service, procurement, finance, RMM, SLA tracking. Both internal and customer-facing. It was supposed to be the product.
+
+About a year in, the team arrived at a conclusion that should have been reached in month one. The companies they were trying to compete with already had solutions they could just API in. The legacy code made building from scratch somewhere between painful and pointless. And the technical architecture people who could have flagged all of this weren't in the room when the initiative launched.
+
+I've been thinking about that dashboard a lot lately. Not because of the dashboard itself, but because of what happened this month on Wall Street.
+
+## the scare trade
+
+A former karaoke company called Algorithm Holdings put out a press release about AI-powered freight optimization and wiped billions off the logistics sector. CH Robinson dropped 24% in a day. Before that, Anthropic's legal plugins triggered a $285 billion sell-off across SaaS. Before that, Palantir's earnings spooked enterprise software. Insurance, wealth management, real estate services, commercial office space. Eight sectors in ten days. Each time a different AI headline. Each time, the same response. Dump everything, ask questions later.
+
+The financial press is covering the stock drops. The tech press is covering the technology. What nobody is talking about is what happens next inside the buildings.
+
+I've seen that part before.
+
+## the slow realization
+
+With the dashboard, it was textbook. Early on, the energy was high. New initiatives always have that momentum when nobody's hit a wall yet. Features getting scoped, sprints filling up, the roadmap looking clean.
+
+Then the quiet doubts. A module that was harder than it should have been. A dependency nobody mapped. The growing gap between the plan and the legacy code underneath it.
+
+Everybody on the team could feel it before anybody said it out loud. That's what the denial curve looks like from the inside. Not dramatic. Not a single meeting where someone slams a laptop shut. Just a slow, collective understanding that the thing you've been building for months might not be the thing you should have built at all. And nobody says it because the initiative has momentum, it has executive sponsorship, and admitting it means a year of work goes in the trash.
+
+Eventually someone said it. And a year of work went in the trash.
+
+The team didn't implode after. People got a little more cynical. Engagement dipped. Ideas came less freely. Nothing dramatic. There are always people who are more or less engaged in any given circumstance, but it sucks to have that much time and energy scrapped. Leadership rarely sees that cost because it doesn't show up on a spreadsheet.
+
+## the pattern
+
+Every company whose stock just cratered on an AI headline is about to launch an AI initiative. The board will demand it. A task force will be assembled. Budget will get redirected from product and engineering toward whatever the board thinks will signal to the market that the company "takes AI seriously."
+
+Here's what I've watched happen after that. The initiative launches without the right people in the room. Nobody checks feasibility against existing systems. Nobody asks whether the thing they're building already exists as an API they could integrate. The people who understand the legacy architecture, the data infrastructure, the actual constraints of the business, they get consulted later. Or never.
+
+And then the slow realization starts. Except this time it's compressed. The board doesn't have a year to wait. They want a headline by next quarter. So the denial curve that used to take twelve months gets squeezed into three. The same mistake, faster.
+
+## edge cases
+
+I've been building with AI every day for the better part of a year now. Fourteen repositories, hundreds of co-authored commits. The thing that would surprise a CEO reading a vendor pitch deck is this: the first output is never production-ready.
+
+AI works beautifully in demos. It handles the center of every problem with confidence. The issue lives at the edges. The 30% where it hallucinates, misses context, or produces something wrong with total conviction. You spend most of your time there. Not on the impressive part. On the seams.
+
+And the edges are specific to your domain. A contract review tool that works perfectly on standard agreements will misread a non-compete clause structured in a way the model hasn't seen. A freight optimization tool will miss a regulatory constraint that only applies in certain corridors. The demo doesn't show this. The pitch deck doesn't show this. You only find it by testing against real work, in your own environment, with your own data. And you only fix it by iterating until the guardrails hold.
+
+Every vendor demo is the center of the problem. Every real implementation is the edges.
+
+## the symphony
+
+The biggest thing I've learned from building with AI is that the hard part isn't AI.
+
+It's everything around it. Planning. Strategy. Guardrails. Documentation. QA. Testing. Patching vulnerabilities. Managing tech debt. Maintaining context across sessions so nothing gets lost in translation. And remembering that all of this is your responsibility, because the tool isn't going to do it for you.
+
+You have to retrain your entire process to work this way. It's like being the maestro of a symphony. You've got to know all the instruments well enough to lead the entire show. If you don't, you get noise. Expensive, impressive-sounding noise that doesn't hold up when anyone listens closely.
+
+The companies about to rush into AI initiatives on a panic timeline are going to skip this part. They'll buy a vendor tool, get the logo on the slide deck, and announce a transformation. Some will cut headcount to fund it. And in six months, they'll arrive at the same slow realization my team arrived at with the dashboard. The thing they're building either already exists, doesn't work with their systems, or requires a level of process discipline that no press release can substitute for.
+
+## panorama
+
+Stock drops don't just reflect reality. They create it. A 24% drop triggered by a karaoke company's press release is going to produce real hiring freezes, real budget reallocations, real strategic pivots inside companies that will last long after the stock recovers.
+
+The expensive part of what comes next isn't AI. It's the product work that gets skipped because the board is panicking and wants a headline by next quarter. It's the feasibility check that doesn't happen. It's the architecture conversation that gets pushed to later. It's the year of wasted effort compressed into months.
+
+The technology is real. The disruption is real. But so is the work of making it useful in a specific domain, against specific constraints, tested against the edges and not just the center. There are no shortcuts to that part. And the companies that understand this will be easy to spot. They'll be the quiet ones.
+
+---
+
+**See the work:** [shainapauley.com](https://shainapauley.com)

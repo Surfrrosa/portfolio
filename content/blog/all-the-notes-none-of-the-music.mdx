@@ -1,0 +1,82 @@
+---
+title: "All the Notes, None of the Music"
+date: "2026-02-19"
+excerpt: "A developer shipped a component with thirty useState calls. It worked. The interesting question isn't whether the code is bad. It's why someone who knows better accepted it."
+readTime: "6 min read"
+tags: ["AI Development", "Code Quality", "Process"]
+draft: true
+---
+
+A developer shipped a React component with thirty useState calls in a single function. The app worked. Users could use it. And half the internet started arguing about whether it mattered.
+
+One camp says it's bad code, maintainability is everything, this is what's wrong with vibe coding. The other camp says it works, who cares, stop gatekeeping. They're both missing the interesting question.
+
+The code isn't bad because AI wrote it. It's bad because nobody directed the architecture. And the question worth asking is: why would a developer who'd never write thirty useState calls by hand accept them from an AI without blinking?
+
+## the broken loop
+
+When you write code by hand, architecture emerges incrementally. You get to useState number five and your hands feel the bloat before your brain names it. You refactor in real-time because the friction is physical. Something about typing the same pattern over and over makes you stop and think about whether there's a better structure. You're laying bricks, so you notice when the wall is crooked.
+
+When AI generates a whole component at once, that signal disappears. The code arrives fully formed. It runs. The "it works" hit lands before the "this is unmaintainable" thought has a chance to surface. You'd have to actively slow down and review what you just received with the same critical eye you'd apply to your own code mid-keystroke.
+
+Most people don't. The entire pitch of the tool is speed.
+
+The feedback loop that used to enforce quality wasn't a linter or a code review. It was the physical act of typing. And that loop broke.
+
+## fingers and documents
+
+Here's the part nobody's talking about. Most developers never had to articulate their conventions explicitly. They just did them. Clean architecture lived in their fingers, not in a document. Ask a good developer why they break state into custom hooks and they'll say it's obvious. But "obvious" is just a pattern that got internalized so deeply it feels like instinct.
+
+Now they need to make that instinct explicit. Write it down. Tell the AI: use custom hooks for state grouping, keep components under 100 lines, follow this error handling pattern, separate data from UI from business logic. That's not coding. That's closer to tech leadership. It's the difference between playing an instrument and conducting an orchestra. A lot of very good developers have never had to operate as conductors.
+
+Then there's a third group. People who went straight from "I have an idea" to "the AI built it" and never passed through the part where you learn why a component shouldn't manage thirty pieces of state. They don't know what they don't know, and the tool won't tell them.
+
+## the straightjacket
+
+I came at this from the product side, not engineering. Seven years of enterprise product management, then building with AI in the terminal every day. I never had hand-coding patterns in my fingers. There was nothing implicit to fall back on.
+
+So I had to build the system from day one.
+
+Every project starts with a file that tells the AI exactly how to work: what patterns to follow, what styling system to use, where files live, what's off limits. Every working session gets documented so the next one picks up where the last left off. Architecture decisions, design systems, security practices. Written down. Not assumed.
+
+I call it the straightjacket because that's what it feels like sometimes. But it's also why the output stays consistent across fourteen repositories and hundreds of sessions. The constraints aren't limiting the work. They're what makes the work hold together.
+
+I didn't build this system because I'm more disciplined than anyone else. I built it because I had no choice. Without it, nothing was coherent. The developers frustrated with bad AI code had the option of leaning on instinct. I didn't have instincts to lean on. So I wrote the document instead.
+
+Turns out, the document is what the tool actually needs.
+
+## what the tool needs
+
+I asked Claude directly what makes code maintainable from its perspective. The answer was more specific than I expected.
+
+**Project instructions loaded at session start.** When there's a file that defines conventions, design tokens, and file structure, it doesn't guess. It follows the pattern. Without that, it infers conventions from whatever files it happens to read first, and that's where drift starts.
+
+**Small, focused files.** That thirty-useState component? If you asked the AI to add a feature, it would have to hold all thirty state variables in context to figure out what might break. Break the state into three custom hooks and it can modify one without touching the others. The smaller the surface area, the more precisely it can work.
+
+**Consistent patterns.** If every API call in a codebase follows the same structure, the AI follows it too. When every file does it differently, it reinvents the approach each time.
+
+**Types instead of `any`.** When it sees `sourceToEdit: ToolSourceRecord` it knows the shape of the object without reading the entire codebase. When it sees `any`, it's flying blind. And so is the next session that touches the same file.
+
+**Session context.** When there's a log that says "we chose X because of Y, and Z is still unfinished," it doesn't repeat work, contradict past decisions, or accidentally break something intentional. Context is the difference between coherent code and technically functional code that fights the existing codebase.
+
+None of this is new. It's the same stuff that makes code maintainable for humans. The difference is that humans compensate for missing context with tribal knowledge, hallway conversations, and years of familiarity. The AI can't. It needs the explicit version every time.
+
+## the real split
+
+The dirty secret nobody in these debates wants to acknowledge: a lot of hand-written production code is just as bad. Legacy codebases are full of monolithic components, untyped interfaces, and state management held together by duct tape. The difference is that bad hand-written code accumulated slowly over years with multiple authors, so it felt like nobody's fault. Bad AI code arrives all at once and has a visible origin, so it's an easy target.
+
+The split was never AI code vs. human code. It's directed work vs. undirected work. That's always been true. A developer with strong instincts and enough time will produce clean code by hand. A developer with a clear system of constraints will produce clean code with AI. And without either, the code will be bad regardless of who or what wrote it.
+
+AI just made the split visible overnight, because undirected AI produces a louder mess faster than undirected humans ever could.
+
+## panorama
+
+Thirty useState calls in a single component isn't an AI problem. It's a missing document problem.
+
+The developer who shipped it probably knows exactly how to organize state. They just never had to write that knowledge down before, because it lived in their hands. Now it needs to live in a file. And the shift from fingers to documents is the actual skill change that nobody in these threads is talking about.
+
+The tool is an instrument. The variable is the conductor. And the score needs to be written down, because the orchestra can't read your mind.
+
+---
+
+**See the work:** [shainapauley.com](https://shainapauley.com)
