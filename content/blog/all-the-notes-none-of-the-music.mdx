@@ -13,11 +13,13 @@ One camp says it's bad code, maintainability is everything, this is what's wrong
 
 The code isn't bad because AI wrote it. It's bad because nobody directed the architecture. And the question worth asking isn't who wrote it. It's why nobody caught it before it shipped.
 
+![Tweet about vibe coded app with thirty useState calls](/images/vibe-code-usestate.jpg)
+
 ## fruity loops
 
 When you write code by hand, architecture emerges incrementally. You get to useState number five and your hands feel the weight before your mind can name it. You refactor in real time because the friction is physical. Something about typing the same pattern over and over makes you stop and think about whether there's a better structure. You're laying bricks so you notice every layer and when things start looking a little crooked.
 
-When AI generates a whole component at once, that signal disappears. The code arrives fully formed. It runs. The "it works" hit lands before the "this is unmaintainable" thought has a chance to surface. You'd have to actively slow down and review what you just received with the same critical eye you'd apply to your own code mid-keystroke.
+When AI generates a whole component at once, that signal disappears. The code arrives fully formed. It runs. The 'it works' hit lands before the 'this is unmaintainable' thought has a chance to surface. You'd have to actively slow down and review what you just received with the same critical eye you'd apply to your own code mid-keystroke.
 
 Most people don't. The entire pitch of the tool is speed.
 
@@ -25,11 +27,11 @@ The feedback loop that used to enforce quality wasn't a linter or a code review.
 
 ## the known unknowns and the unknown unknowns
 
-Here's the part I don't see a lot of people talking about. Most developers never had to articulate their conventions explicitly. They just did them. Clean architecture lived in their fingers, not in a document. Ask a good developer why they break state into custom hooks and they'll say it's obvious. But "obvious" is just a pattern that got internalized so deeply it feels like instinct.
+Here's the part I don't see a lot of people talking about. Most developers never had to articulate their conventions explicitly. They just did them. Clean architecture lived in their fingers, not in a document. Ask a good developer why they break state into custom hooks and they'll say it's obvious. But 'obvious' is just a pattern that got internalized so deeply it feels like instinct.
 
 Now they need to make that instinct explicit. Write it down. Tell the AI: use custom hooks for state grouping, keep components under 100 lines, follow this error handling pattern, separate data from UI from business logic. It's actually more aligned with tech leadership than entry and mid-level coding. It's the difference between playing an instrument and conducting an orchestra. A lot of very good developers have never had to operate as conductors.
 
-Then there's a third group. People who went straight from "I have an idea" to "the AI built it" and never passed through the part where you learn why a component shouldn't manage thirty pieces of state. They don't know what they don't know, and the tool won't tell them. They don't even know what questions to ask.
+Then there's a third group. People who went straight from 'I have an idea' to 'the AI built it' and never passed through the part where you learn why a component shouldn't manage thirty pieces of state. They don't know what they don't know, and the tool won't tell them. They don't even know what questions to ask.
 
 ## if you build it, they will complain
 
@@ -67,7 +69,9 @@ Session context. Visual constraints. Domain-specific guardrails. Operational rul
 
 ## bare necessities ♪
 
-I asked Claude directly what makes code maintainable from its perspective. The answer was more specific than I expected.
+I asked Claude Code directly what makes code maintainable from its perspective. The answer was more specific than I expected.
+
+![Claude Code response on what makes code maintainable](/images/claude-maintainability-response.png)
 
 **Project instructions loaded at session start.** When there's a file that defines conventions, design tokens, and file structure, it doesn't guess. It follows the pattern. Without that, it infers conventions from whatever files it happens to read first, and that's where drift starts.
 
@@ -77,7 +81,7 @@ I asked Claude directly what makes code maintainable from its perspective. The a
 
 **Types instead of `any`.** When it sees `sourceToEdit: ToolSourceRecord` it knows the shape of the object without reading the entire codebase. When it sees `any`, it's flying blind. And so is the next session that touches the same file.
 
-**Session context.** When there's a log that says "we chose X because of Y, and Z is still unfinished," it doesn't repeat work, contradict past decisions, or accidentally break something intentional. Context is the difference between coherent code and technically functional code that fights the existing codebase.
+**Session context.** When there's a log that says 'we chose X because of Y, and Z is still unfinished,' it doesn't repeat work, contradict past decisions, or accidentally break something intentional. Context is the difference between coherent code and technically functional code that fights the existing codebase.
 
 None of this is new. It's the same stuff that makes code maintainable for humans. The difference is that humans compensate for missing context with tribal knowledge, processes, hallway conversations, and years of familiarity. This is genuinely the missing piece. It has to be created. AI needs to have a solid starting foundation, and approach it exactly the same way that I would work with any team. The entire team. You have to get it in your head that you're working with an entire team, and it's a non-stop revolving door of teammates. That means you're going to need onboarding capabilities that take no more than a few minutes, and it isn't hard.
 
@@ -85,7 +89,7 @@ None of this is new. It's the same stuff that makes code maintainable for humans
 
 When AI generates a component, you still have to read it the way you'd review a pull request from a junior developer. You still have to run it locally and click through the edge cases yourself. You still have to ask: does this actually work, or does it just look like it works?
 
-And then there's everything else. The testing. Not just "does it run," but does it handle the weird inputs, the empty states, the things a user will inevitably do that nobody planned for. Patching vulnerabilities, because AI will cheerfully introduce one if you don't tell it not to and sometimes even if you do. Documenting technical debt so the next session knows what corners were cut and why. Managing dependencies before they pile up into something nobody wants to untangle.
+And then there's everything else. The testing. Not just 'does it run,' but does it handle the weird inputs, the empty states, the things a user will inevitably do that nobody planned for. Patching vulnerabilities, because AI will cheerfully introduce one if you don't tell it not to and sometimes even if you do. Documenting technical debt so the next session knows what corners were cut and why. Managing dependencies before they pile up into something nobody wants to untangle.
 
 AI replaces typing. It does not replace the development lifecycle. Testing, security, QA, maintenance, iteration. All of it still has to happen. In some ways it has to happen more carefully, because the code arrived faster and in bigger chunks than it would have by hand, which means more surface area to review in less time.
 
@@ -109,4 +113,4 @@ The tool is an instrument. The variable is the conductor. And the score needs to
 
 ---
 
-**See the work:** [shainapauley.com](https://shainapauley.com)
+**See the work:** [shainapauley.com/work](https://www.shainapauley.com/work)
