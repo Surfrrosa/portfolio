@@ -1,5 +1,10 @@
 import type { Config } from 'tailwindcss'
 
+const blinkKeyframes = {
+  '0%, 100%': { opacity: '1' },
+  '50%': { opacity: '0' },
+}
+
 const config: Config = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -21,10 +26,7 @@ const config: Config = {
         'blink': 'blink 1s step-end infinite',
       },
       keyframes: {
-        blink: {
-          '0%, 100%': { opacity: '1' },
-          '50%': { opacity: '0' },
-        },
+        blink: blinkKeyframes,
       },
     },
   },

@@ -2,6 +2,13 @@
 
 import React, { useEffect, useState, useRef } from 'react'
 
+function playBlip(audioRef: React.RefObject<HTMLAudioElement | null>) {
+  if (!audioRef.current) return
+  const audio = audioRef.current.cloneNode() as HTMLAudioElement
+  audio.volume = 0.3
+  audio.play().catch(() => {})
+}
+
 interface TypewriterProps {
   text: string
   speed?: number
@@ -33,24 +40,19 @@ export default function Typewriter({
       return
     }
 
-    if (currentIndex < text.length) {
-      const timeout = setTimeout(() => {
-        const currentChar = text[currentIndex]
-        setVisibleText(text.substring(0, currentIndex + 1))
-        setCurrentIndex(currentIndex + 1)
-
-        // Play blip sound for non-space characters
-        if (currentChar !== ' ' && currentChar !== '\n' && audioRef.current) {
-          // Clone and play to allow rapid successive sounds
-          const audio = audioRef.current.cloneNode() as HTMLAudioElement
-          audio.volume = 0.3
-          audio.play().catch(() => {}) // Ignore autoplay errors
-        }
-      }, speed)
-      return () => clearTimeout(timeout)
-    } else if (currentIndex === text.length && onComplete) {
-      onComplete()
+    if (currentIndex >= text.length) {
+      if (currentIndex === text.length) onComplete?.()
+      return
     }
+
+    const timeout = setTimeout(() => {
+      const currentChar = text[currentIndex]
+      setVisibleText(text.substring(0, currentIndex + 1))
+      setCurrentIndex(currentIndex + 1)
+
+      if (currentChar !== ' ' && currentChar !== '\n') playBlip(audioRef)
+    }, speed)
+    return () => clearTimeout(timeout)
   }, [currentIndex, text, speed, onComplete, skipToEnd])
 
   // Reset when text changes
