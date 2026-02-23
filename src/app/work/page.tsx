@@ -239,15 +239,19 @@ export default function Work() {
                 <div
                   className="relative aspect-video rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
                   onClick={() => {
-                    setModalMedia({ src: '/images/maestro-cli.png', type: 'image' })
+                    setModalMedia({ src: '/videos/maestro-demo.mp4', type: 'video' })
                     setIsModalOpen(true)
                   }}
                 >
-                  <img
-                    src="/images/maestro-cli.png"
-                    alt="Maestro CLI showing available commands and command categories"
+                  <video
                     className="w-full h-full object-cover"
-                  />
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                  >
+                    <source src="/videos/maestro-demo.mp4" type="video/mp4" />
+                  </video>
                 </div>
 
                 <div className="flex justify-center gap-6">
