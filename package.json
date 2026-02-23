@@ -33,7 +33,9 @@
         "src/app/**/loading.tsx",
         "src/app/**/error.tsx",
         "src/app/**/not-found.tsx",
-        "src/app/**/route.ts"
+        "src/app/**/route.ts",
+        "src/app/**/sitemap.ts",
+        "generate-favicons.js"
       ]
     }
   },
