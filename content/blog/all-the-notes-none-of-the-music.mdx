@@ -9,9 +9,9 @@ draft: false
 
 A React component with thirty useState calls made the rounds online. The app worked. Users couldn't tell. And half the internet started arguing about whether it mattered.
 
-One camp says it's bad code, maintainability is everything, this is what's wrong with vibe coding. The other camp says it works, who cares, stop gatekeeping. They're both missing a more interesting question.
+One camp says it’s bad code, maintainability is everything, this is what’s wrong with vibe coding. The other camp says it works, who cares, stop gatekeeping. The code isn’t bad because AI wrote it. It’s bad because nobody directed the architecture. And the question worth asking isn’t who wrote it. It’s why nobody caught it before it shipped.
 
-The code isn't bad because AI wrote it. It's bad because nobody directed the architecture. And the question worth asking isn't who wrote it. It's why nobody caught it before it shipped.
+& where tf is the rest of the development lifecycle process?
 
 ![Tweet about vibe coded app with thirty useState calls](/images/vibe-code-usestate.jpg)
 
@@ -69,7 +69,7 @@ Session context. Visual constraints. Domain-specific guardrails. Operational rul
 
 ## bare necessities ♪
 
-I asked Claude Code directly what makes code maintainable from its perspective. [Here's the answer.](/images/claude-maintainability-response.png)
+[I asked Claude Code directly what makes code maintainable from its perspective. Here's the full convo.](/images/claude-maintainability-response.png)
 
 **Project instructions loaded at session start.** When there's a file that defines conventions, design tokens, and file structure, it doesn't guess. It follows the pattern. Without that, it infers conventions from whatever files it happens to read first, and that's where drift starts.
 
@@ -81,7 +81,7 @@ I asked Claude Code directly what makes code maintainable from its perspective. 
 
 **Session context.** When there's a log that says 'we chose X because of Y, and Z is still unfinished,' it doesn't repeat work, contradict past decisions, or accidentally break something intentional. Context is the difference between coherent code and technically functional code that fights the existing codebase.
 
-None of this is new. It's the same stuff that makes code maintainable for humans. The difference is that humans compensate for missing context with tribal knowledge, processes, hallway conversations, and years of familiarity. This is genuinely the missing piece. It has to be created. AI needs to have a solid starting foundation, and approach it exactly the same way that I would work with any team. The entire team. You have to get it in your head that you're working with an entire team, and it's a non-stop revolving door of teammates. That means you're going to need onboarding capabilities that take no more than a few minutes, and it isn't hard.
+None of this is new. It’s the same stuff that makes code maintainable for humans. The difference is that humans compensate for missing context with tribal knowledge, processes, hallway conversations, and years of familiarity. I approach it exactly the same way that I would work with any team. The entire team. You have to get it in your head that you’re working with an entire team, and it’s a non-stop revolving door of teammates. That means you’re going to need onboarding capabilities that take no more than a few minutes, and this becomes easy if you’re willing to put the time in up-front and learn.
 
 ## the end is the beginning
 
