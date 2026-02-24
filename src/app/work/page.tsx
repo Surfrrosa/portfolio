@@ -292,7 +292,7 @@ export default function Work() {
               </h3>
               
               <h4 className="text-teal-400 text-lg font-semibold mb-6">
-                From chaos to clarity: instantly turn raw ideas into Agile-ready user stories.
+                From chaos to clarity: a simulated backlog refinement session that turns raw ideas into Agile-ready user stories.
               </h4>
               
               <div className="space-y-6">
@@ -306,14 +306,14 @@ export default function Work() {
                 <div>
                   <h5 className="text-white font-semibold mb-2">Solution</h5>
                   <p className="text-gray-300 leading-relaxed">
-                    An AI-powered platform that ingests unstructured input and outputs standardized, ready-to-use user stories. Including acceptance criteria, edge cases, and optional metadata, all aligned with Agile best practices.
+                    An AI-powered platform that ingests unstructured input and runs it through a live, five-agent backlog refinement session -- Product Owner, Tech Lead, Developer, QA Engineer, and Scrum Master -- each streaming their thinking in real time. The result: structured, ready-to-use user stories with acceptance criteria, edge cases, and metadata. A quick-generate mode is also available for single-pass output.
                   </p>
                 </div>
 
                 <div>
                   <h5 className="text-white font-semibold mb-2">My Role</h5>
                   <p className="text-gray-300 leading-relaxed">
-                    Product concept, UX flows, AI prompt design, platform architecture, QA/testing, go-to-market strategy.
+                    Product concept, UX flows, AI prompt engineering, multi-agent pipeline architecture, frontend state machine design, QA/testing, go-to-market strategy.
                   </p>
                 </div>
                 
@@ -322,6 +322,7 @@ export default function Work() {
                   <div className="text-gray-300 space-y-3">
                     <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Generated 1,000+ user stories for product teams globally</span></p>
                     <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Reduces story creation time by ~87% (15 min → &lt;2 min per story)</span></p>
+                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Five-agent pipeline with live-streamed reasoning, budget tracking, and graceful failover</span></p>
                     <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Launched on Product Hunt with community engagement</span></p>
                     <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Free tool serving teams across 20+ countries</span></p>
                   </div>
@@ -329,6 +330,7 @@ export default function Work() {
               </div>
               
               <div className="flex flex-wrap gap-2 mt-6">
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Multi-Agent AI Orchestration</span>
                 <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">AI Workflow Design</span>
                 <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Agile Delivery</span>
                 <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Product Strategy</span>
@@ -353,6 +355,13 @@ export default function Work() {
               </div>
 
               <div className="mt-8 space-y-6">
+                <div className="bg-teal-400/5 border border-teal-400/20 rounded-lg p-6">
+                  <h5 className="text-teal-400 font-semibold mb-2">New: The Story Room</h5>
+                  <p className="text-gray-300 text-sm leading-relaxed">
+                    Five AI agents -- Product Owner, Tech Lead, Developer, QA Engineer, and Scrum Master -- debate and refine your stories in a live session you can watch unfold. Each agent streams their reasoning in real time, catching edge cases and aligning on acceptance criteria before a single story hits your backlog.
+                  </p>
+                </div>
+
                 <div
                   className="relative aspect-video rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
                   onClick={() => {
