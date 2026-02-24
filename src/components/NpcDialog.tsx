@@ -147,7 +147,7 @@ export default function NpcDialog({ open, onClose }: NpcDialogProps) {
         onClick={handleClick}
       >
         <h2 id="npc-dialog-title" className="sr-only">
-          Framework Quest Dialog
+          Methodology Quest Dialog
         </h2>
 
         {/* Inner border for classic layered look */}

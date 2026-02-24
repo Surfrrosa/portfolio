@@ -41,7 +41,7 @@ function MethodContent() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
           >
-            The Method to my Madness
+            Methodology Quickie
           </motion.h1>
 
           <motion.p
@@ -50,7 +50,7 @@ function MethodContent() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            My 4-phase framework for transforming ideas into lasting impact.
+            How I build with AI in the terminal. Four phases, no shortcuts.
           </motion.p>
 
           <div className="space-y-16">
