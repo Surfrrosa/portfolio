@@ -1,5 +1,3 @@
-'use client'
-
 function buildPersonSchema() {
   return {
     "@type": "Person",
@@ -8,29 +6,42 @@ function buildPersonSchema() {
     "url": "https://shainapauley.com",
     "image": {
       "@type": "ImageObject",
-      "url": "https://shainapauley.com/images/shaina-pauley-profile.jpg",
-      "width": 400,
-      "height": 400
+      "url": "https://shainapauley.com/og-image.png",
+      "width": 1200,
+      "height": 630
     },
     "sameAs": [
       "https://linkedin.com/in/shainapauley",
-      "https://github.com/Surfrrosa"
+      "https://github.com/Surfrrosa",
+      "https://x.com/sha1napauley"
     ],
     "jobTitle": "Technical Product Owner",
-    "worksFor": {
-      "@type": "Organization",
-      "name": "Product Management Consultant"
-    },
     "knowsAbout": [
       "Product Management",
+      "AI-Native Development",
       "AI Product Development",
+      "Claude Code",
+      "AI Workflow Automation",
       "SaaS Development",
       "Technical Product Ownership",
       "Enterprise Software",
       "Product Strategy",
-      "Agile Development"
+      "Agile Development",
+      "AI Implementation Consulting"
     ],
-    "description": "Technical Product Owner and AI builder with 7+ years enterprise experience. Building what lasts. Exploring what's next."
+    "description": "Technical Product Owner and AI-native builder with 7+ years enterprise experience. Building production software with AI in the terminal daily. Product strategy, AI workflows, and development process that scales.",
+    "hasCredential": [
+      {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "certification",
+        "name": "Certified Scrum Product Owner (CSPO)"
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "certification",
+        "name": "Certified ScrumMaster (CSM)"
+      }
+    ]
   }
 }
 
@@ -39,17 +50,9 @@ function buildWebSiteSchema() {
     "@type": "WebSite",
     "@id": "https://shainapauley.com/#website",
     "url": "https://shainapauley.com",
-    "name": "Shaina Pauley - Technical Product Owner Portfolio",
-    "description": "Portfolio showcasing enterprise product management experience, AI workflows, and SaaS product development.",
-    "publisher": { "@id": "https://shainapauley.com/#person" },
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": "https://shainapauley.com/search?q={search_term_string}"
-      },
-      "query-input": "required name=search_term_string"
-    }
+    "name": "Shaina Pauley",
+    "description": "Portfolio and writing on AI-native development, product management, and building production software with AI.",
+    "publisher": { "@id": "https://shainapauley.com/#person" }
   }
 }
 
@@ -58,12 +61,12 @@ function buildWebPageSchema() {
     "@type": "WebPage",
     "@id": "https://shainapauley.com/#webpage",
     "url": "https://shainapauley.com",
-    "name": "Shaina Pauley - Building what lasts. Exploring what's next.",
+    "name": "Shaina Pauley | Technical Product Owner & AI-Native Builder",
     "isPartOf": { "@id": "https://shainapauley.com/#website" },
     "about": { "@id": "https://shainapauley.com/#person" },
     "datePublished": "2025-01-01",
-    "dateModified": "2025-09-29",
-    "description": "Technical Product Owner and AI builder with 7+ years enterprise experience. Specializing in AI workflows, secure SaaS products, and measurable business impact."
+    "dateModified": "2026-02-24",
+    "description": "Technical Product Owner and AI-native builder with 7+ years enterprise experience. Building production software with AI in the terminal daily."
   }
 }
 
@@ -72,17 +75,23 @@ function buildServiceOffer(name: string) {
 }
 
 function buildServiceSchema() {
-  const services = ["AI Product Strategy", "SaaS Product Development", "Technical Product Ownership"]
+  const services = [
+    "AI-Native Product Development",
+    "AI Implementation Consulting",
+    "Technical Product Ownership",
+    "SaaS Product Strategy",
+    "AI Workflow Design"
+  ]
   return {
     "@type": "ProfessionalService",
     "@id": "https://shainapauley.com/#service",
-    "name": "Product Management Consulting",
+    "name": "Shaina Pauley - Product & AI Consulting",
     "provider": { "@id": "https://shainapauley.com/#person" },
-    "serviceType": "Product Management Consulting",
+    "serviceType": "AI Implementation and Product Management Consulting",
     "areaServed": "Worldwide",
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name": "Product Management Services",
+      "name": "Services",
       "itemListElement": services.map(buildServiceOffer)
     }
   }

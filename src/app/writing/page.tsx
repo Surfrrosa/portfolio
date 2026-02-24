@@ -6,8 +6,16 @@ import { getAllPosts, getContentPreview } from '@/lib/blog'
 import Sidebar from '@/components/Sidebar'
 
 export const metadata: Metadata = {
-  title: 'stuff I\'m writing about',
-  description: 'Thoughts on product management, AI, and building things that work.',
+  title: 'Writing',
+  description: 'Thoughts on AI-native development, product management, building with Claude Code, and what happens when a product owner starts shipping code.',
+  alternates: {
+    canonical: '/writing',
+  },
+  openGraph: {
+    title: 'Writing by Shaina Pauley',
+    description: 'Thoughts on AI-native development, product management, and building with AI in the terminal.',
+    url: 'https://shainapauley.com/writing',
+  },
 }
 
 export default function WritingPage() {

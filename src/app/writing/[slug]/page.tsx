@@ -43,13 +43,22 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       authors: ['Shaina Pauley'],
       tags: post.tags,
       url: `https://shainapauley.com/writing/${slug}`,
-      siteName: 'Shaina Pauley Portfolio',
+      siteName: 'Shaina Pauley',
+      images: [
+        {
+          url: '/og-image.png',
+          width: 1200,
+          height: 630,
+          alt: `${post.title} - Shaina Pauley`,
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
       title: post.title,
       description: post.excerpt,
-      creator: '@shainapauley',
+      creator: '@sha1napauley',
+      images: ['/og-image.png'],
     },
     alternates: {
       canonical: `/writing/${slug}`,

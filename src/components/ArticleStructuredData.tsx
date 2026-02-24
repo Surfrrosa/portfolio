@@ -18,14 +18,22 @@ export default function ArticleStructuredData({
     '@type': 'Article',
     headline: title,
     description: description,
+    image: {
+      '@type': 'ImageObject',
+      url: 'https://shainapauley.com/og-image.png',
+      width: 1200,
+      height: 630,
+    },
     author: {
       '@type': 'Person',
+      '@id': 'https://shainapauley.com/#person',
       name: 'Shaina Pauley',
       url: 'https://shainapauley.com',
       jobTitle: 'Technical Product Owner',
     },
     publisher: {
       '@type': 'Person',
+      '@id': 'https://shainapauley.com/#person',
       name: 'Shaina Pauley',
       url: 'https://shainapauley.com',
     },
@@ -36,6 +44,9 @@ export default function ArticleStructuredData({
     mainEntityOfPage: {
       '@type': 'WebPage',
       '@id': url,
+    },
+    isPartOf: {
+      '@id': 'https://shainapauley.com/#website',
     },
   }
 
