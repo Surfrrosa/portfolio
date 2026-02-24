@@ -99,6 +99,18 @@ export default async function BlogPost({ params }: PageProps) {
         url={`https://shainapauley.com/writing/${slug}`}
         ogImage={ogImage}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://shainapauley.com' },
+            { '@type': 'ListItem', position: 2, name: 'Writing', item: 'https://shainapauley.com/writing' },
+            { '@type': 'ListItem', position: 3, name: post.title },
+          ],
+        }) }}
+      />
       <div className="min-h-screen grid lg:grid-cols-[340px_1fr]">
         <Sidebar />
 

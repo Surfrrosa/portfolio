@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { getAllPosts, getContentPreview } from '@/lib/blog'
 import Sidebar from '@/components/Sidebar'
+import WritingStructuredData from '@/components/WritingStructuredData'
 
 export const metadata: Metadata = {
   title: 'Writing',
@@ -22,6 +23,8 @@ export default function WritingPage() {
   const posts = getAllPosts()
 
   return (
+    <>
+    <WritingStructuredData posts={posts} />
     <div className="min-h-screen grid lg:grid-cols-[340px_1fr]">
       <Sidebar />
 
@@ -121,5 +124,6 @@ export default function WritingPage() {
         </div>
       </main>
     </div>
+    </>
   )
 }

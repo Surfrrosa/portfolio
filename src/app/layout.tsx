@@ -34,6 +34,9 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://shainapauley.com'),
   alternates: {
     canonical: '/',
+    types: {
+      'application/rss+xml': '/feed.xml',
+    },
   },
   openGraph: {
     title: 'Shaina Pauley | Technical Product Owner & AI-Native Builder',
