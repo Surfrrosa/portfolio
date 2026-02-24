@@ -4,6 +4,7 @@ interface ArticleStructuredDataProps {
   publishedTime: string
   tags: string[]
   url: string
+  ogImage?: string
 }
 
 export default function ArticleStructuredData({
@@ -11,8 +12,13 @@ export default function ArticleStructuredData({
   description,
   publishedTime,
   tags,
-  url
+  url,
+  ogImage
 }: ArticleStructuredDataProps) {
+  const imageUrl = ogImage
+    ? `https://shainapauley.com${ogImage}`
+    : 'https://shainapauley.com/og-image.png'
+
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -20,7 +26,7 @@ export default function ArticleStructuredData({
     description: description,
     image: {
       '@type': 'ImageObject',
-      url: 'https://shainapauley.com/og-image.png',
+      url: imageUrl,
       width: 1200,
       height: 630,
     },

@@ -1,4 +1,6 @@
 import React from 'react'
+import fs from 'fs'
+import path from 'path'
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
@@ -11,6 +13,15 @@ import ArticleStructuredData from '@/components/ArticleStructuredData'
 
 interface PageProps {
   params: Promise<{ slug: string }>
+}
+
+function getOgImagePath(slug: string): string {
+  const articleOg = `/images/og/${slug}.png`
+  const filePath = path.join(process.cwd(), 'public', articleOg)
+  if (fs.existsSync(filePath)) {
+    return articleOg
+  }
+  return '/og-image.png'
 }
 
 export async function generateStaticParams() {
@@ -27,6 +38,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: 'Post Not Found',
     }
   }
+
+  const ogImage = getOgImagePath(slug)
 
   return {
     title: post.title,
@@ -46,7 +59,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       siteName: 'Shaina Pauley',
       images: [
         {
-          url: '/og-image.png',
+          url: ogImage,
           width: 1200,
           height: 630,
           alt: `${post.title} - Shaina Pauley`,
@@ -58,7 +71,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: post.title,
       description: post.excerpt,
       creator: '@sha1napauley',
-      images: ['/og-image.png'],
+      images: [ogImage],
     },
     alternates: {
       canonical: `/writing/${slug}`,
@@ -74,6 +87,8 @@ export default async function BlogPost({ params }: PageProps) {
     notFound()
   }
 
+  const ogImage = getOgImagePath(slug)
+
   return (
     <>
       <ArticleStructuredData
@@ -82,6 +97,7 @@ export default async function BlogPost({ params }: PageProps) {
         publishedTime={post.date}
         tags={post.tags || []}
         url={`https://shainapauley.com/writing/${slug}`}
+        ogImage={ogImage}
       />
       <div className="min-h-screen grid lg:grid-cols-[340px_1fr]">
         <Sidebar />
