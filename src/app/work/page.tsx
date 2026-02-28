@@ -211,7 +211,7 @@ export default function Work() {
                 <div>
                   <h5 className="text-white font-semibold mb-2">My Role</h5>
                   <p className="text-gray-300 leading-relaxed">
-                    Creator and lead developer. Product concept, CLI architecture, scoring algorithms, npm publishing, documentation. Built with AI-assisted development and dogfooded across 12 personal projects.
+                    Product concept, CLI architecture, scoring algorithms, npm publishing. Built with AI-assisted development and dogfooded across 12 personal projects.
                   </p>
                 </div>
 
@@ -358,7 +358,7 @@ export default function Work() {
                 <div className="bg-teal-400/5 border border-teal-400/20 rounded-lg p-6">
                   <h5 className="text-teal-400 font-semibold mb-2">New: The Story Room</h5>
                   <p className="text-gray-300 text-sm leading-relaxed">
-                    Five AI agents -- Product Owner, Tech Lead, Developer, QA Engineer, and Scrum Master -- debate and refine your stories in a live session you can watch unfold. Each agent streams their reasoning in real time, catching edge cases and aligning on acceptance criteria before a single story hits your backlog.
+                    Five AI agents (Product Owner, Tech Lead, Developer, QA Engineer, and Scrum Master) debate and refine your stories in a live session you can watch unfold. Each agent streams their reasoning in real time, catching edge cases and aligning on acceptance criteria before a single story hits your backlog.
                   </p>
                 </div>
 
