@@ -221,7 +221,7 @@ export default function Work() {
                     <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Published on npm as maestro-dev, installable globally</span></p>
                     <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>12-check audit scoring (0-100) plus 7-category code quality grading (A-F)</span></p>
                     <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Full CI integration with GitHub Actions workflow</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Dogfooded daily across 12 repos to validate every feature before shipping</span></p>
+                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Dogfooded across repos to validate every feature before shipping</span></p>
                   </div>
                 </div>
               </div>
