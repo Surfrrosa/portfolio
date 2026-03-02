@@ -114,7 +114,7 @@ export default async function BlogPost({ params }: PageProps) {
       <div className="min-h-screen grid lg:grid-cols-[340px_1fr]">
         <Sidebar />
 
-      <main className="px-4 lg:px-12 py-12 lg:py-20">
+      <main id="main-content" className="px-4 lg:px-12 py-12 lg:py-20">
         <article className="max-w-3xl mx-auto">
           {/* Back link */}
           <Link

@@ -66,7 +66,7 @@ export default function Contact() {
         body: JSON.stringify(payload),
       });
 
-      const data: any = await res.json().catch(() => ({}));
+      const data: { ok?: boolean; error?: string } = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(data?.error || "Failed");
 
       setSubmitStatus('success')
@@ -83,7 +83,7 @@ export default function Contact() {
     <div className="min-h-screen grid lg:grid-cols-[340px_1fr]">
       <Sidebar />
       
-      <main className="px-4 lg:px-12 py-8 lg:py-12">
+      <main id="main-content" className="px-4 lg:px-12 py-8 lg:py-12">
         <div className="max-w-6xl mx-auto">
           <motion.h1
             className="text-4xl lg:text-5xl font-bold text-white mb-12"

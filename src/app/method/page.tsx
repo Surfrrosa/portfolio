@@ -33,7 +33,7 @@ function MethodContent() {
     <div className="min-h-screen grid lg:grid-cols-[340px_1fr]">
       <Sidebar />
 
-      <main className="px-4 lg:px-12 py-8 lg:py-12">
+      <main id="main-content" className="px-4 lg:px-12 py-8 lg:py-12">
         <div className="max-w-4xl mx-auto">
           <motion.h1
             className="text-white text-4xl md:text-5xl lg:text-7xl font-display leading-tight mb-6 lg:mb-8"
@@ -135,7 +135,7 @@ export default function MethodPage() {
     <Suspense fallback={
       <div className="min-h-screen grid lg:grid-cols-[340px_1fr]">
         <Sidebar />
-        <main className="px-4 lg:px-12 py-8 lg:py-12">
+        <main id="main-content" className="px-4 lg:px-12 py-8 lg:py-12">
           <div className="max-w-4xl mx-auto">
             <div className="text-white text-4xl">Loading...</div>
           </div>

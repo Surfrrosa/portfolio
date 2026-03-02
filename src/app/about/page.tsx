@@ -40,7 +40,7 @@ export default function AboutPage() {
     <div className="min-h-screen grid lg:grid-cols-[340px_1fr]">
       <Sidebar />
 
-      <main className="flex flex-col px-4 lg:px-12 py-12 lg:py-20">
+      <main id="main-content" className="flex flex-col px-4 lg:px-12 py-12 lg:py-20">
         <motion.div
           className="text-center relative w-full max-w-4xl mx-auto"
           initial={{ opacity: 0, y: 50 }}

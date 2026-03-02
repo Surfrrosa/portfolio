@@ -82,6 +82,7 @@ function BackgroundVideo({ videoRef }: { videoRef: React.RefObject<HTMLVideoElem
     <div className="fixed inset-0 -z-20 overflow-hidden pointer-events-none">
       <video
         ref={videoRef}
+        aria-hidden="true"
         className="absolute min-w-full min-h-full w-auto h-auto top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 object-cover"
         autoPlay loop muted playsInline preload="auto"
       >
