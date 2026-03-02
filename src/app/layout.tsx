@@ -18,11 +18,11 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: 'Shaina Pauley | Technical Product Owner & AI-Native Builder',
+    default: 'Shaina Pauley | Product Builder & Fearless Explorer',
     template: '%s | Shaina Pauley'
   },
-  description: 'Technical Product Owner and AI-native builder with 7+ years enterprise experience. Building production software with AI in the terminal daily. Product strategy, AI workflows, and development process that scales.',
-  keywords: ['Technical Product Owner', 'AI-Native Development', 'AI Product Development', 'Claude Code', 'Product Manager', 'SaaS Product Management', 'Enterprise Software', 'Product Strategy', 'AI Workflows', 'AI Implementation', 'Agile Product Management', 'Shaina Pauley', 'CSPO', 'CSM'],
+  description: 'Technical Product Owner and builder who loves prototyping, transforming data into dashboards, and designing workflows that accelerate teams and deliver measurable results.',
+  keywords: ['Technical Product Owner', 'Product Manager', 'AI Product Development', 'SaaS Product Management', 'Enterprise Software', 'Product Strategy', 'AI Workflows', 'Agile Product Management', 'Shaina Pauley', 'CSPO', 'CSM'],
   authors: [{ name: 'Shaina Pauley', url: 'https://shainapauley.com' }],
   creator: 'Shaina Pauley',
   publisher: 'Shaina Pauley',
@@ -39,10 +39,10 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Shaina Pauley | Technical Product Owner & AI-Native Builder',
-    description: 'Technical Product Owner and AI-native builder with 7+ years enterprise experience. Building production software with AI in the terminal daily.',
+    title: 'Shaina Pauley | Product Builder & Fearless Explorer',
+    description: 'Technical Product Owner and builder who loves prototyping, transforming data into dashboards, and designing workflows that accelerate teams and deliver measurable results.',
     url: 'https://shainapauley.com',
-    siteName: 'Shaina Pauley',
+    siteName: 'Shaina Pauley Portfolio',
     type: 'website',
     locale: 'en_US',
     images: [
@@ -57,8 +57,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Shaina Pauley | Technical Product Owner & AI-Native Builder',
-    description: 'Technical Product Owner and AI-native builder with 7+ years enterprise experience. Building production software with AI in the terminal daily.',
+    title: 'Shaina Pauley | Product Builder & Fearless Explorer',
+    description: 'Technical Product Owner and builder who loves prototyping, transforming data into dashboards, and designing workflows that accelerate teams and deliver measurable results.',
     images: ['/og-image.png'],
     creator: '@sha1napauley',
   },
