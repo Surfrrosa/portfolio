@@ -67,6 +67,95 @@ export default function Work() {
               transition={{ duration: 0.8, delay: 0.5 }}
             >
               <h3 className="text-white text-2xl font-display font-bold mb-4">
+                Prism ● Media Bias Awareness Tool
+              </h3>
+
+              <h4 className="text-teal-400 text-lg font-semibold mb-6">
+                See the full spectrum of your news diet, no effort required.
+              </h4>
+
+              <div className="space-y-6">
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Problem</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    People don&apos;t realize their news consumption is lopsided. Existing tools require manual effort and don&apos;t surface patterns passively.
+                  </p>
+                </div>
+
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Solution</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    A Chrome extension that silently tracks news sources you read, matches them against 2,700+ rated sources from Media Bias/Fact Check, and computes a Perspective Diversity Score. Visualizes your Left/Center/Right distribution, detects blind spots, and generates shareable retro-styled cards of your media diet.
+                  </p>
+                </div>
+
+                <div>
+                  <h5 className="text-white font-semibold mb-2">My Role</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    Solo builder. Product concept, design, development, Chrome Web Store launch.
+                  </p>
+                </div>
+
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Impact</h5>
+                  <div className="text-gray-300 space-y-3">
+                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>2,700+ rated news sources from Media Bias/Fact Check database</span></p>
+                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Zero network requests, all data stays local in IndexedDB</span></p>
+                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Diversity Score algorithm factoring entropy, variety, quality, and breadth</span></p>
+                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Weekly summary reports and shareable Canvas-rendered media diet cards</span></p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap gap-2 mt-6">
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Chrome Extension</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">TypeScript</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">IndexedDB</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Canvas API</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Manifest V3</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Privacy-First</span>
+              </div>
+
+              <div className="mt-8 space-y-6">
+                <div>
+                  <div
+                    className="relative rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
+                    onClick={() => {
+                      setModalMedia({ src: '/images/prism-promo-marquee.png', type: 'image' })
+                      setIsModalOpen(true)
+                    }}
+                  >
+                    <img
+                      src="/images/prism-promo-marquee.png"
+                      alt="Prism Chrome extension promo showing media bias spectrum visualization"
+                      className="w-full h-auto object-contain mx-auto"
+                    />
+                  </div>
+                </div>
+
+                <div className="flex justify-center gap-6">
+                  <a
+                    href="https://chromewebstore.google.com/detail/prism/pbhmchohngpdjmldjfdlomjfgkjfegfc"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors group"
+                  >
+                    Chrome Web Store
+                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+            >
+              <h3 className="text-white text-2xl font-display font-bold mb-4">
                 Synestrology ● Astrology × Human Design × Numerology Synthesis Engine
               </h3>
 
@@ -273,6 +362,96 @@ export default function Work() {
                     className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors group"
                   >
                     GitHub
+                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              <h3 className="text-white text-2xl font-display font-bold mb-4">
+                What Changed ● Automatic Webpage Diff Tracker
+              </h3>
+
+              <h4 className="text-teal-400 text-lg font-semibold mb-6">
+                See exactly what&apos;s different when you revisit any page.
+              </h4>
+
+              <div className="space-y-6">
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Problem</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    Every change-detection tool requires you to predict which pages will change and set up watchers ahead of time. Nobody does that.
+                  </p>
+                </div>
+
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Solution</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    A Chrome extension that flips the model. It silently snapshots every page you visit using Mozilla&apos;s Readability for smart content extraction, then shows you a clean word-level diff the moment you return. SHA-256 deduplication keeps storage minimal, and configurable significance thresholds filter out noise from A/B tests and dynamic feeds.
+                  </p>
+                </div>
+
+                <div>
+                  <h5 className="text-white font-semibold mb-2">My Role</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    Solo builder. Product concept, architecture, development, Chrome Web Store launch.
+                  </p>
+                </div>
+
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Impact</h5>
+                  <div className="text-gray-300 space-y-3">
+                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Zero-config automatic tracking on every page you visit</span></p>
+                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>~5 KB average snapshot vs ~200 KB raw HTML via Readability extraction</span></p>
+                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>~70% revisit deduplication via SHA-256 content hashing</span></p>
+                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>SPA navigation support with automatic re-capture</span></p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap gap-2 mt-6">
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Chrome Extension</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">TypeScript</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">IndexedDB</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Readability.js</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">jsdiff</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Manifest V3</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Privacy-First</span>
+              </div>
+
+              <div className="mt-8 space-y-6">
+                <div>
+                  <div
+                    className="relative rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
+                    onClick={() => {
+                      setModalMedia({ src: '/images/what-changed-promo-marquee.png', type: 'image' })
+                      setIsModalOpen(true)
+                    }}
+                  >
+                    <img
+                      src="/images/what-changed-promo-marquee.png"
+                      alt="What Changed Chrome extension promo showing webpage diff tracking"
+                      className="w-full h-auto object-contain mx-auto"
+                    />
+                  </div>
+                </div>
+
+                <div className="flex justify-center gap-6">
+                  <a
+                    href="https://chromewebstore.google.com/detail/what-changed/beaielclimdopobfbaeibgmpnlmnfpjf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors group"
+                  >
+                    Chrome Web Store
                     <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
