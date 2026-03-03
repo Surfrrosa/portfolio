@@ -133,6 +133,22 @@ export default function Work() {
                   </div>
                 </div>
 
+                <div>
+                  <div
+                    className="relative rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
+                    onClick={() => {
+                      setModalMedia({ src: '/images/prism-screenshot-3.png', type: 'image' })
+                      setIsModalOpen(true)
+                    }}
+                  >
+                    <img
+                      src="/images/prism-screenshot-3.png"
+                      alt="Prism bias badge explainer showing Left through Right ratings with example sources"
+                      className="w-full h-auto object-contain mx-auto"
+                    />
+                  </div>
+                </div>
+
                 <div className="flex justify-center gap-6">
                   <a
                     href="https://chromewebstore.google.com/detail/prism/pbhmchohngpdjmldjfdlomjfgkjfegfc"
