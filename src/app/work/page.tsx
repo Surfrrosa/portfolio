@@ -133,6 +133,22 @@ export default function Work() {
                   </div>
                 </div>
 
+                <div>
+                  <div
+                    className="relative rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
+                    onClick={() => {
+                      setModalMedia({ src: '/images/prism-screenshot-3.png', type: 'image' })
+                      setIsModalOpen(true)
+                    }}
+                  >
+                    <img
+                      src="/images/prism-screenshot-3.png"
+                      alt="Prism bias badge explainer showing Left through Right ratings with example sources"
+                      className="w-full h-auto object-contain mx-auto"
+                    />
+                  </div>
+                </div>
+
                 <div className="flex justify-center gap-6">
                   <a
                     href="https://chromewebstore.google.com/detail/prism/pbhmchohngpdjmldjfdlomjfgkjfegfc"
@@ -432,13 +448,13 @@ export default function Work() {
                   <div
                     className="relative rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
                     onClick={() => {
-                      setModalMedia({ src: '/images/what-changed-promo-marquee.png', type: 'image' })
+                      setModalMedia({ src: '/images/what-changed-screenshot.png', type: 'image' })
                       setIsModalOpen(true)
                     }}
                   >
                     <img
-                      src="/images/what-changed-promo-marquee.png"
-                      alt="What Changed Chrome extension promo showing webpage diff tracking"
+                      src="/images/what-changed-screenshot.png"
+                      alt="What Changed landing page showing automatic webpage diff tracking with highlighted text changes"
                       className="w-full h-auto object-contain mx-auto"
                     />
                   </div>
@@ -586,6 +602,94 @@ export default function Work() {
                     className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors group"
                   >
                     Try It Live
+                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.55 }}
+            >
+              <h3 className="text-white text-2xl font-display font-bold mb-4">
+                Solo Stack ● Opinionated Stack Guide for Solo Founders
+              </h3>
+
+              <h4 className="text-teal-400 text-lg font-semibold mb-6">
+                Pick your stack. Ship your thing. Grow from there.
+              </h4>
+
+              <div className="space-y-6">
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Problem</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    Solo founders drown in comparison articles with 15 options per category. Most guides are padded with affiliate links and outdated pricing. Nobody tells you what actually works at each stage.
+                  </p>
+                </div>
+
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Solution</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    An open-source guide structured around decisions, not tool categories. Includes a default stack for shipping fast, five decision guides with flowcharts, cost calculators at 100/1K/10K/100K users, and graduation guides for when you outgrow each tool. Zero affiliate links, community-maintained, every price verified with a date stamp.
+                  </p>
+                </div>
+
+                <div>
+                  <h5 className="text-white font-semibold mb-2">My Role</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    Creator and maintainer. Guide structure, decision frameworks, cost research, all based on building with these tools across a dozen personal projects.
+                  </p>
+                </div>
+
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Impact</h5>
+                  <div className="text-gray-300 space-y-3">
+                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>32+ tools evaluated with real costs and trade-offs</span></p>
+                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>5 decision guides with flowcharts (payments, auth, hosting, databases, AI)</span></p>
+                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Cost calculators showing $0/mo MVP to $85/mo production</span></p>
+                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Open source, community-maintained, zero affiliate links</span></p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap gap-2 mt-6">
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Open Source</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Developer Tools</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Stack Architecture</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Cost Analysis</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Community</span>
+              </div>
+
+              <div className="mt-8 space-y-6">
+                <div>
+                  <div
+                    className="relative rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
+                    onClick={() => {
+                      setModalMedia({ src: '/images/solo-stack-social.png', type: 'image' })
+                      setIsModalOpen(true)
+                    }}
+                  >
+                    <img
+                      src="/images/solo-stack-social.png"
+                      alt="Solo Stack social card showing retro computer with stack configuration and tagline: pick your stack, ship your thing, grow from there"
+                      className="w-full h-auto object-contain mx-auto"
+                    />
+                  </div>
+                </div>
+
+                <div className="flex justify-center gap-6">
+                  <a
+                    href="https://github.com/Surfrrosa/solo-stack"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors group"
+                  >
+                    GitHub
                     <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
