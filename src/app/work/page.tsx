@@ -448,13 +448,13 @@ export default function Work() {
                   <div
                     className="relative rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
                     onClick={() => {
-                      setModalMedia({ src: '/images/what-changed-promo-marquee.png', type: 'image' })
+                      setModalMedia({ src: '/images/what-changed-screenshot.png', type: 'image' })
                       setIsModalOpen(true)
                     }}
                   >
                     <img
-                      src="/images/what-changed-promo-marquee.png"
-                      alt="What Changed Chrome extension promo showing webpage diff tracking"
+                      src="/images/what-changed-screenshot.png"
+                      alt="What Changed landing page showing automatic webpage diff tracking with highlighted text changes"
                       className="w-full h-auto object-contain mx-auto"
                     />
                   </div>
