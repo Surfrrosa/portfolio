@@ -20,3 +20,6 @@ updates:
       react-three:
         patterns:
           - "@react-three/*"
+    ignore:
+      - dependency-name: "tailwindcss"
+        update-types: ["version-update:semver-major"]
