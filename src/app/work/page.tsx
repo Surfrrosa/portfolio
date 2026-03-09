@@ -617,52 +617,52 @@ export default function Work() {
               transition={{ duration: 0.8, delay: 0.55 }}
             >
               <h3 className="text-white text-2xl font-display font-bold mb-4">
-                Solo Stack ● Opinionated Stack Guide for Solo Founders
+                Declassify ● Sourced Reporting on the 2026 Iran War
               </h3>
 
               <h4 className="text-teal-400 text-lg font-semibold mb-6">
-                Pick your stack. Ship your thing. Grow from there.
+                Every number cited. Every claim linked. No editorializing.
               </h4>
 
               <div className="space-y-6">
                 <div>
                   <h5 className="text-white font-semibold mb-2">Problem</h5>
                   <p className="text-gray-300 leading-relaxed">
-                    Solo founders drown in comparison articles with 15 options per category. Most guides are padded with affiliate links and outdated pricing. Nobody tells you what actually works at each stage.
+                    The Pentagon revoked press credentials from every major news outlet during Operation Epic Fury. With traditional media locked out, the public lost access to verified, centralized reporting on an active military conflict.
                   </p>
                 </div>
 
                 <div>
                   <h5 className="text-white font-semibold mb-2">Solution</h5>
                   <p className="text-gray-300 leading-relaxed">
-                    An open-source guide structured around decisions, not tool categories. Includes a default stack for shipping fast, five decision guides with flowcharts, cost calculators at 100/1K/10K/100K users, and graduation guides for when you outgrow each tool. Zero affiliate links, community-maintained, every price verified with a date stamp.
+                    A sourced reporting dashboard that aggregates casualty figures, economic impact data, and operational details from international outlets, government releases, and NGOs. Every single number links to its source. Contested figures are presented side by side with no editorial judgment. Includes a timeline, impact analysis across 10+ categories, and a media blackout visualization showing which outlets lost credentials and which kept them.
                   </p>
                 </div>
 
                 <div>
                   <h5 className="text-white font-semibold mb-2">My Role</h5>
                   <p className="text-gray-300 leading-relaxed">
-                    Creator and maintainer. Guide structure, decision frameworks, cost research, all based on building with these tools across a dozen personal projects.
+                    Solo builder. Research pipeline, editorial framework, information architecture, data binding system, accessibility, daily source monitoring and updates.
                   </p>
                 </div>
 
                 <div>
                   <h5 className="text-white font-semibold mb-2">Impact</h5>
                   <div className="text-gray-300 space-y-3">
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>32+ tools evaluated with real costs and trade-offs</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>5 decision guides with flowcharts (payments, auth, hosting, databases, AI)</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Cost calculators showing $0/mo MVP to $85/mo production</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Open source, community-maintained, zero affiliate links</span></p>
+                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>54+ external source citations across dashboard, timeline, and impact pages</span></p>
+                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Daily automated broken link checking via GitHub Actions</span></p>
+                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Zero dependencies: pure HTML/CSS/JS, no build step, progressive enhancement throughout</span></p>
+                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Full keyboard navigation, screen reader support, reduced motion respect</span></p>
                   </div>
                 </div>
               </div>
 
               <div className="flex flex-wrap gap-2 mt-6">
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Open Source</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Developer Tools</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Stack Architecture</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Cost Analysis</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Community</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Information Design</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Accessibility</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Zero Dependencies</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">CI/CD</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Brutalist Design</span>
               </div>
 
               <div className="mt-8 space-y-6">
@@ -670,13 +670,13 @@ export default function Work() {
                   <div
                     className="relative rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
                     onClick={() => {
-                      setModalMedia({ src: '/images/solo-stack-social.png', type: 'image' })
+                      setModalMedia({ src: '/images/declassify-og.png', type: 'image' })
                       setIsModalOpen(true)
                     }}
                   >
                     <img
-                      src="/images/solo-stack-social.png"
-                      alt="Solo Stack social card showing retro computer with stack configuration and tagline: pick your stack, ship your thing, grow from there"
+                      src="/images/declassify-og.png"
+                      alt="Declassify social card with redacted title treatment and tagline: sourced reporting on the 2026 Iran war"
                       className="w-full h-auto object-contain mx-auto"
                     />
                   </div>
@@ -684,7 +684,18 @@ export default function Work() {
 
                 <div className="flex justify-center gap-6">
                   <a
-                    href="https://github.com/Surfrrosa/solo-stack"
+                    href="https://declassify.news"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors group"
+                  >
+                    Visit Site
+                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </a>
+                  <a
+                    href="https://github.com/Surfrrosa/declassify"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors group"
