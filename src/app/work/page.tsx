@@ -288,7 +288,344 @@ export default function Work() {
               className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
+              transition={{ duration: 0.8, delay: 0.55 }}
+            >
+              <h3 className="text-white text-2xl font-display font-bold mb-4">
+                Declassify ● Sourced Reporting on the 2026 Iran War
+              </h3>
+
+              <h4 className="text-teal-400 text-lg font-semibold mb-6">
+                Every number cited. Every claim linked. No editorializing.
+              </h4>
+
+              <div className="space-y-6">
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Problem</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    The Pentagon revoked press credentials from every major news outlet during Operation Epic Fury. With traditional media locked out, the public lost access to verified, centralized reporting on an active military conflict.
+                  </p>
+                </div>
+
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Solution</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    A sourced reporting dashboard that aggregates casualty figures, economic impact data, and operational details from international outlets, government releases, and NGOs. Every single number links to its source. Contested figures are presented side by side with no editorial judgment. Includes a timeline, impact analysis across 10+ categories, and a media blackout visualization showing which outlets lost credentials and which kept them.
+                  </p>
+                </div>
+
+                <div>
+                  <h5 className="text-white font-semibold mb-2">My Role</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    Solo builder. Research pipeline, editorial framework, information architecture, data binding system, accessibility, daily source monitoring and updates.
+                  </p>
+                </div>
+
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Impact</h5>
+                  <div className="text-gray-300 space-y-3">
+                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>54+ external source citations across dashboard, timeline, and impact pages</span></p>
+                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Daily automated broken link checking via GitHub Actions</span></p>
+                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Zero dependencies: pure HTML/CSS/JS, no build step, progressive enhancement throughout</span></p>
+                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Full keyboard navigation, screen reader support, reduced motion respect</span></p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap gap-2 mt-6">
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Information Design</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Accessibility</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Zero Dependencies</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">CI/CD</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Brutalist Design</span>
+              </div>
+
+              <div className="mt-8 space-y-6">
+                <div>
+                  <div
+                    className="relative rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
+                    onClick={() => {
+                      setModalMedia({ src: '/images/declassify-og.png', type: 'image' })
+                      setIsModalOpen(true)
+                    }}
+                  >
+                    <img
+                      src="/images/declassify-og.png"
+                      alt="Declassify social card with redacted title treatment and tagline: sourced reporting on the 2026 Iran war"
+                      className="w-full h-auto object-contain mx-auto"
+                    />
+                  </div>
+                </div>
+
+                <div className="flex justify-center gap-6">
+                  <a
+                    href="https://declassify.news"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors group"
+                  >
+                    Visit Site
+                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </a>
+                  <a
+                    href="https://github.com/Surfrrosa/declassify"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors group"
+                  >
+                    GitHub
+                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.55 }}
+            >
+              <h3 className="text-white text-2xl font-display font-bold mb-4">
+                BlipCode ● Privacy-First QR Code Generator
+              </h3>
+
+              <h4 className="text-teal-400 text-lg font-semibold mb-6">
+                Generate QR codes instantly. No uploads. No tracking. No nonsense.
+              </h4>
+
+              <div className="space-y-6">
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Problem</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    Every QR code generator either harvests your data, requires an account, or buries a simple task behind feature bloat. People just want a QR code.
+                  </p>
+                </div>
+
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Solution</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    A client-side QR code generator where nothing ever touches a server. Supports URLs, plain text, Wi-Fi credentials, and vCard contact cards. Export as PNG or SVG with custom colors. Free tier with 5 codes per day, Pro subscription for unlimited use.
+                  </p>
+                </div>
+
+                <div>
+                  <h5 className="text-white font-semibold mb-2">My Role</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    Solo builder. Product concept, brand identity, development, Stripe integration, Sentry monitoring, launch.
+                  </p>
+                </div>
+
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Impact</h5>
+                  <div className="text-gray-300 space-y-3">
+                    <p className="flex items-start"><span className="text-teal-400 mr-2">&#10003;</span><span>100% client-side: zero data ever leaves the browser</span></p>
+                    <p className="flex items-start"><span className="text-teal-400 mr-2">&#10003;</span><span>4 QR types: URL, text, Wi-Fi, vCard contact cards</span></p>
+                    <p className="flex items-start"><span className="text-teal-400 mr-2">&#10003;</span><span>Freemium model with Stripe subscription billing</span></p>
+                    <p className="flex items-start"><span className="text-teal-400 mr-2">&#10003;</span><span>Sentry error monitoring and logging for proactive issue detection</span></p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap gap-2 mt-6">
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Astro</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Client-Side JS</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Stripe</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Sentry</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Vercel</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Privacy-First</span>
+              </div>
+
+              <div className="mt-8 space-y-6">
+                <div
+                  className="relative aspect-video rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
+                  onClick={() => {
+                    setModalMedia({ src: '/videos/blipcode.mp4', type: 'video' })
+                    setIsModalOpen(true)
+                  }}
+                >
+                  <video
+                    className="w-full h-full object-cover"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    onError={(e) => {
+                      const target = e.target as HTMLVideoElement;
+                      target.style.display = 'none';
+                      const fallback = target.nextElementSibling as HTMLElement;
+                      if (fallback) fallback.style.display = 'flex';
+                    }}
+                  >
+                    <source src="/videos/blipcode.mp4" type="video/mp4" />
+                  </video>
+                  <div className="absolute inset-0 bg-slate-700/30 flex items-center justify-center" style={{ display: 'none' }}>
+                    <div className="text-center">
+                      <div className="w-16 h-16 bg-teal-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg className="w-8 h-8 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z" />
+                        </svg>
+                      </div>
+                      <p className="text-gray-400 text-sm">Project Preview</p>
+                      <p className="text-white font-semibold">BlipCode</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex justify-center gap-6">
+                  <a
+                    href="https://blipcode.lol"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors group"
+                  >
+                    Try It Live
+                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </a>
+                  <a
+                    href="https://github.com/Surfrrosa/blipcode"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors group"
+                  >
+                    GitHub
+                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              <h3 className="text-white text-2xl font-display font-bold mb-4">
+                CrunchBox ● Client-Side File Conversion Tools
+              </h3>
+
+              <h4 className="text-teal-400 text-lg font-semibold mb-6">
+                Convert, compress, and merge files. Everything stays in your browser.
+              </h4>
+
+              <div className="space-y-6">
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Problem</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    File conversion sites upload your documents to their servers, plaster ads everywhere, and harvest your data. For something as simple as compressing a PDF, you shouldn&apos;t need to trust a stranger with your files.
+                  </p>
+                </div>
+
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Solution</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    A suite of client-side file tools where every conversion happens in the browser. HEIC to JPG, WebP to JPG, PDF compression, PDF merging, and image compression with quality control. No files ever leave your machine.
+                  </p>
+                </div>
+
+                <div>
+                  <h5 className="text-white font-semibold mb-2">My Role</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    Solo builder. Product concept, brand identity, development, Stripe integration, Sentry monitoring, launch.
+                  </p>
+                </div>
+
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Impact</h5>
+                  <div className="text-gray-300 space-y-3">
+                    <p className="flex items-start"><span className="text-teal-400 mr-2">&#10003;</span><span>5 conversion tools: HEIC, WebP, PDF compress, PDF merge, image compress</span></p>
+                    <p className="flex items-start"><span className="text-teal-400 mr-2">&#10003;</span><span>100% client-side processing via pdf-lib, heic-to (libheif WASM), Canvas API</span></p>
+                    <p className="flex items-start"><span className="text-teal-400 mr-2">&#10003;</span><span>Freemium model with Stripe subscription billing</span></p>
+                    <p className="flex items-start"><span className="text-teal-400 mr-2">&#10003;</span><span>Sentry error monitoring and logging for proactive issue detection</span></p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap gap-2 mt-6">
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Astro</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">pdf-lib</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">WASM</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Stripe</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Sentry</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Privacy-First</span>
+              </div>
+
+              <div className="mt-8 space-y-6">
+                <div
+                  className="relative aspect-video rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
+                  onClick={() => {
+                    setModalMedia({ src: '/videos/crunchbox.mp4', type: 'video' })
+                    setIsModalOpen(true)
+                  }}
+                >
+                  <video
+                    className="w-full h-full object-cover"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    onError={(e) => {
+                      const target = e.target as HTMLVideoElement;
+                      target.style.display = 'none';
+                      const fallback = target.nextElementSibling as HTMLElement;
+                      if (fallback) fallback.style.display = 'flex';
+                    }}
+                  >
+                    <source src="/videos/crunchbox.mp4" type="video/mp4" />
+                  </video>
+                  <div className="absolute inset-0 bg-slate-700/30 flex items-center justify-center" style={{ display: 'none' }}>
+                    <div className="text-center">
+                      <div className="w-16 h-16 bg-teal-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg className="w-8 h-8 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        </svg>
+                      </div>
+                      <p className="text-gray-400 text-sm">Project Preview</p>
+                      <p className="text-white font-semibold">CrunchBox</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex justify-center gap-6">
+                  <a
+                    href="https://crunchbox.lol"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors group"
+                  >
+                    Try It Live
+                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </a>
+                  <a
+                    href="https://github.com/Surfrrosa/crunchbox"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors group"
+                  >
+                    GitHub
+                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
             >
               <h3 className="text-white text-2xl font-display font-bold mb-4">
                 Maestro ● AI Development Process CLI
@@ -390,7 +727,7 @@ export default function Work() {
               className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
+              transition={{ duration: 0.8, delay: 0.65 }}
             >
               <h3 className="text-white text-2xl font-display font-bold mb-4">
                 What Changed ● Automatic Webpage Diff Tracker
@@ -475,138 +812,126 @@ export default function Work() {
                 </div>
               </div>
             </motion.div>
-
             <motion.div
               className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
+              transition={{ duration: 0.8, delay: 0.65 }}
             >
               <h3 className="text-white text-2xl font-display font-bold mb-4">
-                Prompt2Story ● AI-Powered User Story Generator
+                Enlighten ● Tao × Neuroscience Mindfulness App
               </h3>
               
               <h4 className="text-teal-400 text-lg font-semibold mb-6">
-                From chaos to clarity: a simulated backlog refinement session that turns raw ideas into Agile-ready user stories.
+                Mindfulness, nervous system regulation, and timeless Taoist wisdom in your pocket.
               </h4>
               
               <div className="space-y-6">
                 <div>
                   <h5 className="text-white font-semibold mb-2">Problem</h5>
                   <p className="text-gray-300 leading-relaxed">
-                    Product teams waste hours transforming messy meeting notes, feature ideas, and requirements into consistent, actionable user stories with acceptance criteria.
+                    Most mindfulness apps expect users to actively seek out content, making it easy to forget or skip entirely. Few combine unpredictable Taoist insights with quick, evidence-based practices for an immediate state shift.
                   </p>
                 </div>
                 
                 <div>
                   <h5 className="text-white font-semibold mb-2">Solution</h5>
                   <p className="text-gray-300 leading-relaxed">
-                    An AI-powered platform that ingests unstructured input and runs it through a live, five-agent backlog refinement session -- Product Owner, Tech Lead, Developer, QA Engineer, and Scrum Master -- each streaming their thinking in real time. The result: structured, ready-to-use user stories with acceptance criteria, edge cases, and metadata. A quick-generate mode is also available for single-pass output.
-                  </p>
-                </div>
-
-                <div>
-                  <h5 className="text-white font-semibold mb-2">My Role</h5>
-                  <p className="text-gray-300 leading-relaxed">
-                    Product concept, UX flows, AI prompt engineering, multi-agent pipeline architecture, frontend state machine design, QA/testing, go-to-market strategy.
+                    Enlighten delivers Tao Te Ching passages paired with neuroscience-backed micro-practices at beautifully timed moments. Features include a quote library with filters, favorites, customizable notifications, and minimal, distraction-free UX.
                   </p>
                 </div>
                 
                 <div>
-                  <h5 className="text-white font-semibold mb-2">Impact</h5>
+                  <h5 className="text-white font-semibold mb-2">My Role</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    Product concept, UX design, user flows, high-level technical planning, user story creation, and roadmap development.
+                  </p>
+                </div>
+                
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Impact (6-Month Targets)</h5>
                   <div className="text-gray-300 space-y-3">
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Generated 1,000+ user stories for product teams globally</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Reduces story creation time by ~87% (15 min → &lt;2 min per story)</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Five-agent pipeline with live-streamed reasoning, budget tracking, and graceful failover</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Launched on Product Hunt with community engagement</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Free tool serving teams across 20+ countries</span></p>
+                    <p className="flex items-start"><span className="text-teal-400 mr-2">→</span><span>750-1,500 downloads with organic growth</span></p>
+                    <p className="flex items-start"><span className="text-teal-400 mr-2">→</span><span>4-6% Day 30 retention (indie app benchmark)</span></p>
+                    <p className="flex items-start"><span className="text-teal-400 mr-2">→</span><span>100-200 weekly active users engaging 2-3x per week</span></p>
+                    <p className="flex items-start"><span className="text-teal-400 mr-2">→</span><span>Fast nervous system resets without disrupting routine</span></p>
                   </div>
+                </div>
+                
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Status</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    Available now on iOS App Store and Google Play.
+                  </p>
                 </div>
               </div>
               
               <div className="flex flex-wrap gap-2 mt-6">
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Multi-Agent AI Orchestration</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">AI Workflow Design</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Agile Delivery</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Mindfulness</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Mobile UX</span>
                 <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Product Strategy</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">AI Development</span>
               </div>
 
-              <div className="mt-6 pt-6 border-t border-white/10">
-                <h5 className="text-white/60 text-xs uppercase tracking-wider mb-4">Featured On</h5>
+              <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <a
-                  href="https://www.producthunt.com/products/prompt2story"
+                  href="https://apps.apple.com/us/app/enlighten-daily-wisdom/id6756754380"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 text-gray-400 hover:text-orange-400 transition-colors group"
+                  className="inline-flex items-center gap-3 bg-black/40 hover:bg-black/60 border border-white/10 hover:border-white/20 px-6 py-4 rounded-xl transition-all group"
                 >
-                  <svg className="w-8 h-8" viewBox="0 0 40 40" fill="currentColor">
-                    <path d="M20 0c11.046 0 20 8.954 20 20s-8.954 20-20 20S0 31.046 0 20 8.954 0 20 0zm0 4c-8.837 0-16 7.163-16 16s7.163 16 16 16 16-7.163 16-16S28.837 4 20 4zm3.5 12h-7v8h7c2.209 0 4-1.791 4-4s-1.791-4-4-4zm0 6h-3v-4h3c1.105 0 2 .895 2 2s-.895 2-2 2z"/>
+                  <svg className="w-10 h-10" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.09997 22C7.78997 22.05 6.79997 20.68 5.95997 19.47C4.24997 17 2.93997 12.45 4.69997 9.39C5.56997 7.87 7.12997 6.91 8.81997 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z" fill="white"/>
                   </svg>
-                  <span className="text-base font-semibold">Product Hunt</span>
-                  <svg className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  <div className="text-left">
+                    <div className="text-xs text-gray-400">Get it on</div>
+                    <div className="text-xl font-semibold text-white">App Store</div>
+                  </div>
+                  <svg className="w-4 h-4 text-gray-400 group-hover:text-white group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </a>
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.enlighten.wisdomapp"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 bg-black/40 hover:bg-black/60 border border-white/10 hover:border-white/20 px-6 py-4 rounded-xl transition-all group"
+                >
+                  <svg className="w-10 h-10" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" fill="white"/>
+                  </svg>
+                  <div className="text-left">
+                    <div className="text-xs text-gray-400">Get it on</div>
+                    <div className="text-xl font-semibold text-white">Google Play</div>
+                  </div>
+                  <svg className="w-4 h-4 text-gray-400 group-hover:text-white group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </a>
               </div>
 
-              <div className="mt-8 space-y-6">
-                <div className="bg-teal-400/5 border border-teal-400/20 rounded-lg p-6">
-                  <h5 className="text-teal-400 font-semibold mb-2">New: The Story Room</h5>
-                  <p className="text-gray-300 text-sm leading-relaxed">
-                    Five AI agents (Product Owner, Tech Lead, Developer, QA Engineer, and Scrum Master) debate and refine your stories in a live session you can watch unfold. Each agent streams their reasoning in real time, catching edge cases and aligning on acceptance criteria before a single story hits your backlog.
-                  </p>
-                </div>
+              <EnlightenCarousel
+                onSlideClick={(index) => {
+                  setModalMedia({
+                    src: `/images/enlighten${index + 1}.PNG`,
+                    type: 'image'
+                  })
+                  setIsModalOpen(true)
+                }}
+              />
 
-                <div
-                  className="relative aspect-video rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
-                  onClick={() => {
-                    setModalMedia({ src: '/videos/prompt2story-preview.mp4', type: 'video' })
-                    setIsModalOpen(true)
-                  }}
+              <div className="text-center mt-8">
+                <a
+                  href="https://enlighten-kappa.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors group"
                 >
-                  <video
-                    className="w-full h-full object-cover"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    onError={(e) => {
-                      const target = e.target as HTMLVideoElement;
-                      target.style.display = 'none';
-                      const fallback = target.nextElementSibling as HTMLElement;
-                      if (fallback) fallback.style.display = 'flex';
-                    }}
-                  >
-                    <source src="/videos/prompt2story-preview.webm" type="video/webm" />
-                    <source src="/videos/prompt2story-preview.mp4" type="video/mp4" />
-                  </video>
-                  <div className="absolute inset-0 bg-slate-700/30 flex items-center justify-center" style={{ display: 'none' }}>
-                    <div className="text-center">
-                      <div className="w-16 h-16 bg-teal-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg className="w-8 h-8 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                        </svg>
-                      </div>
-                      <p className="text-gray-400 text-sm">Project Preview</p>
-                      <p className="text-white font-semibold">Prompt2Story</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="text-center">
-                  
-                  <a
-                    href="https://www.prompt2story.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors group"
-                  >
-                    Try It Live
-                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </a>
-                </div>
+                  View Landing Page
+                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </a>
               </div>
             </motion.div>
 
@@ -614,106 +939,7 @@ export default function Work() {
               className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.55 }}
-            >
-              <h3 className="text-white text-2xl font-display font-bold mb-4">
-                Declassify ● Sourced Reporting on the 2026 Iran War
-              </h3>
-
-              <h4 className="text-teal-400 text-lg font-semibold mb-6">
-                Every number cited. Every claim linked. No editorializing.
-              </h4>
-
-              <div className="space-y-6">
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Problem</h5>
-                  <p className="text-gray-300 leading-relaxed">
-                    The Pentagon revoked press credentials from every major news outlet during Operation Epic Fury. With traditional media locked out, the public lost access to verified, centralized reporting on an active military conflict.
-                  </p>
-                </div>
-
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Solution</h5>
-                  <p className="text-gray-300 leading-relaxed">
-                    A sourced reporting dashboard that aggregates casualty figures, economic impact data, and operational details from international outlets, government releases, and NGOs. Every single number links to its source. Contested figures are presented side by side with no editorial judgment. Includes a timeline, impact analysis across 10+ categories, and a media blackout visualization showing which outlets lost credentials and which kept them.
-                  </p>
-                </div>
-
-                <div>
-                  <h5 className="text-white font-semibold mb-2">My Role</h5>
-                  <p className="text-gray-300 leading-relaxed">
-                    Solo builder. Research pipeline, editorial framework, information architecture, data binding system, accessibility, daily source monitoring and updates.
-                  </p>
-                </div>
-
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Impact</h5>
-                  <div className="text-gray-300 space-y-3">
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>54+ external source citations across dashboard, timeline, and impact pages</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Daily automated broken link checking via GitHub Actions</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Zero dependencies: pure HTML/CSS/JS, no build step, progressive enhancement throughout</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Full keyboard navigation, screen reader support, reduced motion respect</span></p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex flex-wrap gap-2 mt-6">
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Information Design</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Accessibility</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Zero Dependencies</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">CI/CD</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Brutalist Design</span>
-              </div>
-
-              <div className="mt-8 space-y-6">
-                <div>
-                  <div
-                    className="relative rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
-                    onClick={() => {
-                      setModalMedia({ src: '/images/declassify-og.png', type: 'image' })
-                      setIsModalOpen(true)
-                    }}
-                  >
-                    <img
-                      src="/images/declassify-og.png"
-                      alt="Declassify social card with redacted title treatment and tagline: sourced reporting on the 2026 Iran war"
-                      className="w-full h-auto object-contain mx-auto"
-                    />
-                  </div>
-                </div>
-
-                <div className="flex justify-center gap-6">
-                  <a
-                    href="https://declassify.news"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors group"
-                  >
-                    Visit Site
-                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </a>
-                  <a
-                    href="https://github.com/Surfrrosa/declassify"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors group"
-                  >
-                    GitHub
-                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
             >
               <h3 className="text-white text-2xl font-display font-bold mb-4">
                 The Absurdity Index ● Data-Driven Social Research
@@ -842,250 +1068,6 @@ export default function Work() {
                 </div>
               </div>
             </motion.div>
-            <motion.div
-              className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.0 }}
-            >
-              <h3 className="text-white text-2xl font-display font-bold mb-4">
-                Enlighten ● Tao × Neuroscience Mindfulness App
-              </h3>
-              
-              <h4 className="text-teal-400 text-lg font-semibold mb-6">
-                Mindfulness, nervous system regulation, and timeless Taoist wisdom in your pocket.
-              </h4>
-              
-              <div className="space-y-6">
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Problem</h5>
-                  <p className="text-gray-300 leading-relaxed">
-                    Most mindfulness apps expect users to actively seek out content, making it easy to forget or skip entirely. Few combine unpredictable Taoist insights with quick, evidence-based practices for an immediate state shift.
-                  </p>
-                </div>
-                
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Solution</h5>
-                  <p className="text-gray-300 leading-relaxed">
-                    Enlighten delivers Tao Te Ching passages paired with neuroscience-backed micro-practices at beautifully timed moments. Features include a quote library with filters, favorites, customizable notifications, and minimal, distraction-free UX.
-                  </p>
-                </div>
-                
-                <div>
-                  <h5 className="text-white font-semibold mb-2">My Role</h5>
-                  <p className="text-gray-300 leading-relaxed">
-                    Product concept, UX design, user flows, high-level technical planning, user story creation, and roadmap development.
-                  </p>
-                </div>
-                
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Impact (6-Month Targets)</h5>
-                  <div className="text-gray-300 space-y-3">
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">→</span><span>750-1,500 downloads with organic growth</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">→</span><span>4-6% Day 30 retention (indie app benchmark)</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">→</span><span>100-200 weekly active users engaging 2-3x per week</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">→</span><span>Fast nervous system resets without disrupting routine</span></p>
-                  </div>
-                </div>
-                
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Status</h5>
-                  <p className="text-gray-300 leading-relaxed">
-                    Available now on iOS App Store and Google Play.
-                  </p>
-                </div>
-              </div>
-              
-              <div className="flex flex-wrap gap-2 mt-6">
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Mindfulness</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Mobile UX</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Product Strategy</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">AI Development</span>
-              </div>
-
-              <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a
-                  href="https://apps.apple.com/us/app/enlighten-daily-wisdom/id6756754380"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 bg-black/40 hover:bg-black/60 border border-white/10 hover:border-white/20 px-6 py-4 rounded-xl transition-all group"
-                >
-                  <svg className="w-10 h-10" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.09997 22C7.78997 22.05 6.79997 20.68 5.95997 19.47C4.24997 17 2.93997 12.45 4.69997 9.39C5.56997 7.87 7.12997 6.91 8.81997 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z" fill="white"/>
-                  </svg>
-                  <div className="text-left">
-                    <div className="text-xs text-gray-400">Get it on</div>
-                    <div className="text-xl font-semibold text-white">App Store</div>
-                  </div>
-                  <svg className="w-4 h-4 text-gray-400 group-hover:text-white group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </a>
-                <a
-                  href="https://play.google.com/store/apps/details?id=com.enlighten.wisdomapp"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 bg-black/40 hover:bg-black/60 border border-white/10 hover:border-white/20 px-6 py-4 rounded-xl transition-all group"
-                >
-                  <svg className="w-10 h-10" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" fill="white"/>
-                  </svg>
-                  <div className="text-left">
-                    <div className="text-xs text-gray-400">Get it on</div>
-                    <div className="text-xl font-semibold text-white">Google Play</div>
-                  </div>
-                  <svg className="w-4 h-4 text-gray-400 group-hover:text-white group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </a>
-              </div>
-
-              <EnlightenCarousel
-                onSlideClick={(index) => {
-                  setModalMedia({
-                    src: `/images/enlighten${index + 1}.PNG`,
-                    type: 'image'
-                  })
-                  setIsModalOpen(true)
-                }}
-              />
-
-              <div className="text-center mt-8">
-                <a
-                  href="https://enlighten-kappa.vercel.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors group"
-                >
-                  View Landing Page
-                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </a>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.9 }}
-            >
-              <h3 className="text-white text-2xl font-display font-bold mb-4">
-                PomodoroFlow ● Radically Simple Focus Timer
-              </h3>
-              
-              <h4 className="text-teal-400 text-lg font-semibold mb-6">
-                From start to focus in one tap, a minimal 25/5 pomodoro timer with zero clutter.
-              </h4>
-              
-              <div className="space-y-4">
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Problem</h5>
-                  <p className="text-gray-300 leading-relaxed">
-                    Most pomodoro apps are overloaded with customization, making them distracting to set up and easy to abandon. I wanted a timer so simple it fades into the background, yet reliable enough to track focus cycles without breaking flow.
-                  </p>
-                </div>
-                
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Solution</h5>
-                  <p className="text-gray-300 leading-relaxed">
-                    PomodoroFlow delivers a distraction-free 25-minute focus / 5-minute break cycle with auto-progression, subtle chimes, and gentle haptic feedback. Sessions persist if the app is closed, and local notifications ensure you never miss a switch. Includes a "Fast Mode" for rapid QA and testing.
-                  </p>
-                </div>
-                
-                <div>
-                  <h5 className="text-white font-semibold mb-2">My Role</h5>
-                  <p className="text-gray-300 leading-relaxed">
-                    Product concept, UX design, feature scoping, technical direction, and platform deployment. Built with AI-assisted development using Expo (React Native).
-                  </p>
-                </div>
-                
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Impact</h5>
-                  <div className="text-gray-300 space-y-2">
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Live on iOS App Store and Google Play with users across 15+ countries</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Created seamless, minimal UX that keeps users focused without decision fatigue</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>One-tap launch to focus eliminates setup friction</span></p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="flex flex-wrap gap-2 mt-4">
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Mobile Development</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Product Design</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Agile Development</span>
-              </div>
-
-              <div className="mt-6 space-y-6">
-                <div>
-                  <div
-                    className="relative rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
-                    onClick={() => {
-                      setModalMedia({ src: '/images/pomodoro_flow_app.png', type: 'image' })
-                      setIsModalOpen(true)
-                    }}
-                  >
-                    <img
-                      src="/images/pomodoro_flow_app.png"
-                      alt="PomodoroFlow app splash screen with tomato icon and Focus • Flow • Achieve tagline"
-                      className="w-full h-auto object-contain mx-auto"
-                    />
-                  </div>
-                </div>
-
-                <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
-                  <a
-                    href="https://apps.apple.com/us/app/pomodoroflow/id6753604260"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-3 bg-black/40 hover:bg-black/60 border border-white/10 hover:border-white/20 px-6 py-4 rounded-xl transition-all group"
-                  >
-                    <svg className="w-10 h-10" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.09997 22C7.78997 22.05 6.79997 20.68 5.95997 19.47C4.24997 17 2.93997 12.45 4.69997 9.39C5.56997 7.87 7.12997 6.91 8.81997 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z" fill="white"/>
-                    </svg>
-                    <div className="text-left">
-                      <div className="text-xs text-gray-400">Get it on</div>
-                      <div className="text-xl font-semibold text-white">App Store</div>
-                    </div>
-                    <svg className="w-4 h-4 text-gray-400 group-hover:text-white group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </a>
-                  <a
-                    href="https://play.google.com/store/apps/details?id=com.surfrrosa.pomodoroflow&pcampaignid=web_share"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-3 bg-black/40 hover:bg-black/60 border border-white/10 hover:border-white/20 px-6 py-4 rounded-xl transition-all group"
-                  >
-                    <svg className="w-10 h-10" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" fill="white"/>
-                    </svg>
-                    <div className="text-left">
-                      <div className="text-xs text-gray-400">Get it on</div>
-                      <div className="text-xl font-semibold text-white">Google Play</div>
-                    </div>
-                    <svg className="w-4 h-4 text-gray-400 group-hover:text-white group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </a>
-                </div>
-
-                <div className="text-center mt-8">
-                  <a
-                    href="https://pomodoroflow.app"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors group"
-                  >
-                    Visit Website
-                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </motion.div>
 
             <motion.div
               className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
@@ -1166,422 +1148,7 @@ export default function Work() {
               className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.1 }}
-            >
-              <h3 className="text-white text-2xl font-display font-bold mb-4">
-                WindTalker ● Real-Time Monitoring, RF Planning, and Field Deployments
-              </h3>
-              
-              <h4 className="text-teal-400 text-lg font-semibold mb-6">
-                Delivering mission-critical network tools and rapid connectivity solutions for complex, high-stakes environments.
-              </h4>
-              
-              <div className="mb-6">
-                <p className="text-xs uppercase tracking-wider text-gray-400 font-semibold">
-                  Secure Communications Modernization — Faster, Safer, Smarter
-                </p>
-              </div>
-              
-              <div className="space-y-6">
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Problem</h5>
-                  <p className="text-gray-300 leading-relaxed">
-                    Fixed wireless networks in remote and tactical contexts require precision planning, real-time health visibility, and the ability to deploy infrastructure quickly — even in humanitarian or emergency situations.
-                  </p>
-                </div>
-                
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Solution</h5>
-                  <p className="text-gray-300 leading-relaxed">
-                    In dual roles as Product Owner and Business Analyst, I delivered Manager — a real-time network health monitoring platform with uptime alerts and performance analytics, Planner — an RF mapping and network planning tool for rapid, accurate deployment design, and Field Deployments — guided refugee camp mesh network setup and drone integration for public safety operations.
-                  </p>
-                </div>
-                
-                <div>
-                  <h5 className="text-white font-semibold mb-2">My Role</h5>
-                  <p className="text-gray-300 leading-relaxed">
-                    Product Owner and Business Analyst managing network monitoring platforms, RF planning tools, and field deployment coordination for mission-critical environments.
-                  </p>
-                </div>
-                
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Impact</h5>
-                  <div className="text-gray-300 space-y-3">
-                    <p>Reduced network downtime and improved monitoring accuracy.</p>
-                    <p>Cut RF planning time and increased deployment precision.</p>
-                    <p>Provided life-critical communications in crisis and public safety scenarios.</p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="flex flex-wrap gap-2 mt-6">
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Network Monitoring</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">RF Planning</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Emergency Deployments</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">SaaS Product Ownership</span>
-              </div>
-              <div className="space-y-6">
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Problem</h5>
-                  <p className="text-gray-300 leading-relaxed">
-                    Military and tactical communication systems required complex manual setup processes that delayed critical operations and created security vulnerabilities in high-stakes environments.
-                  </p>
-                </div>
-                
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Solution</h5>
-                  <p className="text-gray-300 leading-relaxed">
-                    WindTalker delivers automated secure communication deployment with instant frequency scanning, streamlined configuration workflows, and rapid onboarding protocols designed for mission-critical scenarios.
-                  </p>
-                </div>
-                
-                <div>
-                  <h5 className="text-white font-semibold mb-2">My Role</h5>
-                  <p className="text-gray-300 leading-relaxed">
-                    Product strategy, UX research with military personnel, secure system architecture, deployment automation design, and field testing coordination.
-                  </p>
-                </div>
-              </div>
-
-              <div className="mt-8 space-y-4" aria-label="WindTalker visuals">
-                <div className="relative rounded-lg border border-white/10 bg-black/30 p-6">
-                  <h5 className="text-white font-semibold mb-6">WindTalker — Personas</h5>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div className="space-y-3">
-                      <div className="flex items-center gap-3">
-                        <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
-                        </svg>
-                        <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs uppercase tracking-wider">Operator</span>
-                      </div>
-                      <div className="text-gray-300 space-y-2 text-sm">
-                        <p><strong>Goal:</strong> Reliable comms in the field</p>
-                        <p><strong>Pain:</strong> Complex setup</p>
-                        <p><strong>Environment:</strong> Remote tactical locations</p>
-                        <p><strong>Challenge:</strong> Time-critical deployments</p>
-                      </div>
-                    </div>
-                    
-                    <div className="space-y-3">
-                      <div className="flex items-center gap-3">
-                        <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                        </svg>
-                        <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs uppercase tracking-wider">Technician</span>
-                      </div>
-                      <div className="text-gray-300 space-y-2 text-sm">
-                        <p><strong>Goal:</strong> Fast, correct deployment</p>
-                        <p><strong>Pain:</strong> Long configuration time</p>
-                        <p><strong>Environment:</strong> Field installations</p>
-                        <p><strong>Challenge:</strong> Equipment compatibility</p>
-                      </div>
-                    </div>
-                    
-                    <div className="space-y-3">
-                      <div className="flex items-center gap-3">
-                        <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
-                        </svg>
-                        <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs uppercase tracking-wider">Mission Lead</span>
-                      </div>
-                      <div className="text-gray-300 space-y-2 text-sm">
-                        <p><strong>Goal:</strong> Operational readiness</p>
-                        <p><strong>Pain:</strong> Delays due to tech issues</p>
-                        <p><strong>Environment:</strong> Command centers</p>
-                        <p><strong>Challenge:</strong> Mission-critical timing</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="relative rounded-lg border border-white/10 bg-black/30 p-4">
-                  <h5 className="text-white font-semibold mb-4">WindTalker — Impact Metrics</h5>
-                  <div className="space-y-5">
-                    <div className="flex items-center gap-3">
-                      <svg className="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                      <div>
-                        <div className="text-3xl font-bold text-white" style={{textShadow: '0 0 20px rgba(96, 165, 250, 0.5)'}}>
-                          6 hrs → 2 hrs
-                        </div>
-                        <div className="text-xs uppercase tracking-wider text-gray-400 mt-1">Time to Deploy</div>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-center gap-3">
-                      <svg className="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                      <div>
-                        <div className="text-3xl font-bold text-white" style={{textShadow: '0 0 20px rgba(52, 211, 153, 0.5)'}}>
-                          +22%
-                        </div>
-                        <div className="text-xs uppercase tracking-wider text-gray-400 mt-1">Reliability</div>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-center gap-3">
-                      <svg className="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                      </svg>
-                      <div>
-                        <div className="text-3xl font-bold text-white" style={{textShadow: '0 0 20px rgba(167, 139, 250, 0.5)'}}>
-                          −50%
-                        </div>
-                        <div className="text-xs uppercase tracking-wider text-gray-400 mt-1">Onboarding</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="relative rounded-lg border border-white/10 bg-black/30 p-4">
-                  <h5 className="text-white font-semibold mb-4">WindTalker — Before / After</h5>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <div className="text-xs uppercase tracking-wider text-gray-400 mb-3 font-semibold">Before</div>
-                      <div className="space-y-3">
-                        <div className="flex items-center gap-3 p-2 rounded-lg bg-slate-800/50 border border-slate-700">
-                          <svg className="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                          </svg>
-                          <span className="text-gray-300 text-sm">Manual setup</span>
-                          <svg className="w-3 h-3 text-gray-500 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                          </svg>
-                        </div>
-                        
-                        <div className="flex items-center gap-3 p-2 rounded-lg bg-slate-800/50 border border-slate-700">
-                          <svg className="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
-                          </svg>
-                          <span className="text-gray-300 text-sm">Frequency mapping</span>
-                          <svg className="w-3 h-3 text-gray-500 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                          </svg>
-                        </div>
-                        
-                        <div className="flex items-center gap-3 p-2 rounded-lg bg-slate-800/50 border border-slate-700">
-                          <svg className="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                          </svg>
-                          <span className="text-gray-300 text-sm">Extended training</span>
-                          <svg className="w-3 h-3 text-gray-500 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div>
-                      <div className="text-xs uppercase tracking-wider text-gray-400 mb-3 font-semibold">After</div>
-                      <div className="space-y-3">
-                        <div className="flex items-center gap-3 p-2 rounded-lg bg-green-900/20 border border-green-700/50">
-                          <svg className="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                          </svg>
-                          <span className="text-gray-300 text-sm">Automated setup</span>
-                        </div>
-                        
-                        <div className="flex items-center gap-3 p-2 rounded-lg bg-green-900/20 border border-green-700/50">
-                          <svg className="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                          </svg>
-                          <span className="text-gray-300 text-sm">Instant frequency scan</span>
-                        </div>
-                        
-                        <div className="flex items-center gap-3 p-2 rounded-lg bg-green-900/20 border border-green-700/50">
-                          <svg className="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                          </svg>
-                          <span className="text-gray-300 text-sm">Quick start guide</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="text-center mt-8">
-                <a 
-                  href="https://windtalker.com/osmosis/" 
-                  className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors group"
-                >
-                  Visit Website
-                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </a>
-              </div>
-
-            </motion.div>
-
-            <motion.div
-              className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.3 }}
-            >
-              <h3 className="text-white text-2xl font-display font-bold mb-4">
-                ShainAI ● My RAG-Powered Second Brain
-              </h3>
-
-              <h4 className="text-teal-400 text-lg font-semibold mb-6">
-                AI-powered knowledge retrieval: instant access to technical details, decision history, and project context from across all my work.
-              </h4>
-
-              <div className="space-y-6">
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Problem</h5>
-                  <p className="text-gray-300 leading-relaxed">
-                    I generate tons of technical knowledge daily: architecture decisions, code patterns, debugging sessions, feature discussions. When that information lives across ChatGPT conversations, Git repos, note archives, and local files, finding specific details becomes a needle-in-haystack problem. What was that API approach I discussed three months ago? Why did I choose that architecture? What was the solution to that edge case? My brain remembers the concepts, but not all the specifics.
-                  </p>
-                </div>
-
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Solution</h5>
-                  <p className="text-gray-300 leading-relaxed">
-                    A privacy-first RAG (Retrieval-Augmented Generation) system that ingests, indexes, and semantically searches across all my personal data sources. ShainAI automatically watches my local files, ingests my Git repos on commit, parses my ChatGPT exports, and imports my note archives. It then answers my questions by retrieving relevant context with citations. The system even ingests its own conversations with me, creating a meta-memory loop where my second brain remembers thinking with itself.
-                  </p>
-                </div>
-
-                <div>
-                  <h5 className="text-white font-semibold mb-2">My Role</h5>
-                  <p className="text-gray-300 leading-relaxed">
-                    System architecture design (RAG pipeline, vector embeddings, semantic search), AI orchestration and prompt engineering, auto-ingestion system design with real-time file watching and git hooks, UX/UI for conversational interface. Built with AI-assisted development.
-                  </p>
-                </div>
-
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Impact</h5>
-                  <div className="text-gray-300 space-y-3">
-                    <p>Gives me instant semantic search across my 1,000+ memories (ChatGPT history, Joplin notes, local files, GitHub repos).</p>
-                    <p>Auto-ingestion pipeline watches my files, hooks into my git commits, and parses multiple formats (PDF, Word, images with OCR, .env files, ZIP archives).</p>
-                    <p>Meta capability: Automatically saves its own conversations with me every 5 Q&A exchanges, making past ShainAI discussions searchable.</p>
-                    <p className="text-cyan-400 font-medium">Built for privacy: 100% local deployment on my machine with no external dependencies and full data ownership.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex flex-wrap gap-2 mt-6">
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">RAG Systems</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Vector Search</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">AI Engineering</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Full-Stack</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Node.js</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
-              </div>
-
-              <div className="mt-8 space-y-4">
-                <div className="relative rounded-lg border border-white/10 bg-black/30 p-6">
-                  <h5 className="text-white font-semibold mb-4">Tech Stack</h5>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-                    <div>
-                      <div className="text-cyan-400 font-semibold mb-2">Backend</div>
-                      <div className="text-gray-300 space-y-1">
-                        <p>• Node.js + Express</p>
-                        <p>• PostgreSQL + pgvector</p>
-                        <p>• Vector similarity search</p>
-                      </div>
-                    </div>
-                    <div>
-                      <div className="text-cyan-400 font-semibold mb-2">Frontend</div>
-                      <div className="text-gray-300 space-y-1">
-                        <p>• Next.js 14 + TypeScript</p>
-                        <p>• React + Tailwind CSS</p>
-                        <p>• Markdown rendering</p>
-                      </div>
-                    </div>
-                    <div>
-                      <div className="text-cyan-400 font-semibold mb-2">AI/ML</div>
-                      <div className="text-gray-300 space-y-1">
-                        <p>• OpenAI GPT-4 Turbo</p>
-                        <p>• text-embedding-3-small</p>
-                        <p>• 1536-dim embeddings</p>
-                      </div>
-                    </div>
-                    <div>
-                      <div className="text-cyan-400 font-semibold mb-2">Ingestion</div>
-                      <div className="text-gray-300 space-y-1">
-                        <p>• Custom parsers (PDF, Word)</p>
-                        <p>• Tesseract OCR for images</p>
-                        <p>• File watching (chokidar)</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="relative rounded-lg border border-white/10 bg-black/30 p-4">
-                  <h5 className="text-white font-semibold mb-4">Auto-Ingestion Highlights</h5>
-                  <div className="space-y-3 text-sm text-gray-300">
-                    <div className="flex items-start gap-3">
-                      <svg className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                      <p>Real-time file monitoring across Desktop, Downloads, Documents with intelligent filtering</p>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <svg className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                      <p>Git integration via post-commit hooks—every commit auto-ingests changed files</p>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <svg className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                      <p>Multi-source imports: ChatGPT (343 conversations → 5,037 chunks), Joplin (400 notes → 1,315 chunks), local files (900+ scanned)</p>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <svg className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                      <p>Meta-memory: ShainAI auto-saves its own conversations, enabling queries like "What did I ask you about Floatless yesterday?"</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div
-                  className="relative aspect-video rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
-                  onClick={() => {
-                    setModalMedia({ src: '/videos/shainai-demo.mp4', type: 'video' })
-                    setIsModalOpen(true)
-                  }}
-                >
-                  <video
-                    className="w-full h-full object-cover"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    onError={(e) => {
-                      const target = e.target as HTMLVideoElement;
-                      target.style.display = 'none';
-                      const fallback = target.nextElementSibling as HTMLElement;
-                      if (fallback) fallback.style.display = 'flex';
-                    }}
-                  >
-                    <source src="/videos/shainai-demo.mp4" type="video/mp4" />
-                  </video>
-                  <div className="absolute inset-0 bg-slate-700/30 flex items-center justify-center" style={{ display: 'none' }}>
-                    <div className="text-center">
-                      <div className="w-16 h-16 bg-cyan-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg className="w-8 h-8 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                        </svg>
-                      </div>
-                      <p className="text-gray-400 text-sm">Demo Video</p>
-                      <p className="text-white font-semibold">ShainAI Interface</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.5 }}
+              transition={{ duration: 0.8, delay: 0.75 }}
             >
               <h3 className="text-white text-2xl font-display font-bold mb-4">
                 ConnectWise Manage ● Product Ownership Across Mobile, Communication, and CRM Platforms
@@ -1742,7 +1309,7 @@ export default function Work() {
               className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.7 }}
+              transition={{ duration: 0.8, delay: 0.75 }}
             >
               <h3 className="text-white text-2xl font-display font-bold mb-4">
                 Floatless ● Automated Payment Reconciliation & Dunning Platform
