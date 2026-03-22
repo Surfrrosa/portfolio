@@ -80,7 +80,18 @@ function HomeLink({ isHome }: { isHome: boolean }) {
   )
 }
 
+function ArtPortfolioIcon() {
+  return (
+    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="10" />
+      <line x1="2" y1="12" x2="22" y2="12" />
+      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+    </svg>
+  )
+}
+
 const SOCIAL_LINKS = [
+  { href: 'https://surfrrosa.vercel.app/', icon: ArtPortfolioIcon, label: 'Art Portfolio' },
   { href: 'https://linkedin.com/in/shainapauley', icon: LinkedInIcon, label: 'LinkedIn' },
   { href: 'https://github.com/Surfrrosa', icon: GitHubIcon, label: 'GitHub' },
 ] as const
