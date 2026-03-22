@@ -7,14 +7,14 @@ import Sidebar from '@/components/Sidebar'
 import WritingStructuredData from '@/components/WritingStructuredData'
 
 export const metadata: Metadata = {
-  title: 'Writing',
-  description: 'Essays on AI, consciousness, attention, and what it means to build and be human in a world that keeps accelerating.',
+  title: 'Navigating Mind, Machine, & Modern Unease',
+  description: 'Essays on staying human.',
   alternates: {
     canonical: '/writing',
   },
   openGraph: {
-    title: 'Writing by Shaina Pauley',
-    description: 'Essays on AI, consciousness, attention, and what it means to build and be human in a world that keeps accelerating.',
+    title: 'Navigating Mind, Machine, & Modern Unease',
+    description: 'Essays on staying human.',
     url: 'https://shainapauley.com/writing',
   },
 }
