@@ -31,7 +31,7 @@ export default function WritingPage() {
       <main id="main-content" className="px-4 lg:px-12 py-12 lg:py-20">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-            stuff I&apos;m writing about
+            mind, machine, &amp; modern unease
           </h1>
 
           <a
