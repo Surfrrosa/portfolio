@@ -8,13 +8,13 @@ import WritingStructuredData from '@/components/WritingStructuredData'
 
 export const metadata: Metadata = {
   title: 'Writing',
-  description: 'Thoughts on AI-native development, product management, building with Claude Code, and what happens when a product owner starts shipping code.',
+  description: 'Essays on AI, consciousness, attention, and what it means to build and be human in a world that keeps accelerating.',
   alternates: {
     canonical: '/writing',
   },
   openGraph: {
     title: 'Writing by Shaina Pauley',
-    description: 'Thoughts on AI-native development, product management, and building with AI in the terminal.',
+    description: 'Essays on AI, consciousness, attention, and what it means to build and be human in a world that keeps accelerating.',
     url: 'https://shainapauley.com/writing',
   },
 }
