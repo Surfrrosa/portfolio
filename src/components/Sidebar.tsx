@@ -83,8 +83,6 @@ function HomeLink({ isHome }: { isHome: boolean }) {
 const SOCIAL_LINKS = [
   { href: 'https://linkedin.com/in/shainapauley', icon: LinkedInIcon, label: 'LinkedIn' },
   { href: 'https://github.com/Surfrrosa', icon: GitHubIcon, label: 'GitHub' },
-  { href: 'https://medium.com', icon: MediumIcon, label: 'Medium' },
-  { href: 'https://nothingbutstatic.substack.com/', icon: SubstackIcon, label: 'Substack' },
 ] as const
 
 const NAV_LINKS = [
