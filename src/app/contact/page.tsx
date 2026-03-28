@@ -113,21 +113,20 @@ export default function Contact() {
               <div>
                 <h3 className="text-teal-400 text-lg font-semibold mb-4">What I Do</h3>
                 <ul className="space-y-2 text-gray-300">
-                  <li>• Product strategy, roadmapping, and MVP definition</li>
-                  <li>• Product design &amp; development workflows</li>
-                  <li>• SaaS platform optimization &amp; feature delivery</li>
+                  <li>• AI product architecture and agentic systems design</li>
+                  <li>• Specification design, evaluation systems, and context architecture</li>
+                  <li>• Production software built and maintained with AI-native workflows</li>
                   <li>• Cross-functional team leadership &amp; alignment</li>
-                  <li>• Data-driven product decisions & consulting</li>
                 </ul>
               </div>
 
               <div>
                 <h3 className="text-teal-400 text-lg font-semibold mb-4">Industries</h3>
                 <ul className="space-y-2 text-gray-300">
-                  <li>• AI &amp; machine learning solutions</li>
+                  <li>• AI and machine learning systems</li>
                   <li>• SaaS and enterprise software</li>
-                  <li>• Healthcare &amp; neuroscience innovation</li>
-                  <li>• Productivity &amp; automation tools</li>
+                  <li>• Privacy-first consumer tools</li>
+                  <li>• Media, journalism, and information design</li>
                 </ul>
               </div>
 
