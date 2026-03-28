@@ -53,7 +53,7 @@ export default function AboutPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <strong className="font-bold">Technical Product Owner</strong> and <strong className="font-bold">builder</strong> who loves prototyping, transforming data into dashboards, and designing workflows that accelerate teams and deliver measurable results.
+            <strong className="font-bold">AI Product Architect</strong> and <strong className="font-bold">builder</strong> who ships production software with AI in the terminal every day.
           </motion.p>
 
           <motion.div
@@ -97,7 +97,7 @@ export default function AboutPage() {
               </li>
               <li className="flex items-start">
                 <span className="text-teal-400 mr-4 mt-1">•</span>
-                <span><strong>AI as a Co-Pilot</strong> ● automation, intelligent tooling, workflows that streamline delivery.</span>
+                <span><strong>AI Systems Architect</strong> ● specification design, evaluation systems, agentic workflows, production guardrails.</span>
               </li>
               <li className="flex items-start">
                 <span className="text-teal-400 mr-4 mt-1">•</span>
@@ -119,16 +119,16 @@ export default function AboutPage() {
             <h2 className="text-3xl lg:text-4xl font-bold mb-8 lg:mb-12">Frequently Asked Questions</h2>
             <div className="space-y-8">
               <div>
-                <h3 className="text-xl lg:text-2xl font-semibold mb-3 text-teal-400">What's a Technical Product Owner?</h3>
+                <h3 className="text-xl lg:text-2xl font-semibold mb-3 text-teal-400">What's an AI Product Architect?</h3>
                 <p className="text-gray-300 text-lg leading-relaxed">
-                  I bridge the gap between engineering and business. I can read code, design APIs, write technical specs, and talk to stakeholders. I own the why, what, when, and where, which sets up a clean handoff for engineering to own the how.
+                  I sit between the technical and the strategic. I can read code, debug agent failures, and talk to stakeholders. I own the what and the why, then build the structure that makes complex systems reliable in production.
                 </p>
               </div>
 
               <div>
                 <h3 className="text-xl lg:text-2xl font-semibold mb-3 text-teal-400">How do you use AI in product work?</h3>
                 <p className="text-gray-300 text-lg leading-relaxed">
-                  I use AI to move faster on execution by building features, drafting content, and analyzing options. I iterate and push back often, validating everything. I take full ownership for my work as well as any tools I use. AI is tremendous for speed, not a replacement for judgment or accountability.
+                  I architect the systems that AI works inside. That means writing the specifications agents follow, building evaluation pipelines that catch errors before they ship, and designing context architecture so every session picks up where the last one left off. I orchestrate multi-agent workflows for everything from astronomical verification to content generation. I push back constantly, validate everything, and take full ownership of what ships.
                 </p>
               </div>
 
@@ -142,7 +142,7 @@ export default function AboutPage() {
               <div>
                 <h3 className="text-xl lg:text-2xl font-semibold mb-3 text-teal-400">What's your typical engagement look like?</h3>
                 <p className="text-gray-300 text-lg leading-relaxed">
-                  Product ownership roles, consulting projects, fractional product leadership, and custom deliverables. I work with teams who need someone technical enough to spec features and business-savvy enough to prioritize ruthlessly. I also love helping teams work together better. Open communication, everyone feeling heard, and genuine alignment.
+                  Building things, designing how AI systems work, making sure what ships actually holds up, and leading product when teams need it. I work with people who need someone technical enough to get in the code and sharp enough to know what to prioritize. I also love helping teams work together better. Open communication, everyone feeling heard, and genuine alignment.
                 </p>
               </div>
 

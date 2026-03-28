@@ -35,7 +35,7 @@ export default function ArticleStructuredData({
       '@id': 'https://shainapauley.com/#person',
       name: 'Shaina Pauley',
       url: 'https://shainapauley.com',
-      jobTitle: 'Technical Product Owner',
+      jobTitle: 'AI Product Architect',
     },
     publisher: {
       '@type': 'Person',

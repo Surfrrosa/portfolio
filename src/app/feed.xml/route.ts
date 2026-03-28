@@ -30,7 +30,7 @@ ${categories}
   <channel>
     <title>Shaina Pauley</title>
     <link>${SITE_URL}</link>
-    <description>Writing on AI-native development, product management, and building production software with AI.</description>
+    <description>Writing on AI product architecture, agentic systems, multi-agent orchestration, evaluation design, and building production software with AI.</description>
     <language>en-us</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
     <atom:link href="${SITE_URL}/feed.xml" rel="self" type="application/rss+xml"/>

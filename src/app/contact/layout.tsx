@@ -2,13 +2,13 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Contact',
-  description: 'Get in touch with Shaina Pauley for product ownership, AI implementation consulting, fractional product leadership, or collaboration opportunities.',
+  description: 'Get in touch with Shaina Pauley for AI product architecture, agentic systems design, evaluation harness development, or collaboration on AI-native projects.',
   alternates: {
     canonical: '/contact',
   },
   openGraph: {
     title: 'Contact Shaina Pauley',
-    description: 'Get in touch for product ownership, AI implementation consulting, or collaboration opportunities.',
+    description: 'Get in touch for AI product architecture, agentic systems design, or collaboration on AI-native projects.',
     url: 'https://shainapauley.com/contact',
   },
 }

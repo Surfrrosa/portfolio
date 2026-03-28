@@ -2,13 +2,13 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Work',
-  description: 'Portfolio of AI-assisted projects: Synestrology synthesis engine, Maestro CLI for AI development process, Prompt2Story user story generator, The Absurdity Index data dashboard, and more.',
+  description: 'Portfolio of AI-native projects built with agentic workflows: Synestrology (multi-agent synthesis engine with astronomical verification), Maestro CLI, Prompt2Story, The Absurdity Index, and enterprise product work.',
   alternates: {
     canonical: '/work',
   },
   openGraph: {
     title: 'Work by Shaina Pauley',
-    description: 'Portfolio of AI-assisted projects: synthesis engines, CLI tools, data dashboards, mobile apps, and enterprise product work.',
+    description: 'AI-native projects built with agentic workflows: multi-agent systems, evaluation pipelines, CLI tools, data dashboards, and enterprise product architecture.',
     url: 'https://shainapauley.com/work',
   },
 }

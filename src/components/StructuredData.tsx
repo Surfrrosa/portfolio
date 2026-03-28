@@ -15,21 +15,24 @@ function buildPersonSchema() {
       "https://github.com/Surfrrosa",
       "https://x.com/sha1napauley"
     ],
-    "jobTitle": "Technical Product Owner",
+    "jobTitle": "AI Product Architect",
     "knowsAbout": [
-      "Product Management",
-      "AI-Native Development",
-      "AI Product Development",
+      "AI Product Architecture",
+      "Agentic Systems Design",
+      "Multi-Agent Orchestration",
+      "AI Evaluation Harnesses",
+      "Context Architecture",
+      "Specification Precision",
+      "Failure Pattern Recognition",
+      "Trust and Security Design",
+      "Token Economics",
       "Claude Code",
+      "AI-Native Development",
       "AI Workflow Automation",
-      "SaaS Development",
-      "Technical Product Ownership",
-      "Enterprise Software",
       "Product Strategy",
-      "Agile Development",
-      "AI Implementation Consulting"
+      "Enterprise Software"
     ],
-    "description": "Technical Product Owner and AI-native builder with 7+ years enterprise experience. Building production software with AI in the terminal daily. Product strategy, AI workflows, and development process that scales.",
+    "description": "AI Product Architect who designs agentic systems, builds evaluation harnesses, and architects context for production AI workflows. 7+ years enterprise product experience, now building multi-agent systems and shipping AI-native software daily.",
     "hasCredential": [
       {
         "@type": "EducationalOccupationalCredential",
@@ -51,7 +54,7 @@ function buildWebSiteSchema() {
     "@id": "https://shainapauley.com/#website",
     "url": "https://shainapauley.com",
     "name": "Shaina Pauley",
-    "description": "Portfolio and writing on AI-native development, product management, and building production software with AI.",
+    "description": "Portfolio and writing on AI product architecture, agentic systems, multi-agent orchestration, and building production software with AI.",
     "publisher": { "@id": "https://shainapauley.com/#person" }
   }
 }
@@ -61,12 +64,12 @@ function buildWebPageSchema() {
     "@type": "WebPage",
     "@id": "https://shainapauley.com/#webpage",
     "url": "https://shainapauley.com",
-    "name": "Shaina Pauley | Technical Product Owner & AI-Native Builder",
+    "name": "Shaina Pauley | AI Product Architect",
     "isPartOf": { "@id": "https://shainapauley.com/#website" },
     "about": { "@id": "https://shainapauley.com/#person" },
     "datePublished": "2025-01-01",
-    "dateModified": "2026-02-24",
-    "description": "Technical Product Owner and AI-native builder with 7+ years enterprise experience. Building production software with AI in the terminal daily."
+    "dateModified": "2026-03-27",
+    "description": "AI Product Architect who designs agentic systems, builds evaluation harnesses, and architects context for production AI workflows. 7+ years enterprise product experience."
   }
 }
 
@@ -76,18 +79,18 @@ function buildServiceOffer(name: string) {
 
 function buildServiceSchema() {
   const services = [
-    "AI-Native Product Development",
-    "AI Implementation Consulting",
-    "Technical Product Ownership",
-    "SaaS Product Strategy",
-    "AI Workflow Design"
+    "AI Product Architecture",
+    "Agentic Systems Design",
+    "Multi-Agent Orchestration",
+    "AI Evaluation and Quality Systems",
+    "Context Architecture and AI Workflow Design"
   ]
   return {
     "@type": "ProfessionalService",
     "@id": "https://shainapauley.com/#service",
-    "name": "Shaina Pauley - Product & AI Consulting",
+    "name": "Shaina Pauley - AI Product Architecture",
     "provider": { "@id": "https://shainapauley.com/#person" },
-    "serviceType": "AI Implementation and Product Management Consulting",
+    "serviceType": "AI Product Architecture and Agentic Systems Design",
     "areaServed": "Worldwide",
     "hasOfferCatalog": {
       "@type": "OfferCatalog",

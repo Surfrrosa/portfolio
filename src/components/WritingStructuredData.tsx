@@ -10,7 +10,7 @@ export default function WritingStructuredData({ posts }: WritingStructuredDataPr
     '@type': 'CollectionPage',
     '@id': 'https://shainapauley.com/writing',
     name: 'Writing by Shaina Pauley',
-    description: 'Thoughts on AI-native development, product management, building with Claude Code, and what happens when a product owner starts shipping code.',
+    description: 'Writing on AI product architecture, agentic systems, multi-agent orchestration, evaluation design, and navigating the shift from knowledge work to AI-native building.',
     url: 'https://shainapauley.com/writing',
     isPartOf: { '@id': 'https://shainapauley.com/#website' },
     mainEntity: {

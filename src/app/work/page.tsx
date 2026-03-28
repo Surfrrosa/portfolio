@@ -197,7 +197,7 @@ export default function Work() {
                 <div>
                   <h5 className="text-white font-semibold mb-2">My Role</h5>
                   <p className="text-gray-300 leading-relaxed">
-                    Founder and product lead. Product strategy, UX design, AI prompt engineering, SEO, and go-to-market. Built with AI-assisted development.
+                    Founder and product architect. Designed the verification pipeline, context architecture, and evaluation system. Product strategy, UX, SEO, and go-to-market.
                   </p>
                 </div>
 

@@ -18,11 +18,11 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: 'Shaina Pauley | Product Builder & Fearless Explorer',
+    default: 'Shaina Pauley | AI Product Architect',
     template: '%s | Shaina Pauley'
   },
-  description: 'Technical Product Owner and builder who loves prototyping, transforming data into dashboards, and designing workflows that accelerate teams and deliver measurable results.',
-  keywords: ['Technical Product Owner', 'Product Manager', 'AI Product Development', 'SaaS Product Management', 'Enterprise Software', 'Product Strategy', 'AI Workflows', 'Agile Product Management', 'Shaina Pauley', 'CSPO', 'CSM'],
+  description: 'AI Product Architect who designs agentic systems, builds evaluation harnesses, and architects context for production AI workflows. 7+ years enterprise product experience, now building multi-agent systems and shipping AI-native software daily.',
+  keywords: ['AI Product Architect', 'Agentic Systems Design', 'AI Evaluation Harnesses', 'Multi-Agent Orchestration', 'Context Architecture', 'AI Workflow Design', 'Specification Precision', 'Failure Pattern Recognition', 'Trust and Security Design', 'Token Economics', 'Claude Code', 'AI-Native Development', 'Product Architecture', 'Shaina Pauley'],
   authors: [{ name: 'Shaina Pauley', url: 'https://shainapauley.com' }],
   creator: 'Shaina Pauley',
   publisher: 'Shaina Pauley',
@@ -39,10 +39,10 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Shaina Pauley | Product Builder & Fearless Explorer',
-    description: 'Technical Product Owner and builder who loves prototyping, transforming data into dashboards, and designing workflows that accelerate teams and deliver measurable results.',
+    title: 'Shaina Pauley | AI Product Architect',
+    description: 'Designing agentic systems, evaluation harnesses, and context architecture for production AI. Building multi-agent workflows and shipping AI-native software daily.',
     url: 'https://shainapauley.com',
-    siteName: 'Shaina Pauley Portfolio',
+    siteName: 'Shaina Pauley',
     type: 'website',
     locale: 'en_US',
     images: [
@@ -50,15 +50,15 @@ export const metadata: Metadata = {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Shaina Pauley - Technical Product Owner',
+        alt: 'Shaina Pauley - AI Product Architect',
         type: 'image/png',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Shaina Pauley | Product Builder & Fearless Explorer',
-    description: 'Technical Product Owner and builder who loves prototyping, transforming data into dashboards, and designing workflows that accelerate teams and deliver measurable results.',
+    title: 'Shaina Pauley | AI Product Architect',
+    description: 'Designing agentic systems, evaluation harnesses, and context architecture for production AI. Building multi-agent workflows and shipping AI-native software daily.',
     images: ['/og-image.png'],
     creator: '@sha1napauley',
   },

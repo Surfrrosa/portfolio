@@ -2,13 +2,13 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'About',
-  description: 'Technical Product Owner with 7+ years enterprise experience and AI-native builder. CSPO and CSM certified. Bridging engineering, design, leadership, and stakeholders.',
+  description: 'AI Product Architect with 7+ years enterprise experience. Designs agentic systems, builds evaluation harnesses, and architects context for production AI workflows. CSPO and CSM certified.',
   alternates: {
     canonical: '/about',
   },
   openGraph: {
     title: 'About Shaina Pauley',
-    description: 'Technical Product Owner with 7+ years enterprise experience and AI-native builder. Bridging engineering, design, leadership, and stakeholders.',
+    description: 'AI Product Architect with 7+ years enterprise experience. Designs agentic systems, evaluation harnesses, and context architecture for production AI workflows.',
     url: 'https://shainapauley.com/about',
   },
 }
