@@ -1,0 +1,117 @@
+---
+title: "How I Built Synestrology"
+date: "2026-03-29"
+excerpt: "A Claude-powered synthesis engine that combines three ancient systems, verifies every astronomical claim against Swiss Ephemeris, and emails branded PDF readings to paying customers. Built entirely with Claude Code."
+readTime: "10 min read"
+tags: ["AI Development", "Building", "Claude Code", "Claude API", "Synestrology"]
+draft: false
+---
+
+## three systems, one reading
+
+Synestrology started with a question I couldn't shake: what happens when you stop treating astrology, Human Design, and numerology as separate systems and start treating them as three lenses on the same person?
+
+Every app in the space does one system. Co-Star does astrology. myBodyGraph does Human Design. Nobody synthesizes them because it's a genuinely hard problem. The systems use different languages, different frameworks, different ways of interpreting a birth chart. Getting them to talk to each other in a way that feels coherent and not like three readings stitched together is the whole challenge.
+
+I wanted to build the thing that does that. An engine that takes your birth data, calculates your chart across all three systems, and synthesizes a single narrative that weaves them together. Not a summary. A synthesis. One voice, 3,000+ words, grounded in computation.
+
+## the engine
+
+Under the hood, Synestrology is a FastAPI application deployed on Railway. When someone submits their birth data and pays through Stripe, a chain of things happens:
+
+First, the birth location gets geocoded. This matters because astrology and Human Design both depend on precise latitude, longitude, and timezone for the birth moment. Get the timezone wrong and the rising sign shifts. Get the coordinates wrong and the house system breaks.
+
+Then three calculation engines run independently. Western Tropical Astrology uses Kerykeion, which sits on top of Swiss Ephemeris, the same ephemeris NASA cross-references. Human Design uses an in-house port of HDKit that I rebuilt from scratch because I didn't want to depend on someone else's API for a core calculation. Numerology is Pythagorean, which is computationally simpler but still has to be precise.
+
+All three outputs get aggregated into a single structured XML context. That context becomes the prompt for Claude Sonnet via the Anthropic API, which synthesizes the reading. The synthesis prompt is specific. It doesn't say "write a reading." It defines exactly how the three systems should interact, where the narrative should find convergence points, what to do when systems contradict each other, and how to handle the somatic layer that makes the reading feel embodied instead of cerebral. The prompt went through roughly 30 revisions to get the synthesis quality right. Early versions produced readings that sounded like three separate reports glued together. Getting Claude to actually find the places where your Saturn return and your Human Design authority and your personal year number all point in the same direction took very precise specification.
+
+The raw output then runs through a validator with 9 auto-fix checks: degree notation, house numbers, life path accuracy, Human Design type and profile validation, defined center counts. If something's wrong, the validator catches it before the reading gets rendered as a branded PDF via WeasyPrint and emailed to the customer through Resend.
+
+## claude's role in the product
+
+Claude Sonnet is the synthesis layer. It's the thing that takes three completely different systems' worth of computed data and turns it into a coherent narrative about one person's life. That's not a trivial task. The model needs to understand astrological aspects, Human Design mechanics, and numerological cycles well enough to find genuine convergence points, not just list facts from each system side by side.
+
+The synthesis prompt uses structured XML context so Claude can parse the three data streams cleanly. Each system's output is tagged and organized: planetary positions with degrees and houses, Human Design type with strategy and authority, numerology numbers with their meanings. Claude then weaves these into a single reading that sounds like one voice speaking, not a committee.
+
+Beyond the core reading, Claude also powers the lunation email system. Every new and full moon, a GitHub Actions cron job triggers a personalized email to subscribed customers. The lunation prompt is adapted to each customer's Human Design type and authority, so a Manifestor with emotional authority gets different guidance than a Generator with sacral authority, even for the same moon event. These are generated via Claude Haiku for cost efficiency at scale.
+
+The follow-up upsell emails are also Claude-generated, personalized to the customer's chart data. Every touchpoint where the product communicates with a customer runs through Claude with specific, validated context.
+
+## claude code built the whole thing
+
+The entire codebase was built with Claude Code in the terminal. Every feature, every database migration, every bug fix, every test. The development process uses a CLAUDE.md file that defines project rules, constraints, and architectural decisions. Session logs document what was accomplished and what to pick up next, so every new session starts with full context of where the project stands.
+
+This is how I build everything. I have custom slash commands for onboarding into a project (/onboard), checking analytics (/metrics), and generating session logs (/session). The AI reads the project instructions, the latest session log, and the architecture docs before any work begins. Context architecture is the difference between productive sessions and wasted ones.
+
+I don't write code from scratch. I architect the systems, define the specifications, evaluate the output, and make the product decisions. Claude Code is the development partner that executes. But the guardrails, the quality standards, the "this isn't good enough, try again" moments are mine. The AI didn't decide to build a verification pipeline. I did, after shipping wrong data and deciding it would never happen again.
+
+## the verification problem
+
+Here's the thing about building a system that makes astronomical claims: you have to be right.
+
+Not "close enough" right. Not "that sounds about right" right. Computationally verified, cross-referenced against NASA JPL Horizons, down-to-the-degree right.
+
+I learned this the hard way. Early on, the calendar data for Synestrology's transit calendar was hand-typed. I was pulling dates from various astrology sites and entering them manually. When I finally built a verification pipeline that checked every single entry against Swiss Ephemeris, the results were ugly. Wrong dates. Wrong degrees. Ingresses off by a day. Stations listed on the wrong date entirely. Aspects that didn't exist on the dates claimed.
+
+This is the problem with trusting secondary sources for astronomical data. Everyone copies from each other, and errors propagate. An astrology blog posts that Mercury stations retrograde on March 15th, three other sites copy it, and suddenly it's "true" even though the actual station is March 14th at 22:47 UTC.
+
+So I built the observatory. It's a full Swiss Ephemeris integration that computes planetary positions for any date. It generates a reference file of 132 verified events for the year. It has a verification script that validates every entry in the calendar data against that reference. And it has a cross-check tool that validates against NASA's JPL Horizons API as a second opinion.
+
+The rule is simple: no astronomical claim ships without computational verification. Not in the calendar, not in blog posts, not in social media content, not in readings. If a number appears, the ephemeris produced it.
+
+## the things that broke
+
+Building a system this complex, a lot of things break. Some of them are obvious. Most of them aren't.
+
+The geocoding was a persistent headache. GeoNames would return slightly different coordinates for the same city depending on the query format. A birth in "Portland, Oregon" and "Portland, OR" could produce different latitude/longitude pairs, which meant different timezone lookups, which meant different charts. I added a Nominatim fallback and built validation around coordinate precision, but it took weeks of debugging edge cases to get it reliable.
+
+The Human Design calculation was another deep hole. HDKit is a JavaScript library. Synestrology is Python. Rather than wrapping the JS in a subprocess call (fragile, slow, dependency nightmare), I ported the entire calculation engine to Python. That meant understanding the I Ching gate system, the hexagram-to-line mapping, how planetary positions convert to gate activations, and how channels form between defined centers. It's not something you can approximate. One wrong gate assignment and the entire bodygraph is wrong.
+
+## silent failures
+
+The scariest failures were the ones that looked correct.
+
+A reading would come back from Claude beautifully written, structurally sound, with accurate planetary positions in the text. Everything checks out. Except the validator catches that the reading mentioned 4 defined centers when the chart has 5. The narrative was so fluent that a human reader would never notice. The numbers are buried in paragraphs of flowing prose.
+
+This is a known characteristic of LLM output: confident fluency regardless of factual accuracy. It's not a flaw in Claude specifically, it's the nature of working with language models in production. The response reads like it's correct, and most of the time it is. But "most of the time" isn't good enough when someone paid for their reading and will check whether their life path number is actually 7.
+
+That's why the validator exists. Nine automated checks that run on every single reading before it becomes a PDF. Not because I don't trust the synthesis. Because I know exactly where it tends to be wrong, and I built the catches for those specific failure modes.
+
+The validator also does two detection-only checks for things that can't be auto-fixed but need human review. It flags them. I look. It's not fully automated and it's not meant to be. Some things need a person to make the call.
+
+## no database? yes database.
+
+Early Synestrology had no database. Readings lived in memory. Customer data existed only in Stripe metadata. If the server restarted, everything in progress was gone.
+
+This was fine when it was just me testing. It was not fine when real people were paying real money and expecting their reading to arrive.
+
+So I migrated to Supabase with Row Level Security on every table. Customers, readings, email logs, calendar subscriptions, reviews, gift cards, a retry queue. Six database migrations over the course of a few months, each one adding a layer of reliability.
+
+The retry queue was a specific lesson. When a reading generation fails (API timeout, geocoding error, ephemeris edge case), the job gets enqueued with exponential backoff. First retry at 5 minutes, second at 15, third at 60. If all three fail, an alert email goes to me. No customer should ever pay and not receive their reading. That's the line.
+
+Birth data is sensitive. People are trusting me with the exact moment and location they entered the world. Service role only, no anonymous access, and I don't take that lightly.
+
+## the boring part
+
+Synestrology has 257 passing tests.
+
+I'm going to be honest, I didn't start with tests. I started with vibes and shipping. The tests came later, after things broke in production that shouldn't have broken, after I realized that changing the synthesis prompt could silently degrade Claude's output quality in ways I wouldn't notice for days.
+
+Now the test suite catches regressions before they ship. Calculation accuracy, API contract validation, database operations, email formatting, retry logic. The boring infrastructure that means a customer in Tokyo at 3 AM gets the same reliable experience as someone in Brooklyn at noon.
+
+There are also GitHub Actions running daily cron jobs. Lunation emails go out at 14:00 UTC. Review request emails at 15:00. Follow-up upsell emails at 16:00. Each one personalized to the customer's chart. Each one pulling fresh data from the calculation engines and generating content through Claude. Each one automated, monitored, and logged.
+
+## what it actually took
+
+Synestrology isn't one project. It's a checkout system, a three-system calculation engine, a Claude-powered synthesis layer, a post-generation validator, a PDF renderer, a verification pipeline, an email delivery system, a retry queue, a blog platform, a free tool, a calendar service, a gift card system, a review collection system, and a Supabase database. All running on a single Railway deployment.
+
+I didn't build it because I knew how to build all of those things. I built it because I wanted to solve the problem and I figured out each piece as I got to it. Some pieces took days. The Human Design port took weeks. The verification pipeline was born out of the shame of shipping wrong data and the determination to never do it again.
+
+The whole thing was built with Claude Code in the terminal. But the decisions were mine. What to build, what to skip, what level of quality to insist on, where to put the guardrails. Claude is the engine and the development partner. The architecture, the accountability, and the maintenance are mine.
+
+And I maintain it every day. Check the logs. Watch the errors. Merge the PRs. Make sure people are getting what they paid for. That's the job.
+
+---
+
+**See the product:** [synestrology.com](https://www.synestrology.com)
+**Free tool:** [Cosmic Blueprint](https://www.synestrology.com/tools/cosmic-blueprint)
