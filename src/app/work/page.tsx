@@ -1504,8 +1504,8 @@ export default function Work() {
 
           </div>
 
-          {/* Return to Top Button */}
-          <div className="mt-16 mb-8 text-center">
+          {/* Bottom Navigation */}
+          <div className="mt-16 mb-8 flex justify-center items-center gap-8">
             <button
               onClick={() => {
                 if (lenisRef.current) {
@@ -1520,6 +1520,18 @@ export default function Work() {
               </svg>
               Back to Top
             </button>
+            <span className="text-white/20">|</span>
+            <a
+              href="https://surfrrosa.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-teal-400 hover:text-teal-300 font-medium glitch-hover transition-colors group"
+            >
+              see a different side of my work
+              <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
           </div>
         </div>
       </main>
