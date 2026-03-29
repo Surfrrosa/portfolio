@@ -7,7 +7,7 @@ tags: ["AI Development", "Building", "Claude Code", "Claude API", "Synestrology"
 draft: false
 ---
 
-## three systems, one reading
+## 3:1
 
 Synestrology started with a question I couldn't shake: what happens when you stop treating astrology, Human Design, and numerology as separate systems and start treating them as three lenses on the same person?
 
@@ -27,7 +27,7 @@ I designed an aggregator that combines all three outputs into a single structure
 
 The raw output then runs through a validator I built with 9 auto-fix checks: degree notation, house numbers, life path accuracy, Human Design type and profile validation, defined center counts. If something's wrong, the validator catches it before the reading gets rendered as a branded PDF via WeasyPrint and delivered through Resend.
 
-## claude's role in the product
+## claude's role
 
 Claude Sonnet is the synthesis layer. It's the thing that takes three completely different systems' worth of computed data and turns it into a coherent narrative about one person's life. That's not a trivial task. The model needs to understand astrological aspects, Human Design mechanics, and numerological cycles well enough to find genuine convergence points, not just list facts from each system side by side.
 
@@ -37,7 +37,7 @@ Beyond the core reading, Claude also powers the lunation email system. Every new
 
 The follow-up upsell emails are also Claude-generated, personalized to the customer's chart data. Every touchpoint where the product communicates with a customer runs through Claude with specific, validated context. I designed each of these flows: when they trigger, what data gets pulled, how the prompt is constructed, and what the output quality bar is.
 
-## how we built it together
+## better together
 
 The entire codebase was built with Claude Code in the terminal. Every feature, every database migration, every bug fix, every test. But this wasn't "tell the AI what to build and wait." It was a genuine back-and-forth.
 
@@ -47,7 +47,7 @@ My role is the decision-making layer. I chose Railway for deployment and configu
 
 Claude Code is the partner that executes. It writes the code, debugs the issues, implements the features. But it works inside the system I designed. The guardrails, the quality standards, the architectural decisions, the "this isn't good enough, try again" moments are mine. We built this together, and the result is better than either of us could have produced alone.
 
-## the verification problem
+## precision
 
 Here's the thing about building a system that makes astronomical claims: you have to be right.
 
@@ -61,7 +61,7 @@ So I designed the observatory. It's a full Swiss Ephemeris integration that comp
 
 The rule is simple: no astronomical claim ships without computational verification. Not in the calendar, not in blog posts, not in social media content, not in readings. If a number appears, the ephemeris produced it.
 
-## the things that broke
+## break stuff
 
 Building a system this complex, a lot of things break. Some of them are obvious. Most of them aren't.
 
@@ -71,7 +71,7 @@ The synthesis prompt was its own journey. Early versions produced readings that 
 
 The Content Security Policy was a fun one. I added security headers to the application and didn't whitelist PostHog's domains. Analytics silently stopped working for three weeks before I figured out what happened. That kind of thing teaches you to check your monitoring after every infrastructure change.
 
-## silent failures
+## sneaky snake
 
 The scariest failures were the ones that looked correct.
 
@@ -83,7 +83,7 @@ That's why I built the validator. Nine automated checks that run on every single
 
 The validator also does two detection-only checks for things that can't be auto-fixed but need human review. It flags them. I look. It's not fully automated and it's not meant to be. Some things need a person to make the call.
 
-## no database? yes database.
+## our house
 
 Early Synestrology had no database. Readings lived in memory. Customer data existed only in Stripe metadata. If the server restarted, everything in progress was gone.
 
@@ -95,7 +95,7 @@ The retry queue was a specific lesson. When a reading generation fails (API time
 
 Birth data is sensitive. People are trusting me with the exact moment and location they entered the world. Service role only, no anonymous access, and I don't take that lightly.
 
-## the boring part
+## banana pudding
 
 Synestrology has 257 passing tests.
 
@@ -107,7 +107,7 @@ I also set up GitHub Actions running daily cron jobs. Lunation emails go out at 
 
 I check the analytics and error logs daily. What's getting traffic, what's throwing errors, where people are dropping off. That data informs what gets built next. It's not glamorous work, but it's the difference between a product that runs and a product that grows.
 
-## what it actually took
+## tl;dr
 
 Synestrology isn't one project. It's a checkout system, a three-system calculation engine, a Claude-powered synthesis layer, a post-generation validator, a PDF renderer, a verification pipeline, an email delivery system, a retry queue, a blog platform, a free tool, a calendar service, a gift card system, a review collection system, and a Supabase database. All running on a single Railway deployment that I configured and maintain.
 
