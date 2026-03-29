@@ -41,6 +41,7 @@ export default function AboutPage() {
       <Sidebar />
 
       <main id="main-content" className="flex flex-col px-4 lg:px-12 py-12 lg:py-20">
+        <h1 className="sr-only">About Shaina Pauley</h1>
         <motion.div
           className="text-center relative w-full max-w-4xl mx-auto"
           initial={{ opacity: 0, y: 50 }}

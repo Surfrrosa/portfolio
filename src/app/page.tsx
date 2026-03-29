@@ -61,6 +61,7 @@ export default function Home() {
       <ExitIntentPrompt />
 
       <main id="main-content" className="flex flex-col items-center px-4 lg:px-12 h-auto lg:min-h-screen pt-0 lg:justify-center relative overflow-visible">
+        <h1 className="sr-only">Shaina Pauley | AI Product Architect</h1>
         <motion.div
           className="text-center relative w-full"
           initial={{ opacity: 0, y: 50 }}
