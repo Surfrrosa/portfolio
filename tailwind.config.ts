@@ -16,7 +16,7 @@ const config: Config = {
       colors: {
         'bg-base': '#0B0C0E',
         'surface': '#14161A',
-        'accent-teal': '#2BD4CF',
+        'accent-teal': '#E930A8',
       },
       fontFamily: {
         'display': ['Archivo', 'League Spartan', 'Bebas Neue', 'Monument Extended', 'Space Grotesk', 'sans-serif'],

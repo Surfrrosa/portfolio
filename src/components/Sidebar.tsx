@@ -128,7 +128,7 @@ function DesktopSidebar({ isHome }: { isHome: boolean }) {
             My name is Shaina Pauley.
           </p>
           <p className="text-white font-mono tracking-wide" style={{ fontSize: '22px', lineHeight: '1.7' }}>
-            I'm an action-oriented dreamer and believer that emotional intelligence, systems thinking, storytelling, and collaboration are the real signal in a world full of noise
+            I&apos;m an action-oriented <a href="https://pale-blue-dot-ten.vercel.app" target="_blank" rel="noopener noreferrer" className="text-accent-teal hover:text-white transition-colors">dreamer</a> and believer that emotional intelligence, systems thinking, storytelling, and collaboration are the real signal in a world full of noise
             <span className="inline-block w-[3px] h-[1.1em] bg-white ml-1 align-middle animate-blink" />
           </p>
         </motion.div>

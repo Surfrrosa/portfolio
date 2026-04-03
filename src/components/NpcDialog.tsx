@@ -176,7 +176,7 @@ export default function NpcDialog({ open, onClose }: NpcDialogProps) {
 
             {hasChoices && (
               <div className="inline-block ml-2 animate-bounce">
-                <span className="text-teal-400">▼</span>
+                <span className="text-accent-teal">▼</span>
               </div>
             )}
           </div>

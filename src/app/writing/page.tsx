@@ -38,7 +38,7 @@ export default function WritingPage() {
             href="https://buttondown.com/shainapauley"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-zinc-400 hover:text-teal-400 transition-colors mb-12 group"
+            className="inline-flex items-center gap-2 text-zinc-400 hover:text-accent-teal transition-colors mb-12 group"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -63,9 +63,9 @@ export default function WritingPage() {
                   href={`/writing/${encodeURIComponent(post.slug)}`}
                   className="block group"
                 >
-                  <article className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-teal-400/50 transition-all duration-300">
+                  <article className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-accent-teal/50 transition-all duration-300">
                     <div className="flex items-start justify-between gap-4 mb-3">
-                      <h2 className="text-2xl font-bold text-white group-hover:text-teal-400 transition-colors">
+                      <h2 className="text-2xl font-bold text-white group-hover:text-accent-teal transition-colors">
                         {post.title}
                       </h2>
                       {post.readTime && (
@@ -92,7 +92,7 @@ export default function WritingPage() {
                         {post.tags.map((tag) => (
                           <span
                             key={tag}
-                            className="px-3 py-1 bg-teal-400/10 text-teal-400 text-sm rounded-full"
+                            className="px-3 py-1 bg-accent-teal/10 text-accent-teal text-sm rounded-full"
                           >
                             {tag}
                           </span>
@@ -100,7 +100,7 @@ export default function WritingPage() {
                       </div>
                     )}
 
-                    <div className="mt-4 text-teal-400 group-hover:translate-x-1 transition-transform inline-flex items-center gap-2">
+                    <div className="mt-4 text-accent-teal group-hover:translate-x-1 transition-transform inline-flex items-center gap-2">
                       Read more
                       <svg
                         className="w-4 h-4"

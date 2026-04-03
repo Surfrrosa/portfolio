@@ -111,7 +111,7 @@ export default function Contact() {
               transition={{ duration: 0.8, delay: 0.5 }}
             >
               <div>
-                <h3 className="text-teal-400 text-lg font-semibold mb-4">What I Do</h3>
+                <h3 className="text-accent-teal text-lg font-semibold mb-4">What I Do</h3>
                 <ul className="space-y-2 text-gray-300">
                   <li>• AI product architecture and agentic systems design</li>
                   <li>• Specification design, evaluation systems, and context architecture</li>
@@ -121,7 +121,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <h3 className="text-teal-400 text-lg font-semibold mb-4">Industries</h3>
+                <h3 className="text-accent-teal text-lg font-semibold mb-4">Industries</h3>
                 <ul className="space-y-2 text-gray-300">
                   <li>• AI and machine learning systems</li>
                   <li>• SaaS and enterprise software</li>
@@ -131,7 +131,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <h3 className="text-teal-400 text-lg font-semibold mb-4">Response Time</h3>
+                <h3 className="text-accent-teal text-lg font-semibold mb-4">Response Time</h3>
                 <p className="text-gray-300">
                   I typically respond within 24 hours.
                 </p>
@@ -155,7 +155,7 @@ export default function Contact() {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-slate-800/50 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-teal-400 transition-colors"
+                    className="w-full px-4 py-3 bg-slate-800/50 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-accent-teal transition-colors"
                     placeholder="Your full name"
                   />
                 </div>
@@ -171,7 +171,7 @@ export default function Contact() {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-slate-800/50 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-teal-400 transition-colors"
+                    className="w-full px-4 py-3 bg-slate-800/50 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-accent-teal transition-colors"
                     placeholder="your.email@example.com"
                   />
                 </div>
@@ -187,7 +187,7 @@ export default function Contact() {
                     onChange={handleInputChange}
                     required
                     rows={5}
-                    className="w-full px-4 py-3 bg-slate-800/50 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-teal-400 transition-colors resize-none"
+                    className="w-full px-4 py-3 bg-slate-800/50 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-accent-teal transition-colors resize-none"
                     placeholder="Give me the quick version: what are you building and what do you need help with?"
                   />
                 </div>
@@ -195,7 +195,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-teal-500 hover:bg-teal-600 disabled:bg-teal-400 disabled:cursor-not-allowed text-white font-semibold py-3 px-6 rounded-lg transition-colors"
+                  className="w-full bg-teal-500 hover:bg-teal-600 disabled:bg-accent-teal disabled:cursor-not-allowed text-white font-semibold py-3 px-6 rounded-lg transition-colors"
                 >
                   {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
@@ -235,7 +235,7 @@ export default function Contact() {
                 href="https://www.upwork.com/freelancers/~01678c95a70afbd270?mp_source=share"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative overflow-hidden rounded-2xl border-2 border-white/20 hover:border-teal-400 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-teal-500/20 w-64 h-28 flex items-center justify-center"
+                className="group relative overflow-hidden rounded-2xl border-2 border-white/20 hover:border-accent-teal transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-teal-500/20 w-64 h-28 flex items-center justify-center"
               >
                 <Image
                   src="/images/upwork-logo.png"

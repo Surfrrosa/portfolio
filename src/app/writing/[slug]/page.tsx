@@ -119,7 +119,7 @@ export default async function BlogPost({ params }: PageProps) {
           {/* Back link */}
           <Link
             href="/writing"
-            className="inline-flex items-center gap-2 text-teal-400 hover:text-teal-300 transition-colors mb-8 group"
+            className="inline-flex items-center gap-2 text-accent-teal hover:text-accent-teal/80 transition-colors mb-8 group"
           >
             <svg
               className="w-4 h-4 group-hover:-translate-x-1 transition-transform"
@@ -166,7 +166,7 @@ export default async function BlogPost({ params }: PageProps) {
                   {post.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1 bg-teal-400/10 text-teal-400 text-sm rounded-full"
+                      className="px-3 py-1 bg-accent-teal/10 text-accent-teal text-sm rounded-full"
                     >
                       {tag}
                     </span>
@@ -186,7 +186,7 @@ export default async function BlogPost({ params }: PageProps) {
             <footer className="mt-16 pt-8 border-t border-white/10">
               <Link
                 href="/writing"
-                className="inline-flex items-center gap-2 text-teal-400 hover:text-teal-300 transition-colors"
+                className="inline-flex items-center gap-2 text-accent-teal hover:text-accent-teal/80 transition-colors"
               >
                 <svg
                   className="w-4 h-4"

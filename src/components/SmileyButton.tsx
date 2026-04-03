@@ -53,7 +53,7 @@ export default function SmileyButton({ children }: SmileyButtonProps) {
         onClick={handleClick}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        className="relative group cursor-pointer focus:outline-none focus:ring-2 focus:ring-teal-400/60 focus:ring-offset-2 focus:ring-offset-black rounded-lg transition-all"
+        className="relative group cursor-pointer focus:outline-none focus:ring-2 focus:ring-accent-teal/60 focus:ring-offset-2 focus:ring-offset-black rounded-lg transition-all"
         aria-label="Open framework quest dialog"
       >
         {/* Shimmer wrapper */}

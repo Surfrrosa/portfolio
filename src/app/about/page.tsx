@@ -93,19 +93,19 @@ export default function AboutPage() {
             <h2 className="text-3xl lg:text-4xl font-bold mb-6 lg:mb-8">Proven Impact & Approach</h2>
             <ul className="space-y-6 text-lg leading-relaxed">
               <li className="flex items-start">
-                <span className="text-teal-400 mr-4 mt-1">•</span>
+                <span className="text-accent-teal mr-4 mt-1">•</span>
                 <span><strong>7+ Years in the Trenches</strong> ● secure authentication, REST APIs, CRM, migrations, dashboards.</span>
               </li>
               <li className="flex items-start">
-                <span className="text-teal-400 mr-4 mt-1">•</span>
+                <span className="text-accent-teal mr-4 mt-1">•</span>
                 <span><strong>AI Systems Architect</strong> ● specification design, evaluation systems, agentic workflows, production guardrails.</span>
               </li>
               <li className="flex items-start">
-                <span className="text-teal-400 mr-4 mt-1">•</span>
+                <span className="text-accent-teal mr-4 mt-1">•</span>
                 <span><strong>Fluent in Tech + People</strong> ● bridging engineering, design, leadership, and stakeholders.</span>
               </li>
               <li className="flex items-start">
-                <span className="text-teal-400 mr-4 mt-1">•</span>
+                <span className="text-accent-teal mr-4 mt-1">•</span>
                 <span><strong>Impact, Not Just Output</strong> ● every feature tied to tangible, trackable results.</span>
               </li>
             </ul>
@@ -120,35 +120,35 @@ export default function AboutPage() {
             <h2 className="text-3xl lg:text-4xl font-bold mb-8 lg:mb-12">Frequently Asked Questions</h2>
             <div className="space-y-8">
               <div>
-                <h3 className="text-xl lg:text-2xl font-semibold mb-3 text-teal-400">What's an AI Product Architect?</h3>
+                <h3 className="text-xl lg:text-2xl font-semibold mb-3 text-accent-teal">What's an AI Product Architect?</h3>
                 <p className="text-gray-300 text-lg leading-relaxed">
                   I sit between the technical and the strategic. I can read code, debug agent failures, and talk to stakeholders. I own the what and the why, then build the structure that makes complex systems reliable in production.
                 </p>
               </div>
 
               <div>
-                <h3 className="text-xl lg:text-2xl font-semibold mb-3 text-teal-400">How do you use AI in product work?</h3>
+                <h3 className="text-xl lg:text-2xl font-semibold mb-3 text-accent-teal">How do you use AI in product work?</h3>
                 <p className="text-gray-300 text-lg leading-relaxed">
                   I architect the systems that AI works inside. That means writing the specifications agents follow, building evaluation pipelines that catch errors before they ship, and designing context architecture so every session picks up where the last one left off. I orchestrate multi-agent workflows for everything from astronomical verification to content generation. I push back constantly, validate everything, and take full ownership of what ships.
                 </p>
               </div>
 
               <div>
-                <h3 className="text-xl lg:text-2xl font-semibold mb-3 text-teal-400">What types of teams do you work with?</h3>
+                <h3 className="text-xl lg:text-2xl font-semibold mb-3 text-accent-teal">What types of teams do you work with?</h3>
                 <p className="text-gray-300 text-lg leading-relaxed">
                   Product-focused teams across industries: SaaS, enterprise tools, consumer apps. From 1:1 work with founders to early-stage and scale-up. Teams that value shipping over endless planning.
                 </p>
               </div>
 
               <div>
-                <h3 className="text-xl lg:text-2xl font-semibold mb-3 text-teal-400">What's your typical engagement look like?</h3>
+                <h3 className="text-xl lg:text-2xl font-semibold mb-3 text-accent-teal">What's your typical engagement look like?</h3>
                 <p className="text-gray-300 text-lg leading-relaxed">
                   Building things, designing how AI systems work, making sure what ships actually holds up, and leading product when teams need it. I work with people who need someone technical enough to get in the code and sharp enough to know what to prioritize. I also love helping teams work together better. Open communication, everyone feeling heard, and genuine alignment.
                 </p>
               </div>
 
               <div>
-                <h3 className="text-xl lg:text-2xl font-semibold mb-3 text-teal-400">What's your availability?</h3>
+                <h3 className="text-xl lg:text-2xl font-semibold mb-3 text-accent-teal">What's your availability?</h3>
                 <p className="text-gray-300 text-lg leading-relaxed">
                   Open to new opportunities. Contact me to discuss your product challenges and see if we're a good fit.
                 </p>

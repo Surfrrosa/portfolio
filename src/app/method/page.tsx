@@ -63,7 +63,7 @@ function MethodContent() {
                   transition-all duration-500
                   ${
                     highlightedPhase === phase.key
-                      ? 'border-teal-400 shadow-[0_0_30px_rgba(45,212,207,0.3)]'
+                      ? 'border-accent-teal shadow-[0_0_30px_rgba(45,212,207,0.3)]'
                       : 'border-white/10'
                   }
                 `}
@@ -74,7 +74,7 @@ function MethodContent() {
                 <div className="mb-6">
                   <h2 className="text-white text-3xl font-display font-bold mb-2">
                     <span className="font-bold">{phase.title}.</span>{' '}
-                    <span className="text-teal-400 font-semibold">{phase.objective}</span>
+                    <span className="text-accent-teal font-semibold">{phase.objective}</span>
                   </h2>
                 </div>
 
@@ -86,8 +86,8 @@ function MethodContent() {
                     <p className="text-gray-300 leading-relaxed">{phase.action}</p>
                   </div>
 
-                  <div className="bg-teal-500/10 rounded-lg p-4 border border-teal-400/20">
-                    <h3 className="text-teal-400 font-semibold mb-2 text-sm uppercase tracking-wider">
+                  <div className="bg-teal-500/10 rounded-lg p-4 border border-accent-teal/20">
+                    <h3 className="text-accent-teal font-semibold mb-2 text-sm uppercase tracking-wider">
                       Reward
                     </h3>
                     <p className="text-gray-200 leading-relaxed font-semibold">{phase.reward}</p>
@@ -106,7 +106,7 @@ function MethodContent() {
             <p className="text-white/60 mb-6">Ready to start your quest?</p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 bg-teal-500/20 hover:bg-teal-500/30 border border-teal-400/40 hover:border-teal-400/60 text-teal-400 px-6 py-3 rounded-xl transition-all group"
+              className="inline-flex items-center gap-2 bg-teal-500/20 hover:bg-teal-500/30 border border-accent-teal/40 hover:border-accent-teal/60 text-accent-teal px-6 py-3 rounded-xl transition-all group"
             >
               Book a Session
               <svg

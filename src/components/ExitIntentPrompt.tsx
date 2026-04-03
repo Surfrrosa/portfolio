@@ -29,7 +29,7 @@ function BouncingArrow() {
   return (
     <div className="flex justify-center animate-bounce">
       <svg
-        className="w-8 h-8 text-teal-400"
+        className="w-8 h-8 text-accent-teal"
         fill="currentColor"
         viewBox="0 0 24 24"
         style={{ filter: 'drop-shadow(0 0 8px rgba(45, 212, 207, 0.6))' }}

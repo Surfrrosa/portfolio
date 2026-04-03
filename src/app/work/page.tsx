@@ -70,7 +70,7 @@ export default function Work() {
                 Prism ● Media Bias Awareness Tool
               </h3>
 
-              <h4 className="text-teal-400 text-lg font-semibold mb-6">
+              <h4 className="text-accent-teal text-lg font-semibold mb-6">
                 See the full spectrum of your news diet, no effort required.
               </h4>
 
@@ -99,10 +99,10 @@ export default function Work() {
                 <div>
                   <h5 className="text-white font-semibold mb-2">Impact</h5>
                   <div className="text-gray-300 space-y-3">
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>2,700+ rated news sources from Media Bias/Fact Check database</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Zero network requests, all data stays local in IndexedDB</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Diversity Score algorithm factoring entropy, variety, quality, and breadth</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Weekly summary reports and shareable Canvas-rendered media diet cards</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>2,700+ rated news sources from Media Bias/Fact Check database</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>Zero network requests, all data stays local in IndexedDB</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>Diversity Score algorithm factoring entropy, variety, quality, and breadth</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>Weekly summary reports and shareable Canvas-rendered media diet cards</span></p>
                   </div>
                 </div>
               </div>
@@ -154,7 +154,7 @@ export default function Work() {
                     href="https://chromewebstore.google.com/detail/prism/pbhmchohngpdjmldjfdlomjfgkjfegfc"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors group"
+                    className="inline-flex items-center text-accent-teal hover:text-accent-teal/80 transition-colors group"
                   >
                     Chrome Web Store
                     <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -175,7 +175,7 @@ export default function Work() {
                 Synestrology ● Astrology × Human Design × Numerology Synthesis Engine
               </h3>
 
-              <h4 className="text-teal-400 text-lg font-semibold mb-6">
+              <h4 className="text-accent-teal text-lg font-semibold mb-6">
                 The only platform that weaves three self-discovery systems into a single personalized reading.
               </h4>
 
@@ -204,10 +204,10 @@ export default function Work() {
                 <div>
                   <h5 className="text-white font-semibold mb-2">Impact</h5>
                   <div className="text-gray-300 space-y-3">
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Only combined astrology + Human Design + numerology calculator on the web</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Swiss Ephemeris precision (0.001 arcsecond accuracy) for natal chart calculations</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Full e-commerce pipeline: Stripe checkout → AI generation → branded PDF → email delivery</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>257 passing tests, CI/CD pipeline, rate limiting, retry queue with exponential backoff</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>Only combined astrology + Human Design + numerology calculator on the web</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>Swiss Ephemeris precision (0.001 arcsecond accuracy) for natal chart calculations</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>Full e-commerce pipeline: Stripe checkout → AI generation → branded PDF → email delivery</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>257 passing tests, CI/CD pipeline, rate limiting, retry queue with exponential backoff</span></p>
                   </div>
                 </div>
               </div>
@@ -262,7 +262,7 @@ export default function Work() {
                     href="https://www.synestrology.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors group"
+                    className="inline-flex items-center text-accent-teal hover:text-accent-teal/80 transition-colors group"
                   >
                     Visit Synestrology
                     <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -273,7 +273,7 @@ export default function Work() {
                     href="https://www.synestrology.com/tools/cosmic-blueprint"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors group"
+                    className="inline-flex items-center text-accent-teal hover:text-accent-teal/80 transition-colors group"
                   >
                     Use the Free Tool
                     <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -294,7 +294,7 @@ export default function Work() {
                 Declassify ● Sourced Reporting on the 2026 Iran War
               </h3>
 
-              <h4 className="text-teal-400 text-lg font-semibold mb-6">
+              <h4 className="text-accent-teal text-lg font-semibold mb-6">
                 Every number cited. Every claim linked. No editorializing.
               </h4>
 
@@ -323,10 +323,10 @@ export default function Work() {
                 <div>
                   <h5 className="text-white font-semibold mb-2">Impact</h5>
                   <div className="text-gray-300 space-y-3">
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>54+ external source citations across dashboard, timeline, and impact pages</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Daily automated broken link checking via GitHub Actions</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Zero dependencies: pure HTML/CSS/JS, no build step, progressive enhancement throughout</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Full keyboard navigation, screen reader support, reduced motion respect</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>54+ external source citations across dashboard, timeline, and impact pages</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>Daily automated broken link checking via GitHub Actions</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>Zero dependencies: pure HTML/CSS/JS, no build step, progressive enhancement throughout</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>Full keyboard navigation, screen reader support, reduced motion respect</span></p>
                   </div>
                 </div>
               </div>
@@ -361,7 +361,7 @@ export default function Work() {
                     href="https://declassify.news"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors group"
+                    className="inline-flex items-center text-accent-teal hover:text-accent-teal/80 transition-colors group"
                   >
                     Visit Site
                     <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -372,7 +372,7 @@ export default function Work() {
                     href="https://github.com/Surfrrosa/declassify"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors group"
+                    className="inline-flex items-center text-accent-teal hover:text-accent-teal/80 transition-colors group"
                   >
                     GitHub
                     <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -393,7 +393,7 @@ export default function Work() {
                 BlipCode ● Privacy-First QR Code Generator
               </h3>
 
-              <h4 className="text-teal-400 text-lg font-semibold mb-6">
+              <h4 className="text-accent-teal text-lg font-semibold mb-6">
                 Generate QR codes instantly. No uploads. No tracking. No nonsense.
               </h4>
 
@@ -422,10 +422,10 @@ export default function Work() {
                 <div>
                   <h5 className="text-white font-semibold mb-2">Impact</h5>
                   <div className="text-gray-300 space-y-3">
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">&#10003;</span><span>100% client-side: zero data ever leaves the browser</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">&#10003;</span><span>4 QR types: URL, text, Wi-Fi, vCard contact cards</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">&#10003;</span><span>Freemium model with Stripe subscription billing</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">&#10003;</span><span>Sentry error monitoring and logging for proactive issue detection</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">&#10003;</span><span>100% client-side: zero data ever leaves the browser</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">&#10003;</span><span>4 QR types: URL, text, Wi-Fi, vCard contact cards</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">&#10003;</span><span>Freemium model with Stripe subscription billing</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">&#10003;</span><span>Sentry error monitoring and logging for proactive issue detection</span></p>
                   </div>
                 </div>
               </div>
@@ -465,7 +465,7 @@ export default function Work() {
                   <div className="absolute inset-0 bg-slate-700/30 flex items-center justify-center" style={{ display: 'none' }}>
                     <div className="text-center">
                       <div className="w-16 h-16 bg-teal-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg className="w-8 h-8 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-8 h-8 text-accent-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z" />
                         </svg>
                       </div>
@@ -480,7 +480,7 @@ export default function Work() {
                     href="https://blipcode.lol"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors group"
+                    className="inline-flex items-center text-accent-teal hover:text-accent-teal/80 transition-colors group"
                   >
                     Try It Live
                     <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -501,7 +501,7 @@ export default function Work() {
                 CrunchBox ● Client-Side File Conversion Tools
               </h3>
 
-              <h4 className="text-teal-400 text-lg font-semibold mb-6">
+              <h4 className="text-accent-teal text-lg font-semibold mb-6">
                 Convert, compress, and merge files. Everything stays in your browser.
               </h4>
 
@@ -530,10 +530,10 @@ export default function Work() {
                 <div>
                   <h5 className="text-white font-semibold mb-2">Impact</h5>
                   <div className="text-gray-300 space-y-3">
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">&#10003;</span><span>5 conversion tools: HEIC, WebP, PDF compress, PDF merge, image compress</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">&#10003;</span><span>100% client-side processing via pdf-lib, heic-to (libheif WASM), Canvas API</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">&#10003;</span><span>Freemium model with Stripe subscription billing</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">&#10003;</span><span>Sentry error monitoring and logging for proactive issue detection</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">&#10003;</span><span>5 conversion tools: HEIC, WebP, PDF compress, PDF merge, image compress</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">&#10003;</span><span>100% client-side processing via pdf-lib, heic-to (libheif WASM), Canvas API</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">&#10003;</span><span>Freemium model with Stripe subscription billing</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">&#10003;</span><span>Sentry error monitoring and logging for proactive issue detection</span></p>
                   </div>
                 </div>
               </div>
@@ -573,7 +573,7 @@ export default function Work() {
                   <div className="absolute inset-0 bg-slate-700/30 flex items-center justify-center" style={{ display: 'none' }}>
                     <div className="text-center">
                       <div className="w-16 h-16 bg-teal-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg className="w-8 h-8 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-8 h-8 text-accent-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                         </svg>
                       </div>
@@ -588,7 +588,7 @@ export default function Work() {
                     href="https://crunchbox.lol"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors group"
+                    className="inline-flex items-center text-accent-teal hover:text-accent-teal/80 transition-colors group"
                   >
                     Try It Live
                     <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -609,7 +609,7 @@ export default function Work() {
                 Maestro ● AI Development Process CLI
               </h3>
 
-              <h4 className="text-teal-400 text-lg font-semibold mb-6">
+              <h4 className="text-accent-teal text-lg font-semibold mb-6">
                 The missing process layer for AI-assisted development.
               </h4>
 
@@ -638,10 +638,10 @@ export default function Work() {
                 <div>
                   <h5 className="text-white font-semibold mb-2">Impact</h5>
                   <div className="text-gray-300 space-y-3">
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Published on npm as maestro-dev, installable globally</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>12-check audit scoring (0-100) plus 7-category code quality grading (A-F)</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Full CI integration with GitHub Actions workflow</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Dogfooded across repos to validate every feature before shipping</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>Published on npm as maestro-dev, installable globally</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>12-check audit scoring (0-100) plus 7-category code quality grading (A-F)</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>Full CI integration with GitHub Actions workflow</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>Dogfooded across repos to validate every feature before shipping</span></p>
                   </div>
                 </div>
               </div>
@@ -679,7 +679,7 @@ export default function Work() {
                     href="https://www.npmjs.com/package/maestro-dev"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors group"
+                    className="inline-flex items-center text-accent-teal hover:text-accent-teal/80 transition-colors group"
                   >
                     npm Package
                     <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -690,7 +690,7 @@ export default function Work() {
                     href="https://github.com/Surfrrosa/maestro"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors group"
+                    className="inline-flex items-center text-accent-teal hover:text-accent-teal/80 transition-colors group"
                   >
                     GitHub
                     <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -711,7 +711,7 @@ export default function Work() {
                 What Changed ● Automatic Webpage Diff Tracker
               </h3>
 
-              <h4 className="text-teal-400 text-lg font-semibold mb-6">
+              <h4 className="text-accent-teal text-lg font-semibold mb-6">
                 See exactly what&apos;s different when you revisit any page.
               </h4>
 
@@ -740,10 +740,10 @@ export default function Work() {
                 <div>
                   <h5 className="text-white font-semibold mb-2">Impact</h5>
                   <div className="text-gray-300 space-y-3">
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Zero-config automatic tracking on every page you visit</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>~5 KB average snapshot vs ~200 KB raw HTML via Readability extraction</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>~70% revisit deduplication via SHA-256 content hashing</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>SPA navigation support with automatic re-capture</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>Zero-config automatic tracking on every page you visit</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>~5 KB average snapshot vs ~200 KB raw HTML via Readability extraction</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>~70% revisit deduplication via SHA-256 content hashing</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>SPA navigation support with automatic re-capture</span></p>
                   </div>
                 </div>
               </div>
@@ -780,7 +780,7 @@ export default function Work() {
                     href="https://chromewebstore.google.com/detail/what-changed/beaielclimdopobfbaeibgmpnlmnfpjf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors group"
+                    className="inline-flex items-center text-accent-teal hover:text-accent-teal/80 transition-colors group"
                   >
                     Chrome Web Store
                     <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -800,7 +800,7 @@ export default function Work() {
                 Enlighten ● Tao × Neuroscience Mindfulness App
               </h3>
               
-              <h4 className="text-teal-400 text-lg font-semibold mb-6">
+              <h4 className="text-accent-teal text-lg font-semibold mb-6">
                 Mindfulness, nervous system regulation, and timeless Taoist wisdom in your pocket.
               </h4>
               
@@ -829,10 +829,10 @@ export default function Work() {
                 <div>
                   <h5 className="text-white font-semibold mb-2">Impact (6-Month Targets)</h5>
                   <div className="text-gray-300 space-y-3">
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">→</span><span>750-1,500 downloads with organic growth</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">→</span><span>4-6% Day 30 retention (indie app benchmark)</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">→</span><span>100-200 weekly active users engaging 2-3x per week</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">→</span><span>Fast nervous system resets without disrupting routine</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">→</span><span>750-1,500 downloads with organic growth</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">→</span><span>4-6% Day 30 retention (indie app benchmark)</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">→</span><span>100-200 weekly active users engaging 2-3x per week</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">→</span><span>Fast nervous system resets without disrupting routine</span></p>
                   </div>
                 </div>
                 
@@ -903,7 +903,7 @@ export default function Work() {
                   href="https://enlighten-kappa.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors group"
+                  className="inline-flex items-center text-accent-teal hover:text-accent-teal/80 transition-colors group"
                 >
                   View Landing Page
                   <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -923,7 +923,7 @@ export default function Work() {
                 The Absurdity Index ● Data-Driven Social Research
               </h3>
 
-              <h4 className="text-teal-400 text-lg font-semibold mb-6">
+              <h4 className="text-accent-teal text-lg font-semibold mb-6">
                 Quantifying modern life&apos;s absurdity through systematic data collection and transparent methodology.
               </h4>
 
@@ -952,10 +952,10 @@ export default function Work() {
                 <div>
                   <h5 className="text-white font-semibold mb-2">Impact</h5>
                   <div className="text-gray-300 space-y-3">
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Systematic 3-level crisis categorization across 8 societal metrics</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Target: 380-480 data points per metric with verifiable URLs</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Open-source Python collection scripts for reproducibility</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Brutalist design chosen to mirror the stark, unembellished reality of modern absurdity</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>Systematic 3-level crisis categorization across 8 societal metrics</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>Target: 380-480 data points per metric with verifiable URLs</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>Open-source Python collection scripts for reproducibility</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>Brutalist design chosen to mirror the stark, unembellished reality of modern absurdity</span></p>
                   </div>
                 </div>
               </div>
@@ -994,7 +994,7 @@ export default function Work() {
                   <div className="absolute inset-0 bg-slate-700/30 flex items-center justify-center" style={{ display: 'none' }}>
                     <div className="text-center">
                       <div className="w-16 h-16 bg-teal-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg className="w-8 h-8 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-8 h-8 text-accent-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                         </svg>
                       </div>
@@ -1032,7 +1032,7 @@ export default function Work() {
                 <div className="pt-6 border-t border-white/10">
                   <a
                     href="/writing/the-absurdity-index"
-                    className="inline-flex items-center gap-2 text-teal-400 hover:text-teal-300 transition-colors group"
+                    className="inline-flex items-center gap-2 text-accent-teal hover:text-accent-teal/80 transition-colors group"
                   >
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -1057,7 +1057,7 @@ export default function Work() {
                 Nortal ● API-Driven Telecom Solutions for National Retailers
               </h3>
               
-              <h4 className="text-teal-400 text-lg font-semibold mb-6">
+              <h4 className="text-accent-teal text-lg font-semibold mb-6">
                 Delivered prepaid activation, number port-in, add-a-line, and billing integrations for T-Mobile's largest retail partners.
               </h4>
               
@@ -1092,10 +1092,10 @@ export default function Work() {
                 <div>
                   <h5 className="text-white font-semibold mb-2">Impact</h5>
                   <div className="text-gray-300 space-y-3">
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Delivered 3 major API integrations on time for T-Mobile's largest retail partners</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Streamlined prepaid activations across Walmart, Costco, and Best Buy</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Reduced number porting errors and improved customer onboarding flow</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Zero critical production bugs across enterprise retail integrations</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>Delivered 3 major API integrations on time for T-Mobile's largest retail partners</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>Streamlined prepaid activations across Walmart, Costco, and Best Buy</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>Reduced number porting errors and improved customer onboarding flow</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>Zero critical production bugs across enterprise retail integrations</span></p>
                   </div>
                 </div>
               </div>
@@ -1112,7 +1112,7 @@ export default function Work() {
               <div className="text-center mt-8">
                 <a 
                   href="https://nortal.com/about" 
-                  className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors group"
+                  className="inline-flex items-center text-accent-teal hover:text-accent-teal/80 transition-colors group"
                 >
                   Visit Website
                   <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1132,7 +1132,7 @@ export default function Work() {
                 ConnectWise Manage ● Product Ownership Across Mobile, Communication, and CRM Platforms
               </h3>
               
-              <h4 className="text-teal-400 text-lg font-semibold mb-6">
+              <h4 className="text-accent-teal text-lg font-semibold mb-6">
                 Delivered cross-platform enhancements to improve usability, communication, and data visibility for IT service providers.
               </h4>
               
@@ -1235,10 +1235,10 @@ export default function Work() {
                         href="https://www.connectwise.com/blog/new-connectwise-mobile-app#:~:text=With%20our%20core%20values%20to%20guide%20us%2C,techs%20complete%20assigned%20tasks%20quickly%20and%20efficiently"
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-2 text-teal-400 hover:text-teal-300"
+                        className="inline-flex items-center gap-2 text-accent-teal hover:text-accent-teal/80"
                         title="ConnectWise Mobile App"
                       >
-                        <span className="inline-block h-1.5 w-1.5 rounded-full bg-teal-400"></span>
+                        <span className="inline-block h-1.5 w-1.5 rounded-full bg-accent-teal"></span>
                         ConnectWise Mobile App
                       </a>
                     </li>
@@ -1247,10 +1247,10 @@ export default function Work() {
                         href="https://www.connectwise.com/blog/new-connectwise-manage-features"
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-2 text-teal-400 hover:text-teal-300"
+                        className="inline-flex items-center gap-2 text-accent-teal hover:text-accent-teal/80"
                         title="Ticket Notes"
                       >
-                        <span className="inline-block h-1.5 w-1.5 rounded-full bg-teal-400"></span>
+                        <span className="inline-block h-1.5 w-1.5 rounded-full bg-accent-teal"></span>
                         Ticket Notes
                       </a>
                     </li>
@@ -1259,10 +1259,10 @@ export default function Work() {
                         href="https://www.connectwise.com/blog/introducing-connectwise-now-a-new-dashboard-for-your-data"
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-2 text-teal-400 hover:text-teal-300"
+                        className="inline-flex items-center gap-2 text-accent-teal hover:text-accent-teal/80"
                         title="ConnectWise Now Dashboard"
                       >
-                        <span className="inline-block h-1.5 w-1.5 rounded-full bg-teal-400"></span>
+                        <span className="inline-block h-1.5 w-1.5 rounded-full bg-accent-teal"></span>
                         ConnectWise Now Dashboard
                       </a>
                     </li>
@@ -1273,7 +1273,7 @@ export default function Work() {
               <div className="text-center mt-8">
                 <a 
                   href="https://www.connectwise.com/platform/psa?ref=header#features" 
-                  className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors group"
+                  className="inline-flex items-center text-accent-teal hover:text-accent-teal/80 transition-colors group"
                 >
                   Visit Website
                   <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1293,7 +1293,7 @@ export default function Work() {
                 Floatless ● Automated Payment Reconciliation & Dunning Platform
               </h3>
               
-              <h4 className="text-teal-400 text-lg font-semibold mb-6">
+              <h4 className="text-accent-teal text-lg font-semibold mb-6">
                 Polite payment reminders, accurate records, and zero manual chasing all in one place.
               </h4>
               
@@ -1322,10 +1322,10 @@ export default function Work() {
                 <div>
                   <h5 className="text-white font-semibold mb-2">Impact (Technical Proof of Concept)</h5>
                   <div className="text-gray-300 space-y-3">
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Full Stripe & QuickBooks integration working in test environment</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Automated payment matching reduces manual reconciliation by ~80%</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>On-brand dunning message generation with communication history tracking</span></p>
-                    <p className="flex items-start"><span className="text-teal-400 mr-2">✓</span><span>Real-time subscription metrics and payment health dashboard built</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>Full Stripe & QuickBooks integration working in test environment</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>Automated payment matching reduces manual reconciliation by ~80%</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>On-brand dunning message generation with communication history tracking</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>Real-time subscription metrics and payment health dashboard built</span></p>
                   </div>
                 </div>
 
@@ -1362,7 +1362,7 @@ export default function Work() {
                     
                     <div className="text-center space-y-3">
                       <div className="w-12 h-12 bg-teal-500/20 rounded-full flex items-center justify-center mx-auto">
-                        <svg className="w-6 h-6 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-6 h-6 text-accent-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                         </svg>
                       </div>
@@ -1476,7 +1476,7 @@ export default function Work() {
                   <div className="absolute inset-0 bg-slate-700/30 flex items-center justify-center" style={{ display: 'none' }}>
                     <div className="text-center">
                       <div className="w-16 h-16 bg-teal-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg className="w-8 h-8 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-8 h-8 text-accent-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
                         </svg>
                       </div>
@@ -1491,9 +1491,101 @@ export default function Work() {
                     href="https://www.floatless.app/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors group"
+                    className="inline-flex items-center text-accent-teal hover:text-accent-teal/80 transition-colors group"
                   >
                     See it live
+                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+            >
+              <h3 className="text-white text-2xl font-display font-bold mb-4">
+                Pale Blue Dot ● Interactive Pixel-Art Tribute
+              </h3>
+
+              <h4 className="text-accent-teal text-lg font-semibold mb-6">
+                An 8-bit love letter to Carl Sagan and the Voyager 1 photograph.
+              </h4>
+
+              <div className="space-y-6">
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Concept</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    A single-page web experience that renders a procedural pixel-art space scene at 320x180 pixels. Stars drift in parallax layers, nebula clouds glow in deep purple, and one quiet, steady pixel sits at the center: Earth.
+                  </p>
+                </div>
+
+                <div>
+                  <h5 className="text-white font-semibold mb-2">The Experience</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    A boot sequence types out a transmission from the Voyager Deep Space Network. The starfield reveals, the nebula fades in, and an amber sign points to the dot: YOU ARE HERE. Press play to hear Sagan read the excerpt, or read it as RPG-style dialogue typed out one passage at a time.
+                  </p>
+                </div>
+
+                <div>
+                  <h5 className="text-white font-semibold mb-2">My Role</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    Solo builder. Concept, creative direction, visual design, procedural generation, audio integration. Built with vanilla JavaScript and Canvas API, no framework.
+                  </p>
+                </div>
+
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Technical Highlights</h5>
+                  <div className="text-gray-300 space-y-3">
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">&#10003;</span><span>Procedural starfield, nebula, and sparkle stars drawn pixel-by-pixel</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">&#10003;</span><span>CRT shader effects: scanlines, vignette, film grain, chromatic aberration</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">&#10003;</span><span>3-layer parallax creating the illusion of flying through space</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">&#10003;</span><span>RPG-style typewriter dialogue for accessibility</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">&#10003;</span><span>Zero dependencies. Pure HTML, CSS, Canvas API</span></p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap gap-2 mt-6">
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Vanilla JS</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Canvas API</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Procedural Generation</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Pixel Art</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Web Audio</span>
+              </div>
+
+              <div className="mt-8 space-y-6">
+                <div>
+                  <div
+                    className="relative rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
+                    onClick={() => {
+                      setModalMedia({ src: '/videos/pale-blue-dot-preview.mp4', type: 'video' })
+                      setIsModalOpen(true)
+                    }}
+                  >
+                    <video
+                      src="/videos/pale-blue-dot-preview.mp4"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full h-auto"
+                    />
+                  </div>
+                </div>
+
+                <div className="flex justify-center gap-6">
+                  <a
+                    href="https://pale-blue-dot-ten.vercel.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-accent-teal hover:text-accent-teal/80 transition-colors group"
+                  >
+                    Experience it
                     <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
@@ -1512,7 +1604,7 @@ export default function Work() {
                   lenisRef.current.scrollTo(0, { duration: 1.5 })
                 }
               }}
-              className="inline-flex items-center gap-2 text-teal-400 hover:text-teal-300 font-medium glitch-hover transition-colors group"
+              className="inline-flex items-center gap-2 text-accent-teal hover:text-accent-teal/80 font-medium glitch-hover transition-colors group"
               aria-label="Return to top of page"
             >
               <svg className="w-5 h-5 group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1525,7 +1617,7 @@ export default function Work() {
               href="https://surfrrosa.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-teal-400 hover:text-teal-300 font-medium glitch-hover transition-colors group"
+              className="inline-flex items-center gap-2 text-accent-teal hover:text-accent-teal/80 font-medium glitch-hover transition-colors group"
             >
               see a different side of my work
               <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
