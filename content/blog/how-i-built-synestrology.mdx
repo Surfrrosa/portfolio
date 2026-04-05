@@ -53,11 +53,7 @@ Birth data is sensitive. People are trusting us with the exact moment and locati
 
 ## banana pudding
 
-Synestrology has 257 passing tests.
-
-The tests came after things broke in production that shouldn't have broken, after realizing that changing the synthesis prompt could silently degrade output quality in ways that wouldn't surface for days.
-
-Now the test suite catches regressions before they ship. Calculation accuracy, API contract validation, database operations, email formatting, retry logic. The boring infrastructure that means a customer in Tokyo at 3 AM gets the same reliable experience as someone in Brooklyn at noon.
+257 passing tests cover calculation accuracy, API contract validation, database operations, email formatting, and retry logic. The infrastructure that means a customer in Tokyo at 3 AM gets the same reliable experience as someone in Brooklyn at noon.
 
 GitHub Actions run daily cron jobs for email delivery, monitored through Sentry and tracked in PostHog. The analytics and error logs get checked daily. That data informs what gets built next.
 
