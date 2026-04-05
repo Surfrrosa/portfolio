@@ -27,11 +27,7 @@ We designed an aggregator that combines all three outputs into a single structur
 
 The raw output runs through a validator with 9 auto-fix checks and 2 detection-only flags: degree notation, house numbers, life path accuracy, Human Design type and profile validation, defined center counts. If something's wrong, the validator catches it before the reading gets rendered as a branded PDF via WeasyPrint and delivered through Resend.
 
-## claude's role
-
-Beyond the core reading synthesis, Claude powers the lunation email system. Every new and full moon, a GitHub Actions cron job triggers a personalized email to subscribed customers. The lunation prompt adapts to each customer's Human Design type and authority, so a Manifestor with emotional authority gets different guidance than a Generator with sacral authority, even for the same moon event. These run through Claude Haiku for cost efficiency at scale.
-
-Follow-up upsell emails are also Claude-generated, personalized to chart data.
+Claude also powers the email layer. Lunation emails adapt to each customer's Human Design type and authority. Follow-up upsell emails are personalized to chart data. Both run through Claude Haiku for cost efficiency at scale.
 
 ## better together
 
@@ -71,9 +67,7 @@ We didn't start with tests. We started with vibes and shipping. The tests came l
 
 Now the test suite catches regressions before they ship. Calculation accuracy, API contract validation, database operations, email formatting, retry logic. The boring infrastructure that means a customer in Tokyo at 3 AM gets the same reliable experience as someone in Brooklyn at noon.
 
-GitHub Actions run daily cron jobs. Lunation emails go out at 14:00 UTC. Review request emails at 15:00. Follow-up upsell emails at 16:00. Each one personalized to the customer's chart, pulling fresh data from the calculation engines and generating content through Claude. Automated, monitored through Sentry, and tracked in PostHog.
-
-The analytics and error logs get checked daily. What's getting traffic, what's throwing errors, where people are dropping off. That data informs what gets built next. It's not glamorous work, but it's the difference between a product that runs and a product that grows.
+GitHub Actions run daily cron jobs for email delivery, monitored through Sentry and tracked in PostHog. The analytics and error logs get checked daily. That data informs what gets built next.
 
 ## tl;dr
 
