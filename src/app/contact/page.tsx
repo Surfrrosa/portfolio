@@ -1,13 +1,13 @@
 'use client'
 
-import React, { useEffect, useRef, useState } from 'react'
+import { useState } from 'react'
 import { motion } from 'framer-motion'
-import Lenis from 'lenis'
 import Image from 'next/image'
 import Sidebar from '@/components/Sidebar'
+import { useLenis } from '@/hooks/useLenis'
 
 export default function Contact() {
-  const lenisRef = useRef<Lenis | null>(null)
+  useLenis()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -15,29 +15,6 @@ export default function Contact() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
-
-  useEffect(() => {
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smoothWheel: true,
-      wheelMultiplier: 1,
-      touchMultiplier: 2,
-    })
-
-    lenisRef.current = lenis
-
-    function raf(time: number) {
-      lenis.raf(time)
-      requestAnimationFrame(raf)
-    }
-
-    requestAnimationFrame(raf)
-
-    return () => {
-      lenis.destroy()
-    }
-  }, [])
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -70,7 +47,7 @@ export default function Contact() {
       if (!res.ok) throw new Error(data?.error || "Failed");
 
       setSubmitStatus('success')
-      if (typeof form.reset === "function") form.reset();
+      form.reset();
     } catch (err) {
       console.error(err);
       setSubmitStatus('error')
@@ -219,7 +196,6 @@ export default function Contact() {
             </motion.div>
           </div>
 
-          {/* Find Me On Section - Standalone at bottom */}
           <motion.div
             className="mt-20 pt-16 border-t border-white/10"
             initial={{ opacity: 0, y: 30 }}

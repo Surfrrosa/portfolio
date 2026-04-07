@@ -1,7 +1,5 @@
-import React from 'react'
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { motion } from 'framer-motion'
 import { getAllPosts, getContentPreview } from '@/lib/blog'
 import Sidebar from '@/components/Sidebar'
 import WritingStructuredData from '@/components/WritingStructuredData'

@@ -1,40 +1,13 @@
 'use client'
 
-import React, { useRef, useEffect } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import Lenis from 'lenis'
 import Sidebar from '@/components/Sidebar'
 import BottomCTAs from '@/components/BottomCTAs'
+import { useLenis } from '@/hooks/useLenis'
 
 export default function AboutPage() {
-  const lenisRef = useRef<Lenis | null>(null)
-
-  useEffect(() => {
-    const lenis = new Lenis({
-      duration: 1.1,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      orientation: 'vertical',
-      gestureOrientation: 'vertical',
-      smoothWheel: true,
-      wheelMultiplier: 1,
-      touchMultiplier: 2,
-      infinite: false,
-    })
-
-    lenisRef.current = lenis
-
-    function raf(time: number) {
-      lenis.raf(time)
-      requestAnimationFrame(raf)
-    }
-
-    requestAnimationFrame(raf)
-
-    return () => {
-      lenis.destroy()
-    }
-  }, [])
+  useLenis({ duration: 1.1, orientation: 'vertical', gestureOrientation: 'vertical', infinite: false })
 
   return (
     <div className="min-h-screen grid lg:grid-cols-[340px_1fr]">
@@ -87,7 +60,6 @@ export default function AboutPage() {
           </motion.div>
         </motion.div>
 
-        {/* Proven Impact & Approach section */}
         <section className="mt-16 lg:mt-24">
           <div className="max-w-4xl mx-auto text-white">
             <h2 className="text-3xl lg:text-4xl font-bold mb-6 lg:mb-8">Proven Impact & Approach</h2>
@@ -115,7 +87,6 @@ export default function AboutPage() {
             <BottomCTAs />
           </div>
 
-          {/* FAQ Section */}
           <div className="max-w-4xl mx-auto text-white mt-24 lg:mt-32">
             <h2 className="text-3xl lg:text-4xl font-bold mb-8 lg:mb-12">Frequently Asked Questions</h2>
             <div className="space-y-8">

@@ -116,7 +116,6 @@ export default async function BlogPost({ params }: PageProps) {
 
       <main id="main-content" className="px-4 lg:px-12 py-12 lg:py-20">
         <article className="max-w-3xl mx-auto">
-          {/* Back link */}
           <Link
             href="/writing"
             className="inline-flex items-center gap-2 text-accent-teal hover:text-accent-teal/80 transition-colors mb-8 group"
@@ -137,9 +136,7 @@ export default async function BlogPost({ params }: PageProps) {
             Back to Writing
           </Link>
 
-          {/* Article container with dark background */}
           <div className="bg-zinc-950 rounded-2xl p-8 lg:p-12 border border-white/10">
-            {/* Post header */}
             <header className="mb-12">
               <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
                 {post.title}
@@ -175,14 +172,12 @@ export default async function BlogPost({ params }: PageProps) {
               )}
             </header>
 
-            {/* Post content */}
             <MDXContent>
               <ReactMarkdown remarkPlugins={[remarkGfm]}>
                 {post.content}
               </ReactMarkdown>
             </MDXContent>
 
-            {/* Footer */}
             <footer className="mt-16 pt-8 border-t border-white/10">
               <Link
                 href="/writing"

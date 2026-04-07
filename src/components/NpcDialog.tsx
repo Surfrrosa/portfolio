@@ -153,9 +153,7 @@ export default function NpcDialog({ open, onClose }: NpcDialogProps) {
         {/* Inner border for classic layered look */}
         <div className="absolute inset-[8px] border-2 border-white/30 rounded-sm pointer-events-none" />
 
-        {/* Content */}
         <div className="relative z-20 p-8 space-y-6">
-          {/* ASCII Smiley Portrait */}
           <div className="flex justify-center mb-4">
             <img
               src="/images/ascii-smiley.png"
@@ -165,7 +163,6 @@ export default function NpcDialog({ open, onClose }: NpcDialogProps) {
             />
           </div>
 
-          {/* Dialogue text */}
           <div className="min-h-[80px] text-white text-base leading-relaxed font-mono tracking-wide">
             <Typewriter
               text={node.text}

@@ -4,7 +4,6 @@ import matter from 'gray-matter'
 
 const postsDirectory = path.join(process.cwd(), 'content/blog')
 
-// Helper function to extract plain text preview from markdown content
 export function getContentPreview(content: string, maxLength: number = 200): string {
   // Remove markdown frontmatter if it exists
   const contentWithoutFrontmatter = content.replace(/^---[\s\S]*?---\n/, '')
@@ -72,7 +71,6 @@ export function getAllPosts(): BlogPost[] {
         draft: data.draft || false,
       } as BlogPost
     })
-    // Filter out drafts in production
     .filter((post) => {
       if (process.env.NODE_ENV === 'production') {
         return !post.draft
@@ -80,7 +78,6 @@ export function getAllPosts(): BlogPost[] {
       return true // Show drafts in development
     })
 
-  // Sort posts by date (newest first)
   return allPostsData.sort((a, b) => {
     if (a.date < b.date) {
       return 1
@@ -120,13 +117,13 @@ export function getPostBySlug(slug: string): BlogPost | null {
       draft: data.draft || false,
     }
 
-    // Don't return draft posts in production
     if (process.env.NODE_ENV === 'production' && post.draft) {
       return null
     }
 
     return post
   } catch (error) {
+    console.error(`Failed to load post "${slug}":`, error)
     return null
   }
 }

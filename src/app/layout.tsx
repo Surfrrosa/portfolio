@@ -107,7 +107,6 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-        {/* Google Analytics */}
         {process.env.NEXT_PUBLIC_GA_ID && (
           <>
             <Script
@@ -125,9 +124,7 @@ export default function RootLayout({
           </>
         )}
 
-        {/* Video Background */}
         <VideoBackground />
-        {/* Global dark charcoal sheath over background */}
         <div
           className="fixed inset-0 -z-10 pointer-events-none
                      bg-black/55 backdrop-blur-[1px]"

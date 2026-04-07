@@ -1,39 +1,16 @@
 'use client'
 
-import React, { useEffect, useRef, useState } from 'react'
+import { useState } from 'react'
 import { motion } from 'framer-motion'
-import Lenis from 'lenis'
 import Sidebar from '@/components/Sidebar'
 import DiagramGallery from '@/components/DiagramGallery'
 import { EnlightenCarousel } from '@/components/EnlightenCarousel'
+import { useLenis } from '@/hooks/useLenis'
 
 export default function Work() {
-  const lenisRef = useRef<Lenis | null>(null)
+  const lenisRef = useLenis()
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [modalMedia, setModalMedia] = useState({ src: '', type: 'image' as 'image' | 'video' })
-
-  useEffect(() => {
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smoothWheel: true,
-      wheelMultiplier: 1,
-      touchMultiplier: 2,
-    })
-
-    lenisRef.current = lenis
-
-    function raf(time: number) {
-      lenis.raf(time)
-      requestAnimationFrame(raf)
-    }
-
-    requestAnimationFrame(raf)
-
-    return () => {
-      lenis.destroy()
-    }
-  }, [])
 
   return (
     <div className="min-h-screen grid lg:grid-cols-[340px_1fr]">
@@ -1596,7 +1573,6 @@ export default function Work() {
 
           </div>
 
-          {/* Bottom Navigation */}
           <div className="mt-16 mb-8 flex justify-center items-center gap-8">
             <button
               onClick={() => {
@@ -1628,7 +1604,6 @@ export default function Work() {
         </div>
       </main>
 
-      {/* Media Modal */}
       {isModalOpen && (
         <div
           className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4"

@@ -35,17 +35,6 @@ body {
   width: 100%;
 }
 
-.h1-display {
-  font-family: var(--font-display, 'Archivo', system-ui, sans-serif);
-  font-weight: 900;
-  letter-spacing: -0.08em;
-  line-height: 0.85;
-  font-size: clamp(3.6rem, 10.8vw, 10.8rem);
-  will-change: contents;
-  transform: translateZ(0);
-  backface-visibility: hidden;
-}
-
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -59,10 +48,6 @@ body {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-}
-
-.hero-gradient {
-  background: linear-gradient(135deg, var(--bg-base) 0%, var(--surface) 100%);
 }
 
 /* RGB Glitch Effect */
@@ -124,24 +109,9 @@ body {
   animation: fade-in 0.2s ease-out forwards;
 }
 
-/* Float Effect for Exclamation Point */
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px) translateX(-50%);
-  }
-  50% {
-    transform: translateY(-10px) translateX(-50%);
-  }
-}
-
-.animate-float {
-  animation: float 2s ease-in-out infinite;
-}
-
 @media (prefers-reduced-motion: reduce) {
   .animate-shimmer,
-  .animate-fade-in,
-  .animate-float {
+  .animate-fade-in {
     animation: none;
   }
 }

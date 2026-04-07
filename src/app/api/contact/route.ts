@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
-export const runtime = "nodejs"; // ensure Node runtime
+export const runtime = "nodejs";
 
 const resend = new Resend(process.env.RESEND_API_KEY!);
 const TO = process.env.CONTACT_TO_EMAIL!;

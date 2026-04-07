@@ -1,6 +1,6 @@
 import { PHASES } from '@/lib/phases'
 
-export type DialogNode = {
+type DialogNode = {
   id: string
   text: string
   choices?: {
@@ -141,12 +141,6 @@ export const DIALOGUE_TREE: Record<string, DialogNode> = {
     id: 'goodbye',
     text: "* The smiley face waves.\n\nNo pressure. Sometimes the best decision is marinating on things.\n\nI'll be here, shimmering in the sidebar, whenever you're ready.\n\nThe methodology isn't going anywhere. Unlike your context window.\n\n(Sorry, couldn't resist.)",
     action: 'close',
-    choices: [],
-  },
-  checkMethod: {
-    id: 'checkMethod',
-    text: "* You chose wisely.\n\nSmart move. Check out the methodology page, see if it vibes with you.\n\nIf it does, you know where to find me.\n\n(Hint: I'm the shimmering smiley. Hard to miss.)",
-    action: 'goToMethod',
     choices: [],
   },
 }

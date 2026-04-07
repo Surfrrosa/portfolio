@@ -28,5 +28,3 @@ export const PHASES = [
     reward: `Evolution (+1 level).`,
   },
 ] as const;
-
-export type PhaseKey = typeof PHASES[number]['key'];
