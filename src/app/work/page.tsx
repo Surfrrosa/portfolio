@@ -1580,7 +1580,7 @@ export default function Work() {
 
                 <div className="flex justify-center gap-6">
                   <a
-                    href="https://pale-blue-dot-ten.vercel.app"
+                    href="https://palebluedot.sh"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center text-accent-teal hover:text-accent-teal/80 transition-colors group"
