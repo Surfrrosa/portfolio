@@ -21,8 +21,8 @@ export const metadata: Metadata = {
     default: 'Shaina Pauley | AI Product Architect',
     template: '%s | Shaina Pauley'
   },
-  description: 'AI Product Architect who designs agentic systems, builds evaluation harnesses, and architects context for production AI workflows. 7+ years enterprise product experience, now building multi-agent systems and shipping AI-native software daily.',
-  keywords: ['AI Product Architect', 'Agentic Systems Design', 'AI Evaluation Harnesses', 'Multi-Agent Orchestration', 'Context Architecture', 'AI Workflow Design', 'Specification Precision', 'Failure Pattern Recognition', 'Trust and Security Design', 'Token Economics', 'Claude Code', 'AI-Native Development', 'Product Architecture', 'Shaina Pauley'],
+  description: 'AI Product Architect. I design the systems AI works inside: specifications, evaluation pipelines, context that persists between sessions. 7+ years in product, now building with AI every day.',
+  keywords: ['AI Product Architect', 'Agentic Systems Design', 'AI Evaluation Harnesses', 'Multi-Agent Orchestration', 'Context Architecture', 'Claude Code', 'AI-Native Development', 'Product Architecture', 'Shaina Pauley'],
   authors: [{ name: 'Shaina Pauley', url: 'https://shainapauley.com' }],
   creator: 'Shaina Pauley',
   publisher: 'Shaina Pauley',
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Shaina Pauley | AI Product Architect',
-    description: 'Designing agentic systems, evaluation harnesses, and context architecture for production AI. Building multi-agent workflows and shipping AI-native software daily.',
+    description: 'I design the systems AI works inside. Specifications, evaluation pipelines, context that sticks between sessions. Building with AI every day.',
     url: 'https://shainapauley.com',
     siteName: 'Shaina Pauley',
     type: 'website',
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Shaina Pauley | AI Product Architect',
-    description: 'Designing agentic systems, evaluation harnesses, and context architecture for production AI. Building multi-agent workflows and shipping AI-native software daily.',
+    description: 'I design the systems AI works inside. Specifications, evaluation pipelines, context that sticks between sessions. Building with AI every day.',
     images: ['/og-image.png'],
     creator: '@sha1napauley',
   },

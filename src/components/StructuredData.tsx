@@ -22,17 +22,11 @@ function buildPersonSchema() {
       "Multi-Agent Orchestration",
       "AI Evaluation Harnesses",
       "Context Architecture",
-      "Specification Precision",
-      "Failure Pattern Recognition",
-      "Trust and Security Design",
-      "Token Economics",
       "Claude Code",
       "AI-Native Development",
-      "AI Workflow Automation",
-      "Product Strategy",
-      "Enterprise Software"
+      "Product Strategy"
     ],
-    "description": "AI Product Architect who designs agentic systems, builds evaluation harnesses, and architects context for production AI workflows. 7+ years enterprise product experience, now building multi-agent systems and shipping AI-native software daily.",
+    "description": "AI Product Architect. I design the systems AI works inside: specifications, evaluation pipelines, context that persists between sessions. 7+ years in product, now building with AI every day.",
     "hasCredential": [
       {
         "@type": "EducationalOccupationalCredential",
@@ -54,7 +48,7 @@ function buildWebSiteSchema() {
     "@id": "https://shainapauley.com/#website",
     "url": "https://shainapauley.com",
     "name": "Shaina Pauley",
-    "description": "Portfolio and writing on AI product architecture, agentic systems, multi-agent orchestration, and building production software with AI.",
+    "description": "Portfolio and writing on building with AI, product architecture, and what changes when the tools get this good.",
     "publisher": { "@id": "https://shainapauley.com/#person" }
   }
 }
@@ -69,7 +63,7 @@ function buildWebPageSchema() {
     "about": { "@id": "https://shainapauley.com/#person" },
     "datePublished": "2025-01-01",
     "dateModified": "2026-03-27",
-    "description": "AI Product Architect who designs agentic systems, builds evaluation harnesses, and architects context for production AI workflows. 7+ years enterprise product experience."
+    "description": "AI Product Architect. I design the systems AI works inside: specifications, evaluation pipelines, context that persists between sessions."
   }
 }
 

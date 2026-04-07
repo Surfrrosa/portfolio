@@ -62,7 +62,7 @@ export default function AboutPage() {
 
         <section className="mt-16 lg:mt-24">
           <div className="max-w-4xl mx-auto text-white">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-6 lg:mb-8">Proven Impact & Approach</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold mb-6 lg:mb-8">What I Bring</h2>
             <ul className="space-y-6 text-lg leading-relaxed">
               <li className="flex items-start">
                 <span className="text-accent-teal mr-4 mt-1">•</span>
@@ -74,11 +74,11 @@ export default function AboutPage() {
               </li>
               <li className="flex items-start">
                 <span className="text-accent-teal mr-4 mt-1">•</span>
-                <span><strong>Fluent in Tech + People</strong> ● bridging engineering, design, leadership, and stakeholders.</span>
+                <span><strong>Speaks Both Languages</strong> ● I can talk to engineers about architecture and explain the same thing to a stakeholder without dumbing it down.</span>
               </li>
               <li className="flex items-start">
                 <span className="text-accent-teal mr-4 mt-1">•</span>
-                <span><strong>Impact, Not Just Output</strong> ● every feature tied to tangible, trackable results.</span>
+                <span><strong>Results Over Activity</strong> ● I care whether the thing we built actually moved the needle, not how many tickets we closed.</span>
               </li>
             </ul>
           </div>
@@ -100,7 +100,7 @@ export default function AboutPage() {
               <div>
                 <h3 className="text-xl lg:text-2xl font-semibold mb-3 text-accent-teal">How do you use AI in product work?</h3>
                 <p className="text-gray-300 text-lg leading-relaxed">
-                  I architect the systems that AI works inside. That means writing the specifications agents follow, building evaluation pipelines that catch errors before they ship, and designing context architecture so every session picks up where the last one left off. I orchestrate multi-agent workflows for everything from astronomical verification to content generation. I push back constantly, validate everything, and take full ownership of what ships.
+                  I architect the systems that AI works inside. That means writing the specifications agents follow, building evaluation pipelines that catch errors before they ship, and designing context architecture so every session picks up where the last one left off. I run multi-agent workflows for everything from astronomical verification to content generation, and I push back constantly on what the AI gives me.
                 </p>
               </div>
 
@@ -121,7 +121,7 @@ export default function AboutPage() {
               <div>
                 <h3 className="text-xl lg:text-2xl font-semibold mb-3 text-accent-teal">What's your availability?</h3>
                 <p className="text-gray-300 text-lg leading-relaxed">
-                  Open to new opportunities. Contact me to discuss your product challenges and see if we're a good fit.
+                  Open to new opportunities. Drop me a note and tell me what you're building.
                 </p>
               </div>
             </div>

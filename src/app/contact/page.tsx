@@ -77,7 +77,7 @@ export default function Contact() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            Got a project idea or challenge keeping you up at night? Drop me a quick summary below and I'll send you a link to book a free 30-minute consultation to see how I can help.
+            Got something you're building and need help with? Tell me about it below and I'll send you a link to book a free 30-minute call.
           </motion.p>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -93,7 +93,7 @@ export default function Contact() {
                   <li>• AI product architecture and agentic systems design</li>
                   <li>• Specification design, evaluation systems, and context architecture</li>
                   <li>• Production software built and maintained with AI-native workflows</li>
-                  <li>• Cross-functional team leadership &amp; alignment</li>
+                  <li>• Leading product when teams need direction</li>
                 </ul>
               </div>
 
@@ -223,21 +223,6 @@ export default function Contact() {
                 <div className="absolute inset-0 bg-gradient-to-r from-teal-500/0 via-teal-500/10 to-teal-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </a>
 
-              <span className="text-white text-4xl md:text-5xl font-serif italic">&</span>
-
-              <a
-                href="#"
-                className="group relative overflow-hidden rounded-2xl border-2 border-white/10 opacity-40 cursor-not-allowed w-64 h-28 flex items-center justify-center"
-                title="Coming soon"
-              >
-                <Image
-                  src="/images/contra-logo.png"
-                  alt="Contra"
-                  width={260}
-                  height={110}
-                  className="object-contain"
-                />
-              </a>
             </div>
           </motion.div>
         </div>

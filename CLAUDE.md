@@ -36,14 +36,14 @@ Defined in `tailwind.config.ts` and `src/app/globals.css`:
 src/app/              Pages (App Router)
 src/components/       React components
 src/lib/              Utilities and config
-content/blog/         MDX blog posts with gray-matter frontmatter
+content/blog/         Markdown blog posts (.mdx extension, rendered via react-markdown)
 public/               Static assets (images, videos, diagrams, media)
 docs/sessions/        Development session logs
 ```
 
 ## Blog Posts
 
-Blog posts live in `content/blog/` as `.mdx` files. Frontmatter fields:
+Blog posts live in `content/blog/` as `.mdx` files (rendered as plain markdown via react-markdown, not compiled MDX). Frontmatter fields:
 
 ```yaml
 title: "Post Title"
@@ -115,9 +115,9 @@ npm run lint      # ESLint
 | `src/components/VideoBackground.tsx` | Background video loop with Web Audio API toggle |
 | `src/components/NpcDialog.tsx` | Undertale-style NPC dialogue easter egg |
 | `src/components/StructuredData.tsx` | JSON-LD structured data for SEO |
-| `src/lib/blog.ts` | Blog post loading and parsing (gray-matter + MDX) |
+| `src/lib/blog.ts` | Blog post loading and parsing (gray-matter + react-markdown) |
 | `src/lib/phases.ts` | Method framework phase data |
-| `content/blog/` | MDX blog posts with frontmatter |
+| `content/blog/` | Markdown blog posts with frontmatter |
 | `tailwind.config.ts` | Design tokens, custom colors, font families |
 | `src/app/globals.css` | Global styles, font imports, Tailwind directives |
 

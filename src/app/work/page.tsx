@@ -799,7 +799,7 @@ export default function Work() {
                 <div>
                   <h5 className="text-white font-semibold mb-2">My Role</h5>
                   <p className="text-gray-300 leading-relaxed">
-                    Product concept, UX design, user flows, high-level technical planning, user story creation, and roadmap development.
+                    Product concept, UX design, and technical planning. Wrote the user stories and roadmap.
                   </p>
                 </div>
                 
@@ -901,7 +901,7 @@ export default function Work() {
               </h3>
 
               <h4 className="text-accent-teal text-lg font-semibold mb-6">
-                Quantifying modern life&apos;s absurdity through systematic data collection and transparent methodology.
+                When the economy is &apos;strong&apos; but everyone&apos;s struggling, that gap is worth measuring.
               </h4>
 
               <div className="space-y-6">
@@ -922,7 +922,7 @@ export default function Work() {
                 <div>
                   <h5 className="text-white font-semibold mb-2">My Role</h5>
                   <p className="text-gray-300 leading-relaxed">
-                    Research design, methodology development, data collection framework, UX/UI design, brutalist aesthetic, platform deployment. Built with AI-assisted development.
+                    Research design, data collection, UX/UI design, brutalist aesthetic, deployment. Built with AI.
                   </p>
                 </div>
 

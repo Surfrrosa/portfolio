@@ -31,10 +31,10 @@ src/
     api/contact/route.ts  Contact form API endpoint
   components/             Sidebar, Typewriter, VideoBackground, carousels, etc.
   lib/
-    blog.ts               Blog post parsing (gray-matter, MDX)
+    blog.ts               Blog post parsing (gray-matter, react-markdown)
     phases.ts             Phase configuration
 content/
-  blog/                   MDX blog posts
+  blog/                   Markdown blog posts (.mdx extension)
 public/
   images/                 Static images and hero GIF
   videos/                 Background video loops, project previews
@@ -59,8 +59,7 @@ public/
 - **Language:** TypeScript 5
 - **Styling:** Tailwind CSS 3.3 with custom design tokens
 - **Animations:** Framer Motion 12, Lenis (smooth scroll)
-- **3D:** Three.js with React Three Fiber
-- **Blog:** MDX with gray-matter frontmatter
+- **Blog:** Markdown with gray-matter frontmatter, rendered via react-markdown
 - **Contact form:** Resend for email delivery
 - **Analytics:** Vercel Analytics, Google Analytics
 
