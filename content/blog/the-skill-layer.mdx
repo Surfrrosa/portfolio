@@ -1,0 +1,77 @@
+---
+title: "The Skill Layer"
+date: "2026-04-09"
+excerpt: "Custom skills turn Claude Code from a general-purpose assistant into a project-aware operations layer. Here's how to build them and why they matter more than prompting."
+readTime: "3 min read"
+tags: ["AI Development", "Claude Code", "Building"]
+draft: false
+---
+
+## what's a skill
+
+A skill is a reusable slash command for Claude Code. It's a markdown file with structured instructions that Claude executes like a playbook. Instead of typing 'check my site for accessibility issues against WCAG guidelines,' you type `/a11y` and the skill handles scope, methodology, output format, and follow-up. No code, no plugins, no SDK. If you can write a checklist, you can write a skill.
+
+The difference isn't convenience. It's consistency. Every session runs the same way regardless of how much context Claude has lost since the last one.
+
+## what 20 skills looks like
+
+### operations
+
+| Skill | What it does |
+|-------|-------------|
+| `/onboard` | Digests a repo's docs, session logs, architecture, and git state so Claude is productive in under a minute |
+| `/session` | Generates an end-of-session log: what changed, decisions made, known issues, next steps |
+| `/ship` | Pre-deploy safety checklist |
+| `/report` | Full health report on any project or all projects at once |
+
+### audits
+
+| Skill | What it does |
+|-------|-------------|
+| `/a11y` | WCAG accessibility audit against source code and optionally live URLs |
+| `/seo` | SEO health audit with scoring and gap identification |
+| `/perf` | Bundle size, image weight, render-blocking resources, Core Web Vitals |
+| `/privacy` | Data collection, consent flows, exposed secrets, privacy policy accuracy |
+| `/vuln` | Vulnerability scan across dependencies and code patterns |
+
+### monitoring
+
+| Skill | What it does |
+|-------|-------------|
+| `/pulse` | Uptime, SSL, response time, and basic health across all live sites |
+| `/sentry` | Errors, issues, and logs across all projects |
+| `/metrics` | Analytics report using PostHog custom events and traffic data |
+| `/cost` | Monthly burn rate across all services, flag tier limits, compare against revenue |
+
+### content
+
+| Skill | What it does |
+|-------|-------------|
+| `/blog` | Scaffold a blog post with domain-specific verification built in |
+| `/social` | Extract social media posts from a blog post |
+| `/voice` | Check content against brand voice rules |
+| `/verify` | Verify factual claims in content against authoritative sources |
+
+### project-specific
+
+| Skill | What it does |
+|-------|-------------|
+| `/transit` | Look up planetary positions for any date using Swiss Ephemeris |
+| `/update` | Run a daily content update workflow |
+| `/solo-stack-update` | Research pricing/tier changes and update structured data |
+
+## why skills matter
+
+Every skill encodes a decision that was made once and shouldn't need to be made again.
+
+`/verify` exists because Claude hallucinated a date in an early post. `/ship` exists because a deploy went out with a broken API route. `/session` exists because without structured handoff notes, the next conversation starts from zero. Each one is a scar turned into a guardrail.
+
+Skills also compound. `/onboard` reads the session logs that `/session` wrote. `/blog` calls `/verify` before publishing. `/report` orchestrates `/pulse`, `/sentry`, and `/metrics` into a single health check. The output of one session becomes the context for the next.
+
+## how to start
+
+Pick the thing you explain to Claude most often. The workflow you repeat, the constraints you re-teach, the checklist you run manually. Write it as a markdown file in `.claude/skills/your-skill-name/SKILL.md` with clear instructions. That's your first skill.
+
+From there, build the two that changed everything for me: `/onboard` (so Claude knows what it's working on) and `/session` (so the next conversation knows what happened in this one). Those two alone solve the biggest problem with AI-assisted development, which is context loss between sessions.
+
+The tool is capable enough. The bottleneck is how much of your operational knowledge lives in your head versus in a format Claude can execute.

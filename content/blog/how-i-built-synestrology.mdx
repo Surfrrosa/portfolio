@@ -9,9 +9,9 @@ draft: false
 
 ## 3:1
 
-I used Synestrology for nearly a year before I decided to build it for others. I was going through a rather difficult period which led me to a simple question: what happens when you stop treating astrology, Human Design, and numerology as separate systems and start treating them as three lenses viewing the same subject.
+I used Synestrology for nearly a year before I decided to build it for others. I've always been a fan of astrology, deep, complex astrology, not the pop-astrology version. When I lived in Thailand, I took some Human Design classes and found them interesting. Both of these things are deeply enmeshed with numerology, and I couldn't help but wonder what happens when you stop treating them as separate systems and instead view them as three lenses looking at the same subject.
 
-Every app in the space does one system. Co-Star does astrology. myBodyGraph does Human Design. Nobody synthesizes them because it's a genuinely hard problem. The systems use different languages, different frameworks, and different ways of interpreting a birth chart. Getting them to talk to each other in a way that feels coherent and not like three readings stitched together is the whole challenge.
+When I started this, nobody was synthesizing them because it's a genuinely hard problem. The systems use different languages, different frameworks, and different ways of interpreting a birth chart. Getting them to talk to each other in a way that feels coherent and not like three readings stitched together is the whole challenge.
 
 I wanted to build the thing that does that. An engine that takes your birth data, calculates your chart across all three systems, and synthesizes a single narrative that weaves them together.
 
@@ -37,7 +37,7 @@ A reading would come back beautifully written, structurally sound, with accurate
 
 This is a known characteristic of LLM output: confident fluency regardless of factual accuracy. The response reads like it's correct, and most of the time it is. But 'most of the time' isn't good enough when someone paid for their reading and will check whether their life path number is actually 7.
 
-Same problem with astronomical data. Early on, the calendar was hand-typed from various astrology sites. When we built a verification pipeline that checked every entry against Swiss Ephemeris, the results were ugly. Wrong dates. Wrong degrees. Stations listed on the wrong date. Everyone copies from each other, and errors propagate. So we built the observatory: a full Swiss Ephemeris integration that computes planetary positions for any date, cross-checked against NASA's JPL Horizons API. No astronomical claim ships without computational verification.
+Same problem with astronomical data. When we built a verification pipeline that checked every entry against Swiss Ephemeris, the results were ugly. Wrong dates. Wrong degrees. Stations listed on the wrong date. Everyone copies from each other, and errors propagate. So we built the observatory: a full Swiss Ephemeris integration that computes planetary positions for any date, cross-checked against NASA's JPL Horizons API. No astronomical claim ships without computational verification.
 
 ## our house
 
@@ -47,23 +47,21 @@ Fine for testing. Not fine when real people are paying real money.
 
 We migrated to Supabase. Six migrations over a few months, Row Level Security on every table. Customers, readings, email logs, calendar subscriptions, reviews, gift cards, a retry queue.
 
-The retry queue was a specific lesson. When a reading generation fails (API timeout, geocoding error, ephemeris edge case), the job gets enqueued with exponential backoff. First retry at 5 minutes, second at 15, third at 60. If all three fail, an alert email fires. No customer should ever pay and not receive their reading. That's the line.
+The retry queue was a specific lesson. When a read generation fails (API timeout, geocoding error, or an ephemeris edge case), the job is enqueued with exponential backoff. First retry at 5 minutes, second at 15, third at 60. If all three fail, an alert email fires. No customer should ever pay for a reading and not receive it. That's the line.
 
-Birth data is sensitive. People are trusting us with the exact moment and location they entered the world. Service role only, no anonymous access.
+Birth data is sensitive. People are trusting us with the exact moment and location of their birth. Service role only, no anonymous access.
 
 ## banana pudding
 
-257 passing tests cover calculation accuracy, API contract validation, database operations, email formatting, and retry logic. The infrastructure that means a customer in Tokyo at 3 AM gets the same reliable experience as someone in Brooklyn at noon.
+257 passing tests cover calculation accuracy, API contract validation, database operations, email formatting, and retry logic. The infrastructure means that a customer in Tokyo at 3 AM gets the same reliable experience as someone in Brooklyn at noon.
 
-GitHub Actions run daily cron jobs for email delivery, monitored through Sentry and tracked in PostHog. The analytics and error logs get checked daily. That data informs what gets built next.
+GitHub Actions run daily cron jobs for email delivery, monitored through Sentry and tracked in PostHog. Analytics and error logs are checked daily. That data informs what gets built next.
 
 ## tl;dr
 
 Checkout, calculation engine, synthesis layer, validator, PDF renderer, verification pipeline, email system, retry queue, blog, free tools, calendar, gift cards, reviews, and a Supabase database. All on a single Railway deployment.
 
 Each piece got figured out along the way. The Human Design port took a couple of weeks. The verification pipeline was born out of shipping wrong data and the determination to never do it again.
-
-Claude Code and I built this together, and I maintain it every day. That's the job.
 
 ---
 
