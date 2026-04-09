@@ -1,7 +1,7 @@
 import React from 'react'
 import type { Metadata, Viewport } from 'next'
 import Script from 'next/script'
-import { Inter, Bebas_Neue } from 'next/font/google'
+import { Inter, Bebas_Neue, Archivo, League_Spartan } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 import StructuredData from '@/components/StructuredData'
 import VideoBackground from '@/components/VideoBackground'
@@ -9,11 +9,12 @@ import './globals.css'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const bebasNeue = Bebas_Neue({ weight: '400', subsets: ['latin'], variable: '--font-bebas' })
+const archivo = Archivo({ subsets: ['latin'], weight: ['900'], variable: '--font-archivo' })
+const leagueSpartan = League_Spartan({ subsets: ['latin'], weight: ['900'], variable: '--font-league-spartan' })
 
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  maximumScale: 1,
 }
 
 export const metadata: Metadata = {
@@ -96,7 +97,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${bebasNeue.variable}`}>
+    <html lang="en" className={`${inter.variable} ${bebasNeue.variable} ${archivo.variable} ${leagueSpartan.variable}`}>
       <head>
         <StructuredData />
       </head>
