@@ -15,6 +15,15 @@ Report:
 - Uncommitted changes (if any)
 - How many commits ahead of origin
 
+### Step 1.5: Clean macOS resource forks
+The repo lives on an external SSD and macOS periodically drops `._*` resource fork files into `content/blog/`. Next.js tries to render these as blog posts and the build explodes. There's no known way to prevent them at the source (filed as an Anthropic bug for the sandbox case), so we clean them up every preflight:
+
+```bash
+find . -name "._*" -type f -delete
+```
+
+Report how many files were removed (if any).
+
 ### Step 2: Run lint
 ```bash
 npm run lint
