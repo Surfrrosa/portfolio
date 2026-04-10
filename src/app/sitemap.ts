@@ -5,17 +5,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://shainapauley.com'
   const currentDate = new Date()
 
-  // Get all blog posts dynamically
+  // Get all published blog posts (excludes drafts)
   const slugs = getAllPostSlugs()
-  const blogPosts = slugs.map((slug) => {
-    const post = getPostBySlug(slug)
-    return {
-      url: `${baseUrl}/writing/${slug}`,
-      lastModified: post?.date ? new Date(post.date) : currentDate,
-      changeFrequency: 'monthly' as const,
-      priority: 0.8,
-    }
-  })
+  const blogPosts = slugs
+    .map((slug) => {
+      const post = getPostBySlug(slug)
+      if (!post) return null
+      return {
+        url: `${baseUrl}/writing/${slug}`,
+        lastModified: post.date ? new Date(post.date) : currentDate,
+        changeFrequency: 'monthly' as const,
+        priority: 0.8,
+      }
+    })
+    .filter((entry): entry is NonNullable<typeof entry> => entry !== null)
 
   return [
     {

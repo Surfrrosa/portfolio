@@ -90,7 +90,7 @@ function SocialLinks({ className }: { className: string }) {
   return (
     <>
       {SOCIAL_LINKS.map(({ href, icon: Icon, label }) => (
-        <a key={label} href={href} className={`${className} glitch-hover`}>
+        <a key={label} href={href} className={`${className} glitch-hover`} aria-label={label}>
           <Icon />
         </a>
       ))}
