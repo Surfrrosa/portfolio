@@ -44,6 +44,115 @@ export default function Work() {
               transition={{ duration: 0.8, delay: 0.5 }}
             >
               <h3 className="text-white text-2xl font-display font-bold mb-4">
+                SlabCheck ● Pokemon TCG Grading Decision Tool
+              </h3>
+
+              <h4 className="text-accent-teal text-lg font-semibold mb-6">
+                Scan a card. See the math. Make a smarter grading decision.
+              </h4>
+
+              <div className="space-y-6">
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Problem</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    Pokemon card collectors spend hundreds on grading fees with no way to know if it&apos;s worth it. The math is opaque: grade probability, market prices at each grade, fees, turnaround times. Most people guess, and most guesses lose money.
+                  </p>
+                </div>
+
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Solution</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    A mobile app that identifies any Pokemon card from a photo using computer vision, then runs transparent expected value math: probability of each grade times market price at that grade, minus grading costs. The result is a clear recommendation: grade it, sell it raw, or list it on eBay.
+                  </p>
+                </div>
+
+                <div>
+                  <h5 className="text-white font-semibold mb-2">My Role</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    Product lead. Working with a designer to shape the experience from concept through MVP. Owning product strategy, technical architecture, and development.
+                  </p>
+                </div>
+
+                <div>
+                  <h5 className="text-white font-semibold mb-2">Status</h5>
+                  <div className="text-gray-300 space-y-3">
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">&#10003;</span><span>Working MVP with card scanning, identification, and EV breakdown</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">&#10003;</span><span>Ximilar computer vision API for instant card identification</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">&#10003;</span><span>Core EV formula: P(grade) x price_at_grade - costs = expected profit</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">&#10003;</span><span>Gathering early access interest now</span></p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap gap-2 mt-6">
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">React Native</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Expo</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">TypeScript</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Supabase</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Computer Vision</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Vercel</span>
+              </div>
+
+              <div className="mt-8 space-y-6">
+                <div
+                  className="relative aspect-video rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
+                  onClick={() => {
+                    setModalMedia({ src: '/videos/slabcheck-demo.mp4', type: 'video' })
+                    setIsModalOpen(true)
+                  }}
+                >
+                  <video
+                    className="w-full h-full object-cover"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    onError={(e) => {
+                      const target = e.target as HTMLVideoElement;
+                      target.style.display = 'none';
+                      const fallback = target.nextElementSibling as HTMLElement;
+                      if (fallback) fallback.style.display = 'flex';
+                    }}
+                  >
+                    <source src="/videos/slabcheck-demo.mp4" type="video/mp4" />
+                  </video>
+                  <div className="absolute inset-0 bg-slate-700/30 flex items-center justify-center" style={{ display: 'none' }}>
+                    <div className="text-center">
+                      <div className="w-16 h-16 bg-teal-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg className="w-8 h-8 text-accent-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      </div>
+                      <p className="text-gray-400 text-sm">Project Preview</p>
+                      <p className="text-white font-semibold">SlabCheck</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex justify-center gap-6">
+                  <a
+                    href="https://slabcheck.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-accent-teal hover:text-accent-teal/80 transition-colors group"
+                  >
+                    Join the Waitlist
+                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+            >
+              <h3 className="text-white text-2xl font-display font-bold mb-4">
                 Prism ● Media Bias Awareness Tool
               </h3>
 
