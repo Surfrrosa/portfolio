@@ -77,7 +77,8 @@ export default function Work() {
                   <h5 className="text-white font-semibold mb-2">Status</h5>
                   <div className="text-gray-300 space-y-3">
                     <p className="flex items-start"><span className="text-accent-teal mr-2">&#10003;</span><span>Working MVP with card scanning, identification, and value breakdown</span></p>
-                    <p className="flex items-start"><span className="text-accent-teal mr-2">&#10003;</span><span>Computer vision for instant card identification from a single photo</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">&#10003;</span><span>Card identification via specialized TCG recognition API</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">&#10003;</span><span>Set tracking with completion progress across 207 Pokemon TCG sets</span></p>
                     <p className="flex items-start"><span className="text-accent-teal mr-2">&#10003;</span><span>Proprietary valuation model that weighs grade probability, market prices, and fees</span></p>
                     <p className="flex items-start"><span className="text-accent-teal mr-2">&#10003;</span><span>Gathering early access interest now</span></p>
                   </div>
@@ -89,7 +90,6 @@ export default function Work() {
                 <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Expo</span>
                 <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">TypeScript</span>
                 <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Supabase</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Computer Vision</span>
                 <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Vercel</span>
               </div>
 
