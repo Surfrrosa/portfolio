@@ -62,7 +62,7 @@ export default function Work() {
                 <div>
                   <h5 className="text-white font-semibold mb-2">Solution</h5>
                   <p className="text-gray-300 leading-relaxed">
-                    A mobile app that identifies any Pokemon card from a photo using computer vision, then runs transparent expected value math: probability of each grade times market price at that grade, minus grading costs. The result is a clear recommendation: grade it, sell it raw, or list it on eBay.
+                    A mobile app that identifies any Pokemon card from a photo, then runs a data-driven valuation model under the hood. The result is a clear recommendation in seconds: grade it, sell it raw, or list it on eBay.
                   </p>
                 </div>
 
@@ -76,9 +76,9 @@ export default function Work() {
                 <div>
                   <h5 className="text-white font-semibold mb-2">Status</h5>
                   <div className="text-gray-300 space-y-3">
-                    <p className="flex items-start"><span className="text-accent-teal mr-2">&#10003;</span><span>Working MVP with card scanning, identification, and EV breakdown</span></p>
-                    <p className="flex items-start"><span className="text-accent-teal mr-2">&#10003;</span><span>Ximilar computer vision API for instant card identification</span></p>
-                    <p className="flex items-start"><span className="text-accent-teal mr-2">&#10003;</span><span>Core EV formula: P(grade) x price_at_grade - costs = expected profit</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">&#10003;</span><span>Working MVP with card scanning, identification, and value breakdown</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">&#10003;</span><span>Computer vision for instant card identification from a single photo</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">&#10003;</span><span>Proprietary valuation model that weighs grade probability, market prices, and fees</span></p>
                     <p className="flex items-start"><span className="text-accent-teal mr-2">&#10003;</span><span>Gathering early access interest now</span></p>
                   </div>
                 </div>
