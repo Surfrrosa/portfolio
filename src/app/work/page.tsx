@@ -930,10 +930,10 @@ export default function Work() {
                 <div>
                   <h5 className="text-white font-semibold mb-2">Impact</h5>
                   <div className="text-gray-300 space-y-3">
-                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>Systematic 3-level crisis categorization across 8 societal metrics</span></p>
-                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>Target: 380-480 data points per metric with verifiable URLs</span></p>
-                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>Open-source Python collection scripts for reproducibility</span></p>
-                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>Brutalist design chosen to mirror the stark, unembellished reality of modern absurdity</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>3,200+ real data points collected across 8 societal metrics</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>7 data sources: YouTube, Reddit, TikTok, Hacker News, CFPB, Bluesky, FRED</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>Fully automated weekly data pipeline running on GitHub Actions</span></p>
+                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>Current overall score: 38/100, with wage stagnation and healthcare leading the crisis</span></p>
                   </div>
                 </div>
               </div>
