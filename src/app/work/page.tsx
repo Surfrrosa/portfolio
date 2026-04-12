@@ -1107,32 +1107,32 @@ export default function Work() {
               transition={{ duration: 0.8, delay: 0.75 }}
             >
               <h3 className="text-white text-2xl font-display font-bold mb-4">
-                ConnectWise Manage ● Product Ownership Across Mobile, Communication, and CRM Platforms
+                ConnectWise Manage ● CRM/PSA Platform Product Ownership
               </h3>
               
               <h4 className="text-accent-teal text-lg font-semibold mb-6">
-                Delivered cross-platform enhancements to improve usability, communication, and data visibility for IT service providers.
+                Owned CRM, Service, and System modules for a platform used by thousands of IT service providers to manage sales pipelines, service delivery, and customer lifecycle.
               </h4>
               
               <div className="space-y-6">
                 <div>
                   <h5 className="text-white font-semibold mb-2">Problem</h5>
                   <p className="text-gray-300 leading-relaxed">
-                    ConnectWise Manage serves thousands of IT professionals worldwide, but some workflows were outdated or inefficient — from mobile field operations to client communication and sales visibility. Users needed a faster, clearer, and more integrated experience across devices and departments.
+                    ConnectWise Manage is the CRM and professional services automation platform for the managed services industry. Sales teams lacked real-time pipeline visibility, reporting took days, and legacy UI and APIs slowed adoption. The platform needed modernization across CRM dashboards, mobile workflows, and integrations.
                   </p>
                 </div>
                 
                 <div>
                   <h5 className="text-white font-semibold mb-2">Solution</h5>
                   <p className="text-gray-300 leading-relaxed">
-                    As Product Owner for CRM, Service, and System modules, I delivered Mobile App Updates – improved ticket management, remote access, and workflows for technicians on the go, Ticket Notes Redesign – added rich text formatting, inline images, avatars, and issue tags to improve clarity and reduce resolution times, and ConnectWise Now CRM Dashboards – built real-time sales and quote visibility into customizable dashboards, integrating pipeline, forecasting, and compliance metrics.
+                    Owned companies &amp; contacts, quoting, sales funnel, and procurement modules. Built ConnectWise Now CRM Dashboards with real-time pipeline visibility, quote tracking, and sales forecasting. Redesigned ticket communication with rich text, inline images, and issue tagging. Led AngularJS to React migration and legacy API to REST conversion across the platform.
                   </p>
                 </div>
                 
                 <div>
                   <h5 className="text-white font-semibold mb-2">My Role</h5>
                   <p className="text-gray-300 leading-relaxed">
-                    Product Owner for CRM, Service, and System modules managing mobile UX improvements, communication redesigns, and data visualization enhancements for enterprise IT service providers.
+                    Product Owner for CRM modules: companies &amp; contacts, quoting system, sales funnel, and procurement. Owned sales pipeline visibility, customer lifecycle features, and platform modernization across a PSA platform serving thousands of IT service providers.
                   </p>
                 </div>
                 
@@ -1147,11 +1147,11 @@ export default function Work() {
               </div>
               
               <div className="flex flex-wrap gap-2 mt-6">
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Product Ownership</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">CRM</span>
                 <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">SaaS</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Mobile UX</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Data Visualization</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Communication UX</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Sales Pipeline</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Service Management</span>
+                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Platform Modernization</span>
               </div>
 
               <div className="mt-8">
