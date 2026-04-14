@@ -216,7 +216,7 @@ function MobileSidebar({ isHome }: { isHome: boolean }) {
           My name is Shaina Pauley.
         </p>
         <p className="text-white font-mono tracking-wide text-sm leading-relaxed">
-          I'm an action-oriented dreamer and believer that emotional intelligence, systems thinking, storytelling, and collaboration are the real signal in a world full of noise
+          I'm an action-oriented <a href="https://palebluedot.sh" target="_blank" rel="noopener noreferrer" className="text-accent-teal hover:text-white transition-colors">dreamer</a> and believer that emotional intelligence, systems thinking, storytelling, and collaboration are the real signal in a world full of noise
           <span className="inline-block w-[2px] h-[1em] bg-white ml-1 align-middle animate-blink" />
         </p>
       </div>
