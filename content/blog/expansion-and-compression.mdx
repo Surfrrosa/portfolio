@@ -1,0 +1,68 @@
+---
+title: "Expansion and Compression"
+date: "2026-04-14"
+excerpt: "MCPs and hooks solve opposite problems in Claude Code. One adds capability, the other removes variance. Most people do half the job."
+readTime: "4 min read"
+tags: ["AI Development", "Claude Code", "Building"]
+draft: false
+---
+
+## most people only do half
+
+Every guide about extending Claude Code tells you which MCP servers to install. Almost none tell you which hooks to write. After four months of daily use, my ratio is twelve servers to one hook, and that ratio is backwards for what the tools are actually good at.
+
+MCPs and hooks solve opposite problems. An MCP expands what Claude can do. A hook constrains how it does it. One adds capability, the other removes variance. Most people stack servers like browser extensions and never touch hooks at all. That's the asymmetry worth naming.
+
+## expansion: the easy direction
+
+An MCP server is a process that exposes tools over a protocol. Claude connects, reads the tool schemas, and can now do things it previously couldn't. File systems, databases, design systems, analytics, video editing software, whatever. If the thing you use has an API, there's probably a server for it.
+
+My current stack: PostHog, Supabase, Vercel, Sentry, Stripe, Figma, Canva, Gmail, Google Drive, Notion. Last night we added Adobe After Effects and Premiere Pro, which I didn't expect to exist and added anyway because they did. That's twelve servers that let Claude touch everything from the database to a motion graphics timeline.
+
+The discovery problem is real. Listicle rankings like "50 Best MCP Servers" miss most of the useful ones because ranking favors popularity over fit. Three places actually work:
+
+- **PulseMCP** indexes thousands of servers with filters and search.
+- **awesome-mcp-servers** repos on GitHub (wong2, appcypher, tolkonepiu) get updated by humans who use these things.
+- **GitHub search for "mcp-server" plus your tool name** finds the one-off servers that never made a list.
+
+The Premiere server showed up by searching "premiere pro mcp" on GitHub. One developer, a few hundred stars, worked on the first try. There's probably a server for whatever obscure tool you use. You just have to look.
+
+## compression: the direction nobody goes
+
+A hook is a shell command that fires on a Claude Code event. Before a tool runs, after it runs, when a session starts, when one ends. You configure them in `settings.json` with a matcher pattern and a command. That's it.
+
+Every hooks guide online opens with the same example: auto-format with Prettier after every edit. It's the obvious one. It's also probably unnecessary if your editor formats on save, which it already does.
+
+The useful hooks are smaller and weirder. They come from bugs you actually hit.
+
+Here's my entire hook config, global, the only one I've written in four months:
+
+```json
+"PostToolUse": [{
+  "matcher": "Write|Edit",
+  "hooks": [{
+    "type": "command",
+    "command": "f=$(jq -r '.tool_response.filePath // .tool_input.file_path'); [ -n \"$f\" ] && rm -f \"$(dirname \"$f\")/._$(basename \"$f\")\" 2>/dev/null; true"
+  }]
+}]
+```
+
+It deletes macOS resource-fork sidecar files after every write. Translation: this portfolio lives on an external SSD. When macOS writes to that drive, it leaves hidden `._filename` companion files scattered around. Next.js tried to compile those as real files and the build exploded. I could have cleaned each breakage by hand. Instead I wrote six lines that make the problem impossible.
+
+That hook has run thousands of times since. I haven't thought about resource forks again. That's what a good hook does.
+
+## why the ratio is lopsided
+
+Adding an MCP is shopping. You browse, you install, you get a small dopamine hit from new capability. Writing a hook is janitorial. You notice a repeating annoyance, diagnose it, then write shell you'll never look at again. One feels like progress. The other feels like chores.
+
+But shopping doesn't change your workflow. The tenth server you add runs once a week if that. The one hook you write runs every time Claude touches a file. The leverage is inverted from the effort.
+
+The test for whether a hook is worth writing: have I fixed the same thing more than twice? If yes, it belongs in `settings.json`. The bug you're tired of is the hook you should have written last week.
+
+## where to actually start
+
+If you use Claude Code daily and have zero hooks, write one this week. Pick the most recent small annoyance you cleaned up by hand. That's it. You don't need the twelve-event taxonomy or a production CI pattern. You need one PostToolUse matcher and a command that runs in under a second.
+
+If you have ten hooks and two MCPs, you're doing it backwards in the other direction. The asymmetry cuts both ways. Expansion without compression leaves a messy agent. Compression without expansion leaves a tidy agent that can't do much.
+
+The right ratio probably isn't one to twelve. It might be three to twelve, or five to twelve. I haven't found it yet. But zero hooks is the wrong number, and the people writing "best of" lists aren't going to tell you that.
