@@ -31,9 +31,7 @@ The Premiere server showed up by searching 'premiere pro mcp' on GitHub. One dev
 
 A hook is a shell command that fires on a Claude Code event. Before a tool runs, after it runs, when a session starts, when one ends. You configure them in `settings.json` with a matcher pattern and a command. Super easy and will save you so much hassle.
 
-Every hooks guide online opens with the same example: auto-format with Prettier after every edit. It's the obvious one. It's also probably unnecessary if your editor formats on save, which it already does.
-
-The useful hooks are smaller and weirder. They come from bugs you actually hit.
+Every hooks guide online opens with the same example: auto-format with Prettier after every edit. It's the obvious one. It's also probably unnecessary if your editor formats on save, which it already does. Part of why every guide lands there is that hooks are genuinely hard to teach. The useful ones are situational, born from a bug you hit on your machine, in your project, at your stack level. It doesn't generalize well.
 
 Here's my entire hook config, global, the only one I've written in four months:
 
