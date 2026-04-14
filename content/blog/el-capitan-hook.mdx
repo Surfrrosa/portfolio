@@ -7,13 +7,13 @@ tags: ["AI Development", "Claude Code", "Building"]
 draft: false
 ---
 
-## most people only do half
+## el capitan hook
 
 Every guide about extending Claude Code tells you which MCP servers to install. Almost none tell you which hooks to write. After four months of daily use, my ratio is twelve servers to one hook, and that ratio is backwards for what the tools are actually good at.
 
 MCPs and hooks solve opposite problems. An MCP expands what Claude can do. A hook constrains how it does it. One adds capability, the other removes variance. Most people stack servers like browser extensions and never touch hooks at all. That's the asymmetry worth naming.
 
-## expansion: the easy direction
+## exhale
 
 An MCP server is a process that exposes tools over a protocol. Claude connects, reads the tool schemas, and can now do things it previously couldn't. File systems, databases, design systems, analytics, video editing software, whatever. If the thing you use has an API, there's probably a server for it.
 
@@ -27,7 +27,7 @@ The discovery problem is real. Listicle rankings like "50 Best MCP Servers" miss
 
 The Premiere server showed up by searching "premiere pro mcp" on GitHub. One developer, a few hundred stars, worked on the first try. There's probably a server for whatever obscure tool you use. You just have to look.
 
-## compression: the direction nobody goes
+## inhale
 
 A hook is a shell command that fires on a Claude Code event. Before a tool runs, after it runs, when a session starts, when one ends. You configure them in `settings.json` with a matcher pattern and a command. That's it.
 
@@ -51,7 +51,7 @@ It deletes macOS resource-fork sidecar files after every write. Translation: thi
 
 That hook has run thousands of times since. I haven't thought about resource forks again. That's what a good hook does.
 
-## why the ratio is lopsided
+## jenga
 
 Adding an MCP is shopping. You browse, you install, you get a small dopamine hit from new capability. Writing a hook is janitorial. You notice a repeating annoyance, diagnose it, then write shell you'll never look at again. One feels like progress. The other feels like chores.
 
@@ -59,7 +59,7 @@ But shopping doesn't change your workflow. The tenth server you add runs once a 
 
 The test for whether a hook is worth writing: have I fixed the same thing more than twice? If yes, it belongs in `settings.json`. The bug you're tired of is the hook you should have written last week.
 
-## where to actually start
+## press start
 
 If you use Claude Code daily and have zero hooks, write one this week. Pick the most recent small annoyance you cleaned up by hand. That's it. You don't need the twelve-event taxonomy or a production CI pattern. You need one PostToolUse matcher and a command that runs in under a second.
 
