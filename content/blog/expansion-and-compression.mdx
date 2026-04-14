@@ -1,7 +1,7 @@
 ---
 title: "Expansion & Compression"
 date: "2026-04-14"
-excerpt: "MCPs and hooks solve opposite problems in Claude Code. One adds capability, the other removes variance. Most people do half the job."
+excerpt: "MCPs and hooks solve opposite problems in Claude Code. One adds capability, the other removes variance."
 readTime: "4 min read"
 tags: ["AI Development", "Claude Code", "Building"]
 draft: false
@@ -13,7 +13,7 @@ Every guide about extending Claude Code tells you which MCP servers to install. 
 
 MCPs and hooks solve opposite problems. An MCP expands what Claude can do. A hook constrains how it does it. One adds capability, the other removes variance. Most people stack servers like browser extensions and never touch hooks at all.
 
-## exhale
+## inhale
 
 An MCP server is a process that exposes tools over a protocol. Claude connects, reads the tool schemas, and can do things it ordinarily cannot. File systems, databases, design systems, analytics, video editing software, whatever. If the thing you use has an API, there's probably a server for it. And if there isn't, you can probably build one.
 
@@ -27,7 +27,7 @@ The discovery problem is real, but here are three that are worth noting:
 
 The Premiere server showed up by searching 'premiere pro mcp' on GitHub. One developer, a few hundred stars, and it worked on the first try. There's probably a server for whatever obscure tool you use. You just have to look.
 
-## inhale
+## exhale
 
 A hook is a shell command that fires on a Claude Code event. Before a tool runs, after it runs, when a session starts, when one ends. You configure them in `settings.json` with a matcher pattern and a command. Super easy and will save you so much hassle.
 
