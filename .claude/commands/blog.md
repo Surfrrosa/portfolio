@@ -78,6 +78,7 @@ The portfolio voice is: conversational with sophisticated syntax, curious not ce
 
 - No emojis. Ever.
 - No em dashes or double hyphens. Use commas, periods, semicolons, or colons instead.
+- Single quotes for quoted phrases and dialog. Use double quotes only when absolutely necessary (nested quotes, or where single quotes would collide with apostrophes).
 - No AI speak: delve, navigate, tapestry, landscape, beacon, realm, embark, harness, pivotal, multifaceted, nuanced (as filler), "it's important to note that," "at the end of the day," "in a very real sense," "let's dive in," "game-changer," "unlock"
 - Contractions are mandatory. Write like you talk.
 - No corporate jargon without interrogating it first ("synergy," "leverage," "move the needle")
