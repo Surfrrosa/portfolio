@@ -11,25 +11,25 @@ draft: false
 
 Every guide about extending Claude Code tells you which MCP servers to install. Almost none tell you which hooks to write. After four months of daily use, my ratio is twelve servers to one hook, and that ratio is backwards for what the tools are actually good at.
 
-MCPs and hooks solve opposite problems. An MCP expands what Claude can do. A hook constrains how it does it. One adds capability, the other removes variance. Most people stack servers like browser extensions and never touch hooks at all. That's the asymmetry worth naming.
+MCPs and hooks solve opposite problems. An MCP expands what Claude can do. A hook constrains how it does it. One adds capability, the other removes variance. Most people stack servers like browser extensions and never touch hooks at all.
 
 ## exhale
 
-An MCP server is a process that exposes tools over a protocol. Claude connects, reads the tool schemas, and can now do things it previously couldn't. File systems, databases, design systems, analytics, video editing software, whatever. If the thing you use has an API, there's probably a server for it.
+An MCP server is a process that exposes tools over a protocol. Claude connects, reads the tool schemas, and can do things it ordinarily cannot. File systems, databases, design systems, analytics, video editing software, whatever. If the thing you use has an API, there's probably a server for it. And if there isn't, you can probably build one.
 
-My current stack: PostHog, Supabase, Vercel, Sentry, Stripe, Figma, Canva, Gmail, Google Drive, Notion. Last night we added Adobe After Effects and Premiere Pro, which I didn't expect to exist and added anyway because they did. That's twelve servers that let Claude touch everything from the database to a motion graphics timeline.
+My current stack: PostHog, Supabase, Vercel, Sentry, Stripe, Figma, Canva, Gmail, Google Drive, Notion. Last night we added Adobe After Effects and Premiere Pro (which I didn't expect to exist, but it does, and it's actually pretty useful.) That's 12 servers that let Claude touch everything from the database to a video editing timeline.
 
-The discovery problem is real. Listicle rankings like "50 Best MCP Servers" miss most of the useful ones because ranking favors popularity over fit. Three places actually work:
+The discovery problem is real, but here are three that are worth noting:
 
 - **PulseMCP** indexes thousands of servers with filters and search.
 - **awesome-mcp-servers** repos on GitHub (wong2, appcypher, tolkonepiu) get updated by humans who use these things.
 - **GitHub search for "mcp-server" plus your tool name** finds the one-off servers that never made a list.
 
-The Premiere server showed up by searching "premiere pro mcp" on GitHub. One developer, a few hundred stars, worked on the first try. There's probably a server for whatever obscure tool you use. You just have to look.
+The Premiere server showed up by searching 'premiere pro mcp' on GitHub. One developer, a few hundred stars, and it worked on the first try. There's probably a server for whatever obscure tool you use. You just have to look.
 
 ## inhale
 
-A hook is a shell command that fires on a Claude Code event. Before a tool runs, after it runs, when a session starts, when one ends. You configure them in `settings.json` with a matcher pattern and a command. That's it.
+A hook is a shell command that fires on a Claude Code event. Before a tool runs, after it runs, when a session starts, when one ends. You configure them in `settings.json` with a matcher pattern and a command. Super easy and will save you so much hassle.
 
 Every hooks guide online opens with the same example: auto-format with Prettier after every edit. It's the obvious one. It's also probably unnecessary if your editor formats on save, which it already does.
 
@@ -47,7 +47,7 @@ Here's my entire hook config, global, the only one I've written in four months:
 }]
 ```
 
-It deletes macOS resource-fork sidecar files after every write. Translation: this portfolio lives on an external SSD. When macOS writes to that drive, it leaves hidden `._filename` companion files scattered around. Next.js tried to compile those as real files and the build exploded. I could have cleaned each breakage by hand. Instead I wrote six lines that make the problem impossible.
+It deletes macOS resource-fork sidecar files after every write. Translation: this portfolio lives on an external SSD. When macOS writes to that drive, it leaves hidden `._filename` companion files scattered around. Next.js tried to compile those as real files and the build fails. After annoyingly having to clean it up by hand so many times, I decided to create a hook to accommodate this bug.
 
 That hook has run thousands of times since. I haven't thought about resource forks again. That's what a good hook does.
 
@@ -57,7 +57,7 @@ Adding an MCP is shopping. You browse, you install, you get a small dopamine hit
 
 But shopping doesn't change your workflow. The tenth server you add runs once a week if that. The one hook you write runs every time Claude touches a file. The leverage is inverted from the effort.
 
-The test for whether a hook is worth writing: have I fixed the same thing more than twice? If yes, it belongs in `settings.json`. The bug you're tired of is the hook you should have written last week.
+The test for whether a hook is worth writing: have I fixed the same thing more than twice? If yes, it belongs in `settings.json`. The bug you're tired of is the hook you should have written yesterday.
 
 ## press start
 
