@@ -1,5 +1,5 @@
 ---
-title: "This is your second brain speaking."
+title: "Bad Brains"
 date: "2026-04-12"
 excerpt: "I built an elaborate RAG system to be my second brain. Then I realized I'd built a worse version of the tool I used to build it with."
 readTime: "3 min read"
@@ -13,7 +13,7 @@ Shallow enough that you haven't seriously considered it. Tits-deep into the conc
 
 I know because I built one and then slowly learned that I never needed it.
 
-## me - with less feelings
+## me but with less feelings
 
 ShainAI (cringe) was a RAG system on pgvector, Next.js 14, GPT-4 Turbo embeddings. Over a thousand memories indexed. Auto-ingestion from ChatGPT (343 conversations, 5,037 chunks), Joplin (400 notes, 1,315 chunks), 900 local files. Real-time file monitoring. Git post-commit hooks. Tesseract OCR. A meta-memory loop that saved its own conversations so it could learn from how I used it.
 
@@ -31,18 +31,18 @@ Claude Code is your second brain. Most people haven't figured out how to make th
 
 The second brain didn't die. It got absorbed. It moved from a separate app into the tool you already work in.
 
-## but what about privacy
+## private parts
 
 This is where the objection usually lands. If Claude Code sits in the middle, a vendor sees everything. A local vault doesn't leak.
 
-Smaller than it sounds. Claude Code retains inputs up to 30 days for abuse monitoring and doesn't train on them by default. Meanwhile your vault syncs to iCloud or Dropbox, your email client leaks more sensitive data than your journal would, and your laptop is as secure as its disk encryption. The "Anthropic employees read my reflections" threat model is mostly imaginary.
+Smaller than it sounds. Claude Code retains inputs up to 30 days for abuse monitoring and doesn't train on them by default. Meanwhile, your vault syncs to iCloud or Dropbox, your email client probably leaks more sensitive data than your journal would, and your laptop is as secure as its disk encryption.
 
-The real cases are compliance-shaped. HIPAA-covered data. Attorney-client privilege. Journalistic sources. These categorically can't transit a third-party model, no matter the retention policy.
+The real cases are compliance-driven, and these categorically can't be handled by a third-party model, no matter the retention policy.
 
-And in those cases, you don't need a second brain. You need a local model. Ollama or LM Studio plus your own files gets you the AI workflow with no third party in the loop. Different architecture, not a different vault.
+And in those cases, you don't need a second brain. You need a local model. Ollama or LM Studio plus your own files gets you the AI workflow with no third party in the loop.
 
 Either your threat model doesn't need what you think it does, or it needs something outside this argument entirely.
 
 ## so
 
-If you're building one right now, ask which thing you're doing. Solving a retrieval problem, or enjoying the build. Both are fine, and I'm not here to discourage anyone. Hell, I couldn't have wrote this if I didn't do it myself. It was a lot of learning under my belt, so my recommendation is keep going. Experience points are the only thing that really matters in this wild ride anyway.
+If you're building one right now, ask which thing you're doing. Solving a retrieval problem, or enjoying the build. I think either is good, actually, and I'm not here to discourage anyone. Heck, I couldn't have written this if I didn't do it myself. My recommendation is to keep going, as I learned a lot about RAG while doing it. Experience points are what count in the end, bb.
