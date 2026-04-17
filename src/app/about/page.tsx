@@ -74,7 +74,7 @@ export default function AboutPage() {
               </li>
               <li className="flex items-start">
                 <span className="text-accent-teal mr-4 mt-1">•</span>
-                <span><strong>Speaks Both Languages</strong> ● I can talk to engineers about architecture and explain the same thing to a stakeholder without dumbing it down.</span>
+                <span><strong>Speaks Both Languages</strong> ● I can talk to engineers about architecture and simplify it for non-technical teams and stakeholders so everyone's aligned.</span>
               </li>
               <li className="flex items-start">
                 <span className="text-accent-teal mr-4 mt-1">•</span>
