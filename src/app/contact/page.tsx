@@ -6,6 +6,8 @@ import Image from 'next/image'
 import Sidebar from '@/components/Sidebar'
 import { useLenis } from '@/hooks/useLenis'
 
+const CONTACT_EMAIL = 'shaina@slabcheck.app'
+
 export default function Contact() {
   useLenis()
   const [formData, setFormData] = useState({
@@ -13,8 +15,6 @@ export default function Contact() {
     email: '',
     message: ''
   })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -24,36 +24,11 @@ export default function Contact() {
     }))
   }
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true)
-    setSubmitStatus('idle')
-    const form = e.currentTarget;
-    const fd = new FormData(form);
-    const payload = {
-      name: String(fd.get("name") || ""),
-      email: String(fd.get("email") || ""),
-      message: String(fd.get("message") || ""),
-    };
-
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-
-      const data: { ok?: boolean; error?: string } = await res.json().catch(() => ({}));
-      if (!res.ok) throw new Error(data?.error || "Failed");
-
-      setSubmitStatus('success')
-      form.reset();
-    } catch (err) {
-      console.error(err);
-      setSubmitStatus('error')
-    } finally {
-      setIsSubmitting(false)
-    }
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const subject = `New message from ${formData.name}`
+    const body = `${formData.message}\n\n---\nReply to: ${formData.email}`
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
   }
 
   return (
@@ -88,7 +63,7 @@ export default function Contact() {
               transition={{ duration: 0.8, delay: 0.5 }}
             >
               <div>
-                <h3 className="text-accent-teal text-lg font-semibold mb-4">What I Do</h3>
+                <h2 className="text-accent-teal text-lg font-semibold mb-4">What I Do</h2>
                 <ul className="space-y-2 text-gray-300">
                   <li>• AI product architecture and agentic systems design</li>
                   <li>• Specification design, evaluation systems, and context architecture</li>
@@ -98,7 +73,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <h3 className="text-accent-teal text-lg font-semibold mb-4">Industries</h3>
+                <h2 className="text-accent-teal text-lg font-semibold mb-4">Industries</h2>
                 <ul className="space-y-2 text-gray-300">
                   <li>• AI and machine learning systems</li>
                   <li>• SaaS and enterprise software</li>
@@ -108,7 +83,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <h3 className="text-accent-teal text-lg font-semibold mb-4">Response Time</h3>
+                <h2 className="text-accent-teal text-lg font-semibold mb-4">Response Time</h2>
                 <p className="text-gray-300">
                   I typically respond within 24 hours.
                 </p>
@@ -171,27 +146,17 @@ export default function Contact() {
 
                 <button
                   type="submit"
-                  disabled={isSubmitting}
-                  className="w-full bg-teal-500 hover:bg-teal-600 disabled:bg-accent-teal disabled:cursor-not-allowed text-white font-semibold py-3 px-6 rounded-lg transition-colors"
+                  className="w-full bg-teal-500 hover:bg-teal-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors"
                 >
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                  Send Message
                 </button>
 
-                {submitStatus === 'success' && (
-                  <div className="mt-4 p-4 bg-green-500/20 border border-green-500/30 rounded-lg">
-                    <p className="text-green-400 text-center">
-                      Got it! I'll send you a scheduling link for a free 30-minute consultation within 24 hours.
-                    </p>
-                  </div>
-                )}
-
-                {submitStatus === 'error' && (
-                  <div className="mt-4 p-4 bg-red-500/20 border border-red-500/30 rounded-lg">
-                    <p className="text-red-400 text-center">
-                      Failed to send message. Please try again or email me directly at shainaep@gmail.com
-                    </p>
-                  </div>
-                )}
+                <p className="text-sm text-gray-400 text-center">
+                  This opens your mail client. Prefer direct?{' '}
+                  <a href={`mailto:${CONTACT_EMAIL}`} className="text-accent-teal hover:underline">
+                    {CONTACT_EMAIL}
+                  </a>
+                </p>
               </form>
             </motion.div>
           </div>
@@ -203,9 +168,9 @@ export default function Contact() {
             transition={{ duration: 0.8, delay: 0.9 }}
           >
             <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8">
-              <h3 className="text-white text-2xl md:text-3xl font-light tracking-wide">
+              <h2 className="text-white text-2xl md:text-3xl font-light tracking-wide">
                 Find me on
-              </h3>
+              </h2>
 
               <a
                 href="https://www.upwork.com/freelancers/~01678c95a70afbd270?mp_source=share"

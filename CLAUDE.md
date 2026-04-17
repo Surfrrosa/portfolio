@@ -63,12 +63,7 @@ Posts with `draft: true` are hidden in production but visible in dev.
 
 ## Contact Form
 
-Uses Resend (`/api/contact`). Environment variables in `.env.local`:
-- `RESEND_API_KEY`
-- `CONTACT_FROM_EMAIL`
-- `CONTACT_TO_EMAIL`
-
-See `.env.example` for template.
+Form submit opens a `mailto:` link to `shaina@slabcheck.app` with prefilled subject and body. No backend, no Resend, no API keys. Inbox is Google Workspace on slabcheck.app.
 
 ## Session Logs
 
@@ -84,10 +79,8 @@ See `docs/sessions/README.md` for format.
 2. Copy `.env.example` to `.env.local` and fill in secrets
 3. `npm run dev` starts the dev server at `http://localhost:3000`
 
-**Environment variables** (required for contact form):
-- `RESEND_API_KEY` -- API key from Resend
-- `CONTACT_FROM_EMAIL` -- verified sender email in Resend
-- `CONTACT_TO_EMAIL` -- recipient email for contact form submissions
+**Environment variables:**
+- `NEXT_PUBLIC_GA_ID` -- Google Analytics measurement ID (optional in dev)
 
 **Commands:**
 ```bash
@@ -108,8 +101,7 @@ npm run lint      # ESLint
 | `src/app/work/page.tsx` | Work/portfolio showcase with project cards and media modal |
 | `src/app/writing/page.tsx` | Blog listing page |
 | `src/app/writing/[slug]/page.tsx` | Individual blog post renderer |
-| `src/app/contact/page.tsx` | Contact form (posts to `/api/contact`) |
-| `src/app/api/contact/route.ts` | Contact form API route (Resend) |
+| `src/app/contact/page.tsx` | Contact form (opens mailto: with prefilled fields) |
 | `src/app/sitemap.ts` | Dynamic sitemap generator |
 | `src/components/Sidebar.tsx` | Global sidebar navigation |
 | `src/components/VideoBackground.tsx` | Background video loop with Web Audio API toggle |

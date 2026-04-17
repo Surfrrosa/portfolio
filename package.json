@@ -19,7 +19,6 @@
     "react-dom": "19.2.4",
     "react-markdown": "10.1.0",
     "remark-gfm": "4.0.1",
-    "resend": "6.9.4",
     "swiper": "12.1.2"
   },
   "maestro": {
