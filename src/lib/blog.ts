@@ -10,7 +10,7 @@ export function getContentPreview(content: string, maxLength: number = 200): str
 
   // Remove markdown syntax (headers, bold, italic, links, etc)
   let plainText = contentWithoutFrontmatter
-    .replace(/#{1,6}\s/g, '') // Remove headers
+    .replace(/^#{1,6}\s.+$/gm, '') // Remove heading lines entirely
     .replace(/\*\*(.+?)\*\*/g, '$1') // Remove bold
     .replace(/\*(.+?)\*/g, '$1') // Remove italic
     .replace(/\[(.+?)\]\(.+?\)/g, '$1') // Remove links but keep text

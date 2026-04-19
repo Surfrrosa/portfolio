@@ -82,7 +82,7 @@ export default function WritingPage() {
                     </p>
 
                     <p className="text-zinc-300 leading-relaxed mb-4">
-                      {getContentPreview(post.content, 200)}
+                      {post.excerpt || getContentPreview(post.content, 200)}
                     </p>
 
                     {post.tags && post.tags.length > 0 && (
