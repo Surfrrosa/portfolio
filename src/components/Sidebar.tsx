@@ -3,7 +3,6 @@
 import { usePathname } from 'next/navigation'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import SmileyButton from './SmileyButton'
 
 function LinkedInIcon() {
   return (
@@ -113,81 +112,54 @@ function NavLinks({ className }: { className: string }) {
 function DesktopSidebar({ isHome }: { isHome: boolean }) {
   return (
     <aside className="hidden lg:flex lg:flex-col gap-6 fixed top-0 left-0 w-[340px] h-screen
-                       bg-black/60 backdrop-blur-[1px] border-r border-white/10 p-6 z-50">
-      <div className="space-y-6">
-        <HomeLink isHome={isHome} />
+                       bg-black/60 backdrop-blur-[1px] border-r border-white/10 p-6 z-50 overflow-y-auto">
+      <HomeLink isHome={isHome} />
 
-        <motion.div
-          className="space-y-4"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          <p className="text-white font-mono tracking-wide" style={{ fontSize: '22px', lineHeight: '1.7' }}>
-            My name is Shaina Pauley.
-          </p>
-          <p className="text-white font-mono tracking-wide" style={{ fontSize: '22px', lineHeight: '1.7' }}>
-            I&apos;m an action-oriented <a href="https://palebluedot.sh" target="_blank" rel="noopener noreferrer" className="text-accent-teal hover:text-white transition-colors">dreamer</a> and believer that emotional intelligence, systems thinking, storytelling, and collaboration are the real signal in a world full of noise
-            <span className="inline-block w-[3px] h-[1.1em] bg-white ml-1 align-middle animate-blink" />
-          </p>
-        </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+      >
+        <p className="text-white font-mono font-bold tracking-wide mb-3" style={{ fontSize: '18px' }}>
+          I am...
+        </p>
+        <ul className="text-white font-mono list-disc pl-5 space-y-2" style={{ fontSize: '16px', lineHeight: '1.5' }}>
+          <li>Alchemist</li>
+          <li>Cosmic Puppet</li>
+          <li>Interdimensional Traveler</li>
+          <li>Mime</li>
+          <li>Peaceful Noisemaker</li>
+          <li>Noodlist</li>
+          <li>Bicycler</li>
+          <li>Facilitator of Freedom</li>
+          <li>Mad Hatter</li>
+          <li>Shoegazer</li>
+          <li>
+            <a href="https://palebluedot.sh" target="_blank" rel="noopener noreferrer" className="text-accent-teal hover:text-white transition-colors">Heartist</a>
+          </li>
+        </ul>
+      </motion.div>
 
-        <motion.div
-          className="flex gap-4"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-        >
-          <SocialLinks className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors" />
-          <div className="w-px h-10 bg-white/20 mx-2"></div>
-          <NavLinks className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors" />
-        </motion.div>
+      <motion.div
+        className="flex gap-4"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+      >
+        <SocialLinks className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors" />
+        <div className="w-px h-10 bg-white/20 mx-2"></div>
+        <NavLinks className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors" />
+      </motion.div>
 
-        <motion.div
-          className="mt-8 flex-1 flex items-center justify-center overflow-hidden"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.6 }}
-        >
-          <SmileyButton>
-            <pre aria-hidden="true" className="text-white/30 text-[12px] leading-[1.2] font-mono select-none scale-150">
-{`⠀⠀⠀⠀⠀⡾⠀⢀⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢇⠀⠸⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⠇⠀⡸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⡄⠀⢿⠀⠀⠀⠀⠀
-⠀⠀⠀⢠⡾⠁⠀⡼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⡄⠀⠙⣦⠀⠀⠀⠀⠀⠀⠀⣴⠋⠀⢠⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢷⠀⠈⢳⣄⠀⠀⠀
-⠤⠒⠚⠁⠀⢀⡞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢦⡀⠀⠙⠒⠂⠤⠐⠒⠋⠀⠀⣰⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠳⣄⠀⠈⠓⠒⠤
-⠀⠀⣀⡤⠖⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠦⣄⡀⠀⠀⠀⢀⣠⠴⠊⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠳⢤⣀⠀⠀
-⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠴⠒⠋⠉⠉⠉⠓⠲⢄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⢀⡠⠖⠚⠉⠉⠉⠙⠒⠦⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠞⠁⠀⠀⣀⠀⠀⢀⡀⠀⠀⠙⢦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡴⠋⠀⠀⢀⡀⠀⠀⣀⠀⠀⠈⠳⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⢰⠋⠀⠀⠀⠀⣿⡄⠀⣾⡇⠀⠀⠀⠀⢳⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡞⠁⠀⠀⠀⢸⣧⠀⢰⣿⠀⠀⠀⠀⠘⣆⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⡿⠀⣀⡀⠀⠀⢿⠁⠀⢹⠇⠀⠀⣠⡄⠈⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠇⢀⣀⠀⠀⠸⡏⠀⠈⡿⠀⠀⢀⣤⠀⢹⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⢸⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⡏⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⢻⠀⠈⢧⡀⠀⠀⠀⠀⠀⠀⠀⣠⠏⠀⢰⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡇⠀⠹⣄⠀⠀⠀⠀⠀⠀⠀⢀⡼⠁⠀⡾⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⢷⡀⠀⠙⠲⠤⢀⣀⠠⠴⠚⠁⠀⣰⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣆⠀⠈⠓⠦⠄⣀⡀⠤⠖⠋⠀⢀⡾⠁⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠦⣀⡀⠀⠀⠀⠀⠀⣀⡠⠞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠳⢄⣀⠀⠀⠀⠀⠀⢀⣀⠴⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠒⠒⠤⣄⡀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠑⠒⠒⠒⠋⠉⠀⠀⠀⠀⠀⠀⠀⠀⣀⡤⠔⠒⠒⠒⠢⢤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠒⠒⠒⠚⠉⠁⠀⠀⠀⠀⠀⠀⠀⢀⣠⠤⠒⠒
-⠀⠀⠀⠀⠉⠳⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡴⠚⠁⠀⠀⠀⠀⠀⠀⠀⠈⠙⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠖⠉⠀⠀⠀⠀
-⠀⣾⡆⠀⠀⠀⠘⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡞⠁⠀⠀⠀⣾⡆⠀⢸⣧⠀⠀⠀⠀⢳⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⠋⠀⠀⠀⢠⣿⠀
-⠀⣿⡇⠀⠀⠀⠀⠸⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡸⠀⠀⠀⠀⠀⢿⡇⠀⢸⡿⠀⠀⢀⡀⠈⢇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠇⠀⣀⠀⠀⠸⣿⠀
-⠀⠈⠀⠀⠘⣹⠁⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⢹⡟⠀⠀⠈⠀⠀⠀⠁⠀⠀⢙⡏⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠈⣏⠁⠀⠀⠉⠀
-⠀⠀⠀⠀⢠⠏⠀⢰⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⡀⠈⢧⡀⠀⠀⠀⠀⠀⠀⠀⠀⡼⠁⠀⡎⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⡆⠀⠹⣄⠀⠀⠀⠀
-⠀⣀⣠⠔⠃⠀⣠⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢳⡀⠀⠛⢤⣀⡀⠀⢀⣀⡤⠚⠀⢀⡼⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣄⠀⠘⠣⣄⣀⠀
-⠁⠀⠀⠀⣀⠴⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⢤⡀⠀⠀⠀⠉⠁⠀⠀⢀⡠⠞⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠷⣀⠀⠀⠀⠈
-⠤⠤⠒⠋⠁⠀⠀⠀⠀⠀⠀⠀⢀⣀⡤⠤⠤⠤⣄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠓⠢⠤⠤⠤⠔⠚⠉⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⠤⠤⠤⢤⣀⡀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠒⠤⠤
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠖⠉⠀⠀⠀⠀⠀⠀⠈⠑⢦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡴⠊⠁⠀⠀⠀⠀⠀⠀⠉⠲⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⢀⡾⠁⠀⠀⠀⣶⠀⠀⣰⡆⠀⠀⠀⠙⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⠏⠀⠀⠀⢰⡆⠀⢀⣶⠀⠀⠀⠈⢳⡀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⡼⠀⠀⠀⠀⠀⣿⠇⠀⢿⡇⠀⠀⠀⠀⠸⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠇⠀⠀⠀⠀⢸⡿⠀⠸⣿⠀⠀⠀⠀⠀⢷⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⢲⠦⠀⠀⠙⠀⠀⠘⠁⠀⠀⢺⠃⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠐⡶⠄⠀⠈⠃⠀⠀⠋⠀⠀⠐⡟⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⣧⠀⠸⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⡼⠀⢀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡄⠀⢧⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠇⠀⣸⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠸⣆⠀⠙⢦⣀⠀⠀⠀⠀⢀⣠⠞⠁⢀⡼⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢷⡀⠈⠳⣄⡀⠀⠀⠀⠀⣀⡴⠋⠀⣠⠏⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢦⡀⠀⠈⠉⠐⠒⠈⠉⠀⠀⣠⠞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠳⣄⠀⠀⠉⠁⠒⠂⠉⠁⠀⢀⡴⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠲⠤⢄⣀⣀⣀⡤⠴⠊⠁⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠑⠦⠤⣀⣀⣀⣠⠤⠖⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀
-⠀⠀⠉⠓⠦⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡠⠖⠋⠁⠀⠀⠀⠈⠙⠲⢤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠴⠚⠉⠁⠀
-⠀⣤⠀⠀⠀⠈⢷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠏⠀⠀⠀⢠⡄⠀⢀⣄⠀⠀⠀⠙⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡼⠁⠀⠀⢀⣄⠀
-⠀⣿⡇⠀⠀⠀⠀⢳⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⠃⠀⠀⠀⠀⣿⡧⠀⢸⣿⠀⠀⠀⠀⠘⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡞⠀⠀⠀⠀⢸⣿⠀
-⠀⠿⠁⠀⢠⣶⡆⢨⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡎⠀⢴⡦⠀⠀⢹⡇⠀⠘⣟⠀⠀⣠⣤⠀⢱⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⠱⢠⣤⡄⠀⠘⡟⠀`}
-            </pre>
-          </SmileyButton>
-        </motion.div>
-      </div>
+      <motion.div
+        className="mt-auto pt-6 border-t border-white/10"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 0.6 }}
+      >
+        <p className="text-white/70 font-mono" style={{ fontSize: '14px' }}>My name is</p>
+        <p className="text-white font-mono font-bold tracking-wide" style={{ fontSize: '20px', letterSpacing: '-0.01em' }}>Shaina Pauley</p>
+      </motion.div>
     </aside>
   )
 }
@@ -212,13 +184,26 @@ function MobileSidebar({ isHome }: { isHome: boolean }) {
       </div>
 
       <div className="space-y-2">
-        <p className="text-white font-mono tracking-wide text-base leading-relaxed">
-          My name is Shaina Pauley.
-        </p>
-        <p className="text-white font-mono tracking-wide text-sm leading-relaxed">
-          I'm an action-oriented <a href="https://palebluedot.sh" target="_blank" rel="noopener noreferrer" className="text-accent-teal hover:text-white transition-colors">dreamer</a> and believer that emotional intelligence, systems thinking, storytelling, and collaboration are the real signal in a world full of noise
-          <span className="inline-block w-[2px] h-[1em] bg-white ml-1 align-middle animate-blink" />
-        </p>
+        <p className="text-white font-mono font-bold text-base">I am...</p>
+        <ul className="text-white font-mono list-disc pl-5 space-y-1.5 text-sm leading-relaxed">
+          <li>Alchemist</li>
+          <li>Cosmic Puppet</li>
+          <li>Interdimensional Traveler</li>
+          <li>Mime</li>
+          <li>Peaceful Noisemaker</li>
+          <li>Noodlist</li>
+          <li>Bicycler</li>
+          <li>Facilitator of Freedom</li>
+          <li>Mad Hatter</li>
+          <li>Shoegazer</li>
+          <li>
+            <a href="https://palebluedot.sh" target="_blank" rel="noopener noreferrer" className="text-accent-teal hover:text-white transition-colors">Heartist</a>
+          </li>
+        </ul>
+        <div className="pt-3 mt-3 border-t border-white/10">
+          <p className="text-white/70 font-mono text-xs">My name is</p>
+          <p className="text-white font-mono font-bold text-lg">Shaina Pauley</p>
+        </div>
       </div>
 
       <div className="flex items-center justify-between mt-4">
