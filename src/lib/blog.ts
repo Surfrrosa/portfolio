@@ -45,8 +45,21 @@ export interface BlogPost {
   draft?: boolean
 }
 
+function parsePost(slug: string, fileContents: string): BlogPost {
+  const { data, content } = matter(fileContents)
+  return {
+    slug,
+    title: data.title || 'Untitled',
+    date: data.date || '',
+    excerpt: data.excerpt || '',
+    content,
+    readTime: data.readTime,
+    tags: data.tags || [],
+    draft: data.draft || false,
+  }
+}
+
 export function getAllPosts(): BlogPost[] {
-  // Create directory if it doesn't exist
   if (!fs.existsSync(postsDirectory)) {
     return []
   }
@@ -58,64 +71,33 @@ export function getAllPosts(): BlogPost[] {
       const slug = fileName.replace(/\.mdx?$/, '')
       const fullPath = path.join(postsDirectory, fileName)
       const fileContents = fs.readFileSync(fullPath, 'utf8')
-      const { data, content } = matter(fileContents)
-
-      return {
-        slug,
-        title: data.title || 'Untitled',
-        date: data.date || '',
-        excerpt: data.excerpt || '',
-        content,
-        readTime: data.readTime,
-        tags: data.tags || [],
-        draft: data.draft || false,
-      } as BlogPost
+      return parsePost(slug, fileContents)
     })
     .filter((post) => {
       if (process.env.NODE_ENV === 'production') {
         return !post.draft
       }
-      return true // Show drafts in development
+      return true
     })
 
-  return allPostsData.sort((a, b) => {
-    if (a.date < b.date) {
-      return 1
-    } else {
-      return -1
-    }
-  })
+  return allPostsData.sort((a, b) => (a.date < b.date ? 1 : -1))
 }
 
 export function getPostBySlug(slug: string): BlogPost | null {
   try {
-    const fullPath = path.join(postsDirectory, `${slug}.mdx`)
+    const mdxPath = path.join(postsDirectory, `${slug}.mdx`)
+    const mdPath = path.join(postsDirectory, `${slug}.md`)
 
-    // Try .mdx first, then .md
     let fileContents: string
-    if (fs.existsSync(fullPath)) {
-      fileContents = fs.readFileSync(fullPath, 'utf8')
+    if (fs.existsSync(mdxPath)) {
+      fileContents = fs.readFileSync(mdxPath, 'utf8')
+    } else if (fs.existsSync(mdPath)) {
+      fileContents = fs.readFileSync(mdPath, 'utf8')
     } else {
-      const mdPath = path.join(postsDirectory, `${slug}.md`)
-      if (fs.existsSync(mdPath)) {
-        fileContents = fs.readFileSync(mdPath, 'utf8')
-      } else {
-        return null
-      }
+      return null
     }
 
-    const { data, content } = matter(fileContents)
-
-    const post = {
-      slug,
-      title: data.title || 'Untitled',
-      date: data.date || '',
-      excerpt: data.excerpt || '',
-      content,
-      readTime: data.readTime,
-      tags: data.tags || [],
-      draft: data.draft || false,
-    }
+    const post = parsePost(slug, fileContents)
 
     if (process.env.NODE_ENV === 'production' && post.draft) {
       return null
