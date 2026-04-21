@@ -45,6 +45,39 @@ function MailIcon() {
   )
 }
 
+const IDENTITIES = [
+  'builder',
+  'alchemist',
+  'cosmic puppet',
+  'interdimensional traveler',
+  'mime',
+  'peaceful noisemaker',
+  'noodlist',
+  'bicycler',
+  'facilitator of freedom',
+  'mad hatter',
+  'shoegazer',
+] as const
+
+function IdentityList({ headingClassName, listClassName, headingStyle, listStyle }: {
+  headingClassName: string
+  listClassName: string
+  headingStyle?: React.CSSProperties
+  listStyle?: React.CSSProperties
+}) {
+  return (
+    <>
+      <p className={headingClassName} style={headingStyle}>I am a...</p>
+      <ul className={listClassName} style={listStyle}>
+        {IDENTITIES.map((id) => (
+          <li key={id}>{id}</li>
+        ))}
+        <li>&amp; <a href="https://palebluedot.sh" target="_blank" rel="noopener noreferrer" className="text-accent-teal hover:text-white transition-colors">heartist</a></li>
+      </ul>
+    </>
+  )
+}
+
 function HomeCard({ className }: { className?: string }) {
   return (
     <Link href="/" aria-label="Home" className={`group relative block ${className ?? ''}`}>
@@ -116,7 +149,7 @@ function NavLinks({ className }: { className: string }) {
 
 function DesktopSidebar() {
   return (
-    <aside className="hidden lg:flex lg:flex-col gap-5 fixed top-0 left-0 w-[340px] h-screen
+    <aside className="hidden lg:flex lg:flex-col gap-7 fixed top-0 left-0 w-[340px] h-screen
                        bg-black/60 backdrop-blur-[1px] border-r border-white/10 p-6 z-50 overflow-y-auto">
       <HomeCard className="max-w-[280px] mx-auto" />
 
@@ -125,24 +158,12 @@ function DesktopSidebar() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
       >
-        <p className="text-white font-mono font-bold tracking-wide mb-3" style={{ fontSize: '18px' }}>
-          I am a...
-        </p>
-        <ul className="text-white font-mono list-disc pl-5 space-y-3" style={{ fontSize: '16px', lineHeight: '1.6' }}>
-          <li>Builder</li>
-          <li>Product Owner</li>
-          <li>Alchemist</li>
-          <li>Cosmic Puppet</li>
-          <li>Interdimensional Traveler</li>
-          <li>Mime</li>
-          <li>Peaceful Noisemaker</li>
-          <li>Noodlist</li>
-          <li>Bicycler</li>
-          <li>Facilitator of Freedom</li>
-          <li>Mad Hatter</li>
-          <li>Shoegazer</li>
-          <li>&amp; <a href="https://palebluedot.sh" target="_blank" rel="noopener noreferrer" className="text-accent-teal hover:text-white transition-colors">Heartist</a></li>
-        </ul>
+        <IdentityList
+          headingClassName="text-white font-mono font-bold tracking-wide mb-3"
+          headingStyle={{ fontSize: '18px' }}
+          listClassName="text-white font-mono list-disc pl-5 space-y-3"
+          listStyle={{ fontSize: '16px', lineHeight: '1.6' }}
+        />
       </motion.div>
 
       <motion.div
@@ -168,22 +189,10 @@ function MobileSidebar() {
       </div>
 
       <div className="space-y-2">
-        <p className="text-white font-mono font-bold text-base">I am a...</p>
-        <ul className="text-white font-mono list-disc pl-5 space-y-1.5 text-sm leading-relaxed">
-          <li>Builder</li>
-          <li>Product Owner</li>
-          <li>Alchemist</li>
-          <li>Cosmic Puppet</li>
-          <li>Interdimensional Traveler</li>
-          <li>Mime</li>
-          <li>Peaceful Noisemaker</li>
-          <li>Noodlist</li>
-          <li>Bicycler</li>
-          <li>Facilitator of Freedom</li>
-          <li>Mad Hatter</li>
-          <li>Shoegazer</li>
-          <li>&amp; <a href="https://palebluedot.sh" target="_blank" rel="noopener noreferrer" className="text-accent-teal hover:text-white transition-colors">Heartist</a></li>
-        </ul>
+        <IdentityList
+          headingClassName="text-white font-mono font-bold text-base"
+          listClassName="text-white font-mono list-disc pl-5 space-y-1.5 text-sm leading-relaxed"
+        />
       </div>
 
       <div className="flex items-center justify-between mt-4">
