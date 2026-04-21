@@ -5,6 +5,7 @@ import { useSearchParams } from 'next/navigation'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Sidebar from '@/components/Sidebar'
+import PageHero from '@/components/PageHero'
 import { PHASES } from '@/lib/phases'
 
 function MethodContent() {
@@ -35,23 +36,12 @@ function MethodContent() {
 
       <main id="main-content" className="px-4 lg:px-12 py-8 lg:py-12">
         <div className="max-w-4xl mx-auto">
-          <motion.h1
-            className="text-white text-4xl md:text-5xl lg:text-7xl font-display leading-tight mb-6 lg:mb-8"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-          >
-            Methodology Quickie
-          </motion.h1>
-
-          <motion.p
-            className="text-white text-xl md:text-2xl leading-relaxed max-w-3xl mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-          >
-            How I build with AI in the terminal. Four phases, no shortcuts.
-          </motion.p>
+          <PageHero
+            title="Methodology Quickie"
+            subtitle="How I build with AI in the terminal. Four phases, no shortcuts."
+            titleClassName="text-white text-4xl md:text-5xl lg:text-7xl font-display leading-tight mb-6 lg:mb-8"
+            subtitleMaxWidth="max-w-3xl"
+          />
 
           <div className="space-y-16">
             {PHASES.map((phase, index) => (

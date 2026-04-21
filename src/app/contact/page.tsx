@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Sidebar from '@/components/Sidebar'
+import PageHero from '@/components/PageHero'
 import { useLenis } from '@/hooks/useLenis'
 
 const CONTACT_EMAIL = 'shaina@slabcheck.app'
@@ -37,23 +38,10 @@ export default function Contact() {
       
       <main id="main-content" className="px-4 lg:px-12 py-8 lg:py-12">
         <div className="max-w-6xl mx-auto">
-          <motion.h1
-            className="text-4xl lg:text-5xl font-bold text-white mb-12"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-          >
-            let&apos;s connect
-          </motion.h1>
-          
-          <motion.p
-            className="text-white text-xl md:text-2xl leading-relaxed max-w-4xl mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-          >
-            Got something you're building and need help with? Tell me about it below and I'll send you a link to book a free 30-minute call.
-          </motion.p>
+          <PageHero
+            title="let's connect"
+            subtitle="Got something you're building and need help with? Tell me about it below and I'll send you a link to book a free 30-minute call."
+          />
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <motion.div
