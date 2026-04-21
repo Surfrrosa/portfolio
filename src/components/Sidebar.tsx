@@ -116,7 +116,7 @@ function NavLinks({ className }: { className: string }) {
 
 function DesktopSidebar() {
   return (
-    <aside className="hidden lg:flex lg:flex-col gap-2 fixed top-0 left-0 w-[340px] h-screen
+    <aside className="hidden lg:flex lg:flex-col gap-5 fixed top-0 left-0 w-[340px] h-screen
                        bg-black/60 backdrop-blur-[1px] border-r border-white/10 p-6 z-50 overflow-y-auto">
       <HomeCard className="max-w-[280px] mx-auto" />
 
@@ -128,7 +128,7 @@ function DesktopSidebar() {
         <p className="text-white font-mono font-bold tracking-wide mb-3" style={{ fontSize: '18px' }}>
           I am a...
         </p>
-        <ul className="text-white font-mono list-disc pl-5 space-y-2" style={{ fontSize: '16px', lineHeight: '1.5' }}>
+        <ul className="text-white font-mono list-disc pl-5 space-y-3" style={{ fontSize: '16px', lineHeight: '1.6' }}>
           <li>Builder</li>
           <li>Product Owner</li>
           <li>Alchemist</li>
