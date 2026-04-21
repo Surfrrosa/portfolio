@@ -4,6 +4,7 @@ import path from 'path'
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
+import BackLink from '@/components/BackLink'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { getPostBySlug, getAllPostSlugs } from '@/lib/blog'
@@ -116,25 +117,7 @@ export default async function BlogPost({ params }: PageProps) {
 
       <main id="main-content" className="px-4 lg:px-12 py-12 lg:py-20">
         <article className="max-w-3xl mx-auto">
-          <Link
-            href="/writing"
-            className="inline-flex items-center gap-2 text-accent-teal hover:text-accent-teal/80 transition-colors mb-8 group"
-          >
-            <svg
-              className="w-4 h-4 group-hover:-translate-x-1 transition-transform"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
-            Back to Writing
-          </Link>
+          <BackLink href="/writing" className="mb-8">Back to Writing</BackLink>
 
           <div className="bg-zinc-950 rounded-2xl p-8 lg:p-12 border border-white/10">
             <header className="mb-12">
