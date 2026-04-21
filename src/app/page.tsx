@@ -74,7 +74,7 @@ export default function Home() {
             }}
           >
             <img
-              src="/images/hero-banner-v2.gif"
+              src="/images/hero-banner-v3.gif"
               alt="Navigate by clicking on the TV screens"
               className="w-full h-auto"
             />
