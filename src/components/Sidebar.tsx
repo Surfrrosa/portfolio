@@ -1,6 +1,7 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { useEffect, useRef, useState } from 'react'
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -41,6 +42,22 @@ function MailIcon() {
   return (
     <svg className="w-5 h-5 text-white group-hover:text-accent-teal transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+    </svg>
+  )
+}
+
+function MenuIcon() {
+  return (
+    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+  )
+}
+
+function CloseIcon() {
+  return (
+    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
     </svg>
   )
 }
@@ -123,11 +140,11 @@ const NAV_LINKS = [
   { href: '/contact', icon: MailIcon, label: 'Contact' },
 ] as const
 
-function SocialLinks({ className }: { className: string }) {
+function SocialLinks({ className, onClick }: { className: string; onClick?: () => void }) {
   return (
     <>
       {SOCIAL_LINKS.map(({ href, icon: Icon, label }) => (
-        <a key={label} href={href} className={`${className} glitch-hover`} aria-label={label}>
+        <a key={label} href={href} className={`${className} glitch-hover`} aria-label={label} onClick={onClick}>
           <Icon />
         </a>
       ))}
@@ -135,11 +152,11 @@ function SocialLinks({ className }: { className: string }) {
   )
 }
 
-function NavLinks({ className }: { className: string }) {
+function NavLinks({ className, onClick }: { className: string; onClick?: () => void }) {
   return (
     <>
       {NAV_LINKS.map(({ href, icon: Icon, label }) => (
-        <Link key={label} href={href} className={`${className} group glitch-hover`} aria-label={label}>
+        <Link key={label} href={href} className={`${className} group glitch-hover`} aria-label={label} onClick={onClick}>
           <Icon />
         </Link>
       ))}
@@ -182,28 +199,126 @@ function DesktopSidebar() {
 }
 
 function MobileSidebar() {
+  const [isOpen, setIsOpen] = useState(false)
+  const closeButtonRef = useRef<HTMLButtonElement>(null)
+  const reducedMotion = useReducedMotion()
+  const close = () => setIsOpen(false)
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    if (!localStorage.getItem('sidebar-intro-seen')) {
+      setIsOpen(true)
+      localStorage.setItem('sidebar-intro-seen', '1')
+    }
+  }, [])
+
+  useEffect(() => {
+    if (!isOpen) return
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setIsOpen(false)
+    }
+    window.addEventListener('keydown', onKey)
+    const prevOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    closeButtonRef.current?.focus()
+    return () => {
+      window.removeEventListener('keydown', onKey)
+      document.body.style.overflow = prevOverflow
+    }
+  }, [isOpen])
+
+  const animDuration = reducedMotion ? 0 : 0.3
+
   return (
-    <aside className="lg:hidden p-4 border-b border-white/10 bg-black/50 backdrop-blur-[1px] relative z-10">
-      <div className="mb-4">
-        <HomeCard className="max-w-[220px] mx-auto" />
-      </div>
+    <>
+      <header className="lg:hidden sticky top-0 z-30 flex items-center justify-between px-4 py-2 bg-black/70 backdrop-blur-sm border-b border-white/10">
+        <Link href="/" aria-label="Home" className="block max-w-[100px]">
+          <Image
+            src="/images/name-tag-shaina.png"
+            alt="Shaina"
+            width={1922}
+            height={1334}
+            className="w-full h-auto"
+            priority
+          />
+        </Link>
+        <button
+          type="button"
+          onClick={() => setIsOpen(true)}
+          aria-label="Open menu"
+          aria-expanded={isOpen}
+          aria-controls="mobile-drawer"
+          className="p-2 text-white hover:text-accent-teal transition-colors"
+        >
+          <MenuIcon />
+        </button>
+      </header>
 
-      <div className="space-y-2">
-        <IdentityList
-          headingClassName="text-white font-mono font-bold text-base"
-          listClassName="text-white font-mono list-disc pl-5 space-y-1.5 text-sm leading-relaxed"
-        />
-      </div>
+      <AnimatePresence>
+        {isOpen && (
+          <>
+            <motion.div
+              key="drawer-backdrop"
+              className="lg:hidden fixed inset-0 z-40 bg-black/60"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: reducedMotion ? 0 : 0.2 }}
+              onClick={close}
+              aria-hidden="true"
+            />
+            <motion.aside
+              key="drawer"
+              id="mobile-drawer"
+              className="lg:hidden fixed top-0 right-0 z-50 h-[100dvh] w-[85vw] max-w-[340px] bg-black/95 border-l border-white/10 p-6 overflow-y-auto"
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'tween', duration: animDuration }}
+              role="dialog"
+              aria-modal="true"
+              aria-label="Navigation"
+            >
+              <button
+                ref={closeButtonRef}
+                type="button"
+                onClick={close}
+                aria-label="Close menu"
+                className="absolute top-4 right-4 text-white p-2 hover:text-accent-teal transition-colors"
+              >
+                <CloseIcon />
+              </button>
 
-      <div className="flex items-center justify-between mt-4">
-        <div className="flex gap-3">
-          <SocialLinks className="w-11 h-11 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors touch-manipulation" />
-        </div>
-        <div className="flex gap-3">
-          <NavLinks className="w-11 h-11 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors touch-manipulation" />
-        </div>
-      </div>
-    </aside>
+              <div className="mt-12 space-y-6">
+                <HomeCard className="max-w-[220px] mx-auto" />
+
+                <div className="space-y-2">
+                  <IdentityList
+                    headingClassName="text-white font-mono font-bold text-base"
+                    listClassName="text-white font-mono list-disc pl-5 space-y-1.5 text-sm leading-relaxed"
+                  />
+                </div>
+
+                <div className="flex items-center justify-between pt-4">
+                  <div className="flex gap-3">
+                    <SocialLinks
+                      className="w-11 h-11 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors touch-manipulation"
+                      onClick={close}
+                    />
+                  </div>
+                  <div className="flex gap-3">
+                    <NavLinks
+                      className="w-11 h-11 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors touch-manipulation"
+                      onClick={close}
+                    />
+                  </div>
+                </div>
+              </div>
+            </motion.aside>
+          </>
+        )}
+      </AnimatePresence>
+    </>
   )
 }
 
