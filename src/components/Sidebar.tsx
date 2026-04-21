@@ -239,7 +239,8 @@ function MobileSidebar() {
 
   return (
     <>
-      <header className="lg:hidden sticky top-0 z-30 flex items-center justify-between px-3 py-0 bg-black/70 backdrop-blur-sm border-b border-white/10">
+      <div className="lg:hidden h-10" aria-hidden="true" />
+      <header className="lg:hidden fixed top-0 left-0 right-0 z-30 flex items-center justify-between px-3 py-1 bg-black/95 backdrop-blur-md border-b border-white/10">
         <Link
           href="/"
           aria-label="Home"
