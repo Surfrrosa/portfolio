@@ -48,7 +48,7 @@ function MailIcon() {
 
 function MenuIcon() {
   return (
-    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
     </svg>
   )
@@ -64,7 +64,7 @@ function CloseIcon() {
 
 function HomeIcon() {
   return (
-    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
       <path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1h-5v-7h-6v7H4a1 1 0 01-1-1V9.5z" />
     </svg>
   )
@@ -239,11 +239,11 @@ function MobileSidebar() {
 
   return (
     <>
-      <header className="lg:hidden sticky top-0 z-30 flex items-center justify-between px-4 py-2 bg-black/70 backdrop-blur-sm border-b border-white/10">
+      <header className="lg:hidden sticky top-0 z-30 flex items-center justify-between px-3 py-0 bg-black/70 backdrop-blur-sm border-b border-white/10">
         <Link
           href="/"
           aria-label="Home"
-          className="p-2 text-white hover:text-accent-teal transition-colors"
+          className="p-1.5 text-white hover:text-accent-teal transition-colors"
         >
           <HomeIcon />
         </Link>
@@ -253,7 +253,7 @@ function MobileSidebar() {
           aria-label="Open menu"
           aria-expanded={isOpen}
           aria-controls="mobile-drawer"
-          className="p-2 text-white hover:text-accent-teal transition-colors"
+          className="p-1.5 text-white hover:text-accent-teal transition-colors"
         >
           <MenuIcon />
         </button>
@@ -304,14 +304,14 @@ function MobileSidebar() {
                   />
                 </div>
 
-                <div className="flex flex-wrap items-center justify-center gap-2 pt-4">
+                <div className="flex items-center justify-center gap-2 pt-4">
                   <SocialLinks
-                    className="w-11 h-11 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors touch-manipulation"
+                    className="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors touch-manipulation"
                     onClick={close}
                   />
-                  <div className="w-px h-8 bg-white/20 mx-2" aria-hidden="true" />
+                  <div className="w-px h-7 bg-white/20 mx-1.5" aria-hidden="true" />
                   <NavLinks
-                    className="w-11 h-11 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors touch-manipulation"
+                    className="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors touch-manipulation"
                     onClick={close}
                   />
                 </div>
