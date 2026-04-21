@@ -1,8 +1,8 @@
 'use client'
 
-import { usePathname } from 'next/navigation'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 
 function LinkedInIcon() {
   return (
@@ -45,20 +45,25 @@ function MailIcon() {
   )
 }
 
-function HomeLink({ isHome }: { isHome: boolean }) {
+function HomeCard({ className }: { className?: string }) {
   return (
-    <Link href="/" className="block group">
-      <div className="font-bold text-white hover:text-accent-teal transition-colors cursor-pointer glitch-hover flex items-center gap-2" style={{ fontSize: '32px', fontWeight: '700', letterSpacing: '-0.02em' }}>
-        <span>→</span>
-        {isHome ? (
-          <span>Hello</span>
-        ) : (
-          <span className="flex items-center gap-2">
-            <span className="line-through opacity-50">Hello</span>
-            <span>Home</span>
-          </span>
-        )}
-      </div>
+    <Link href="/" aria-label="Home" className={`group relative block ${className ?? ''}`}>
+      <Image
+        src="/images/name-tag-shaina.png"
+        alt="Hello my name is Shaina"
+        width={1922}
+        height={1334}
+        className="w-full h-auto transition-opacity duration-200 lg:group-hover:opacity-0"
+        priority
+      />
+      <Image
+        src="/images/name-tag-home.png"
+        alt=""
+        aria-hidden="true"
+        width={1922}
+        height={1334}
+        className="absolute inset-0 w-full h-auto opacity-0 transition-opacity duration-200 lg:group-hover:opacity-100"
+      />
     </Link>
   )
 }
@@ -109,11 +114,11 @@ function NavLinks({ className }: { className: string }) {
   )
 }
 
-function DesktopSidebar({ isHome }: { isHome: boolean }) {
+function DesktopSidebar() {
   return (
-    <aside className="hidden lg:flex lg:flex-col gap-6 fixed top-0 left-0 w-[340px] h-screen
+    <aside className="hidden lg:flex lg:flex-col gap-2 fixed top-0 left-0 w-[340px] h-screen
                        bg-black/60 backdrop-blur-[1px] border-r border-white/10 p-6 z-50 overflow-y-auto">
-      <HomeLink isHome={isHome} />
+      <HomeCard className="max-w-[280px] mx-auto" />
 
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -121,9 +126,11 @@ function DesktopSidebar({ isHome }: { isHome: boolean }) {
         transition={{ duration: 0.8, delay: 0.2 }}
       >
         <p className="text-white font-mono font-bold tracking-wide mb-3" style={{ fontSize: '18px' }}>
-          I am...
+          I am a...
         </p>
         <ul className="text-white font-mono list-disc pl-5 space-y-2" style={{ fontSize: '16px', lineHeight: '1.5' }}>
+          <li>Builder</li>
+          <li>Product Owner</li>
           <li>Alchemist</li>
           <li>Cosmic Puppet</li>
           <li>Interdimensional Traveler</li>
@@ -134,9 +141,7 @@ function DesktopSidebar({ isHome }: { isHome: boolean }) {
           <li>Facilitator of Freedom</li>
           <li>Mad Hatter</li>
           <li>Shoegazer</li>
-          <li>
-            <a href="https://palebluedot.sh" target="_blank" rel="noopener noreferrer" className="text-accent-teal hover:text-white transition-colors">Heartist</a>
-          </li>
+          <li>&amp; <a href="https://palebluedot.sh" target="_blank" rel="noopener noreferrer" className="text-accent-teal hover:text-white transition-colors">Heartist</a></li>
         </ul>
       </motion.div>
 
@@ -151,41 +156,22 @@ function DesktopSidebar({ isHome }: { isHome: boolean }) {
         <NavLinks className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors" />
       </motion.div>
 
-      <motion.div
-        className="mt-auto pt-6 border-t border-white/10"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 0.6 }}
-      >
-        <p className="text-white/70 font-mono" style={{ fontSize: '14px' }}>My name is</p>
-        <p className="text-white font-mono font-bold tracking-wide" style={{ fontSize: '20px', letterSpacing: '-0.01em' }}>Shaina Pauley</p>
-      </motion.div>
     </aside>
   )
 }
 
-function MobileSidebar({ isHome }: { isHome: boolean }) {
+function MobileSidebar() {
   return (
     <aside className="lg:hidden p-4 border-b border-white/10 bg-black/50 backdrop-blur-[1px] relative z-10">
-      <div className="flex items-center gap-3 mb-4">
-        <Link href="/" className="block">
-          <div className="text-lg font-bold text-white hover:text-accent-teal transition-colors cursor-pointer glitch-hover flex items-center gap-2" style={{ letterSpacing: '-0.02em' }}>
-            <span>→</span>
-            {isHome ? (
-              <span>Hello</span>
-            ) : (
-              <span className="flex items-center gap-2">
-                <span className="line-through opacity-50">Hello</span>
-                <span>Home</span>
-              </span>
-            )}
-          </div>
-        </Link>
+      <div className="mb-4">
+        <HomeCard className="max-w-[220px] mx-auto" />
       </div>
 
       <div className="space-y-2">
-        <p className="text-white font-mono font-bold text-base">I am...</p>
+        <p className="text-white font-mono font-bold text-base">I am a...</p>
         <ul className="text-white font-mono list-disc pl-5 space-y-1.5 text-sm leading-relaxed">
+          <li>Builder</li>
+          <li>Product Owner</li>
           <li>Alchemist</li>
           <li>Cosmic Puppet</li>
           <li>Interdimensional Traveler</li>
@@ -196,14 +182,8 @@ function MobileSidebar({ isHome }: { isHome: boolean }) {
           <li>Facilitator of Freedom</li>
           <li>Mad Hatter</li>
           <li>Shoegazer</li>
-          <li>
-            <a href="https://palebluedot.sh" target="_blank" rel="noopener noreferrer" className="text-accent-teal hover:text-white transition-colors">Heartist</a>
-          </li>
+          <li>&amp; <a href="https://palebluedot.sh" target="_blank" rel="noopener noreferrer" className="text-accent-teal hover:text-white transition-colors">Heartist</a></li>
         </ul>
-        <div className="pt-3 mt-3 border-t border-white/10">
-          <p className="text-white/70 font-mono text-xs">My name is</p>
-          <p className="text-white font-mono font-bold text-lg">Shaina Pauley</p>
-        </div>
       </div>
 
       <div className="flex items-center justify-between mt-4">
@@ -219,14 +199,11 @@ function MobileSidebar({ isHome }: { isHome: boolean }) {
 }
 
 export default function Sidebar() {
-  const pathname = usePathname()
-  const isHome = pathname === '/'
-
   return (
     <>
       <div className="hidden lg:block w-[340px]" />
-      <DesktopSidebar isHome={isHome} />
-      <MobileSidebar isHome={isHome} />
+      <DesktopSidebar />
+      <MobileSidebar />
     </>
   )
 }
