@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import { usePathname } from 'next/navigation'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -104,18 +105,24 @@ function IdentityList({ headingClassName, listClassName, headingStyle, listStyle
 }
 
 function HomeCard({ className }: { className?: string }) {
+  const pathname = usePathname()
+  const isHome = pathname === '/'
+  const defaultSrc = isHome ? '/images/name-tag-shaina.png' : '/images/name-tag-home.png'
+  const hoverSrc = isHome ? '/images/name-tag-home.png' : '/images/name-tag-shaina.png'
+  const defaultAlt = isHome ? 'Hello my name is Shaina' : 'Home'
+
   return (
     <Link href="/" aria-label="Home" className={`group relative block ${className ?? ''}`}>
       <Image
-        src="/images/name-tag-shaina.png"
-        alt="Hello my name is Shaina"
+        src={defaultSrc}
+        alt={defaultAlt}
         width={1922}
         height={1334}
         className="w-full h-auto transition-opacity duration-200 lg:group-hover:opacity-0"
         priority
       />
       <Image
-        src="/images/name-tag-home.png"
+        src={hoverSrc}
         alt=""
         aria-hidden="true"
         width={1922}
