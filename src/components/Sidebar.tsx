@@ -62,6 +62,14 @@ function CloseIcon() {
   )
 }
 
+function HomeIcon() {
+  return (
+    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1h-5v-7h-6v7H4a1 1 0 01-1-1V9.5z" />
+    </svg>
+  )
+}
+
 const IDENTITIES = [
   'builder',
   'alchemist',
@@ -232,15 +240,12 @@ function MobileSidebar() {
   return (
     <>
       <header className="lg:hidden sticky top-0 z-30 flex items-center justify-between px-4 py-2 bg-black/70 backdrop-blur-sm border-b border-white/10">
-        <Link href="/" aria-label="Home" className="block max-w-[100px]">
-          <Image
-            src="/images/name-tag-shaina.png"
-            alt="Shaina"
-            width={1922}
-            height={1334}
-            className="w-full h-auto"
-            priority
-          />
+        <Link
+          href="/"
+          aria-label="Home"
+          className="p-2 text-white hover:text-accent-teal transition-colors"
+        >
+          <HomeIcon />
         </Link>
         <button
           type="button"
@@ -299,19 +304,16 @@ function MobileSidebar() {
                   />
                 </div>
 
-                <div className="flex items-center justify-between pt-4">
-                  <div className="flex gap-3">
-                    <SocialLinks
-                      className="w-11 h-11 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors touch-manipulation"
-                      onClick={close}
-                    />
-                  </div>
-                  <div className="flex gap-3">
-                    <NavLinks
-                      className="w-11 h-11 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors touch-manipulation"
-                      onClick={close}
-                    />
-                  </div>
+                <div className="flex flex-wrap items-center justify-center gap-2 pt-4">
+                  <SocialLinks
+                    className="w-11 h-11 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors touch-manipulation"
+                    onClick={close}
+                  />
+                  <div className="w-px h-8 bg-white/20 mx-2" aria-hidden="true" />
+                  <NavLinks
+                    className="w-11 h-11 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors touch-manipulation"
+                    onClick={close}
+                  />
                 </div>
               </div>
             </motion.aside>
