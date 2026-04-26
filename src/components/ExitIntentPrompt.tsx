@@ -71,7 +71,7 @@ export default function ExitIntentPrompt() {
       setHasTriggered(true)
       sessionStorage.setItem('exit-intent-shown', 'true')
 
-      const audio = new Audio('/sounds/user_leaving.wav')
+      const audio = new Audio('/sounds/dialogue_blip.wav')
       audio.volume = 0.4
       audio.play().catch(() => {})
 

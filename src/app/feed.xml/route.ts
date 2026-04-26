@@ -1,6 +1,5 @@
 import { getAllPosts } from '@/lib/blog'
-
-const SITE_URL = 'https://shainapauley.com'
+import { SITE_URL } from '@/lib/site'
 
 export async function GET() {
   const posts = getAllPosts()

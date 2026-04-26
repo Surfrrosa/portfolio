@@ -1,3 +1,5 @@
+import { SITE_URL } from '@/lib/site'
+
 interface ArticleStructuredDataProps {
   title: string
   description: string
@@ -16,8 +18,8 @@ export default function ArticleStructuredData({
   ogImage
 }: ArticleStructuredDataProps) {
   const imageUrl = ogImage
-    ? `https://shainapauley.com${ogImage}`
-    : 'https://shainapauley.com/og-image.png'
+    ? `${SITE_URL}${ogImage}`
+    : `${SITE_URL}/og-image.png`
 
   const structuredData = {
     '@context': 'https://schema.org',
@@ -32,16 +34,16 @@ export default function ArticleStructuredData({
     },
     author: {
       '@type': 'Person',
-      '@id': 'https://shainapauley.com/#person',
+      '@id': `${SITE_URL}/#person`,
       name: 'Shaina Pauley',
-      url: 'https://shainapauley.com',
+      url: SITE_URL,
       jobTitle: 'AI Product Architect',
     },
     publisher: {
       '@type': 'Person',
-      '@id': 'https://shainapauley.com/#person',
+      '@id': `${SITE_URL}/#person`,
       name: 'Shaina Pauley',
-      url: 'https://shainapauley.com',
+      url: SITE_URL,
     },
     datePublished: publishedTime,
     dateModified: publishedTime,
@@ -52,7 +54,7 @@ export default function ArticleStructuredData({
       '@id': url,
     },
     isPartOf: {
-      '@id': 'https://shainapauley.com/#website',
+      '@id': `${SITE_URL}/#website`,
     },
   }
 

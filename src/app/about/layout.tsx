@@ -1,17 +1,12 @@
-import { Metadata } from 'next'
+import { buildRouteMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
+export const metadata = buildRouteMetadata({
   title: 'About',
+  slug: '/about',
   description: 'AI Product Architect with 7+ years enterprise experience. Designs agentic systems, builds evaluation harnesses, and architects context for production AI workflows. CSPO and CSM certified.',
-  alternates: {
-    canonical: '/about',
-  },
-  openGraph: {
-    title: 'About Shaina Pauley',
-    description: 'AI Product Architect with 7+ years enterprise experience. Designs agentic systems, evaluation harnesses, and context architecture for production AI workflows.',
-    url: 'https://shainapauley.com/about',
-  },
-}
+  ogTitle: 'About Shaina Pauley',
+  ogDescription: 'AI Product Architect with 7+ years enterprise experience. Designs agentic systems, evaluation harnesses, and context architecture for production AI workflows.',
+})
 
 export default function AboutLayout({ children }: { children: React.ReactNode }) {
   return children

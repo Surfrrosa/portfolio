@@ -1,12 +1,14 @@
+import { SITE_URL } from '@/lib/site'
+
 function buildPersonSchema() {
   return {
     "@type": "Person",
-    "@id": "https://shainapauley.com/#person",
+    "@id": `${SITE_URL}/#person`,
     "name": "Shaina Pauley",
-    "url": "https://shainapauley.com",
+    "url": SITE_URL,
     "image": {
       "@type": "ImageObject",
-      "url": "https://shainapauley.com/og-image.png",
+      "url": `${SITE_URL}/og-image.png`,
       "width": 1200,
       "height": 630
     },
@@ -45,22 +47,22 @@ function buildPersonSchema() {
 function buildWebSiteSchema() {
   return {
     "@type": "WebSite",
-    "@id": "https://shainapauley.com/#website",
-    "url": "https://shainapauley.com",
+    "@id": `${SITE_URL}/#website`,
+    "url": SITE_URL,
     "name": "Shaina Pauley",
     "description": "Portfolio and writing on building with AI, product architecture, and what changes when the tools get this good.",
-    "publisher": { "@id": "https://shainapauley.com/#person" }
+    "publisher": { "@id": `${SITE_URL}/#person` }
   }
 }
 
 function buildWebPageSchema() {
   return {
     "@type": "WebPage",
-    "@id": "https://shainapauley.com/#webpage",
-    "url": "https://shainapauley.com",
+    "@id": `${SITE_URL}/#webpage`,
+    "url": SITE_URL,
     "name": "Shaina Pauley | AI Product Architect",
-    "isPartOf": { "@id": "https://shainapauley.com/#website" },
-    "about": { "@id": "https://shainapauley.com/#person" },
+    "isPartOf": { "@id": `${SITE_URL}/#website` },
+    "about": { "@id": `${SITE_URL}/#person` },
     "datePublished": "2025-01-01",
     "dateModified": "2026-03-27",
     "description": "AI Product Architect. I design the systems AI works inside: specifications, evaluation pipelines, context that persists between sessions."
@@ -81,9 +83,9 @@ function buildServiceSchema() {
   ]
   return {
     "@type": "ProfessionalService",
-    "@id": "https://shainapauley.com/#service",
+    "@id": `${SITE_URL}/#service`,
     "name": "Shaina Pauley - AI Product Architecture",
-    "provider": { "@id": "https://shainapauley.com/#person" },
+    "provider": { "@id": `${SITE_URL}/#person` },
     "serviceType": "AI Product Architecture and Agentic Systems Design",
     "areaServed": "Worldwide",
     "hasOfferCatalog": {

@@ -5,6 +5,7 @@ import { Inter, Bebas_Neue, Archivo, League_Spartan } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 import StructuredData from '@/components/StructuredData'
 import VideoBackground from '@/components/VideoBackground'
+import { SITE_URL } from '@/lib/site'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
   },
   description: 'AI Product Architect. I design the systems AI works inside: specifications, evaluation pipelines, context that persists between sessions. 7+ years in product, now building with AI every day.',
   keywords: ['AI Product Architect', 'Agentic Systems Design', 'AI Evaluation Harnesses', 'Multi-Agent Orchestration', 'Context Architecture', 'Claude Code', 'AI-Native Development', 'Product Architecture', 'Shaina Pauley'],
-  authors: [{ name: 'Shaina Pauley', url: 'https://shainapauley.com' }],
+  authors: [{ name: 'Shaina Pauley', url: SITE_URL }],
   creator: 'Shaina Pauley',
   publisher: 'Shaina Pauley',
   formatDetection: {
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://shainapauley.com'),
+  metadataBase: new URL(SITE_URL),
   alternates: {
     canonical: '/',
     types: {
@@ -42,7 +43,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Shaina Pauley | AI Product Architect',
     description: 'I design the systems AI works inside. Specifications, evaluation pipelines, context that sticks between sessions. Building with AI every day.',
-    url: 'https://shainapauley.com',
+    url: SITE_URL,
     siteName: 'Shaina Pauley',
     type: 'website',
     locale: 'en_US',

@@ -1,8 +1,8 @@
 import { MetadataRoute } from 'next'
 import { getAllPostSlugs, getPostBySlug } from '@/lib/blog'
+import { SITE_URL } from '@/lib/site'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://shainapauley.com'
   const currentDate = new Date()
 
   // Get all published blog posts (excludes drafts)
@@ -12,7 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       const post = getPostBySlug(slug)
       if (!post) return null
       return {
-        url: `${baseUrl}/writing/${slug}`,
+        url: `${SITE_URL}/writing/${slug}`,
         lastModified: post.date ? new Date(post.date) : currentDate,
         changeFrequency: 'monthly' as const,
         priority: 0.8,
@@ -22,37 +22,37 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     {
-      url: baseUrl,
+      url: SITE_URL,
       lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 1.0,
     },
     {
-      url: `${baseUrl}/writing`,
+      url: `${SITE_URL}/writing`,
       lastModified: currentDate,
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/work`,
+      url: `${SITE_URL}/work`,
       lastModified: currentDate,
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/method`,
+      url: `${SITE_URL}/method`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/about`,
+      url: `${SITE_URL}/about`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/contact`,
+      url: `${SITE_URL}/contact`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.7,

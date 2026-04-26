@@ -1,21 +1,14 @@
-import { Metadata } from 'next'
 import Link from 'next/link'
 import { getAllPosts, getContentPreview } from '@/lib/blog'
 import Sidebar from '@/components/Sidebar'
 import WritingStructuredData from '@/components/WritingStructuredData'
+import { buildRouteMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
+export const metadata = buildRouteMetadata({
   title: 'Navigating Mind, Machine, & Modern Unease',
+  slug: '/writing',
   description: 'Essays on staying human.',
-  alternates: {
-    canonical: '/writing',
-  },
-  openGraph: {
-    title: 'Navigating Mind, Machine, & Modern Unease',
-    description: 'Essays on staying human.',
-    url: 'https://shainapauley.com/writing',
-  },
-}
+})
 
 export default function WritingPage() {
   const posts = getAllPosts()

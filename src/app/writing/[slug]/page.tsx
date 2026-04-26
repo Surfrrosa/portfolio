@@ -11,6 +11,7 @@ import { getPostBySlug, getAllPostSlugs } from '@/lib/blog'
 import Sidebar from '@/components/Sidebar'
 import MDXContent from '@/components/MDXContent'
 import ArticleStructuredData from '@/components/ArticleStructuredData'
+import { SITE_URL } from '@/lib/site'
 
 interface PageProps {
   params: Promise<{ slug: string }>
@@ -46,7 +47,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: post.title,
     description: post.excerpt,
     keywords: post.tags,
-    authors: [{ name: 'Shaina Pauley', url: 'https://shainapauley.com' }],
+    authors: [{ name: 'Shaina Pauley', url: SITE_URL }],
     creator: 'Shaina Pauley',
     publisher: 'Shaina Pauley',
     openGraph: {
@@ -56,7 +57,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       publishedTime: post.date,
       authors: ['Shaina Pauley'],
       tags: post.tags,
-      url: `https://shainapauley.com/writing/${slug}`,
+      url: `${SITE_URL}/writing/${slug}`,
       siteName: 'Shaina Pauley',
       images: [
         {
@@ -97,7 +98,7 @@ export default async function BlogPost({ params }: PageProps) {
         description={post.excerpt}
         publishedTime={post.date}
         tags={post.tags || []}
-        url={`https://shainapauley.com/writing/${slug}`}
+        url={`${SITE_URL}/writing/${slug}`}
         ogImage={ogImage}
       />
       <script
@@ -106,8 +107,8 @@ export default async function BlogPost({ params }: PageProps) {
           '@context': 'https://schema.org',
           '@type': 'BreadcrumbList',
           itemListElement: [
-            { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://shainapauley.com' },
-            { '@type': 'ListItem', position: 2, name: 'Writing', item: 'https://shainapauley.com/writing' },
+            { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+            { '@type': 'ListItem', position: 2, name: 'Writing', item: `${SITE_URL}/writing` },
             { '@type': 'ListItem', position: 3, name: post.title },
           ],
         }) }}
