@@ -14,6 +14,25 @@ Next.js 16 (App Router), TypeScript, Tailwind CSS 3.3, Framer Motion, Vercel.
 - All components are TypeScript (.tsx). All utilities are TypeScript (.ts).
 - Use `'use client'` directive only when the component needs client-side interactivity.
 
+## Before Writing New Code
+
+Before adding a component, helper, or layout, search for existing ones
+first:
+
+- `rg "<symbol>" src/` for similar names or near-duplicates
+- Components live in `src/components/` — check there before creating
+  a new one (especially structured-data, hero, sidebar, link variants)
+- Shared utilities live in `src/lib/`. Notable existing helpers:
+  - `SITE_URL` in `src/lib/site.ts` — never hardcode `https://shainapauley.com`
+  - `buildRouteMetadata({title, slug, description, ...})` in
+    `src/lib/metadata.ts` — use for per-route layout.tsx files
+  - `getAllPosts`, `getPostBySlug`, `BlogPost` type in `src/lib/blog.ts`
+- Hooks live in `src/hooks/`
+
+Don't add a new file for a one-off variant of an existing pattern.
+If you're about to copy-paste a layout/component and tweak two values,
+extract or extend the helper instead.
+
 ## Design Tokens
 
 Defined in `tailwind.config.ts` and `src/app/globals.css`:
