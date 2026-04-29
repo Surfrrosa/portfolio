@@ -16,6 +16,8 @@ const leagueSpartan = League_Spartan({ subsets: ['latin'], weight: ['900'], vari
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
+  themeColor: '#0B0C0E',
+  colorScheme: 'dark',
 }
 
 export const metadata: Metadata = {

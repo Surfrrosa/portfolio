@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 :root {
+  color-scheme: dark;
   --bg-base: #0B0C0E;
   --surface: #14161A;
   --accent-teal: #E930A8;
@@ -18,6 +19,7 @@ html {
   scroll-behavior: smooth;
   overflow-x: hidden;
   width: 100%;
+  background: var(--bg-base);
 }
 
 body {
