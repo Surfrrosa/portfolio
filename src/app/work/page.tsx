@@ -69,7 +69,7 @@ export default function Work() {
                 <div>
                   <h5 className="text-white font-semibold mb-2">My Role</h5>
                   <p className="text-gray-300 leading-relaxed">
-                    Co-founder. Working with a designer to shape the experience from concept through MVP. Owning product strategy, technical architecture, and development.
+                    Co-founder. Shaping the experience from concept through MVP. Owning product strategy, technical architecture, and development.
                   </p>
                 </div>
 
