@@ -983,44 +983,25 @@ export default function Work() {
                 </div>
 
                 <div className="space-y-4">
-                <div className="flex gap-4">
-                  <a
-                    href="https://absurdity-index.vercel.app/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 bg-teal-500 hover:bg-teal-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 text-center group inline-flex items-center justify-center"
-                  >
-                    View Dashboard
-                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </a>
-                  <a
-                    href="https://absurdity-index.vercel.app/methodology"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 text-center group inline-flex items-center justify-center"
-                  >
-                    Methodology
-                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                    </svg>
-                  </a>
-                </div>
-                <div className="pt-6 border-t border-white/10">
-                  <a
-                    href="/writing/the-absurdity-index"
-                    className="inline-flex items-center gap-2 text-accent-teal hover:text-accent-teal/80 transition-colors group"
-                  >
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                    </svg>
-                    <span className="font-medium">Read the full article: The Absurdity Index</span>
-                    <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </a>
-                </div>
+                  <div className="text-center py-4 px-6 bg-white/[0.02] rounded-lg border border-white/5">
+                    <p className="text-gray-400 text-sm">
+                      This project has been archived. Full writeup in progress.
+                    </p>
+                  </div>
+                  <div className="pt-6 border-t border-white/10">
+                    <a
+                      href="/writing/the-absurdity-index"
+                      className="inline-flex items-center gap-2 text-accent-teal hover:text-accent-teal/80 transition-colors group"
+                    >
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                      </svg>
+                      <span className="font-medium">Read the full article: The Absurdity Index</span>
+                      <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </a>
+                  </div>
                 </div>
               </div>
             </motion.div>
