@@ -24,7 +24,6 @@ html {
 
 body {
   color: white;
-  background: var(--bg-base);
   font-family: var(--font-inter), 'Inter', sans-serif;
   line-height: 1.6;
   position: relative;
