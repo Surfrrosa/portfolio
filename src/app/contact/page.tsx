@@ -29,7 +29,13 @@ export default function Contact() {
     e.preventDefault()
     const subject = `New message from ${formData.name}`
     const body = `${formData.message}\n\n---\nReply to: ${formData.email}`
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+    const mailtoUrl = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+
+    const a = document.createElement('a')
+    a.href = mailtoUrl
+    document.body.appendChild(a)
+    a.click()
+    document.body.removeChild(a)
   }
 
   return (
