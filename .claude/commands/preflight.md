@@ -46,6 +46,30 @@ Report:
 - Verify no `.env.local` or secrets are staged
 - Verify no `.DS_Store` files are staged
 - Check that `content/blog/` posts with `draft: false` have all required frontmatter fields (title, date, excerpt, readTime, tags)
+- Validate `package.json` has no duplicate keys in the dependency blocks. Dependabot merges can leave duplicates that `JSON.parse` silently flattens (takes the last value), which still passes `npm install` but quietly blocks every subsequent dependabot rebase with `mergeable: UNKNOWN`:
+
+```bash
+node -e "
+const txt = require('fs').readFileSync('package.json', 'utf8');
+const blocks = ['dependencies','devDependencies','peerDependencies','optionalDependencies'];
+let failed = false;
+for (const b of blocks) {
+  const start = txt.indexOf('\"' + b + '\"');
+  if (start < 0) continue;
+  const open = txt.indexOf('{', start);
+  let depth = 0, end = open;
+  for (let i = open; i < txt.length; i++) {
+    if (txt[i] === '{') depth++;
+    else if (txt[i] === '}' && --depth === 0) { end = i; break; }
+  }
+  const keys = [...txt.slice(open, end).matchAll(/\"([^\"]+)\"\s*:/g)].map(m => m[1]);
+  const dupes = [...new Set(keys.filter((k,i) => keys.indexOf(k) !== i))];
+  if (dupes.length) { console.error('Duplicate ' + b + ' keys:', dupes); failed = true; }
+}
+process.exit(failed ? 1 : 0);
+console.log('package.json: deps clean');
+"
+```
 
 ### Step 5: Report
 
