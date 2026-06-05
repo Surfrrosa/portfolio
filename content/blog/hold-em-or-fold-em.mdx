@@ -1,0 +1,38 @@
+---
+title: "Hold 'em or fold 'em: projects I've killed so far"
+date: "2026-05-31"
+excerpt: "Three projects retired, one still on watch. The reason each time has been time."
+readTime: "3 min read"
+tags: ["Process", "Product Strategy", "Reflection"]
+draft: true
+---
+
+Three of the projects we've shipped this year are no longer running, and a fourth is on watch. None of them stopped working. They had users, they had traffic. They ended because I couldn't keep dedicating energy to them, and that energy belonged on Synestrology and SlabCheck.
+
+## Floatless
+
+Floatless was an AR automation tool for small businesses, basically took the work out of receivables. It worked well. What ended up killing it was that Anchor went free and QuickBooks Online shipped reminders natively, both within a few months of each other. Once that happens there isn't really a wedge anymore.
+
+## prompt2story
+
+prompt2story I'm a little more proud of. It started as a single-shot LLM call that turned meeting notes into user stories. By the end it was a multi-agent system, five AI agents running what we called The Story Room: a PO, a few devs, a QA, a Scrum Master. They'd debate the request the way an actual backlog refinement session does, with a little comedy baked into their personalities, and deliver finished stories at the end. We had it deployed multi-tenant, real users in 20+ countries, launched on Product Hunt.
+
+We killed it anyway, partly because the AI user story category got crowded fast in 2026, but mostly because multi-agent and multi-tenant systems both have ongoing maintenance surfaces that don't shrink just because you're done building. Every hour spent on prompt2story was an hour not on Synestrology or SlabCheck.
+
+## The Absurdity Index
+
+[The Absurdity Index](/writing/the-absurdity-index) was a research dashboard tracking eight metrics of modern absurdity: wages, housing, healthcare, AI dependency, the rest. The pipeline pulled from seven sources (YouTube, Reddit, TikTok, Hacker News, CFPB, Bluesky, FRED) and ran weekly on GitHub Actions. The [automation setup](/writing/automating-the-absurdity-index) is written up if you want the details.
+
+The thing about this one is that it was already fully automated. The dashboard ran itself, the pipeline ran itself. But automation doesn't mean zero attention. APIs change, scrapers break, sentiment models drift. None of it is heavy, all of it adds up. We let it go at the end of May for the same reason as prompt2story: that time is better spent on the two products that need to grow.
+
+## Declassify
+
+Declassify is still running. It's a news site, fully automated, with daily updates by an agent and an editorial check before anything ships. By the same logic as the Absurdity Index it should probably already be gone. But the maintenance has actually stayed minimal in a way the dashboard didn't. Nothing breaks, the editorial gate handles what it needs to.
+
+So I'm undecided. Sometimes I wonder if I'm keeping it because it earns its keep or because letting it go feels heavier than keeping it running. Those are two pretty different reasons. I don't have the answer yet.
+
+---
+
+Synestrology and SlabCheck have my attention now, those are where the time goes. The rest of these were built with the same energy, and that energy isn't unlimited. One person doing it all has a learning curve, and a lot of that learning curve is in the maintenance phase. Even an automated project costs some thinking and some checking in.
+
+When I'm deciding whether to keep something, it mostly comes down to whether opening the repo feels energizing or draining. That's most of how I'm making the call now.
