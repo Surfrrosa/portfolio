@@ -84,7 +84,7 @@ function BackgroundVideo({ videoRef }: { videoRef: React.RefObject<HTMLVideoElem
         ref={videoRef}
         aria-hidden="true"
         className="absolute min-w-full min-h-full w-auto h-auto top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 object-cover"
-        autoPlay loop muted playsInline preload="auto"
+        autoPlay loop muted playsInline preload="metadata"
       >
         <source src="/videos/background-loop-safari.mp4" type="video/mp4" />
         <source src="/videos/background-loop-v3.mp4" type="video/mp4" />

@@ -6,6 +6,7 @@ import { Analytics } from '@vercel/analytics/react'
 import StructuredData from '@/components/StructuredData'
 import VideoBackground from '@/components/VideoBackground'
 import { SITE_URL } from '@/lib/site'
+import { BG_BASE } from '@/lib/theme'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
@@ -16,7 +17,7 @@ const leagueSpartan = League_Spartan({ subsets: ['latin'], weight: ['900'], vari
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  themeColor: '#0B0C0E',
+  themeColor: BG_BASE,
   colorScheme: 'dark',
 }
 

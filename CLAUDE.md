@@ -27,7 +27,12 @@ first:
   - `buildRouteMetadata({title, slug, description, ...})` in
     `src/lib/metadata.ts` — use for per-route layout.tsx files
   - `getAllPosts`, `getPostBySlug`, `BlogPost` type in `src/lib/blog.ts`
+  - `BG_BASE`, `SURFACE`, `ACCENT_TEAL` in `src/lib/theme.ts` — hex values
+    for Next.js metadata + inline SVG; CSS uses the Tailwind tokens
 - Hooks live in `src/hooks/`
+- Work-page primitives (use when adding a project to `src/app/work/page.tsx`):
+  `<ProjectCard>`, `<ProjectHeader>`, `<ProjectSection>`, `<ProjectText>`,
+  `<ProjectBullets>`, `<Checkmark>`, `<TechStackTags>`, `<ExternalLink>`
 
 Don't add a new file for a one-off variant of an existing pattern.
 If you're about to copy-paste a layout/component and tweak two values,

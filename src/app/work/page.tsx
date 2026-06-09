@@ -5,17 +5,30 @@ import { motion } from 'framer-motion'
 import Sidebar from '@/components/Sidebar'
 import DiagramGallery from '@/components/DiagramGallery'
 import { EnlightenCarousel } from '@/components/EnlightenCarousel'
+import { Checkmark } from '@/components/Checkmark'
+import { TechStackTags } from '@/components/TechStackTags'
+import { ExternalLink } from '@/components/ExternalLink'
+import { ProjectCard } from '@/components/ProjectCard'
+import { ProjectHeader } from '@/components/ProjectHeader'
+import { ProjectSection, ProjectText, ProjectBullets } from '@/components/ProjectSection'
 import { useLenis } from '@/hooks/useLenis'
+
+type ModalMedia = { src: string; type: 'image' | 'video' }
 
 export default function Work() {
   const lenisRef = useLenis()
   const [isModalOpen, setIsModalOpen] = useState(false)
-  const [modalMedia, setModalMedia] = useState({ src: '', type: 'image' as 'image' | 'video' })
+  const [modalMedia, setModalMedia] = useState<ModalMedia>({ src: '', type: 'image' })
+
+  const openMedia = (media: ModalMedia) => {
+    setModalMedia(media)
+    setIsModalOpen(true)
+  }
 
   return (
     <div className="min-h-screen grid lg:grid-cols-[340px_1fr]">
       <Sidebar />
-      
+
       <main id="main-content" className="px-4 lg:px-12 py-8 lg:py-12">
         <div className="max-w-6xl mx-auto">
           <motion.h1
@@ -26,7 +39,7 @@ export default function Work() {
           >
             stuff I&apos;ve been working on
           </motion.h1>
-          
+
           <motion.p
             className="text-white text-xl md:text-2xl leading-relaxed max-w-4xl mb-16"
             initial={{ opacity: 0, y: 30 }}
@@ -37,69 +50,49 @@ export default function Work() {
           </motion.p>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <motion.div
-              className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-            >
-              <h3 className="text-white text-2xl font-display font-bold mb-4">
-                SlabCheck ● Pokemon TCG Grading Decision Tool
-              </h3>
 
-              <h4 className="text-accent-teal text-lg font-semibold mb-6">
-                Scan a card. See the math. Make a smarter grading decision.
-              </h4>
+            <ProjectCard>
+              <ProjectHeader
+                title="SlabCheck ● Pokemon TCG Grading Decision Tool"
+                tagline="Scan a card. See the math. Make a smarter grading decision."
+              />
 
               <div className="space-y-6">
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Problem</h5>
-                  <p className="text-gray-300 leading-relaxed">
+                <ProjectSection label="Problem">
+                  <ProjectText>
                     Pokemon card collectors spend hundreds on grading fees with no way to know if it&apos;s worth it. The math is opaque: grade probability, market prices at each grade, fees, turnaround times. Most people guess, and most guesses lose money.
-                  </p>
-                </div>
+                  </ProjectText>
+                </ProjectSection>
 
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Solution</h5>
-                  <p className="text-gray-300 leading-relaxed">
+                <ProjectSection label="Solution">
+                  <ProjectText>
                     A mobile app that identifies any Pokemon card from a photo, then runs a data-driven valuation model under the hood. The result is a clear recommendation in seconds: grade it, sell it raw, or list it on eBay.
-                  </p>
-                </div>
+                  </ProjectText>
+                </ProjectSection>
 
-                <div>
-                  <h5 className="text-white font-semibold mb-2">My Role</h5>
-                  <p className="text-gray-300 leading-relaxed">
+                <ProjectSection label="My Role">
+                  <ProjectText>
                     Co-founder. Shaping the experience from concept through MVP. Owning product strategy, technical architecture, and development.
-                  </p>
-                </div>
+                  </ProjectText>
+                </ProjectSection>
 
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Status</h5>
-                  <div className="text-gray-300 space-y-3">
-                    <p className="flex items-start"><span className="text-accent-teal mr-2">&#10003;</span><span>Working MVP with card scanning, identification, and value breakdown</span></p>
-                    <p className="flex items-start"><span className="text-accent-teal mr-2">&#10003;</span><span>Card identification via specialized TCG recognition API</span></p>
-                    <p className="flex items-start"><span className="text-accent-teal mr-2">&#10003;</span><span>Set tracking with completion progress across 207 Pokemon TCG sets</span></p>
-                    <p className="flex items-start"><span className="text-accent-teal mr-2">&#10003;</span><span>Proprietary valuation model that weighs grade probability, market prices, and fees</span></p>
-                    <p className="flex items-start"><span className="text-accent-teal mr-2">&#10003;</span><span>Gathering early access interest now</span></p>
-                  </div>
-                </div>
+                <ProjectSection label="Status">
+                  <ProjectBullets>
+                    <Checkmark>Working MVP with card scanning, identification, and value breakdown</Checkmark>
+                    <Checkmark>Card identification via specialized TCG recognition API</Checkmark>
+                    <Checkmark>Set tracking with completion progress across 207 Pokemon TCG sets</Checkmark>
+                    <Checkmark>Proprietary valuation model that weighs grade probability, market prices, and fees</Checkmark>
+                    <Checkmark>Gathering early access interest now</Checkmark>
+                  </ProjectBullets>
+                </ProjectSection>
               </div>
 
-              <div className="flex flex-wrap gap-2 mt-6">
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">React Native</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Expo</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">TypeScript</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Supabase</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Vercel</span>
-              </div>
+              <TechStackTags tags={['React Native', 'Expo', 'TypeScript', 'Supabase', 'Vercel']} />
 
               <div className="mt-8 space-y-6">
                 <div
                   className="relative aspect-video rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
-                  onClick={() => {
-                    setModalMedia({ src: '/videos/slabcheck-demo.mp4', type: 'video' })
-                    setIsModalOpen(true)
-                  }}
+                  onClick={() => openMedia({ src: '/videos/slabcheck-demo.mp4', type: 'video' })}
                 >
                   <video
                     className="w-full h-full object-cover"
@@ -108,10 +101,10 @@ export default function Work() {
                     loop
                     playsInline
                     onError={(e) => {
-                      const target = e.target as HTMLVideoElement;
-                      target.style.display = 'none';
-                      const fallback = target.nextElementSibling as HTMLElement;
-                      if (fallback) fallback.style.display = 'flex';
+                      const target = e.target as HTMLVideoElement
+                      target.style.display = 'none'
+                      const fallback = target.nextElementSibling as HTMLElement
+                      if (fallback) fallback.style.display = 'flex'
                     }}
                   >
                     <source src="/videos/slabcheck-demo.mp4" type="video/mp4" />
@@ -131,85 +124,53 @@ export default function Work() {
                 </div>
 
                 <div className="flex justify-center gap-6">
-                  <a
-                    href="https://slabcheck.app"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-accent-teal hover:text-accent-teal/80 transition-colors group"
-                  >
-                    Join the Waitlist
-                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </a>
+                  <ExternalLink href="https://slabcheck.app">Join the Waitlist</ExternalLink>
                 </div>
               </div>
-            </motion.div>
+            </ProjectCard>
 
-            <motion.div
-              className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-            >
-              <h3 className="text-white text-2xl font-display font-bold mb-4">
-                Prism ● Media Bias Awareness Tool
-              </h3>
-
-              <h4 className="text-accent-teal text-lg font-semibold mb-6">
-                See the full spectrum of your news diet, no effort required.
-              </h4>
+            <ProjectCard>
+              <ProjectHeader
+                title="Prism ● Media Bias Awareness Tool"
+                tagline="See the full spectrum of your news diet, no effort required."
+              />
 
               <div className="space-y-6">
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Problem</h5>
-                  <p className="text-gray-300 leading-relaxed">
+                <ProjectSection label="Problem">
+                  <ProjectText>
                     People don&apos;t realize their news consumption is lopsided. Existing tools require manual effort and don&apos;t surface patterns passively.
-                  </p>
-                </div>
+                  </ProjectText>
+                </ProjectSection>
 
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Solution</h5>
-                  <p className="text-gray-300 leading-relaxed">
+                <ProjectSection label="Solution">
+                  <ProjectText>
                     A Chrome extension that silently tracks news sources you read, matches them against 2,700+ rated sources from Media Bias/Fact Check, and computes a Perspective Diversity Score. Visualizes your Left/Center/Right distribution, detects blind spots, and generates shareable retro-styled cards of your media diet.
-                  </p>
-                </div>
+                  </ProjectText>
+                </ProjectSection>
 
-                <div>
-                  <h5 className="text-white font-semibold mb-2">My Role</h5>
-                  <p className="text-gray-300 leading-relaxed">
+                <ProjectSection label="My Role">
+                  <ProjectText>
                     Solo builder. Product concept, design, development, Chrome Web Store launch.
-                  </p>
-                </div>
+                  </ProjectText>
+                </ProjectSection>
 
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Impact</h5>
-                  <div className="text-gray-300 space-y-3">
-                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>2,700+ rated news sources from Media Bias/Fact Check database</span></p>
-                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>Zero network requests, all data stays local in IndexedDB</span></p>
-                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>Diversity Score algorithm factoring entropy, variety, quality, and breadth</span></p>
-                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>Weekly summary reports and shareable Canvas-rendered media diet cards</span></p>
-                  </div>
-                </div>
+                <ProjectSection label="Impact">
+                  <ProjectBullets>
+                    <Checkmark>2,700+ rated news sources from Media Bias/Fact Check database</Checkmark>
+                    <Checkmark>Zero network requests, all data stays local in IndexedDB</Checkmark>
+                    <Checkmark>Diversity Score algorithm factoring entropy, variety, quality, and breadth</Checkmark>
+                    <Checkmark>Weekly summary reports and shareable Canvas-rendered media diet cards</Checkmark>
+                  </ProjectBullets>
+                </ProjectSection>
               </div>
 
-              <div className="flex flex-wrap gap-2 mt-6">
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Chrome Extension</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">TypeScript</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">IndexedDB</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Canvas API</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Manifest V3</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Privacy-First</span>
-              </div>
+              <TechStackTags tags={['Chrome Extension', 'TypeScript', 'IndexedDB', 'Canvas API', 'Manifest V3', 'Privacy-First']} />
 
               <div className="mt-8 space-y-6">
                 <div>
                   <div
                     className="relative rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
-                    onClick={() => {
-                      setModalMedia({ src: '/images/prism-promo-marquee.png', type: 'image' })
-                      setIsModalOpen(true)
-                    }}
+                    onClick={() => openMedia({ src: '/images/prism-promo-marquee.png', type: 'image' })}
                   >
                     <img
                       src="/images/prism-promo-marquee.png"
@@ -222,10 +183,7 @@ export default function Work() {
                 <div>
                   <div
                     className="relative rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
-                    onClick={() => {
-                      setModalMedia({ src: '/images/prism-screenshot-3.png', type: 'image' })
-                      setIsModalOpen(true)
-                    }}
+                    onClick={() => openMedia({ src: '/images/prism-screenshot-3.png', type: 'image' })}
                   >
                     <img
                       src="/images/prism-screenshot-3.png"
@@ -236,84 +194,54 @@ export default function Work() {
                 </div>
 
                 <div className="flex justify-center gap-6">
-                  <a
-                    href="https://chromewebstore.google.com/detail/prism/pbhmchohngpdjmldjfdlomjfgkjfegfc"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-accent-teal hover:text-accent-teal/80 transition-colors group"
-                  >
+                  <ExternalLink href="https://chromewebstore.google.com/detail/prism/pbhmchohngpdjmldjfdlomjfgkjfegfc">
                     Chrome Web Store
-                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </a>
+                  </ExternalLink>
                 </div>
               </div>
-            </motion.div>
+            </ProjectCard>
 
-            <motion.div
-              className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-            >
-              <h3 className="text-white text-2xl font-display font-bold mb-4">
-                Synestrology ● Astrology × Human Design × Numerology Synthesis Engine
-              </h3>
-
-              <h4 className="text-accent-teal text-lg font-semibold mb-6">
-                The only platform that weaves three self-discovery systems into a single personalized reading.
-              </h4>
+            <ProjectCard>
+              <ProjectHeader
+                title="Synestrology ● Astrology × Human Design × Numerology Synthesis Engine"
+                tagline="The only platform that weaves three self-discovery systems into a single personalized reading."
+              />
 
               <div className="space-y-6">
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Problem</h5>
-                  <p className="text-gray-300 leading-relaxed">
+                <ProjectSection label="Problem">
+                  <ProjectText>
                     Astrology, Human Design, and Numerology each offer deep personal insight, but they exist in silos. No product synthesizes all three into a unified narrative, forcing people to piece together fragmented readings across multiple sites.
-                  </p>
-                </div>
+                  </ProjectText>
+                </ProjectSection>
 
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Solution</h5>
-                  <p className="text-gray-300 leading-relaxed">
+                <ProjectSection label="Solution">
+                  <ProjectText>
                     A full-stack synthesis engine that calculates natal charts (Swiss Ephemeris), Human Design bodygraphs, and Pythagorean numerology profiles, then feeds all three into an AI synthesis layer that generates 3,000+ word personalized readings delivered as branded PDFs. Includes a free Cosmic Blueprint tool combining all three systems.
-                  </p>
-                </div>
+                  </ProjectText>
+                </ProjectSection>
 
-                <div>
-                  <h5 className="text-white font-semibold mb-2">My Role</h5>
-                  <p className="text-gray-300 leading-relaxed">
+                <ProjectSection label="My Role">
+                  <ProjectText>
                     Founder and product architect. Designed the verification pipeline, context architecture, and evaluation system. Product strategy, UX, SEO, and go-to-market.
-                  </p>
-                </div>
+                  </ProjectText>
+                </ProjectSection>
 
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Impact</h5>
-                  <div className="text-gray-300 space-y-3">
-                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>Only combined astrology + Human Design + numerology calculator on the web</span></p>
-                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>Swiss Ephemeris precision (0.001 arcsecond accuracy) for natal chart calculations</span></p>
-                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>Full e-commerce pipeline: Stripe checkout → AI generation → branded PDF → email delivery</span></p>
-                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>257 passing tests, CI/CD pipeline, rate limiting, retry queue with exponential backoff</span></p>
-                  </div>
-                </div>
+                <ProjectSection label="Impact">
+                  <ProjectBullets>
+                    <Checkmark>Only combined astrology + Human Design + numerology calculator on the web</Checkmark>
+                    <Checkmark>Swiss Ephemeris precision (0.001 arcsecond accuracy) for natal chart calculations</Checkmark>
+                    <Checkmark>Full e-commerce pipeline: Stripe checkout → AI generation → branded PDF → email delivery</Checkmark>
+                    <Checkmark>257 passing tests, CI/CD pipeline, rate limiting, retry queue with exponential backoff</Checkmark>
+                  </ProjectBullets>
+                </ProjectSection>
               </div>
 
-              <div className="flex flex-wrap gap-2 mt-6">
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Python / FastAPI</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Swiss Ephemeris</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">AI Synthesis</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Stripe</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">PDF Generation</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">SEO</span>
-              </div>
+              <TechStackTags tags={['Python / FastAPI', 'Swiss Ephemeris', 'AI Synthesis', 'Stripe', 'PDF Generation', 'SEO']} />
 
               <div className="mt-8 space-y-6">
                 <div
                   className="relative aspect-video rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
-                  onClick={() => {
-                    setModalMedia({ src: '/videos/synestrology-preview.mp4', type: 'video' })
-                    setIsModalOpen(true)
-                  }}
+                  onClick={() => openMedia({ src: '/videos/synestrology-preview.mp4', type: 'video' })}
                 >
                   <video
                     className="w-full h-full object-cover"
@@ -322,10 +250,10 @@ export default function Work() {
                     loop
                     playsInline
                     onError={(e) => {
-                      const target = e.target as HTMLVideoElement;
-                      target.style.display = 'none';
-                      const fallback = target.nextElementSibling as HTMLElement;
-                      if (fallback) fallback.style.display = 'flex';
+                      const target = e.target as HTMLVideoElement
+                      target.style.display = 'none'
+                      const fallback = target.nextElementSibling as HTMLElement
+                      if (fallback) fallback.style.display = 'flex'
                     }}
                   >
                     <source src="/videos/synestrology-preview.mp4" type="video/mp4" />
@@ -344,194 +272,53 @@ export default function Work() {
                 </div>
 
                 <div className="flex justify-center gap-6">
-                  <a
-                    href="https://www.synestrology.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-accent-teal hover:text-accent-teal/80 transition-colors group"
-                  >
-                    Visit Synestrology
-                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </a>
-                  <a
-                    href="https://www.synestrology.com/tools/cosmic-blueprint"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-accent-teal hover:text-accent-teal/80 transition-colors group"
-                  >
-                    Use the Free Tool
-                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </a>
+                  <ExternalLink href="https://www.synestrology.com/">Visit Synestrology</ExternalLink>
+                  <ExternalLink href="https://www.synestrology.com/tools/cosmic-blueprint">Use the Free Tool</ExternalLink>
                 </div>
               </div>
-            </motion.div>
+            </ProjectCard>
 
-            <motion.div
-              className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.55 }}
-            >
-              <h3 className="text-white text-2xl font-display font-bold mb-4">
-                Declassify ● Sourced Reporting on the 2026 Iran War
-              </h3>
-
-              <h4 className="text-accent-teal text-lg font-semibold mb-6">
-                Every number cited. Every claim linked. No editorializing.
-              </h4>
+            <ProjectCard delay={0.55}>
+              <ProjectHeader
+                title="CrunchBox ● Client-Side File Conversion Tools"
+                tagline="Convert, compress, and merge files. Everything stays in your browser."
+              />
 
               <div className="space-y-6">
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Problem</h5>
-                  <p className="text-gray-300 leading-relaxed">
-                    The Pentagon revoked press credentials from every major news outlet during Operation Epic Fury. With traditional media locked out, the public lost access to verified, centralized reporting on an active military conflict.
-                  </p>
-                </div>
-
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Solution</h5>
-                  <p className="text-gray-300 leading-relaxed">
-                    A sourced reporting dashboard that aggregates casualty figures, economic impact data, and operational details from international outlets, government releases, and NGOs. Every single number links to its source. Contested figures are presented side by side with no editorial judgment. Includes a timeline, impact analysis across 10+ categories, and a media blackout visualization showing which outlets lost credentials and which kept them.
-                  </p>
-                </div>
-
-                <div>
-                  <h5 className="text-white font-semibold mb-2">My Role</h5>
-                  <p className="text-gray-300 leading-relaxed">
-                    Solo builder. Research pipeline, editorial framework, information architecture, data binding system, accessibility, daily source monitoring and updates.
-                  </p>
-                </div>
-
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Impact</h5>
-                  <div className="text-gray-300 space-y-3">
-                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>54+ external source citations across dashboard, timeline, and impact pages</span></p>
-                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>Daily automated broken link checking via GitHub Actions</span></p>
-                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>Zero dependencies: pure HTML/CSS/JS, no build step, progressive enhancement throughout</span></p>
-                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>Full keyboard navigation, screen reader support, reduced motion respect</span></p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex flex-wrap gap-2 mt-6">
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Information Design</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Accessibility</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Zero Dependencies</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">CI/CD</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Brutalist Design</span>
-              </div>
-
-              <div className="mt-8 space-y-6">
-                <div>
-                  <div
-                    className="relative rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
-                    onClick={() => {
-                      setModalMedia({ src: '/images/declassify-og.png', type: 'image' })
-                      setIsModalOpen(true)
-                    }}
-                  >
-                    <img
-                      src="/images/declassify-og.png"
-                      alt="Declassify social card with redacted title treatment and tagline: sourced reporting on the 2026 Iran war"
-                      className="w-full h-auto object-contain mx-auto"
-                    />
-                  </div>
-                </div>
-
-                <div className="flex justify-center gap-6">
-                  <a
-                    href="https://declassify.news"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-accent-teal hover:text-accent-teal/80 transition-colors group"
-                  >
-                    Visit Site
-                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </a>
-                  <a
-                    href="https://github.com/Surfrrosa/declassify"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-accent-teal hover:text-accent-teal/80 transition-colors group"
-                  >
-                    GitHub
-                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.55 }}
-            >
-              <h3 className="text-white text-2xl font-display font-bold mb-4">
-                CrunchBox ● Client-Side File Conversion Tools
-              </h3>
-
-              <h4 className="text-accent-teal text-lg font-semibold mb-6">
-                Convert, compress, and merge files. Everything stays in your browser.
-              </h4>
-
-              <div className="space-y-6">
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Problem</h5>
-                  <p className="text-gray-300 leading-relaxed">
+                <ProjectSection label="Problem">
+                  <ProjectText>
                     File conversion sites upload your documents to their servers, plaster ads everywhere, and harvest your data. For something as simple as compressing a PDF, you shouldn&apos;t need to trust a stranger with your files.
-                  </p>
-                </div>
+                  </ProjectText>
+                </ProjectSection>
 
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Solution</h5>
-                  <p className="text-gray-300 leading-relaxed">
+                <ProjectSection label="Solution">
+                  <ProjectText>
                     A suite of client-side file tools where every conversion happens in the browser. HEIC to JPG, WebP to JPG, PDF compression, PDF merging, and image compression with quality control. No files ever leave your machine.
-                  </p>
-                </div>
+                  </ProjectText>
+                </ProjectSection>
 
-                <div>
-                  <h5 className="text-white font-semibold mb-2">My Role</h5>
-                  <p className="text-gray-300 leading-relaxed">
+                <ProjectSection label="My Role">
+                  <ProjectText>
                     Solo builder. Product concept, brand identity, development, Stripe integration, Sentry monitoring, launch.
-                  </p>
-                </div>
+                  </ProjectText>
+                </ProjectSection>
 
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Impact</h5>
-                  <div className="text-gray-300 space-y-3">
-                    <p className="flex items-start"><span className="text-accent-teal mr-2">&#10003;</span><span>5 conversion tools: HEIC, WebP, PDF compress, PDF merge, image compress</span></p>
-                    <p className="flex items-start"><span className="text-accent-teal mr-2">&#10003;</span><span>100% client-side processing via pdf-lib, heic-to (libheif WASM), Canvas API</span></p>
-                    <p className="flex items-start"><span className="text-accent-teal mr-2">&#10003;</span><span>Freemium model with Stripe subscription billing</span></p>
-                    <p className="flex items-start"><span className="text-accent-teal mr-2">&#10003;</span><span>Sentry error monitoring and logging for proactive issue detection</span></p>
-                  </div>
-                </div>
+                <ProjectSection label="Impact">
+                  <ProjectBullets>
+                    <Checkmark>5 conversion tools: HEIC, WebP, PDF compress, PDF merge, image compress</Checkmark>
+                    <Checkmark>100% client-side processing via pdf-lib, heic-to (libheif WASM), Canvas API</Checkmark>
+                    <Checkmark>Freemium model with Stripe subscription billing</Checkmark>
+                    <Checkmark>Sentry error monitoring and logging for proactive issue detection</Checkmark>
+                  </ProjectBullets>
+                </ProjectSection>
               </div>
 
-              <div className="flex flex-wrap gap-2 mt-6">
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Astro</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">pdf-lib</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">WASM</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Stripe</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Sentry</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Privacy-First</span>
-              </div>
+              <TechStackTags tags={['Astro', 'pdf-lib', 'WASM', 'Stripe', 'Sentry', 'Privacy-First']} />
 
               <div className="mt-8 space-y-6">
                 <div
                   className="relative aspect-video rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
-                  onClick={() => {
-                    setModalMedia({ src: '/videos/crunchbox.mp4', type: 'video' })
-                    setIsModalOpen(true)
-                  }}
+                  onClick={() => openMedia({ src: '/videos/crunchbox.mp4', type: 'video' })}
                 >
                   <video
                     className="w-full h-full object-cover"
@@ -540,10 +327,10 @@ export default function Work() {
                     loop
                     playsInline
                     onError={(e) => {
-                      const target = e.target as HTMLVideoElement;
-                      target.style.display = 'none';
-                      const fallback = target.nextElementSibling as HTMLElement;
-                      if (fallback) fallback.style.display = 'flex';
+                      const target = e.target as HTMLVideoElement
+                      target.style.display = 'none'
+                      const fallback = target.nextElementSibling as HTMLElement
+                      if (fallback) fallback.style.display = 'flex'
                     }}
                   >
                     <source src="/videos/crunchbox.mp4" type="video/mp4" />
@@ -562,84 +349,52 @@ export default function Work() {
                 </div>
 
                 <div className="flex justify-center gap-6">
-                  <a
-                    href="https://crunchbox.lol"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-accent-teal hover:text-accent-teal/80 transition-colors group"
-                  >
-                    Try It Live
-                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </a>
+                  <ExternalLink href="https://crunchbox.lol">Try It Live</ExternalLink>
                 </div>
               </div>
-            </motion.div>
+            </ProjectCard>
 
-            <motion.div
-              className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-            >
-              <h3 className="text-white text-2xl font-display font-bold mb-4">
-                Maestro ● AI Development Process CLI
-              </h3>
-
-              <h4 className="text-accent-teal text-lg font-semibold mb-6">
-                The missing process layer for AI-assisted development.
-              </h4>
+            <ProjectCard delay={0.6}>
+              <ProjectHeader
+                title="Maestro ● AI Development Process CLI"
+                tagline="The missing process layer for AI-assisted development."
+              />
 
               <div className="space-y-6">
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Problem</h5>
-                  <p className="text-gray-300 leading-relaxed">
+                <ProjectSection label="Problem">
+                  <ProjectText>
                     AI coding tools start every session fresh. Without documented context, teams lose naming conventions, architecture decisions, and security requirements between sessions. The output is fast but undirected.
-                  </p>
-                </div>
+                  </ProjectText>
+                </ProjectSection>
 
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Solution</h5>
-                  <p className="text-gray-300 leading-relaxed">
+                <ProjectSection label="Solution">
+                  <ProjectText>
                     A CLI that scaffolds and enforces development process. Scans your codebase to generate CLAUDE.md, session logs, security checklists, and .env templates. Scores project health across audit, quality, security, and dependency categories. Integrates with CI pipelines and git hooks for continuous enforcement.
-                  </p>
-                </div>
+                  </ProjectText>
+                </ProjectSection>
 
-                <div>
-                  <h5 className="text-white font-semibold mb-2">My Role</h5>
-                  <p className="text-gray-300 leading-relaxed">
+                <ProjectSection label="My Role">
+                  <ProjectText>
                     Product concept, CLI architecture, scoring algorithms, npm publishing. Built with AI-assisted development and dogfooded across 12 personal projects.
-                  </p>
-                </div>
+                  </ProjectText>
+                </ProjectSection>
 
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Impact</h5>
-                  <div className="text-gray-300 space-y-3">
-                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>Published on npm as maestro-dev, installable globally</span></p>
-                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>12-check audit scoring (0-100) plus 7-category code quality grading (A-F)</span></p>
-                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>Full CI integration with GitHub Actions workflow</span></p>
-                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>Dogfooded across repos to validate every feature before shipping</span></p>
-                  </div>
-                </div>
+                <ProjectSection label="Impact">
+                  <ProjectBullets>
+                    <Checkmark>Published on npm as maestro-dev, installable globally</Checkmark>
+                    <Checkmark>12-check audit scoring (0-100) plus 7-category code quality grading (A-F)</Checkmark>
+                    <Checkmark>Full CI integration with GitHub Actions workflow</Checkmark>
+                    <Checkmark>Dogfooded across repos to validate every feature before shipping</Checkmark>
+                  </ProjectBullets>
+                </ProjectSection>
               </div>
 
-              <div className="flex flex-wrap gap-2 mt-6">
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Node.js / TypeScript</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">CLI Design</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">npm Publishing</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Static Analysis</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Git Hooks</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">CI/CD</span>
-              </div>
+              <TechStackTags tags={['Node.js / TypeScript', 'CLI Design', 'npm Publishing', 'Static Analysis', 'Git Hooks', 'CI/CD']} />
 
               <div className="mt-8 space-y-6">
                 <div
                   className="relative aspect-video rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
-                  onClick={() => {
-                    setModalMedia({ src: '/videos/maestro-demo.mp4', type: 'video' })
-                    setIsModalOpen(true)
-                  }}
+                  onClick={() => openMedia({ src: '/videos/maestro-demo.mp4', type: 'video' })}
                 >
                   <video
                     className="w-full h-full object-cover"
@@ -653,97 +408,54 @@ export default function Work() {
                 </div>
 
                 <div className="flex justify-center gap-6">
-                  <a
-                    href="https://www.npmjs.com/package/maestro-dev"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-accent-teal hover:text-accent-teal/80 transition-colors group"
-                  >
-                    npm Package
-                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </a>
-                  <a
-                    href="https://github.com/Surfrrosa/maestro"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-accent-teal hover:text-accent-teal/80 transition-colors group"
-                  >
-                    GitHub
-                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </a>
+                  <ExternalLink href="https://www.npmjs.com/package/maestro-dev">npm Package</ExternalLink>
+                  <ExternalLink href="https://github.com/Surfrrosa/maestro">GitHub</ExternalLink>
                 </div>
               </div>
-            </motion.div>
+            </ProjectCard>
 
-            <motion.div
-              className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.65 }}
-            >
-              <h3 className="text-white text-2xl font-display font-bold mb-4">
-                What Changed ● Automatic Webpage Diff Tracker
-              </h3>
-
-              <h4 className="text-accent-teal text-lg font-semibold mb-6">
-                See exactly what&apos;s different when you revisit any page.
-              </h4>
+            <ProjectCard delay={0.65}>
+              <ProjectHeader
+                title="What Changed ● Automatic Webpage Diff Tracker"
+                tagline="See exactly what&apos;s different when you revisit any page."
+              />
 
               <div className="space-y-6">
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Problem</h5>
-                  <p className="text-gray-300 leading-relaxed">
+                <ProjectSection label="Problem">
+                  <ProjectText>
                     Every change-detection tool requires you to predict which pages will change and set up watchers ahead of time. Nobody does that.
-                  </p>
-                </div>
+                  </ProjectText>
+                </ProjectSection>
 
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Solution</h5>
-                  <p className="text-gray-300 leading-relaxed">
+                <ProjectSection label="Solution">
+                  <ProjectText>
                     A Chrome extension that flips the model. It silently snapshots every page you visit using Mozilla&apos;s Readability for smart content extraction, then shows you a clean word-level diff the moment you return. SHA-256 deduplication keeps storage minimal, and configurable significance thresholds filter out noise from A/B tests and dynamic feeds.
-                  </p>
-                </div>
+                  </ProjectText>
+                </ProjectSection>
 
-                <div>
-                  <h5 className="text-white font-semibold mb-2">My Role</h5>
-                  <p className="text-gray-300 leading-relaxed">
+                <ProjectSection label="My Role">
+                  <ProjectText>
                     Solo builder. Product concept, architecture, development, Chrome Web Store launch.
-                  </p>
-                </div>
+                  </ProjectText>
+                </ProjectSection>
 
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Impact</h5>
-                  <div className="text-gray-300 space-y-3">
-                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>Zero-config automatic tracking on every page you visit</span></p>
-                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>~5 KB average snapshot vs ~200 KB raw HTML via Readability extraction</span></p>
-                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>~70% revisit deduplication via SHA-256 content hashing</span></p>
-                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>SPA navigation support with automatic re-capture</span></p>
-                  </div>
-                </div>
+                <ProjectSection label="Impact">
+                  <ProjectBullets>
+                    <Checkmark>Zero-config automatic tracking on every page you visit</Checkmark>
+                    <Checkmark>~5 KB average snapshot vs ~200 KB raw HTML via Readability extraction</Checkmark>
+                    <Checkmark>~70% revisit deduplication via SHA-256 content hashing</Checkmark>
+                    <Checkmark>SPA navigation support with automatic re-capture</Checkmark>
+                  </ProjectBullets>
+                </ProjectSection>
               </div>
 
-              <div className="flex flex-wrap gap-2 mt-6">
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Chrome Extension</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">TypeScript</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">IndexedDB</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Readability.js</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">jsdiff</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Manifest V3</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Privacy-First</span>
-              </div>
+              <TechStackTags tags={['Chrome Extension', 'TypeScript', 'IndexedDB', 'Readability.js', 'jsdiff', 'Manifest V3', 'Privacy-First']} />
 
               <div className="mt-8 space-y-6">
                 <div>
                   <div
                     className="relative rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
-                    onClick={() => {
-                      setModalMedia({ src: '/images/what-changed-screenshot.png', type: 'image' })
-                      setIsModalOpen(true)
-                    }}
+                    onClick={() => openMedia({ src: '/images/what-changed-screenshot.png', type: 'image' })}
                   >
                     <img
                       src="/images/what-changed-screenshot.png"
@@ -754,80 +466,53 @@ export default function Work() {
                 </div>
 
                 <div className="flex justify-center gap-6">
-                  <a
-                    href="https://chromewebstore.google.com/detail/what-changed/beaielclimdopobfbaeibgmpnlmnfpjf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-accent-teal hover:text-accent-teal/80 transition-colors group"
-                  >
+                  <ExternalLink href="https://chromewebstore.google.com/detail/what-changed/beaielclimdopobfbaeibgmpnlmnfpjf">
                     Chrome Web Store
-                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </a>
+                  </ExternalLink>
                 </div>
               </div>
-            </motion.div>
-            <motion.div
-              className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.65 }}
-            >
-              <h3 className="text-white text-2xl font-display font-bold mb-4">
-                Enlighten ● Tao × Neuroscience Mindfulness App
-              </h3>
-              
-              <h4 className="text-accent-teal text-lg font-semibold mb-6">
-                Mindfulness, nervous system regulation, and timeless Taoist wisdom in your pocket.
-              </h4>
-              
+            </ProjectCard>
+
+            <ProjectCard delay={0.65}>
+              <ProjectHeader
+                title="Enlighten ● Tao × Neuroscience Mindfulness App"
+                tagline="Mindfulness, nervous system regulation, and timeless Taoist wisdom in your pocket."
+              />
+
               <div className="space-y-6">
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Problem</h5>
-                  <p className="text-gray-300 leading-relaxed">
+                <ProjectSection label="Problem">
+                  <ProjectText>
                     Most mindfulness apps expect users to actively seek out content, making it easy to forget or skip entirely. Few combine unpredictable Taoist insights with quick, evidence-based practices for an immediate state shift.
-                  </p>
-                </div>
-                
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Solution</h5>
-                  <p className="text-gray-300 leading-relaxed">
+                  </ProjectText>
+                </ProjectSection>
+
+                <ProjectSection label="Solution">
+                  <ProjectText>
                     Enlighten delivers Tao Te Ching passages paired with neuroscience-backed micro-practices at beautifully timed moments. Features include a quote library with filters, favorites, customizable notifications, and minimal, distraction-free UX.
-                  </p>
-                </div>
-                
-                <div>
-                  <h5 className="text-white font-semibold mb-2">My Role</h5>
-                  <p className="text-gray-300 leading-relaxed">
+                  </ProjectText>
+                </ProjectSection>
+
+                <ProjectSection label="My Role">
+                  <ProjectText>
                     Product concept, UX design, and technical planning. Wrote the user stories and roadmap.
-                  </p>
-                </div>
-                
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Impact (6-Month Targets)</h5>
-                  <div className="text-gray-300 space-y-3">
-                    <p className="flex items-start"><span className="text-accent-teal mr-2">→</span><span>750-1,500 downloads with organic growth</span></p>
-                    <p className="flex items-start"><span className="text-accent-teal mr-2">→</span><span>4-6% Day 30 retention (indie app benchmark)</span></p>
-                    <p className="flex items-start"><span className="text-accent-teal mr-2">→</span><span>100-200 weekly active users engaging 2-3x per week</span></p>
-                    <p className="flex items-start"><span className="text-accent-teal mr-2">→</span><span>Fast nervous system resets without disrupting routine</span></p>
-                  </div>
-                </div>
-                
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Status</h5>
-                  <p className="text-gray-300 leading-relaxed">
-                    Available now on iOS App Store and Google Play.
-                  </p>
-                </div>
+                  </ProjectText>
+                </ProjectSection>
+
+                <ProjectSection label="Impact (6-Month Targets)">
+                  <ProjectBullets>
+                    <Checkmark marker="→">750-1,500 downloads with organic growth</Checkmark>
+                    <Checkmark marker="→">4-6% Day 30 retention (indie app benchmark)</Checkmark>
+                    <Checkmark marker="→">100-200 weekly active users engaging 2-3x per week</Checkmark>
+                    <Checkmark marker="→">Fast nervous system resets without disrupting routine</Checkmark>
+                  </ProjectBullets>
+                </ProjectSection>
+
+                <ProjectSection label="Status">
+                  <ProjectText>Available now on iOS App Store and Google Play.</ProjectText>
+                </ProjectSection>
               </div>
-              
-              <div className="flex flex-wrap gap-2 mt-6">
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Mindfulness</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Mobile UX</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Product Strategy</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">AI Development</span>
-              </div>
+
+              <TechStackTags tags={['Mindfulness', 'Mobile UX', 'Product Strategy', 'AI Development']} />
 
               <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <a
@@ -868,272 +553,98 @@ export default function Work() {
 
               <EnlightenCarousel
                 onSlideClick={(index) => {
-                  setModalMedia({
+                  openMedia({
                     src: `/images/enlighten${index + 1}.PNG`,
-                    type: 'image'
+                    type: 'image',
                   })
-                  setIsModalOpen(true)
                 }}
               />
 
               <div className="text-center mt-8">
-                <a
-                  href="https://enlighten-kappa.vercel.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center text-accent-teal hover:text-accent-teal/80 transition-colors group"
-                >
-                  View Landing Page
-                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </a>
+                <ExternalLink href="https://enlighten-kappa.vercel.app/">View Landing Page</ExternalLink>
               </div>
-            </motion.div>
+            </ProjectCard>
 
-            <motion.div
-              className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.7 }}
-            >
-              <h3 className="text-white text-2xl font-display font-bold mb-4">
-                The Absurdity Index ● Data-Driven Social Research
-              </h3>
-
-              <h4 className="text-accent-teal text-lg font-semibold mb-6">
-                When the economy is &apos;strong&apos; but everyone&apos;s struggling, that gap is worth measuring.
-              </h4>
+            <ProjectCard delay={0.7}>
+              <ProjectHeader
+                title="Nortal ● API-Driven Telecom Solutions for National Retailers"
+                tagline="Delivered prepaid activation, number port-in, add-a-line, and billing integrations for T-Mobile's largest retail partners."
+                subtitle="Secure Communications Modernization — Faster, Safer, Smarter"
+              />
 
               <div className="space-y-6">
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Problem</h5>
-                  <p className="text-gray-300 leading-relaxed">
-                    Official statistics often lag reality and miss the psychological toll of modern challenges like healthcare nightmares, housing despair, and AI dependency.
-                  </p>
-                </div>
+                <ProjectSection label="Problem">
+                  <ProjectText>
+                    T-Mobile&apos;s prepaid services for major retailers like Walmart, Costco, and Best Buy required complex API integrations for activations, number porting, and service extensions. Without streamlined processes, onboarding new customers or adding lines was slow, error-prone, and frustrating.
+                  </ProjectText>
+                </ProjectSection>
 
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Solution</h5>
-                  <p className="text-gray-300 leading-relaxed">
-                    A research dashboard tracking 8 metrics of modern absurdity through a 40/60 formula combining official data with social sentiment analysis across YouTube, Reddit, and TikTok.
-                  </p>
-                </div>
-
-                <div>
-                  <h5 className="text-white font-semibold mb-2">My Role</h5>
-                  <p className="text-gray-300 leading-relaxed">
-                    Research design, data collection, UX/UI design, brutalist aesthetic, deployment. Built with AI.
-                  </p>
-                </div>
-
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Impact</h5>
-                  <div className="text-gray-300 space-y-3">
-                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>3,200+ real data points collected across 8 societal metrics</span></p>
-                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>7 data sources: YouTube, Reddit, TikTok, Hacker News, CFPB, Bluesky, FRED</span></p>
-                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>Fully automated weekly data pipeline running on GitHub Actions</span></p>
-                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>Current overall score: 38/100, with wage stagnation and healthcare leading the crisis</span></p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex flex-wrap gap-2 mt-6">
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Research Design</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Data Collection</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Social Sentiment</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Next.js</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Python</span>
-              </div>
-
-              <div className="mt-8 space-y-6">
-                <div
-                  className="relative aspect-video rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
-                  onClick={() => {
-                    setModalMedia({ src: '/videos/absurdity-index-preview.mp4', type: 'video' })
-                    setIsModalOpen(true)
-                  }}
-                >
-                  <video
-                    className="w-full h-full object-cover"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    onError={(e) => {
-                      const target = e.target as HTMLVideoElement;
-                      target.style.display = 'none';
-                      const fallback = target.nextElementSibling as HTMLElement;
-                      if (fallback) fallback.style.display = 'flex';
-                    }}
-                  >
-                    <source src="/videos/absurdity-index-preview.mp4" type="video/mp4" />
-                  </video>
-                  <div className="absolute inset-0 bg-slate-700/30 flex items-center justify-center" style={{ display: 'none' }}>
-                    <div className="text-center">
-                      <div className="w-16 h-16 bg-teal-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg className="w-8 h-8 text-accent-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                        </svg>
-                      </div>
-                      <p className="text-gray-400 text-sm">Project Preview</p>
-                      <p className="text-white font-semibold">The Absurdity Index</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="space-y-4">
-                  <div className="text-center py-4 px-6 bg-white/[0.02] rounded-lg border border-white/5">
-                    <p className="text-gray-400 text-sm">
-                      This project has been archived. Full writeup in progress.
-                    </p>
-                  </div>
-                  <div className="pt-6 border-t border-white/10">
-                    <a
-                      href="/writing/the-absurdity-index"
-                      className="inline-flex items-center gap-2 text-accent-teal hover:text-accent-teal/80 transition-colors group"
-                    >
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                      </svg>
-                      <span className="font-medium">Read the full article: The Absurdity Index</span>
-                      <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.7 }}
-            >
-              <h3 className="text-white text-2xl font-display font-bold mb-4">
-                Nortal ● API-Driven Telecom Solutions for National Retailers
-              </h3>
-              
-              <h4 className="text-accent-teal text-lg font-semibold mb-6">
-                Delivered prepaid activation, number port-in, add-a-line, and billing integrations for T-Mobile's largest retail partners.
-              </h4>
-              
-              <div className="mb-6">
-                <p className="text-xs uppercase tracking-wider text-gray-400 font-semibold">
-                  Secure Communications Modernization — Faster, Safer, Smarter
-                </p>
-              </div>
-              
-              <div className="space-y-6">
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Problem</h5>
-                  <p className="text-gray-300 leading-relaxed">
-                    T-Mobile's prepaid services for major retailers like Walmart, Costco, and Best Buy required complex API integrations for activations, number porting, and service extensions. Without streamlined processes, onboarding new customers or adding lines was slow, error-prone, and frustrating.
-                  </p>
-                </div>
-                
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Solution</h5>
-                  <p className="text-gray-300 leading-relaxed">
+                <ProjectSection label="Solution">
+                  <ProjectText>
                     As Technical Product Owner, I managed the MAAD Lite prepaid API integration for national retailers, delivered Port-In capabilities for seamless number transfers, launched National Retailer Add-a-Line (AAL) functionality for existing customers, and improved cart, payment, and OTP retry performance for faster transactions.
-                  </p>
-                </div>
-                
-                <div>
-                  <h5 className="text-white font-semibold mb-2">My Role</h5>
-                  <p className="text-gray-300 leading-relaxed">
-                    Technical Product Owner managing API integrations, stakeholder coordination, performance optimization, and cross-team delivery for enterprise retail partnerships.
-                  </p>
-                </div>
-                
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Impact</h5>
-                  <div className="text-gray-300 space-y-3">
-                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>Delivered 3 major API integrations on time for T-Mobile's largest retail partners</span></p>
-                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>Streamlined prepaid activations across Walmart, Costco, and Best Buy</span></p>
-                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>Reduced number porting errors and improved customer onboarding flow</span></p>
-                    <p className="flex items-start"><span className="text-accent-teal mr-2">✓</span><span>Zero critical production bugs across enterprise retail integrations</span></p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="flex flex-wrap gap-2 mt-6">
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">API Integration</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Telecom</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Agile Delivery</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Enterprise Retail</span>
-              </div>
-              
-              <DiagramGallery />
-              
-              <div className="text-center mt-8">
-                <a 
-                  href="https://nortal.com/about" 
-                  className="inline-flex items-center text-accent-teal hover:text-accent-teal/80 transition-colors group"
-                >
-                  Visit Website
-                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </a>
-              </div>
-            </motion.div>
+                  </ProjectText>
+                </ProjectSection>
 
-            <motion.div
-              className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.75 }}
-            >
-              <h3 className="text-white text-2xl font-display font-bold mb-4">
-                ConnectWise Manage ● CRM/PSA Platform Product Ownership
-              </h3>
-              
-              <h4 className="text-accent-teal text-lg font-semibold mb-6">
-                Owned CRM, Service, and System modules for a platform used by thousands of IT service providers to manage sales pipelines, service delivery, and customer lifecycle.
-              </h4>
-              
+                <ProjectSection label="My Role">
+                  <ProjectText>
+                    Technical Product Owner managing API integrations, stakeholder coordination, performance optimization, and cross-team delivery for enterprise retail partnerships.
+                  </ProjectText>
+                </ProjectSection>
+
+                <ProjectSection label="Impact">
+                  <ProjectBullets>
+                    <Checkmark>Delivered 3 major API integrations on time for T-Mobile&apos;s largest retail partners</Checkmark>
+                    <Checkmark>Streamlined prepaid activations across Walmart, Costco, and Best Buy</Checkmark>
+                    <Checkmark>Reduced number porting errors and improved customer onboarding flow</Checkmark>
+                    <Checkmark>Zero critical production bugs across enterprise retail integrations</Checkmark>
+                  </ProjectBullets>
+                </ProjectSection>
+              </div>
+
+              <TechStackTags tags={['API Integration', 'Telecom', 'Agile Delivery', 'Enterprise Retail']} />
+
+              <DiagramGallery />
+
+              <div className="text-center mt-8">
+                <ExternalLink href="https://nortal.com/about">Visit Website</ExternalLink>
+              </div>
+            </ProjectCard>
+
+            <ProjectCard delay={0.75}>
+              <ProjectHeader
+                title="ConnectWise Manage ● CRM/PSA Platform Product Ownership"
+                tagline="Owned CRM, Service, and System modules for a platform used by thousands of IT service providers to manage sales pipelines, service delivery, and customer lifecycle."
+              />
+
               <div className="space-y-6">
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Problem</h5>
-                  <p className="text-gray-300 leading-relaxed">
+                <ProjectSection label="Problem">
+                  <ProjectText>
                     ConnectWise Manage is the CRM and professional services automation platform for the managed services industry. Sales teams lacked real-time pipeline visibility, reporting took days, and legacy UI and APIs slowed adoption. The platform needed modernization across CRM dashboards, mobile workflows, and integrations.
-                  </p>
-                </div>
-                
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Solution</h5>
-                  <p className="text-gray-300 leading-relaxed">
+                  </ProjectText>
+                </ProjectSection>
+
+                <ProjectSection label="Solution">
+                  <ProjectText>
                     Owned companies &amp; contacts, quoting, sales funnel, and procurement modules. Built ConnectWise Now CRM Dashboards with real-time pipeline visibility, quote tracking, and sales forecasting. Redesigned ticket communication with rich text, inline images, and issue tagging. Led AngularJS to React migration and legacy API to REST conversion across the platform.
-                  </p>
-                </div>
-                
-                <div>
-                  <h5 className="text-white font-semibold mb-2">My Role</h5>
-                  <p className="text-gray-300 leading-relaxed">
+                  </ProjectText>
+                </ProjectSection>
+
+                <ProjectSection label="My Role">
+                  <ProjectText>
                     Product Owner for CRM modules: companies &amp; contacts, quoting system, sales funnel, and procurement. Owned sales pipeline visibility, customer lifecycle features, and platform modernization across a PSA platform serving thousands of IT service providers.
-                  </p>
-                </div>
-                
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Impact</h5>
-                  <div className="text-gray-300 space-y-3">
-                    <p>Reduced mobile ticket handling time by ~25% and boosted app adoption by 40%.</p>
-                    <p>Improved communication clarity and reduced note review time for technicians and clients.</p>
-                    <p>Enabled instant CRM data access for sales teams, improving forecast accuracy and decision-making speed.</p>
-                  </div>
-                </div>
+                  </ProjectText>
+                </ProjectSection>
+
+                <ProjectSection label="Impact">
+                  <ProjectBullets>
+                    <ProjectText>Reduced mobile ticket handling time by ~25% and boosted app adoption by 40%.</ProjectText>
+                    <ProjectText>Improved communication clarity and reduced note review time for technicians and clients.</ProjectText>
+                    <ProjectText>Enabled instant CRM data access for sales teams, improving forecast accuracy and decision-making speed.</ProjectText>
+                  </ProjectBullets>
+                </ProjectSection>
               </div>
-              
-              <div className="flex flex-wrap gap-2 mt-6">
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">CRM</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">SaaS</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Sales Pipeline</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Service Management</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Platform Modernization</span>
-              </div>
+
+              <TechStackTags tags={['CRM', 'SaaS', 'Sales Pipeline', 'Service Management', 'Platform Modernization']} />
 
               <div className="mt-8">
                 <div className="mb-3">
@@ -1143,10 +654,7 @@ export default function Work() {
                 </div>
                 <div
                   className="relative rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
-                  onClick={() => {
-                    setModalMedia({ src: '/images/connectwise-manage-showcase.png', type: 'image' })
-                    setIsModalOpen(true)
-                  }}
+                  onClick={() => openMedia({ src: '/images/connectwise-manage-showcase.png', type: 'image' })}
                 >
                   <img
                     src="/images/connectwise-manage-showcase.png"
@@ -1182,7 +690,6 @@ export default function Work() {
                   </div>
                 </div>
 
-
                 <section
                   className="mt-4 rounded-xl border border-white/10 bg-white/[0.03] p-3"
                   aria-label="ConnectWise Release Notes"
@@ -1193,7 +700,7 @@ export default function Work() {
                       <a
                         href="https://www.connectwise.com/blog/new-connectwise-mobile-app#:~:text=With%20our%20core%20values%20to%20guide%20us%2C,techs%20complete%20assigned%20tasks%20quickly%20and%20efficiently"
                         target="_blank"
-                        rel="noreferrer"
+                        rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 text-accent-teal hover:text-accent-teal/80"
                         title="ConnectWise Mobile App"
                       >
@@ -1205,7 +712,7 @@ export default function Work() {
                       <a
                         href="https://www.connectwise.com/blog/new-connectwise-manage-features"
                         target="_blank"
-                        rel="noreferrer"
+                        rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 text-accent-teal hover:text-accent-teal/80"
                         title="Ticket Notes"
                       >
@@ -1217,7 +724,7 @@ export default function Work() {
                       <a
                         href="https://www.connectwise.com/blog/introducing-connectwise-now-a-new-dashboard-for-your-data"
                         target="_blank"
-                        rel="noreferrer"
+                        rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 text-accent-teal hover:text-accent-teal/80"
                         title="ConnectWise Now Dashboard"
                       >
@@ -1228,84 +735,55 @@ export default function Work() {
                   </ul>
                 </section>
               </div>
-              
+
               <div className="text-center mt-8">
-                <a 
-                  href="https://www.connectwise.com/platform/psa?ref=header#features" 
-                  className="inline-flex items-center text-accent-teal hover:text-accent-teal/80 transition-colors group"
-                >
-                  Visit Website
-                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </a>
+                <ExternalLink href="https://www.connectwise.com/platform/psa?ref=header#features">Visit Website</ExternalLink>
               </div>
-            </motion.div>
+            </ProjectCard>
 
-            <motion.div
-              className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-            >
-              <h3 className="text-white text-2xl font-display font-bold mb-4">
-                Pale Blue Dot ● Interactive Pixel-Art Tribute
-              </h3>
-
-              <h4 className="text-accent-teal text-lg font-semibold mb-6">
-                An 8-bit love letter to Carl Sagan and the Voyager 1 photograph.
-              </h4>
+            <ProjectCard>
+              <ProjectHeader
+                title="Pale Blue Dot ● Interactive Pixel-Art Tribute"
+                tagline="An 8-bit love letter to Carl Sagan and the Voyager 1 photograph."
+              />
 
               <div className="space-y-6">
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Concept</h5>
-                  <p className="text-gray-300 leading-relaxed">
+                <ProjectSection label="Concept">
+                  <ProjectText>
                     A single-page web experience that renders a procedural pixel-art space scene at 320x180 pixels. Stars drift in parallax layers, nebula clouds glow in deep purple, and one quiet, steady pixel sits at the center: Earth.
-                  </p>
-                </div>
+                  </ProjectText>
+                </ProjectSection>
 
-                <div>
-                  <h5 className="text-white font-semibold mb-2">The Experience</h5>
-                  <p className="text-gray-300 leading-relaxed">
+                <ProjectSection label="The Experience">
+                  <ProjectText>
                     A boot sequence types out a transmission from the Voyager Deep Space Network. The starfield reveals, the nebula fades in, and an amber sign points to the dot: YOU ARE HERE. Press play to hear Sagan read the excerpt, or read it as RPG-style dialogue typed out one passage at a time.
-                  </p>
-                </div>
+                  </ProjectText>
+                </ProjectSection>
 
-                <div>
-                  <h5 className="text-white font-semibold mb-2">My Role</h5>
-                  <p className="text-gray-300 leading-relaxed">
+                <ProjectSection label="My Role">
+                  <ProjectText>
                     Solo builder. Concept, creative direction, visual design, procedural generation, audio integration. Built with vanilla JavaScript and Canvas API, no framework.
-                  </p>
-                </div>
+                  </ProjectText>
+                </ProjectSection>
 
-                <div>
-                  <h5 className="text-white font-semibold mb-2">Technical Highlights</h5>
-                  <div className="text-gray-300 space-y-3">
-                    <p className="flex items-start"><span className="text-accent-teal mr-2">&#10003;</span><span>Procedural starfield, nebula, and sparkle stars drawn pixel-by-pixel</span></p>
-                    <p className="flex items-start"><span className="text-accent-teal mr-2">&#10003;</span><span>CRT shader effects: scanlines, vignette, film grain, chromatic aberration</span></p>
-                    <p className="flex items-start"><span className="text-accent-teal mr-2">&#10003;</span><span>3-layer parallax creating the illusion of flying through space</span></p>
-                    <p className="flex items-start"><span className="text-accent-teal mr-2">&#10003;</span><span>RPG-style typewriter dialogue for accessibility</span></p>
-                    <p className="flex items-start"><span className="text-accent-teal mr-2">&#10003;</span><span>Zero dependencies. Pure HTML, CSS, Canvas API</span></p>
-                  </div>
-                </div>
+                <ProjectSection label="Technical Highlights">
+                  <ProjectBullets>
+                    <Checkmark>Procedural starfield, nebula, and sparkle stars drawn pixel-by-pixel</Checkmark>
+                    <Checkmark>CRT shader effects: scanlines, vignette, film grain, chromatic aberration</Checkmark>
+                    <Checkmark>3-layer parallax creating the illusion of flying through space</Checkmark>
+                    <Checkmark>RPG-style typewriter dialogue for accessibility</Checkmark>
+                    <Checkmark>Zero dependencies. Pure HTML, CSS, Canvas API</Checkmark>
+                  </ProjectBullets>
+                </ProjectSection>
               </div>
 
-              <div className="flex flex-wrap gap-2 mt-6">
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Vanilla JS</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Canvas API</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Procedural Generation</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Pixel Art</span>
-                <span className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Web Audio</span>
-              </div>
+              <TechStackTags tags={['Vanilla JS', 'Canvas API', 'Procedural Generation', 'Pixel Art', 'Web Audio']} />
 
               <div className="mt-8 space-y-6">
                 <div>
                   <div
                     className="relative rounded-lg overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-colors"
-                    onClick={() => {
-                      setModalMedia({ src: '/videos/pale-blue-dot-preview.mp4', type: 'video' })
-                      setIsModalOpen(true)
-                    }}
+                    onClick={() => openMedia({ src: '/videos/pale-blue-dot-preview.mp4', type: 'video' })}
                   >
                     <video
                       src="/videos/pale-blue-dot-preview.mp4"
@@ -1319,20 +797,10 @@ export default function Work() {
                 </div>
 
                 <div className="flex justify-center gap-6">
-                  <a
-                    href="https://palebluedot.sh"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-accent-teal hover:text-accent-teal/80 transition-colors group"
-                  >
-                    Experience it
-                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </a>
+                  <ExternalLink href="https://palebluedot.sh">Experience it</ExternalLink>
                 </div>
               </div>
-            </motion.div>
+            </ProjectCard>
 
           </div>
 

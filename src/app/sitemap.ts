@@ -1,24 +1,16 @@
 import { MetadataRoute } from 'next'
-import { getAllPostSlugs, getPostBySlug } from '@/lib/blog'
+import { getAllPosts } from '@/lib/blog'
 import { SITE_URL } from '@/lib/site'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const currentDate = new Date()
 
-  // Get all published blog posts (excludes drafts)
-  const slugs = getAllPostSlugs()
-  const blogPosts = slugs
-    .map((slug) => {
-      const post = getPostBySlug(slug)
-      if (!post) return null
-      return {
-        url: `${SITE_URL}/writing/${slug}`,
-        lastModified: post.date ? new Date(post.date) : currentDate,
-        changeFrequency: 'monthly' as const,
-        priority: 0.8,
-      }
-    })
-    .filter((entry): entry is NonNullable<typeof entry> => entry !== null)
+  const blogPosts = getAllPosts().map((post) => ({
+    url: `${SITE_URL}/writing/${post.slug}`,
+    lastModified: post.date ? new Date(post.date) : currentDate,
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }))
 
   return [
     {

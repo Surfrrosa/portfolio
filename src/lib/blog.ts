@@ -1,31 +1,29 @@
 import fs from 'fs'
 import path from 'path'
+import { cache } from 'react'
 import matter from 'gray-matter'
 
 const postsDirectory = path.join(process.cwd(), 'content/blog')
 
 export function getContentPreview(content: string, maxLength: number = 200): string {
-  // Remove markdown frontmatter if it exists
   const contentWithoutFrontmatter = content.replace(/^---[\s\S]*?---\n/, '')
 
-  // Remove markdown syntax (headers, bold, italic, links, etc)
   let plainText = contentWithoutFrontmatter
-    .replace(/^#{1,6}\s.+$/gm, '') // Remove heading lines entirely
-    .replace(/\*\*(.+?)\*\*/g, '$1') // Remove bold
-    .replace(/\*(.+?)\*/g, '$1') // Remove italic
-    .replace(/\[(.+?)\]\(.+?\)/g, '$1') // Remove links but keep text
-    .replace(/`(.+?)`/g, '$1') // Remove inline code
-    .replace(/^\s*[-*+]\s/gm, '') // Remove list markers
-    .replace(/^\s*\d+\.\s/gm, '') // Remove numbered list markers
-    .replace(/\n+/g, ' ') // Replace newlines with spaces
+    .replace(/^#{1,6}\s.+$/gm, '')
+    .replace(/\*\*(.+?)\*\*/g, '$1')
+    .replace(/\*(.+?)\*/g, '$1')
+    .replace(/\[(.+?)\]\(.+?\)/g, '$1')
+    .replace(/`(.+?)`/g, '$1')
+    .replace(/^\s*[-*+]\s/gm, '')
+    .replace(/^\s*\d+\.\s/gm, '')
+    .replace(/\n+/g, ' ')
     .trim()
 
-  // Truncate to maxLength and add ellipsis
   if (plainText.length > maxLength) {
     plainText = plainText.substring(0, maxLength).trim()
-    // Try to break at last complete word
     const lastSpace = plainText.lastIndexOf(' ')
-    if (lastSpace > maxLength * 0.8) { // Only break at word if it's not too far back
+    // 0.8 threshold avoids breaking too far back when the truncation point lands mid-word
+    if (lastSpace > maxLength * 0.8) {
       plainText = plainText.substring(0, lastSpace)
     }
     plainText += '...'
@@ -83,7 +81,7 @@ export function getAllPosts(): BlogPost[] {
   return allPostsData.sort((a, b) => (a.date < b.date ? 1 : -1))
 }
 
-export function getPostBySlug(slug: string): BlogPost | null {
+export const getPostBySlug = cache((slug: string): BlogPost | null => {
   try {
     const mdxPath = path.join(postsDirectory, `${slug}.mdx`)
     const mdPath = path.join(postsDirectory, `${slug}.md`)
@@ -108,7 +106,7 @@ export function getPostBySlug(slug: string): BlogPost | null {
     console.error(`Failed to load post "${slug}":`, error)
     return null
   }
-}
+})
 
 export function getAllPostSlugs(): string[] {
   if (!fs.existsSync(postsDirectory)) {
