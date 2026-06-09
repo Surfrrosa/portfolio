@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import Sidebar from '@/components/Sidebar'
 import DiagramGallery from '@/components/DiagramGallery'
@@ -25,6 +25,20 @@ export default function Work() {
     setModalMedia(media)
     setIsModalOpen(true)
   }
+
+  useEffect(() => {
+    if (!isModalOpen) return
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setIsModalOpen(false)
+    }
+    document.addEventListener('keydown', handleEscape)
+    const originalOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.removeEventListener('keydown', handleEscape)
+      document.body.style.overflow = originalOverflow
+    }
+  }, [isModalOpen])
 
   return (
     <div className="min-h-screen grid lg:grid-cols-[340px_1fr]">
