@@ -32,7 +32,8 @@ first:
 - Hooks live in `src/hooks/`
 - Work-page primitives (use when adding a project to `src/app/work/page.tsx`):
   `<ProjectCard>`, `<ProjectHeader>`, `<ProjectSection>`, `<ProjectText>`,
-  `<ProjectBullets>`, `<Checkmark>`, `<TechStackTags>`, `<ExternalLink>`
+  `<ProjectBullets>`, `<Checkmark>`, `<TechStackTags>`, `<ExternalLink>`,
+  `<MediaButton>` (clickable preview that opens the enlarge modal)
 
 Don't add a new file for a one-off variant of an existing pattern.
 If you're about to copy-paste a layout/component and tweak two values,

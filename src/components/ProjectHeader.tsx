@@ -7,8 +7,8 @@ type ProjectHeaderProps = {
 export function ProjectHeader({ title, tagline, subtitle }: ProjectHeaderProps) {
   return (
     <>
-      <h3 className="text-white text-2xl font-display font-bold mb-4">{title}</h3>
-      <h4 className="text-accent-teal text-lg font-semibold mb-6">{tagline}</h4>
+      <h2 className="text-white text-2xl font-display font-bold mb-4">{title}</h2>
+      <h3 className="text-accent-teal text-lg font-semibold mb-6">{tagline}</h3>
       {subtitle && (
         <div className="mb-6">
           <p className="text-xs uppercase tracking-wider text-gray-400 font-semibold">

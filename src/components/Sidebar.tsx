@@ -181,7 +181,7 @@ function NavLinks({ className, onClick }: { className: string; onClick?: () => v
 
 function DesktopSidebar() {
   return (
-    <aside className="hidden lg:flex lg:flex-col gap-7 fixed top-0 left-0 w-[340px] h-screen
+    <nav aria-label="Primary" className="hidden lg:flex lg:flex-col gap-7 fixed top-0 left-0 w-[340px] h-screen
                        bg-black/60 backdrop-blur-[1px] border-r border-white/10 p-6 z-50 overflow-y-auto">
       <HomeCard className="max-w-[280px] mx-auto" />
 
@@ -209,7 +209,7 @@ function DesktopSidebar() {
         <NavLinks className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors" />
       </motion.div>
 
-    </aside>
+    </nav>
   )
 }
 
