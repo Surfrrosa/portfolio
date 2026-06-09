@@ -18,7 +18,7 @@ interface PageProps {
 }
 
 function getOgImagePath(slug: string): string {
-  const articleOg = `/images/og/${slug}.png`
+  const articleOg = `/images/og/${slug}.jpg`
   const filePath = path.join(process.cwd(), 'public', articleOg)
   if (fs.existsSync(filePath)) {
     return articleOg
