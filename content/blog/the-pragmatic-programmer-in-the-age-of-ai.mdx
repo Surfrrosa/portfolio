@@ -1,0 +1,50 @@
+---
+title: "The Pragmatic Programmer in the Age of AI"
+date: "2026-06-11"
+excerpt: "You'd expect a book from before Git to feel dated next to AI agents. It doesn't. Five patterns from The Pragmatic Programmer that AI makes more obvious, not less."
+readTime: "3 min read"
+tags: ["Process", "Building", "Reflection"]
+draft: true
+---
+
+The Pragmatic Programmer came out in 1999. You'd expect a book from before Git existed to feel dated next to AI agents. It doesn't. The parts that hold up best are the ones AI makes more obvious, not less.
+
+I read it after I'd already built most of what's in it. Solo-founder work with Claude Code had me building skills, hooks, and audit procedures. The book gave them names and surfaced the gaps. Here are the five that mattered most.
+
+## orthogonality is a coupling problem you can measure
+
+The book's chapter on orthogonality is basically shoot-yourself-in-the-foot prevention. I learned it by hitting it. Every time I touched the work page in this portfolio, something elsewhere broke. The file was 1,192 lines, a god-component where every variation ended up. I refactored it last week, cut about a quarter off the line count, and made the rest safer to change.
+
+Here's what nobody mentions. Most coupling debt is invisible to lint and visible to git. If two files always change together, they're coupled, even if the import graph says otherwise. I built `/coupling` after noticing the pattern. Cycles and cross-layer imports are the easy half. Git co-change is where the actual rot lives.
+
+## DRY is the wrong word
+
+DRY gets read as 'don't repeat code,' which is the smallest version of it. The bigger version: every fact about the system lives in exactly one place. Astro dates, model IDs, brand colors, prices, URLs. When the same fact lives in three files, you don't have a copy-paste problem. You have a decision drift problem.
+
+Synestrology started with hand-typed astro data, and station dates were wrong in places. The code was DRY. The data wasn't. I built two things in response: a hook that catches hardcoded astro values at keystroke time, and a skill that sweeps for the judgment calls the hook can't pattern-match. One catches at keystroke, the other catches on demand. The book calls this 'automation.' In practice it's the only thing that holds.
+
+## tracer bullets vs prototypes
+
+The book is direct. Tracer bullets are end-to-end skeletons that ship and get fleshed out. Prototypes answer one question and get thrown away. Different tools, different mindsets.
+
+The honest pattern in industry is neither. It's 'prototype turned into production.' You write something to answer a question, it works well enough, you build the next thing on top of it. Six months later, the foundation of your product is code that was never meant to be a foundation. I've done this. Everyone I've shipped with has done it.
+
+Naming the call up front is most of the value. I built `/kickoff` to force a ten-minute conversation before non-trivial work starts: is this a tracer or a prototype, and if it's a prototype, what's the throw-away criterion. The skill doesn't fix the failure mode. The conversation does. The skill just makes the conversation cheap enough to actually have.
+
+## broken windows is a scheduling problem
+
+The book treats 'don't live with broken windows' as character. The version that actually works is putting the sweep on a calendar. Sentry won't interrupt you with rot at the right cadence. Stale draft posts won't either. Eight Dependabot PRs won't, until they're sixteen.
+
+What I learned solo: discipline at the right interval beats constant vigilance. Weekly Sentry digest reviewed against the accepted-risk doc. Monthly dependency batch. Quarterly stale draft cull. The book says don't let broken windows accumulate. The practical translation is: build the meeting with yourself, because nobody else is going to call it.
+
+## the spicy one: audits hallucinate at scale
+
+The book predates AI agents but still has the rule for using them: 'don't assume it, prove it.'
+
+Multi-agent audit tools, mine included, hallucinate findings at scale. The first time I ran a full audit sweep on this portfolio, the verification gate dropped 38% of findings as false positives. A flagged 'dead dependency' was actually loaded as a Tailwind plugin. Eighteen 'orphan images' were referenced dynamically. Three 'twin components' were distinct schema.org types.
+
+The verification step matters more than the audit. If you're using agents to check anything, code, content, or infra, the question isn't whether the agent found something. It's whether the finding survives a mechanical recheck. Treat agent output as a hypothesis, not a result. The book had this rule before AI existed. Different problem, same answer.
+
+---
+
+The book holds up because it isn't really about programming. It's about noticing small repetitions before they add up to chaos. Most of what I do as a solo founder is that work.
