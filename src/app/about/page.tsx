@@ -78,7 +78,7 @@ export default function AboutPage() {
               </li>
               <li className="flex items-start">
                 <span className="text-accent-teal mr-4 mt-1">•</span>
-                <span><strong>Results Over Activity</strong> ● I care whether the thing we built actually moved the needle, not how many tickets we closed.</span>
+                <span><strong>Results Over Activity</strong> ● Orthogonality, drift detection, dead-code sweeps, security review: my own toolkit for finding what's weak in your AI-built system.</span>
               </li>
             </ul>
           </div>
@@ -121,7 +121,7 @@ export default function AboutPage() {
               <div>
                 <h3 className="text-xl lg:text-2xl font-semibold mb-3 text-accent-teal">What's your availability?</h3>
                 <p className="text-gray-300 text-lg leading-relaxed">
-                  Open to new opportunities. Drop me a note and tell me what you're building.
+                  Currently taking on new clients who are interested in learning to build with AI. Drop me a note and tell me what you're building.
                 </p>
               </div>
             </div>
