@@ -121,7 +121,7 @@ export default function AboutPage() {
               <div>
                 <h3 className="text-xl lg:text-2xl font-semibold mb-3 text-accent-teal">What's your availability?</h3>
                 <p className="text-gray-300 text-lg leading-relaxed">
-                  Open to new opportunities. Drop me a note and tell me what you're building.
+                  Currently taking on new clients who are interested in learning to build with AI. Drop me a note and tell me what you're building.
                 </p>
               </div>
             </div>
