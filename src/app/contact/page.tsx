@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 import Script from 'next/script'
 import Sidebar from '@/components/Sidebar'
 import PageHero from '@/components/PageHero'
@@ -145,35 +144,6 @@ export default function Contact() {
                 </div>
               </motion.div>
             </div>
-
-            <motion.div
-              className="mt-20 pt-16 border-t border-white/10"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.9 }}
-            >
-              <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8">
-                <h2 className="text-white text-2xl md:text-3xl font-light tracking-wide">
-                  Find me on
-                </h2>
-
-                <a
-                  href="https://www.upwork.com/freelancers/~01678c95a70afbd270?mp_source=share"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group relative overflow-hidden rounded-2xl border-2 border-white/20 hover:border-accent-teal transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-teal-500/20 w-64 h-28 flex items-center justify-center"
-                >
-                  <Image
-                    src="/images/upwork-logo.png"
-                    alt="Upwork"
-                    width={220}
-                    height={70}
-                    className="object-contain transition-all duration-500 translate-y-3"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-r from-teal-500/0 via-teal-500/10 to-teal-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                </a>
-              </div>
-            </motion.div>
           </div>
         </main>
       </div>
