@@ -47,7 +47,12 @@ Defined in `tailwind.config.ts` and `src/app/globals.css`:
 |-------|---------------|-----|
 | Background | `bg-bg-base` | `#0B0C0E` |
 | Surface | `bg-surface` | `#14161A` |
-| Accent Teal | `text-accent-teal` | `#2BD4CF` |
+| Accent (electric fuchsia) | `text-accent-teal` | `#E930A8` |
+
+Note: the Tailwind token is still named `accent-teal` for historical reasons
+but the value was changed to electric fuchsia in commit `f6f609a` (2026-04-03).
+Renaming the token to `accent-fuchsia` is tracked drift; do not assume the
+literal hex is teal.
 
 ## Typography
 
