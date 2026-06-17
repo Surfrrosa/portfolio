@@ -78,7 +78,7 @@ export default function AboutPage() {
               </li>
               <li className="flex items-start">
                 <span className="text-accent-teal mr-4 mt-1">•</span>
-                <span><strong>Results Over Activity</strong> ● I care whether the thing we built actually moved the needle, not how many tickets we closed.</span>
+                <span><strong>Results Over Activity</strong> ● Orthogonality, drift detection, dead-code sweeps, security review: my own toolkit for finding what's weak in your AI-built system.</span>
               </li>
             </ul>
           </div>
