@@ -137,7 +137,6 @@ npm run lint      # ESLint
 | `src/components/VideoBackground.tsx` | Background video loop with Web Audio API toggle |
 | `src/components/StructuredData.tsx` | JSON-LD structured data for SEO |
 | `src/lib/blog.ts` | Blog post loading and parsing (gray-matter + react-markdown) |
-| `src/lib/phases.ts` | Method framework phase data |
 | `content/blog/` | Markdown blog posts with frontmatter |
 | `tailwind.config.ts` | Design tokens, custom colors, font families |
 | `src/app/globals.css` | Global styles, font imports, Tailwind directives |
