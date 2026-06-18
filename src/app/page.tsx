@@ -3,7 +3,6 @@
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import Sidebar from '@/components/Sidebar'
-import ExitIntentPrompt from '@/components/ExitIntentPrompt'
 
 // TV hotspot positions (percentages relative to the GIF container)
 const tvHotspots = [
@@ -57,7 +56,6 @@ export default function Home() {
   return (
     <div className="min-h-screen grid lg:grid-cols-[340px_1fr]">
       <Sidebar />
-      <ExitIntentPrompt />
 
       <main id="main-content" className="flex flex-col items-center px-4 lg:px-12 h-auto lg:min-h-screen pt-0 lg:justify-center relative overflow-visible">
         <h1 className="sr-only">Shaina Pauley | AI Product Architect</h1>
