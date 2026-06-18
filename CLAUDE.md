@@ -135,10 +135,8 @@ npm run lint      # ESLint
 | `src/app/sitemap.ts` | Dynamic sitemap generator |
 | `src/components/Sidebar.tsx` | Global sidebar navigation |
 | `src/components/VideoBackground.tsx` | Background video loop with Web Audio API toggle |
-| `src/components/ExitIntentPrompt.tsx` | Undertale-style NPC dialogue easter egg on exit-intent |
 | `src/components/StructuredData.tsx` | JSON-LD structured data for SEO |
 | `src/lib/blog.ts` | Blog post loading and parsing (gray-matter + react-markdown) |
-| `src/lib/phases.ts` | Method framework phase data |
 | `content/blog/` | Markdown blog posts with frontmatter |
 | `tailwind.config.ts` | Design tokens, custom colors, font families |
 | `src/app/globals.css` | Global styles, font imports, Tailwind directives |
