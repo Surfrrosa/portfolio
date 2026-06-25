@@ -81,11 +81,6 @@ export default function AboutPage() {
                 <span><strong>Results Over Activity</strong> ● Orthogonality, drift detection, dead-code sweeps, security review: my own toolkit for finding what's weak in your AI-built system.</span>
               </li>
             </ul>
-            <p className="text-zinc-500 text-sm mt-6">
-              <a href="/skills" className="hover:text-accent-teal transition-colors">
-                browse my skills →
-              </a>
-            </p>
           </div>
 
           <div className="mt-24 lg:mt-32">
