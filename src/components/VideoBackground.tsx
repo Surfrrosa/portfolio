@@ -26,19 +26,21 @@ function UnmutedIcon() {
   )
 }
 
-async function initAudioContext(refs: AudioRefs): Promise<boolean> {
-  if (refs.context.current) return true
+function createAudioContext(refs: AudioRefs) {
+  if (refs.context.current) return
+  const AC = window.AudioContext || (window as any).webkitAudioContext
+  ;(refs.context as React.MutableRefObject<AudioContext | null>).current = new AC()
+  ;(refs.gain as React.MutableRefObject<GainNode | null>).current = refs.context.current!.createGain()
+  refs.gain.current!.gain.value = 0
+  refs.gain.current!.connect(refs.context.current!.destination)
+}
 
+async function loadAudioBuffer(refs: AudioRefs): Promise<boolean> {
+  if (refs.buffer.current || !refs.context.current) return !!refs.buffer.current
   try {
-    const AC = window.AudioContext || (window as any).webkitAudioContext
-    ;(refs.context as React.MutableRefObject<AudioContext | null>).current = new AC()
-    ;(refs.gain as React.MutableRefObject<GainNode | null>).current = refs.context.current!.createGain()
-    refs.gain.current!.gain.value = 0
-    refs.gain.current!.connect(refs.context.current!.destination)
-
     const response = await fetch('/videos/background-audio.m4a')
     const arrayBuffer = await response.arrayBuffer()
-    ;(refs.buffer as React.MutableRefObject<AudioBuffer | null>).current = await refs.context.current!.decodeAudioData(arrayBuffer)
+    ;(refs.buffer as React.MutableRefObject<AudioBuffer | null>).current = await refs.context.current.decodeAudioData(arrayBuffer)
     return true
   } catch {
     return false
@@ -126,12 +128,18 @@ export default function VideoBackground() {
   }, [])
 
   const toggleMute = async () => {
-    const ready = await initAudioContext(audioRefs)
+    // iOS Safari requires resume() to be called synchronously inside the user
+    // gesture. Any await before resume() loses the gesture and audio never
+    // plays. So: create context, call resume(), THEN do async work.
+    createAudioContext(audioRefs)
+    const resumePromise = audioRefs.context.current?.state === 'suspended'
+      ? audioRefs.context.current.resume()
+      : Promise.resolve()
+
+    const ready = await loadAudioBuffer(audioRefs)
     if (!ready) return
 
-    if (audioRefs.context.current?.state === 'suspended') {
-      await audioRefs.context.current.resume()
-    }
+    await resumePromise
 
     if (isMuted) startPlayback(audioRefs)
     else stopPlayback(audioRefs)
