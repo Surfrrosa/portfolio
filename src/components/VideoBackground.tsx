@@ -2,13 +2,6 @@
 
 import React, { useEffect, useRef, useState } from 'react'
 
-type AudioRefs = {
-  context: React.RefObject<AudioContext | null>
-  buffer: React.RefObject<AudioBuffer | null>
-  source: React.RefObject<AudioBufferSourceNode | null>
-  gain: React.RefObject<GainNode | null>
-}
-
 function MutedIcon() {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 md:h-5 md:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -24,59 +17,6 @@ function UnmutedIcon() {
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
     </svg>
   )
-}
-
-function createAudioContext(refs: AudioRefs) {
-  if (refs.context.current) return
-  const AC = window.AudioContext || (window as any).webkitAudioContext
-  ;(refs.context as React.MutableRefObject<AudioContext | null>).current = new AC()
-  ;(refs.gain as React.MutableRefObject<GainNode | null>).current = refs.context.current!.createGain()
-  refs.gain.current!.gain.value = 0
-  refs.gain.current!.connect(refs.context.current!.destination)
-}
-
-async function loadAudioBuffer(refs: AudioRefs): Promise<boolean> {
-  if (refs.buffer.current || !refs.context.current) return !!refs.buffer.current
-  try {
-    const response = await fetch('/videos/background-audio.m4a')
-    const arrayBuffer = await response.arrayBuffer()
-    ;(refs.buffer as React.MutableRefObject<AudioBuffer | null>).current = await refs.context.current.decodeAudioData(arrayBuffer)
-    return true
-  } catch {
-    return false
-  }
-}
-
-function startPlayback(refs: AudioRefs) {
-  if (!refs.buffer.current || !refs.gain.current || !refs.context.current) return
-
-  refs.source.current?.stop()
-
-  const source = refs.context.current.createBufferSource()
-  source.buffer = refs.buffer.current
-  source.loop = true
-  source.connect(refs.gain.current)
-  source.start()
-  ;(refs.source as React.MutableRefObject<AudioBufferSourceNode | null>).current = source
-
-  const now = refs.context.current.currentTime
-  refs.gain.current.gain.cancelScheduledValues(now)
-  refs.gain.current.gain.linearRampToValueAtTime(0, now)
-  refs.gain.current.gain.linearRampToValueAtTime(1, now + 0.8)
-}
-
-function stopPlayback(refs: AudioRefs) {
-  if (!refs.gain.current || !refs.context.current) return
-
-  const now = refs.context.current.currentTime
-  refs.gain.current.gain.cancelScheduledValues(now)
-  refs.gain.current.gain.linearRampToValueAtTime(refs.gain.current.gain.value, now)
-  refs.gain.current.gain.linearRampToValueAtTime(0, now + 0.5)
-
-  setTimeout(() => {
-    refs.source.current?.stop()
-    ;(refs.source as React.MutableRefObject<AudioBufferSourceNode | null>).current = null
-  }, 600)
 }
 
 function BackgroundVideo({ videoRef }: { videoRef: React.RefObject<HTMLVideoElement | null> }) {
@@ -109,46 +49,65 @@ function MuteButton({ isMuted, onToggle }: { isMuted: boolean; onToggle: () => v
   )
 }
 
+function fadeVolume(audio: HTMLAudioElement, target: number, durationMs: number): Promise<void> {
+  return new Promise((resolve) => {
+    const steps = 30
+    const stepDuration = durationMs / steps
+    const startVolume = audio.volume
+    const delta = target - startVolume
+    let currentStep = 0
+
+    const interval = window.setInterval(() => {
+      currentStep++
+      const t = currentStep / steps
+      audio.volume = Math.max(0, Math.min(1, startVolume + delta * t))
+      if (currentStep >= steps) {
+        window.clearInterval(interval)
+        resolve()
+      }
+    }, stepDuration)
+  })
+}
+
 export default function VideoBackground() {
   const videoRef = useRef<HTMLVideoElement>(null)
-  const audioRefs: AudioRefs = {
-    context: useRef<AudioContext | null>(null),
-    buffer: useRef<AudioBuffer | null>(null),
-    source: useRef<AudioBufferSourceNode | null>(null),
-    gain: useRef<GainNode | null>(null),
-  }
+  const audioRef = useRef<HTMLAudioElement>(null)
   const [isMuted, setIsMuted] = useState(true)
 
   useEffect(() => {
     videoRef.current?.play().catch(() => {})
-    return () => {
-      audioRefs.source.current?.stop()
-      audioRefs.context.current?.close()
-    }
   }, [])
 
   const toggleMute = async () => {
-    // iOS Safari requires resume() to be called synchronously inside the user
-    // gesture. Any await before resume() loses the gesture and audio never
-    // plays. So: create context, call resume(), THEN do async work.
-    createAudioContext(audioRefs)
-    const resumePromise = audioRefs.context.current?.state === 'suspended'
-      ? audioRefs.context.current.resume()
-      : Promise.resolve()
+    const audio = audioRef.current
+    if (!audio) return
 
-    const ready = await loadAudioBuffer(audioRefs)
-    if (!ready) return
-
-    await resumePromise
-
-    if (isMuted) startPlayback(audioRefs)
-    else stopPlayback(audioRefs)
-    setIsMuted(!isMuted)
+    if (isMuted) {
+      audio.volume = 0
+      try {
+        await audio.play()
+      } catch {
+        return
+      }
+      setIsMuted(false)
+      fadeVolume(audio, 1, 800)
+    } else {
+      setIsMuted(true)
+      await fadeVolume(audio, 0, 500)
+      audio.pause()
+    }
   }
 
   return (
     <>
       <BackgroundVideo videoRef={videoRef} />
+      <audio
+        ref={audioRef}
+        src="/videos/background-audio.m4a"
+        loop
+        preload="auto"
+        aria-hidden="true"
+      />
       <MuteButton isMuted={isMuted} onToggle={toggleMute} />
     </>
   )
