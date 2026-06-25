@@ -8,7 +8,7 @@ export const metadata = buildRouteMetadata({
   title: 'Skills',
   slug: '/skills',
   description:
-    'A free audit toolkit for Claude Code. The slash commands I run on my own work, calibrated for my workflow.',
+    'A free audit toolkit for Claude Code. Fourteen slash commands for accessibility, performance, SEO, privacy, design, deploy safety, and codebase audits.',
 })
 
 export default function SkillsPage() {
