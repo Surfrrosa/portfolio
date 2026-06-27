@@ -86,6 +86,27 @@ draft: false
 
 Posts with `draft: true` are hidden in production but visible in dev.
 
+### Voice
+
+Understated and efficient, not self-congratulatory:
+
+- **Minimize first person.** Use 'we' instead of 'I' when describing build work (the partner is Claude Code, so 'we' is accurate). Prefer passive/impersonal construction when possible: "this is what was done" over "I did this."
+- **No redundancy.** Never restate the same idea twice. Not trying to hit a word count.
+- **No gloating.** State what was built, not how impressive it is.
+- **Be honest about timelines.** Things described as taking "weeks" often took days or hours. Don't inflate effort.
+- **Earn every sentence.** Elegant and efficient. Never use "vibes and shipping" or similar try-hard casual phrasing.
+- **Never frame testing/process as an afterthought.** Builds happen with tests and process from the start — baked in, not bolted on after things break.
+
+### Single quotes for prose
+
+Use single quotes for all quoted phrases, dialog, and referenced terms in blog post bodies. Use double quotes only for nested quotes or cases where single quotes would collide with apostrophes in a way that hurts readability. (Also memorialized in `.claude/commands/blog.md` Hard Rules.)
+
+### Substack-suffix posts (3 posts) — leave the suffix
+
+Three posts carry "(Substack)" in their title — `synthetic-intimacy.mdx`, `the-shadow-economy-of-silence.mdx`, `you-are-the-marketplace.mdx`. The suffix is **deliberate**: it signals to readers that these were written in a different style and perspective than the current portfolio voice, and warns of the tonal mismatch.
+
+Don't strip the "(Substack)" suffix even though the Substack itself no longer exists. The original commit message ("Tag Substack-origin posts with '(Substack)' suffix") makes it sound like origin-tracking and tempts removal — it isn't. Leave it alone.
+
 ## Branching
 
 - `main` -- production, auto-deploys to Vercel
