@@ -23,3 +23,9 @@ updates:
     ignore:
       - dependency-name: "tailwindcss"
         update-types: ["version-update:semver-major"]
+      # TypeScript majors are gated on Next.js compiler-API support.
+      # TS 7 broke prod on 2026-07-28 (PR #161) because Next.js 16.2.x
+      # doesn't provide the required compiler API. Re-enable after
+      # confirming Next.js official TS 7 support.
+      - dependency-name: "typescript"
+        update-types: ["version-update:semver-major"]
