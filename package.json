@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@tailwindcss/typography": "0.5.19",
+    "@tailwindcss/typography": "0.5.20",
     "@vercel/analytics": "2.0.1",
     "framer-motion": "12.43.0",
     "gray-matter": "4.0.3",
