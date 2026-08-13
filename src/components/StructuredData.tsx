@@ -6,12 +6,20 @@ function buildPersonSchema() {
     "@id": `${SITE_URL}/#person`,
     "name": "Shaina Pauley",
     "url": SITE_URL,
-    "image": {
-      "@type": "ImageObject",
-      "url": `${SITE_URL}/og-image.png`,
-      "width": 1200,
-      "height": 630
-    },
+    "image": [
+      {
+        "@type": "ImageObject",
+        "url": `${SITE_URL}/images/shaina-headshot-1.jpg`,
+        "width": 800,
+        "height": 1056
+      },
+      {
+        "@type": "ImageObject",
+        "url": `${SITE_URL}/images/shaina-headshot-2.jpg`,
+        "width": 800,
+        "height": 1010
+      }
+    ],
     "sameAs": [
       "https://linkedin.com/in/shainapauley",
       "https://github.com/Surfrrosa",
