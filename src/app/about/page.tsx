@@ -68,34 +68,23 @@ export default function AboutPage() {
           <source src="/videos/about-hero.mp4" type="video/mp4" />
         </video>
         <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 px-6 py-3 rounded-2xl bg-black/40 backdrop-blur-md border border-white/10 max-w-[min(92vw,640px)]"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.5 }}
+          className="absolute bottom-0 right-0 z-10 flex items-center gap-3 px-4 py-2 bg-black/40 backdrop-blur-md border-t border-l border-white/10 max-w-[92vw] overflow-hidden"
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 1.2 }}
         >
-          <p className="text-white/60 text-xs font-mono text-center leading-relaxed">
-            now playing: let&apos;s all go to the lobby (1957) + a colour box (1935) · public domain
+          <p className="text-white/70 text-xs font-mono whitespace-nowrap overflow-hidden text-ellipsis">
+            now playing: let&apos;s all go to the lobby (1957) + a colour box (1935)
           </p>
-          <div className="flex items-center justify-center gap-4 mt-1">
-            <p className="text-white text-sm font-mono">
-              contact:{' '}
-              <a
-                href="mailto:me@shainapauley.com"
-                className="text-accent-teal hover:text-white transition-colors"
-              >
-                me@shainapauley.com
-              </a>
-            </p>
-            <button
-              type="button"
-              onClick={toggleMute}
-              className="text-white/70 hover:text-white transition-colors"
-              aria-label={isMuted ? 'Unmute video' : 'Mute video'}
-              title={isMuted ? 'Click to unmute' : 'Click to mute'}
-            >
-              {isMuted ? <MutedIcon /> : <UnmutedIcon />}
-            </button>
-          </div>
+          <button
+            type="button"
+            onClick={toggleMute}
+            className="shrink-0 text-white/70 hover:text-white transition-colors"
+            aria-label={isMuted ? 'Unmute video' : 'Mute video'}
+            title={isMuted ? 'Click to unmute' : 'Click to mute'}
+          >
+            {isMuted ? <MutedIcon /> : <UnmutedIcon />}
+          </button>
         </motion.div>
       </main>
     </>
