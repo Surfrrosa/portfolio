@@ -40,8 +40,8 @@ const tvHotspots = [
     labelTop: '60%',
   },
   {
-    id: 'contact',
-    label: 'Contact',
+    id: 'about',
+    label: 'About',
     href: '/about',
     // Bottom right TV (crowd)
     top: '45%',
