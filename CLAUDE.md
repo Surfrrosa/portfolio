@@ -112,10 +112,6 @@ Don't strip the "(Substack)" suffix even though the Substack itself no longer ex
 - `main` -- production, auto-deploys to Vercel
 - Feature branches off `main` for new work
 
-## Contact Form
-
-Form submit opens a `mailto:` link to `shaina@slabcheck.app` with prefilled subject and body. No backend, no Resend, no API keys. Inbox is Google Workspace on slabcheck.app.
-
 ## Session Logs
 
 After each working session, write a session log to `docs/sessions/YYYY-MM-DD-summary.md`.
@@ -148,19 +144,22 @@ npm run lint      # ESLint
 | Path | Description |
 |------|-------------|
 | `src/app/layout.tsx` | Root layout: fonts, metadata, VideoBackground, Analytics, Google Analytics |
-| `src/app/page.tsx` | Homepage |
+| `src/app/page.tsx` | Homepage with TV-hotspot GIF navigation |
+| `src/app/about/page.tsx` | `/about` is now a full-bleed autoplay video with a bottom-right credit tag + inline sound toggle; contact email lives in the sidebar footer, not on this page |
 | `src/app/work/page.tsx` | Work/portfolio showcase with project cards and media modal |
 | `src/app/writing/page.tsx` | Blog listing page |
 | `src/app/writing/[slug]/page.tsx` | Individual blog post renderer |
-| `src/app/contact/page.tsx` | Contact form (opens mailto: with prefilled fields) |
+| `src/app/skills/page.tsx` | Public skills toolkit landing page |
 | `src/app/sitemap.ts` | Dynamic sitemap generator |
-| `src/components/Sidebar.tsx` | Global sidebar navigation |
-| `src/components/VideoBackground.tsx` | Background video loop with Web Audio API toggle |
-| `src/components/StructuredData.tsx` | JSON-LD structured data for SEO |
+| `src/components/Sidebar.tsx` | Global sidebar; collapsible on routes listed in `COLLAPSIBLE_ROUTES` (currently `/about`); email footer shows `me@shainapauley.com` with `select-all` for copy/paste |
+| `src/components/VideoBackground.tsx` | Site-wide background loop + HTML5 audio toggle; returns `null` on routes listed in `ROUTES_WITHOUT_GLOBAL_BACKGROUND` (currently `/about`) so the /about hero video's own audio doesn't compete |
+| `src/components/StructuredData.tsx` | Person + WebSite + WebPage JSON-LD; Person image is an array of two headshot files for Google image-search entity clustering |
 | `src/lib/blog.ts` | Blog post loading and parsing (gray-matter + react-markdown) |
 | `content/blog/` | Markdown blog posts with frontmatter |
 | `tailwind.config.ts` | Design tokens, custom colors, font families |
 | `src/app/globals.css` | Global styles, font imports, Tailwind directives |
+| `next.config.js` | Permanent redirect `/contact` → `/about` for any old bookmarks |
+| `public/videos/about-hero.mp4` | /about hero film; swap this file (+ regenerate `about-hero-poster.jpg`) to rotate the video monthly/quarterly, no code change needed |
 
 ## Project Skills
 

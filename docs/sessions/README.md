@@ -1,27 +1,45 @@
 # Session Logs
 
-Development session logs for the portfolio project. Each log captures what was done, decisions made, and what to pick up next.
+Ephemeral pickup notes for development sessions. Not decision archaeology — decisions live in permanent homes (see below). Session logs are here to help future-self pick up where past-self left off.
 
-## Format
+## Naming
+
+`YYYY-MM-DD-short-description.md`. Newest first when reading.
+
+## Retention
+
+Kept for the last 30 days. Older logs are pruned during `/bedtime` runs. Anything worth remembering longer than 30 days should be promoted to a permanent home before deletion. Git preserves deleted logs — recover with `git log --all -- 'docs/sessions/*'`.
+
+## Where decisions actually live
+
+| Kind of thing | Permanent home |
+|---|---|
+| Positioning shifts, service framing | `CLAUDE.local.md` |
+| Code conventions, Key Files, "Before Writing" | `CLAUDE.md` |
+| Shipped features (what's live in prod) | This project doesn't have a `CURRENT_STATE.md`; blog voice + rules live in `CLAUDE.md` |
+| Voice / brand corrections | `CLAUDE.md` "Blog Posts" section |
+| User-level cross-project preferences | `~/.claude/projects/-Users-surfrrosa/memory/` |
+
+## Session-log template
 
 ```markdown
-# Session: YYYY-MM-DD -- Short Title
+# Session: YYYY-MM-DD — Short Title
 
-## What happened
-- Bullet points of work completed
+**Status:** <Complete | In Progress | Blocked>
 
-## Decisions made
-- Any architectural or design choices and why
+## What shipped
+- PR #X — one line
 
-## Known issues
-- Anything broken or needing attention
+## What's open
+- Uncommitted / unpushed / awaiting review
 
-## Next session
-- What to pick up next
+## Next pickup
+<2-3 sentences: single most important thing for the next session>
+
+## Promotion audit
+<what got promoted to which permanent home this session>
 ```
 
-## Log files
+## Current handoff
 
-Name format: `YYYY-MM-DD-short-description.md`
-
-Logs are ordered by date, newest first when reading.
+Read [`HANDOFF.md`](HANDOFF.md) first when starting a session. It's a live snapshot of pickup state.
