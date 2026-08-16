@@ -150,9 +150,9 @@ const SOCIAL_LINKS = [
 ] as const
 
 const NAV_LINKS = [
-  { href: '/writing', icon: WriteIcon, label: 'Writing' },
-  { href: '/work', icon: WorkIcon, label: 'View Work' },
-  { href: '/about', icon: MailIcon, label: 'Contact' },
+  { href: '/writing', icon: WriteIcon, label: 'Writing', external: false },
+  { href: '/work', icon: WorkIcon, label: 'View Work', external: false },
+  { href: 'mailto:me@shainapauley.com', icon: MailIcon, label: 'Email me', external: true },
 ] as const
 
 const COLLAPSIBLE_ROUTES = ['/about'] as const
@@ -172,11 +172,29 @@ function SocialLinks({ className, onClick }: { className: string; onClick?: () =
 function NavLinks({ className, onClick }: { className: string; onClick?: () => void }) {
   return (
     <>
-      {NAV_LINKS.map(({ href, icon: Icon, label }) => (
-        <Link key={label} href={href} className={`${className} group glitch-hover`} aria-label={label} onClick={onClick}>
-          <Icon />
-        </Link>
-      ))}
+      {NAV_LINKS.map(({ href, icon: Icon, label, external }) =>
+        external ? (
+          <a
+            key={label}
+            href={href}
+            className={`${className} group glitch-hover`}
+            aria-label={label}
+            onClick={onClick}
+          >
+            <Icon />
+          </a>
+        ) : (
+          <Link
+            key={label}
+            href={href}
+            className={`${className} group glitch-hover`}
+            aria-label={label}
+            onClick={onClick}
+          >
+            <Icon />
+          </Link>
+        )
+      )}
     </>
   )
 }
@@ -185,18 +203,29 @@ function DesktopSidebar() {
   const pathname = usePathname()
   const isCollapsibleRoute = COLLAPSIBLE_ROUTES.includes(pathname as typeof COLLAPSIBLE_ROUTES[number])
   const [isExpanded, setIsExpanded] = useState(!isCollapsibleRoute)
+  const [isEntering, setIsEntering] = useState(false)
   const reducedMotion = useReducedMotion()
 
   useEffect(() => {
     if (isCollapsibleRoute) {
       setIsExpanded(false)
+      setIsEntering(true)
       const timer = setTimeout(() => setIsExpanded(true), 500)
       return () => clearTimeout(timer)
     }
     setIsExpanded(true)
+    setIsEntering(false)
   }, [isCollapsibleRoute])
 
-  const animDuration = reducedMotion ? 0 : 0.3
+  const transition = reducedMotion
+    ? { duration: 0 }
+    : isEntering
+      ? { type: 'tween' as const, duration: 0.9, ease: [0.16, 1, 0.3, 1] as const }
+      : { type: 'tween' as const, duration: 0.3, ease: 'easeInOut' as const }
+
+  const handleAnimationComplete = () => {
+    if (isEntering && isExpanded) setIsEntering(false)
+  }
 
   return (
     <>
@@ -209,7 +238,7 @@ function DesktopSidebar() {
             aria-expanded={isExpanded}
             initial={false}
             animate={{ x: isExpanded ? 340 : 0 }}
-            transition={{ type: 'tween', duration: animDuration }}
+            transition={transition}
             className="w-8 h-16 flex items-center justify-center bg-black/60 backdrop-blur-sm border border-white/10 rounded-r-md text-white/70 hover:text-white hover:bg-black/80 transition-colors pointer-events-auto"
           >
             <svg
@@ -233,7 +262,8 @@ function DesktopSidebar() {
                    bg-black/60 backdrop-blur-[1px] border-r border-white/10 p-6 z-50 overflow-y-auto"
         initial={false}
         animate={{ x: isCollapsibleRoute && !isExpanded ? '-100%' : 0 }}
-        transition={{ type: 'tween', duration: animDuration }}
+        transition={transition}
+        onAnimationComplete={handleAnimationComplete}
       >
         <HomeCard className="max-w-[280px] mx-auto" />
 
