@@ -5,7 +5,7 @@ import WritingStructuredData from '@/components/WritingStructuredData'
 import { buildRouteMetadata } from '@/lib/metadata'
 
 export const metadata = buildRouteMetadata({
-  title: 'Navigating Mind, Machine, & Modern Unease',
+  title: 'navigating mind, machine, & modern unease',
   slug: '/writing',
   description: 'Essays on staying human.',
 })

@@ -24,7 +24,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: {
     default: 'it me | shaina pauley',
-    template: '%s | Shaina Pauley'
+    template: '%s | shaina pauley'
   },
   description: 'founder @ synestrology & co-founder @ SlabCheck · let\'s have a kiki',
   keywords: ['Shaina Pauley', 'Synestrology', 'SlabCheck', 'Founder', 'Pokemon TCG', 'Astrology Software', 'Human Design'],
