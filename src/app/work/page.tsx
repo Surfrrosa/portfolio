@@ -68,6 +68,84 @@ export default function Work() {
 
             <ProjectCard>
               <ProjectHeader
+                title="Synestrology ● Astrology × Human Design × Numerology Synthesis Engine"
+                tagline="The only platform that weaves three self-discovery systems into a single personalized reading."
+              />
+
+              <div className="space-y-6">
+                <ProjectSection label="Problem">
+                  <ProjectText>
+                    Astrology, Human Design, and Numerology each offer deep personal insight, but they exist in silos. No product synthesizes all three into a unified narrative, forcing people to piece together fragmented readings across multiple sites.
+                  </ProjectText>
+                </ProjectSection>
+
+                <ProjectSection label="Solution">
+                  <ProjectText>
+                    A full-stack synthesis engine that calculates natal charts (Swiss Ephemeris), Human Design bodygraphs, and Pythagorean numerology profiles, then feeds all three into an AI synthesis layer that generates 3,000+ word personalized readings delivered as branded PDFs. Includes a free Cosmic Blueprint tool combining all three systems.
+                  </ProjectText>
+                </ProjectSection>
+
+                <ProjectSection label="My Role">
+                  <ProjectText>
+                    Founder and product architect. Designed the verification pipeline, context architecture, and evaluation system. Product strategy, UX, SEO, and go-to-market.
+                  </ProjectText>
+                </ProjectSection>
+
+                <ProjectSection label="Impact">
+                  <ProjectBullets>
+                    <Checkmark>Only combined astrology + Human Design + numerology calculator on the web</Checkmark>
+                    <Checkmark>Swiss Ephemeris precision (0.001 arcsecond accuracy) for natal chart calculations</Checkmark>
+                    <Checkmark>Full e-commerce pipeline: Stripe checkout → AI generation → branded PDF → email delivery</Checkmark>
+                    <Checkmark>257 passing tests, CI/CD pipeline, rate limiting, retry queue with exponential backoff</Checkmark>
+                  </ProjectBullets>
+                </ProjectSection>
+              </div>
+
+              <TechStackTags tags={['Python / FastAPI', 'Swiss Ephemeris', 'AI Synthesis', 'Stripe', 'PDF Generation', 'SEO']} />
+
+              <div className="mt-8 space-y-6">
+                <MediaButton
+                  aspectVideo
+                  label="Enlarge Synestrology preview video"
+                  onClick={() => openMedia({ src: '/videos/synestrology-preview.mp4', type: 'video' })}
+                >
+                  <video
+                    className="w-full h-full object-cover"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    onError={(e) => {
+                      const target = e.target as HTMLVideoElement
+                      target.style.display = 'none'
+                      const fallback = target.nextElementSibling as HTMLElement
+                      if (fallback) fallback.style.display = 'flex'
+                    }}
+                  >
+                    <source src="/videos/synestrology-preview.mp4" type="video/mp4" />
+                  </video>
+                  <div className="absolute inset-0 bg-slate-700/30 flex items-center justify-center" style={{ display: 'none' }}>
+                    <div className="text-center">
+                      <div className="w-16 h-16 bg-amber-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg className="w-8 h-8 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                        </svg>
+                      </div>
+                      <p className="text-gray-400 text-sm">Project Preview</p>
+                      <p className="text-white font-semibold">Synestrology</p>
+                    </div>
+                  </div>
+                </MediaButton>
+
+                <div className="flex justify-center gap-6">
+                  <ExternalLink href="https://www.synestrology.com/">Visit Synestrology</ExternalLink>
+                  <ExternalLink href="https://www.synestrology.com/tools/cosmic-blueprint">Use the Free Tool</ExternalLink>
+                </div>
+              </div>
+            </ProjectCard>
+
+            <ProjectCard>
+              <ProjectHeader
                 title="SlabCheck ● Pokemon TCG Grading Decision Tool"
                 tagline="Scan a card. See the math. Make a smarter grading decision."
               />
@@ -207,84 +285,6 @@ export default function Work() {
                   <ExternalLink href="https://chromewebstore.google.com/detail/prism/pbhmchohngpdjmldjfdlomjfgkjfegfc">
                     Chrome Web Store
                   </ExternalLink>
-                </div>
-              </div>
-            </ProjectCard>
-
-            <ProjectCard>
-              <ProjectHeader
-                title="Synestrology ● Astrology × Human Design × Numerology Synthesis Engine"
-                tagline="The only platform that weaves three self-discovery systems into a single personalized reading."
-              />
-
-              <div className="space-y-6">
-                <ProjectSection label="Problem">
-                  <ProjectText>
-                    Astrology, Human Design, and Numerology each offer deep personal insight, but they exist in silos. No product synthesizes all three into a unified narrative, forcing people to piece together fragmented readings across multiple sites.
-                  </ProjectText>
-                </ProjectSection>
-
-                <ProjectSection label="Solution">
-                  <ProjectText>
-                    A full-stack synthesis engine that calculates natal charts (Swiss Ephemeris), Human Design bodygraphs, and Pythagorean numerology profiles, then feeds all three into an AI synthesis layer that generates 3,000+ word personalized readings delivered as branded PDFs. Includes a free Cosmic Blueprint tool combining all three systems.
-                  </ProjectText>
-                </ProjectSection>
-
-                <ProjectSection label="My Role">
-                  <ProjectText>
-                    Founder and product architect. Designed the verification pipeline, context architecture, and evaluation system. Product strategy, UX, SEO, and go-to-market.
-                  </ProjectText>
-                </ProjectSection>
-
-                <ProjectSection label="Impact">
-                  <ProjectBullets>
-                    <Checkmark>Only combined astrology + Human Design + numerology calculator on the web</Checkmark>
-                    <Checkmark>Swiss Ephemeris precision (0.001 arcsecond accuracy) for natal chart calculations</Checkmark>
-                    <Checkmark>Full e-commerce pipeline: Stripe checkout → AI generation → branded PDF → email delivery</Checkmark>
-                    <Checkmark>257 passing tests, CI/CD pipeline, rate limiting, retry queue with exponential backoff</Checkmark>
-                  </ProjectBullets>
-                </ProjectSection>
-              </div>
-
-              <TechStackTags tags={['Python / FastAPI', 'Swiss Ephemeris', 'AI Synthesis', 'Stripe', 'PDF Generation', 'SEO']} />
-
-              <div className="mt-8 space-y-6">
-                <MediaButton
-                  aspectVideo
-                  label="Enlarge Synestrology preview video"
-                  onClick={() => openMedia({ src: '/videos/synestrology-preview.mp4', type: 'video' })}
-                >
-                  <video
-                    className="w-full h-full object-cover"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    onError={(e) => {
-                      const target = e.target as HTMLVideoElement
-                      target.style.display = 'none'
-                      const fallback = target.nextElementSibling as HTMLElement
-                      if (fallback) fallback.style.display = 'flex'
-                    }}
-                  >
-                    <source src="/videos/synestrology-preview.mp4" type="video/mp4" />
-                  </video>
-                  <div className="absolute inset-0 bg-slate-700/30 flex items-center justify-center" style={{ display: 'none' }}>
-                    <div className="text-center">
-                      <div className="w-16 h-16 bg-amber-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg className="w-8 h-8 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                        </svg>
-                      </div>
-                      <p className="text-gray-400 text-sm">Project Preview</p>
-                      <p className="text-white font-semibold">Synestrology</p>
-                    </div>
-                  </div>
-                </MediaButton>
-
-                <div className="flex justify-center gap-6">
-                  <ExternalLink href="https://www.synestrology.com/">Visit Synestrology</ExternalLink>
-                  <ExternalLink href="https://www.synestrology.com/tools/cosmic-blueprint">Use the Free Tool</ExternalLink>
                 </div>
               </div>
             </ProjectCard>
