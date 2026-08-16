@@ -188,7 +188,12 @@ function DesktopSidebar() {
   const reducedMotion = useReducedMotion()
 
   useEffect(() => {
-    setIsExpanded(!isCollapsibleRoute)
+    if (isCollapsibleRoute) {
+      setIsExpanded(false)
+      const timer = setTimeout(() => setIsExpanded(true), 500)
+      return () => clearTimeout(timer)
+    }
+    setIsExpanded(true)
   }, [isCollapsibleRoute])
 
   const animDuration = reducedMotion ? 0 : 0.3
