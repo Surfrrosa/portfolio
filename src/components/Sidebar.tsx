@@ -115,11 +115,9 @@ function IdentityList({ headingClassName, listClassName, headingStyle, listStyle
 }
 
 function HomeCard({ className }: { className?: string }) {
-  const pathname = usePathname()
-  const isHome = pathname === '/'
-  const defaultSrc = isHome ? '/images/name-tag-shaina.png' : '/images/name-tag-home.png'
-  const hoverSrc = isHome ? '/images/name-tag-home.png' : '/images/name-tag-shaina.png'
-  const defaultAlt = isHome ? 'Hello my name is Shaina' : 'Home'
+  const defaultSrc = '/images/name-tag-shaina.png'
+  const hoverSrc = '/images/name-tag-home.png'
+  const defaultAlt = 'Hello my name is Shaina'
 
   return (
     <Link href="/" aria-label="Home" className={`group relative block ${className ?? ''}`}>
