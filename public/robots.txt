@@ -27,5 +27,9 @@ Allow: /
 User-agent: Googlebot
 Allow: /
 
+# Keep the HOME nametag on-site only; don't let it rank in Google Image search
+User-agent: Googlebot-Image
+Disallow: /images/name-tag-home.png
+
 # Sitemap location
 Sitemap: https://shainapauley.com/sitemap.xml
