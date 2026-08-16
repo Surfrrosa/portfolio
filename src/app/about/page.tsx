@@ -37,7 +37,7 @@ export default function AboutPage() {
           >
             SlabCheck
           </a>
-          , &amp; current grad student
+          , &amp; grad student
         </motion.p>
       </main>
     </div>
