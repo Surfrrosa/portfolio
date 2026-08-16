@@ -74,7 +74,7 @@ export default function AboutPage() {
           transition={{ duration: 0.6, delay: 1.2 }}
         >
           <p className="text-white/70 text-xs font-mono whitespace-nowrap overflow-hidden text-ellipsis">
-            now playing: let&apos;s all go to the lobby (1957) + a colour box (1935) · public domain
+            now playing: let&apos;s all go to the lobby (1957) + a colour box (1935)
           </p>
           <button
             type="button"
