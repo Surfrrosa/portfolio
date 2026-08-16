@@ -152,8 +152,10 @@ const SOCIAL_LINKS = [
 const NAV_LINKS = [
   { href: '/writing', icon: WriteIcon, label: 'Writing' },
   { href: '/work', icon: WorkIcon, label: 'View Work' },
-  { href: '/contact', icon: MailIcon, label: 'Contact' },
+  { href: '/about', icon: MailIcon, label: 'Contact' },
 ] as const
+
+const COLLAPSIBLE_ROUTES = ['/about'] as const
 
 function SocialLinks({ className, onClick }: { className: string; onClick?: () => void }) {
   return (
@@ -180,10 +182,55 @@ function NavLinks({ className, onClick }: { className: string; onClick?: () => v
 }
 
 function DesktopSidebar() {
+  const pathname = usePathname()
+  const isCollapsibleRoute = COLLAPSIBLE_ROUTES.includes(pathname as typeof COLLAPSIBLE_ROUTES[number])
+  const [isExpanded, setIsExpanded] = useState(!isCollapsibleRoute)
+  const reducedMotion = useReducedMotion()
+
+  useEffect(() => {
+    setIsExpanded(!isCollapsibleRoute)
+  }, [isCollapsibleRoute])
+
+  const animDuration = reducedMotion ? 0 : 0.3
+
   return (
-    <nav aria-label="Primary" className="hidden lg:flex lg:flex-col gap-7 fixed top-0 left-0 w-[340px] h-screen
-                       bg-black/60 backdrop-blur-[1px] border-r border-white/10 p-6 z-50 overflow-y-auto">
-      <HomeCard className="max-w-[280px] mx-auto" />
+    <>
+      {isCollapsibleRoute && (
+        <div className="hidden lg:block fixed left-0 top-1/2 -translate-y-1/2 z-[60] pointer-events-none">
+          <motion.button
+            type="button"
+            onClick={() => setIsExpanded((v) => !v)}
+            aria-label={isExpanded ? 'Collapse navigation' : 'Expand navigation'}
+            aria-expanded={isExpanded}
+            initial={false}
+            animate={{ x: isExpanded ? 340 : 0 }}
+            transition={{ type: 'tween', duration: animDuration }}
+            className="w-8 h-16 flex items-center justify-center bg-black/60 backdrop-blur-sm border border-white/10 rounded-r-md text-white/70 hover:text-white hover:bg-black/80 transition-colors pointer-events-auto"
+          >
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              strokeWidth={2}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              {isExpanded ? <path d="M15 19l-7-7 7-7" /> : <path d="M9 5l7 7-7 7" />}
+            </svg>
+          </motion.button>
+        </div>
+      )}
+      <motion.nav
+        aria-label="Primary"
+        className="hidden lg:flex lg:flex-col gap-7 fixed top-0 left-0 w-[340px] h-screen
+                   bg-black/60 backdrop-blur-[1px] border-r border-white/10 p-6 z-50 overflow-y-auto"
+        initial={false}
+        animate={{ x: isCollapsibleRoute && !isExpanded ? '-100%' : 0 }}
+        transition={{ type: 'tween', duration: animDuration }}
+      >
+        <HomeCard className="max-w-[280px] mx-auto" />
 
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -209,7 +256,8 @@ function DesktopSidebar() {
         <NavLinks className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors" />
       </motion.div>
 
-    </nav>
+      </motion.nav>
+    </>
   )
 }
 
