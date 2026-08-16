@@ -23,11 +23,11 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: 'Shaina Pauley | AI Product Architect',
+    default: 'it me | shaina pauley',
     template: '%s | Shaina Pauley'
   },
-  description: 'AI Product Architect. I design the systems AI works inside: specifications, evaluation pipelines, context that persists between sessions. 7+ years in product, now building with AI every day.',
-  keywords: ['AI Product Architect', 'Agentic Systems Design', 'AI Evaluation Harnesses', 'Multi-Agent Orchestration', 'Context Architecture', 'Claude Code', 'AI-Native Development', 'Product Architecture', 'Shaina Pauley'],
+  description: 'founder @ synestrology & co-founder @ SlabCheck · let\'s have a kiki',
+  keywords: ['Shaina Pauley', 'Synestrology', 'SlabCheck', 'Founder', 'Pokemon TCG', 'Astrology Software', 'Human Design'],
   authors: [{ name: 'Shaina Pauley', url: SITE_URL }],
   creator: 'Shaina Pauley',
   publisher: 'Shaina Pauley',
@@ -44,8 +44,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Shaina Pauley | AI Product Architect',
-    description: 'I design the systems AI works inside. Specifications, evaluation pipelines, context that sticks between sessions. Building with AI every day.',
+    title: 'it me | shaina pauley',
+    description: 'founder @ synestrology & co-founder @ SlabCheck · let\'s have a kiki',
     url: SITE_URL,
     siteName: 'Shaina Pauley',
     type: 'website',
@@ -55,15 +55,15 @@ export const metadata: Metadata = {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Shaina Pauley - AI Product Architect',
+        alt: 'Shaina Pauley - founder of Synestrology and co-founder of SlabCheck',
         type: 'image/png',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Shaina Pauley | AI Product Architect',
-    description: 'I design the systems AI works inside. Specifications, evaluation pipelines, context that sticks between sessions. Building with AI every day.',
+    title: 'it me | shaina pauley',
+    description: 'founder @ synestrology & co-founder @ SlabCheck · let\'s have a kiki',
     images: ['/og-image.png'],
     creator: '@sha1napauley',
   },
