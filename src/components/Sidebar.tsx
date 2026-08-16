@@ -202,15 +202,15 @@ function NavLinks({ className, onClick }: { className: string; onClick?: () => v
 function DesktopSidebar() {
   const pathname = usePathname()
   const isCollapsibleRoute = COLLAPSIBLE_ROUTES.includes(pathname as typeof COLLAPSIBLE_ROUTES[number])
-  const [isExpanded, setIsExpanded] = useState(!isCollapsibleRoute)
+  const [isExpanded, setIsExpanded] = useState(true)
   const [isEntering, setIsEntering] = useState(false)
   const reducedMotion = useReducedMotion()
 
   useEffect(() => {
     if (isCollapsibleRoute) {
-      setIsExpanded(false)
+      setIsExpanded(true)
       setIsEntering(true)
-      const timer = setTimeout(() => setIsExpanded(true), 500)
+      const timer = setTimeout(() => setIsExpanded(false), 300)
       return () => clearTimeout(timer)
     }
     setIsExpanded(true)
@@ -224,7 +224,7 @@ function DesktopSidebar() {
       : { type: 'tween' as const, duration: 0.3, ease: 'easeInOut' as const }
 
   const handleAnimationComplete = () => {
-    if (isEntering && isExpanded) setIsEntering(false)
+    if (isEntering && !isExpanded) setIsEntering(false)
   }
 
   return (
