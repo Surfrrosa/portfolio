@@ -25,18 +25,18 @@ function buildPersonSchema() {
       "https://github.com/Surfrrosa",
       "https://x.com/sha1napauley"
     ],
-    "jobTitle": "AI Product Architect",
+    "jobTitle": "Founder",
     "knowsAbout": [
+      "Synestrology",
+      "SlabCheck",
+      "Astrology Software",
+      "Human Design",
+      "Pokemon TCG Grading",
       "AI Product Architecture",
       "Agentic Systems Design",
-      "Multi-Agent Orchestration",
-      "AI Evaluation Harnesses",
-      "Context Architecture",
-      "Claude Code",
-      "AI-Native Development",
-      "Product Strategy"
+      "Claude Code"
     ],
-    "description": "AI Product Architect. I design the systems AI works inside: specifications, evaluation pipelines, context that persists between sessions. 7+ years in product, now building with AI every day.",
+    "description": "Founder of Synestrology and co-founder of SlabCheck. Building both full-time while starting a master's in biomedical neuroscience at the University of Florida.",
     "hasCredential": [
       {
         "@type": "EducationalOccupationalCredential",
@@ -68,39 +68,12 @@ function buildWebPageSchema() {
     "@type": "WebPage",
     "@id": `${SITE_URL}/#webpage`,
     "url": SITE_URL,
-    "name": "Shaina Pauley | AI Product Architect",
+    "name": "it me | shaina pauley",
     "isPartOf": { "@id": `${SITE_URL}/#website` },
     "about": { "@id": `${SITE_URL}/#person` },
     "datePublished": "2025-01-01",
-    "dateModified": "2026-03-27",
-    "description": "AI Product Architect. I design the systems AI works inside: specifications, evaluation pipelines, context that persists between sessions."
-  }
-}
-
-function buildServiceOffer(name: string) {
-  return { "@type": "Offer", "itemOffered": { "@type": "Service", name } }
-}
-
-function buildServiceSchema() {
-  const services = [
-    "AI Product Architecture",
-    "Agentic Systems Design",
-    "Multi-Agent Orchestration",
-    "AI Evaluation and Quality Systems",
-    "Context Architecture and AI Workflow Design"
-  ]
-  return {
-    "@type": "ProfessionalService",
-    "@id": `${SITE_URL}/#service`,
-    "name": "Shaina Pauley - AI Product Architecture",
-    "provider": { "@id": `${SITE_URL}/#person` },
-    "serviceType": "AI Product Architecture and Agentic Systems Design",
-    "areaServed": "Worldwide",
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Services",
-      "itemListElement": services.map(buildServiceOffer)
-    }
+    "dateModified": "2026-08-16",
+    "description": "Founder of Synestrology and co-founder of SlabCheck."
   }
 }
 
@@ -111,7 +84,6 @@ export default function StructuredData() {
       buildPersonSchema(),
       buildWebSiteSchema(),
       buildWebPageSchema(),
-      buildServiceSchema(),
     ]
   }
 
