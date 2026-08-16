@@ -1,6 +1,9 @@
 'use client'
 
 import React, { useEffect, useRef, useState } from 'react'
+import { usePathname } from 'next/navigation'
+
+const ROUTES_WITHOUT_GLOBAL_BACKGROUND = ['/about'] as const
 
 function MutedIcon() {
   return (
@@ -70,6 +73,7 @@ function fadeVolume(audio: HTMLAudioElement, target: number, durationMs: number)
 }
 
 export default function VideoBackground() {
+  const pathname = usePathname()
   const videoRef = useRef<HTMLVideoElement>(null)
   const audioRef = useRef<HTMLAudioElement>(null)
   const [isMuted, setIsMuted] = useState(true)
@@ -77,6 +81,10 @@ export default function VideoBackground() {
   useEffect(() => {
     videoRef.current?.play().catch(() => {})
   }, [])
+
+  if (ROUTES_WITHOUT_GLOBAL_BACKGROUND.includes(pathname as typeof ROUTES_WITHOUT_GLOBAL_BACKGROUND[number])) {
+    return null
+  }
 
   const toggleMute = async () => {
     const audio = audioRef.current
