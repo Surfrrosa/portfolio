@@ -39,11 +39,21 @@ function WorkIcon() {
   )
 }
 
-function MailIcon() {
+function QuestionMarkIcon() {
   return (
     <svg className="w-5 h-5 text-white group-hover:text-accent-teal transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
     </svg>
+  )
+}
+
+function EmailFooter() {
+  return (
+    <div className="pt-4 mt-auto border-t border-white/10 text-center">
+      <p className="text-white/60 text-xs font-mono select-all">
+        me@shainapauley.com
+      </p>
+    </div>
   )
 }
 
@@ -152,7 +162,7 @@ const SOCIAL_LINKS = [
 const NAV_LINKS = [
   { href: '/writing', icon: WriteIcon, label: 'Writing', external: false },
   { href: '/work', icon: WorkIcon, label: 'View Work', external: false },
-  { href: 'mailto:me@shainapauley.com', icon: MailIcon, label: 'Email me', external: true },
+  { href: '/about', icon: QuestionMarkIcon, label: 'About', external: false },
 ] as const
 
 const COLLAPSIBLE_ROUTES = ['/about'] as const
@@ -291,6 +301,8 @@ function DesktopSidebar() {
         <NavLinks className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors" />
       </motion.div>
 
+      <EmailFooter />
+
       </motion.nav>
     </>
   )
@@ -406,6 +418,8 @@ function MobileSidebar() {
                     onClick={close}
                   />
                 </div>
+
+                <EmailFooter />
               </div>
             </motion.aside>
           </>

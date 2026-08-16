@@ -39,17 +39,6 @@ const tvHotspots = [
     height: '38%',
     labelTop: '60%',
   },
-  {
-    id: 'about',
-    label: 'About',
-    href: '/about',
-    // Bottom right TV (crowd)
-    top: '45%',
-    left: '65%',
-    width: '22%',
-    height: '38%',
-    labelTop: '60%',
-  },
 ]
 
 export default function Home() {
