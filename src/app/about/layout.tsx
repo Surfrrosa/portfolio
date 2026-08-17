@@ -1,11 +1,11 @@
 import { buildRouteMetadata } from '@/lib/metadata'
 
 export const metadata = buildRouteMetadata({
-  title: 'About',
+  title: 'about',
   slug: '/about',
-  description: 'AI Product Architect with 7+ years enterprise experience. Designs agentic systems, builds evaluation harnesses, and architects context for production AI workflows. CSPO and CSM certified.',
-  ogTitle: 'About Shaina Pauley',
-  ogDescription: 'AI Product Architect with 7+ years enterprise experience. Designs agentic systems, evaluation harnesses, and context architecture for production AI workflows.',
+  description: 'hi, it me. founder @ synestrology & co-founder @ SlabCheck.',
+  ogTitle: 'about shaina pauley',
+  ogDescription: 'hi, it me. founder @ synestrology & co-founder @ SlabCheck.',
 })
 
 export default function AboutLayout({ children }: { children: React.ReactNode }) {

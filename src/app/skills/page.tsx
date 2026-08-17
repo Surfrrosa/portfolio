@@ -5,7 +5,7 @@ import { SKILLS, SKILLS_REPO, TIER_LABELS, TIERS } from '@/lib/skills'
 import { buildRouteMetadata } from '@/lib/metadata'
 
 export const metadata = buildRouteMetadata({
-  title: 'Skills',
+  title: 'skills',
   slug: '/skills',
   description:
     'A free audit toolkit for Claude Code. Fourteen slash commands for accessibility, performance, SEO, privacy, design, deploy safety, and codebase audits.',
